@@ -13,13 +13,13 @@ Site en français: https://islam.zmo.de/s/afrique_ouest/
 - Newspaper articles metadata (“newspaper_articles.csv”)
 - Bibliographical references metadata (“references.csv”)
 
-### CSV files
+### CSV files format:
 - Delimiter: ,
 - Enclosure: "
 - Escape: /
 - Multi-value separator: |
 
-### Metadata
+### Metadata:
 - Metadata names or headers are Rdf names
 - The metadata is a mix a “Dublin Core”, “Bibliographic Ontology”, “Friend of a Friend”, and “Geonames”
 - Format of uri: Uri and label separated by a space
