@@ -24,3 +24,6 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 - Metadata names or headers are Rdf names
 - The metadata is a mix a “Dublin Core”, “Bibliographic Ontology”, “Friend of a Friend”, and “Geonames”
 - Format of uri: Uri and label separated by a space
+
+## Folder "TimelineJS"
+It contains the spreadsheets that were used to create the digital exhibits using Timeline JS.
