@@ -7,12 +7,14 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 
 ## Folder "Metadata"
 ### Contains:
-- Audio-visual documents metadata (“audio-visual_documents.csv”)
-- Documents metadata (“documents.csv”)
-- Images metadata (“images.csv”)
-- Issues of Islamic newspapers/magazines/bulletins metadata (“issues.csv”)
-- Newspaper articles metadata (“newspaper_articles.csv”)
-- Bibliographical references metadata (“references.csv”)
+- Audio-visual documents metadata ("audio-visual_documents.csv")
+- Documents metadata ("documents.csv")
+- Images metadata ("images.csv")
+- Index of events ("index_events.csv")
+- Index of locations ("index_locations")
+- Issues of Islamic newspapers/magazines/bulletins metadata ("issues.csv")
+- Newspaper articles metadata ("newspaper_articles.csv")
+- Bibliographical references metadata ("references.csv")
 
 ### CSV files format:
 - Delimiter: ,
@@ -22,7 +24,7 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 
 ### Metadata:
 - Metadata names or headers are Rdf names
-- The metadata is a mix a “Dublin Core”, “Bibliographic Ontology”, “Friend of a Friend”, and “Geonames”
+- The metadata is a mix a "Dublin Core", "Bibliographic Ontology", "Friend of a Friend", and "Geonames"
 - Format of uri: Uri and label separated by a space
 
 ## Folder "TimelineJS"
