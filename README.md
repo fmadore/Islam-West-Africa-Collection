@@ -8,13 +8,13 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 ## Folder "Metadata"
 ### Contains:
 - Audio-visual documents metadata ("audio-visual_documents.csv")
-- Documents metadata ("documents.csv")
-- Images metadata ("images.csv")
-- Index of events ("index_events.csv")
-- Index of locations ("index_locations.csv")
-- Issues of Islamic newspapers/magazines/bulletins metadata ("issues.csv")
-- Newspaper articles metadata ("newspaper_articles.csv")
 - Bibliographical references metadata ("references.csv")
+- Documents metadata ("documents.csv")
+- Events metadata ("index_events.csv")
+- Images metadata ("images.csv")
+- Issues of Islamic newspapers/magazines/bulletins metadata ("issues.csv")
+- Locations metadata ("index_locations.csv")
+- Newspaper articles metadata ("newspaper_articles.csv")
 
 ### CSV files format:
 - Delimiter: ,
