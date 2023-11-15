@@ -27,5 +27,7 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 - The metadata is a mix a "Dublin Core", "Bibliographic Ontology", "Friend of a Friend", and "Geonames"
 - Format of uri: Uri and label separated by a space
 
+## Folder "Textual analysis"
+
 ## Folder "TimelineJS"
 It contains a copy of the spreadsheets that were used to create the [digital exhibits](https://islam.zmo.de/s/westafrica/page/exhibits) using [Timeline JS](https://timeline.knightlab.com/).
