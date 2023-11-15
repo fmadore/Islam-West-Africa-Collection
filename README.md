@@ -11,7 +11,7 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 - Documents metadata ("documents.csv")
 - Images metadata ("images.csv")
 - Index of events ("index_events.csv")
-- Index of locations ("index_locations")
+- Index of locations ("index_locations.csv")
 - Issues of Islamic newspapers/magazines/bulletins metadata ("issues.csv")
 - Newspaper articles metadata ("newspaper_articles.csv")
 - Bibliographical references metadata ("references.csv")
