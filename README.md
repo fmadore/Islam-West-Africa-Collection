@@ -7,12 +7,14 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 
 ## Folder "Metadata"
 ### Contains:
-- Audio-visual documents metadata (“audio-visual_documents.csv”)
-- Documents metadata (“documents.csv”)
-- Images metadata (“images.csv”)
-- Issues of Islamic newspapers/magazines/bulletins metadata (“issues.csv”)
-- Newspaper articles metadata (“newspaper_articles.csv”)
-- Bibliographical references metadata (“references.csv”)
+- Audio-visual documents metadata ("audio-visual_documents.csv")
+- Bibliographical references metadata ("references.csv")
+- Documents metadata ("documents.csv")
+- Events metadata ("index_events.csv")
+- Images metadata ("images.csv")
+- Issues of Islamic newspapers/magazines/bulletins metadata ("issues.csv")
+- Locations metadata ("index_locations.csv")
+- Newspaper articles metadata ("newspaper_articles.csv")
 
 ### CSV files format:
 - Delimiter: ,
@@ -22,8 +24,10 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 
 ### Metadata:
 - Metadata names or headers are Rdf names
-- The metadata is a mix a “Dublin Core”, “Bibliographic Ontology”, “Friend of a Friend”, and “Geonames”
+- The metadata is a mix a "Dublin Core", "Bibliographic Ontology", "Friend of a Friend", and "Geonames"
 - Format of uri: Uri and label separated by a space
+
+## Folder "Textual analysis"
 
 ## Folder "TimelineJS"
 It contains a copy of the spreadsheets that were used to create the [digital exhibits](https://islam.zmo.de/s/westafrica/page/exhibits) using [Timeline JS](https://timeline.knightlab.com/).
