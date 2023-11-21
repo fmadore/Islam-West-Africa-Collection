@@ -29,6 +29,7 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 
 ## Folder "Textual analysis"
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD?urlpath=https%3A%2F%2Fgithub.com%2Ffmadore%2FIslam-West-Africa-Collection%2Ftree%2Fmain%2FTextual%2520analysis)
+
 To access and run the Jupyter notebooks in this repository, simply click on the Binder button shown above. This will launch a virtual environment within your browser, allowing you to open and run the notebooks seamlessly, without the need for any installation.
 
 ## Folder "TimelineJS"
