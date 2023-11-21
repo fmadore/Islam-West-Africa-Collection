@@ -28,7 +28,7 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 - Format of uri: Uri and label separated by a space
 
 ## Folder "Textual analysis"
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Islam-West-Africa-Collection/HEAD?urlpath=https%3A%2F%2Fgithub.com%2Ffmadore%2FIslam-West-Africa-Collection%2Ftree%2Fe5b95113f37d646fc88c9da94e0cb0363f496aed%2FTextual%2520analysis)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD?urlpath=https%3A%2F%2Fgithub.com%2Ffmadore%2FIslam-West-Africa-Collection%2Ftree%2Fe5b95113f37d646fc88c9da94e0cb0363f496aed%2FTextual%2520analysis)
 
 To access and run the Jupyter notebooks in this repository, simply click on the Binder button shown above. This will launch a virtual environment within your browser, allowing you to open and run the notebooks seamlessly, without the need for any installation.
 There are 4 notebooks in the folder [Textual analysis](https://github.com/fmadore/Islam-West-Africa-Collection/tree/32d4fb9694faf26800f8e92039f6bca16232a316/Textual%20analysis)
