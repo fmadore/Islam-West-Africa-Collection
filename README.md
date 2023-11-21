@@ -28,7 +28,9 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 - Format of uri: Uri and label separated by a space
 
 ## Folder "Textual analysis"
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD?labpath=https%3A%2F%2Fgithub.com%2Ffmadore%2FIslam-West-Africa-Collection%2Ftree%2Fmain%2FTextual%2520analysis)
+.. image:: https://mybinder.org/badge_logo.svg
+ :target: https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD?labpath=https%3A%2F%2Fgithub.com%2Ffmadore%2FIslam-West-Africa-Collection%2Ftree%2Fmain%2FTextual%2520analysis
 
 ## Folder "TimelineJS"
 It contains a copy of the spreadsheets that were used to create the [digital exhibits](https://islam.zmo.de/s/westafrica/page/exhibits) using [Timeline JS](https://timeline.knightlab.com/).
