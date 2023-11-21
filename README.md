@@ -31,6 +31,9 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD?urlpath=https%3A%2F%2Fgithub.com%2Ffmadore%2FIslam-West-Africa-Collection%2Ftree%2Fmain%2FTextual%2520analysis)
 
 To access and run the Jupyter notebooks in this repository, simply click on the Binder button shown above. This will launch a virtual environment within your browser, allowing you to open and run the notebooks seamlessly, without the need for any installation.
+There are 3 notebooks in the folder Textual analysis
+1- Sentiment_analysis.ipynb
+2- [Spatial_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Textual%20analysis/Spatial%20analysis/Spatial_analysis.ipynb)
 
 ## Folder "TimelineJS"
 It contains a copy of the spreadsheets that were used to create the [digital exhibits](https://islam.zmo.de/s/westafrica/page/exhibits) using [Timeline JS](https://timeline.knightlab.com/).
