@@ -1,0 +1,1202 @@
+[
+{
+    "o:id": 1,
+    "url": "https://islam.zmo.de/s/westafrica/item/1",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        5852
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/645eb118da710c4c418a0afd8d13ff8cb8fd525a.jpg"
+    ],
+    "dcterms:title": [
+        "Grande Mosquée Sunnite de Ouagadougou"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2015-06-20"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3290 Grande Mosquée Sunnite de Ouagadougou",
+        "https://islam.zmo.de/api/items/3332 Ouagadougou"
+    ]
+},
+{
+    "o:id": 1183,
+    "url": "https://islam.zmo.de/s/westafrica/item/1183",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        6199
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/f7885d0d5b8f3a4de9b482f0758d85686aa55d61.jpeg"
+    ],
+    "dcterms:title": [
+        "Grande mosquée de Dioulassoba"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2015-06-27"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3256 Bobo-Dioulasso",
+        "https://islam.zmo.de/api/items/3319 Mosquée de Dioulassoba"
+    ]
+},
+{
+    "o:id": 1184,
+    "url": "https://islam.zmo.de/s/westafrica/item/1184",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        6200,
+        6201
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/e0c012a95878001bddd2860e3e2b2016f416ae68.jpeg",
+        "https://islam.zmo.de/files/original/44a76f86e2b0c61cc6788f14259ef87fbdfab26f.jpeg"
+    ],
+    "dcterms:title": [
+        "Radio Ridwane"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4026 Radio Ridwane"
+    ],
+    "dcterms:date": [
+        "2015-04-16"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3332 Ouagadougou"
+    ],
+    "geonames:lat": [
+        "12.3367681"
+    ],
+    "geonames:long": [
+        "-1.5436187"
+    ]
+},
+{
+    "o:id": 1185,
+    "url": "https://islam.zmo.de/s/westafrica/item/1185",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        6202
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/dee166ad4d82db460934140351deece45be7215b.jpeg"
+    ],
+    "dcterms:title": [
+        "Mosquée d'Hamdallaye"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2011-11-17"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3321 Mosquée Hamdalaye",
+        "https://islam.zmo.de/api/items/3332 Ouagadougou"
+    ]
+},
+{
+    "o:id": 1186,
+    "url": "https://islam.zmo.de/s/westafrica/item/1186",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        6203,
+        6204,
+        6205,
+        6206
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/5725ef651c81e325a2077bdad8c5f95482415e88.jpeg",
+        "https://islam.zmo.de/files/original/8419a249dc986c89b8d97a83b6cd07c981d035fc.jpeg",
+        "https://islam.zmo.de/files/original/ca4f5f7169a30d00f0efcc1403389058b1712253.jpeg",
+        "https://islam.zmo.de/files/original/52f213f2aee4fbdce1ff5d125c113a15c79c030b.jpeg"
+    ],
+    "dcterms:title": [
+        "Mosquée en construction dans le quartier de Ouaga 2000"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/3635 Construction of a mosque"
+    ],
+    "dcterms:date": [
+        "2011-11-17"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3331 Ouaga 2000",
+        "https://islam.zmo.de/api/items/3332 Ouagadougou"
+    ],
+    "geonames:lat": [
+        "12.315160"
+    ],
+    "geonames:long": [
+        "-1.511406"
+    ]
+},
+{
+    "o:id": 1187,
+    "url": "https://islam.zmo.de/s/westafrica/item/1187",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        6207
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/223a5ae9f024dfcc3e6de94cd9e485543091135d.jpeg"
+    ],
+    "dcterms:title": [
+        "Mosquée de l'ONG islamique Makkah Al Moukarramah"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:description": [
+        "La mosquée à côté du bureau de l'ONG islamique Makkah Al Moukarramah dans le quartier de Ouaga 2000."
+    ],
+    "dcterms:date": [
+        "2011-11-10"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3332 Ouagadougou"
+    ],
+    "geonames:lat": [
+        "12.3172987"
+    ],
+    "geonames:long": [
+        "-1.519166"
+    ]
+},
+{
+    "o:id": 1188,
+    "url": "https://islam.zmo.de/s/westafrica/item/1188",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        6208,
+        6209,
+        6210,
+        6211
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/5b8581364115f2662cbd7b9d9f71bddc6c410708.jpeg",
+        "https://islam.zmo.de/files/original/788ddf420a0324a649323cba18527c41e3063ee6.jpeg",
+        "https://islam.zmo.de/files/original/346c8d3c7ec33b326bcfacc16b0544fae27be745.jpeg",
+        "https://islam.zmo.de/files/original/dcc4d827452bd33aab8ff96be14b7ea7f474ecb8.jpeg"
+    ],
+    "dcterms:title": [
+        "Grande Mosquée de Ouagadougou"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2011-10-29"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3286 Grande Mosquée de Ouagadougou",
+        "https://islam.zmo.de/api/items/3332 Ouagadougou"
+    ],
+    "geonames:lat": [
+        "12.3663107"
+    ],
+    "geonames:long": [
+        "-1.5228766"
+    ]
+},
+{
+    "o:id": 2746,
+    "url": "https://islam.zmo.de/s/westafrica/item/2746",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        6952,
+        6953
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/9711879cdfe841ef13d09dfd8d89dccfcab9efc5.jpg",
+        "https://islam.zmo.de/files/original/5447bb63e816bb9e111236be95ed0313211490e3.jpg"
+    ],
+    "dcterms:title": [
+        "Radio Iqra"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4006 Radio IQRA"
+    ],
+    "dcterms:date": [
+        "2015-04-22"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3332 Ouagadougou"
+    ],
+    "geonames:lat": [
+        "12.3673611"
+    ],
+    "geonames:long": [
+        "-1.5242347"
+    ]
+},
+{
+    "o:id": 2764,
+    "url": "https://islam.zmo.de/s/westafrica/item/2764",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5825": 5825
+    },
+    "o:media/o:id": [
+        6970,
+        6971,
+        6972,
+        6973,
+        6974,
+        6975,
+        6976,
+        6977,
+        6978,
+        6979,
+        6980
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/4ff21f348248225dc4432a67a001b83dda670ec4.jpg",
+        "https://islam.zmo.de/files/original/8c6a934347d1a083c38607eef82783d82afb7259.jpg",
+        "https://islam.zmo.de/files/original/95d2c5c1de484697d9efbd184108e9d3720902f5.jpg",
+        "https://islam.zmo.de/files/original/e012736e09a3ab5fb194f0d34fa4eb7ea044ad65.jpg",
+        "https://islam.zmo.de/files/original/f0d8cba101608cf30d9e5dcf8aa6b4499c693d93.jpg",
+        "https://islam.zmo.de/files/original/2d977f709f7b534160745ebc3c4b8b7f9ecbc9a7.jpg",
+        "https://islam.zmo.de/files/original/8b51168a791ec96ff23aff24ff83200dca9f484e.jpg",
+        "https://islam.zmo.de/files/original/fa6795799bc992a9bcaec04b302667d047df96fb.jpg",
+        "https://islam.zmo.de/files/original/fc13c5901554abe976af1f4ef1280d1c7020a8ba.jpg",
+        "https://islam.zmo.de/files/original/a97ab2e459d68a693ad55ed348bb500e6a4a8196.jpg",
+        "https://islam.zmo.de/files/original/7fd3af3f5b0ec075199aeeb041f76379eb77a9db.jpg"
+    ],
+    "dcterms:title": [
+        "Cérémonie de remise de diplômes pour l'apprentissage de la lecture du Coran"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/3617 Women in Islam",
+        "https://islam.zmo.de/api/items/3828 Mahamoudou Bandé"
+    ],
+    "dcterms:description": [
+        "Graduation ceremony for women who have learned to read the Qur'an at the Zawiya of Sheikh Mahamoudou Bandé.",
+        "Cérémonie de remise de diplômes pour les femmes qui ont appris à lire le Coran au foyer coranique de la Zawiya du cheikh Mahamoudou Bandé."
+    ],
+    "dcterms:date": [
+        "2015-04-26"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3332 Ouagadougou"
+    ],
+    "geonames:lat": [
+        "12.3546047"
+    ],
+    "geonames:long": [
+        "-1.529277"
+    ]
+},
+{
+    "o:id": 3180,
+    "url": "https://islam.zmo.de/s/westafrica/item/3180",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7332,
+        7333
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/caa2863462f5e80b44c2a090e8b128d249be099f.jpg",
+        "https://islam.zmo.de/files/original/0c74e9f487768678b56bd5468a939eb5f318fb7a.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée centrale de Cotonou Jonquet"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4431 Mosquée centrale de Cotonou Jonquet"
+    ],
+    "dcterms:date": [
+        "2019-03-26"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3267 Cotonou"
+    ]
+},
+{
+    "o:id": 3181,
+    "url": "https://islam.zmo.de/s/westafrica/item/3181",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7334,
+        7335
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/e72af69301ba50d629bcb45a2a151d7f4ee48c5e.jpg",
+        "https://islam.zmo.de/files/original/9561e82911238a307f8f2138cef01e7c70055bd3.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée centrale de Bohicon"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4438 Mosquée centrale de Bohicon"
+    ],
+    "dcterms:date": [
+        "2019-04-30"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3258 Bohicon"
+    ]
+},
+{
+    "o:id": 3182,
+    "url": "https://islam.zmo.de/s/westafrica/item/3182",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7336
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/724bc70eade0ae372f42c6d294861a2389627b2d.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée Oumar Ibn Khattab en construction"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/3239 Association Culturelle des Étudiants et Élèves Musulmans du Bénin",
+        "https://islam.zmo.de/api/items/4370 Mosquée Oumar Ibn Khattab",
+        "https://islam.zmo.de/api/items/4360 University of Abomey-Calavi"
+    ],
+    "dcterms:date": [
+        "2022-03-16"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3243 Abomey-Calavi"
+    ]
+},
+{
+    "o:id": 3186,
+    "url": "https://islam.zmo.de/s/westafrica/item/3186",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7338,
+        7339
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/38b10af9a5ed7b146b2f7fc8f4757ae78da20213.jpg",
+        "https://islam.zmo.de/files/original/0f2d48f63d228b59bda7a5bf87b09e33a5f58be0.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée centrale de Zongo (Cotonou)"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4448 Mosquée centrale de Zongo (Cotonou)"
+    ],
+    "dcterms:date": [
+        "2019-03-15"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3267 Cotonou"
+    ]
+},
+{
+    "o:id": 3187,
+    "url": "https://islam.zmo.de/s/westafrica/item/3187",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7340,
+        7341,
+        7342
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/12f4f4e1052dd25dd884ac6564be05004d95622b.jpg",
+        "https://islam.zmo.de/files/original/cedf2bae06f76e8e80efb67b38c14ad3d854cb43.jpg",
+        "https://islam.zmo.de/files/original/7eed6c94cd1f276df7dc04a6e72270dceee18b7b.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée centrale de Porto-Novo"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4418 Mosquée centrale de Porto-Novo"
+    ],
+    "dcterms:date": [
+        "2019-04-08"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3341 Porto-Novo"
+    ]
+},
+{
+    "o:id": 3188,
+    "url": "https://islam.zmo.de/s/westafrica/item/3188",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7343
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/4dc81c03816c98c991e518980bd63078153c4c8c.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée de Ganvié"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4450 Mosquée de Ganvié"
+    ],
+    "dcterms:date": [
+        "2019-05-26"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3376 Ganvié"
+    ]
+},
+{
+    "o:id": 3190,
+    "url": "https://islam.zmo.de/s/westafrica/item/3190",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7344,
+        7345
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/977a3d02365f08fc564c8f34f76da2f00fa0935c.jpg",
+        "https://islam.zmo.de/files/original/c1291c54b89eef3cdeb0c6ae363acdda49532282.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée centrale de Fidjrossè"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/3225 Africa Muslims Agency",
+        "https://islam.zmo.de/api/items/4441 Mosquée centrale de Fidjrossè"
+    ],
+    "dcterms:date": [
+        "2019-03-21"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3267 Cotonou"
+    ]
+},
+{
+    "o:id": 3191,
+    "url": "https://islam.zmo.de/s/westafrica/item/3191",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7352,
+        7353
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/45d4c23f3b672d33526ace18e205e46d6fd2d74c.jpg",
+        "https://islam.zmo.de/files/original/50dd6f2b9b9073efb4c95ad2c6b18a35e8120348.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée Oumar Ibn Khattab"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/3239 Association Culturelle des Étudiants et Élèves Musulmans du Bénin",
+        "https://islam.zmo.de/api/items/4370 Mosquée Oumar Ibn Khattab",
+        "https://islam.zmo.de/api/items/4360 University of Abomey-Calavi"
+    ],
+    "dcterms:date": [
+        "2019-03-25"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3243 Abomey-Calavi"
+    ]
+},
+{
+    "o:id": 3192,
+    "url": "https://islam.zmo.de/s/westafrica/item/3192",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7354,
+        7355,
+        7356
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/1c984cd39d29d6c056480dd255125670b0abebf2.jpg",
+        "https://islam.zmo.de/files/original/309975f3ae780893a7b1439114121a5beb66bb72.jpg",
+        "https://islam.zmo.de/files/original/eac1ae4225094b93445951f460f1f781ea1ceb53.jpg"
+    ],
+    "dcterms:title": [
+        "Ancienne mosquée centrale de Porto-Novo"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4418 Mosquée centrale de Porto-Novo"
+    ],
+    "dcterms:date": [
+        "2019-04-29"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3341 Porto-Novo"
+    ]
+},
+{
+    "o:id": 3193,
+    "url": "https://islam.zmo.de/s/westafrica/item/3193",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7357
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/0a5ddb712befce1004f45c5ab33deb123e2a6ab6.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée centrale as-salam Godomey Togoudo"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4442 Mosquée centrale de Godomey"
+    ],
+    "dcterms:date": [
+        "2019-04-22"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3377 Godomey"
+    ]
+},
+{
+    "o:id": 3194,
+    "url": "https://islam.zmo.de/s/westafrica/item/3194",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7358
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/238c81c8d55c94d1fd2e12326e84421385ab5558.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée Porto-Novo"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2019-04-29"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3341 Porto-Novo"
+    ]
+},
+{
+    "o:id": 3195,
+    "url": "https://islam.zmo.de/s/westafrica/item/3195",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5836": 5836
+    },
+    "o:media/o:id": [
+        7359
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/5753ff1a71a152e853574767668bdced70426c76.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée centrale de Ouando (Porto-Novo)"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/4445 Mosquée centrale de Ouando"
+    ],
+    "dcterms:date": [
+        "2019-04-29"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3341 Porto-Novo"
+    ]
+},
+{
+    "o:id": 11710,
+    "url": "https://islam.zmo.de/s/westafrica/item/11710",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "11709": 11709
+    },
+    "o:media/o:id": [
+        11711
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/f88ee841e66c24a2dc50ec0dbccbb6e8112c45b9.jpg"
+    ],
+    "dcterms:title": [
+        "Great Mosque of Niamey",
+        "Grande mosquée de Niamey"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2022-11-03"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/11437 Niamey"
+    ]
+},
+{
+    "o:id": 12737,
+    "url": "https://islam.zmo.de/s/westafrica/item/12737",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "12736": 12736
+    },
+    "o:media/o:id": [
+        12738,
+        12741
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/5962d4e906f60c3b4803b753b6761bb577d90e8c.jpg",
+        "https://islam.zmo.de/files/original/f4a8ecc32f5d1a98706766b8750afc3d7f2c279e.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée de Aghien"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2014-12-04"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3241 Abidjan",
+        "https://islam.zmo.de/api/items/3266 Ivory Coast"
+    ],
+    "geonames:lat": [
+        "5.3831329"
+    ],
+    "geonames:long": [
+        "-3.9937872"
+    ]
+},
+{
+    "o:id": 12739,
+    "url": "https://islam.zmo.de/s/westafrica/item/12739",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "12736": 12736
+    },
+    "o:media/o:id": [
+        12740
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/8f2158fd68ac08cc5c7ca4055240933161a3d92e.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée An-nour"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/3240 Association des Élèves et Étudiants Musulmans de Côte d'Ivoire"
+    ],
+    "dcterms:date": [
+        "2015-02-10"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3241 Abidjan",
+        "https://islam.zmo.de/api/items/3266 Ivory Coast"
+    ],
+    "geonames:lat": [
+        "5.351380"
+    ],
+    "geonames:long": [
+        "-3.980761"
+    ]
+},
+{
+    "o:id": 12742,
+    "url": "https://islam.zmo.de/s/westafrica/item/12742",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "12736": 12736
+    },
+    "o:media/o:id": [
+        12743,
+        12744
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/1b3979db06541a891dbd6a340cc958bfc8076616.jpg",
+        "https://islam.zmo.de/files/original/eff0aa327fa4b460fefb27b8f1989bc55972c73b.jpg"
+    ],
+    "dcterms:title": [
+        "Grande Mosquée de la Riviera Golf"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2015-03-28"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3241 Abidjan",
+        "https://islam.zmo.de/api/items/3266 Ivory Coast"
+    ],
+    "geonames:lat": [
+        "5.338507"
+    ],
+    "geonames:long": [
+        "-3.978591"
+    ]
+},
+{
+    "o:id": 12745,
+    "url": "https://islam.zmo.de/s/westafrica/item/12745",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "12736": 12736
+    },
+    "o:media/o:id": [
+        12746,
+        12747,
+        12748
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/6b1b9436bf3a2ccbc72cf64481ce917e1cadce10.jpg",
+        "https://islam.zmo.de/files/original/0d1d092ff06ee7a19e7581a1da2bef7094e5bf4f.jpg",
+        "https://islam.zmo.de/files/original/a5a20b3613e706214b88d06418721f6699b804ae.jpg"
+    ],
+    "dcterms:title": [
+        "Grande Mosquée du Plateau"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2014-11-08"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3241 Abidjan",
+        "https://islam.zmo.de/api/items/3266 Ivory Coast"
+    ],
+    "geonames:lat": [
+        "5.319372"
+    ],
+    "geonames:long": [
+        "-4.015018"
+    ]
+},
+{
+    "o:id": 12750,
+    "url": "https://islam.zmo.de/s/westafrica/item/12750",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "12749": 12749
+    },
+    "o:media/o:id": [
+        12751,
+        12752
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/b75306b6dbbf3cb27046fa44d64ba461951b54bc.jpg",
+        "https://islam.zmo.de/files/original/9084063f84104bdff25f41e1558299187ecd1395.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée Kadhafi"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "Centre Culturel Islamique (CCI) de Lomé II"
+    ],
+    "dcterms:date": [
+        "2019-05-14"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/4407 Lomé",
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.191579"
+    ],
+    "geonames:long": [
+        "1.226693"
+    ]
+},
+{
+    "o:id": 12753,
+    "url": "https://islam.zmo.de/s/westafrica/item/12753",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "12749": 12749
+    },
+    "o:media/o:id": [
+        12754,
+        12755,
+        12757
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/628678138f77770e2bf3b3795247fff2f6cc2082.jpg",
+        "https://islam.zmo.de/files/original/d3254e086ca070f5e547a50467bf831b8a797978.jpg",
+        "https://islam.zmo.de/files/original/908afdb8b68a3a8bc98b526f88480cbc76ffa4c0.jpg"
+    ],
+    "dcterms:title": [
+        "Centre islamique Abdul Aziz bin Fahad bin Abdullah Alrajhi"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2019-05-14"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/4407 Lomé",
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.175899"
+    ],
+    "geonames:long": [
+        "1.206351"
+    ]
+},
+{
+    "o:id": 12758,
+    "url": "https://islam.zmo.de/s/westafrica/item/12758",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "12749": 12749
+    },
+    "o:media/o:id": [
+        12759
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/6c36a8d9b04a99d0f8317ab3249db32aab24018a.jpg"
+    ],
+    "dcterms:title": [
+        "Maison du Hadj"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/3553 Hadj",
+        "Maison du Hadj"
+    ],
+    "dcterms:date": [
+        "2019-05-16"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/4407 Lomé",
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.182554"
+    ],
+    "geonames:long": [
+        "1.253757"
+    ]
+},
+{
+    "o:id": 12760,
+    "url": "https://islam.zmo.de/s/westafrica/item/12760",
+    "o:resource_template": "Photograph",
+    "o:resource_class": "bibo:Image",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "12749": 12749
+    },
+    "o:media/o:id": [
+        12761,
+        12762
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/fe6bc08a7b1064daa41386748d1ab90318947709.jpg",
+        "https://islam.zmo.de/files/original/4b0d688c6bd9985f36a4c2feff0e336f40793b98.jpg"
+    ],
+    "dcterms:title": [
+        "Mosquée de l'Université de Lomé"
+    ],
+    "dcterms:creator": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "dcterms:subject": [
+        "https://islam.zmo.de/api/items/3238 Association des Élèves et Étudiants Musulmans au Togo"
+    ],
+    "dcterms:date": [
+        "2021-08-17"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/4407 Lomé",
+        "https://islam.zmo.de/api/items/11098 University of Lomé",
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.171550"
+    ],
+    "geonames:long": [
+        "1.211433"
+    ]
+}
+]
