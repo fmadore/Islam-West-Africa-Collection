@@ -34,7 +34,7 @@ To access and run the Jupyter notebooks in this repository, simply click on the 
 There are 4 notebooks in the folder:
 1. [Sentiment_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Textual%20analysis/Sentiment%20analysis/Sentiment_analysis.ipynb)
 2. [Spatial_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Spatial%20analysis/Spatial_analysis.ipynb)
-3. [Temporal_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Textual%20analysis/Temporal%20analysis/temporal_analysis.ipynb)
+3. [Temporal_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Textual%20analysis/Temporal%20analysis/Temporal_analysis.ipynb)
 4. [Topic_modelling.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Textual%20analysis/Topic%20modelling/Topic_modelling.ipynb)
 
 ## Folder "TimelineJS"
