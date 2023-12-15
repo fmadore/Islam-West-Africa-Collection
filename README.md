@@ -33,7 +33,7 @@ Metadata is also available in [JSON-LD](https://github.com/fmadore/Islam-West-Af
 ## Folder "Jupyter notebooks"
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD)
 
-To access and run the Jupyter notebooks in this repository, simply click on the Binder button shown above. This will launch a virtual environment within your browser, allowing you to open and run the notebooks seamlessly, without the need for any installation.
+This folder contains the Jupyter notebooks that were used to create the visualisations that showcase the possibilities of [digital humanities](https://islam.zmo.de/s/westafrica/page/digital-humanities) with the IWAC dataset. To access and run the Jupyter notebooks in this repository, simply click on the Binder button shown above. This will launch a virtual environment within your browser, allowing you to open and run the notebooks seamlessly, without the need for any installation.
 There are 4 notebooks in the folder:
 1. [Sentiment_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Textual%20analysis/Sentiment%20analysis/Sentiment_analysis.ipynb)
 2. [Spatial_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Spatial%20analysis/Spatial_analysis.ipynb)
