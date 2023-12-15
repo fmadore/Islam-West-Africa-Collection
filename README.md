@@ -27,6 +27,9 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 - The metadata is a mix a "Dublin Core", "Bibliographic Ontology", "Friend of a Friend", and "Geonames"
 - Format of uri: Uri and label separated by a space
 
+### JSON and ODS
+The metadata is also available in [JSON-LD](https://github.com/fmadore/Islam-West-Africa-Collection/tree/main/Metadata/JSON) and [ODS](https://github.com/fmadore/Islam-West-Africa-Collection/tree/main/Metadata/ODS) formats.
+
 ## Folder "Jupyter notebooks"
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD)
 
