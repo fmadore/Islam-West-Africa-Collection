@@ -1876,6 +1876,9 @@
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q817 Q817"
     ],
+    "dcterms:alternative": [
+        "Koweit"
+    ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/4279 Country"
     ],
@@ -5827,6 +5830,1125 @@
     ],
     "geonames:long": [
         "2.3442182"
+    ]
+},
+{
+    "o:id": 13022,
+    "url": "https://islam.zmo.de/s/westafrica/item/13022",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Adjengré"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q118125902 Q118125902"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13023,
+    "url": "https://islam.zmo.de/s/westafrica/item/13023",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Amlamé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2080085 Q2080085"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "7.4605555555556"
+    ],
+    "geonames:long": [
+        "0.90305555555556"
+    ]
+},
+{
+    "o:id": 13024,
+    "url": "https://islam.zmo.de/s/westafrica/item/13024",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Aného"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1018574 Q1018574"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.2288888888889"
+    ],
+    "geonames:long": [
+        "1.5930555555556"
+    ]
+},
+{
+    "o:id": 13025,
+    "url": "https://islam.zmo.de/s/westafrica/item/13025",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Anié"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q550978 Q550978"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "7.76111111"
+    ],
+    "geonames:long": [
+        "1.19166667"
+    ]
+},
+{
+    "o:id": 13026,
+    "url": "https://islam.zmo.de/s/westafrica/item/13026",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Assoli"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3910155 Q3910155"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.35"
+    ],
+    "geonames:long": [
+        "1.2666666666667"
+    ]
+},
+{
+    "o:id": 13027,
+    "url": "https://islam.zmo.de/s/westafrica/item/13027",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Atakpamé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q126124 Q126124"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "7.5269444444444"
+    ],
+    "geonames:long": [
+        "1.1266666666667"
+    ]
+},
+{
+    "o:id": 13028,
+    "url": "https://islam.zmo.de/s/westafrica/item/13028",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Badou"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2878806 Q2878806"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "7.584327"
+    ],
+    "geonames:long": [
+        "0.606651"
+    ]
+},
+{
+    "o:id": 13029,
+    "url": "https://islam.zmo.de/s/westafrica/item/13029",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Bafilo"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q618060 Q618060"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.35"
+    ],
+    "geonames:long": [
+        "1.26666667"
+    ]
+},
+{
+    "o:id": 13030,
+    "url": "https://islam.zmo.de/s/westafrica/item/13030",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Bassar"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q810474 Q810474"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.25"
+    ],
+    "geonames:long": [
+        "0.78333333333333"
+    ]
+},
+{
+    "o:id": 13031,
+    "url": "https://islam.zmo.de/s/westafrica/item/13031",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Biankouri"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2900852 Q2900852"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "11.019444444444"
+    ],
+    "geonames:long": [
+        "0.054722222222222"
+    ]
+},
+{
+    "o:id": 13032,
+    "url": "https://islam.zmo.de/s/westafrica/item/13032",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Sacred Heart Cathedral",
+        "Cathédrale du Sacré-Cœur de Lomé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q766138 Q766138"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.12486111"
+    ],
+    "geonames:long": [
+        "1.22627778"
+    ]
+},
+{
+    "o:id": 13033,
+    "url": "https://islam.zmo.de/s/westafrica/item/13033",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Cinkassé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3910163 Q3910163"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "11.096876"
+    ],
+    "geonames:long": [
+        "0.016393"
+    ]
+},
+{
+    "o:id": 13034,
+    "url": "https://islam.zmo.de/s/westafrica/item/13034",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Dapaong"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q970904 Q970904"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "10.866666666667"
+    ],
+    "geonames:long": [
+        "0.2"
+    ]
+},
+{
+    "o:id": 13035,
+    "url": "https://islam.zmo.de/s/westafrica/item/13035",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Galangachi"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3094486 Q3094486"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "10.4169843"
+    ],
+    "geonames:long": [
+        "0.3560076"
+    ]
+},
+{
+    "o:id": 13036,
+    "url": "https://islam.zmo.de/s/westafrica/item/13036",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Gando"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3095099 Q3095099"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "10.3257"
+    ],
+    "geonames:long": [
+        "0.749044"
+    ]
+},
+{
+    "o:id": 13037,
+    "url": "https://islam.zmo.de/s/westafrica/item/13037",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kandé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q168824 Q168824"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.9563888888889"
+    ],
+    "geonames:long": [
+        "1.0463888888889"
+    ]
+},
+{
+    "o:id": 13038,
+    "url": "https://islam.zmo.de/s/westafrica/item/13038",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kara"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q860729 Q860729"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.5488888888889"
+    ],
+    "geonames:long": [
+        "1.1905555555556"
+    ]
+},
+{
+    "o:id": 13039,
+    "url": "https://islam.zmo.de/s/westafrica/item/13039",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kéran"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3408886 Q3408886"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "10.083333333333"
+    ],
+    "geonames:long": [
+        "1"
+    ]
+},
+{
+    "o:id": 13040,
+    "url": "https://islam.zmo.de/s/westafrica/item/13040",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kétao"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3195592 Q3195592"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.6611111111111"
+    ],
+    "geonames:long": [
+        "1.3113888888889"
+    ]
+},
+{
+    "o:id": 13041,
+    "url": "https://islam.zmo.de/s/westafrica/item/13041",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kpagouda"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q16650743 Q16650743"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.75"
+    ],
+    "geonames:long": [
+        "1.3166666666666667"
+    ]
+},
+{
+    "o:id": 13042,
+    "url": "https://islam.zmo.de/s/westafrica/item/13042",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kpalimé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q995413 Q995413"
+    ],
+    "dcterms:alternative": [
+        "Palimé"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.91"
+    ],
+    "geonames:long": [
+        "0.62805555555556"
+    ]
+},
+{
+    "o:id": 13043,
+    "url": "https://islam.zmo.de/s/westafrica/item/13043",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kparatao"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q118128878 Q118128878"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13044,
+    "url": "https://islam.zmo.de/s/westafrica/item/13044",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Mango"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1392195 Q1392195"
+    ],
+    "dcterms:alternative": [
+        "Sansanné-Mango"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "10.355555555556"
+    ],
+    "geonames:long": [
+        "0.47555555555556"
+    ]
+},
+{
+    "o:id": 13045,
+    "url": "https://islam.zmo.de/s/westafrica/item/13045",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Niamtougou"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q201342 Q201342"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.7666666666667"
+    ],
+    "geonames:long": [
+        "1.1"
+    ]
+},
+{
+    "o:id": 13046,
+    "url": "https://islam.zmo.de/s/westafrica/item/13046",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Notsé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3173182 Q3173182"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.948333333333333"
+    ],
+    "geonames:long": [
+        "1.1680555555555556"
+    ]
+},
+{
+    "o:id": 13047,
+    "url": "https://islam.zmo.de/s/westafrica/item/13047",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Pya"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1707727 Q1707727"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.65194444"
+    ],
+    "geonames:long": [
+        "1.13638889"
+    ]
+},
+{
+    "o:id": 13048,
+    "url": "https://islam.zmo.de/s/westafrica/item/13048",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Sarakawa"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q119960328 Q119960328"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.6218425"
+    ],
+    "geonames:long": [
+        "0.9866713"
+    ]
+},
+{
+    "o:id": 13049,
+    "url": "https://islam.zmo.de/s/westafrica/item/13049",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Sokodé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q845097 Q845097"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "8.9833333333333"
+    ],
+    "geonames:long": [
+        "1.1333333333333"
+    ]
+},
+{
+    "o:id": 13050,
+    "url": "https://islam.zmo.de/s/westafrica/item/13050",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Sotouboua"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q8841307 Q8841307"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "8.56667"
+    ],
+    "geonames:long": [
+        "0.983333"
+    ]
+},
+{
+    "o:id": 13051,
+    "url": "https://islam.zmo.de/s/westafrica/item/13051",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Tabligbo"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2528080 Q2528080"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.5833333333333"
+    ],
+    "geonames:long": [
+        "1.5"
+    ]
+},
+{
+    "o:id": 13052,
+    "url": "https://islam.zmo.de/s/westafrica/item/13052",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Tchamba"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2711981 Q2711981"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.0333333333333"
+    ],
+    "geonames:long": [
+        "1.4166666666667"
+    ]
+},
+{
+    "o:id": 13053,
+    "url": "https://islam.zmo.de/s/westafrica/item/13053",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Tchaoudjo"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3910188 Q3910188"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "8.98333333"
+    ],
+    "geonames:long": [
+        "1.13333333"
+    ]
+},
+{
+    "o:id": 13054,
+    "url": "https://islam.zmo.de/s/westafrica/item/13054",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Tsévié"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2060202 Q2060202"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.4333333333333"
+    ],
+    "geonames:long": [
+        "1.2166666666667"
+    ]
+},
+{
+    "o:id": 13055,
+    "url": "https://islam.zmo.de/s/westafrica/item/13055",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Vogan"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2740491 Q2740491"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.3333333333333"
+    ],
+    "geonames:long": [
+        "1.5333333333333"
+    ]
+},
+{
+    "o:id": 13075,
+    "url": "https://islam.zmo.de/s/westafrica/item/13075",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Maison du RPT"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13076,
+    "url": "https://islam.zmo.de/s/westafrica/item/13076",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Lycée de Tokoin"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13077,
+    "url": "https://islam.zmo.de/s/westafrica/item/13077",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Grande mosquée de Lomé"
+    ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/4152 Mosque"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13078,
+    "url": "https://islam.zmo.de/s/westafrica/item/13078",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Centre Culturel Islamique de Lomé II"
+    ],
+    "dcterms:alternative": [
+        "CCI",
+        "Centre Culturel Islamique"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13082,
+    "url": "https://islam.zmo.de/s/westafrica/item/13082",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Blitta"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q15075944 Q15075944"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "8.31667"
+    ],
+    "geonames:long": [
+        "0.983333"
+    ]
+},
+{
+    "o:id": 13083,
+    "url": "https://islam.zmo.de/s/westafrica/item/13083",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Riyadh",
+        "Riyad"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3692 Q3692"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3249 Saudi Arabia"
+    ],
+    "geonames:lat": [
+        "24.65"
+    ],
+    "geonames:long": [
+        "46.71"
+    ]
+},
+{
+    "o:id": 13084,
+    "url": "https://islam.zmo.de/s/westafrica/item/13084",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "o:media/o:id": [
+        13085
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/0c90cb9fc5c1c2543094610b6cac290fd16ea692.png"
+    ],
+    "dcterms:title": [
+        "North Korea",
+        "Corée du Nord"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q423 Q423"
+    ],
+    "dcterms:alternative": [
+        "Democratic People's Republic of Korea",
+        "République populaire démocratique de Corée"
+    ],
+    "geonames:lat": [
+        "40"
+    ],
+    "geonames:long": [
+        "127"
+    ]
+},
+{
+    "o:id": 13086,
+    "url": "https://islam.zmo.de/s/westafrica/item/13086",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kloto"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3408917 Q3408917"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "7.083333"
+    ],
+    "geonames:long": [
+        "0.75"
+    ]
+},
+{
+    "o:id": 13087,
+    "url": "https://islam.zmo.de/s/westafrica/item/13087",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kozah"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3910171 Q3910171"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.583333"
+    ],
+    "geonames:long": [
+        "1.166667"
+    ]
+},
+{
+    "o:id": 13088,
+    "url": "https://islam.zmo.de/s/westafrica/item/13088",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Kabou"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q11043566 Q11043566"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "9.45"
+    ],
+    "geonames:long": [
+        "0.816667"
     ]
 }
 ]
