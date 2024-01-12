@@ -67,7 +67,7 @@
 3306,https://islam.zmo.de/s/westafrica/item/3306,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Koubri,,"https://www.wikidata.org/wiki/Q585121 Q585121",,,"Burkina Faso",,,12.1675,-1.35556
 3307,https://islam.zmo.de/s/westafrica/item/3307,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Koudougou,,"https://www.wikidata.org/wiki/Q460697 Q460697",,,"Burkina Faso",,,12.25263,-2.36272
 3308,https://islam.zmo.de/s/westafrica/item/3308,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Koupéla,,"https://www.wikidata.org/wiki/Q116524 Q116524",,,"Burkina Faso",,,12.17864,-0.35103
-3309,https://islam.zmo.de/s/westafrica/item/3309,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,10490,https://islam.zmo.de/files/original/b422a0f3262badff535c4ca4fdf824d92a4b20d9.png,Kuwait|Koweït,,"https://www.wikidata.org/wiki/Q817 Q817",,,Country,,,29.5,47.75
+3309,https://islam.zmo.de/s/westafrica/item/3309,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,10490,https://islam.zmo.de/files/original/b422a0f3262badff535c4ca4fdf824d92a4b20d9.png,Kuwait|Koweït,,"https://www.wikidata.org/wiki/Q817 Q817",,Koweit,Country,,,29.5,47.75
 3310,https://islam.zmo.de/s/westafrica/item/3310,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Léo,,"https://www.wikidata.org/wiki/Q650951 Q650951",,,"Burkina Faso",,,11.10033,-2.10654
 3311,https://islam.zmo.de/s/westafrica/item/3311,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,10491,https://islam.zmo.de/files/original/313378acd7f2bc5d90d1aa05d6d1f3d9a2a32e32.png,Lebanon|Liban,,"https://www.wikidata.org/wiki/Q822 Q822",,,Country,,,33.83333,35.83333
 3312,https://islam.zmo.de/s/westafrica/item/3312,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,10492,https://islam.zmo.de/files/original/c8421ceb48cff187d5d15825ba03c7cb17c3b4fd.png,Libya|Libye,,"https://www.wikidata.org/wiki/Q1016 Q1016","Institut de la Langue Arabe et de la Culture Islamique",,Country,,,28,17
@@ -227,9 +227,9 @@
 13039,https://islam.zmo.de/s/westafrica/item/13039,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Kéran,,"https://www.wikidata.org/wiki/Q3408886 Q3408886",,,Togo,,,10.083333333333,1
 13040,https://islam.zmo.de/s/westafrica/item/13040,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Kétao,,"https://www.wikidata.org/wiki/Q3195592 Q3195592",,,Togo,,,9.6611111111111,1.3113888888889
 13041,https://islam.zmo.de/s/westafrica/item/13041,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Kpagouda,,"https://www.wikidata.org/wiki/Q16650743 Q16650743",,,Togo,,,9.75,1.3166666666666667
-13042,https://islam.zmo.de/s/westafrica/item/13042,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Kpalimé,,"https://www.wikidata.org/wiki/Q995413 Q995413",,,Togo,,,6.91,0.62805555555556
+13042,https://islam.zmo.de/s/westafrica/item/13042,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Kpalimé,,"https://www.wikidata.org/wiki/Q995413 Q995413",,Palimé,Togo,,,6.91,0.62805555555556
 13043,https://islam.zmo.de/s/westafrica/item/13043,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Kparatao,,"https://www.wikidata.org/wiki/Q118128878 Q118128878",,,Togo,,,,
-13044,https://islam.zmo.de/s/westafrica/item/13044,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Mango,,"https://www.wikidata.org/wiki/Q1392195 Q1392195",,,Togo,,,10.355555555556,0.47555555555556
+13044,https://islam.zmo.de/s/westafrica/item/13044,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Mango,,"https://www.wikidata.org/wiki/Q1392195 Q1392195",,Sansanné-Mango,Togo,,,10.355555555556,0.47555555555556
 13045,https://islam.zmo.de/s/westafrica/item/13045,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Niamtougou,,"https://www.wikidata.org/wiki/Q201342 Q201342",,,Togo,,,9.7666666666667,1.1
 13046,https://islam.zmo.de/s/westafrica/item/13046,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Notsé,,"https://www.wikidata.org/wiki/Q3173182 Q3173182",,,Togo,,,6.948333333333333,1.1680555555555556
 13047,https://islam.zmo.de/s/westafrica/item/13047,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Pya,,"https://www.wikidata.org/wiki/Q1707727 Q1707727",,,Togo,,,9.65194444,1.13638889
@@ -241,3 +241,12 @@
 13053,https://islam.zmo.de/s/westafrica/item/13053,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Tchaoudjo,,"https://www.wikidata.org/wiki/Q3910188 Q3910188",,,Togo,,,8.98333333,1.13333333
 13054,https://islam.zmo.de/s/westafrica/item/13054,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Tsévié,,"https://www.wikidata.org/wiki/Q2060202 Q2060202",,,Togo,,,6.4333333333333,1.2166666666667
 13055,https://islam.zmo.de/s/westafrica/item/13055,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Vogan,,"https://www.wikidata.org/wiki/Q2740491 Q2740491",,,Togo,,,6.3333333333333,1.5333333333333
+13075,https://islam.zmo.de/s/westafrica/item/13075,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,"Maison du RPT",,,,,Togo,,,,
+13076,https://islam.zmo.de/s/westafrica/item/13076,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,"Lycée de Tokoin",,,,,Togo,,,,
+13077,https://islam.zmo.de/s/westafrica/item/13077,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,"Grande mosquée de Lomé",,,,,Togo,,,,
+13078,https://islam.zmo.de/s/westafrica/item/13078,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,"Centre Culturel Islamique de Lomé II",,,,"CCI|Centre Culturel Islamique",Togo,,,,
+13082,https://islam.zmo.de/s/westafrica/item/13082,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Blitta,,"https://www.wikidata.org/wiki/Q15075944 Q15075944",,,Togo,,,8.31667,0.983333
+13083,https://islam.zmo.de/s/westafrica/item/13083,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Riyadh|Riyad,,"https://www.wikidata.org/wiki/Q3692 Q3692",,,"Saudi Arabia",,,24.65,46.71
+13084,https://islam.zmo.de/s/westafrica/item/13084,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,13085,https://islam.zmo.de/files/original/0c90cb9fc5c1c2543094610b6cac290fd16ea692.png,"North Korea|Corée du Nord",,"https://www.wikidata.org/wiki/Q423 Q423",,"Democratic People's Republic of Korea|République populaire démocratique de Corée",,,,40,127
+13086,https://islam.zmo.de/s/westafrica/item/13086,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Kloto,,"https://www.wikidata.org/wiki/Q3408917 Q3408917",,,Togo,,,7.083333,0.75
+13087,https://islam.zmo.de/s/westafrica/item/13087,Location,dcterms:Location,frederick.madore@zmo.de,true,5842,,,,Kozah,,"https://www.wikidata.org/wiki/Q3910171 Q3910171",,,Togo,,,9.583333,1.166667

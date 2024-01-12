@@ -3368,5 +3368,29 @@
     "dcterms:spatial": [
         "https://islam.zmo.de/api/items/3247 Germany"
     ]
+},
+{
+    "o:id": 13074,
+    "url": "https://islam.zmo.de/s/westafrica/item/13074",
+    "o:resource_template": "Event",
+    "o:resource_class": "bibo:Event",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5843": 5843
+    },
+    "dcterms:title": [
+        "11e congrès de l'ACEEMUB"
+    ],
+    "dcterms:date": [
+        "2023-07-28/2023-08-01"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3239 Association Culturelle des Étudiants et Élèves Musulmans du Bénin"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3340 Pobé",
+        "https://islam.zmo.de/api/items/3255 Benin"
+    ]
 }
 ]
