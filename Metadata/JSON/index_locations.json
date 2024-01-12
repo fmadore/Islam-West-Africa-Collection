@@ -968,6 +968,7 @@
     ],
     "dcterms:alternative": [
         "United Arab Republic",
+        "Egypte",
         "République arabe unie"
     ],
     "dcterms:isPartOf": [
@@ -1002,6 +1003,9 @@
     ],
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q878 Q878"
+    ],
+    "dcterms:alternative": [
+        "Emirats arabes unis"
     ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/4279 Country"
@@ -5920,6 +5924,9 @@
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q550978 Q550978"
     ],
+    "dcterms:alternative": [
+        "Anie"
+    ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/3359 Togo"
     ],
@@ -6949,6 +6956,53 @@
     ],
     "geonames:long": [
         "0.816667"
+    ]
+},
+{
+    "o:id": 13089,
+    "url": "https://islam.zmo.de/s/westafrica/item/13089",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "o:media/o:id": [
+        13090
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/81ee7a84dc8d0424e59ac66aeb0d3e9cdf357dc6.png"
+    ],
+    "dcterms:title": [
+        "Namibia",
+        "Namibie"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1030 Q1030"
+    ],
+    "geonames:lat": [
+        "-23"
+    ],
+    "geonames:long": [
+        "17"
+    ]
+},
+{
+    "o:id": 13091,
+    "url": "https://islam.zmo.de/s/westafrica/item/13091",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Temple œcuménique de Pya"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
     ]
 }
 ]
