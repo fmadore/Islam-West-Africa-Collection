@@ -2180,6 +2180,7 @@
         "5844": 5844
     },
     "dcterms:title": [
+        "Atheism",
         "Athéisme"
     ],
     "dcterms:description": [
@@ -2245,6 +2246,135 @@
     ],
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q454 Q454"
+    ]
+},
+{
+    "o:id": 14248,
+    "url": "https://islam.zmo.de/s/westafrica/item/14248",
+    "o:resource_template": "Topic",
+    "o:resource_class": "fabio:AuthorityFile",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5844": 5844
+    },
+    "dcterms:title": [
+        "Zionism",
+        "Sionisme"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q42388 Q42388"
+    ]
+},
+{
+    "o:id": 14249,
+    "url": "https://islam.zmo.de/s/westafrica/item/14249",
+    "o:resource_template": "Topic",
+    "o:resource_class": "fabio:AuthorityFile",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5844": 5844
+    },
+    "dcterms:title": [
+        "Orphan",
+        "Orphelin"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q193279 Q193279"
+    ]
+},
+{
+    "o:id": 14289,
+    "url": "https://islam.zmo.de/s/westafrica/item/14289",
+    "o:resource_template": "Topic",
+    "o:resource_class": "fabio:AuthorityFile",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5844": 5844
+    },
+    "dcterms:title": [
+        "Forgiveness",
+        "Pardon"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q537963 Q537963"
+    ]
+},
+{
+    "o:id": 14308,
+    "url": "https://islam.zmo.de/s/westafrica/item/14308",
+    "o:resource_template": "Topic",
+    "o:resource_class": "fabio:AuthorityFile",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5844": 5844
+    },
+    "dcterms:title": [
+        "Reconciliation",
+        "Réconciliation"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1194317 Q1194317"
+    ],
+    "dcterms:alternative": [
+        "Conflict resolution",
+        "Résolution de conflit"
+    ]
+},
+{
+    "o:id": 14332,
+    "url": "https://islam.zmo.de/s/westafrica/item/14332",
+    "o:resource_template": "Topic",
+    "o:resource_class": "fabio:AuthorityFile",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5844": 5844
+    },
+    "dcterms:title": [
+        "Human rights",
+        "Droits de l'homme"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q8458 Q8458"
+    ]
+},
+{
+    "o:id": 14335,
+    "url": "https://islam.zmo.de/s/westafrica/item/14335",
+    "o:resource_template": "Topic",
+    "o:resource_class": "fabio:AuthorityFile",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5844": 5844
+    },
+    "dcterms:title": [
+        "Violence"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q124490 Q124490"
+    ]
+},
+{
+    "o:id": 14336,
+    "url": "https://islam.zmo.de/s/westafrica/item/14336",
+    "o:resource_template": "Topic",
+    "o:resource_class": "fabio:AuthorityFile",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5844": 5844
+    },
+    "dcterms:title": [
+        "Sect",
+        "Secte"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q19097 Q19097"
     ]
 }
 ]

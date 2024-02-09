@@ -5605,6 +5605,7 @@
     ],
     "dcterms:alternative": [
         "UFHB",
+        "Université d'Abidjan",
         "Université de Cocody"
     ],
     "dcterms:isPartOf": [
@@ -5898,6 +5899,9 @@
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q1018574 Q1018574"
     ],
+    "dcterms:alternative": [
+        "Anèho"
+    ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/3359 Togo"
     ],
@@ -5950,6 +5954,9 @@
     "dcterms:title": [
         "Assoli"
     ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/13420 Prefecture of Togo"
+    ],
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q3910155 Q3910155"
     ],
@@ -5980,7 +5987,8 @@
         "https://www.wikidata.org/wiki/Q126124 Q126124"
     ],
     "dcterms:isPartOf": [
-        "https://islam.zmo.de/api/items/3359 Togo"
+        "https://islam.zmo.de/api/items/3359 Togo",
+        "https://islam.zmo.de/api/items/14280 Ogou"
     ],
     "geonames:lat": [
         "7.5269444444444"
@@ -6032,6 +6040,7 @@
         "https://www.wikidata.org/wiki/Q618060 Q618060"
     ],
     "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/13026 Assoli",
         "https://islam.zmo.de/api/items/3359 Togo"
     ],
     "geonames:lat": [
@@ -6109,6 +6118,9 @@
     ],
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q766138 Q766138"
+    ],
+    "dcterms:alternative": [
+        "Cathédrale de Lomé"
     ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/3359 Togo"
@@ -6683,6 +6695,7 @@
         "https://www.wikidata.org/wiki/Q2060202 Q2060202"
     ],
     "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/13421 Zio",
         "https://islam.zmo.de/api/items/3359 Togo"
     ],
     "geonames:lat": [
@@ -6729,10 +6742,22 @@
         "5842": 5842
     },
     "dcterms:title": [
+        "Palais des congrès de Lomé"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q111540510 Q111540510"
+    ],
+    "dcterms:alternative": [
         "Maison du RPT"
     ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.13059"
+    ],
+    "geonames:long": [
+        "1.21739"
     ]
 },
 {
@@ -6767,6 +6792,9 @@
     ],
     "dcterms:type": [
         "https://islam.zmo.de/api/items/4152 Mosque"
+    ],
+    "dcterms:alternative": [
+        "Mosquée centrale de Lomé"
     ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/3359 Togo"
@@ -6836,6 +6864,9 @@
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q3692 Q3692"
     ],
+    "dcterms:alternative": [
+        "Ryad"
+    ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/3249 Saudi Arabia"
     ],
@@ -6892,6 +6923,9 @@
     },
     "dcterms:title": [
         "Kloto"
+    ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/13420 Prefecture of Togo"
     ],
     "dcterms:identifier": [
         "https://www.wikidata.org/wiki/Q3408917 Q3408917"
@@ -7003,6 +7037,91 @@
     ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13421,
+    "url": "https://islam.zmo.de/s/westafrica/item/13421",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Zio"
+    ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/13420 Prefecture of Togo"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3910193 Q3910193"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.433333"
+    ],
+    "geonames:long": [
+        "1.216667"
+    ]
+},
+{
+    "o:id": 14280,
+    "url": "https://islam.zmo.de/s/westafrica/item/14280",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Ogou"
+    ],
+    "dcterms:description": [
+        "Prefecture of the plateaux region in Togo",
+        "Préfecture de la région des plateaux au Togo"
+    ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/13420 Prefecture of Togo"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2076410 Q2076410"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "7.516667"
+    ],
+    "geonames:long": [
+        "1.116667"
+    ]
+},
+{
+    "o:id": 14327,
+    "url": "https://islam.zmo.de/s/westafrica/item/14327",
+    "o:resource_template": "Location",
+    "o:resource_class": "dcterms:Location",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5842": 5842
+    },
+    "dcterms:title": [
+        "Maison du Hadj"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "geonames:lat": [
+        "6.181735"
+    ],
+    "geonames:long": [
+        "1.255005"
     ]
 }
 ]

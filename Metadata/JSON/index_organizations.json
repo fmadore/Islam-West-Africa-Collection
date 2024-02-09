@@ -680,6 +680,10 @@
     "dcterms:created": [
         "1996-05-16"
     ],
+    "dcterms:replaces": [
+        "https://islam.zmo.de/api/items/14300 Jeunesse Estudiantine Islamique de l'Université du Bénin",
+        "https://islam.zmo.de/api/items/14314 Mouvement de la Jeunesse Islamique du Togo"
+    ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/3391 Organisation de la Jeunesse Musulmane en Afrique de l'Ouest",
         "https://islam.zmo.de/api/items/4276 Islamic organization"
@@ -736,7 +740,9 @@
         "https://islam.zmo.de/api/items/11520 4e congrès de l'ACEEMUB",
         "https://islam.zmo.de/api/items/11521 5e congrès de l'ACEEMUB",
         "https://islam.zmo.de/api/items/11525 8e congrès de l'ACEEMUB",
-        "https://islam.zmo.de/api/items/11532 9e congrès de l'ACEEMUB"
+        "https://islam.zmo.de/api/items/11532 9e congrès de l'ACEEMUB",
+        "https://islam.zmo.de/api/items/4372 10e congrès de l'ACEEMUB",
+        "https://islam.zmo.de/api/items/13074 11e congrès de l'ACEEMUB"
     ],
     "dcterms:spatial": [
         "https://islam.zmo.de/api/items/3255 Benin"
@@ -6482,6 +6488,582 @@
     ],
     "dcterms:spatial": [
         "https://islam.zmo.de/api/items/3266 Ivory Coast"
+    ]
+},
+{
+    "o:id": 12998,
+    "url": "https://islam.zmo.de/s/westafrica/item/12998",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Commission de Réflexion pour l'Unité de la Communauté Musulmane du Bénin"
+    ],
+    "dcterms:alternative": [
+        "Commission AL-OUMMAH",
+        "Commission de réflexion pour l'unité de la communauté islamique du Bénin"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4276 Islamic organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3255 Benin"
+    ]
+},
+{
+    "o:id": 13390,
+    "url": "https://islam.zmo.de/s/westafrica/item/13390",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Agence Togolaise de Presse"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q16525428 Q16525428"
+    ],
+    "dcterms:alternative": [
+        "ATOP"
+    ],
+    "dcterms:created": [
+        "1975-03-05"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13391,
+    "url": "https://islam.zmo.de/s/westafrica/item/13391",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "o:media/o:id": [
+        13392
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/ff6c8f067c19091a955782b472f0c5f4a22cc719.png"
+    ],
+    "dcterms:title": [
+        "Agence France-Presse"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q40464 Q40464"
+    ],
+    "dcterms:alternative": [
+        "AFP"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3280 France"
+    ]
+},
+{
+    "o:id": 14247,
+    "url": "https://islam.zmo.de/s/westafrica/item/14247",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "National Academies Press"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q6970107 Q6970107"
+    ],
+    "dcterms:alternative": [
+        "NAP"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3278 United States of America"
+    ]
+},
+{
+    "o:id": 14253,
+    "url": "https://islam.zmo.de/s/westafrica/item/14253",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "o:media/o:id": [
+        14310
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/fe52b4cb8ffbc56b17268a322bbdaf3a7e62ee52.png"
+    ],
+    "dcterms:title": [
+        "Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1514253 Q1514253"
+    ],
+    "dcterms:alternative": [
+        "RPT"
+    ],
+    "dcterms:abstract": [
+        "Togolese political party",
+        "Parti politique togolais"
+    ],
+    "dcterms:created": [
+        "1969"
+    ],
+    "dcterms:isReplacedBy": [
+        "https://islam.zmo.de/api/items/14273 Union pour la République"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4277 Political party"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14254,
+    "url": "https://islam.zmo.de/s/westafrica/item/14254",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Union Musulmane du Togo"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q116044806 Q116044806"
+    ],
+    "dcterms:alternative": [
+        "UMT"
+    ],
+    "dcterms:created": [
+        "1963-09"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4276 Islamic organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14261,
+    "url": "https://islam.zmo.de/s/westafrica/item/14261",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Ligue Togolaise des Droits de l'Homme"
+    ],
+    "dcterms:alternative": [
+        "LTDH"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14266,
+    "url": "https://islam.zmo.de/s/westafrica/item/14266",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Comité d'Action pour le Renouveau"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q4677086 Q4677086"
+    ],
+    "dcterms:alternative": [
+        "CAR"
+    ],
+    "dcterms:abstract": [
+        "Political party in Togo",
+        "Parti politique togolais"
+    ],
+    "dcterms:created": [
+        "1991-05-01"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4277 Political party"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14267,
+    "url": "https://islam.zmo.de/s/westafrica/item/14267",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Alliance de Démocrates pour le Renouveau"
+    ],
+    "dcterms:alternative": [
+        "ADR"
+    ],
+    "dcterms:abstract": [
+        "Political party in Togo",
+        "Parti politique togolais"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4277 Political party"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14268,
+    "url": "https://islam.zmo.de/s/westafrica/item/14268",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Alliance Togolaise pour la Démocratie"
+    ],
+    "dcterms:alternative": [
+        "ATD"
+    ],
+    "dcterms:abstract": [
+        "Political party in Togo",
+        "Parti politique togolais"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4277 Political party"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14269,
+    "url": "https://islam.zmo.de/s/westafrica/item/14269",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Convention Démocratique des Peuples Africains"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2996304 Q2996304"
+    ],
+    "dcterms:alternative": [
+        "CDPA"
+    ],
+    "dcterms:abstract": [
+        "Political party in Togo",
+        "Parti politique togolais"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4277 Political party"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14270,
+    "url": "https://islam.zmo.de/s/westafrica/item/14270",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Haut Conseil de la République"
+    ],
+    "dcterms:alternative": [
+        "HCR"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14288,
+    "url": "https://islam.zmo.de/s/westafrica/item/14288",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Union Nationale des Femmes du Togo"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q120763663 Q120763663"
+    ],
+    "dcterms:alternative": [
+        "UNFT"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14292,
+    "url": "https://islam.zmo.de/s/westafrica/item/14292",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Église Évangélique Presbytérienne du Togo"
+    ],
+    "dcterms:alternative": [
+        "EEPT"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4282 Christian organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14300,
+    "url": "https://islam.zmo.de/s/westafrica/item/14300",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Jeunesse Estudiantine Islamique de l'Université du Bénin"
+    ],
+    "dcterms:alternative": [
+        "JEIUB"
+    ],
+    "dcterms:created": [
+        "1987"
+    ],
+    "dcterms:isReplacedBy": [
+        "https://islam.zmo.de/api/items/3238 Association des Élèves et Étudiants Musulmans au Togo"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4276 Islamic organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14307,
+    "url": "https://islam.zmo.de/s/westafrica/item/14307",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Togolese Armed Forces",
+        "Forces Armées Togolaises"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q718167 Q718167"
+    ],
+    "dcterms:alternative": [
+        "FAT"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14314,
+    "url": "https://islam.zmo.de/s/westafrica/item/14314",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Mouvement de la Jeunesse Islamique du Togo"
+    ],
+    "dcterms:alternative": [
+        "MOJIST"
+    ],
+    "dcterms:created": [
+        "1992-03"
+    ],
+    "dcterms:isReplacedBy": [
+        "https://islam.zmo.de/api/items/3238 Association des Élèves et Étudiants Musulmans au Togo"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4276 Islamic organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14315,
+    "url": "https://islam.zmo.de/s/westafrica/item/14315",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Comité International pour l'Expansion des Rites de l'Islam"
+    ],
+    "dcterms:alternative": [
+        "CIERI"
+    ],
+    "dcterms:created": [
+        "1992-11-28"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4276 Islamic organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14316,
+    "url": "https://islam.zmo.de/s/westafrica/item/14316",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Association pour l'Appel de la Culture Islamique au Togo"
+    ],
+    "dcterms:alternative": [
+        "APACIT"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4276 Islamic organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14317,
+    "url": "https://islam.zmo.de/s/westafrica/item/14317",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Église évangélique du Togo"
+    ],
+    "dcterms:alternative": [
+        "EET"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4282 Christian organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14333,
+    "url": "https://islam.zmo.de/s/westafrica/item/14333",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Église Méthodiste du Togo"
+    ],
+    "dcterms:alternative": [
+        "EMT"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4282 Christian organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14334,
+    "url": "https://islam.zmo.de/s/westafrica/item/14334",
+    "o:resource_template": "Organization",
+    "o:resource_class": "foaf:Organization",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5840": 5840
+    },
+    "dcterms:title": [
+        "Conseil Chrétien du Togo"
+    ],
+    "dcterms:alternative": [
+        "CCT"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4282 Christian organization"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
     ]
 }
 ]

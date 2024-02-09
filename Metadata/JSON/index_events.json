@@ -3392,5 +3392,97 @@
         "https://islam.zmo.de/api/items/3340 Pobé",
         "https://islam.zmo.de/api/items/3255 Benin"
     ]
+},
+{
+    "o:id": 14259,
+    "url": "https://islam.zmo.de/s/westafrica/item/14259",
+    "o:resource_template": "Event",
+    "o:resource_class": "bibo:Event",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5843": 5843
+    },
+    "dcterms:title": [
+        "Conférence nationale souveraine"
+    ],
+    "dcterms:date": [
+        "1991-07-08/1991-08-28"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q18642520 Q18642520"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14299,
+    "url": "https://islam.zmo.de/s/westafrica/item/14299",
+    "o:resource_template": "Event",
+    "o:resource_class": "bibo:Event",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5843": 5843
+    },
+    "dcterms:title": [
+        "Togo's independence",
+        "Indépendance du Togo"
+    ],
+    "dcterms:date": [
+        "1960-04-27"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14302,
+    "url": "https://islam.zmo.de/s/westafrica/item/14302",
+    "o:resource_template": "Event",
+    "o:resource_class": "bibo:Event",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5843": 5843
+    },
+    "dcterms:title": [
+        "Fête de la Libération nationale"
+    ],
+    "dcterms:description": [
+        "Between 1967 and 2014, a public holiday commemorating the death of the first president, Sylvanus Olympio, in 1963",
+        "Entre 1967 et 2014,  jour de fête commémorant la mort du premier président, Sylvanus Olympio en 1963"
+    ],
+    "dcterms:date": [
+        "1963-01-13"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 14343,
+    "url": "https://islam.zmo.de/s/westafrica/item/14343",
+    "o:resource_template": "Event",
+    "o:resource_class": "bibo:Event",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5843": 5843
+    },
+    "dcterms:title": [
+        "Congrès UMT (1981)"
+    ],
+    "dcterms:date": [
+        "1981-02-20/1981-02-21"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/4407 Lomé",
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
 }
 ]

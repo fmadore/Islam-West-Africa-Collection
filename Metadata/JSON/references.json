@@ -17791,6 +17791,12 @@
     "o:item_set/o:id": {
         "5826": 5826
     },
+    "o:media/o:id": [
+        14346
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/e1d4953b5400648a8bf4877718fbfc3b32b10995.pdf"
+    ],
     "dcterms:title": [
         "Entre activisme post-colonialiste et réveil du religieux : le campus universitaire de Ouagadougou"
     ],
@@ -18322,6 +18328,9 @@
     ],
     "bibo:authorList": [
         "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ],
+    "bibo:citedBy": [
+        "https://islam.zmo.de/api/items/12983 Developing Crosslingual Ontologies in WissKI: Transcontinental Research Collaboration in the Africa Multiple Cluster of Excellence"
     ],
     "bibo:doi": [
         "https://doi.org/10.51185/journals/rhca.2021.e610 10.51185/journals/rhca.2021.e610"
@@ -24518,6 +24527,12 @@
     "o:item_set/o:id": {
         "5826": 5826
     },
+    "o:media/o:id": [
+        14349
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/d17da0ae6d44b5b8c7019e1474dd74e9adec6f6e.pdf"
+    ],
     "dcterms:title": [
         "The Modernity of Islam in Burkina Faso: Contrasting Strategies in Two Emergent Movements"
     ],
@@ -33707,6 +33722,12 @@
     "o:item_set/o:id": {
         "9412": 9412
     },
+    "o:media/o:id": [
+        14347
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/e3e4d7941874e3accf8ab4026ca1966ddd81a583.pdf"
+    ],
     "dcterms:title": [
         "\"Les étudiants aussi sont des enfants de Dieu\" : la religiosité à l'Université Abdou Moumouni de Niamey"
     ],
@@ -34012,6 +34033,12 @@
     "o:item_set/o:id": {
         "9412": 9412
     },
+    "o:media/o:id": [
+        13417
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/3a5dde4866795d52eba3197ce2c5f83db77c313c.pdf"
+    ],
     "dcterms:title": [
         "Salafi Youth on Campus in Niamey, Niger: Moral Motives, Political Ends"
     ],
@@ -34051,7 +34078,9 @@
         "https://islam.zmo.de/api/items/4118 Abdoulaye Sounaye"
     ],
     "bibo:editorList": [
-        "Elina Oinas"
+        "Elina Oinas",
+        "Henri Onodera",
+        "Leena Suurpää"
     ],
     "bibo:doi": [
         "https://doi.org/10.1163/9789004356368_014 10.1163/9789004356368_014"
@@ -39684,6 +39713,12 @@
     "o:item_set/o:id": {
         "5828": 5828
     },
+    "o:media/o:id": [
+        14279
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/7f597aea0b4cbfb0be5806a85c534079f611ed5c.pdf"
+    ],
     "dcterms:title": [
         "Récits de la guérison en Côte d'Ivoire : les dits et les non-dits de la spiritualité"
     ],
@@ -44867,6 +44902,283 @@
     ],
     "bibo:pageStart": [
         "173"
+    ]
+},
+{
+    "o:id": 12999,
+    "url": "https://islam.zmo.de/s/westafrica/item/12999",
+    "o:resource_template": "Communication",
+    "o:resource_class": "bibo:PersonalCommunication",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5826": 5826
+    },
+    "o:media/o:id": [
+        13000,
+        13001
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/a5429a056a4ff95bf570e99fa6b064054204c252.pdf",
+        "https://islam.zmo.de/files/original/dda14793d6e108f30d552102fd6c9d52c1541e91.jpg"
+    ],
+    "dcterms:title": [
+        "Digital Humanities in the Making: The Islam Burkina Faso Collection"
+    ],
+    "dcterms:date": [
+        "2022-09-16"
+    ],
+    "dcterms:language": [
+        "https://islam.zmo.de/api/items/4008 English"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3366 Burkina Faso"
+    ],
+    "bibo:authorList": [
+        "https://islam.zmo.de/api/items/3382 Frédérick Madore"
+    ]
+},
+{
+    "o:id": 13415,
+    "url": "https://islam.zmo.de/s/westafrica/item/13415",
+    "o:resource_template": "Book chapter",
+    "o:resource_class": "bibo:Chapter",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5826": 5826,
+        "5828": 5828
+    },
+    "o:media/o:id": [
+        13416
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/3f10858c861a29ecededcd20c4a7aa9848a58bf2.pdf"
+    ],
+    "dcterms:title": [
+        "Islam, jeunesse et trajectoires de mobilisation en Afrique de l'Ouest à l'ère néoliberale : un regard anthropologique"
+    ],
+    "dcterms:publisher": [
+        "Brill"
+    ],
+    "dcterms:date": [
+        "2015"
+    ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/4012 Book chapter"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113955206 Q113955206"
+    ],
+    "dcterms:language": [
+        "https://islam.zmo.de/api/items/4007 French"
+    ],
+    "dcterms:alternative": [
+        "Collective mobilisations in Africa / Mobilisations collectives en Afrique. Enough is enough! / Ça suffit!"
+    ],
+    "dcterms:abstract": [
+        "Ce chapitre traite de la mobilisation de la jeunesse autour de l'islam en Afrique de l'Ouest. En tant qu'anthroplogues, chacun des auteurs a mené des enquêtes ethnographiques de longue durée, principalement en Côte d'Ivoire et au Mali, sur les dynamiques entourant l'islam et sur les différentes façons d'être musulman. Des projets de recherche sur la thématique du religieux ont aussi été développé dans les pays voisins: Nigéria, Sénégal et Burkina Faso. En abordant les modalités de la moralisation de la société et du soi, les auteurs analysent comment les jeunes d'aujourd'hui, à savoir ceux pour qui la mobilisation s'inscrit dans les logiques de l'économie néoliberale, empruntent et enchevêtrent des éléments de différentes traditions de l'islam pour façonner de nouvelles manières d'être musulmane ou musulman. Les auteurs ont souhaité faire contrepoids à ceux qui tendent à réduire l'étude de l'islam et de la mobilisation de la jeunesse aux trajectoires plus ou moins signifiantes de la réforme, de l'islam politique ou de l'islamisme."
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3366 Burkina Faso",
+        "https://islam.zmo.de/api/items/3266 Ivory Coast",
+        "https://islam.zmo.de/api/items/3315 Mali",
+        "https://islam.zmo.de/api/items/3352 Senegal"
+    ],
+    "dcterms:provenance": [
+        "Leiden"
+    ],
+    "bibo:authorList": [
+        "https://islam.zmo.de/api/items/4116 Benjamin Soares",
+        "https://islam.zmo.de/api/items/4128 Marie Nathalie LeBlanc"
+    ],
+    "bibo:editorList": [
+        "Kadya Tall",
+        "Marie-Emmanuelle Pommerolle",
+        "Michel Cahen"
+    ],
+    "bibo:chapter": [
+        "3"
+    ],
+    "bibo:doi": [
+        "https://doi.org/10.1163/9789004300002_004 10.1163/9789004300002_004"
+    ],
+    "bibo:pageEnd": [
+        "90"
+    ],
+    "bibo:pageStart": [
+        "67"
+    ]
+},
+{
+    "o:id": 13418,
+    "url": "https://islam.zmo.de/s/westafrica/item/13418",
+    "o:resource_template": "Book chapter",
+    "o:resource_class": "bibo:Chapter",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "9514": 9514
+    },
+    "o:media/o:id": [
+        13419
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/158115139a46a9e8e5745f10c09a6a5dcaee48ac.pdf"
+    ],
+    "dcterms:title": [
+        "The Projection of Saudi Arabian Influence in West Africa"
+    ],
+    "dcterms:publisher": [
+        "De Gruyter"
+    ],
+    "dcterms:date": [
+        "2022"
+    ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/4012 Book chapter"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q115970141 Q115970141"
+    ],
+    "dcterms:language": [
+        "https://islam.zmo.de/api/items/4008 English"
+    ],
+    "dcterms:alternative": [
+        "Islam and Muslim Life in West Africa: Practices, Trajectories and Influences"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3327 Nigeria"
+    ],
+    "dcterms:provenance": [
+        "Berlin"
+    ],
+    "bibo:authorList": [
+        "https://islam.zmo.de/api/items/10168 Ulrike Freitag"
+    ],
+    "bibo:editorList": [
+        "https://islam.zmo.de/api/items/4118 Abdoulaye Sounaye",
+        "https://islam.zmo.de/api/items/4455 André Chappatte"
+    ],
+    "bibo:doi": [
+        "https://doi.org/10.1515/9783110733204-009 10.1515/9783110733204-009"
+    ],
+    "bibo:pageEnd": [
+        "206"
+    ],
+    "bibo:pageStart": [
+        "173"
+    ]
+},
+{
+    "o:id": 14275,
+    "url": "https://islam.zmo.de/s/westafrica/item/14275",
+    "o:resource_template": "Book",
+    "o:resource_class": "bibo:Book",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5828": 5828
+    },
+    "o:media/o:id": [
+        14276
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/04ad597db7a2c5b1133c557acf3442a3da3bb532.jpg"
+    ],
+    "dcterms:title": [
+        "Corps rituels : la fabrique du religieux en pays mandingue (Mali, Guinée, Côte d'Ivoire)"
+    ],
+    "dcterms:publisher": [
+        "Éditions de la Maison des sciences de l'homme"
+    ],
+    "dcterms:date": [
+        "2023"
+    ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/4011 Book"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q124373276 Q124373276"
+    ],
+    "dcterms:language": [
+        "https://islam.zmo.de/api/items/4007 French"
+    ],
+    "dcterms:abstract": [
+        "Entre un passé compliqué et un futur incertain, comment vivre au mieux avec soi-même ? Pour répondre à cette question, l’ouvrage explore les constructions de soi de trois types de spécialistes rituels mandingues : les donsow (les chasseurs), les basitigiw (les féticheurs) et les jinatigiw (les maîtresses des génies). Il analyse la relation entre ces spécialistes et les entités – êtres de la brousse, choses-dieux et génies urbains – que leur pratique fait émerger. Il vise à saisir, par ce biais, ce que fait le rituel, comment il le fait, et ainsi à améliorer notre compréhension de ce mode d’engagement particulier. Afin d’en appréhender le rôle dans la fabrique du religieux, le regard est porté sur la dimension matérielle de cette fabrique : ingrédients des sacrifices, couleurs des habits qui plaisent aux génies, tonalité baroque prisée par les « nouveaux entrepreneurs religieux » qui excellent dans l’usage du « faux authentique », et, surtout, sur le corps des experts, qu’ils soient à la chasse, en transe, ou engagés dans un chair à chair avec certains objets-sujets ou avec des « personnes qui ne sont pas des personnes ». Le déplacement des conditions d’intentionnalité ou d’agentivité que ces spécialistes opèrent à travers leurs pratiques leur permet-il de modifier durablement leur rapport au monde, de se constituer en des sujets « virtuoses », d’agrandir leurs marges de liberté ? Ces pratiques, qui contribuent à l’émergence de la sphère a-islamique, se constituant dès les années 1990 face aux pratiques associées à l’islam, modifient-elles les rapports de force et de genre en place dans les sociétés africaines de ce début du xxie siècle ?"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3266 Ivory Coast",
+        "https://islam.zmo.de/api/items/3291 Guinea",
+        "https://islam.zmo.de/api/items/3315 Mali"
+    ],
+    "dcterms:provenance": [
+        "Paris"
+    ],
+    "bibo:authorList": [
+        "https://islam.zmo.de/api/items/14277 Agnieszka Kedzierska Manzon"
+    ],
+    "bibo:numPages": [
+        "288"
+    ]
+},
+{
+    "o:id": 14278,
+    "url": "https://islam.zmo.de/s/westafrica/item/14278",
+    "o:resource_template": "Book chapter",
+    "o:resource_class": "bibo:Chapter",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5828": 5828
+    },
+    "dcterms:title": [
+        "La Communauté musulmane de la Riviera (CMR) et le « réveil » de l'islam au sein des classes sociales supérieures ivoiriennes (1982-2000)"
+    ],
+    "dcterms:publisher": [
+        "ENS Éditions"
+    ],
+    "dcterms:date": [
+        "2023"
+    ],
+    "dcterms:type": [
+        "https://islam.zmo.de/api/items/4012 Book chapter"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q117015563 Q117015563"
+    ],
+    "dcterms:language": [
+        "https://islam.zmo.de/api/items/4007 French"
+    ],
+    "dcterms:alternative": [
+        "Religions et classes sociales"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3266 Ivory Coast"
+    ],
+    "dcterms:provenance": [
+        "Lyon"
+    ],
+    "bibo:authorList": [
+        "https://islam.zmo.de/api/items/10058 Drissa Koné"
+    ],
+    "bibo:editorList": [
+        "Anthony Favier",
+        "Yannick Fer",
+        "Juliette Galonnier",
+        "Ana Perrin-Heredia"
+    ],
+    "bibo:chapter": [
+        "4"
+    ],
+    "bibo:doi": [
+        "https://doi.org/10.4000/books.enseditions.44379 10.4000/books.enseditions.44379"
+    ],
+    "bibo:pageEnd": [
+        "133"
+    ],
+    "bibo:pageStart": [
+        "113"
     ]
 }
 ]
