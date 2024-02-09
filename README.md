@@ -18,6 +18,9 @@ Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/
 - Issues of Islamic newspapers/magazines/bulletins metadata ("issues.csv")
 - Locations metadata ("index_locations.csv")
 - Newspaper articles metadata ("newspaper_articles.csv")
+- Organizations metadata ("index_organizations.csv")
+- Persons metadata ("index_persons.csv")
+- Topics metadata ("index_topics.csv")
 
 ### CSV files format:
 - Delimiter: ,
