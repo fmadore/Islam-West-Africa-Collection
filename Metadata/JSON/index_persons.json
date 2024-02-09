@@ -33341,7 +33341,8 @@
         "https://www.wikidata.org/wiki/Q116484295 Q116484295"
     ],
     "dcterms:alternative": [
-        "Sidza, Kwamé Seeti"
+        "Sidza, Kwamé Seeti",
+        "S.K. Sidza"
     ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/4235 Researcher"
@@ -37067,6 +37068,9 @@
     "dcterms:title": [
         "Mohamed Louckman Bissirou"
     ],
+    "dcterms:alternative": [
+        "Bissirou Mohamed Loukman"
+    ],
     "dcterms:isPartOf": [
         "https://islam.zmo.de/api/items/4271 Ahmadiyya"
     ],
@@ -39304,6 +39308,2768 @@
     ],
     "foaf:lastName": [
         "Bakari"
+    ]
+},
+{
+    "o:id": 12978,
+    "url": "https://islam.zmo.de/s/westafrica/item/12978",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Georgette Afiwavi Kponvi"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q123685330 Q123685330"
+    ],
+    "dcterms:alternative": [
+        "Afiwavi Kponvi, Georgette"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4235 Researcher"
+    ],
+    "foaf:firstName": [
+        "Georgette"
+    ],
+    "foaf:lastName": [
+        "Afiwavi Kponvi"
+    ]
+},
+{
+    "o:id": 12984,
+    "url": "https://islam.zmo.de/s/westafrica/item/12984",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Philipp Eisenhuth"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q123928153 Q123928153"
+    ],
+    "dcterms:alternative": [
+        "Eisenhuth, Philipp"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4235 Researcher"
+    ],
+    "foaf:firstName": [
+        "Philipp"
+    ],
+    "foaf:lastName": [
+        "Eisenhuth"
+    ]
+},
+{
+    "o:id": 12985,
+    "url": "https://islam.zmo.de/s/westafrica/item/12985",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Myriel Fichtner"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q123928304 Q123928304"
+    ],
+    "dcterms:alternative": [
+        "Fichtner, Myriel"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4235 Researcher"
+    ],
+    "foaf:firstName": [
+        "Myriel"
+    ],
+    "foaf:lastName": [
+        "Fichtner"
+    ]
+},
+{
+    "o:id": 12986,
+    "url": "https://islam.zmo.de/s/westafrica/item/12986",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Britta Frede"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113820813 Q113820813"
+    ],
+    "dcterms:alternative": [
+        "Frede, Britta"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4235 Researcher"
+    ],
+    "foaf:firstName": [
+        "Britta"
+    ],
+    "foaf:lastName": [
+        "Frede"
+    ]
+},
+{
+    "o:id": 12987,
+    "url": "https://islam.zmo.de/s/westafrica/item/12987",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Rüdiger Seesemann"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113812877 Q113812877"
+    ],
+    "dcterms:alternative": [
+        "Seesemann, Rüdiger"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4235 Researcher"
+    ],
+    "foaf:firstName": [
+        "Rüdiger"
+    ],
+    "foaf:lastName": [
+        "Seesemann"
+    ]
+},
+{
+    "o:id": 12993,
+    "url": "https://islam.zmo.de/s/westafrica/item/12993",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Mahmoud Riadds Sidi"
+    ],
+    "dcterms:alternative": [
+        "Sidi Mahmoud"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4371 Amicale des Intellectuels Musulmans du Bénin"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3255 Benin"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Mahmoud Riadds"
+    ],
+    "foaf:lastName": [
+        "Sidi"
+    ]
+},
+{
+    "o:id": 13388,
+    "url": "https://islam.zmo.de/s/westafrica/item/13388",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Dodji A. Nyatépé-Coo"
+    ],
+    "dcterms:alternative": [
+        "Djodji A. Nyatépé-Coo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Dodji A."
+    ],
+    "foaf:lastName": [
+        "Nyatépé-Coo"
+    ]
+},
+{
+    "o:id": 13389,
+    "url": "https://islam.zmo.de/s/westafrica/item/13389",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "El Hadj Tâzi Sant-Anna"
+    ],
+    "dcterms:alternative": [
+        "El Hadj Tâzi M. Sant-Anna",
+        "El Hadj Tazi Sant'Anna",
+        "Tazi M. Sant'Anna"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ]
+},
+{
+    "o:id": 13393,
+    "url": "https://islam.zmo.de/s/westafrica/item/13393",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Adama Kinvi"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Adama"
+    ],
+    "foaf:lastName": [
+        "Kinvi"
+    ]
+},
+{
+    "o:id": 13394,
+    "url": "https://islam.zmo.de/s/westafrica/item/13394",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Adoukonou Akakpo"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Adoukonou"
+    ],
+    "foaf:lastName": [
+        "Akakpo"
+    ]
+},
+{
+    "o:id": 13395,
+    "url": "https://islam.zmo.de/s/westafrica/item/13395",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Akouètè Kokodoko"
+    ],
+    "dcterms:alternative": [
+        "Akuètè Kokodoko"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Akouètè"
+    ],
+    "foaf:lastName": [
+        "Kokodoko"
+    ]
+},
+{
+    "o:id": 13396,
+    "url": "https://islam.zmo.de/s/westafrica/item/13396",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Améwogninin Koutoukloui"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Améwogninin"
+    ],
+    "foaf:lastName": [
+        "Koutoukloui"
+    ]
+},
+{
+    "o:id": 13397,
+    "url": "https://islam.zmo.de/s/westafrica/item/13397",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Anoumou Kate Aziaglo"
+    ],
+    "dcterms:alternative": [
+        "Anoumou Kate-Aziaglo",
+        "A. Kate-Aziaglo"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Anoumou"
+    ],
+    "foaf:lastName": [
+        "Kate Aziaglo"
+    ]
+},
+{
+    "o:id": 13398,
+    "url": "https://islam.zmo.de/s/westafrica/item/13398",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Ayodélé Aguiar"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Ayodélé"
+    ],
+    "foaf:lastName": [
+        "Aguiar"
+    ]
+},
+{
+    "o:id": 13399,
+    "url": "https://islam.zmo.de/s/westafrica/item/13399",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Banafey Assih"
+    ],
+    "dcterms:alternative": [
+        "Banafei Assih"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Banafey"
+    ],
+    "foaf:lastName": [
+        "Assih"
+    ]
+},
+{
+    "o:id": 13400,
+    "url": "https://islam.zmo.de/s/westafrica/item/13400",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Barray Gérard Amana"
+    ],
+    "dcterms:alternative": [
+        "Barray Amana",
+        "Barray G. Amana"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche",
+        "https://islam.zmo.de/api/item_sets/7625 Togo Presse"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Barray Gérard"
+    ],
+    "foaf:lastName": [
+        "Amana"
+    ]
+},
+{
+    "o:id": 13401,
+    "url": "https://islam.zmo.de/s/westafrica/item/13401",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Bassirou Ayeva"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Bassirou"
+    ],
+    "foaf:lastName": [
+        "Ayeva"
+    ]
+},
+{
+    "o:id": 13402,
+    "url": "https://islam.zmo.de/s/westafrica/item/13402",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Dadja Anadé Adabi"
+    ],
+    "dcterms:alternative": [
+        "Dadja Adabi"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Dadja Anadé"
+    ],
+    "foaf:lastName": [
+        "Adabi"
+    ]
+},
+{
+    "o:id": 13403,
+    "url": "https://islam.zmo.de/s/westafrica/item/13403",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Damtaré Kankpe"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Damtaré"
+    ],
+    "foaf:lastName": [
+        "Kankpe"
+    ]
+},
+{
+    "o:id": 13404,
+    "url": "https://islam.zmo.de/s/westafrica/item/13404",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Dodji Aougah"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Dodji"
+    ],
+    "foaf:lastName": [
+        "Aougah"
+    ]
+},
+{
+    "o:id": 13405,
+    "url": "https://islam.zmo.de/s/westafrica/item/13405",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Eklou Komlan"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Eklou"
+    ],
+    "foaf:lastName": [
+        "Komlan"
+    ]
+},
+{
+    "o:id": 13406,
+    "url": "https://islam.zmo.de/s/westafrica/item/13406",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Koffi Fiawumo-Dotsey"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche",
+        "https://islam.zmo.de/api/item_sets/7625 Togo Presse"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Koffi"
+    ],
+    "foaf:lastName": [
+        "Fiawumo-Dotsey"
+    ]
+},
+{
+    "o:id": 13407,
+    "url": "https://islam.zmo.de/s/westafrica/item/13407",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Koffi-Dankwa Koudodji"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/items/13390 Agence Togolaise de Presse"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Koffi-Dankwa"
+    ],
+    "foaf:lastName": [
+        "Koudodji"
+    ]
+},
+{
+    "o:id": 13408,
+    "url": "https://islam.zmo.de/s/westafrica/item/13408",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Kwadzo Amouzou"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche",
+        "https://islam.zmo.de/api/item_sets/7625 Togo Presse"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Kwadzo"
+    ],
+    "foaf:lastName": [
+        "Amouzou"
+    ]
+},
+{
+    "o:id": 13409,
+    "url": "https://islam.zmo.de/s/westafrica/item/13409",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Mawuko Akuetey"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Mawuko"
+    ],
+    "foaf:lastName": [
+        "Akuetey"
+    ]
+},
+{
+    "o:id": 13410,
+    "url": "https://islam.zmo.de/s/westafrica/item/13410",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Sol'Kaza Souley Nyaw"
+    ],
+    "dcterms:alternative": [
+        "Sol Kaza Souley-Nayaw",
+        "Sol'Kaza Souley-Nyaw",
+        "Sol'Kazah Souley-Nyaw"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche",
+        "https://islam.zmo.de/api/item_sets/7625 Togo Presse"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Sol'Kaza"
+    ],
+    "foaf:lastName": [
+        "Souley Nyaw"
+    ]
+},
+{
+    "o:id": 13411,
+    "url": "https://islam.zmo.de/s/westafrica/item/13411",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Tabanatang Ekilou Lowa"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Tabanatang Ekilou"
+    ],
+    "foaf:lastName": [
+        "Lowa"
+    ]
+},
+{
+    "o:id": 13412,
+    "url": "https://islam.zmo.de/s/westafrica/item/13412",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Tchamdja Adom"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche",
+        "https://islam.zmo.de/api/item_sets/7625 Togo Presse"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Tchamdja"
+    ],
+    "foaf:lastName": [
+        "Adom"
+    ]
+},
+{
+    "o:id": 13413,
+    "url": "https://islam.zmo.de/s/westafrica/item/13413",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Tchémi Tchambi"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Tchémi"
+    ],
+    "foaf:lastName": [
+        "Tchambi"
+    ]
+},
+{
+    "o:id": 13414,
+    "url": "https://islam.zmo.de/s/westafrica/item/13414",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Tètè Attikossie"
+    ],
+    "dcterms:alternative": [
+        "Têtê Attikossie"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4236 Journalist",
+        "https://islam.zmo.de/api/item_sets/7624 La Nouvelle Marche"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Tètè"
+    ],
+    "foaf:lastName": [
+        "Attikossie"
+    ]
+},
+{
+    "o:id": 14246,
+    "url": "https://islam.zmo.de/s/westafrica/item/14246",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Kukovi Benyi Gabriel Polycarpe Johnson"
+    ],
+    "dcterms:alternative": [
+        "Kwaovi Benyi Johnson",
+        "Kwaovi-Benyi Johnson",
+        "Polycarpe Johnson"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/item_sets/7625 Togo Presse"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:birthday": [
+        "1924"
+    ]
+},
+{
+    "o:id": 14250,
+    "url": "https://islam.zmo.de/s/westafrica/item/14250",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Olalekan Rasheed Azeez"
+    ],
+    "dcterms:alternative": [
+        "Aziz Rachid Olalékan"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3225 Africa Muslims Agency"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14251,
+    "url": "https://islam.zmo.de/s/westafrica/item/14251",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Maman N'Danida"
+    ],
+    "dcterms:description": [
+        "Mother of Gnassingbé Eyadéma",
+        "Mère de Gnassingbé Eyadéma"
+    ],
+    "dcterms:date": [
+        "1984-06-28"
+    ],
+    "dcterms:relation": [
+        "https://islam.zmo.de/api/items/14252 Gnassingbé Eyadéma"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4019 Female"
+    ],
+    "foaf:lastName": [
+        "N'Danida"
+    ]
+},
+{
+    "o:id": 14252,
+    "url": "https://islam.zmo.de/s/westafrica/item/14252",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "o:media/o:id": [
+        14309
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/d49b74aee63735adc22656231071c9b5c2b854af.jpg"
+    ],
+    "dcterms:title": [
+        "Gnassingbé Eyadéma"
+    ],
+    "dcterms:description": [
+        "President of Togo (1967–2005)",
+        "Président du Togo (1967–2005)"
+    ],
+    "dcterms:date": [
+        "2005-02-05"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q155385 Q155385"
+    ],
+    "dcterms:relation": [
+        "https://islam.zmo.de/api/items/14251 Maman N'Danida"
+    ],
+    "dcterms:alternative": [
+        "Étienne Eyadéma Gnassingbé"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4368 Military personnel",
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Gnassingbé"
+    ],
+    "foaf:lastName": [
+        "Eyadéma"
+    ],
+    "foaf:birthday": [
+        "1935-12-26"
+    ]
+},
+{
+    "o:id": 14255,
+    "url": "https://islam.zmo.de/s/westafrica/item/14255",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Abass Bonfoh"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "homme politique togolais"
+    ],
+    "dcterms:date": [
+        "2021-06-30"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q305669 Q305669"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Abass"
+    ],
+    "foaf:lastName": [
+        "Bonfoh"
+    ],
+    "foaf:birthday": [
+        "1948-11-23"
+    ]
+},
+{
+    "o:id": 14256,
+    "url": "https://islam.zmo.de/s/westafrica/item/14256",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Boukari Bassabi Bonfoh"
+    ],
+    "dcterms:description": [
+        "Imam and former President of the Muslim Union of Togo (1981-1986)",
+        "Imam et ancien président de l'Union musulmane du Togo (1981-1986)"
+    ],
+    "dcterms:date": [
+        "1986"
+    ],
+    "dcterms:alternative": [
+        "Boukary Bonfoh",
+        "Boukari Bonfoh",
+        "Bassabi Bonfoh",
+        "Bassabi Kondi Bonfoh"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam",
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14257,
+    "url": "https://islam.zmo.de/s/westafrica/item/14257",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Nassiki Awrufo"
+    ],
+    "dcterms:description": [
+        "Former President of the Muslim Union of Togo (1986-1992)",
+        "Ancien président de l'Union Musulmane du Togo (1986-1992)"
+    ],
+    "dcterms:alternative": [
+        "Aoufoh Oumorou Nassiki",
+        "Awurofo Nassiki",
+        "Nassiki Awouroufo",
+        "Nassiki Awroufo"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam",
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Nassiki"
+    ],
+    "foaf:lastName": [
+        "Awrufo"
+    ]
+},
+{
+    "o:id": 14258,
+    "url": "https://islam.zmo.de/s/westafrica/item/14258",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "o:media/o:id": [
+        14313
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/ed1b6773c18a78338b7a8b56b49ff2175caaaa3c.jpg"
+    ],
+    "dcterms:title": [
+        "Joseph Kokou Koffigoh"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Homme politique togolais"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1707420 Q1707420"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14261 Ligue Togolaise des Droits de l'Homme"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Joseph Kokou"
+    ],
+    "foaf:lastName": [
+        "Koffigoh"
+    ],
+    "foaf:birthday": [
+        "1948"
+    ]
+},
+{
+    "o:id": 14260,
+    "url": "https://islam.zmo.de/s/westafrica/item/14260",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Youssef Mohamed"
+    ],
+    "dcterms:alternative": [
+        "Youssif Mohamed",
+        "Mohamed Youssouf"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14262,
+    "url": "https://islam.zmo.de/s/westafrica/item/14262",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Robert-Casimir Dosseh-Anyron"
+    ],
+    "dcterms:description": [
+        "Togolese Catholic bishop",
+        "Prélat catholique togolais"
+    ],
+    "dcterms:date": [
+        "2014-04-15"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1794951 Q1794951"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4242 Bishop"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Robert-Casimir"
+    ],
+    "foaf:lastName": [
+        "Dosseh-Anyron"
+    ],
+    "foaf:birthday": [
+        "1925-10-13"
+    ]
+},
+{
+    "o:id": 14263,
+    "url": "https://islam.zmo.de/s/westafrica/item/14263",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "o:media/o:id": [
+        14312
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/056564bd36721d0be0610f88d6305e07157f05fd.jpg"
+    ],
+    "dcterms:title": [
+        "Philippe Fanoko Kossi Kpodzro"
+    ],
+    "dcterms:description": [
+        "Togolese Catholic bishop",
+        "Prélat catholique togolais"
+    ],
+    "dcterms:date": [
+        "2024-01-09"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1711464 Q1711464"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4242 Bishop",
+        "https://islam.zmo.de/api/items/14270 Haut Conseil de la République"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Philippe Fanoko Kossi"
+    ],
+    "foaf:lastName": [
+        "Kpodzro"
+    ],
+    "foaf:birthday": [
+        "1930-03-30"
+    ]
+},
+{
+    "o:id": 14264,
+    "url": "https://islam.zmo.de/s/westafrica/item/14264",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Yawovi Agboyibo"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Homme politique togolais"
+    ],
+    "dcterms:date": [
+        "2020-05-30"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q747770 Q747770"
+    ],
+    "dcterms:alternative": [
+        "Yaovi Agboyibor"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14266 Comité d'Action pour le Renouveau",
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Yawovi"
+    ],
+    "foaf:lastName": [
+        "Agboyibo"
+    ],
+    "foaf:birthday": [
+        "1943-12-31"
+    ]
+},
+{
+    "o:id": 14265,
+    "url": "https://islam.zmo.de/s/westafrica/item/14265",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Inoussa Bouraïma"
+    ],
+    "dcterms:description": [
+        "President of the Muslim Union of Togo (2007- ) and former Minister of Tourism and the Environment (1991) and Defence (1992-1994)",
+        "Président de l'Union Musulmane du Togo (2007- ) et ancien ministre du Tourisme et de l'Environnement (1991) et de la Défense (1992-1994)"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais",
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Inoussa"
+    ],
+    "foaf:lastName": [
+        "Bouraïma"
+    ],
+    "foaf:birthday": [
+        "1945"
+    ]
+},
+{
+    "o:id": 14271,
+    "url": "https://islam.zmo.de/s/westafrica/item/14271",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Ife Adani"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14268 Alliance Togolaise pour la Démocratie",
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Ife"
+    ],
+    "foaf:lastName": [
+        "Adani"
+    ]
+},
+{
+    "o:id": 14272,
+    "url": "https://islam.zmo.de/s/westafrica/item/14272",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Leopold Messan Gnininvi"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Homme politique togolais"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1667617 Q1667617"
+    ],
+    "dcterms:alternative": [
+        "Leopold Gnininvi"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14269 Convention Démocratique des Peuples Africains",
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Leopold Messan"
+    ],
+    "foaf:lastName": [
+        "Gnininvi"
+    ],
+    "foaf:birthday": [
+        "1942-12-19"
+    ]
+},
+{
+    "o:id": 14274,
+    "url": "https://islam.zmo.de/s/westafrica/item/14274",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Ousmane Agbérè"
+    ],
+    "dcterms:description": [
+        "Pilgrimage Organisation Commissioner",
+        "Commissaire à l'organisation du pèlerinage"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Ousmane"
+    ],
+    "foaf:lastName": [
+        "Agbérè"
+    ]
+},
+{
+    "o:id": 14277,
+    "url": "https://islam.zmo.de/s/westafrica/item/14277",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Agnieszka Kedzierska Manzon"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113814390 Q113814390"
+    ],
+    "dcterms:alternative": [
+        "Agnieszka Kedzierska-Manzon"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4235 Researcher"
+    ],
+    "foaf:firstName": [
+        "Agnieszka"
+    ],
+    "foaf:lastName": [
+        "Kedzierska Manzon"
+    ]
+},
+{
+    "o:id": 14281,
+    "url": "https://islam.zmo.de/s/westafrica/item/14281",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Abdoulaye Aboubacar"
+    ],
+    "dcterms:description": [
+        "Imam of Atakpamé",
+        "Imam d'Atakpamé"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14282,
+    "url": "https://islam.zmo.de/s/westafrica/item/14282",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Malam Bawa"
+    ],
+    "dcterms:description": [
+        "Imam of Kpalimé",
+        "Imam de Kpalimé"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14283,
+    "url": "https://islam.zmo.de/s/westafrica/item/14283",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Mamah Issaka"
+    ],
+    "dcterms:description": [
+        "Imam of Amlamé",
+        "Imam d'Amlamé"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14284,
+    "url": "https://islam.zmo.de/s/westafrica/item/14284",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Abdoulaye Wahabou"
+    ],
+    "dcterms:description": [
+        "Imam of Bassar",
+        "Imam de Bassar"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Abdoulaye"
+    ],
+    "foaf:lastName": [
+        "Wahabou"
+    ]
+},
+{
+    "o:id": 14285,
+    "url": "https://islam.zmo.de/s/westafrica/item/14285",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Kodjo Agbéyomé"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Homme politique togolais"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q392055 Q392055"
+    ],
+    "dcterms:alternative": [
+        "Kodjo Messan Agbéyomé"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Kodjo"
+    ],
+    "foaf:lastName": [
+        "Agbéyomé"
+    ],
+    "foaf:birthday": [
+        "1954-10-12"
+    ]
+},
+{
+    "o:id": 14286,
+    "url": "https://islam.zmo.de/s/westafrica/item/14286",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Komlan Alipui"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q123476881 Q123476881"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Komlan"
+    ],
+    "foaf:lastName": [
+        "Alipui"
+    ],
+    "foaf:birthday": [
+        "1936"
+    ]
+},
+{
+    "o:id": 14287,
+    "url": "https://islam.zmo.de/s/westafrica/item/14287",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Ahlonkoba Aithnard"
+    ],
+    "dcterms:description": [
+        "Togolese political figure",
+        "Personnalité politique togolaise"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q120763374 Q120763374"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14288 Union Nationale des Femmes du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4019 Female"
+    ],
+    "foaf:firstName": [
+        "Ahlonkoba"
+    ],
+    "foaf:lastName": [
+        "Aithnard"
+    ]
+},
+{
+    "o:id": 14290,
+    "url": "https://islam.zmo.de/s/westafrica/item/14290",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Kassim Mensah"
+    ],
+    "dcterms:description": [
+        "Former President of the Union Musulmane du Togo (1972-1976) and Togo's ambassador to Libya",
+        "Ancien président de l'Union Musulmane du Togo (1972-1976) et ambassadeur du Togo en Libye"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam",
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Kassim"
+    ],
+    "foaf:lastName": [
+        "Mensah"
+    ],
+    "foaf:birthday": [
+        "1920-11-21"
+    ]
+},
+{
+    "o:id": 14291,
+    "url": "https://islam.zmo.de/s/westafrica/item/14291",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Zakari Bonfoh"
+    ],
+    "dcterms:description": [
+        "Commissioner for the organisation of festivities for the Muslim Union of Togo",
+        "Commissaire à l'organisation des fêtes de l'Union musulmane du Togo"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Zakari"
+    ],
+    "foaf:lastName": [
+        "Bonfoh"
+    ]
+},
+{
+    "o:id": 14293,
+    "url": "https://islam.zmo.de/s/westafrica/item/14293",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Kokou Béné Touléassi"
+    ],
+    "dcterms:alternative": [
+        "Kokou Touléassi"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14292 Église Évangélique Presbytérienne du Togo",
+        "https://islam.zmo.de/api/items/4243 Pastor"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Kokou"
+    ],
+    "foaf:lastName": [
+        "Touléassi"
+    ]
+},
+{
+    "o:id": 14294,
+    "url": "https://islam.zmo.de/s/westafrica/item/14294",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Koffi Edoh"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Personnalité politique togolaise"
+    ],
+    "dcterms:date": [
+        "2012"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Koffi"
+    ],
+    "foaf:lastName": [
+        "Edoh"
+    ],
+    "foaf:birthday": [
+        "1939"
+    ]
+},
+{
+    "o:id": 14295,
+    "url": "https://islam.zmo.de/s/westafrica/item/14295",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Aïssah Agbétra"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Personnalité politique togolaise"
+    ],
+    "dcterms:date": [
+        "2015"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Aïssah"
+    ],
+    "foaf:lastName": [
+        "Agbétra"
+    ]
+},
+{
+    "o:id": 14296,
+    "url": "https://islam.zmo.de/s/westafrica/item/14296",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Gbégnon Amégboh",
+        "Gbégnon Joseph Amégboh"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Personnalité politique togolaise"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Gbégnon"
+    ],
+    "foaf:lastName": [
+        "Amégboh"
+    ],
+    "foaf:birthday": [
+        "1937-03-09"
+    ]
+},
+{
+    "o:id": 14297,
+    "url": "https://islam.zmo.de/s/westafrica/item/14297",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Samon Kortho"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Personnalité politique togolaise"
+    ],
+    "dcterms:alternative": [
+        "Samon Alphonse Kortho"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Samon"
+    ],
+    "foaf:lastName": [
+        "Kortho"
+    ]
+},
+{
+    "o:id": 14298,
+    "url": "https://islam.zmo.de/s/westafrica/item/14298",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Komlanvi Klutsé"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Personnalité politique togolaise"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Komlanvi"
+    ],
+    "foaf:lastName": [
+        "Klutsé"
+    ]
+},
+{
+    "o:id": 14301,
+    "url": "https://islam.zmo.de/s/westafrica/item/14301",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Alassane Anem"
+    ],
+    "dcterms:description": [
+        "Imam of Lomé (1978-1985)",
+        "Imam de Lomé (1978-1985)"
+    ],
+    "dcterms:date": [
+        "1985-09-08"
+    ],
+    "dcterms:alternative": [
+        "Alassane Anème",
+        "Alassani Anem"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Alassane"
+    ],
+    "foaf:lastName": [
+        "Anem"
+    ],
+    "foaf:birthday": [
+        "1916"
+    ]
+},
+{
+    "o:id": 14304,
+    "url": "https://islam.zmo.de/s/westafrica/item/14304",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "o:media/o:id": [
+        14311
+    ],
+    "o:media/file": [
+        "https://islam.zmo.de/files/original/89479dc21ad101b99f6c7ce2ee5eed9e353abbe5.jpg"
+    ],
+    "dcterms:title": [
+        "Yao Kunalé Eklo"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:date": [
+        "2008"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q63247219 Q63247219"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Yao Kunalé"
+    ],
+    "foaf:lastName": [
+        "Eklo"
+    ],
+    "foaf:birthday": [
+        "1931"
+    ]
+},
+{
+    "o:id": 14305,
+    "url": "https://islam.zmo.de/s/westafrica/item/14305",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Halilou Akarawato"
+    ],
+    "dcterms:description": [
+        "Former President of the Muslim Union of Togo (1976-?) and member of the National Assembly",
+        "Ancien président de l'Union Musulmane du Togo (1976-?) et député à l'Assemblée nationale"
+    ],
+    "dcterms:alternative": [
+        "Alilou Akarawato",
+        "Halilou Akarawafo"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam",
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Halilou"
+    ],
+    "foaf:lastName": [
+        "Akarawato"
+    ]
+},
+{
+    "o:id": 14306,
+    "url": "https://islam.zmo.de/s/westafrica/item/14306",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Eli Koffi Ayivi"
+    ],
+    "dcterms:description": [
+        "Reverend pastor and moderator of the Evangelical Church of Togo",
+        "Révérend pasteur et modérateur de l'Eglise évangélique du Togo"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14317 Église évangélique du Togo",
+        "https://islam.zmo.de/api/items/4243 Pastor"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Eli Koffi"
+    ],
+    "foaf:lastName": [
+        "Ayivi"
+    ]
+},
+{
+    "o:id": 14318,
+    "url": "https://islam.zmo.de/s/westafrica/item/14318",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Elom Kokou Fourn"
+    ],
+    "dcterms:description": [
+        "Mayor of Lomé (1974-1987)",
+        "Maire de Lomé (1974-1987)"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Elom Kokou"
+    ],
+    "foaf:lastName": [
+        "Fourn"
+    ]
+},
+{
+    "o:id": 14319,
+    "url": "https://islam.zmo.de/s/westafrica/item/14319",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Fambaré Ouattara Natchaba"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:date": [
+        "2020-10-15"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2522820 Q2522820"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Fambaré Ouattara"
+    ],
+    "foaf:lastName": [
+        "Natchaba"
+    ],
+    "foaf:birthday": [
+        "1945-04-17"
+    ]
+},
+{
+    "o:id": 14320,
+    "url": "https://islam.zmo.de/s/westafrica/item/14320",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Kpotivi Têvi-Djidjogbé Théodore Laclé"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:date": [
+        "2006"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Kpotivi Têvi-Djidjogbé Théodore"
+    ],
+    "foaf:lastName": [
+        "Laclé"
+    ],
+    "foaf:birthday": [
+        "1934"
+    ]
+},
+{
+    "o:id": 14322,
+    "url": "https://islam.zmo.de/s/westafrica/item/14322",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Médjédjé Issifou"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14323,
+    "url": "https://islam.zmo.de/s/westafrica/item/14323",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Koudjolou Megbemwé Dogo"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Koudjolou Megbemwé"
+    ],
+    "foaf:lastName": [
+        "Dogo"
+    ],
+    "foaf:birthday": [
+        "1938"
+    ]
+},
+{
+    "o:id": 14324,
+    "url": "https://islam.zmo.de/s/westafrica/item/14324",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Sani Karim"
+    ],
+    "dcterms:description": [
+        "Vice-President of the Muslim Union of Togo and Imam of Lomé",
+        "Vice-président de l'Union Musulmane au Togo et imam de Lomé"
+    ],
+    "dcterms:alternative": [
+        "Sanni Karim"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3238 Association des Élèves et Étudiants Musulmans au Togo",
+        "https://islam.zmo.de/api/items/4233 Imam",
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Sani"
+    ],
+    "foaf:lastName": [
+        "Karim"
+    ]
+},
+{
+    "o:id": 14325,
+    "url": "https://islam.zmo.de/s/westafrica/item/14325",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Idriss Nakpane"
+    ],
+    "dcterms:description": [
+        "President of the Association des Élèves et Étudiants Musulmans au Togo (1998-2000)",
+        "Président de l'Association des Élèves et Étudiants Musulmans au Togo (1998-2000)"
+    ],
+    "dcterms:alternative": [
+        "Idriss Nakpam"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/3238 Association des Élèves et Étudiants Musulmans au Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Idriss"
+    ],
+    "foaf:lastName": [
+        "Nakpan"
+    ]
+},
+{
+    "o:id": 14326,
+    "url": "https://islam.zmo.de/s/westafrica/item/14326",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Abdoul-Hamid Sègoun Tidjani Dourodjaye"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:date": [
+        "2005"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14328,
+    "url": "https://islam.zmo.de/s/westafrica/item/14328",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Téouri Baba"
+    ],
+    "dcterms:description": [
+        "President of the Comité International pour l'Expansion des Rites de l'Islam",
+        "Président du Comité International pour l'Expansion des Rites de l'Islam"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14315 Comité International pour l'Expansion des Rites de l'Islam"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Téouri"
+    ],
+    "foaf:lastName": [
+        "Baba"
+    ]
+},
+{
+    "o:id": 14329,
+    "url": "https://islam.zmo.de/s/westafrica/item/14329",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Pierre Seshie"
+    ],
+    "dcterms:description": [
+        "Parish priest in Lomé",
+        "Curé de la paroisse de Lomé"
+    ],
+    "dcterms:alternative": [
+        "Koffi Seshie"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Pierre"
+    ],
+    "foaf:lastName": [
+        "Seshie"
+    ]
+},
+{
+    "o:id": 14330,
+    "url": "https://islam.zmo.de/s/westafrica/item/14330",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Akrawati Shamsidine Adjita"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/11098 University of Lomé"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ]
+},
+{
+    "o:id": 14331,
+    "url": "https://islam.zmo.de/s/westafrica/item/14331",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Youssif Guimba"
+    ],
+    "dcterms:description": [
+        "4th Imam of the Grand Mosque of Lomé and former President of the Muslim Union of Togo",
+        "4e imam de la grande mosquée de Lomé et ancien président de l'Union Musulmane du Togo"
+    ],
+    "dcterms:alternative": [
+        "Maman Youssef Gimba",
+        "Youssif Gimba",
+        "Youssouf Guimba"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4233 Imam",
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Youssif"
+    ],
+    "foaf:lastName": [
+        "Guimba"
+    ]
+},
+{
+    "o:id": 14337,
+    "url": "https://islam.zmo.de/s/westafrica/item/14337",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Ahmed Têtou"
+    ],
+    "dcterms:description": [
+        "Former President of the Muslim Union of Togo (2004-2007)",
+        "Ancien président de l'Union Musulmane du Togo (2004-2007)"
+    ],
+    "dcterms:date": [
+        "2007"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Ahmed"
+    ],
+    "foaf:lastName": [
+        "Têtou"
+    ]
+},
+{
+    "o:id": 14339,
+    "url": "https://islam.zmo.de/s/westafrica/item/14339",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Seydou Maman Sodandji"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Seydou Maman"
+    ],
+    "foaf:lastName": [
+        "Sodandji"
+    ]
+},
+{
+    "o:id": 14340,
+    "url": "https://islam.zmo.de/s/westafrica/item/14340",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Tchatikpi Ouro Bang'na"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais",
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:firstName": [
+        "Tchatikpi"
+    ],
+    "foaf:lastName": [
+        "Ouro Bang'na"
+    ]
+},
+{
+    "o:id": 14341,
+    "url": "https://islam.zmo.de/s/westafrica/item/14341",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Anouar el-Sadate"
+    ],
+    "dcterms:description": [
+        "President of the Arab Republic of Egypt from 1970 to 1981",
+        "Président de la République arabe d'Égypte de 1970 à 1981"
+    ],
+    "dcterms:date": [
+        "1981-10-06"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q42013 Q42013"
+    ],
+    "dcterms:alternative": [
+        "Anwar Sadat"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3276 Egypt"
+    ],
+    "foaf:firstName": [
+        "Anouar"
+    ],
+    "foaf:lastName": [
+        "el-Sadate"
+    ],
+    "foaf:birthday": [
+        "1918-12-25"
+    ]
+},
+{
+    "o:id": 14342,
+    "url": "https://islam.zmo.de/s/westafrica/item/14342",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Anani Kuma Samuel Akakpo-Ahianyo"
+    ],
+    "dcterms:description": [
+        "Togolese politician",
+        "Politicien togolais"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/4234 Politician",
+        "https://islam.zmo.de/api/items/14253 Rassemblement du Peuple Togolais"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Anani Kuma Samuel"
+    ],
+    "foaf:lastName": [
+        "Akakpo-Ahianyo"
+    ],
+    "foaf:birthday": [
+        "1937"
+    ]
+},
+{
+    "o:id": 14345,
+    "url": "https://islam.zmo.de/s/westafrica/item/14345",
+    "o:resource_template": "Person",
+    "o:resource_class": "foaf:Person",
+    "o:owner": "frederick.madore@zmo.de",
+    "o:is_public": "true",
+    "o:item_set/o:id": {
+        "5841": 5841
+    },
+    "dcterms:title": [
+        "Abdoulaye Salami"
+    ],
+    "dcterms:isPartOf": [
+        "https://islam.zmo.de/api/items/14254 Union Musulmane du Togo"
+    ],
+    "dcterms:spatial": [
+        "https://islam.zmo.de/api/items/3359 Togo"
+    ],
+    "foaf:gender": [
+        "https://islam.zmo.de/api/items/4018 Male"
+    ],
+    "foaf:firstName": [
+        "Abdoulaye"
+    ],
+    "foaf:lastName": [
+        "Salami"
     ]
 }
 ]
