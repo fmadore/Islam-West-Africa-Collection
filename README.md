@@ -32,7 +32,7 @@ Contains all the metadata of the items in the IWAC
 
 ### Metadata:
 - Metadata names or headers are Rdf names
-- The metadata is a mix a "Dublin Core", "Bibliographic Ontology", "Friend of a Friend", and "Geonames"
+- The metadata is a mix of "Dublin Core", "Bibliographic Ontology", "Friend of a Friend", and "Geonames"
 - Format of uri: Uri and label separated by a space
 
 ### JSON
