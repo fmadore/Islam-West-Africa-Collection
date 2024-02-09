@@ -9,6 +9,8 @@ English website: [https://islam.zmo.de/s/westafrica/](https://islam.zmo.de/s/wes
 Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/s/afrique_ouest/)
 
 ## Folder "Metadata"
+Contains all the metadata of the items in the IWAC
+
 ### Contains:
 - Audio-visual documents metadata ("audio-visual_documents.csv")
 - Bibliographical references metadata ("references.csv")
