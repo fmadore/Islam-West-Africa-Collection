@@ -48,7 +48,7 @@ def create_interactive_treemap(data):
     fig = px.treemap(
         data,
         path=['country', 'title'],
-        values='word_count',
+        values='Word count',
         title='Word Count Proportion by Country and Newspaper'
     )
     fig.data[0].textinfo = 'label+text+value'
