@@ -14,39 +14,54 @@ item_set_ids = [
     2226, 2227, 2228, 9458
 ]
 
+def fetch_items(item_set_id):
+    page = 1
+    items = []
+    while True:
+        response = requests.get(f"{api_url}/items", params={"item_set_id": item_set_id, "page": page, "per_page": 50})
+        data = response.json()
+        if not data:
+            break
+        items.extend(data)
+        page += 1
+    return items
+
 def fetch_and_categorize_items():
     items_by_country_and_set = defaultdict(lambda: defaultdict(int))
     errors = []
 
     for item_set_id in tqdm(item_set_ids, desc="Processing item sets"):
         try:
+            # Fetch the item set details
             item_set_response = requests.get(f"{api_url}/item_sets/{item_set_id}")
+            if item_set_response.status_code != 200:
+                errors.append((item_set_id, item_set_response.status_code))
+                continue
+
             item_set_data = item_set_response.json()
+            set_title = item_set_data.get('o:title', 'Unknown Set Title')
+            country = item_set_data.get('dcterms:spatial', [{}])[0].get('display_title', 'Unknown Country')
 
-            # Extract the country from dcterms:spatial
-            country = item_set_data.get('dcterms:spatial', [{}])[0].get('display_title', 'Unknown')
-
-            # Fetch items in the item set if necessary or count directly if included in the item set data
-            item_response = requests.get(f"{api_url}/items", params={"item_set_id": item_set_id})
-            items = item_response.json()
-            items_by_country_and_set[country][item_set_id] += len(items)
+            # Fetch all items for this item set considering pagination
+            items = fetch_items(item_set_id)
+            items_by_country_and_set[country][set_title] += len(items)
 
         except Exception as e:
             errors.append((item_set_id, str(e)))
             continue
 
     if errors:
-        print("Errors occurred with the following item sets:", errors)
+        print("Errors occurred with the following item sets and their details:", errors)
 
     return items_by_country_and_set
 
 def visualize_spatial_distribution(items_by_country_and_set):
     data = []
     for country, sets in items_by_country_and_set.items():
-        for set_id, count in sets.items():
-            data.append({'Country': country, 'Item Set ID': str(set_id), 'Number of Items': count})
+        for set_title, count in sets.items():
+            data.append({'Country': country, 'Item Set Title': set_title, 'Number of Items': count})
 
-    fig = px.treemap(data, path=['Country', 'Item Set ID'], values='Number of Items',
+    fig = px.treemap(data, path=['Country', 'Item Set Title'], values='Number of Items',
                      title='Distribution of Items by Country and Item Set')
     fig.update_traces(textinfo="label+value+percent parent")
     fig.write_html('item_distribution_by_country_and_set.html')
