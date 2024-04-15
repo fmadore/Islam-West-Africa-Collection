@@ -56,7 +56,7 @@ def fetch_and_categorize_items():
     return items_by_country_and_set
 
 def visualize_spatial_distribution(items_by_country_and_set, language='en'):
-    title = 'Distribution of Items by Country and Item Set' if language == 'en' else 'Répartition des articles par pays et collections'
+    title = 'Distribution of items by country and collection' if language == 'en' else 'Répartition des documents par pays et collection'
     filename = 'item_distribution_by_country_and_set_english.html' if language == 'en' else 'item_distribution_by_country_and_set_french.html'
 
     data = []
