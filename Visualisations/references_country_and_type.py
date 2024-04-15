@@ -7,6 +7,36 @@ api_url = "https://iwac.frederickmadore.com/api"
 item_set_ids = [2193, 2212, 2217, 2222, 2225, 2228]
 resource_classes = [35, 43, 88, 40, 82, 178, 52, 77, 305]  # Resource class IDs to focus on
 
+# French labels provided for resource classes
+french_labels = {
+    35: 'Article de revue',
+    43: 'Chapitre',
+    88: 'Thèse',
+    40: 'Livre',
+    82: 'Rapport',
+    178: 'Compte rendu',
+    52: 'Ouvrage collectif',
+    77: 'Communication',
+    305: 'Article de blog'
+}
+
+
+def fetch_resource_class_labels():
+    """ Fetch labels for resource classes. """
+    labels = {}
+    for class_id in resource_classes:
+        response = requests.get(f"{api_url}/resource_classes/{class_id}")
+        if response.status_code == 200:
+            class_data = response.json()
+            labels[class_id] = {
+                'en': class_data.get('o:label', f'Unknown Class {class_id}'),
+                'fr': french_labels.get(class_id, f'Classe Inconnue {class_id}')  # Use the provided French labels
+            }
+        else:
+            labels[class_id] = {'en': f'Unknown Class {class_id}', 'fr': f'Classe Inconnue {class_id}'}
+    return labels
+
+
 def fetch_items(item_set_id):
     """ Fetch all items within a given item set, handling pagination. """
     items = []
@@ -20,8 +50,9 @@ def fetch_items(item_set_id):
         page += 1
     return items
 
-def fetch_and_categorize_items():
-    """ Fetch items and categorize them by country and resource class. """
+
+def fetch_and_categorize_items(class_labels, language='en'):
+    """ Fetch items and categorize them by country and resource class label. """
     items_by_country_and_class = defaultdict(lambda: defaultdict(int))
     for item_set_id in tqdm(item_set_ids, desc="Processing item sets"):
         item_set_response = requests.get(f"{api_url}/item_sets/{item_set_id}")
@@ -31,24 +62,34 @@ def fetch_and_categorize_items():
         items = fetch_items(item_set_id)
         for item in items:
             resource_class_id = item.get('o:resource_class', {}).get('o:id')
-            if resource_class_id in resource_classes:
-                items_by_country_and_class[country][resource_class_id] += 1
+            if resource_class_id in class_labels:
+                label = class_labels[resource_class_id][language]
+                items_by_country_and_class[country][label] += 1
 
     return items_by_country_and_class
 
-def visualize_data(items_by_country_and_class):
-    """ Visualize the distribution of items by country and resource class. """
+
+def visualize_data(items_by_country_and_class, language='en'):
+    """ Visualize the distribution of items by country and resource class label. """
+    title = 'References distribution by country and type' if language == 'en' else 'Répartition des références par pays et par type'
+    filename = f'treemap_references_type_{language}.html'
+
     data = []
     for country, classes in items_by_country_and_class.items():
-        for class_id, count in classes.items():
-            data.append({'Country': country, 'Resource Class ID': str(class_id), 'Number of Items': count})
+        for label, count in classes.items():
+            data.append({'Country': country, 'Resource Class': label, 'Number of Items': count})
 
-    fig = px.treemap(data, path=['Country', 'Resource Class ID'], values='Number of Items',
-                     title='Items Distribution by Country and Resource Class')
+    fig = px.treemap(data, path=['Country', 'Resource Class'], values='Number of Items',
+                     title=title)
     fig.update_traces(textinfo="label+value+percent parent")
-    fig.write_html('treemap_distribution_by_class.html')
+    fig.write_html(filename)
     fig.show()
 
-# Run the processing and visualization functions
-items_by_country_and_class = fetch_and_categorize_items()
-visualize_data(items_by_country_and_class)
+
+# Fetch resource class labels
+class_labels = fetch_resource_class_labels()
+
+# Generate visualizations in both languages
+for lang in ['en', 'fr']:
+    items_by_country_and_class = fetch_and_categorize_items(class_labels, language=lang)
+    visualize_data(items_by_country_and_class, language=lang)
