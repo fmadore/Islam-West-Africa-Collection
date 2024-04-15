@@ -37,17 +37,19 @@ def fetch_item_set_details(item_set_ids):
     return item_set_details
 
 
-def create_bar_chart(item_set_details, language):
-    """ Create and save a bar chart for the item set details in the specified language. """
+def create_bar_chart(item_set_details, language, title, x_title, y_title, filename):
+    """ Create and save a bar chart for the item set details. """
     labels = [details['titles'].get(language, "Unknown") for id, details in item_set_details.items()]
     values = [details['count'] for details in item_set_details.values()]
 
     fig = go.Figure(data=[go.Bar(x=labels, y=values)])
-    title = "Number of items in the index by category" if language == 'en' else "Nombre d'éléments dans l'index par catégories"
-    fig.update_layout(title=title, xaxis_title="Category", yaxis_title="Number of Items")
+    fig.update_layout(
+        title=title,
+        xaxis_title=x_title,
+        yaxis_title=y_title
+    )
 
-    filename = f"index_distribution_{language}.html"
-    fig.write_html(filename)
+    fig.write_html(filename)  # Save the figure as an HTML file
     fig.show()
 
 
@@ -55,5 +57,7 @@ def create_bar_chart(item_set_details, language):
 item_set_details = fetch_item_set_details(item_set_ids)
 
 # Generate and save visualizations in both languages
-create_bar_chart(item_set_details, 'en')  # English version
-create_bar_chart(item_set_details, 'fr')  # French version
+create_bar_chart(item_set_details, 'en', 'Number of items in the index by category', 'Categories', 'Number of items',
+                 'index_distribution_en.html')
+create_bar_chart(item_set_details, 'fr', 'Nombre d\'éléments dans l\'index par catégories', 'Catégories',
+                 'Nombre d\'éléments', 'index_distribution_fr.html')
