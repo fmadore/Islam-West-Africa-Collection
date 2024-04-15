@@ -88,7 +88,11 @@ def visualize_items_over_years(items_by_year_type, language='en'):
                  labels={'Number of Items': label['number_of_items'], 'Year': label['year'], 'Type': label['type']},
                  hover_data={'Number of Items': True})
     fig.update_traces(textposition='inside')
-    fig.update_layout(barmode='stack', xaxis={'type': 'category', 'categoryorder': 'category ascending'})
+    fig.update_layout(
+        barmode='stack',
+        xaxis={'type': 'category', 'categoryorder': 'category ascending'},
+        xaxis_rangeslider_visible=True  # Enable the range slider
+    )
     fig.write_html(label['filename'])
     fig.show()
 
