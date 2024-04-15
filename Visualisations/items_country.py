@@ -55,18 +55,22 @@ def fetch_and_categorize_items():
 
     return items_by_country_and_set
 
-def visualize_spatial_distribution(items_by_country_and_set):
+def visualize_spatial_distribution(items_by_country_and_set, language='en'):
+    title = 'Distribution of Items by Country and Item Set' if language == 'en' else 'Répartition des articles par pays et collections'
+    filename = 'item_distribution_by_country_and_set_english.html' if language == 'en' else 'item_distribution_by_country_and_set_french.html'
+
     data = []
     for country, sets in items_by_country_and_set.items():
         for set_title, count in sets.items():
             data.append({'Country': country, 'Item Set Title': set_title, 'Number of Items': count})
 
     fig = px.treemap(data, path=['Country', 'Item Set Title'], values='Number of Items',
-                     title='Distribution of Items by Country and Item Set')
+                     title=title)
     fig.update_traces(textinfo="label+value+percent parent")
-    fig.write_html('item_distribution_by_country_and_set.html')
+    fig.write_html(filename)
     fig.show()
 
 # Execute the functions
 items_by_country_and_set = fetch_and_categorize_items()
-visualize_spatial_distribution(items_by_country_and_set)
+visualize_spatial_distribution(items_by_country_and_set, language='en')
+visualize_spatial_distribution(items_by_country_and_set, language='fr')
