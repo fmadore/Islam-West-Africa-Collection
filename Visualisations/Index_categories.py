@@ -44,7 +44,7 @@ def create_bar_chart(item_set_details, language):
 
     fig = go.Figure(data=[go.Bar(x=labels, y=values)])
     title = "Number of items in the index by category" if language == 'en' else "Nombre d'éléments dans l'index par catégories"
-    fig.update_layout(title=title, xaxis_title="Item Sets", yaxis_title="Number of Items")
+    fig.update_layout(title=title, xaxis_title="Category", yaxis_title="Number of Items")
 
     filename = f"index_distribution_{language}.html"
     fig.write_html(filename)
