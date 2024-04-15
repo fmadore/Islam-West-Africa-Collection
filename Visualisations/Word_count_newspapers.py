@@ -21,7 +21,7 @@ def fetch_item_set_title(item_set_id):
     return "Unknown Title"
 
 def fetch_word_counts(item_set_ids):
-    """ Fetches word counts for the given item set IDs, with progress bar. """
+    """ Fetches word counts for the given item set IDs, without accessing private content. """
     word_counts = {}
     for id in tqdm(item_set_ids, desc="Fetching titles and word counts"):
         title = fetch_item_set_title(id)
@@ -29,31 +29,39 @@ def fetch_word_counts(item_set_ids):
         more_pages_available = True
         total_words = 0
         while more_pages_available:
-            response = requests.get(f"{api_url}/items", params={'item_set_id': id, 'page': page, 'per_page': 50})
+            response = requests.get(
+                f"{api_url}/items",
+                params={'item_set_id': id, 'page': page, 'per_page': 50}
+            )
             data = response.json()
             if not data:
                 more_pages_available = False
                 continue
             for item in data:
                 for content in item.get('bibo:content', []):
-                    if content["type"] == "literal" and content["is_public"] and "@value" in content:
+                    if content["type"] == "literal" and "@value" in content:
                         word_count = len(content["@value"].split())
                         total_words += word_count
             page += 1
         word_counts[title] = total_words
     return word_counts
 
-def create_interactive_treemap(data):
-    """ Creates an interactive treemap using Plotly. """
+def create_interactive_treemap(data, language='English'):
+    """ Creates an interactive treemap using Plotly with language options. """
+    titles = {
+        'English': 'Word Count Proportion by Country and Newspaper',
+        'French': 'Proportion du nombre de mots par pays et par journal'
+    }
     fig = px.treemap(
         data,
         path=['country', 'title'],
-        values='Word count',
-        title='Word Count Proportion by Country and Newspaper'
+        values='word_count',
+        title=titles.get(language, 'Word Count Proportion by Country and Newspaper')
     )
     fig.data[0].textinfo = 'label+text+value'
     fig.update_layout(margin=dict(t=50, l=25, r=25, b=25))
-    fig.write_html('treemap.html')  # Save as HTML file for easy embedding
+    filename = f'treemap_word_count_{language.lower()}.html'
+    fig.write_html(filename)
     fig.show()
 
 # Prepare data structure for Plotly
@@ -64,4 +72,6 @@ for country, ids in item_sets.items():
     for title, count in word_counts.items():
         data.append({'country': country, 'title': title, 'word_count': count})
 
-create_interactive_treemap(data)
+# Create graphs in both English and French
+create_interactive_treemap(data, language='English')
+create_interactive_treemap(data, language='French')
