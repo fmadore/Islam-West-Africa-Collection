@@ -1,0 +1,1937 @@
+[
+{
+    "o:id": 1,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/1",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Sujets",
+        "Topics"
+    ],
+    "dcterms:description": [
+        "Décrit une ressource dont l'étiquette représente un sujet",
+        "Describes a resource whose label represents a topic"
+    ]
+},
+{
+    "o:id": 2,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Évènements",
+        "Events"
+    ],
+    "dcterms:description": [
+        "Principaux évènements de la base de données",
+        "Main events of the database"
+    ]
+},
+{
+    "o:id": 266,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/266",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Individus",
+        "People"
+    ],
+    "dcterms:description": [
+        "Principaux individus de la base de données",
+        "Main persons of the database"
+    ]
+},
+{
+    "o:id": 267,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/267",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Notices d'autorité",
+        "Authority files"
+    ]
+},
+{
+    "o:id": 268,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/268",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Emplacements",
+        "Locations"
+    ],
+    "dcterms:description": [
+        "Principaux emplacements de la base de données",
+        "Main locations of the database"
+    ]
+},
+{
+    "o:id": 854,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/854",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Associations",
+        "Organizations"
+    ],
+    "dcterms:description": [
+        "Principales associations ou groupes de la base de données",
+        "Main organizations or groups of the database"
+    ]
+},
+{
+    "o:id": 2183,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2183",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Enregistrements audio",
+        "Audio recordings"
+    ],
+    "dcterms:description": [
+        "Enregistrements audio divers",
+        "Various audio recordings"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ]
+},
+{
+    "o:id": 2184,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2184",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Collection de sermons islamiques sur vidéo",
+        "Collection of Islamic sermons on video"
+    ],
+    "dcterms:description": [
+        "Abdoulaye Sounaye a assemblé une collection de vidéos de sermons islamiques en haoussa du Nigéria dans le cadre de ses recherches au cours des vingt dernières années",
+        "Abdoulaye Sounaye has amassed a collection of videos of Islamic sermons in Hausa from Nigeria as part of his research over the past twenty years"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/1682 Aleksei Akseshin",
+        "https://iwac.frederickmadore.com/api/items/1681 Vincent Favier",
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "1999/2014"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/1284 Abdoulaye Sounaye"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8322 Anglais",
+        "https://iwac.frederickmadore.com/api/items/8323 Arabe",
+        "https://iwac.frederickmadore.com/api/items/8364 Haoussa"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/541 Nigéria"
+    ]
+},
+{
+    "o:id": 2185,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2185",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Banouto"
+    ],
+    "dcterms:description": [
+        "Métadonnées d'articles provenant du journal Banouto (2017-2023)",
+        "Metadata of articles from the newspaper Banouto (2017-2023)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2017/2023"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q119889397 Q119889397"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 2186,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2186",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Boulevard des Infos"
+    ],
+    "dcterms:description": [
+        "Métadonées d'articles provenant du journal Boulevard des Infos (2018-2023)",
+        "Metadata of articles from the newspaper Boulevard des Infos (2018-2023)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2018/2023"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q121338136 Q121338136"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 2187,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2187",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Ehuzu"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/739 Office national d'édition de presse et d'imprimerie"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal Ehuzu (1975-1990)",
+        "Newspaper articles from Ehuzu (1975-1990)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore",
+        "https://iwac.frederickmadore.com/api/items/1681 Vincent Favier"
+    ],
+    "dcterms:date": [
+        "1975/1990"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q115453877 Q115453877"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français",
+        "https://iwac.frederickmadore.com/api/items/8344 Dendi"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:isReplacedBy": [
+        "https://iwac.frederickmadore.com/api/item_sets/2189 La Nation"
+    ],
+    "dcterms:replaces": [
+        "https://iwac.frederickmadore.com/api/item_sets/2188 Daho-Express"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/item_sets/2189 La Nation"
+    ]
+},
+{
+    "o:id": 2188,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2188",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Daho-Express"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal Daho-Express (1969-1975)",
+        "Newspaper articles from Daho-Express (1969-1975)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore",
+        "https://iwac.frederickmadore.com/api/items/1681 Vincent Favier"
+    ],
+    "dcterms:date": [
+        "1969/1975"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q115453822 Q115453822"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/415 Bibliothèque du Congrès"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:isReplacedBy": [
+        "https://iwac.frederickmadore.com/api/item_sets/2187 Ehuzu"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/item_sets/2189 La Nation"
+    ]
+},
+{
+    "o:id": 2189,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2189",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "La Nation"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal La Nation (1990-2022)",
+        "Newspaper articles from La Nation (1990-2022)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore",
+        "https://iwac.frederickmadore.com/api/items/1681 Vincent Favier"
+    ],
+    "dcterms:date": [
+        "1990/2022"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q18344583 Q18344583"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:replaces": [
+        "https://iwac.frederickmadore.com/api/item_sets/2187 Ehuzu"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/item_sets/2189 La Nation"
+    ]
+},
+{
+    "o:id": 2190,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2190",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "L’Evénement Précis"
+    ],
+    "dcterms:description": [
+        "Métadonées d'articles provenant du journal L'Evénement Précis (2011-2023)",
+        "Metadata of articles from the newspaper L'Evénement Précis (2011-2023)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2011/2023"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q107020918 Q107020918"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 2191,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2191",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Fraternité"
+    ],
+    "dcterms:description": [
+        "Métadonées d'articles provenant du journal Fraternité (2003-2023)",
+        "Metadata of articles from the newspaper Fraternité (2003-2023)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2003/2023"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q118128339 Q118128339"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/item_sets/2191 Fraternité"
+    ]
+},
+{
+    "o:id": 2192,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2192",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Photographies (Bénin)",
+        "Photographs (Benin)"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:description": [
+        "Photographies sur l'islam et les musulmans au Bénin",
+        "Photographs related to Islam and Muslims in Benin"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 2193,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2193",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Références (Bénin)",
+        "References (Benin)"
+    ],
+    "dcterms:description": [
+        "Livres, chapitres de livre, comptes rendus de livres, articles de revue, thèses, mémoires et rapports sur l'islam au Bénin",
+        "Books, book chapters, book reviews, journal articles, theses, dissertations, and reports on Islam in Benin"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8282 Allemand",
+        "https://iwac.frederickmadore.com/api/items/8322 Anglais",
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 2194,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2194",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "YouTube (Bénin)",
+        "YouTube (Benin)"
+    ],
+    "dcterms:description": [
+        "Vidéos YouTube en lien avec l'islam et les musulmans au Bénin",
+        "YouTube videos about Islam and Muslims in Benin"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 2195,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2195",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "ASSALAM"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/587 Association Culturelle des Étudiants et Élèves Musulmans du Bénin"
+    ],
+    "dcterms:description": [
+        "Journal de l'Association Culturelle des Étudiants et Élèves Musulmans du Bénin (2002-2019)",
+        "Newspaper of the Association Culturelle des Étudiants et Élèves Musulmans du Bénin (2002-2019)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2002-02/2019-05"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q119573392 Q119573392"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/587 Association Culturelle des Étudiants et Élèves Musulmans du Bénin"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/items/587 Association Culturelle des Étudiants et Élèves Musulmans du Bénin"
+    ]
+},
+{
+    "o:id": 2196,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2196",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "An-Nasr Trimestriel"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/569 Association des Élèves et Étudiants Musulmans au Burkina",
+        "https://iwac.frederickmadore.com/api/items/661 COPRESS-AEEMB"
+    ],
+    "dcterms:description": [
+        "\"Bulletin trimestriel d'information et de formation de l'AEEMB\" publié depuis la fin des années 1990",
+        "\"AEEMB's quarterly information and training newsletter\" published since the late 1990s"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2000/2017"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q114033809 Q114033809"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/569 Association des Élèves et Étudiants Musulmans au Burkina"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/items/571 Cercle d'Études, de Recherches et de Formation Islamiques"
+    ]
+},
+{
+    "o:id": 2197,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2197",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Al Mawadda"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/585 Association Islamique d'Al Mawadda Burkina Faso"
+    ],
+    "dcterms:description": [
+        "\"Bimestriel d'information et de formation islamique\" publié par l'Association Islamique d'al Mawadda du Burkina (A.I.M.B.), une organisation chiite francophone",
+        "\"Bimestriel d'information et de formation islamique\" published by the Association Islamique d'al Mawadda du Burkina (A.I.M.B.), a Francophone Shia organization"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2001/2010"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q114030636 Q114030636"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/859 Louis Audet Gosselin"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2198,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2198",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "An-Nasr Vendredi"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/569 Association des Élèves et Étudiants Musulmans au Burkina",
+        "https://iwac.frederickmadore.com/api/items/661 COPRESS-AEEMB"
+    ],
+    "dcterms:description": [
+        "Bulletin hebdomadaire publié par l'AEEMB depuis 2004",
+        "Weekly bulletin published by the AEEMB since 2004"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2004/2020"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q114033925 Q114033925"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/569 Association des Élèves et Étudiants Musulmans au Burkina"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/items/569 Association des Élèves et Étudiants Musulmans au Burkina"
+    ]
+},
+{
+    "o:id": 2199,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2199",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Burkina 24"
+    ],
+    "dcterms:description": [
+        "Métadonées d'articles provenant du journal en ligne Burkina 24 (2011-2021)",
+        "Metadata of articles from the online newspaper Burkina 24 (2011-2021)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2011/2021"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2928499 Q2928499"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2200,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2200",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Carrefour africain"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal Carrefour africain (1962-1987)",
+        "Newspaper articles from Carrefour africain (1962-1987)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "1962/1987"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q27718764 Q27718764"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/416 Institut de Recherche pour le Développement",
+        "https://iwac.frederickmadore.com/api/items/415 Bibliothèque du Congrès"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/item_sets/2201 Sidwaya"
+    ]
+},
+{
+    "o:id": 2201,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2201",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Sidwaya"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal Sidwaya (1984-2021)",
+        "Newspaper articles from Sidwaya (1984-2021)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "1984/2021"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q2282052 Q2282052"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/416 Institut de Recherche pour le Développement"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2202,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2202",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "L’Appel"
+    ],
+    "dcterms:description": [
+        "\"Bimestriel Islamique de Formation et d'Information Générales\". Cette publication est l'œuvre de militants et d'anciens militants de l'AEEMB et du CERFI, qui ont voulu aborder l'actualité religieuse, mais aussi politique nationale et internationale d'un point de vue d'intellectuels musulmans francophones dans un cadre qui se veut plus libre que celui offert par les publications associatives",
+        "\"Islamic Bimonthly of Training and General Information\". This publication is the work of current and former activists of the AEEMB and the CERFI, who wanted to discuss religious news, but also national and international politics from the point of view of French-speaking Muslim intellectuals in a framework that is more open than the one offered by publications by Islamic associations"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "1994/2000"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q114033874 Q114033874"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/571 Cercle d'Études, de Recherches et de Formation Islamiques"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/items/571 Cercle d'Études, de Recherches et de Formation Islamiques"
+    ]
+},
+{
+    "o:id": 2203,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2203",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "L’Autre Regard"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/738 Rachid-production"
+    ],
+    "dcterms:description": [
+        "Mensuel d'informations islamiques et générales. Anciennement \"Le vrai visage de l'islam\"",
+        "Monthly Islamic and general news magazine. Formerly \"Le vrai visage de l'islam\""
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2015-05/2017-09"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113584826 Q113584826"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:replaces": [
+        "https://iwac.frederickmadore.com/api/item_sets/2204 Le vrai visage de l’islam"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2204,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2204",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Le vrai visage de l’islam"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/738 Rachid-production"
+    ],
+    "dcterms:description": [
+        "Mensuel islamique d'information. Le journal a changé de nom pour L'Autre Regard à partir de 2015",
+        "Islamic monthly news magazine. The newspaper changed its name to L'Autre Regard in 2015"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2012-09/2014-12"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113584804 Q113584804"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:isReplacedBy": [
+        "https://iwac.frederickmadore.com/api/item_sets/2203 L’Autre Regard"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2205,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2205",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "La Preuve"
+    ],
+    "dcterms:description": [
+        "\"Mensuel islamique d'informations générales\" publié par des membres actifs et anciens de l'AEEMB et du CERFI",
+        "\"Mensuel islamique d'informations générales\" published by active and former AEEMB and CERFI activists"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/859 Louis Audet Gosselin"
+    ],
+    "dcterms:date": [
+        "2007/2011"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113864200 Q113864200"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2206,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2206",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Le CERFIste"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/571 Cercle d'Études, de Recherches et de Formation Islamiques"
+    ],
+    "dcterms:description": [
+        "\"Bimestriel d'information et de formation du Cercle d'Études, de Recherches et de Formation Islamiques\" lancé en 2006",
+        "\"Bimonthly information and training of the Cercle d'Études, de Recherches et de Formation Islamiques\" launched in 2006"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2006/2010"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113813222 Q113813222"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/571 Cercle d'Études, de Recherches et de Formation Islamiques"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/items/571 Cercle d'Études, de Recherches et de Formation Islamiques"
+    ]
+},
+{
+    "o:id": 2207,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2207",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Le Pays"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal Le Pays (1992-2021)",
+        "Newspaper articles from Le Pays (1992-2021)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "1992/2021"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1810032 Q1810032"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/416 Institut de Recherche pour le Développement"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2209,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2209",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "LeFaso.net"
+    ],
+    "dcterms:description": [
+        "Métadonnées d'articles provenant du journal en ligne LeFaso.net (2004-2021)",
+        "Metadata of articles from the online newspaper LeFaso.net (2004-2021)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2004/2021"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q21129743 Q21129743"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2210,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2210",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Mutations"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal Mutations (2011-2014)",
+        "Newspaper articles from Mutations (2011-2014)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2011/2014"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q117854439 Q117854439"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2211,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2211",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Photographies (Burkina Faso)",
+        "Photographs (Burkina Faso)"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:description": [
+        "Photographies sur l'islam et les musulmans au Burkina Faso",
+        "Photographs related to Islam and Muslims in Burkina Faso"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2212,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2212",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Références (Burkina Faso)",
+        "References (Burkina Faso)"
+    ],
+    "dcterms:description": [
+        "Livres, chapitres de livre, comptes rendus de livres, articles de revue, thèses, mémoires et rapports sur l'islam au Burkina Faso",
+        "Books, book chapters, book reviews, journal articles, theses, dissertations, and reports on Islam in Burkina Faso"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8282 Allemand",
+        "https://iwac.frederickmadore.com/api/items/8322 Anglais",
+        "https://iwac.frederickmadore.com/api/items/8355 Français",
+        "https://iwac.frederickmadore.com/api/items/8373 Italien",
+        "https://iwac.frederickmadore.com/api/items/8393 Slovène"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2213,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2213",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "San Finna"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal San Finna (2001-2010)",
+        "Newspaper articles from San Finna (2001-2010)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2001/2010"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q117851281 Q117851281"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 2214,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2214",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "L’Observateur Paalga"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal L'Observateur Paalga (1991-2021)",
+        "Newspaper articles from L'Observateur Paalga (1991-2021)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "1991/2021"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q1880658 Q1880658"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:replaces": [
+        "https://iwac.frederickmadore.com/api/item_sets/2215 L’Observateur"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/item_sets/2214 L’Observateur Paalga"
+    ]
+},
+{
+    "o:id": 2215,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2215",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "L’Observateur"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal L'Observateur (1979-1984)",
+        "Newspaper articles from L'Observateur (1979-1984)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "1979/1984"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q113799970 Q113799970"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/416 Institut de Recherche pour le Développement"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:isReplacedBy": [
+        "https://iwac.frederickmadore.com/api/item_sets/2214 L’Observateur Paalga"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/item_sets/2214 L’Observateur Paalga"
+    ]
+},
+{
+    "o:id": 2216,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2216",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Photographies (Côte d’Ivoire)",
+        "Photographs (Côte d’Ivoire)"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:description": [
+        "Photographies sur l'islam et les musulmans en Côte d'Ivoire",
+        "Photographs related to Islam and Muslims in Côte d'Ivoire"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/298 Côte d'Ivoire"
+    ]
+},
+{
+    "o:id": 2217,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2217",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Références (Côte d’Ivoire)",
+        "References (Côte d’Ivoire)"
+    ],
+    "dcterms:description": [
+        "Livres, chapitres de livre, articles de revue, thèses et mémoires sur l'islam en Côte d'Ivoire",
+        "Books, book chapters, journal articles, theses and dissertations on Islam in Côte d'Ivoire"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8322 Anglais",
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/298 Côte d'Ivoire"
+    ]
+},
+{
+    "o:id": 2218,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2218",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Al Maoulid Magazine"
+    ],
+    "dcterms:description": [
+        "\"Périodique islamique d'information et de réflexion paraissant à l'occasion des fêtes du Maoulid à Kiota\"",
+        "\"Islamic magazine for information and reflection, published on the occasion of the Maoulid celebrations in Kiota\""
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2006-04-10/2010-02-26"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q122839781 Q122839781"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/1284 Abdoulaye Sounaye"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/540 Niger"
+    ]
+},
+{
+    "o:id": 2219,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2219",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Al Maoulid Magazine (arabe)"
+    ],
+    "dcterms:description": [
+        "Version arabe du \"Périodique islamique d'information et de réflexion paraissant à l'occasion des fêtes du Maoulid à Kiota\"",
+        "Arabic version of the \"Islamic periodical for information and reflection published on the occasion of the Maoulid celebrations in Kiota\""
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2008/2010"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/1284 Abdoulaye Sounaye"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8323 Arabe"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/540 Niger"
+    ]
+},
+{
+    "o:id": 2220,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2220",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Photographies (Niger)",
+        "Photographs (Niger)"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:description": [
+        "Photographies (Niger)",
+        "Photographs (Niger)"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/540 Niger"
+    ]
+},
+{
+    "o:id": 2222,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2222",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Références (Niger)",
+        "References (Niger)"
+    ],
+    "dcterms:description": [
+        "Livres, chapitres de livre, comptes rendus de livres, articles de revue, thèses, mémoires et rapports sur l'islam au Niger",
+        "Books, book chapters, book reviews, journal articles, theses, dissertations, and reports on Islam in Niger"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore",
+        "https://iwac.frederickmadore.com/api/items/1681 Vincent Favier"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8282 Allemand",
+        "https://iwac.frederickmadore.com/api/items/8322 Anglais",
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/540 Niger"
+    ]
+},
+{
+    "o:id": 2223,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2223",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Al Maoulid Info"
+    ],
+    "dcterms:description": [
+        "\"Bimensuel islamique satirique d'information et de réflexion\"",
+        "\"Satirical Islamic bimonthly for information and reflection\""
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2007-06-19/2008-12"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q122839759 Q122839759"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/1284 Abdoulaye Sounaye"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/540 Niger"
+    ]
+},
+{
+    "o:id": 2225,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2225",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Références (Nigéria)",
+        "References (Nigeria)"
+    ],
+    "dcterms:description": [
+        "Livres, chapitres de livre, comptes rendus de livres, articles de revue, thèses, mémoires et rapports sur l'islam au Nigeria",
+        "Books, book chapters, book reviews, journal articles, theses, dissertations, and reports on Islam in Nigeria"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore",
+        "https://iwac.frederickmadore.com/api/items/1681 Vincent Favier"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8322 Anglais",
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/541 Nigéria"
+    ]
+},
+{
+    "o:id": 2226,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2226",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Le Pacific"
+    ],
+    "dcterms:description": [
+        "Trimestriel d'informations et de sensibilisation",
+        "Quarterly information and awareness magazine"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2015/2018"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q116745414 Q116745414"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/1683 Moitapari Kouko"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/544 Togo"
+    ],
+    "dcterms:rightsHolder": [
+        "https://iwac.frederickmadore.com/api/items/1683 Moitapari Kouko"
+    ]
+},
+{
+    "o:id": 2227,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2227",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Photographies (Togo)",
+        "Photographs (Togo)"
+    ],
+    "dcterms:creator": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:description": [
+        "Photographies sur l'islam et les musulmans au Togo",
+        "Photographs related to Islam and Muslims in Togo"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/544 Togo"
+    ]
+},
+{
+    "o:id": 2228,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/2228",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Références (Togo)",
+        "References (Togo)"
+    ],
+    "dcterms:description": [
+        "Livres, chapitres de livre, articles de revue, thèses et mémoires sur l'islam au Togo",
+        "Books, book chapters, journal articles, theses and dissertations on Islam in Togo"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8282 Allemand",
+        "https://iwac.frederickmadore.com/api/items/8322 Anglais",
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/544 Togo"
+    ]
+},
+{
+    "o:id": 4922,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/4922",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "La Nouvelle Tribune"
+    ],
+    "dcterms:description": [
+        "Métadonnées d'articles provenant du journal La Nouvelle Tribune (2011-2023)",
+        "Metadata of articles from the newspaper La Nouvelle Tribune (2011-2023)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2011/2023"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3211145 Q3211145"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 5500,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/5500",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Matin Libre"
+    ],
+    "dcterms:description": [
+        "Métadonnées d'articles provenant du journal Matin Libre (2015-2023)",
+        "Metadata of articles from the newspaper Matin Libre (2015-2023)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2015/2023"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q107020904 Q107020904"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 5501,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/5501",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Le Matinal"
+    ],
+    "dcterms:description": [
+        "Métadonnées d'articles provenant du journal Le Matinal (2013-2021)",
+        "Metadata of articles from the newspaper Le Matinal (2013-2021)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2013/2021"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q79644823 Q79644823"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 5502,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/5502",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Bénin Intelligent"
+    ],
+    "dcterms:description": [
+        "Métadonnées d'articles provenant du journal Bénin Intelligent (2019-2023)",
+        "Metadata of articles from the newspaper Bénin Intelligent (2019-2023)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2019/2023"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q124466726 Q124466726"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 5503,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/5503",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "L'Evénement"
+    ],
+    "dcterms:description": [
+        "Métadonnées d'articles provenant du journal L'Evénement (2002-2018)",
+        "Metadata of articles from the newspaper L'Evénement (2002-2018)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2002/2018"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q116877541 Q116877541"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/416 Institut de Recherche pour le Développement"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 9458,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/9458",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Courrier du Golfe"
+    ],
+    "dcterms:description": [
+        "Articles provenant du journal Courrier du Golfe (1991-1992)",
+        "Newspaper articles from Courrier du Golfe (1991-1992)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "1991/1992"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q124048781 Q124048781"
+    ],
+    "dcterms:source": [
+        "https://iwac.frederickmadore.com/api/items/458 Bibliothèque nationale du Togo"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/544 Togo"
+    ]
+},
+{
+    "o:id": 10223,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/10223",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Islam Hebdo"
+    ],
+    "dcterms:description": [
+        "Métadonnées du journal islamique Islam Hebdo (2020-2023)",
+        "Metadata from the Islamic newspaper Islam Hebdo (2020-2023)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2020/2023"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q119886991 Q119886991"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin"
+    ]
+},
+{
+    "o:id": 10305,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/10305",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "Documents divers",
+        "Miscellaneous documents"
+    ],
+    "dcterms:description": [
+        "Documents d'archive divers",
+        "Various archival documents"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore",
+        "https://iwac.frederickmadore.com/api/items/859 Louis Audet Gosselin"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright - Educational Use Permitted"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/283 Bénin",
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+},
+{
+    "o:id": 23273,
+    "url": "https://iwac.frederickmadore.com/s/afrique_ouest/item-set/23273",
+    "o:resource_template": "Item set",
+    "o:resource_class": "dctype:Collection",
+    "o:owner": "frederick_madore@outlook.com",
+    "o:is_public": "true",
+    "o:is_open": "false",
+    "dcterms:title": [
+        "FasoZine"
+    ],
+    "dcterms:description": [
+        "Métadonnées d'articles provenant du magazine FasoZine (2009-2021)",
+        "Metadata of articles from FasoZine magazine (2009-2021)"
+    ],
+    "dcterms:contributor": [
+        "https://iwac.frederickmadore.com/api/items/858 Frédérick Madore"
+    ],
+    "dcterms:date": [
+        "2009/2021"
+    ],
+    "dcterms:identifier": [
+        "https://www.wikidata.org/wiki/Q3067072 Q3067072"
+    ],
+    "dcterms:language": [
+        "https://iwac.frederickmadore.com/api/items/8355 Français"
+    ],
+    "dcterms:rights": [
+        "In Copyright"
+    ],
+    "dcterms:spatial": [
+        "https://iwac.frederickmadore.com/api/items/546 Burkina Faso"
+    ]
+}
+]
