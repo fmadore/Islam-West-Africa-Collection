@@ -5,6 +5,10 @@ from gensim import corpora, models
 import pyLDAvis.gensim_models as gensimvis
 import pyLDAvis
 from tqdm import tqdm
+from nltk.corpus import stopwords
+
+# Load French stop words
+french_stopwords = set(stopwords.words('french'))
 
 # Initialize Stanza French model
 nlp = stanza.Pipeline(lang='fr', processors='tokenize,mwt,pos,lemma')
@@ -40,14 +44,15 @@ def preprocess_texts(texts):
         text = text.replace('\n', ' ')
 
         # Additional cleaning steps
-        text = re.sub(r"’", "'", text)  # Convert curved apostrophes to straight ones
-        text = re.sub(r"\s+", " ", text)  # Remove multiple spaces
-        text = re.sub(r"œ", "oe", text)  # Normalize "oe"
-        text = text.strip()  # Strip spaces at the beginning and end
+        text = re.sub(r"’", "'", text)
+        text = re.sub(r"\s+", " ", text)
+        text = re.sub(r"œ", "oe", text)
+        text = text.strip()
 
         # Process the cleaned text with Stanza
         doc = nlp(text)
-        tokens = [word.lemma for sent in doc.sentences for word in sent.words if not word.upos in ['PUNCT', 'SYM', 'X']]
+        tokens = [word.lemma for sent in doc.sentences for word in sent.words
+                  if not word.upos in ['PUNCT', 'SYM', 'X'] and word.text.lower() not in french_stopwords]
         processed_text = ' '.join(tokens)
         processed_texts.append(processed_text)
     return processed_texts
