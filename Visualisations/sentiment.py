@@ -9,7 +9,6 @@ from nltk.corpus import stopwords
 from tqdm import tqdm
 from plotly.offline import plot
 import plotly.express as px
-import plotly.graph_objects as go
 
 # Download necessary resources
 nltk.download('stopwords')
@@ -42,15 +41,18 @@ def fetch_items_from_set(item_set_ids):
             page += 1
     return items
 
-def extract_texts(items):
+def extract_texts_and_titles(items):
     texts = []
+    titles = []
     for item in tqdm(items, desc="Extracting texts"):
+        title = next((content.get('@value', '') for content in item.get('dcterms:title', []) if content.get('is_public', True)), '')
+        titles.append(title)
         if "bibo:content" in item:
             content_blocks = item["bibo:content"]
             for content in content_blocks:
                 if content.get('property_label') == 'content' and content.get('is_public', True):
                     texts.append(content.get('@value', ''))
-    return texts
+    return texts, titles
 
 def preprocess_texts(texts):
     processed_texts = []
@@ -78,20 +80,22 @@ def analyze_sentiments(texts):
         sentiments.append((polarity, subjectivity))
     return sentiments
 
-def create_sentiment_visualization(sentiments, file_name):
+def create_sentiment_visualization(sentiments, titles, file_name):
     df = pd.DataFrame(sentiments, columns=['Polarity', 'Subjectivity'])
-    fig = px.scatter(df, x='Polarity', y='Subjectivity', title="Sentiment Analysis: Polarity vs Subjectivity")
+    df['Title'] = titles
+    fig = px.scatter(df, x='Polarity', y='Subjectivity', title="Sentiment Analysis: Polarity vs Subjectivity",
+                     hover_data=['Title'])
     plot(fig, filename=file_name)
 
 def main():
-    benin_item_sets = [2188]
-    burkina_faso_item_sets = [2200]
+    benin_item_sets = [2187, 2188, 2189]
+    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201]
 
     benin_items = fetch_items_from_set(benin_item_sets)
     burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
 
-    benin_texts = extract_texts(benin_items)
-    burkina_faso_texts = extract_texts(burkina_faso_items)
+    benin_texts, benin_titles = extract_texts_and_titles(benin_items)
+    burkina_faso_texts, burkina_faso_titles = extract_texts_and_titles(burkina_faso_items)
 
     benin_processed = preprocess_texts(benin_texts)
     burkina_faso_processed = preprocess_texts(burkina_faso_texts)
@@ -99,8 +103,8 @@ def main():
     benin_sentiments = analyze_sentiments(benin_processed)
     burkina_faso_sentiments = analyze_sentiments(burkina_faso_processed)
 
-    create_sentiment_visualization(benin_sentiments, 'sentiment_visualization_benin.html')
-    create_sentiment_visualization(burkina_faso_sentiments, 'sentiment_visualization_burkina_faso.html')
+    create_sentiment_visualization(benin_sentiments, benin_titles, 'sentiment_visualization_benin.html')
+    create_sentiment_visualization(burkina_faso_sentiments, burkina_faso_titles, 'sentiment_visualization_burkina_faso.html')
 
 if __name__ == "__main__":
     main()
