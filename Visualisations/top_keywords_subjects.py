@@ -76,7 +76,7 @@ def create_interactive_keyword_graph(df, country, output_filename):
 api_url = "https://iwac.frederickmadore.com/api"
 country_item_sets = {
     "Bénin": ["2187", "2188", "2189"],
-    "Burkina Faso": ["2189"]
+    "Burkina Faso": ["2200", "2215", "2214", "2207", "2201"]
 }
 
 # Process and create graphs for each country
