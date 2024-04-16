@@ -45,13 +45,16 @@ def extract_texts_and_titles(items):
     texts = []
     titles = []
     for item in tqdm(items, desc="Extracting texts"):
-        title = next((content.get('@value', '') for content in item.get('dcterms:title', []) if content.get('is_public', True)), '')
-        titles.append(title)
-        if "bibo:content" in item:
-            content_blocks = item["bibo:content"]
-            for content in content_blocks:
-                if content.get('property_label') == 'content' and content.get('is_public', True):
-                    texts.append(content.get('@value', ''))
+        title_content = next((content.get('@value', '') for content in item.get('dcterms:title', []) if content.get('is_public', True)), None)
+        if title_content:  # Ensure there is a title before adding the text
+            if "bibo:content" in item:
+                content_blocks = item["bibo:content"]
+                for content in content_blocks:
+                    if content.get('property_label') == 'content' and content.get('is_public', True):
+                        text_content = content.get('@value', '')
+                        if text_content:  # Ensure there is text content
+                            texts.append(text_content)
+                            titles.append(title_content)  # Only add title if there's a corresponding text
     return texts, titles
 
 def preprocess_texts(texts):
@@ -88,8 +91,8 @@ def create_sentiment_visualization(sentiments, titles, file_name):
     plot(fig, filename=file_name)
 
 def main():
-    benin_item_sets = [2187, 2188, 2189]
-    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201]
+    benin_item_sets = [2188]
+    burkina_faso_item_sets = [2200]
 
     benin_items = fetch_items_from_set(benin_item_sets)
     burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
@@ -97,8 +100,17 @@ def main():
     benin_texts, benin_titles = extract_texts_and_titles(benin_items)
     burkina_faso_texts, burkina_faso_titles = extract_texts_and_titles(burkina_faso_items)
 
+    print(f'Extracted {len(benin_texts)} Benin texts and {len(benin_titles)} titles')
+    print(f'Extracted {len(burkina_faso_texts)} Burkina Faso texts and {len(burkina_faso_titles)} titles')
+
     benin_processed = preprocess_texts(benin_texts)
     burkina_faso_processed = preprocess_texts(burkina_faso_texts)
+
+    print(f'Processed {len(benin_processed)} Benin texts')
+    print(f'Processed {len(burkina_faso_processed)} Burkina Faso texts')
+
+    if len(benin_processed) != len(benin_titles) or len(burkina_faso_processed) != len(burkina_faso_titles):
+        raise ValueError("Mismatch in the number of processed texts and titles")
 
     benin_sentiments = analyze_sentiments(benin_processed)
     burkina_faso_sentiments = analyze_sentiments(burkina_faso_processed)
