@@ -9,6 +9,7 @@ from nltk.corpus import stopwords
 from tqdm import tqdm
 from plotly.offline import plot
 import plotly.express as px
+import plotly.graph_objects as go
 
 # Download necessary resources
 nltk.download('stopwords')
@@ -72,13 +73,14 @@ def analyze_sentiments(texts):
     sentiments = []
     for text in tqdm(texts, desc="Analyzing sentiments"):
         blob = TextBlob(text, pos_tagger=PatternTagger(), analyzer=PatternAnalyzer())
-        sentiment = blob.sentiment[0]  # polarity
-        sentiments.append(sentiment)
+        polarity = blob.sentiment[0]
+        subjectivity = blob.sentiment[1]
+        sentiments.append((polarity, subjectivity))
     return sentiments
 
 def create_sentiment_visualization(sentiments, file_name):
-    df = pd.DataFrame(sentiments, columns=['Sentiment'])
-    fig = px.histogram(df, x='Sentiment', title="Sentiment Distribution")
+    df = pd.DataFrame(sentiments, columns=['Polarity', 'Subjectivity'])
+    fig = px.scatter(df, x='Polarity', y='Subjectivity', title="Sentiment Analysis: Polarity vs Subjectivity")
     plot(fig, filename=file_name)
 
 def main():
