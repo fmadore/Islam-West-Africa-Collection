@@ -1,19 +1,30 @@
+import nltk
 import requests
 import re
 import stanza
 from gensim import corpora, models
 import pyLDAvis.gensim_models as gensimvis
 import pyLDAvis
-from tqdm import tqdm
 from nltk.corpus import stopwords
+from tqdm import tqdm
+
+# Download necessary NLTK resources
+nltk.download('stopwords')
 
 # Load French stop words
 french_stopwords = set(stopwords.words('french'))
-additional_stopwords = {'le', 'de', 'ce'}  # Add any other words to remove
+additional_stopwords = {'El'}  # Add any other words to remove
 french_stopwords.update(additional_stopwords)
+french_stopwords = set(word.lower() for word in french_stopwords)  # Ensure all stopwords are lowercase
 
 # Initialize Stanza French model
 nlp = stanza.Pipeline(lang='fr', processors='tokenize,mwt,pos,lemma')
+
+# Compile regular expressions
+newline_re = re.compile(r'\n')
+apostrophe_re = re.compile(r"’")
+whitespace_re = re.compile(r"\s+")
+oe_re = re.compile(r"œ")
 
 def fetch_items_from_set(item_set_ids):
     base_url = "https://iwac.frederickmadore.com/api/items"
@@ -42,16 +53,16 @@ def extract_texts(items):
 def preprocess_texts(texts):
     processed_texts = []
     for text in tqdm(texts, desc="Preprocessing texts"):
-        text = text.replace('\n', ' ')
-        text = re.sub(r"’", "'", text)
-        text = re.sub(r"\s+", " ", text)
-        text = re.sub(r"œ", "oe", text)
-        text = text.strip()
+        text = newline_re.sub(' ', text)
+        text = apostrophe_re.sub("'", text)
+        text = whitespace_re.sub(" ", text)
+        text = oe_re.sub("oe", text)
+        text = text.strip().lower()  # Convert to lower case before processing
 
         # Process the cleaned text with Stanza
         doc = nlp(text)
-        tokens = [word.lemma for sent in doc.sentences for word in sent.words
-                  if not word.upos in ['PUNCT', 'SYM', 'X'] and word.text.lower() not in french_stopwords]
+        tokens = [word.lemma.lower() for sent in doc.sentences for word in sent.words
+                  if word.upos not in ['PUNCT', 'SYM', 'X'] and word.lemma.lower() not in french_stopwords]
         processed_text = ' '.join(tokens)
         processed_texts.append(processed_text)
     return processed_texts
