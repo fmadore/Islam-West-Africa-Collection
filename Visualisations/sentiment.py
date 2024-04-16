@@ -91,8 +91,8 @@ def create_sentiment_visualization(sentiments, titles, file_name):
     plot(fig, filename=file_name)
 
 def main():
-    benin_item_sets = [2188]
-    burkina_faso_item_sets = [2200]
+    benin_item_sets = [2187, 2188, 2189]
+    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201]
 
     benin_items = fetch_items_from_set(benin_item_sets)
     burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
