@@ -13,7 +13,7 @@ nltk.download('stopwords')
 
 # Load French stop words
 french_stopwords = set(stopwords.words('french'))
-additional_stopwords = {'El', '000'}  # Add any other words to remove
+additional_stopwords = {'El', '000', '%'}  # Add any other words to remove
 french_stopwords.update(additional_stopwords)
 french_stopwords = set(word.lower() for word in french_stopwords)  # Ensure all stopwords are lowercase
 
