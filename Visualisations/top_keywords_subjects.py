@@ -3,29 +3,36 @@ import pandas as pd
 import plotly.graph_objs as go
 from tqdm.auto import tqdm
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Function to fetch data from the API
-def fetch_and_process_data(api_url, item_set_ids):
+
+# Function to fetch data from a single item set
+def fetch_data(api_url, item_set_id):
+    page = 1
+    items = []
+    while True:
+        response = requests.get(f"{api_url}/items", params={"item_set_id": item_set_id, "page": page})
+        data = response.json()
+        if data:
+            items.extend(data)
+            page += 1
+        else:
+            break
+    return items
+
+
+# Function to fetch and process data for all item sets in a country
+def fetch_and_process_data(api_url, item_sets):
     all_items = []
-    tqdm.write("Starting to fetch data from the API...")
-    for item_set_id in item_set_ids:
-        page = 1
-        with tqdm(desc=f"Fetching item set {item_set_id}") as pbar:
-            while True:
-                response = requests.get(f"{api_url}/items", params={"item_set_id": item_set_id, "page": page})
-                data = response.json()
-                if data:
-                    all_items.extend(data)
-                    pbar.update(1)
-                    page += 1
-                else:
-                    break
-            pbar.close()
-    tqdm.write(f"Finished fetching data for all item sets.")
+    # Use ThreadPoolExecutor to parallelize requests
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        future_to_id = {executor.submit(fetch_data, api_url, id): id for id in item_sets}
+        for future in as_completed(future_to_id):
+            all_items.extend(future.result())
 
     # Process items to extract subjects and date
     processed_data = []
-    for item in tqdm(all_items, desc="Processing items"):
+    for item in all_items:
         subjects = [sub['display_title'] for sub in item.get('dcterms:subject', []) if sub.get('display_title')]
         date = item.get('dcterms:date', [{}])[0].get('@value')
         for subject in subjects:
@@ -36,22 +43,17 @@ def fetch_and_process_data(api_url, item_set_ids):
 
     return pd.DataFrame(processed_data)
 
-# Function to create an interactive keyword graph
-def create_interactive_keyword_graph(df, output_filename):
-    # Find the 10 most prominent keywords across all years
+
+# Function to create an interactive keyword graph for each country
+def create_interactive_keyword_graph(df, country, output_filename):
     top_keywords = Counter(df['Subject']).most_common(10)
     top_keywords = [keyword for keyword, count in top_keywords]
 
-    # Filter dataframe to only include top keywords
     df_top_keywords = df[df['Subject'].isin(top_keywords)]
+    df_grouped = df_top_keywords.groupby([df_top_keywords['Date'].dt.year, 'Subject']).size().reset_index(
+        name='Frequency')
 
-    # Group by year and subject to get counts
-    df_grouped = df_top_keywords.groupby([df_top_keywords['Date'].dt.year, 'Subject']).size().reset_index(name='Frequency')
-
-    # Create the base figure
     fig = go.Figure()
-
-    # Add traces for each keyword
     for keyword in top_keywords:
         df_keyword = df_grouped[df_grouped['Subject'] == keyword]
         fig.add_trace(go.Scatter(
@@ -61,39 +63,24 @@ def create_interactive_keyword_graph(df, output_filename):
             name=keyword
         ))
 
-    # Update the layout to add a year slider
     fig.update_layout(
-        title="Annual Frequency of Top 10 Keywords",
-        xaxis=dict(
-            title="Year",
-            rangeselector=dict(
-                buttons=list([
-                    dict(count=1, label="1yr", step="year", stepmode="backward"),
-                    dict(count=3, label="3yrs", step="year", stepmode="backward"),
-                    dict(count=5, label="5yrs", step="year", stepmode="backward"),
-                    dict(step="all")
-                ])
-            ),
-            rangeslider=dict(visible=True),
-            type="date"
-        ),
+        title=f"Annual Frequency of Top 10 Keywords in {country}",
+        xaxis=dict(title="Year", rangeslider=dict(visible=True), type="date"),
         yaxis=dict(title="Frequency")
     )
 
-    # Write the plot to an HTML file
-    fig.write_html(output_filename, full_html=True, include_plotlyjs='cdn')
+    fig.write_html(f"{output_filename}_{country}.html", full_html=True, include_plotlyjs='cdn')
 
-# Set the API URL and item set IDs
+
+# Example usage
 api_url = "https://iwac.frederickmadore.com/api"
-item_sets = ["2187", "2207"]
+country_item_sets = {
+    "Bénin": ["2187", "2188", "2189"],
+    "Burkina Faso": ["2189"]
+}
 
-# Fetch and process the data
-df = fetch_and_process_data(api_url, item_sets)
-
-# Define the output filename for the HTML
-output_html = "top_keywords_graph.html"
-
-# Create the interactive graph
-create_interactive_keyword_graph(df, output_html)
-
-tqdm.write("Interactive graph has been created.")
+# Process and create graphs for each country
+for country, item_sets in country_item_sets.items():
+    df = fetch_and_process_data(api_url, item_sets)
+    create_interactive_keyword_graph(df, country, "top_keywords_graph")
+    tqdm.write(f"Interactive graph has been created for {country}.")
