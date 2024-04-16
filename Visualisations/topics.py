@@ -9,6 +9,8 @@ from nltk.corpus import stopwords
 
 # Load French stop words
 french_stopwords = set(stopwords.words('french'))
+additional_stopwords = {'le', 'de', 'ce'}  # Add any other words to remove
+french_stopwords.update(additional_stopwords)
 
 # Initialize Stanza French model
 nlp = stanza.Pipeline(lang='fr', processors='tokenize,mwt,pos,lemma')
@@ -40,10 +42,7 @@ def extract_texts(items):
 def preprocess_texts(texts):
     processed_texts = []
     for text in tqdm(texts, desc="Preprocessing texts"):
-        # Replace newlines with a space
         text = text.replace('\n', ' ')
-
-        # Additional cleaning steps
         text = re.sub(r"’", "'", text)
         text = re.sub(r"\s+", " ", text)
         text = re.sub(r"œ", "oe", text)
@@ -68,8 +67,8 @@ def create_visualization(lda_model, corpus, dictionary, file_name):
     pyLDAvis.save_html(vis, file_name)
 
 def main():
-    benin_item_sets = [2187, 2188]
-    burkina_faso_item_sets = [2200, 2215]
+    benin_item_sets = [2187, 2188, 2189]
+    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201]
 
     benin_items = fetch_items_from_set(benin_item_sets)
     burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
