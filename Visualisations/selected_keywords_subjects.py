@@ -69,7 +69,7 @@ def create_interactive_keyword_graph(api_url, df, selected_keyword_ids, output_f
             print(f"No data found for ID {keyword_id}. Skipping this ID.")
 
     fig.update_layout(
-        title="Annual Frequency of Selected Keywords",
+        title="Annual Frequency of Selected Muslim Leaders in Burkina Faso",
         xaxis=dict(title="Year", rangeslider=dict(visible=True), type="date"),
         yaxis=dict(title="Frequency"),
         legend_title="Keyword Title"
@@ -80,8 +80,8 @@ def create_interactive_keyword_graph(api_url, df, selected_keyword_ids, output_f
 
 # Example usage
 api_url = "https://iwac.frederickmadore.com/api"
-all_item_sets = ["2188"]
-selected_keyword_ids = ["29", "124"] # Enter keywords ID
+all_item_sets = ["2200", "2215", "2214", "2207", "2201"]
+selected_keyword_ids = ["898", "861", "944", "960", "947", "855", "1102", "1053", "912"]
 
 df = fetch_and_process_data(api_url, all_item_sets, selected_keyword_ids)
 create_interactive_keyword_graph(api_url, df, selected_keyword_ids, "selected_keywords_graph")
