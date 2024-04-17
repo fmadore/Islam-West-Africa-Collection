@@ -9,7 +9,6 @@ from nltk.corpus import stopwords
 from tqdm import tqdm
 from plotly.offline import plot
 import plotly.express as px
-from datetime import datetime
 
 # Download necessary resources
 nltk.download('stopwords')
@@ -87,12 +86,31 @@ def create_polarity_time_series(sentiments, dates, file_name):
     df = pd.DataFrame({'Date': dates, 'Polarity': sentiments})
     df['Date'] = pd.to_datetime(df['Date'])  # Convert date strings to datetime objects
     df = df.groupby('Date').mean().reset_index()  # Group by Date and calculate mean Polarity
+
+    # Create the figure with a range slider
     fig = px.line(df, x='Date', y='Polarity', title="Mean Polarity Over Time")
+    fig.update_layout(
+        xaxis=dict(
+            rangeselector=dict(
+                buttons=list([
+                    dict(count=1, label="1Y", step="year", stepmode="backward"),
+                    dict(count=5, label="5Y", step="year", stepmode="backward"),
+                    dict(count=10, label="10Y", step="year", stepmode="backward"),
+                    dict(step="all")
+                ])
+            ),
+            rangeslider=dict(
+                visible=True
+            ),
+            type="date"
+        )
+    )
+
     plot(fig, filename=file_name)
 
 def main():
-    benin_item_sets = [2187]
-    burkina_faso_item_sets = [2200]
+    benin_item_sets = [2187, 2188, 2189]
+    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201]
 
     benin_items = fetch_items_from_set(benin_item_sets)
     burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
