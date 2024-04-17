@@ -1,6 +1,7 @@
 import requests
 from tqdm.auto import tqdm
-import plotly.express as px
+import folium
+from folium.plugins import HeatMap
 import pandas as pd
 
 
@@ -36,42 +37,41 @@ def fetch_coordinates(spatial_url):
     return None
 
 
-def extract_and_plot(item_set_id, country):
-    items = fetch_items(item_set_id)
+def extract_and_plot(item_set_ids, country):
     all_coordinates = []
 
-    pbar = tqdm(total=len(items), desc=f"Processing {country}")
+    for item_set_id in item_set_ids:
+        items = fetch_items(item_set_id)  # Fetch items first
+        pbar = tqdm(total=len(items), desc=f"Processing {country}: Item Set {item_set_id}")
 
-    for item in items:
-        spatial_data = item.get('dcterms:spatial', [])
-        for spatial in spatial_data:
-            spatial_url = spatial.get('@id')
-            if spatial_url:
-                coords = fetch_coordinates(spatial_url)
-                if coords:
-                    all_coordinates.append(coords)
-        pbar.update(1)
-    pbar.close()
+        for item in items:
+            spatial_data = item.get('dcterms:spatial', [])
+            for spatial in spatial_data:
+                spatial_url = spatial.get('@id')
+                if spatial_url:
+                    coords = fetch_coordinates(spatial_url)
+                    if coords:
+                        all_coordinates.append(coords)
+            pbar.update(1)
+        pbar.close()
 
     if all_coordinates:
-        df = pd.DataFrame(all_coordinates, columns=['Latitude', 'Longitude'])
+        map_center = pd.DataFrame(all_coordinates, columns=['Latitude', 'Longitude']).mean().to_list()
+        m = folium.Map(location=map_center, zoom_start=2)  # Global view
 
-        # Set the zoom and center for a global view
-        fig = px.density_mapbox(df, lat='Latitude', lon='Longitude', radius=10,
-                                center=dict(lat=0, lon=0), zoom=1,  # zoom set for a global view
-                                mapbox_style="stamen-terrain")
-        fig.update_layout(title=f"Heatmap of {country}", margin={"r": 0, "t": 0, "l": 0, "b": 0})
+        HeatMap(all_coordinates).add_to(m)
+
         html_file_path = f"{country.replace(' ', '_').lower()}_heatmap.html"
-        fig.write_html(html_file_path)
+        m.save(html_file_path)
         print(f"Heatmap saved as {html_file_path}")
     else:
         print(f"No valid coordinates found for {country}, heatmap not generated.")
 
 
 countries = {
-    'Benin': 2188,
-    'Burkina Faso': 2200
+    'Benin': [2187, 2188, 2189],
+    'Burkina Faso': [2200, 2215, 2214, 2207, 2201]
 }
 
-for country, item_set_id in countries.items():
-    extract_and_plot(item_set_id, country)
+for country, item_set_ids in countries.items():
+    extract_and_plot(item_set_ids, country)
