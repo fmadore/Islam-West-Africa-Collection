@@ -115,8 +115,8 @@ def main():
     benin_sentiments = analyze_sentiments(benin_processed)
     burkina_faso_sentiments = analyze_sentiments(burkina_faso_processed)
 
-    create_sentiment_visualization(benin_sentiments, benin_titles, 'sentiment_visualization_benin.html')
-    create_sentiment_visualization(burkina_faso_sentiments, burkina_faso_titles, 'sentiment_visualization_burkina_faso.html')
+    create_sentiment_visualization(benin_sentiments, benin_titles, 'sentiment_polarity_subjectivity_benin.html')
+    create_sentiment_visualization(burkina_faso_sentiments, burkina_faso_titles, 'sentiment_polarity_subjectivity_burkina_faso.html')
 
 if __name__ == "__main__":
     main()
