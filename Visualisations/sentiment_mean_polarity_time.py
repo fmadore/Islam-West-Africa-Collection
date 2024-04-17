@@ -84,8 +84,15 @@ def analyze_sentiments(texts):
 
 def create_polarity_time_series(sentiments, dates, file_name):
     df = pd.DataFrame({'Date': dates, 'Polarity': sentiments})
-    df['Date'] = pd.to_datetime(df['Date'])  # Convert date strings to datetime objects
-    df = df.groupby('Date').mean().reset_index()  # Group by Date and calculate mean Polarity
+
+    # Convert date strings to datetime objects, handling different formats
+    df['Date'] = pd.to_datetime(df['Date'], errors='coerce', infer_datetime_format=True)
+
+    # Remove any rows where dates could not be converted (if any)
+    df = df.dropna(subset=['Date'])
+
+    # Group by Date and calculate mean Polarity
+    df = df.groupby('Date').mean().reset_index()
 
     # Create the figure with a range slider
     fig = px.line(df, x='Date', y='Polarity', title="Mean polarity over time")
