@@ -88,7 +88,7 @@ def create_polarity_time_series(sentiments, dates, file_name):
     df = df.groupby('Date').mean().reset_index()  # Group by Date and calculate mean Polarity
 
     # Create the figure with a range slider
-    fig = px.line(df, x='Date', y='Polarity', title="Mean Polarity Over Time")
+    fig = px.line(df, x='Date', y='Polarity', title="Mean polarity over time")
     fig.update_layout(
         xaxis=dict(
             rangeselector=dict(
