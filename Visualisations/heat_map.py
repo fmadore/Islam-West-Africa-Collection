@@ -61,7 +61,7 @@ def extract_and_plot(item_set_ids, country):
 
         HeatMap(all_coordinates).add_to(m)
 
-        html_file_path = f"{country.replace(' ', '_').lower()}_heatmap.html"
+        html_file_path = f"heatmap_{country.replace(' ', '_').lower()}.html"
         m.save(html_file_path)
         print(f"Heatmap saved as {html_file_path}")
     else:
