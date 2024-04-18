@@ -8,9 +8,9 @@ api_url = "https://iwac.frederickmadore.com/api"
 # Define class IDs with their corresponding names in both English and French
 acceptable_ids = {
     58: {"en": "Image", "fr": "Image"},
-    49: {"en": "Document", "fr": "Document"},
+    49: {"en": "Other document", "fr": "Document divers"},
     36: {"en": "Press article", "fr": "Article de presse"},
-    60: {"en": "Issue", "fr": "Numéro"},
+    60: {"en": "Islamic newspaper", "fr": "Journal islamique"},
     38: {"en": "Audiovisual document", "fr": "Document audiovisuel"},
     35: {"en": "Journal article", "fr": "Article de revue"},
     43: {"en": "Chapter", "fr": "Chapitre"},
