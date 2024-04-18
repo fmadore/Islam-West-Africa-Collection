@@ -5,22 +5,22 @@ from tqdm import tqdm
 
 api_url = "https://iwac.frederickmadore.com/api"
 
-# Define class IDs and their corresponding names
+# Define class IDs with their corresponding names in both English and French
 acceptable_ids = {
-    58: "Image",
-    49: "Document",
-    36: "Article",
-    60: "Issue",
-    38: "AudioVisualDocument",
-    35: 'Article de revue',
-    43: 'Chapitre',
-    88: 'Thèse',
-    40: 'Livre',
-    82: 'Rapport',
-    178: 'Compte rendu',
-    52: 'Ouvrage collectif',
-    77: 'Communication',
-    305: 'Article de blog'
+    58: {"en": "Image", "fr": "Image"},
+    49: {"en": "Document", "fr": "Document"},
+    36: {"en": "Press article", "fr": "Article de presse"},
+    60: {"en": "Issue", "fr": "Numéro"},
+    38: {"en": "Audiovisual document", "fr": "Document audiovisuel"},
+    35: {"en": "Journal article", "fr": "Article de revue"},
+    43: {"en": "Chapter", "fr": "Chapitre"},
+    88: {"en": "Thesis", "fr": "Thèse"},
+    40: {"en": "Book", "fr": "Livre"},
+    82: {"en": "Report", "fr": "Rapport"},
+    178: {"en": "Book review", "fr": "Compte rendu de livre"},
+    52: {"en": "Edited volume", "fr": "Ouvrage collectif"},
+    77: {"en": "Communication", "fr": "Communication"},
+    305: {"en": "Blog article", "fr": "Article de blog"}
 }
 
 # Define labels for both English and French
@@ -41,7 +41,7 @@ labels = {
     }
 }
 
-def fetch_items():
+def fetch_items(language='en'):
     page = 1
     more_pages_available = True
     items_by_year_type = defaultdict(lambda: defaultdict(int))
@@ -58,56 +58,51 @@ def fetch_items():
                     resource_classes = item.get('o:resource_class', {})
                     if resource_classes:
                         item_classes = []
-                        # Check if resource_classes is a list of dictionaries
                         if isinstance(resource_classes, list):
                             item_classes = [rclass.get("o:id") for rclass in resource_classes if rclass.get("o:id") in acceptable_ids]
-                        # Check if resource_classes is a dictionary
                         elif isinstance(resource_classes, dict):
                             resource_class_id = resource_classes.get("o:id")
                             if resource_class_id in acceptable_ids:
                                 item_classes.append(resource_class_id)
                         else:
-                            # If resource_classes is neither a list nor a dictionary, skip processing it
                             continue
 
-                        # Extract year from date
                         date_info = item.get('dcterms:date', [])
                         if date_info:
                             date_value = date_info[0].get('@value', '')
                             year = date_value.split('-')[0]
                             for id in item_classes:
-                                items_by_year_type[year][acceptable_ids[id]] += 1
+                                items_by_year_type[year][acceptable_ids[id][language]] += 1
                 page += 1
 
     return items_by_year_type
 
 def visualize_items_over_years(items_by_year_type, language='en'):
-    # Prepare data for visualization
     data = []
-    for year, types in sorted(items_by_year_type.items()):  # Ensure data is sorted by year
+    for year, types in sorted(items_by_year_type.items()):
         for type_name, count in types.items():
             data.append({'Year': year, 'Type': type_name, 'Number of Items': count})
 
-    # Use language-specific labels
+    # Sort the data list by 'Type' alphabetically
+    data = sorted(data, key=lambda x: x['Type'])
+
     label = labels[language]
 
-    # Create a stacked bar chart
     fig = px.bar(data, x='Year', y='Number of Items', color='Type',
                  title=label['title'],
                  labels={'Number of Items': label['number_of_items'], 'Year': label['year'], 'Type': label['type']},
                  hover_data={'Number of Items': True})
     fig.update_traces(textposition='inside')
-    fig.update_layout(
-        barmode='stack',
-        xaxis={'type': 'category', 'categoryorder': 'category ascending'},
-        xaxis_rangeslider_visible=True  # Enable the range slider
-    )
+    fig.update_layout(barmode='stack', xaxis={'type': 'category', 'categoryorder': 'category ascending'})
     fig.write_html(label['filename'])
     fig.show()
 
-# Fetch data
-items_by_year_type = fetch_items()
+# Fetch data for both English and French visualizations
+items_by_year_type_en = fetch_items(language='en')
+items_by_year_type_fr = fetch_items(language='fr')
 
-# Create visualization in English and French
-visualize_items_over_years(items_by_year_type, language='en')
-visualize_items_over_years(items_by_year_type, language='fr')
+# Create visualization in English
+visualize_items_over_years(items_by_year_type_en, language='en')
+
+# Create visualization in French
+visualize_items_over_years(items_by_year_type_fr, language='fr')
