@@ -11,7 +11,16 @@ acceptable_ids = {
     49: "Document",
     36: "Article",
     60: "Issue",
-    38: "AudioVisualDocument"
+    38: "AudioVisualDocument",
+    35: 'Article de revue',
+    43: 'Chapitre',
+    88: 'Thèse',
+    40: 'Livre',
+    82: 'Rapport',
+    178: 'Compte rendu',
+    52: 'Ouvrage collectif',
+    77: 'Communication',
+    305: 'Article de blog'
 }
 
 # Define labels for both English and French
