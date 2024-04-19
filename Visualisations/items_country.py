@@ -65,8 +65,8 @@ def fetch_and_categorize_items(language):
 def visualize_spatial_distribution(items_by_country_and_set, language='en'):
     total_items = sum(count for country_data in items_by_country_and_set.values() for count in country_data.values())
     title_map = {
-        'en': f'Distribution of the {total_items} items by country and sub-collection',
-        'fr': f'Répartition des {total_items} éléments par pays et sous-collection'
+        'en': f'Distribution of the {total_items} items in the database by country and sub-collection',
+        'fr': f'Répartition des {total_items} éléments de la base de données par pays et sous-collection'
     }
     title = title_map.get(language, f'Distribution of {total_items} items by country and sub-collection')
     filename = f'item_distribution_by_country_and_set_{language}.html'
