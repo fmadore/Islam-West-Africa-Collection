@@ -57,6 +57,8 @@ def create_bar_chart(items_by_year_and_class, language='en'):
     data = []
     years_with_data = sorted(items_by_year_and_class.keys())
     year_position = {year: idx for idx, year in enumerate(years_with_data)}
+
+    # Prepare data only for years that have entries
     for year, classes in items_by_year_and_class.items():
         for class_id, count in classes.items():
             if count > 0:
@@ -64,13 +66,17 @@ def create_bar_chart(items_by_year_and_class, language='en'):
                 data.append({'Year': year_position[year], 'Resource Class': class_label, 'Count': count, 'LabelYear': year})
 
     fig = go.Figure()
-    for class_id in resource_classes:
-        class_label = resource_classes[class_id][language]
+
+    # Sort resource classes by label for the legend
+    sorted_classes = sorted(resource_classes.items(), key=lambda x: x[1][language])
+
+    for class_id, labels in sorted_classes:
+        class_label = labels[language]
         class_data = [x['Count'] for x in data if x['Resource Class'] == class_label]
         class_years = [x['Year'] for x in data if x['Resource Class'] == class_label]
         fig.add_trace(go.Bar(x=class_years, y=class_data, name=class_label))
 
-    title = 'Distribution of Publications by Year and Type' if language == 'en' else 'Répartition des publications par année et type'
+    title = 'Distribution of references by year and type' if language == 'en' else 'Répartition des références par année et type'
     fig.update_layout(
         title=title,
         xaxis_title='Year',
@@ -80,12 +86,21 @@ def create_bar_chart(items_by_year_and_class, language='en'):
             tickmode='array',
             tickvals=list(year_position.values()),
             ticktext=[str(year) for year in years_with_data]
+        ),
+        legend=dict(
+            traceorder='normal'
         )
     )
+
     fig.show()
 
-
+# Fetch items from the specified item set
 items = fetch_items(item_set_id)
+
+# Parse items by year and resource class
 items_by_year_and_class = parse_items_by_year_and_class(items, resource_classes)
+
+# Create visualizations in both languages
 create_bar_chart(items_by_year_and_class, language='en')
 create_bar_chart(items_by_year_and_class, language='fr')
+
