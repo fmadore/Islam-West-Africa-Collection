@@ -26,20 +26,21 @@ acceptable_ids = {
 # Define labels for both English and French
 labels = {
     'en': {
-        'title': 'Number of Items by Type Over Years',
-        'number_of_items': 'Number of Items',
+        'title': 'Number of items in the database by type over years',
+        'number_of_items': 'Number of items',
         'year': 'Year',
-        'type': 'Item Type',
+        'type': 'Item type',
         'filename': 'item_distribution_over_years_english.html'
     },
     'fr': {
-        'title': 'Nombre d\'éléments par type au fil des ans',
+        'title': 'Nombre d\'éléments de la base de données par type au fil des ans',
         'number_of_items': 'Nombre d\'éléments',
         'year': 'Année',
         'type': 'Type d\'élément',
         'filename': 'item_distribution_over_years_french.html'
     }
 }
+
 
 def fetch_items(language='en'):
     page = 1
@@ -59,7 +60,8 @@ def fetch_items(language='en'):
                     if resource_classes:
                         item_classes = []
                         if isinstance(resource_classes, list):
-                            item_classes = [rclass.get("o:id") for rclass in resource_classes if rclass.get("o:id") in acceptable_ids]
+                            item_classes = [rclass.get("o:id") for rclass in resource_classes if
+                                            rclass.get("o:id") in acceptable_ids]
                         elif isinstance(resource_classes, dict):
                             resource_class_id = resource_classes.get("o:id")
                             if resource_class_id in acceptable_ids:
@@ -76,6 +78,7 @@ def fetch_items(language='en'):
                 page += 1
 
     return items_by_year_type
+
 
 def visualize_items_over_years(items_by_year_type, language='en'):
     data = []
@@ -96,6 +99,7 @@ def visualize_items_over_years(items_by_year_type, language='en'):
     fig.update_layout(barmode='stack', xaxis={'type': 'category', 'categoryorder': 'category ascending'})
     fig.write_html(label['filename'])
     fig.show()
+
 
 # Fetch data for both English and French visualizations
 items_by_year_type_en = fetch_items(language='en')
