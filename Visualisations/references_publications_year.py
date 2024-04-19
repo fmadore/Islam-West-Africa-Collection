@@ -5,6 +5,14 @@ from tqdm import tqdm
 
 api_url = "https://iwac.frederickmadore.com/api"
 item_set_id = 2193
+country_item_sets = {
+    2193: 'Bénin',
+    2212: 'Burkina Faso',
+    2217: 'Côte d\'Ivoire',
+    2222: 'Niger',
+    2225: 'Nigeria',
+    2228: 'Togo'
+}
 resource_classes = {
     35: {'en': 'Journal article', 'fr': 'Article de revue'},
     43: {'en': 'Chapter', 'fr': 'Chapitre'},
@@ -21,7 +29,7 @@ def fetch_items(item_set_id):
     items = []
     page = 1
     total_pages = 1
-    pbar = tqdm(total=total_pages, desc="Fetching items")
+    pbar = tqdm(total=total_pages, desc=f"Fetching items for ID {item_set_id}")
     while page <= total_pages:
         response = requests.get(f"{api_url}/items", params={"item_set_id": item_set_id, "page": page, "per_page": 50})
         data = response.json()
@@ -53,12 +61,11 @@ def parse_items_by_year_and_class(items, resource_classes):
                 items_by_year_and_class[year][class_id] += 1
     return OrderedDict(sorted(items_by_year_and_class.items()))
 
-def create_bar_chart(items_by_year_and_class, language='en'):
+def create_bar_chart(items_by_year_and_class, country, language='en'):
     data = []
     years_with_data = sorted(items_by_year_and_class.keys())
     year_position = {year: idx for idx, year in enumerate(years_with_data)}
 
-    # Prepare data only for years that have entries
     for year, classes in items_by_year_and_class.items():
         for class_id, count in classes.items():
             if count > 0:
@@ -66,8 +73,6 @@ def create_bar_chart(items_by_year_and_class, language='en'):
                 data.append({'Year': year_position[year], 'Resource Class': class_label, 'Count': count, 'LabelYear': year})
 
     fig = go.Figure()
-
-    # Sort resource classes by label for the legend
     sorted_classes = sorted(resource_classes.items(), key=lambda x: x[1][language])
 
     for class_id, labels in sorted_classes:
@@ -76,11 +81,11 @@ def create_bar_chart(items_by_year_and_class, language='en'):
         class_years = [x['Year'] for x in data if x['Resource Class'] == class_label]
         fig.add_trace(go.Bar(x=class_years, y=class_data, name=class_label))
 
-    title = 'Distribution of references by year and type' if language == 'en' else 'Répartition des références par année et type'
+    title = f"Distribution of references by year and type ({country})" if language == 'en' else f"Répartition des références par année et type ({country})"
     fig.update_layout(
         title=title,
         xaxis_title='Year',
-        yaxis_title='Count of Publications',
+        yaxis_title='Count of publications',
         barmode='stack',
         xaxis=dict(
             tickmode='array',
@@ -91,16 +96,10 @@ def create_bar_chart(items_by_year_and_class, language='en'):
             traceorder='normal'
         )
     )
-
     fig.show()
 
-# Fetch items from the specified item set
-items = fetch_items(item_set_id)
-
-# Parse items by year and resource class
-items_by_year_and_class = parse_items_by_year_and_class(items, resource_classes)
-
-# Create visualizations in both languages
-create_bar_chart(items_by_year_and_class, language='en')
-create_bar_chart(items_by_year_and_class, language='fr')
-
+for item_set_id, country in country_item_sets.items():
+    items = fetch_items(item_set_id)
+    items_by_year_and_class = parse_items_by_year_and_class(items, resource_classes)
+    create_bar_chart(items_by_year_and_class, country, language='en')
+    create_bar_chart(items_by_year_and_class, country, language='fr')
