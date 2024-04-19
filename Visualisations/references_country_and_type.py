@@ -37,8 +37,8 @@ def fetch_resource_class_labels():
     return labels
 
 
-def fetch_items(item_set_id):
-    """ Fetch all items within a given item set, handling pagination. """
+def fetch_items(item_set_id, seen_ids):
+    """ Fetch all items within a given item set, handling pagination and checking for duplicates. """
     items = []
     page = 1
     while True:
@@ -46,7 +46,11 @@ def fetch_items(item_set_id):
         data = response.json()
         if not data:
             break
-        items.extend(data)
+        for item in data:
+            item_id = item['o:id']
+            if item_id not in seen_ids:
+                seen_ids.add(item_id)
+                items.append(item)
         page += 1
     return items
 
@@ -54,12 +58,13 @@ def fetch_items(item_set_id):
 def fetch_and_categorize_items(class_labels, language='en'):
     """ Fetch items and categorize them by country and resource class label. """
     items_by_country_and_class = defaultdict(lambda: defaultdict(int))
+    seen_ids = set()  # Track unique item IDs across all sets
     for item_set_id in tqdm(item_set_ids, desc="Processing item sets"):
         item_set_response = requests.get(f"{api_url}/item_sets/{item_set_id}")
         item_set_data = item_set_response.json()
         country = item_set_data.get('dcterms:spatial', [{}])[0].get('display_title', 'Unknown')
 
-        items = fetch_items(item_set_id)
+        items = fetch_items(item_set_id, seen_ids)
         for item in items:
             resource_class_id = item.get('o:resource_class', {}).get('o:id')
             if resource_class_id in class_labels:
@@ -71,7 +76,8 @@ def fetch_and_categorize_items(class_labels, language='en'):
 
 def visualize_data(items_by_country_and_class, language='en'):
     """ Visualize the distribution of items by country and resource class label. """
-    title = 'References distribution by country and type' if language == 'en' else 'Répartition des références par pays et par type'
+    total_items = sum(count for classes in items_by_country_and_class.values() for count in classes.values())  # Calculate total items
+    title = f'Distribution of the {total_items} references in the database by country and type' if language == 'en' else f'Répartition des {total_items} références de la base de données par pays et par type'
     filename = f'treemap_references_type_{language}.html'
 
     data = []
@@ -79,8 +85,7 @@ def visualize_data(items_by_country_and_class, language='en'):
         for label, count in classes.items():
             data.append({'Country': country, 'Resource Class': label, 'Number of Items': count})
 
-    fig = px.treemap(data, path=['Country', 'Resource Class'], values='Number of Items',
-                     title=title)
+    fig = px.treemap(data, path=['Country', 'Resource Class'], values='Number of Items', title=title)
     fig.update_traces(textinfo="label+value+percent parent")
     fig.write_html(filename)
     fig.show()
