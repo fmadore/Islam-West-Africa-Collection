@@ -96,7 +96,9 @@ def create_bar_chart(items_by_year_and_class, country, language='en'):
             traceorder='normal'
         )
     )
-    fig.show()
+    file_name = f"references_distribution_{country}_{language}.html"
+    fig.write_html(file_name)
+    print(f"Chart saved to {file_name}")
 
 for item_set_id, country in country_item_sets.items():
     items = fetch_items(item_set_id)
