@@ -38,18 +38,19 @@ def fetch_item_set_details(item_set_ids):
 
 
 def create_bar_chart(item_set_details, language, title, x_title, y_title, filename):
-    """ Create and save a bar chart for the item set details. """
+    """ Create and save a bar chart for the item set details. Include the total number of items in the title. """
     labels = [details['titles'].get(language, "Unknown") for id, details in item_set_details.items()]
     values = [details['count'] for details in item_set_details.values()]
+    total_items = sum(values)  # Calculate the total number of items
 
     fig = go.Figure(data=[go.Bar(x=labels, y=values)])
     fig.update_layout(
-        title=title,
+        title=f"{title} (total: {total_items})",  # Include total items in title
         xaxis_title=x_title,
         yaxis_title=y_title
     )
 
-    fig.write_html(filename)  # Save the figure as an HTML file
+    fig.write_html(filename)
     fig.show()
 
 
