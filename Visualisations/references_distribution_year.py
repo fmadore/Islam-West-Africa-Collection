@@ -82,29 +82,57 @@ def fetch_and_categorize_items_by_year(class_labels, language='en'):
 
 
 def visualize_data_by_year(items_by_year_and_class, language='en'):
-    """ Visualize the distribution of items by year and resource class label in a grouped bar chart, excluding unknown years. """
+    """ Visualize the distribution of items by year and resource class label in a stacked bar chart, and save as HTML. """
     data = []
-    for year, classes in sorted(items_by_year_and_class.items()):
-        for label, count in sorted(classes.items()):  # Sort classes alphabetically within each year
+    for year, classes in items_by_year_and_class.items():
+        for label, count in classes.items():
             data.append({'Year': year, 'Resource Class': label, 'Number of Items': count})
+
+    # Ensure the data is a DataFrame
     df = pd.DataFrame(data)
-    df['Year'] = pd.Categorical(df['Year'], categories=sorted(df['Year'].unique()), ordered=True)
 
-    # Set title based on language
-    if language == 'en':
-        title = 'Distribution of Items Over Years by Class'
-    else:
-        title = 'Répartition des articles par année et par catégorie'
+    # Remove entries with 'Unknown Year' and convert year to integer
+    df = df[df['Year'] != 'Unknown Year']
+    df['Year'] = df['Year'].astype(int)
 
-    fig = px.bar(df, x='Year', y='Number of Items', color='Resource Class', title=title,
-                 category_orders={"Resource Class": sorted(df['Resource Class'].unique())}, barmode='group')
-    fig.update_layout(xaxis_title='Year', yaxis_title='Number of Items', xaxis={'type': 'category'})
+    # Ensure years are sorted chronologically
+    df = df.sort_values(by='Year')
+
+    # Define the title based on the language
+    title = 'Distribution of Items Over Years by Class' if language == 'en' else 'Répartition des articles par année et par catégorie'
+
+    # Create the bar chart
+    fig = px.bar(
+        df,
+        x='Year',
+        y='Number of Items',
+        color='Resource Class',
+        title=title,
+        category_orders={"Resource Class": sorted(df['Resource Class'].unique())},  # Sort legend alphabetically
+        barmode='stack'  # Stack bars
+    )
+
+    # Update the layout for better readability
+    fig.update_layout(
+        xaxis_title='Year',
+        yaxis_title='Number of Items',
+        xaxis={'type': 'category'},  # Treat the x-axis values as categories
+        xaxis_tickangle=-45  # Optionally, rotate the x-axis labels for better readability
+    )
+
+    # Save the figure as an HTML file
+    filename = f'distribution_over_years_{language}.html'
+    fig.write_html(filename)
+    print(f"Graph saved as {filename}")
+
+    # Show figure
     fig.show()
+
 
 # Fetch resource class labels
 class_labels = fetch_resource_class_labels()
 
-# Generate visualizations for each language
+# Generate visualizations for each language and save as HTML
 for language in ['en', 'fr']:
     items_by_year_and_class = fetch_and_categorize_items_by_year(class_labels, language)
     visualize_data_by_year(items_by_year_and_class, language)
