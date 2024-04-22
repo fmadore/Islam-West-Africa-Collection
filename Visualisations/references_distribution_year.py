@@ -88,7 +88,7 @@ def visualize_data_by_year(items_by_year_and_class, language='en'):
         # Skip rows where year is 'Unknown Year'
         if year.isdigit():  # This checks if the year consists only of digits
             for label, count in classes.items():
-                data.append({'Year': int(year), 'Resource Class': label, 'Number of Items': count})  # Convert year to int here
+                data.append({'Year': int(year), 'Resource Class': label, 'Number of references': count})  # Convert year to int here
 
     # Ensure the data is a DataFrame
     df = pd.DataFrame(data)
@@ -96,14 +96,17 @@ def visualize_data_by_year(items_by_year_and_class, language='en'):
     # Ensure years are sorted chronologically
     df = df.sort_values(by='Year')  # Now the sorting will be numeric
 
-    # Define the title based on the language
-    title = 'Distribution of references over years by type' if language == 'en' else 'Répartition des références par année et par type'
+    total_items = df['Number of references'].sum()
+    title = f'Distribution of the {total_items} references in the database over years by type' if language == 'en' else f'Répartition des {total_items} références de la base de données par année et par type'
+
+    x_axis_label = 'Year' if language == 'en' else 'Année'
+    y_axis_label = 'Number of references' if language == 'en' else 'Nombre de références'
 
     # Create the bar chart
     fig = px.bar(
         df,
         x='Year',
-        y='Number of Items',
+        y='Number of references',
         color='Resource Class',
         title=title,
         category_orders={"Year": sorted(df['Year'].unique()), "Resource Class": sorted(df['Resource Class'].unique())},
@@ -113,7 +116,7 @@ def visualize_data_by_year(items_by_year_and_class, language='en'):
     # Update the layout for better readability
     fig.update_layout(
         xaxis_title='Year',
-        yaxis_title='Number of Items',
+        yaxis_title='Number of references',
         xaxis={'type': 'category'},
         xaxis_tickangle=-45
     )
@@ -122,15 +125,9 @@ def visualize_data_by_year(items_by_year_and_class, language='en'):
     filename = f'references_distribution_over_years_{language}.html'
     fig.write_html(filename)
     print(f"Graph saved as {filename}")
-
-    # Show figure
     fig.show()
 
-
-# Fetch resource class labels
 class_labels = fetch_resource_class_labels()
-
-# Generate visualizations for each language and save as HTML
 for language in ['en', 'fr']:
     items_by_year_and_class = fetch_and_categorize_items_by_year(class_labels, language)
     visualize_data_by_year(items_by_year_and_class, language)
