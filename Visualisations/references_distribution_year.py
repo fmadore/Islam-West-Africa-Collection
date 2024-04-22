@@ -2,6 +2,7 @@ import requests
 from collections import defaultdict
 import plotly.express as px
 from tqdm import tqdm
+import pandas as pd
 
 api_url = "https://iwac.frederickmadore.com/api"
 item_set_ids = [2193, 2212, 2217, 2222, 2225, 2228]
@@ -56,7 +57,6 @@ def fetch_items(item_set_id, seen_ids):
                     year = date_field[0]['@value'].split('-')[0]  # Assume the format could be YYYY-MM-DD or just YYYY
                 elif isinstance(date_field, dict):
                     year = date_field.get('@value', 'Unknown Year').split('-')[0]
-
                 items.append({
                     'id': item_id,
                     'class_id': item.get('o:resource_class', {}).get('o:id'),
@@ -73,40 +73,38 @@ def fetch_and_categorize_items_by_year(class_labels, language='en'):
     for item_set_id in tqdm(item_set_ids, desc="Processing item sets"):
         items = fetch_items(item_set_id, seen_ids)
         for item in items:
-            year = item['year'].split('-')[0]  # Assume the format could be YYYY-MM-DD or just YYYY
+            year = item['year']
             resource_class_id = item['class_id']
-            if resource_class_id in class_labels:
+            if year != 'Unknown Year' and resource_class_id in class_labels:
                 label = class_labels[resource_class_id][language]
                 items_by_year_and_class[year][label] += 1
-
     return items_by_year_and_class
 
 
 def visualize_data_by_year(items_by_year_and_class, language='en'):
-    """ Visualize the distribution of items by year and resource class label in a bar chart, excluding unknown years and sorting the legend alphabetically. """
+    """ Visualize the distribution of items by year and resource class label in a grouped bar chart, excluding unknown years. """
     data = []
     for year, classes in sorted(items_by_year_and_class.items()):
-        if year != 'Unknown Year':  # Exclude unknown years
-            for label, count in sorted(classes.items()):  # Sort classes alphabetically within each year
-                data.append({'Year': year, 'Resource Class': label, 'Number of Items': count})
-
-    # Convert to DataFrame to enable more complex sorting and filtering
-    import pandas as pd
+        for label, count in sorted(classes.items()):  # Sort classes alphabetically within each year
+            data.append({'Year': year, 'Resource Class': label, 'Number of Items': count})
     df = pd.DataFrame(data)
-    df['Year'] = pd.to_numeric(df['Year'], errors='coerce')  # Convert years to numeric to sort chronologically
-    df = df.dropna(subset=['Year'])  # Drop any rows that could not be converted to numeric
-    df = df.sort_values(by='Year')  # Sort data by year
+    df['Year'] = pd.Categorical(df['Year'], categories=sorted(df['Year'].unique()), ordered=True)
 
-    # Create the bar chart
-    fig = px.bar(df, x='Year', y='Number of Items', color='Resource Class', title='Distribution of Items Over Years by Class',
-                 category_orders={"Resource Class": sorted(df['Resource Class'].unique())})  # Sort legend alphabetically
-    fig.update_layout(xaxis_title='Year', yaxis_title='Number of Items', barmode='group', xaxis={'type': 'category'})
+    # Set title based on language
+    if language == 'en':
+        title = 'Distribution of Items Over Years by Class'
+    else:
+        title = 'Répartition des articles par année et par catégorie'
+
+    fig = px.bar(df, x='Year', y='Number of Items', color='Resource Class', title=title,
+                 category_orders={"Resource Class": sorted(df['Resource Class'].unique())}, barmode='group')
+    fig.update_layout(xaxis_title='Year', yaxis_title='Number of Items', xaxis={'type': 'category'})
     fig.show()
-
 
 # Fetch resource class labels
 class_labels = fetch_resource_class_labels()
 
-# Generate visualizations in English
-items_by_year_and_class = fetch_and_categorize_items_by_year(class_labels, language='en')
-visualize_data_by_year(items_by_year_and_class, language='en')
+# Generate visualizations for each language
+for language in ['en', 'fr']:
+    items_by_year_and_class = fetch_and_categorize_items_by_year(class_labels, language)
+    visualize_data_by_year(items_by_year_and_class, language)
