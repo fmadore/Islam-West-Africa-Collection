@@ -3,9 +3,8 @@ import plotly.express as px
 import pandas as pd
 from tqdm import tqdm
 
-# Constants
 API_URL = "https://iwac.frederickmadore.com/api"
-KEY_IDENTITY = "XXXXXXXXXXXXXXXXXX"
+KEY_IDENTITY = "XXXXXXXXXXXXXXXX"
 KEY_CREDENTIAL = "XXXXXXXXXXXXXXXX"
 ITEM_SETS = {
     'Bénin': [2185, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5500, 5501, 5502],
@@ -13,9 +12,20 @@ ITEM_SETS = {
     'Togo': [9458]
 }
 
+
 def format_number_with_spaces(number):
     """Format the number with a space every three digits."""
     return f"{number:,}".replace(",", " ")
+
+
+def create_label(newspaper, word_count, language='English'):
+    """Create a label for the treemap boxes with language-specific formatting."""
+    formatted_word_count = format_number_with_spaces(word_count)
+    if language == 'French':
+        return f"{newspaper}<br>{formatted_word_count} mots"
+    else:  # default to English
+        return f"{newspaper}<br>{formatted_word_count} words"
+
 
 def get_item_set_name(api_url, item_set_id, key_identity, key_credential):
     """Fetch item set name using its ID."""
@@ -27,6 +37,7 @@ def get_item_set_name(api_url, item_set_id, key_identity, key_credential):
     else:
         print(f"Failed to fetch item set name for ID {item_set_id}: {response.status_code} - {response.text}")
         return f"Newspaper {item_set_id}"
+
 
 def get_items_by_set(api_url, item_set_id, key_identity, key_credential):
     """Retrieve all items for a specific item set ID."""
@@ -45,6 +56,7 @@ def get_items_by_set(api_url, item_set_id, key_identity, key_credential):
         page += 1
     return items
 
+
 def extract_content(items, country, newspaper):
     """Extract content and compute word counts."""
     content_data = []
@@ -55,6 +67,7 @@ def extract_content(items, country, newspaper):
                 word_count = len(words)
                 content_data.append({'country': country, 'newspaper': newspaper, 'word_count': word_count})
     return content_data
+
 
 # Collecting data
 all_data = []
@@ -71,17 +84,21 @@ df = pd.DataFrame(all_data)
 # Aggregate data by country and newspaper
 aggregated_data = df.groupby(['country', 'newspaper']).agg({'word_count': 'sum'}).reset_index()
 
-# Create a label that includes the word count on a new line with formatted numbers
-aggregated_data['label'] = aggregated_data['newspaper'] + "<br>" + aggregated_data['word_count'].apply(format_number_with_spaces) + " words"
+# Format total word count
+total_word_count = format_number_with_spaces(aggregated_data['word_count'].sum())
 
-# Calculate total word count and format it
-total_word_count = format_number_with_spaces(df['word_count'].sum())
+# For English
+english_title = f'Total word count: {total_word_count} - distribution by country and newspaper'
+aggregated_data['label'] = aggregated_data.apply(lambda x: create_label(x['newspaper'], x['word_count'], 'English'),
+                                                 axis=1)
+fig_english = px.treemap(aggregated_data, path=['country', 'label'], values='word_count', title=english_title)
+fig_english.show()
+fig_english.write_html("treemap_word_count_en.html")
 
-# Create treemap
-fig = px.treemap(aggregated_data, path=['country', 'label'], values='word_count',
-                 title=f'Total Word Count: {total_word_count} - Proportion by Country and Newspaper')
-
-fig.show()
-
-# Save the figure as HTML file
-fig.write_html("treemap_word_count.html")
+# For French
+french_title = f'Nombre total de mots: {total_word_count} - répartition par pays et journal'
+aggregated_data['label'] = aggregated_data.apply(lambda x: create_label(x['newspaper'], x['word_count'], 'French'),
+                                                 axis=1)
+fig_french = px.treemap(aggregated_data, path=['country', 'label'], values='word_count', title=french_title)
+fig_french.show()
+fig_french.write_html("treemap_word_count_fr.html")
