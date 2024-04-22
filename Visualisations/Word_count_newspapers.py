@@ -1,77 +1,87 @@
 import requests
 import plotly.express as px
+import pandas as pd
 from tqdm import tqdm
 
-# Define the API URL
-api_url = "https://iwac.frederickmadore.com/api"
-
-# Define country to item set IDs mapping
-item_sets = {
+# Constants
+API_URL = "https://iwac.frederickmadore.com/api"
+KEY_IDENTITY = "XXXXXXXXXXXXXXXXXX"
+KEY_CREDENTIAL = "XXXXXXXXXXXXXXXX"
+ITEM_SETS = {
     'Bénin': [2185, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5500, 5501, 5502],
     'Burkina Faso': [2199, 2200, 2201, 2207, 2209, 2210, 2213, 2214, 2215, 5503, 23273],
     'Togo': [9458]
 }
 
-def fetch_item_set_title(item_set_id):
-    """ Fetches the title for a given item set ID. """
-    response = requests.get(f"{api_url}/item_sets/{item_set_id}")
-    data = response.json()
-    if 'dcterms:title' in data and len(data['dcterms:title']) > 0:
-        return data['dcterms:title'][0]['@value']
-    return "Unknown Title"
+def format_number_with_spaces(number):
+    """Format the number with a space every three digits."""
+    return f"{number:,}".replace(",", " ")
 
-def fetch_word_counts(item_set_ids):
-    """ Fetches word counts for the given item set IDs, without accessing private content. """
-    word_counts = {}
-    for id in tqdm(item_set_ids, desc="Fetching titles and word counts"):
-        title = fetch_item_set_title(id)
-        page = 1
-        more_pages_available = True
-        total_words = 0
-        while more_pages_available:
-            response = requests.get(
-                f"{api_url}/items",
-                params={'item_set_id': id, 'page': page, 'per_page': 50}
-            )
-            data = response.json()
-            if not data:
-                more_pages_available = False
-                continue
-            for item in data:
-                for content in item.get('bibo:content', []):
-                    if content["type"] == "literal" and "@value" in content:
-                        word_count = len(content["@value"].split())
-                        total_words += word_count
-            page += 1
-        word_counts[title] = total_words
-    return word_counts
+def get_item_set_name(api_url, item_set_id, key_identity, key_credential):
+    """Fetch item set name using its ID."""
+    url = f"{api_url}/item_sets/{item_set_id}?key_identity={key_identity}&key_credential={key_credential}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data['dcterms:title'][0]['@value'] if 'dcterms:title' in data else f"Newspaper {item_set_id}"
+    else:
+        print(f"Failed to fetch item set name for ID {item_set_id}: {response.status_code} - {response.text}")
+        return f"Newspaper {item_set_id}"
 
-def create_interactive_treemap(data, language='English'):
-    """ Creates an interactive treemap using Plotly with language options. """
-    titles = {
-        'English': 'Word Count Proportion by Country and Newspaper',
-        'French': 'Proportion du nombre de mots par pays et par journal'
-    }
-    fig = px.treemap(
-        data,
-        path=['country', 'title'],
-        values='word_count',
-        title=titles.get(language, 'Word Count Proportion by Country and Newspaper')
-    )
-    fig.data[0].textinfo = 'label+text+value'
-    fig.update_layout(margin=dict(t=50, l=25, r=25, b=25))
-    filename = f'treemap_word_count_{language.lower()}.html'
-    fig.write_html(filename)
-    fig.show()
+def get_items_by_set(api_url, item_set_id, key_identity, key_credential):
+    """Retrieve all items for a specific item set ID."""
+    items = []
+    page = 1
+    while True:
+        url = f"{api_url}/items?key_identity={key_identity}&key_credential={key_credential}&item_set_id={item_set_id}&page={page}"
+        response = requests.get(url)
+        if response.status_code != 200:
+            print(f"Failed to retrieve items for set {item_set_id}: {response.status_code} - {response.text}")
+            break
+        data = response.json()
+        if not data:
+            break
+        items.extend(data)
+        page += 1
+    return items
 
-# Prepare data structure for Plotly
-data = []
-for country, ids in item_sets.items():
-    print(f"Processing {country}")
-    word_counts = fetch_word_counts(ids)
-    for title, count in word_counts.items():
-        data.append({'country': country, 'title': title, 'word_count': count})
+def extract_content(items, country, newspaper):
+    """Extract content and compute word counts."""
+    content_data = []
+    for item in items:
+        for value in item.get('bibo:content', []):
+            if value['type'] == 'literal':
+                words = value['@value'].split()
+                word_count = len(words)
+                content_data.append({'country': country, 'newspaper': newspaper, 'word_count': word_count})
+    return content_data
 
-# Create graphs in both English and French
-create_interactive_treemap(data, language='English')
-create_interactive_treemap(data, language='French')
+# Collecting data
+all_data = []
+for country, sets in ITEM_SETS.items():
+    for set_id in tqdm(sets, desc=f"Processing {country}"):
+        newspaper = get_item_set_name(API_URL, set_id, KEY_IDENTITY, KEY_CREDENTIAL)
+        items = get_items_by_set(API_URL, set_id, KEY_IDENTITY, KEY_CREDENTIAL)
+        item_content = extract_content(items, country, newspaper)
+        all_data.extend(item_content)
+
+# Create DataFrame
+df = pd.DataFrame(all_data)
+
+# Aggregate data by country and newspaper
+aggregated_data = df.groupby(['country', 'newspaper']).agg({'word_count': 'sum'}).reset_index()
+
+# Create a label that includes the word count on a new line with formatted numbers
+aggregated_data['label'] = aggregated_data['newspaper'] + "<br>" + aggregated_data['word_count'].apply(format_number_with_spaces) + " words"
+
+# Calculate total word count and format it
+total_word_count = format_number_with_spaces(df['word_count'].sum())
+
+# Create treemap
+fig = px.treemap(aggregated_data, path=['country', 'label'], values='word_count',
+                 title=f'Total Word Count: {total_word_count} - Proportion by Country and Newspaper')
+
+fig.show()
+
+# Save the figure as HTML file
+fig.write_html("treemap_word_count.html")
