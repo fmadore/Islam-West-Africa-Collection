@@ -85,21 +85,19 @@ def visualize_data_by_year(items_by_year_and_class, language='en'):
     """ Visualize the distribution of items by year and resource class label in a stacked bar chart, and save as HTML. """
     data = []
     for year, classes in items_by_year_and_class.items():
-        for label, count in classes.items():
-            data.append({'Year': year, 'Resource Class': label, 'Number of Items': count})
+        # Skip rows where year is 'Unknown Year'
+        if year.isdigit():  # This checks if the year consists only of digits
+            for label, count in classes.items():
+                data.append({'Year': int(year), 'Resource Class': label, 'Number of Items': count})  # Convert year to int here
 
     # Ensure the data is a DataFrame
     df = pd.DataFrame(data)
 
-    # Remove entries with 'Unknown Year' and convert year to integer
-    df = df[df['Year'] != 'Unknown Year']
-    df['Year'] = df['Year'].astype(int)
-
     # Ensure years are sorted chronologically
-    df = df.sort_values(by='Year')
+    df = df.sort_values(by='Year')  # Now the sorting will be numeric
 
     # Define the title based on the language
-    title = 'Distribution of Items Over Years by Class' if language == 'en' else 'Répartition des articles par année et par catégorie'
+    title = 'Distribution of references over years by type' if language == 'en' else 'Répartition des références par année et par type'
 
     # Create the bar chart
     fig = px.bar(
@@ -108,20 +106,20 @@ def visualize_data_by_year(items_by_year_and_class, language='en'):
         y='Number of Items',
         color='Resource Class',
         title=title,
-        category_orders={"Resource Class": sorted(df['Resource Class'].unique())},  # Sort legend alphabetically
-        barmode='stack'  # Stack bars
+        category_orders={"Year": sorted(df['Year'].unique()), "Resource Class": sorted(df['Resource Class'].unique())},
+        barmode='stack'
     )
 
     # Update the layout for better readability
     fig.update_layout(
         xaxis_title='Year',
         yaxis_title='Number of Items',
-        xaxis={'type': 'category'},  # Treat the x-axis values as categories
-        xaxis_tickangle=-45  # Optionally, rotate the x-axis labels for better readability
+        xaxis={'type': 'category'},
+        xaxis_tickangle=-45
     )
 
     # Save the figure as an HTML file
-    filename = f'distribution_over_years_{language}.html'
+    filename = f'references_distribution_over_years_{language}.html'
     fig.write_html(filename)
     print(f"Graph saved as {filename}")
 
