@@ -2,21 +2,28 @@ import requests
 import plotly.express as px
 import pandas as pd
 from tqdm import tqdm
+import os
+from dotenv import load_dotenv
+
+# Define the path to the .env file
+env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+
+# Load environment variables from .env file
+load_dotenv(dotenv_path=env_path)
 
 API_URL = "https://iwac.frederickmadore.com/api"
-KEY_IDENTITY = "XXXXXXXXXXXXXXXX"
-KEY_CREDENTIAL = "XXXXXXXXXXXXXXXX"
+KEY_IDENTITY = os.getenv("API_KEY_IDENTITY")
+KEY_CREDENTIAL = os.getenv("API_KEY_CREDENTIAL")
 ITEM_SETS = {
-    'Bénin': [2185, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5500, 5501, 5502],
+    'Bénin': [2185, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5500, 5501, 5502, 2195],
     'Burkina Faso': [2199, 2200, 2201, 2207, 2209, 2210, 2213, 2214, 2215, 5503, 23273],
+    'Niger': [2223],
     'Togo': [9458]
 }
-
 
 def format_number_with_spaces(number):
     """Format the number with a space every three digits."""
     return f"{number:,}".replace(",", " ")
-
 
 def create_label(newspaper, word_count, language='English'):
     """Create a label for the treemap boxes with language-specific formatting."""
@@ -25,7 +32,6 @@ def create_label(newspaper, word_count, language='English'):
         return f"{newspaper}<br>{formatted_word_count} mots"
     else:  # default to English
         return f"{newspaper}<br>{formatted_word_count} words"
-
 
 def get_item_set_name(api_url, item_set_id, key_identity, key_credential):
     """Fetch item set name using its ID."""
@@ -37,7 +43,6 @@ def get_item_set_name(api_url, item_set_id, key_identity, key_credential):
     else:
         print(f"Failed to fetch item set name for ID {item_set_id}: {response.status_code} - {response.text}")
         return f"Newspaper {item_set_id}"
-
 
 def get_items_by_set(api_url, item_set_id, key_identity, key_credential):
     """Retrieve all items for a specific item set ID."""
@@ -56,7 +61,6 @@ def get_items_by_set(api_url, item_set_id, key_identity, key_credential):
         page += 1
     return items
 
-
 def extract_content(items, country, newspaper):
     """Extract content and compute word counts."""
     content_data = []
@@ -67,7 +71,6 @@ def extract_content(items, country, newspaper):
                 word_count = len(words)
                 content_data.append({'country': country, 'newspaper': newspaper, 'word_count': word_count})
     return content_data
-
 
 # Collecting data
 all_data = []
@@ -89,16 +92,14 @@ total_word_count = format_number_with_spaces(aggregated_data['word_count'].sum()
 
 # For English
 english_title = f'Total word count: {total_word_count} - distribution by country and newspaper'
-aggregated_data['label'] = aggregated_data.apply(lambda x: create_label(x['newspaper'], x['word_count'], 'English'),
-                                                 axis=1)
+aggregated_data['label'] = aggregated_data.apply(lambda x: create_label(x['newspaper'], x['word_count'], 'English'), axis=1)
 fig_english = px.treemap(aggregated_data, path=['country', 'label'], values='word_count', title=english_title)
 fig_english.show()
 fig_english.write_html("treemap_word_count_en.html")
 
 # For French
 french_title = f'Nombre total de mots: {total_word_count} - répartition par pays et journal'
-aggregated_data['label'] = aggregated_data.apply(lambda x: create_label(x['newspaper'], x['word_count'], 'French'),
-                                                 axis=1)
+aggregated_data['label'] = aggregated_data.apply(lambda x: create_label(x['newspaper'], x['word_count'], 'French'), axis=1)
 fig_french = px.treemap(aggregated_data, path=['country', 'label'], values='word_count', title=french_title)
 fig_french.show()
 fig_french.write_html("treemap_word_count_fr.html")
