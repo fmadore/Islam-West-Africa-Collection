@@ -107,13 +107,17 @@ def generate_heatmap(coordinates, country):
 
 def extract_and_plot(item_set_ids, country):
     all_coordinates = []
+    total_items = 0  # Counter for total items
+
     for item_set_id in item_set_ids:
         items = fetch_items(item_set_id)
         if items:
+            total_items += len(items)
             coordinates = extract_coordinates(items)
             all_coordinates.extend(coordinates)
 
     generate_heatmap(all_coordinates, country)
+    logging.info(f"Total items processed for {country}: {total_items}")
 
 
 countries = {
@@ -122,6 +126,10 @@ countries = {
     'Togo': [25304, 9458, 5498]
 }
 
+total_global_items = 0  # Global counter for all items processed
+
 for country, item_set_ids in countries.items():
     logging.info(f"Processing data for {country}")
     extract_and_plot(item_set_ids, country)
+
+logging.info(f"Total items processed globally: {total_global_items}")
