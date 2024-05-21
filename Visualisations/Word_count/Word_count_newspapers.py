@@ -4,6 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 import os
 from dotenv import load_dotenv
+import concurrent.futures
 
 # Define the path to the .env file
 env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
@@ -45,21 +46,28 @@ def get_item_set_name(api_url, item_set_id, key_identity, key_credential):
         print(f"Failed to fetch item set name for ID {item_set_id}: {response.status_code} - {response.text}")
         return f"Newspaper {item_set_id}"
 
+def fetch_items_page(api_url, item_set_id, key_identity, key_credential, page):
+    """Fetch items for a specific page of an item set."""
+    url = f"{api_url}/items?key_identity={key_identity}&key_credential={key_credential}&item_set_id={item_set_id}&page={page}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(f"Failed to retrieve items for set {item_set_id}, page {page}: {response.status_code} - {response.text}")
+        return []
+
 def get_items_by_set(api_url, item_set_id, key_identity, key_credential):
-    """Retrieve all items for a specific item set ID."""
+    """Retrieve all items for a specific item set ID using threading to parallelize page fetching."""
     items = []
     page = 1
-    while True:
-        url = f"{api_url}/items?key_identity={key_identity}&key_credential={key_credential}&item_set_id={item_set_id}&page={page}"
-        response = requests.get(url)
-        if response.status_code != 200:
-            print(f"Failed to retrieve items for set {item_set_id}: {response.status_code} - {response.text}")
-            break
-        data = response.json()
-        if not data:
-            break
-        items.extend(data)
-        page += 1
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        while True:
+            future_to_page = {executor.submit(fetch_items_page, api_url, item_set_id, key_identity, key_credential, page): page}
+            response = future_to_page.popitem()[0].result()
+            if not response:
+                break
+            items.extend(response)
+            page += 1
     return items
 
 def extract_content(items, country, newspaper):
@@ -75,9 +83,15 @@ def extract_content(items, country, newspaper):
 
 # Collecting data
 all_data = []
-for country, sets in ITEM_SETS.items():
-    for set_id in tqdm(sets, desc=f"Processing {country}"):
-        newspaper = get_item_set_name(API_URL, set_id, KEY_IDENTITY, KEY_CREDENTIAL)
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    future_to_country_set = {
+        executor.submit(get_item_set_name, API_URL, set_id, KEY_IDENTITY, KEY_CREDENTIAL): (country, set_id)
+        for country, sets in ITEM_SETS.items()
+        for set_id in sets
+    }
+    for future in tqdm(concurrent.futures.as_completed(future_to_country_set), total=len(future_to_country_set), desc="Processing countries"):
+        country, set_id = future_to_country_set[future]
+        newspaper = future.result()
         items = get_items_by_set(API_URL, set_id, KEY_IDENTITY, KEY_CREDENTIAL)
         item_content = extract_content(items, country, newspaper)
         all_data.extend(item_content)
