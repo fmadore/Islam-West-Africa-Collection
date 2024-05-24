@@ -1,55 +1,26 @@
+import requests
+from tqdm import tqdm
+from bertopic import BERTopic
+from transformers import CamembertModel, CamembertTokenizer
+from sklearn.feature_extraction.text import CountVectorizer
+import torch
+import numpy as np
 import os
 import nltk
-import requests
-import re
-import stanza
-from gensim import corpora, models
-import pyLDAvis.gensim_models as gensimvis
-import pyLDAvis
 from nltk.corpus import stopwords
-from tqdm import tqdm
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
-env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
-load_dotenv(dotenv_path=env_path)
-
-API_URL = "https://iwac.frederickmadore.com/api"
-KEY_IDENTITY = os.getenv("API_KEY_IDENTITY")
-KEY_CREDENTIAL = os.getenv("API_KEY_CREDENTIAL")
-
-# Download necessary NLTK resources
+# Download and get French stopwords
 nltk.download('stopwords')
+french_stopwords = stopwords.words('french')
 
-# Load French stop words
-french_stopwords = set(stopwords.words('french'))
-additional_stopwords = {'El', '000', '%'}  # Add any other words to remove
-french_stopwords.update(additional_stopwords)
-french_stopwords = set(word.lower() for word in french_stopwords)  # Ensure all stopwords are lowercase
-
-# Initialize Stanza French model
-nlp = stanza.Pipeline(lang='fr', processors='tokenize,mwt,pos,lemma')
-
-# Compile regular expressions
-newline_re = re.compile(r'\n')
-apostrophe_re = re.compile(r"’")
-whitespace_re = re.compile(r"\s+")
-oe_re = re.compile(r"œ")
-
+# Fetch and Extract Texts
 def fetch_items_from_set(item_set_ids):
+    base_url = "https://iwac.frederickmadore.com/api/items"
     items = []
     for set_id in tqdm(item_set_ids, desc="Fetching item sets"):
         page = 1
         while True:
-            response = requests.get(
-                f"{API_URL}/items",
-                params={
-                    "item_set_id": set_id,
-                    "page": page,
-                    "key_identity": KEY_IDENTITY,
-                    "key_credential": KEY_CREDENTIAL
-                }
-            )
+            response = requests.get(f"{base_url}?item_set_id={set_id}&page={page}")
             data = response.json()
             if not data:
                 break
@@ -67,51 +38,49 @@ def extract_texts(items):
                     texts.append(content.get('@value', ''))
     return texts
 
-def preprocess_texts(texts):
-    processed_texts = []
-    for text in tqdm(texts, desc="Preprocessing texts"):
-        text = newline_re.sub(' ', text)
-        text = apostrophe_re.sub("'", text)
-        text = whitespace_re.sub(" ", text)
-        text = oe_re.sub("oe", text)
-        text = text.strip().lower()  # Convert to lower case before processing
+# Fetch items and extract texts
+item_set_ids = [2188]
+items = fetch_items_from_set(item_set_ids)
+texts = extract_texts(items)
 
-        # Process the cleaned text with Stanza
-        doc = nlp(text)
-        tokens = [word.lemma.lower() for sent in doc.sentences for word in sent.words
-                  if word.upos not in ['PUNCT', 'SYM', 'X'] and word.lemma.lower() not in french_stopwords]
-        processed_text = ' '.join(tokens)
-        processed_texts.append(processed_text)
-    return processed_texts
+# Create embeddings using the locally cloned CamemBERT model
+local_camembert_path = './camembert-base'
+tokenizer = CamembertTokenizer.from_pretrained(local_camembert_path)
+model = CamembertModel.from_pretrained(local_camembert_path)
 
-def perform_lda(texts):
-    dictionary = corpora.Dictionary([text.split() for text in texts])
-    corpus = [dictionary.doc2bow(text.split()) for text in texts]
-    lda_model = models.LdaModel(corpus, num_topics=5, id2word=dictionary, passes=15, update_every=1, chunksize=100, iterations=50)
-    return lda_model, corpus, dictionary
+def embed(text):
+    inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
+    with torch.no_grad():
+        outputs = model(**inputs)
+    return outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
 
-def create_visualization(lda_model, corpus, dictionary, file_name):
-    vis = gensimvis.prepare(lda_model, corpus, dictionary)
-    pyLDAvis.save_html(vis, file_name)
+embeddings = np.array([embed(text) for text in tqdm(texts, desc="Creating embeddings")])
 
-def main():
-    benin_item_sets = [2187, 2188, 2189]
-    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201]
+# Topic Modeling with BERTopic
+# Create a CountVectorizer with French stopwords
+vectorizer_model = CountVectorizer(stop_words=french_stopwords)
 
-    benin_items = fetch_items_from_set(benin_item_sets)
-    burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
+# Create BERTopic model
+topic_model = BERTopic(vectorizer_model=vectorizer_model)
 
-    benin_texts = extract_texts(benin_items)
-    burkina_faso_texts = extract_texts(burkina_faso_items)
+# Fit the model on your texts with the embeddings
+topics, probs = topic_model.fit_transform(texts, embeddings)
 
-    benin_processed = preprocess_texts(benin_texts)
-    burkina_faso_processed = preprocess_texts(burkina_faso_texts)
+# Print topics
+for topic_id, topic in topic_model.get_topics().items():
+    print(f"Topic {topic_id}: {topic}")
 
-    benin_lda_model, benin_corpus, benin_dictionary = perform_lda(benin_processed)
-    burkina_faso_lda_model, burkina_faso_corpus, burkina_faso_dictionary = perform_lda(burkina_faso_processed)
+# (Optional) Visualize Topics
+import matplotlib.pyplot as plt
 
-    create_visualization(benin_lda_model, benin_corpus, benin_dictionary, 'lda_visualization_benin.html')
-    create_visualization(burkina_faso_lda_model, burkina_faso_corpus, burkina_faso_dictionary, 'lda_visualization_burkina_faso.html')
+# Visualize the topics
+fig = topic_model.visualize_topics()
+fig.show()
 
-if __name__ == "__main__":
-    main()
+# Visualize the topic hierarchy
+hierarchical_fig = topic_model.visualize_hierarchy()
+hierarchical_fig.show()
+
+# Visualize the topic heatmap
+heatmap_fig = topic_model.visualize_heatmap()
+heatmap_fig.show()
