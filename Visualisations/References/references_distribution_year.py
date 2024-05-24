@@ -23,7 +23,7 @@ french_labels = {
 
 
 def fetch_resource_class_labels():
-    """ Fetch labels for resource classes. """
+    """Fetch labels for resource classes."""
     labels = {}
     for class_id in resource_classes:
         response = requests.get(f"{api_url}/resource_classes/{class_id}")
@@ -39,11 +39,13 @@ def fetch_resource_class_labels():
 
 
 def fetch_items(item_set_id, seen_ids):
-    """ Fetch all items within a given item set, handling pagination and checking for duplicates. """
+    """Fetch all items within a given item set, handling pagination and checking for duplicates."""
     items = []
     page = 1
     while True:
         response = requests.get(f"{api_url}/items", params={"item_set_id": item_set_id, "page": page, "per_page": 50})
+        if response.status_code != 200:
+            break
         data = response.json()
         if not data:
             break
@@ -51,10 +53,10 @@ def fetch_items(item_set_id, seen_ids):
             item_id = item['o:id']
             if item_id not in seen_ids:
                 seen_ids.add(item_id)
-                date_field = item.get('dcterms:date', [{'@value': 'Unknown Year'}])  # Handle date as list
+                date_field = item.get('dcterms:date', [{'@value': 'Unknown Year'}])
                 year = 'Unknown Year'
                 if isinstance(date_field, list) and date_field and '@value' in date_field[0]:
-                    year = date_field[0]['@value'].split('-')[0]  # Assume the format could be YYYY-MM-DD or just YYYY
+                    year = date_field[0]['@value'].split('-')[0]
                 elif isinstance(date_field, dict):
                     year = date_field.get('@value', 'Unknown Year').split('-')[0]
                 items.append({
@@ -67,7 +69,7 @@ def fetch_items(item_set_id, seen_ids):
 
 
 def fetch_and_categorize_items_by_year(class_labels, language='en'):
-    """ Fetch items and categorize them by year and resource class label. """
+    """Fetch items and categorize them by year and resource class label."""
     items_by_year_and_class = defaultdict(lambda: defaultdict(int))
     seen_ids = set()  # Track unique item IDs across all sets
     for item_set_id in tqdm(item_set_ids, desc="Processing item sets"):
@@ -82,27 +84,23 @@ def fetch_and_categorize_items_by_year(class_labels, language='en'):
 
 
 def visualize_data_by_year(items_by_year_and_class, language='en'):
-    """ Visualize the distribution of items by year and resource class label in a stacked bar chart, and save as HTML. """
-    data = []
-    for year, classes in items_by_year_and_class.items():
-        # Skip rows where year is 'Unknown Year'
-        if year.isdigit():  # This checks if the year consists only of digits
-            for label, count in classes.items():
-                data.append({'Year': int(year), 'Resource Class': label, 'Number of references': count})  # Convert year to int here
+    """Visualize the distribution of items by year and resource class label in a stacked bar chart, and save as HTML."""
+    data = [
+        {'Year': int(year), 'Resource Class': label, 'Number of references': count}
+        for year, classes in items_by_year_and_class.items()
+        if year.isdigit()
+        for label, count in classes.items()
+    ]
 
-    # Ensure the data is a DataFrame
-    df = pd.DataFrame(data)
-
-    # Ensure years are sorted chronologically
-    df = df.sort_values(by='Year')  # Now the sorting will be numeric
+    df = pd.DataFrame(data).sort_values(by='Year')
 
     total_items = df['Number of references'].sum()
-    title = f'Distribution of the {total_items} references in the database over years by type' if language == 'en' else f'Répartition des {total_items} références de la base de données par année et par type'
+    title = (
+        f'Distribution of the {total_items} references in the database over years by type'
+        if language == 'en'
+        else f'Répartition des {total_items} références de la base de données par année et par type'
+    )
 
-    x_axis_label = 'Year' if language == 'en' else 'Année'
-    y_axis_label = 'Number of references' if language == 'en' else 'Nombre de références'
-
-    # Create the bar chart
     fig = px.bar(
         df,
         x='Year',
@@ -113,21 +111,21 @@ def visualize_data_by_year(items_by_year_and_class, language='en'):
         barmode='stack'
     )
 
-    # Update the layout for better readability
     fig.update_layout(
-        xaxis_title='Year',
-        yaxis_title='Number of references',
+        xaxis_title='Year' if language == 'en' else 'Année',
+        yaxis_title='Number of references' if language == 'en' else 'Nombre de références',
         xaxis={'type': 'category'},
         xaxis_tickangle=-45
     )
 
-    # Save the figure as an HTML file
     filename = f'references_distribution_over_years_{language}.html'
     fig.write_html(filename)
     print(f"Graph saved as {filename}")
     fig.show()
 
-class_labels = fetch_resource_class_labels()
-for language in ['en', 'fr']:
-    items_by_year_and_class = fetch_and_categorize_items_by_year(class_labels, language)
-    visualize_data_by_year(items_by_year_and_class, language)
+
+if __name__ == "__main__":
+    class_labels = fetch_resource_class_labels()
+    for language in ['en', 'fr']:
+        items_by_year_and_class = fetch_and_categorize_items_by_year(class_labels, language)
+        visualize_data_by_year(items_by_year_and_class, language)
