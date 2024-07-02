@@ -5,6 +5,9 @@ from tqdm import tqdm
 import os
 from dotenv import load_dotenv
 import concurrent.futures
+import time
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 # Define the path to the .env file
 env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
@@ -20,8 +23,19 @@ ITEM_SETS = {
     'Burkina Faso': [2199, 2200, 2201, 2207, 2209, 2210, 2213, 2214, 2215, 5503, 23273, 2197, 2196, 2206, 2198, 2203, 2205, 2204, 2202],
     'Côte d\'Ivoire': [23253],
     'Niger': [2223, 2218, 2219],
-    'Togo': [9458, 2226]
+    'Togo': [9458, 2226, 5499, 5498]
 }
+
+# Set up a session with retry strategy
+retry_strategy = Retry(
+    total=3,
+    backoff_factor=1,
+    status_forcelist=[429, 500, 502, 503, 504],
+)
+adapter = HTTPAdapter(max_retries=retry_strategy)
+session = requests.Session()
+session.mount("https://", adapter)
+session.mount("http://", adapter)
 
 def format_number_with_spaces(number):
     """Format the number with a space every three digits."""
@@ -38,23 +52,30 @@ def create_label(newspaper, word_count, language='English'):
 def get_item_set_name(api_url, item_set_id, key_identity, key_credential):
     """Fetch item set name using its ID."""
     url = f"{api_url}/item_sets/{item_set_id}?key_identity={key_identity}&key_credential={key_credential}"
-    response = requests.get(url)
-    if response.status_code == 200:
+    try:
+        response = session.get(url, timeout=30)
+        response.raise_for_status()
         data = response.json()
         return data['dcterms:title'][0]['@value'] if 'dcterms:title' in data else f"Newspaper {item_set_id}"
-    else:
-        print(f"Failed to fetch item set name for ID {item_set_id}: {response.status_code} - {response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to fetch item set name for ID {item_set_id}: {e}")
         return f"Newspaper {item_set_id}"
 
 def fetch_items_page(api_url, item_set_id, key_identity, key_credential, page):
     """Fetch items for a specific page of an item set."""
     url = f"{api_url}/items?key_identity={key_identity}&key_credential={key_credential}&item_set_id={item_set_id}&page={page}"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        print(f"Failed to retrieve items for set {item_set_id}, page {page}: {response.status_code} - {response.text}")
-        return []
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = session.get(url, timeout=30)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            print(f"Attempt {attempt + 1} failed for set {item_set_id}, page {page}: {e}")
+            if attempt == max_retries - 1:
+                print(f"Failed to retrieve items for set {item_set_id}, page {page} after {max_retries} attempts")
+                return []
+            time.sleep(2 ** attempt)  # Exponential backoff
 
 def get_items_by_set(api_url, item_set_id, key_identity, key_credential):
     """Retrieve all items for a specific item set ID using threading to parallelize page fetching."""
@@ -91,10 +112,13 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
     }
     for future in tqdm(concurrent.futures.as_completed(future_to_country_set), total=len(future_to_country_set), desc="Processing countries"):
         country, set_id = future_to_country_set[future]
-        newspaper = future.result()
-        items = get_items_by_set(API_URL, set_id, KEY_IDENTITY, KEY_CREDENTIAL)
-        item_content = extract_content(items, country, newspaper)
-        all_data.extend(item_content)
+        try:
+            newspaper = future.result()
+            items = get_items_by_set(API_URL, set_id, KEY_IDENTITY, KEY_CREDENTIAL)
+            item_content = extract_content(items, country, newspaper)
+            all_data.extend(item_content)
+        except Exception as e:
+            print(f"Error processing {country} - {set_id}: {e}")
 
 # Create DataFrame
 df = pd.DataFrame(all_data)
