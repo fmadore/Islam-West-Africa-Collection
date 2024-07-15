@@ -122,11 +122,11 @@ def query_ai(context, user_question):
             model="claude-3-5-sonnet-20240620",
             max_tokens=4000,
             temperature=0.3,
-            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, using line breaks between paragraphs for better readability. Then list all sources used at the end of your response. Format the sources list as follows:\n\nSources:\n1. \"Title of the article\" (Name of the newspaper, Date)\n2. \"Title of the article\" (Name of the newspaper, Date)\n\nEach source should be on a new line. Do not include any citations within the main body of your response.",
+            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, using line breaks between paragraphs for better readability. It is crucial that you list all sources used at the end of your response. Format the sources list as follows:\n\nSources:\n1. \"Title of the article\" (Name of the newspaper, Date)\n2. \"Title of the article\" (Name of the newspaper, Date)\n\nEach source should be on a new line. Do not include any citations within the main body of your response. Always include at least one source, even if you're not certain about its relevance.",
             messages=[
                 {
                     "role": "user",
-                    "content": f"Context:\n{context}\n\nHuman: {user_question}"
+                    "content": f"Context:\n{context}\n\nHuman: {user_question}\n\nRemember to include the sources at the end of your response, formatted as instructed."
                 }
             ]
         )
@@ -179,6 +179,10 @@ def chat():
 
         ai_response = query_ai(context, user_question)
         logging.info(f"Received AI response of length: {len(ai_response)}")
+
+        if "Sources:" not in ai_response:
+            logging.warning("AI response does not contain sources. Adding a note about this.")
+            ai_response += "\n\nSources:\nNo specific sources were cited for this response."
 
         processed_response = process_ai_response(ai_response)
         logging.info(f"Processed AI response")
