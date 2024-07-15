@@ -153,7 +153,14 @@ def create_visualizations(topic_model, topics, probs, dates, country_name):
             # Group by Topic and Timestamp, sum the frequencies
             freq_df = df.groupby(['Topic', 'Timestamp'])['Frequency'].sum().reset_index()
 
-            fig = topic_model.visualize_topics_over_time(freq_df)
+            # Add top words for each topic
+            def get_top_words(topic_id):
+                words, _ = zip(*topic_model.get_topic(topic_id))
+                return ", ".join(words[:5])  # Get top 5 words
+
+            freq_df['Words'] = freq_df['Topic'].apply(get_top_words)
+
+            fig = topic_model.visualize_topics_over_time(freq_df, top_n_topics=10)
             fig.write_html(f'topic_similarity_over_time_{country_name}.html')
         else:
             print(f"Warning: No valid dates available for topics over time visualization for {country_name}")
@@ -186,7 +193,7 @@ def create_visualizations(topic_model, topics, probs, dates, country_name):
 
 def main():
     benin_item_sets = [2187, 2188, 2189]
-    burkina_faso_item_sets = [2200, 2215]
+    burkina_faso_item_sets = [2200, 2215, 2214]
 
     benin_items = fetch_items_from_set(benin_item_sets)
     burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
