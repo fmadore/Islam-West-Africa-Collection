@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import logging
 import anthropic
 import re
+import tiktoken
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -82,20 +83,34 @@ def search_documents(keywords, max_results=5):
         logging.error(f"Error in search_documents: {str(e)}")
         return []
 
-def prepare_context(relevant_docs, max_tokens=3000):
+
+def num_tokens_from_string(string: str, encoding_name: str = "cl100k_base") -> int:
+    encoding = tiktoken.get_encoding(encoding_name)
+    num_tokens = len(encoding.encode(string))
+    return num_tokens
+
+
+def prepare_context(relevant_docs, max_tokens=100000):  # Increased max_tokens significantly
     try:
         context = ""
+        docs_included = 0
         for doc in relevant_docs:
-            doc_content = f"Title: {doc['title']}\nSubject: {', '.join(doc['subject'])}\nDate: {doc['date']}\nContent: {doc['content'][:500]}...\n\n"
-            if len(context) + len(doc_content) > max_tokens:
-                break
-            context += doc_content
+            doc_content = f"Title: {doc['title']}\nSubject: {', '.join(doc['subject'])}\nDate: {doc['date']}\nURL: {doc['url']}\nContent: {doc['content']}\n\n"
 
-        logging.info(f"Prepared context (first 500 chars): {context[:500]}...")
+            # Check if adding this document would exceed the token limit
+            if num_tokens_from_string(context + doc_content) > max_tokens:
+                break
+
+            context += doc_content
+            docs_included += 1
+
+        logging.info(
+            f"Prepared context with {docs_included} full documents. Total tokens: {num_tokens_from_string(context)}")
         return context
     except Exception as e:
         logging.error(f"Error in prepare_context: {str(e)}")
         return ""
+
 
 def query_ai(context, user_question):
     try:
@@ -103,7 +118,7 @@ def query_ai(context, user_question):
             model="claude-3-5-sonnet-20240620",
             max_tokens=1000,
             temperature=0,
-            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question.",
+            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. When citing information, include the URL of the source document in your response. If multiple sources support your answer, cite all relevant sources.",
             messages=[
                 {
                     "role": "user",
@@ -131,7 +146,7 @@ def chat():
         logging.info(f"Extracted keywords: {keywords}")
 
         # Search documents using AI-extracted keywords
-        relevant_docs = search_documents(keywords)
+        relevant_docs = search_documents(keywords, max_results=10)  # Increased max_results
         logging.info(f"Found {len(relevant_docs)} relevant documents")
 
         context = prepare_context(relevant_docs)
@@ -146,4 +161,6 @@ def chat():
         return jsonify({"response": f"An error occurred: {str(e)}"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    logging.info("Starting the Flask application...")
+    app.run(debug=True, host='0.0.0.0', port=5000)
+    logging.info("Flask application has stopped.")
