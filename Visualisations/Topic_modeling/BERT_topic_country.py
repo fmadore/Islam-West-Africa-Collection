@@ -14,6 +14,7 @@ import plotly.express as px
 from wordcloud import WordCloud
 import nltk
 from nltk.corpus import stopwords
+from datetime import datetime
 
 # Download French stop words
 nltk.download('stopwords')
@@ -60,15 +61,29 @@ def fetch_items_from_set(item_set_ids):
     return items
 
 
-def extract_texts(items):
+def extract_texts_and_dates(items):
     texts = []
-    for item in tqdm(items, desc="Extracting texts"):
+    dates = []
+    for item in tqdm(items, desc="Extracting texts and dates"):
         if "bibo:content" in item:
             content_blocks = item["bibo:content"]
             for content in content_blocks:
                 if content.get('property_label') == 'content' and content.get('is_public', True):
                     texts.append(content.get('@value', ''))
-    return texts
+
+                    # Extract date
+                    date = None
+                    if "dcterms:date" in item:
+                        date_blocks = item["dcterms:date"]
+                        for date_block in date_blocks:
+                            if date_block.get('type') == 'numeric:timestamp' and date_block.get('is_public', True):
+                                date_str = date_block.get('@value', '')
+                                try:
+                                    date = datetime.strptime(date_str, "%Y-%m-%d")
+                                except ValueError:
+                                    pass  # If date is not in the expected format, we keep it as None
+                    dates.append(date)
+    return texts, dates
 
 
 def preprocess_texts(texts):
@@ -101,7 +116,7 @@ def perform_topic_modeling(texts, n_topics=5):
     return topic_model, topics, probs
 
 
-def create_visualizations(topic_model, topics, probs, country_name):
+def create_visualizations(topic_model, topics, probs, dates, country_name):
     # Get topic info
     topic_info = topic_model.get_topic_info()
     n_topics = len(topic_info[topic_info['Topic'] != -1])  # Exclude outlier topic
@@ -125,9 +140,19 @@ def create_visualizations(topic_model, topics, probs, country_name):
     else:
         print(f"Warning: Not enough topics to create heatmap for {country_name}")
 
-    # 4. Topic similarity
-    fig = topic_model.visualize_topics_over_time(topics, timestamps=range(len(topics)))
-    fig.write_html(f'topic_similarity_{country_name}.html')
+    # 4. Topic similarity over time
+    if dates:
+        # Filter out None dates and their corresponding topics
+        valid_dates = [d for d in dates if d is not None]
+        valid_topics = [t for t, d in zip(topics, dates) if d is not None]
+
+        if valid_dates and valid_topics:
+            fig = topic_model.visualize_topics_over_time(valid_topics, valid_dates)
+            fig.write_html(f'topic_similarity_over_time_{country_name}.html')
+        else:
+            print(f"Warning: No valid dates available for topics over time visualization for {country_name}")
+    else:
+        print(f"Warning: No dates available for topics over time visualization for {country_name}")
 
     # 5. Word clouds for top topics
     for i in range(min(5, n_topics)):
@@ -154,14 +179,14 @@ def create_visualizations(topic_model, topics, probs, country_name):
 
 
 def main():
-    benin_item_sets = [2187]
-    burkina_faso_item_sets = [2200]
+    benin_item_sets = [2187, 2188, 2189]
+    burkina_faso_item_sets = [2200, 2215]
 
     benin_items = fetch_items_from_set(benin_item_sets)
     burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
 
-    benin_texts = extract_texts(benin_items)
-    burkina_faso_texts = extract_texts(burkina_faso_items)
+    benin_texts, benin_dates = extract_texts_and_dates(benin_items)
+    burkina_faso_texts, burkina_faso_dates = extract_texts_and_dates(burkina_faso_items)
 
     benin_processed = preprocess_texts(benin_texts)
     burkina_faso_processed = preprocess_texts(burkina_faso_texts)
@@ -169,8 +194,9 @@ def main():
     benin_topic_model, benin_topics, benin_probs = perform_topic_modeling(benin_processed)
     burkina_faso_topic_model, burkina_faso_topics, burkina_faso_probs = perform_topic_modeling(burkina_faso_processed)
 
-    create_visualizations(benin_topic_model, benin_topics, benin_probs, "Benin")
-    create_visualizations(burkina_faso_topic_model, burkina_faso_topics, burkina_faso_probs, "Burkina_Faso")
+    create_visualizations(benin_topic_model, benin_topics, benin_probs, benin_dates, "Benin")
+    create_visualizations(burkina_faso_topic_model, burkina_faso_topics, burkina_faso_probs, burkina_faso_dates,
+                          "Burkina_Faso")
 
 
 if __name__ == "__main__":
