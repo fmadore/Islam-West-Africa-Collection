@@ -1,4 +1,10 @@
 from flask import Flask, request, jsonify, render_template
+try:
+    from markupsafe import Markup
+except ImportError as e:
+    logging.error(f"Failed to import Markup from markupsafe: {str(e)}")
+    raise
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
@@ -90,22 +96,20 @@ def num_tokens_from_string(string: str, encoding_name: str = "cl100k_base") -> i
     return num_tokens
 
 
-def prepare_context(relevant_docs, max_tokens=100000):  # Increased max_tokens significantly
+def prepare_context(relevant_docs, max_tokens=100000):
     try:
         context = ""
         docs_included = 0
         for doc in relevant_docs:
-            doc_content = f"Title: {doc['title']}\nSubject: {', '.join(doc['subject'])}\nDate: {doc['date']}\nURL: {doc['url']}\nContent: {doc['content']}\n\n"
+            doc_content = f"Source {docs_included + 1}:\nTitle: {doc['title']}\nDate: {doc['date']}\nURL: {doc['url']}\nSubject: {', '.join(doc['subject'])}\nContent: {doc['content']}\n\n"
 
-            # Check if adding this document would exceed the token limit
             if num_tokens_from_string(context + doc_content) > max_tokens:
                 break
 
             context += doc_content
             docs_included += 1
 
-        logging.info(
-            f"Prepared context with {docs_included} full documents. Total tokens: {num_tokens_from_string(context)}")
+        logging.info(f"Prepared context with {docs_included} full documents. Total tokens: {num_tokens_from_string(context)}")
         return context
     except Exception as e:
         logging.error(f"Error in prepare_context: {str(e)}")
@@ -116,9 +120,9 @@ def query_ai(context, user_question):
     try:
         message = client.messages.create(
             model="claude-3-5-sonnet-20240620",
-            max_tokens=1000,
+            max_tokens=1500,
             temperature=0,
-            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. When citing information, include the URL of the source document in your response. If multiple sources support your answer, cite all relevant sources.",
+            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, and then list all sources used at the end of your response. For each source, include: [Title of the article, Date, URL]. Number each source. Do not include any citations within the main body of your response.",
             messages=[
                 {
                     "role": "user",
@@ -131,6 +135,27 @@ def query_ai(context, user_question):
         logging.error(f"Error in query_ai: {str(e)}")
         return f"Error querying AI: {str(e)}"
 
+
+def process_ai_response(response):
+    # Split the response into main content and sources
+    parts = re.split(r'\n(?=Sources:)', response, flags=re.IGNORECASE)
+    main_content = parts[0]
+    sources = parts[1] if len(parts) > 1 else ""
+
+    # Process sources to create clickable links
+    processed_sources = re.sub(
+        r'\[(.+?), (.+?), (.+?)\]',
+        r'<p><a href="\3" target="_blank" rel="noopener noreferrer">[\1, \2]</a></p>',
+        sources
+    )
+
+    # Combine processed main content and sources
+    processed_response = f"{main_content}\n\n{processed_sources}"
+
+    # Mark the response as safe HTML
+    return Markup(processed_response)
+
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -141,12 +166,10 @@ def chat():
         user_question = request.json['question']
         logging.info(f"Received question: {user_question}")
 
-        # Extract keywords using AI
         keywords = extract_keywords_with_ai(user_question)
         logging.info(f"Extracted keywords: {keywords}")
 
-        # Search documents using AI-extracted keywords
-        relevant_docs = search_documents(keywords, max_results=10)  # Increased max_results
+        relevant_docs = search_documents(keywords, max_results=10)
         logging.info(f"Found {len(relevant_docs)} relevant documents")
 
         context = prepare_context(relevant_docs)
@@ -155,7 +178,10 @@ def chat():
         ai_response = query_ai(context, user_question)
         logging.info(f"Received AI response of length: {len(ai_response)}")
 
-        return jsonify({"response": ai_response})
+        processed_response = process_ai_response(ai_response)
+        logging.info(f"Processed AI response")
+
+        return jsonify({"response": processed_response})
     except Exception as e:
         logging.error(f"Error in chat endpoint: {str(e)}")
         return jsonify({"response": f"An error occurred: {str(e)}"}), 500
