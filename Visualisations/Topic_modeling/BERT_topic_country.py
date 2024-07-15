@@ -102,6 +102,10 @@ def perform_topic_modeling(texts, n_topics=5):
 
 
 def create_visualizations(topic_model, topics, probs, country_name):
+    # Get topic info
+    topic_info = topic_model.get_topic_info()
+    n_topics = len(topic_info[topic_info['Topic'] != -1])  # Exclude outlier topic
+
     # 1. Topic visualization
     fig = topic_model.visualize_topics()
     fig.write_html(f'topic_visualization_{country_name}.html')
@@ -114,16 +118,19 @@ def create_visualizations(topic_model, topics, probs, country_name):
         print(f"Warning: Unable to create topic distribution visualization for {country_name}")
 
     # 3. Topic heatmap
-    fig = topic_model.visualize_heatmap(n_clusters=20)
-    fig.write_html(f'topic_heatmap_{country_name}.html')
+    if n_topics > 1:
+        n_clusters = min(n_topics - 1, 20)  # Ensure n_clusters is less than n_topics
+        fig = topic_model.visualize_heatmap(n_clusters=n_clusters)
+        fig.write_html(f'topic_heatmap_{country_name}.html')
+    else:
+        print(f"Warning: Not enough topics to create heatmap for {country_name}")
 
     # 4. Topic similarity
     fig = topic_model.visualize_topics_over_time(topics, timestamps=range(len(topics)))
     fig.write_html(f'topic_similarity_{country_name}.html')
 
     # 5. Word clouds for top topics
-    topic_info = topic_model.get_topic_info()
-    for i in range(min(5, len(topic_info))):
+    for i in range(min(5, n_topics)):
         topic_id = topic_info.iloc[i]['Topic']
         if topic_id != -1:  # Exclude the outlier topic if it's in top 5
             words = dict(topic_model.get_topic(topic_id))
@@ -136,8 +143,8 @@ def create_visualizations(topic_model, topics, probs, country_name):
             plt.close()
 
     # 6. Interactive topic chart
-    topic_sizes = topic_info['Count'].values
-    topic_names = [f"Topic {i}" for i in topic_info['Topic']]
+    topic_sizes = topic_info[topic_info['Topic'] != -1]['Count'].values
+    topic_names = [f"Topic {i}" for i in topic_info[topic_info['Topic'] != -1]['Topic']]
     fig = go.Figure(data=[go.Bar(x=topic_names, y=topic_sizes)])
     fig.update_layout(title=f'Topic Sizes in {country_name}', xaxis_title='Topics', yaxis_title='Number of Documents')
     fig.write_html(f'topic_sizes_{country_name}.html')
