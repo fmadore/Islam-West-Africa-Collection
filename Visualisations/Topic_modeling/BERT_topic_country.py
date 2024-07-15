@@ -12,6 +12,12 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 from wordcloud import WordCloud
+import nltk
+from nltk.corpus import stopwords
+
+# Download French stop words
+nltk.download('stopwords')
+french_stop_words = stopwords.words('french')
 
 # Define the path to the .env file
 env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
@@ -78,9 +84,9 @@ def preprocess_texts(texts):
 
 
 def perform_topic_modeling(texts, n_topics=5):
-    # Initialize BERTopic
-    vectorizer = CountVectorizer(stop_words="french")
-    topic_model = BERTopic(language="french", n_gram_range=(1, 2), min_topic_size=5, nr_topics=n_topics,
+    # Initialize BERTopic with custom French stop words
+    vectorizer = CountVectorizer(stop_words=french_stop_words)
+    topic_model = BERTopic(language="multilingual", n_gram_range=(1, 2), min_topic_size=5, nr_topics=n_topics,
                            vectorizer_model=vectorizer)
 
     # Fit the model and transform
