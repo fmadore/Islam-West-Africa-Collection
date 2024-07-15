@@ -8,7 +8,7 @@ IWAC Chat Explorer is an AI-powered web application that implements an augmented
 - Augmented retrieval system combining document search and AI-generated responses
 - AI-powered keyword extraction from user queries
 - Relevant document search based on extracted keywords
-- Context-aware responses using the Claude 3 Sonnet model from Anthropic
+- Context-aware responses using the Claude 3.5 Sonnet model from Anthropic
 - Source attribution for AI-generated responses
 - Responsive design using Tailwind CSS
 
@@ -22,7 +22,7 @@ The IWAC Chat Explorer uses an augmented retrieval strategy that involves severa
 
 3. **Context Preparation**: The content of the retrieved documents is compiled into a context that the AI can use to formulate its response.
 
-4. **AI-Powered Response Generation**: The system then sends this context along with the original user query to the Claude 3 Sonnet model, which generates a detailed, context-aware response.
+4. **AI-Powered Response Generation**: The system then sends this context along with the original user query to the Claude 3.5 Sonnet model, which generates a detailed, context-aware response.
 
 5. **Source Attribution**: Finally, the system provides the AI-generated response to the user, along with citations of the source documents used to inform the response.
 
@@ -77,6 +77,6 @@ This approach combines the strengths of traditional information retrieval (findi
 ## Acknowledgements
 
 - This project uses the Islam West Africa Collection (IWAC) dataset.
-- AI capabilities are powered by the Anthropic Claude 3 Sonnet model.
+- AI capabilities are powered by the Anthropic Claude 3.5 Sonnet model.
 - Frontend styling is done using Tailwind CSS.
 
