@@ -121,8 +121,8 @@ def query_ai(context, user_question):
         message = client.messages.create(
             model="claude-3-5-sonnet-20240620",
             max_tokens=4000,
-            temperature=0,
-            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, using line breaks between paragraphs for better readability. Then list all sources used at the end of your response. Format the sources list as follows:\n\nSources:\n1. [Title of the article], [Date], [URL]\n2. [Title of the article], [Date], [URL]\n\nDo not include any citations within the main body of your response.",
+            temperature=0.3,
+            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, using line breaks between paragraphs for better readability. Then list all sources used at the end of your response. Format the sources list as follows:\n\nSources:\n1. \"Title of the article\" (Name of the newspaper, Date), URL\n2. \"Title of the article\" (Name of the newspaper, Date), URL\n\nDo not include any citations within the main body of your response.",
             messages=[
                 {
                     "role": "user",
@@ -144,10 +144,10 @@ def process_ai_response(response):
     # Add paragraph breaks
     main_content = re.sub(r'\n\n', '</p><p>', f'<p>{main_content}</p>')
 
-    # Process sources to create clickable links
+    # Process sources to create clickable links with the new format
     processed_sources = re.sub(
-        r'(\d+)\.\s+(.+?),\s+(.+?),\s+(.+)',
-        r'<p>\1. <a href="\4" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: blue;">\2, \3</a></p>',
+        r'(\d+)\.\s+"(.+?)"\s+\((.+?),\s+(.+?)\),\s+(.+)',
+        r'<p>\1. "<a href="\5" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: blue;">\2</a>" (<i>\3</i>, \4)</p>',
         sources
     )
 
