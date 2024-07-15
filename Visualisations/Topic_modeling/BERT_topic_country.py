@@ -192,8 +192,8 @@ def create_visualizations(topic_model, topics, probs, dates, country_name):
 
 
 def main():
-    benin_item_sets = [2187, 2188, 2189]
-    burkina_faso_item_sets = [2200, 2215, 2214]
+    benin_item_sets = [2185, 5502, 2186, 2187, 2188, 2189, 2191, 2190, 4922, 5501, 5500]
+    burkina_faso_item_sets = [2199, 2200, 2215, 2214, 23448, 23273, 23449, 5503, 2207, 2209, 2210, 2213, 2201]
 
     benin_items = fetch_items_from_set(benin_item_sets)
     burkina_faso_items = fetch_items_from_set(burkina_faso_item_sets)
