@@ -143,11 +143,17 @@ def create_visualizations(topic_model, topics, probs, dates, country_name):
     # 4. Topic similarity over time
     if dates:
         # Filter out None dates and their corresponding topics
-        valid_dates = [d for d in dates if d is not None]
-        valid_topics = [t for t, d in zip(topics, dates) if d is not None]
+        valid_data = [(t, d) for t, d in zip(topics, dates) if d is not None]
 
-        if valid_dates and valid_topics:
-            fig = topic_model.visualize_topics_over_time(valid_topics, valid_dates)
+        if valid_data:
+            # Create a dataframe with the required format
+            df = pd.DataFrame(valid_data, columns=['Topic', 'Timestamp'])
+            df['Frequency'] = 1  # Each document contributes a frequency of 1 to its topic
+
+            # Group by Topic and Timestamp, sum the frequencies
+            freq_df = df.groupby(['Topic', 'Timestamp'])['Frequency'].sum().reset_index()
+
+            fig = topic_model.visualize_topics_over_time(freq_df)
             fig.write_html(f'topic_similarity_over_time_{country_name}.html')
         else:
             print(f"Warning: No valid dates available for topics over time visualization for {country_name}")
