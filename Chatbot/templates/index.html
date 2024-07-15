@@ -56,7 +56,7 @@
             messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'} mb-2`;
             messageDiv.innerHTML = `
                 <div class="max-w-md p-2 rounded-lg ${isUser ? 'bg-blue-100' : 'bg-gray-100'}">
-                    ${text}
+                    ${isUser ? text : text}
                 </div>
             `;
             chatMessages.appendChild(messageDiv);
