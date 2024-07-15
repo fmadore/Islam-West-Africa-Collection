@@ -24,7 +24,8 @@ for _, row in tqdm(df.iterrows(), total=len(df)):
         'publisher': row['dcterms:publisher'] if pd.notna(row['dcterms:publisher']) else '',
         'date': row['dcterms:date'] if pd.notna(row['dcterms:date']) else '',
         'spatial': row['dcterms:spatial'].split('|') if pd.notna(row['dcterms:spatial']) else [],
-        'content': row['bibo:content'] if pd.notna(row['bibo:content']) else ''
+        'content': row['bibo:content'] if pd.notna(row['bibo:content']) else '',
+        'url': row['url'] if pd.notna(row['url']) else ''
     }
     documents.append(doc)
 
