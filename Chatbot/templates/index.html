@@ -30,6 +30,14 @@
                 <input type="text" id="user-input" placeholder="Ask a question to explore the Islam West Africa Collection..." class="flex-grow mr-2 p-2 border rounded">
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Send</button>
             </form>
+
+            <!-- Loading Indicator -->
+            <div id="loading-indicator" class="hidden mt-4">
+                <div class="flex items-center justify-center">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+                    <span class="ml-2">The AI is processing your request...</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -38,6 +46,7 @@
         const userInput = document.getElementById('user-input');
         const chatMessages = document.getElementById('chat-messages');
         const suggestedPrompts = document.getElementById('suggested-prompts');
+        const loadingIndicator = document.getElementById('loading-indicator');
 
         chatForm.addEventListener('submit', handleSubmit);
 
@@ -56,6 +65,9 @@
             addMessage(question, true);
             userInput.value = '';
 
+            // Show loading indicator
+            loadingIndicator.classList.remove('hidden');
+
             try {
                 const response = await fetch('/api/chat', {
                     method: 'POST',
@@ -70,14 +82,17 @@
                 }
 
                 const data = await response.json();
-                addMessage(data.response, false, data.sources, data.relevantDocs);
+                addMessage(data.response, false, data.sources);
             } catch (error) {
                 console.error('Error:', error);
                 addMessage('Sorry, there was an error processing your request.', false);
+            } finally {
+                // Hide loading indicator
+                loadingIndicator.classList.add('hidden');
             }
         }
 
-        function addMessage(text, isUser, sources = [], relevantDocs = []) {
+        function addMessage(text, isUser, sources = []) {
             const messageDiv = document.createElement('div');
             messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`;
 
@@ -88,19 +103,19 @@
                     </div>
                 `;
             } else {
-                // Process the text to add footnotes
-                let processedText = addFootnotes(text, sources);
-
                 messageDiv.innerHTML = `
                     <div class="max-w-2xl p-3 rounded-lg bg-gray-100">
-                        ${processedText}
-                        ${sources.length > 0 ? '<h4 class="font-semibold mt-2">Sources:</h4>' : ''}
-                        <ol class="list-decimal list-inside">
-                            ${sources.map(source => `<li>${source}</li>`).join('')}
-                        </ol>
-                        ${relevantDocs.length > 0 ? '<h4 class="font-semibold mt-2">Relevant Documents:</h4>' : ''}
+                        ${text}
+                        ${sources.length > 0 ? '<h4 class="font-semibold mt-4">Sources Used:</h4>' : ''}
                         <ul class="list-disc list-inside">
-                            ${relevantDocs.map(doc => `<li>${doc.title} (${doc.date})</li>`).join('')}
+                            ${sources.map(source => `
+                                <li>
+                                    <a href="${source.url}" target="_blank" class="text-blue-600 hover:underline">
+                                        ${source.title}
+                                    </a>
+                                    (${source.newspaper}, ${source.date})
+                                </li>
+                            `).join('')}
                         </ul>
                     </div>
                 `;
@@ -108,14 +123,6 @@
 
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function addFootnotes(text, sources) {
-            sources.forEach((source, index) => {
-                const footnoteRegex = new RegExp(`\\[${index + 1}\\]`, 'g');
-                text = text.replace(footnoteRegex, `<sup><a href="#source-${index + 1}" class="text-blue-600">[${index + 1}]</a></sup>`);
-            });
-            return text;
         }
 
         // Make links open in a new tab

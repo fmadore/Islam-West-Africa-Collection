@@ -122,11 +122,11 @@ def query_ai(context, user_question):
             model="claude-3-5-sonnet-20240620",
             max_tokens=4000,
             temperature=0.3,
-            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, using line breaks between paragraphs for better readability. It is crucial that you list all sources used at the end of your response. Format the sources list as follows:\n\nSources:\n1. \"Title of the article\" (Name of the newspaper, Date)\n2. \"Title of the article\" (Name of the newspaper, Date)\n\nEach source should be on a new line. Do not include any citations within the main body of your response. Always include at least one source, even if you're not certain about its relevance.",
+            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, using line breaks between paragraphs for better readability. Do not cite sources or include a list of sources in your response.",
             messages=[
                 {
                     "role": "user",
-                    "content": f"Context:\n{context}\n\nHuman: {user_question}\n\nRemember to include the sources at the end of your response, formatted as instructed."
+                    "content": f"Context:\n{context}\n\nHuman: {user_question}\n\nRemember, do not include any citations or list of sources in your response."
                 }
             ]
         )
@@ -136,23 +136,8 @@ def query_ai(context, user_question):
         return f"Error querying AI: {str(e)}"
 
 def process_ai_response(response):
-    # Split the response into main content and sources
-    parts = re.split(r'\n\nSources:\n', response, flags=re.IGNORECASE)
-    main_content = parts[0]
-    sources = parts[1] if len(parts) > 1 else ""
-
     # Add paragraph breaks
-    main_content = re.sub(r'\n\n', '</p><p>', f'<p>{main_content}</p>')
-
-    # Process sources to create clickable links with the new format
-    processed_sources = re.sub(
-        r'(\d+)\.\s+"(.+?)"\s+\((.+?),\s+(.+?)\)',
-        r'<p>\1. "<a href="#" style="text-decoration: underline; color: blue;">\2</a>" (<i>\3</i>, \4)</p>',
-        sources
-    )
-
-    # Combine processed main content and sources
-    processed_response = f"{main_content}\n\n<h3><strong>Sources:</strong></h3>\n{processed_sources}"
+    processed_response = re.sub(r'\n\n', '</p><p>', f'<p>{response}</p>')
 
     # Mark the response as safe HTML
     return Markup(processed_response)
@@ -180,24 +165,23 @@ def chat():
         ai_response = query_ai(context, user_question)
         logging.info(f"Received AI response of length: {len(ai_response)}")
 
-        if "Sources:" not in ai_response:
-            logging.warning("AI response does not contain sources. Adding a note about this.")
-            ai_response += "\n\nSources:\nNo specific sources were cited for this response."
-
         processed_response = process_ai_response(ai_response)
         logging.info(f"Processed AI response")
 
-        # Extract sources from the AI response
-        sources = re.findall(r'(\d+)\.\s+"(.+?)"\s+\((.+?),\s+(.+?)\)', ai_response)
-        formatted_sources = [f'"{title}" ({newspaper}, {date})' for _, title, newspaper, date in sources]
-
-        # Format relevant documents
-        formatted_relevant_docs = [{"title": doc['title'], "date": doc['date']} for doc in relevant_docs]
+        # Format all relevant documents as sources
+        formatted_sources = [
+            {
+                "title": doc['title'],
+                "date": doc['date'],
+                "url": doc['url'],
+                "newspaper": doc.get('newspaper', 'Unknown Source')  # Add newspaper if available
+            }
+            for doc in relevant_docs
+        ]
 
         return jsonify({
             "response": processed_response,
-            "sources": formatted_sources,
-            "relevantDocs": formatted_relevant_docs
+            "sources": formatted_sources
         })
     except Exception as e:
         logging.error(f"Error in chat endpoint: {str(e)}")
