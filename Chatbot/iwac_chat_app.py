@@ -187,7 +187,18 @@ def chat():
         processed_response = process_ai_response(ai_response)
         logging.info(f"Processed AI response")
 
-        return jsonify({"response": processed_response})
+        # Extract sources from the AI response
+        sources = re.findall(r'(\d+)\.\s+"(.+?)"\s+\((.+?),\s+(.+?)\)', ai_response)
+        formatted_sources = [f'"{title}" ({newspaper}, {date})' for _, title, newspaper, date in sources]
+
+        # Format relevant documents
+        formatted_relevant_docs = [{"title": doc['title'], "date": doc['date']} for doc in relevant_docs]
+
+        return jsonify({
+            "response": processed_response,
+            "sources": formatted_sources,
+            "relevantDocs": formatted_relevant_docs
+        })
     except Exception as e:
         logging.error(f"Error in chat endpoint: {str(e)}")
         return jsonify({"response": f"An error occurred: {str(e)}"}), 500
