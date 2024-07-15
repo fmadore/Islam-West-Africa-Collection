@@ -74,14 +74,6 @@ This approach combines the strengths of traditional information retrieval (findi
 - `static/`: Directory for static files (CSS, images, etc.)
 - `preprocessed_iwac_data.json`: Preprocessed IWAC dataset (not included in the repository)
 
-## Contributing
-
-Contributions to the IWAC Chat Explorer are welcome! Please feel free to submit pull requests or create issues for bugs and feature requests.
-
-## License
-
-[Specify your license here, e.g., MIT, GPL, etc.]
-
 ## Acknowledgements
 
 - This project uses the Islam West Africa Collection (IWAC) dataset.
