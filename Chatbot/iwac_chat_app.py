@@ -120,9 +120,9 @@ def query_ai(context, user_question):
     try:
         message = client.messages.create(
             model="claude-3-5-sonnet-20240620",
-            max_tokens=1500,
+            max_tokens=4500,
             temperature=0,
-            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, and then list all sources used at the end of your response. For each source, include: [Title of the article, Date, URL]. Number each source. Do not include any citations within the main body of your response.",
+            system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, and then list all sources used at the end of your response. Format the sources list as follows:\n\nSources:\n1. [Title of the article], [Date], [URL]\n2. [Title of the article], [Date], [URL]\n\nDo not include any citations within the main body of your response.",
             messages=[
                 {
                     "role": "user",
@@ -135,22 +135,21 @@ def query_ai(context, user_question):
         logging.error(f"Error in query_ai: {str(e)}")
         return f"Error querying AI: {str(e)}"
 
-
 def process_ai_response(response):
     # Split the response into main content and sources
-    parts = re.split(r'\n(?=Sources:)', response, flags=re.IGNORECASE)
+    parts = re.split(r'\n\nSources:\n', response, flags=re.IGNORECASE)
     main_content = parts[0]
     sources = parts[1] if len(parts) > 1 else ""
 
     # Process sources to create clickable links
     processed_sources = re.sub(
-        r'\[(.+?), (.+?), (.+?)\]',
-        r'<p><a href="\3" target="_blank" rel="noopener noreferrer">[\1, \2]</a></p>',
+        r'(\d+)\.\s+(.+?),\s+(.+?),\s+(.+)',
+        r'<p>\1. <a href="\4" target="_blank" rel="noopener noreferrer">\2, \3</a></p>',
         sources
     )
 
     # Combine processed main content and sources
-    processed_response = f"{main_content}\n\n{processed_sources}"
+    processed_response = f"{main_content}\n\n<h3>Sources:</h3>\n{processed_sources}"
 
     # Mark the response as safe HTML
     return Markup(processed_response)
