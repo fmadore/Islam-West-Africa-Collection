@@ -84,10 +84,16 @@ def preprocess_texts(texts):
 
 
 def perform_topic_modeling(texts, n_topics=5):
-    # Initialize BERTopic with custom French stop words
+    # Initialize BERTopic with custom French stop words and probability calculation
     vectorizer = CountVectorizer(stop_words=french_stop_words)
-    topic_model = BERTopic(language="multilingual", n_gram_range=(1, 2), min_topic_size=5, nr_topics=n_topics,
-                           vectorizer_model=vectorizer)
+    topic_model = BERTopic(
+        language="multilingual",
+        n_gram_range=(1, 2),
+        min_topic_size=5,
+        nr_topics=n_topics,
+        vectorizer_model=vectorizer,
+        calculate_probabilities=True
+    )
 
     # Fit the model and transform
     topics, probs = topic_model.fit_transform(texts)
@@ -101,8 +107,11 @@ def create_visualizations(topic_model, topics, probs, country_name):
     fig.write_html(f'topic_visualization_{country_name}.html')
 
     # 2. Topic distribution
-    fig = topic_model.visualize_distribution(probs[0], min_probability=0.015)
-    fig.write_html(f'topic_distribution_{country_name}.html')
+    if probs is not None and len(probs) > 0:
+        fig = topic_model.visualize_distribution(probs[0], min_probability=0.015)
+        fig.write_html(f'topic_distribution_{country_name}.html')
+    else:
+        print(f"Warning: Unable to create topic distribution visualization for {country_name}")
 
     # 3. Topic heatmap
     fig = topic_model.visualize_heatmap(n_clusters=20)
