@@ -82,6 +82,7 @@ def search_documents(keywords, max_results=5):
             logging.info(f"  Title: {doc['title']}")
             logging.info(f"  Date: {doc['date']}")
             logging.info(f"  Subjects: {', '.join(doc['subject'])}")
+            logging.info(f"  Publisher: {doc.get('publisher', 'Unknown Publisher')}")  # Log the publisher
             logging.info(f"  Relevance score: {relevance_scores[top_indices[i]]}")
 
         return selected_docs
@@ -174,7 +175,7 @@ def chat():
                 "title": doc['title'],
                 "date": doc['date'],
                 "url": doc['url'],
-                "newspaper": doc.get('newspaper', 'Unknown Source')  # Add newspaper if available
+                "publisher": doc.get('publisher', 'Unknown Publisher')
             }
             for doc in relevant_docs
         ]
