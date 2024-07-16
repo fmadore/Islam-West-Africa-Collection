@@ -219,7 +219,7 @@ def generate_choropleth(gdf, world_gdf, country, all_counts):
     # Add layer control
     folium.LayerControl().add_to(m)
 
-    html_file_path = f"choropleth_{country.replace(' ', '_').lower()}.html"
+    html_file_path = f"choropleth_{country.replace(' ', '_').lower()}_regions_and_countries.html"
     m.save(html_file_path)
     logging.info(f"Choropleth map saved as {html_file_path}")
 
