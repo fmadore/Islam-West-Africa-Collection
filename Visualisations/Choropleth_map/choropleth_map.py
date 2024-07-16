@@ -85,9 +85,16 @@ def extract_coordinates(items):
                     coordinates.append(coords)
     return coordinates
 
+
 def load_geojson(country):
-    # Load GeoJSON file for the country
-    geojson_path = f"data/{country.lower()}_regions.geojson"
+    # Create a valid filename by replacing spaces with underscores
+    filename = f"{country.lower().replace(' ', '_')}_regions.geojson"
+    geojson_path = os.path.join("data", filename)
+
+    if not os.path.exists(geojson_path):
+        logging.error(f"GeoJSON file not found: {geojson_path}")
+        return None
+
     gdf = gpd.read_file(geojson_path)
     # Ensure the 'name' column is present
     if 'name' not in gdf.columns:
@@ -176,6 +183,10 @@ def extract_and_plot(item_set_ids, country):
             all_coordinates.extend(coordinates)
 
     gdf = load_geojson(country)
+    if gdf is None:
+        logging.error(f"Failed to load GeoJSON for {country}. Skipping.")
+        return
+
     item_counts = count_items_per_region(all_coordinates, gdf)
 
     # Merge item counts with GeoDataFrame
