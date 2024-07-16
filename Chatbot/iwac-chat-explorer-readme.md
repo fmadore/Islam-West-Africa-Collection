@@ -32,7 +32,7 @@ This approach combines the strengths of traditional information retrieval (findi
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/iwac-chat-explorer.git
+   git clone https://github.com/fmadore/Islam-West-Africa-Collection/iwac-chat-explorer.git
    cd iwac-chat-explorer
    ```
 
