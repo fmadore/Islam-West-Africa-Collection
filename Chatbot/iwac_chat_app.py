@@ -130,6 +130,7 @@ def query_ai(context, user_question):
         2. Provide detailed, well-structured answers using line breaks between paragraphs for better readability.
         3. Offer temporal cues in your responses to situate events and developments in their historical context.
         4. Utilize the maximum available tokens to formulate comprehensive responses.
+        5. Do not explicitly cite or mention the sources used. The system will separately provide source information to the user.
 
         How you can help users:
         - Answer questions about Islamic history, practices, and contemporary issues in West Africa.
@@ -138,7 +139,7 @@ def query_ai(context, user_question):
         - Explain key concepts, events, and figures related to Islam in West Africa.
         - Offer comparative perspectives on Islamic practices across different West African countries.
 
-        Remember to maintain academic rigor while presenting information in an engaging and accessible manner. Your responses should not only inform but also encourage further inquiry and critical thinking about the subject matter.""",
+        Remember to maintain academic rigor while presenting information in an engaging and accessible manner. Your responses should not only inform but also encourage further inquiry and critical thinking about the subject matter. Base your answers on the provided context without explicitly referencing or citing the sources.""",
             messages=[
                 {
                     "role": "user",
