@@ -33,6 +33,7 @@ def fetch_json(url):
         logging.error(f"Request failed for URL {url}: {e}")
         return None
 
+
 def fetch_items(item_set_id):
     items = []
     page = 1
@@ -44,17 +45,23 @@ def fetch_items(item_set_id):
             break
         if isinstance(data, list):
             items.extend(data)
+            logging.info(f"Fetched {len(data)} items for item set {item_set_id} (single page response)")
             break  # If the response is a list, assume no pagination
         elif isinstance(data, dict):
-            items.extend(data.get('data', []))
+            page_items = data.get('data', [])
+            items.extend(page_items)
+            logging.info(f"Fetched {len(page_items)} items for item set {item_set_id} (page {page})")
             next_link = data.get('links', {}).get('next', {}).get('href')
             if next_link:
                 url = f"{API_URL}{next_link}&key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}"
+                page += 1
             else:
                 url = None
         else:
             logging.error(f"Unexpected data format: {data}")
             break
+
+    logging.info(f"Total items fetched for item set {item_set_id}: {len(items)}")
     return items
 
 def fetch_coordinates(spatial_url):
