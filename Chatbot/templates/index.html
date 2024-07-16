@@ -14,6 +14,10 @@
         }
         #chat-messages {
             display: flex;
+            flex-direction: column-reverse;
+        }
+        .message-group {
+            display: flex;
             flex-direction: column;
         }
     </style>
@@ -125,9 +129,11 @@
             }
         }
 
+        let currentMessageGroup = null;
+
         function addMessage(text, isUser, sources = []) {
             const messageDiv = document.createElement('div');
-            messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`;
+            messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'} mb-2`;
 
             if (isUser) {
                 messageDiv.innerHTML = `
@@ -135,6 +141,10 @@
                         ${text}
                     </div>
                 `;
+                currentMessageGroup = document.createElement('div');
+                currentMessageGroup.className = 'message-group mb-4';
+                currentMessageGroup.appendChild(messageDiv);
+                chatMessages.insertBefore(currentMessageGroup, chatMessages.firstChild);
             } else {
                 messageDiv.innerHTML = `
                     <div class="max-w-2xl p-3 rounded-lg bg-gray-100">
@@ -152,24 +162,15 @@
                         </ul>
                     </div>
                 `;
-            }
-
-            // If it's a user message, add it to the end
-            // If it's an AI response, insert it after the last user message
-            if (isUser) {
-                chatMessages.appendChild(messageDiv);
-            } else {
-                const userMessages = chatMessages.querySelectorAll('.justify-end');
-                if (userMessages.length > 0) {
-                    const lastUserMessage = userMessages[userMessages.length - 1];
-                    lastUserMessage.parentNode.insertBefore(messageDiv, lastUserMessage.nextSibling);
+                if (currentMessageGroup) {
+                    currentMessageGroup.appendChild(messageDiv);
                 } else {
-                    chatMessages.appendChild(messageDiv);
+                    chatMessages.insertBefore(messageDiv, chatMessages.firstChild);
                 }
             }
 
-            // Scroll to the bottom of the chat messages
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            // Scroll to the top of the chat messages
+            chatMessages.scrollTop = 0;
         }
 
         function exportConversation() {
