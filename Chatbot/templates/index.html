@@ -154,11 +154,22 @@
                 `;
             }
 
-            // Insert the new message at the beginning of the chat container
-            chatMessages.insertBefore(messageDiv, chatMessages.firstChild);
+            // If it's a user message, add it to the end
+            // If it's an AI response, insert it after the last user message
+            if (isUser) {
+                chatMessages.appendChild(messageDiv);
+            } else {
+                const userMessages = chatMessages.querySelectorAll('.justify-end');
+                if (userMessages.length > 0) {
+                    const lastUserMessage = userMessages[userMessages.length - 1];
+                    lastUserMessage.parentNode.insertBefore(messageDiv, lastUserMessage.nextSibling);
+                } else {
+                    chatMessages.appendChild(messageDiv);
+                }
+            }
 
-            // Scroll to the top of the chat messages
-            chatMessages.scrollTop = 0;
+            // Scroll to the bottom of the chat messages
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
         function exportConversation() {
