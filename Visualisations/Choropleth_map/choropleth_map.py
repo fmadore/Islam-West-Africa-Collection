@@ -111,16 +111,22 @@ def count_items_per_region(coordinates, gdf):
 
 
 def generate_choropleth(gdf, country):
+    # Calculate the center of the map using the bounds of the GeoDataFrame
+    bounds = gdf.total_bounds
+    center_lat = (bounds[1] + bounds[3]) / 2
+    center_lon = (bounds[0] + bounds[2]) / 2
+
     # Create a base map
-    m = folium.Map(location=gdf.geometry.centroid.mean(), zoom_start=6)
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=6)
 
     # Add choropleth layer
+    region_column = gdf.columns[0]  # Assuming the first column is the region name
     folium.Choropleth(
         geo_data=gdf,
         name="choropleth",
         data=gdf,
-        columns=[gdf.index.name, "count"],
-        key_on=f"feature.properties.{gdf.index.name}",
+        columns=[region_column, "count"],
+        key_on=f"feature.properties.{region_column}",
         fill_color="YlOrRd",
         fill_opacity=0.7,
         line_opacity=0.2,
@@ -130,11 +136,11 @@ def generate_choropleth(gdf, country):
     # Add hover functionality
     folium.LayerControl().add_to(m)
     style_function = lambda x: {'fillColor': '#ffffff',
-                                'color': '#000000',
+                                'color':'#000000',
                                 'fillOpacity': 0.1,
                                 'weight': 0.1}
     highlight_function = lambda x: {'fillColor': '#000000',
-                                    'color': '#000000',
+                                    'color':'#000000',
                                     'fillOpacity': 0.50,
                                     'weight': 0.1}
     info = folium.features.GeoJson(
@@ -143,8 +149,8 @@ def generate_choropleth(gdf, country):
         control=False,
         highlight_function=highlight_function,
         tooltip=folium.features.GeoJsonTooltip(
-            fields=[gdf.index.name, 'count'],
-            aliases=[gdf.index.name, 'Item Count'],
+            fields=[region_column, 'count'],
+            aliases=[region_column, 'Item Count'],
             style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
         )
     )
