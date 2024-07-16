@@ -93,13 +93,21 @@ def load_geojson(country):
 
 def count_items_per_region(coordinates, gdf):
     # Convert coordinates to GeoDataFrame
-    points = gpd.GeoDataFrame(geometry=gpd.points_from_xy([c[1] for c in coordinates], [c[0] for c in coordinates]))
+    points = gpd.GeoDataFrame(
+        geometry=gpd.points_from_xy([c[1] for c in coordinates], [c[0] for c in coordinates]),
+        crs="EPSG:4326"  # Specify the CRS for the points
+    )
+
+    # Ensure the GeoDataFrame has the same CRS
+    gdf = gdf.to_crs("EPSG:4326")
 
     # Perform spatial join
-    joined = gpd.sjoin(points, gdf, how="inner", op="within")
+    joined = gpd.sjoin(points, gdf, how="inner", predicate="within")
 
     # Count items per region
-    return joined.groupby(gdf.index.name).size().reset_index(name='count')
+    # Use the actual column name instead of gdf.index.name
+    region_column = gdf.columns[0]  # Assuming the first column is the region name
+    return joined.groupby(region_column).size().reset_index(name='count')
 
 
 def generate_choropleth(gdf, country):
@@ -164,7 +172,8 @@ def extract_and_plot(item_set_ids, country):
     item_counts = count_items_per_region(all_coordinates, gdf)
 
     # Merge item counts with GeoDataFrame
-    gdf = gdf.merge(item_counts, on=gdf.index.name, how="left")
+    region_column = gdf.columns[0]  # Assuming the first column is the region name
+    gdf = gdf.merge(item_counts, on=region_column, how="left")
     gdf['count'] = gdf['count'].fillna(0)
 
     generate_choropleth(gdf, country)
@@ -172,9 +181,9 @@ def extract_and_plot(item_set_ids, country):
 
 
 countries = {
-    'Benin': [2185, 5502, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5501, 5500],
-    'Burkina Faso': [2199, 2200, 2215, 2214, 2207, 2201, 23448, 5503, 2209, 2210, 2213],
-    'Togo': [25304, 9458, 5498]
+    'Benin': [2185],
+    'Burkina Faso': [2199],
+    'Togo': [25304]
 }
 
 for country, item_set_ids in countries.items():
