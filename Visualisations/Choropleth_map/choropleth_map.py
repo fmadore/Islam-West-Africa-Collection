@@ -88,14 +88,18 @@ def extract_coordinates(items):
 def load_geojson(country):
     # Load GeoJSON file for the country
     geojson_path = f"data/{country.lower()}_regions.geojson"
-    return gpd.read_file(geojson_path)
+    gdf = gpd.read_file(geojson_path)
+    # Ensure the 'name' column is present
+    if 'name' not in gdf.columns:
+        gdf['name'] = gdf['properties'].apply(lambda x: x.get('name', 'Unknown'))
+    return gdf
 
 
 def count_items_per_region(coordinates, gdf):
     # Convert coordinates to GeoDataFrame
     points = gpd.GeoDataFrame(
         geometry=gpd.points_from_xy([c[1] for c in coordinates], [c[0] for c in coordinates]),
-        crs="EPSG:4326"  # Specify the CRS for the points
+        crs="EPSG:4326"
     )
 
     # Ensure the GeoDataFrame has the same CRS
@@ -105,9 +109,7 @@ def count_items_per_region(coordinates, gdf):
     joined = gpd.sjoin(points, gdf, how="inner", predicate="within")
 
     # Count items per region
-    # Use the actual column name instead of gdf.index.name
-    region_column = gdf.columns[0]  # Assuming the first column is the region name
-    return joined.groupby(region_column).size().reset_index(name='count')
+    return joined.groupby('name').size().reset_index(name='count')
 
 
 def generate_choropleth(gdf, country):
@@ -120,13 +122,12 @@ def generate_choropleth(gdf, country):
     m = folium.Map(location=[center_lat, center_lon], zoom_start=6)
 
     # Add choropleth layer
-    region_column = gdf.columns[0]  # Assuming the first column is the region name
     folium.Choropleth(
-        geo_data=gdf,
+        geo_data=gdf.__geo_interface__,
         name="choropleth",
         data=gdf,
-        columns=[region_column, "count"],
-        key_on=f"feature.properties.{region_column}",
+        columns=['name', 'count'],
+        key_on='feature.properties.name',
         fill_color="YlOrRd",
         fill_opacity=0.7,
         line_opacity=0.2,
@@ -149,8 +150,8 @@ def generate_choropleth(gdf, country):
         control=False,
         highlight_function=highlight_function,
         tooltip=folium.features.GeoJsonTooltip(
-            fields=[region_column, 'count'],
-            aliases=[region_column, 'Item Count'],
+            fields=['name', 'count'],
+            aliases=['Region', 'Item Count'],
             style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
         )
     )
@@ -178,8 +179,7 @@ def extract_and_plot(item_set_ids, country):
     item_counts = count_items_per_region(all_coordinates, gdf)
 
     # Merge item counts with GeoDataFrame
-    region_column = gdf.columns[0]  # Assuming the first column is the region name
-    gdf = gdf.merge(item_counts, on=region_column, how="left")
+    gdf = gdf.merge(item_counts, on='name', how="left")
     gdf['count'] = gdf['count'].fillna(0)
 
     generate_choropleth(gdf, country)
