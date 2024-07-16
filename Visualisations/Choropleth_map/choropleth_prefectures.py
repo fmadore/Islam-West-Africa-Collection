@@ -85,9 +85,10 @@ def extract_coordinates(items):
                     coordinates.append(coords)
     return coordinates
 
+
 def load_geojson(country):
     # Create a valid filename by replacing spaces with underscores
-    filename = f"{country.lower().replace(' ', '_')}_prefectures.geojson"
+    filename = f"{country.lower().replace(' ', '_')}_administrative_boundaries_level6_counties_polygon.geojson"
     geojson_path = os.path.join("data", filename)
 
     if not os.path.exists(geojson_path):
@@ -95,16 +96,15 @@ def load_geojson(country):
         return None
 
     gdf = gpd.read_file(geojson_path)
+
     # Ensure the 'name' column is present
     if 'name' not in gdf.columns:
-        # Try to find a suitable column for prefecture names
-        possible_name_columns = ['NAME', 'Name', 'PREFECTURE', 'Prefecture']
-        for col in possible_name_columns:
-            if col in gdf.columns:
-                gdf['name'] = gdf[col]
-                break
-        else:
+        if 'properties' in gdf.columns and isinstance(gdf['properties'].iloc[0], dict):
             gdf['name'] = gdf['properties'].apply(lambda x: x.get('name', 'Unknown'))
+        else:
+            logging.error("Unable to find 'name' column in the GeoJSON file")
+            return None
+
     return gdf
 
 def count_items_per_prefecture(coordinates, gdf):
@@ -130,7 +130,7 @@ def generate_choropleth(gdf, country):
     center_lon = (bounds[0] + bounds[2]) / 2
 
     # Create a base map
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=6)
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=8)
 
     # Add choropleth layer
     folium.Choropleth(
