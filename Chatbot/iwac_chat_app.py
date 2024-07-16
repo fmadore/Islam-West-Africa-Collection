@@ -121,7 +121,7 @@ def query_ai(context, user_question):
     try:
         message = client.messages.create(
             model="claude-3-5-sonnet-20240620",
-            max_tokens=4000,
+            max_tokens=8192,
             temperature=0.3,
             system="You are an AI assistant for the Islam West Africa Collection (IWAC). Use the provided context to answer questions about Islam in West Africa. Respond in the same language as the user's question. Provide a detailed answer, using line breaks between paragraphs for better readability. Do not cite sources or include a list of sources in your response.",
             messages=[
@@ -129,7 +129,8 @@ def query_ai(context, user_question):
                     "role": "user",
                     "content": f"Context:\n{context}\n\nHuman: {user_question}\n\nRemember, do not include any citations or list of sources in your response."
                 }
-            ]
+            ],
+            extra_headers = {"anthropic-beta": "max-tokens-3-5-sonnet-2024-07-15"}
         )
         return message.content[0].text
     except Exception as e:
