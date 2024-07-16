@@ -256,9 +256,9 @@ def extract_and_plot(item_set_ids, country):
 
 
 countries = {
-    'Benin': [2185],
-    'Burkina Faso': [2199],
-    'Togo': [25304]
+    'Benin': [2185, 5502, 2186, 2188, 2187, 2191, 2190, 2189, 4922, 5501, 5500],
+    'Burkina Faso': [2199, 2200, 23448, 23273, 23449, 5503, 2215, 2214, 2207, 2209, 2210, 2213, 2201],
+    'Togo': [9458, 25304, 5498, 5499]
 }
 
 for country, item_set_ids in countries.items():
