@@ -60,7 +60,12 @@ def extract_keywords_with_ai(query):
         logging.error(f"Error in extract_keywords_with_ai: {str(e)}")
         return []
 
-def search_documents(keywords, max_results=5):
+def num_tokens_from_string(string: str, encoding_name: str = "cl100k_base") -> int:
+    encoding = tiktoken.get_encoding(encoding_name)
+    num_tokens = len(encoding.encode(string))
+    return num_tokens
+
+def search_documents(keywords, max_tokens=90000, max_sources=15):
     try:
         # Calculate relevance scores
         relevance_scores = []
@@ -70,31 +75,38 @@ def search_documents(keywords, max_results=5):
             doc_text_lower = doc_text.lower()
             for keyword in keywords:
                 score += doc_text_lower.count(keyword.lower())
-            relevance_scores.append(score)
+            relevance_scores.append((score, doc))
 
-        # Get top documents
-        top_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:max_results]
-        selected_docs = [documents[i] for i in top_indices if relevance_scores[i] > 0]
+        # Sort documents by relevance score in descending order
+        sorted_docs = sorted(relevance_scores, key=lambda x: x[0], reverse=True)
 
-        logging.info(f"Keywords: {keywords}")
-        for i, doc in enumerate(selected_docs):
-            logging.info(f"Selected document {i + 1}:")
-            logging.info(f"  Title: {doc['title']}")
-            logging.info(f"  Date: {doc['date']}")
-            logging.info(f"  Subjects: {', '.join(doc['subject'])}")
-            logging.info(f"  Publisher: {doc.get('publisher', 'Unknown Publisher')}")  # Log the publisher
-            logging.info(f"  Relevance score: {relevance_scores[top_indices[i]]}")
+        selected_docs = []
+        current_tokens = 0
 
+        for score, doc in sorted_docs:
+            if score == 0 or len(selected_docs) >= max_sources:
+                break  # Stop if we reach documents with no relevance or max sources limit
+
+            doc_content = f"Title: {doc['title']}\nDate: {doc['date']}\nURL: {doc['url']}\nSubject: {', '.join(doc['subject'])}\nContent: {doc['content']}\n\n"
+            doc_tokens = num_tokens_from_string(doc_content)
+
+            if current_tokens + doc_tokens > max_tokens:
+                break  # Stop if adding this document would exceed the token limit
+
+            selected_docs.append(doc)
+            current_tokens += doc_tokens
+
+            logging.info(f"Added document: {doc['title']}")
+            logging.info(f"Relevance score: {score}")
+            logging.info(f"Document tokens: {doc_tokens}")
+            logging.info(f"Total tokens so far: {current_tokens}")
+
+        logging.info(f"Selected {len(selected_docs)} documents. Total tokens: {current_tokens}")
         return selected_docs
+
     except Exception as e:
         logging.error(f"Error in search_documents: {str(e)}")
         return []
-
-
-def num_tokens_from_string(string: str, encoding_name: str = "cl100k_base") -> int:
-    encoding = tiktoken.get_encoding(encoding_name)
-    num_tokens = len(encoding.encode(string))
-    return num_tokens
 
 
 def prepare_context(relevant_docs, max_tokens=100000):
@@ -117,37 +129,44 @@ def prepare_context(relevant_docs, max_tokens=100000):
         return ""
 
 
-def query_ai(context, user_question):
+def query_ai(context, user_question, model="claude-3-5-sonnet-20240620", max_tokens=8192, temperature=0.7):
     try:
+        system_prompt = """You are IWAC Chat Explorer, an AI assistant for the Islam West Africa Collection (IWAC). Your purpose is to provide comprehensive, rigorous, engaging, and analytical responses to questions about Islam in West Africa based on the provided context.
+
+Key features:
+1. Respond in the same language as the user's question.
+2. Provide extremely detailed, well-structured answers using line breaks between paragraphs for better readability.
+3. Offer extensive temporal cues in your responses to situate events and developments in their historical context.
+4. Utilize the maximum available tokens to formulate the most comprehensive responses possible. Aim to use at least 80% of the available tokens.
+5. Do not explicitly cite or mention the sources used. The system will separately provide source information to the user.
+6. Provide in-depth analysis, including historical background, current trends, and potential future implications when relevant.
+7. Include specific examples, case studies, and comparative analyses between different regions or time periods when applicable.
+8. Discuss various perspectives or interpretations on the topic, if they exist in the provided context.
+9. Conclude with thought-provoking questions or areas for further exploration related to the topic.
+
+How you can help users:
+- Provide extensive answers about Islamic history, practices, and contemporary issues in West Africa.
+- Offer detailed analysis of trends and patterns in the development of Muslim communities in the region.
+- Give comprehensive insights into the relationships between Islam and socio-political dynamics in West African countries.
+- Explain key concepts, events, and figures related to Islam in West Africa in great detail.
+- Present thorough comparative perspectives on Islamic practices across different West African countries.
+
+Remember to maintain academic rigor while presenting information in an engaging and accessible manner. Your responses should not only inform but also encourage further inquiry and critical thinking about the subject matter. Base your answers on the provided context without explicitly referencing or citing the sources. If you're unsure about any information, indicate this clearly in your response."""
+
         message = client.messages.create(
-            model="claude-3-5-sonnet-20240620",
-            max_tokens=8192,
-            temperature=0.3,
-            system="""You are IWAC Chat Explorer, an AI assistant for the Islam West Africa Collection (IWAC). Your purpose is to provide rigorous, engaging, and analytical responses to questions about Islam in West Africa based on the provided context.
-
-        Key features:
-        1. Respond in the same language as the user's question.
-        2. Provide detailed, well-structured answers using line breaks between paragraphs for better readability.
-        3. Offer temporal cues in your responses to situate events and developments in their historical context.
-        4. Utilize the maximum available tokens to formulate comprehensive responses.
-        5. Do not explicitly cite or mention the sources used. The system will separately provide source information to the user.
-
-        How you can help users:
-        - Answer questions about Islamic history, practices, and contemporary issues in West Africa.
-        - Analyze trends and patterns in the development of Muslim communities in the region.
-        - Provide insights into the relationships between Islam and socio-political dynamics in West African countries.
-        - Explain key concepts, events, and figures related to Islam in West Africa.
-        - Offer comparative perspectives on Islamic practices across different West African countries.
-
-        Remember to maintain academic rigor while presenting information in an engaging and accessible manner. Your responses should not only inform but also encourage further inquiry and critical thinking about the subject matter. Base your answers on the provided context without explicitly referencing or citing the sources.""",
+            model=model,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            system=system_prompt,
             messages=[
                 {
                     "role": "user",
-                    "content": f"Context:\n{context}\n\nHuman: {user_question}"
+                    "content": f"Context:\n{context}\n\nHuman: {user_question}\n\nPlease provide a comprehensive and detailed response, using as much of the available token limit as possible to thoroughly explore the topic."
                 }
             ],
-            extra_headers = {"anthropic-beta": "max-tokens-3-5-sonnet-2024-07-15"}
+            extra_headers={"anthropic-beta": "max-tokens-3-5-sonnet-2024-07-15"}
         )
+
         return message.content[0].text
     except Exception as e:
         logging.error(f"Error in query_ai: {str(e)}")
@@ -174,7 +193,7 @@ def chat():
         keywords = extract_keywords_with_ai(user_question)
         logging.info(f"Extracted keywords: {keywords}")
 
-        relevant_docs = search_documents(keywords, max_results=10)
+        relevant_docs = search_documents(keywords)  # No need to specify max_results
         logging.info(f"Found {len(relevant_docs)} relevant documents")
 
         context = prepare_context(relevant_docs)
