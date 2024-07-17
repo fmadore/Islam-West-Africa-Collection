@@ -32,57 +32,85 @@ def fetch_json(url):
         logging.error(f"Request failed for URL {url}: {e}")
         return None
 
+
 def fetch_items(item_set_id):
     items = []
     page = 1
-    url = f"{API_URL}/items?key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}&item_set_id={item_set_id}&per_page=50&page={page}"
+    per_page = 100  # Increased from 50 to 100 for efficiency
 
-    while url:
+    while True:
+        url = f"{API_URL}/items?key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}&item_set_id={item_set_id}&per_page={per_page}&page={page}"
         data = fetch_json(url)
+
         if data is None:
             break
+
         if isinstance(data, list):
             items.extend(data)
-            break  # If the response is a list, assume no pagination
+            if len(data) < per_page:
+                break  # Last page
         elif isinstance(data, dict):
             items.extend(data.get('data', []))
-            next_link = data.get('links', {}).get('next', {}).get('href')
-            if next_link:
-                url = f"{API_URL}{next_link}&key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}"
-            else:
-                url = None
+            if 'next' not in data.get('links', {}):
+                break  # No more pages
         else:
             logging.error(f"Unexpected data format: {data}")
             break
+
+        page += 1
+        logging.info(f"Fetched page {page - 1} for item set {item_set_id}")
+
+    logging.info(f"Total items fetched for item set {item_set_id}: {len(items)}")
     return items
 
 def fetch_coordinates(spatial_url):
     spatial_details = fetch_json(spatial_url)
     if not spatial_details:
+        logging.warning(f"Failed to fetch spatial details from {spatial_url}")
         return None
 
     coordinates_field = spatial_details.get('curation:coordinates', [])
-    if coordinates_field:
-        coord_text = coordinates_field[0].get('@value')
-        if coord_text and ',' in coord_text:
-            try:
-                lat, lon = map(float, coord_text.split(','))
-                return lat, lon
-            except ValueError:
-                logging.warning(f"Invalid coordinates format: {coord_text}")
-                return None
-    return None
+    if not coordinates_field:
+        logging.warning(f"No 'curation:coordinates' field found in spatial details from {spatial_url}")
+        return None
+
+    coord_text = coordinates_field[0].get('@value')
+    if not coord_text or ',' not in coord_text:
+        logging.warning(f"Invalid coordinate format in spatial details from {spatial_url}")
+        return None
+
+    try:
+        lat, lon = map(float, coord_text.split(','))
+        return lat, lon
+    except ValueError:
+        logging.warning(f"Invalid coordinate values in spatial details from {spatial_url}")
+        return None
+
 
 def extract_coordinates(items):
     coordinates = []
     for item in tqdm(items, desc="Extracting coordinates"):
         spatial_data = item.get('dcterms:spatial', [])
+        if not spatial_data:
+            logging.warning(f"Item {item.get('@id', 'Unknown')} has no spatial data")
+            continue
+
+        item_coordinates = []
         for spatial in spatial_data:
             spatial_url = spatial.get('@id')
             if spatial_url:
                 coords = fetch_coordinates(spatial_url)
                 if coords:
-                    coordinates.append(coords)
+                    item_coordinates.append(coords)
+            else:
+                logging.warning(f"Spatial data in item {item.get('@id', 'Unknown')} has no '@id' field")
+
+        if item_coordinates:
+            coordinates.extend(item_coordinates)
+        else:
+            logging.warning(f"No valid coordinates found for item {item.get('@id', 'Unknown')}")
+
+    logging.info(f"Extracted coordinates for {len(coordinates)} locations")
     return coordinates
 
 
@@ -179,6 +207,7 @@ def extract_and_plot(item_set_ids, country):
         items = fetch_items(item_set_id)
         if items:
             total_items += len(items)
+            logging.info(f"Fetched {len(items)} items for item set {item_set_id}")
             coordinates = extract_coordinates(items)
             all_coordinates.extend(coordinates)
 
