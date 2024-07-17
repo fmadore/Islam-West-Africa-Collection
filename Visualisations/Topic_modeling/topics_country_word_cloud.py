@@ -136,18 +136,39 @@ def extract_texts(items):
 
 def get_embeddings(texts, tokenizer, model, batch_size=32):
     embeddings = []
-    num_batches = (len(texts) + batch_size - 1) // batch_size  # Calculate total number of batches
+    num_batches = (len(texts) + batch_size - 1) // batch_size
     for i in tqdm(range(0, len(texts), batch_size), desc="Generating embeddings", total=num_batches):
-        batch_texts = texts[i:i+batch_size]
-        inputs = tokenizer(batch_texts, return_tensors="pt", truncation=True, max_length=512, padding=True)
-        with torch.no_grad():
-            outputs = model(**inputs)
-        batch_embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().cpu().numpy()
-        embeddings.extend(batch_embeddings)
-        del outputs, batch_embeddings
-        torch.cuda.empty_cache()  # Clear GPU memory if using CUDA
-    logging.info(f"Generated embeddings for {len(texts)} texts in {num_batches} batches")
-    return np.array(embeddings)
+        batch_texts = texts[i:i + batch_size]
+        try:
+            inputs = tokenizer(batch_texts, return_tensors="pt", truncation=True, max_length=512, padding=True)
+            with torch.no_grad():
+                outputs = model(**inputs)
+            batch_embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().cpu().numpy()
+
+            # Ensure all embeddings in the batch have the same shape
+            if len(batch_embeddings.shape) == 1:
+                batch_embeddings = batch_embeddings.reshape(1, -1)
+
+            embeddings.extend(batch_embeddings)
+        except Exception as e:
+            logging.warning(f"Error processing batch {i // batch_size}: {str(e)}")
+            continue
+        finally:
+            del outputs, batch_embeddings
+            torch.cuda.empty_cache()
+
+    # Filter out any non-numpy array elements
+    embeddings = [e for e in embeddings if isinstance(e, np.ndarray)]
+
+    if not embeddings:
+        raise ValueError("No valid embeddings were generated")
+
+    # Ensure all embeddings have the same shape
+    embedding_shape = embeddings[0].shape
+    embeddings = [e for e in embeddings if e.shape == embedding_shape]
+
+    logging.info(f"Generated {len(embeddings)} valid embeddings out of {len(texts)} texts")
+    return np.stack(embeddings)
 
 def perform_topic_modeling(embeddings, n_topics=5, n_top_words=10):
     logging.info(f"Starting K-means clustering with {n_topics} topics")
@@ -199,7 +220,13 @@ def process_country_data(country_name, item_sets, tokenizer, model):
         all_items.extend(items)
         gc.collect()  # Force garbage collection
 
-    logging.info(f"Total items fetched for {country_name}: {len(all_items)}")
+    logging.info(f"Starting embedding generation for {len(texts)} texts")
+    try:
+        embeddings = get_embeddings(texts, tokenizer, model)
+        logging.info(f"Embeddings generated for {country_name}: {embeddings.shape}")
+    except ValueError as e:
+        logging.error(f"Failed to generate embeddings for {country_name}: {str(e)}")
+        return None, None
 
     texts = extract_texts(all_items)
     logging.info(f"Total texts extracted for {country_name}: {len(texts)}")
@@ -239,9 +266,12 @@ def main():
     try:
         for country_name, item_sets in [("Benin", benin_item_sets), ("Burkina Faso", burkina_faso_item_sets)]:
             texts, topics = process_country_data(country_name, item_sets, tokenizer, model)
-            print(f"\n{country_name} Topics:")
-            for topic in set(topics):
-                print(f"Topic {topic}: {list(topics).count(topic)} documents")
+            if texts is not None and topics is not None:
+                print(f"\n{country_name} Topics:")
+                for topic in set(topics):
+                    print(f"Topic {topic}: {list(topics).count(topic)} documents")
+            else:
+                print(f"Failed to process data for {country_name}")
             del texts, topics
             gc.collect()
 
