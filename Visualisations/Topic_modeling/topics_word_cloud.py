@@ -209,8 +209,8 @@ def process_country_data(country_name, item_sets, tokenizer, model):
     return texts, cluster_labels  # Return cluster_labels directly
 
 def main():
-    benin_item_sets = [2187, 2188]
-    burkina_faso_item_sets = [2200, 2215]
+    benin_item_sets = [2185, 5502, 2186, 2188, 2187, 2191, 2190, 2189, 4922, 5501, 5500]
+    burkina_faso_item_sets = [2199, 2200, 23448, 23273, 23449, 5503, 2215, 2214, 2207, 2209, 2210, 2213, 2201]
 
     # Load CamemBERT model and tokenizer
     tokenizer, model = load_camembert()
