@@ -14,6 +14,7 @@ from sklearn.cluster import KMeans
 import numpy as np
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+from sklearn.decomposition import NMF
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -131,7 +132,7 @@ def extract_texts(items):
     return texts
 
 
-def get_embeddings(texts):
+def get_embeddings(texts, tokenizer, model):
     embeddings = []
     for text in tqdm(texts, desc="Generating embeddings"):
         inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=512, padding=True)
@@ -140,20 +141,33 @@ def get_embeddings(texts):
         embeddings.append(outputs.last_hidden_state.mean(dim=1).squeeze().numpy())
     return np.array(embeddings)
 
+def perform_topic_modeling(embeddings, n_topics=5, n_top_words=10):
+    # Perform NMF on the embeddings
+    nmf = NMF(n_components=n_topics, random_state=42)
+    topic_embeddings = nmf.fit_transform(embeddings)
 
-def cluster_texts(embeddings, n_clusters=5):
-    kmeans = KMeans(n_clusters=n_clusters, random_state=42)
-    return kmeans.fit_predict(embeddings)
+    # Get the most representative documents for each topic
+    top_docs_per_topic = []
+    for topic in range(n_topics):
+        top_docs = topic_embeddings[:, topic].argsort()[-n_top_words:][::-1]
+        top_docs_per_topic.append(top_docs)
+
+    return nmf, top_docs_per_topic
 
 
-def get_top_words(texts, cluster_labels, cluster, top_n=50):
-    cluster_texts = [text for text, label in zip(texts, cluster_labels) if label == cluster]
-    all_words = ' '.join(cluster_texts).split()
+def get_top_words_for_topic(texts, top_docs):
+    # Combine the text of the top documents
+    topic_text = " ".join([texts[i] for i in top_docs])
+
+    # Create a word frequency dictionary
+    words = topic_text.split()
     word_freq = {}
-    for word in all_words:
+    for word in words:
         if len(word) > 1:  # Exclude single-character words
             word_freq[word] = word_freq.get(word, 0) + 1
-    return dict(sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:top_n])
+
+    # Sort by frequency and return top words
+    return dict(sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:50])
 
 
 def generate_word_cloud(word_freq, title, filename):
@@ -163,11 +177,11 @@ def generate_word_cloud(word_freq, title, filename):
     plt.axis('off')
     plt.title(title)
     plt.tight_layout(pad=0)
-    plt.savefig(filename)
+    plt.savefig(filename, format='png')
     plt.close()
 
 
-def process_country_data(country_name, item_sets):
+def process_country_data(country_name, item_sets, tokenizer, model):
     logging.info(f"Processing data for {country_name}")
     all_items = []
     for set_id in tqdm(item_sets, desc=f"Fetching {country_name} item sets"):
@@ -179,15 +193,44 @@ def process_country_data(country_name, item_sets):
     texts = extract_texts(all_items)
     logging.info(f"Total texts extracted for {country_name}: {len(texts)}")
 
-    return texts
+    # Get embeddings
+    embeddings = get_embeddings(texts, tokenizer, model)
+
+    # Perform topic modeling
+    nmf, top_docs_per_topic = perform_topic_modeling(embeddings)
+
+    # Generate word clouds for each topic
+    for topic_idx, top_docs in enumerate(top_docs_per_topic):
+        topic_word_freq = get_top_words_for_topic(texts, top_docs)
+        generate_word_cloud(topic_word_freq, f"{country_name} - Topic {topic_idx + 1}",
+                            f"{country_name.lower()}_topic_{topic_idx + 1}_wordcloud.png")
+
+    # Assign topics to documents
+    topic_assignments = nmf.transform(embeddings).argmax(axis=1)
+
+    return texts, topic_assignments
 
 
 def main():
     benin_item_sets = [2187, 2188, 2189, 2185, 5502, 2186, 2191, 2190, 4922, 5501, 5500]
     burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201, 2199, 23273, 5503, 2209, 2210, 2213]
 
-    process_country_data("Benin", benin_item_sets)
-    process_country_data("Burkina Faso", burkina_faso_item_sets)
+    # Load CamemBERT model and tokenizer
+    tokenizer, model = load_camembert()
+
+    benin_texts, benin_topics = process_country_data("Benin", benin_item_sets, tokenizer, model)
+    burkina_faso_texts, burkina_faso_topics = process_country_data("Burkina Faso", burkina_faso_item_sets, tokenizer,
+                                                                   model)
+
+    # You can now analyze the topics for each country
+    print("Benin Topics:")
+    for topic in set(benin_topics):
+        print(f"Topic {topic}: {list(benin_topics).count(topic)} documents")
+
+    print("\nBurkina Faso Topics:")
+    for topic in set(burkina_faso_topics):
+        print(f"Topic {topic}: {list(burkina_faso_topics).count(topic)} documents")
+
 
 if __name__ == "__main__":
     main()
