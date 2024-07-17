@@ -14,7 +14,6 @@ from sklearn.cluster import KMeans
 import numpy as np
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-from sklearn.decomposition import NMF
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -142,17 +141,19 @@ def get_embeddings(texts, tokenizer, model):
     return np.array(embeddings)
 
 def perform_topic_modeling(embeddings, n_topics=5, n_top_words=10):
-    # Perform NMF on the embeddings
-    nmf = NMF(n_components=n_topics, random_state=42)
-    topic_embeddings = nmf.fit_transform(embeddings)
+    # Perform K-means clustering on the embeddings
+    kmeans = KMeans(n_clusters=n_topics, random_state=42)
+    cluster_labels = kmeans.fit_predict(embeddings)
 
     # Get the most representative documents for each topic
     top_docs_per_topic = []
     for topic in range(n_topics):
-        top_docs = topic_embeddings[:, topic].argsort()[-n_top_words:][::-1]
+        topic_docs = np.where(cluster_labels == topic)[0]
+        distances = np.linalg.norm(embeddings[topic_docs] - kmeans.cluster_centers_[topic], axis=1)
+        top_docs = topic_docs[np.argsort(distances)[:n_top_words]]
         top_docs_per_topic.append(top_docs)
 
-    return nmf, top_docs_per_topic
+    return kmeans, top_docs_per_topic, cluster_labels
 
 
 def get_top_words_for_topic(texts, top_docs):
@@ -197,7 +198,7 @@ def process_country_data(country_name, item_sets, tokenizer, model):
     embeddings = get_embeddings(texts, tokenizer, model)
 
     # Perform topic modeling
-    nmf, top_docs_per_topic = perform_topic_modeling(embeddings)
+    kmeans, top_docs_per_topic, cluster_labels = perform_topic_modeling(embeddings)
 
     # Generate word clouds for each topic
     for topic_idx, top_docs in enumerate(top_docs_per_topic):
@@ -205,24 +206,19 @@ def process_country_data(country_name, item_sets, tokenizer, model):
         generate_word_cloud(topic_word_freq, f"{country_name} - Topic {topic_idx + 1}",
                             f"{country_name.lower()}_topic_{topic_idx + 1}_wordcloud.png")
 
-    # Assign topics to documents
-    topic_assignments = nmf.transform(embeddings).argmax(axis=1)
-
-    return texts, topic_assignments
-
+    return texts, cluster_labels  # Return cluster_labels directly
 
 def main():
-    benin_item_sets = [2187, 2188, 2189, 2185, 5502, 2186, 2191, 2190, 4922, 5501, 5500]
-    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201, 2199, 23273, 5503, 2209, 2210, 2213]
+    benin_item_sets = [2187, 2188]
+    burkina_faso_item_sets = [2200, 2215]
 
     # Load CamemBERT model and tokenizer
     tokenizer, model = load_camembert()
 
     benin_texts, benin_topics = process_country_data("Benin", benin_item_sets, tokenizer, model)
-    burkina_faso_texts, burkina_faso_topics = process_country_data("Burkina Faso", burkina_faso_item_sets, tokenizer,
-                                                                   model)
+    burkina_faso_texts, burkina_faso_topics = process_country_data("Burkina Faso", burkina_faso_item_sets, tokenizer, model)
 
-    # You can now analyze the topics for each country
+    # Analyze the topics for each country
     print("Benin Topics:")
     for topic in set(benin_topics):
         print(f"Topic {topic}: {list(benin_topics).count(topic)} documents")
@@ -230,7 +226,6 @@ def main():
     print("\nBurkina Faso Topics:")
     for topic in set(burkina_faso_topics):
         print(f"Topic {topic}: {list(burkina_faso_topics).count(topic)} documents")
-
 
 if __name__ == "__main__":
     main()
