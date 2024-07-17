@@ -6,6 +6,8 @@ import geopandas as gpd
 import pandas as pd
 import logging
 from dotenv import load_dotenv
+from collections import Counter
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -88,29 +90,38 @@ def fetch_coordinates(spatial_url):
 
 
 def extract_coordinates(items):
-    coordinates = []
-    for item in tqdm(items, desc="Extracting coordinates"):
+    spatial_coverage_count = Counter()
+    items_with_spatial_data = 0
+
+    # First pass: count occurrences of each spatial coverage value
+    for item in tqdm(items, desc="Counting spatial coverage occurrences"):
         spatial_data = item.get('dcterms:spatial', [])
-        if not spatial_data:
-            logging.warning(f"Item {item.get('@id', 'Unknown')} has no spatial data")
-            continue
+        if spatial_data:
+            items_with_spatial_data += 1
+            for spatial in spatial_data:
+                spatial_url = spatial.get('@id')
+                if spatial_url:
+                    spatial_coverage_count[spatial_url] += 1
+                else:
+                    logging.warning(f"Spatial data in item {item.get('@id', 'Unknown')} has no '@id' field")
 
-        item_coordinates = []
-        for spatial in spatial_data:
-            spatial_url = spatial.get('@id')
-            if spatial_url:
-                coords = fetch_coordinates(spatial_url)
-                if coords:
-                    item_coordinates.append(coords)
-            else:
-                logging.warning(f"Spatial data in item {item.get('@id', 'Unknown')} has no '@id' field")
+    logging.info(f"Found {len(spatial_coverage_count)} unique spatial coverage values")
+    logging.info(f"{items_with_spatial_data} out of {len(items)} items have spatial data")
 
-        if item_coordinates:
-            coordinates.extend(item_coordinates)
+    # Second pass: fetch coordinates for unique spatial coverage values
+    coordinates = []
+    unique_coords = {}
+    for spatial_url, count in tqdm(spatial_coverage_count.items(), desc="Fetching unique coordinates"):
+        coords = fetch_coordinates(spatial_url)
+        if coords:
+            unique_coords[spatial_url] = coords
+            coordinates.extend([coords] * count)
         else:
-            logging.warning(f"No valid coordinates found for item {item.get('@id', 'Unknown')}")
+            logging.warning(f"No valid coordinates found for spatial coverage: {spatial_url}")
 
-    logging.info(f"Extracted coordinates for {len(coordinates)} locations")
+    logging.info(f"Fetched coordinates for {len(unique_coords)} out of {len(spatial_coverage_count)} unique spatial coverage values")
+    logging.info(f"Total coordinates extracted: {len(coordinates)}")
+
     return coordinates
 
 
@@ -200,16 +211,18 @@ def generate_choropleth(gdf, country):
 
 
 def extract_and_plot(item_set_ids, country):
-    all_coordinates = []
+    all_items = []
     total_items = 0
 
     for item_set_id in item_set_ids:
         items = fetch_items(item_set_id)
         if items:
+            all_items.extend(items)
             total_items += len(items)
             logging.info(f"Fetched {len(items)} items for item set {item_set_id}")
-            coordinates = extract_coordinates(items)
-            all_coordinates.extend(coordinates)
+
+    all_coordinates = extract_coordinates(all_items)
+    logging.info(f"Extracted {len(all_coordinates)} coordinates from {total_items} items")
 
     gdf = load_geojson(country)
     if gdf is None:
