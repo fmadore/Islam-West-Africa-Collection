@@ -13,6 +13,8 @@ from transformers import CamembertTokenizer, CamembertModel
 from sklearn.cluster import KMeans
 import numpy as np
 from wordcloud import WordCloud
+import matplotlib
+matplotlib.use('Agg')  # Use Agg backend to avoid GUI
 import matplotlib.pyplot as plt
 
 # Set up logging
@@ -206,26 +208,31 @@ def process_country_data(country_name, item_sets, tokenizer, model):
         generate_word_cloud(topic_word_freq, f"{country_name} - Topic {topic_idx + 1}",
                             f"{country_name.lower()}_topic_{topic_idx + 1}_wordcloud.png")
 
-    return texts, cluster_labels  # Return cluster_labels directly
+    return texts, cluster_labels
 
 def main():
-    benin_item_sets = [2185, 5502, 2186, 2188, 2187, 2191, 2190, 2189, 4922, 5501, 5500]
-    burkina_faso_item_sets = [2199, 2200, 23448, 23273, 23449, 5503, 2215, 2214, 2207, 2209, 2210, 2213, 2201]
+    # Set the number of CPU cores to use
+    os.environ["LOKY_MAX_CPU_COUNT"] = str(os.cpu_count())
+
+    benin_item_sets = [2187, 2188, 2189, 2185, 5502, 2186, 2191, 2190, 4922, 5501, 5500]
+    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201, 2199, 23273, 5503, 2209, 2210, 2213]
 
     # Load CamemBERT model and tokenizer
     tokenizer, model = load_camembert()
 
-    benin_texts, benin_topics = process_country_data("Benin", benin_item_sets, tokenizer, model)
-    burkina_faso_texts, burkina_faso_topics = process_country_data("Burkina Faso", burkina_faso_item_sets, tokenizer, model)
+    try:
+        benin_texts, benin_topics = process_country_data("Benin", benin_item_sets, tokenizer, model)
+        print("Benin Topics:")
+        for topic in set(benin_topics):
+            print(f"Topic {topic}: {list(benin_topics).count(topic)} documents")
 
-    # Analyze the topics for each country
-    print("Benin Topics:")
-    for topic in set(benin_topics):
-        print(f"Topic {topic}: {list(benin_topics).count(topic)} documents")
+        burkina_faso_texts, burkina_faso_topics = process_country_data("Burkina Faso", burkina_faso_item_sets, tokenizer, model)
+        print("\nBurkina Faso Topics:")
+        for topic in set(burkina_faso_topics):
+            print(f"Topic {topic}: {list(burkina_faso_topics).count(topic)} documents")
 
-    print("\nBurkina Faso Topics:")
-    for topic in set(burkina_faso_topics):
-        print(f"Topic {topic}: {list(burkina_faso_topics).count(topic)} documents")
+    except Exception as e:
+        logging.error(f"An error occurred: {str(e)}")
 
 if __name__ == "__main__":
     main()
