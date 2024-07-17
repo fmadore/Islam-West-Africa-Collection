@@ -7,6 +7,7 @@ import pandas as pd
 import logging
 from dotenv import load_dotenv
 from pyproj import CRS, Transformer
+from collections import Counter
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -37,29 +38,32 @@ def fetch_json(url):
 def fetch_items(item_set_id):
     items = []
     page = 1
-    url = f"{API_URL}/items?key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}&item_set_id={item_set_id}&per_page=50&page={page}"
+    per_page = 100  # Increased from 50 to 100 for efficiency
 
-    while url:
+    while True:
+        url = f"{API_URL}/items?key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}&item_set_id={item_set_id}&per_page={per_page}&page={page}"
         data = fetch_json(url)
+
         if data is None:
+            logging.error(f"Failed to fetch data for item set {item_set_id} on page {page}")
             break
+
         if isinstance(data, list):
             items.extend(data)
             logging.info(f"Fetched {len(data)} items for item set {item_set_id} (single page response)")
-            break  # If the response is a list, assume no pagination
+            if len(data) < per_page:
+                break  # Last page
         elif isinstance(data, dict):
             page_items = data.get('data', [])
             items.extend(page_items)
             logging.info(f"Fetched {len(page_items)} items for item set {item_set_id} (page {page})")
-            next_link = data.get('links', {}).get('next', {}).get('href')
-            if next_link:
-                url = f"{API_URL}{next_link}&key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}"
-                page += 1
-            else:
-                url = None
+            if 'next' not in data.get('links', {}):
+                break  # No more pages
         else:
-            logging.error(f"Unexpected data format: {data}")
+            logging.error(f"Unexpected data format for item set {item_set_id} on page {page}: {type(data)}")
             break
+
+        page += 1
 
     logging.info(f"Total items fetched for item set {item_set_id}: {len(items)}")
     return items
@@ -67,30 +71,60 @@ def fetch_items(item_set_id):
 def fetch_coordinates(spatial_url):
     spatial_details = fetch_json(spatial_url)
     if not spatial_details:
+        logging.warning(f"Failed to fetch spatial details from {spatial_url}")
         return None
 
     coordinates_field = spatial_details.get('curation:coordinates', [])
-    if coordinates_field:
-        coord_text = coordinates_field[0].get('@value')
-        if coord_text and ',' in coord_text:
-            try:
-                lat, lon = map(float, coord_text.split(','))
-                return lat, lon
-            except ValueError:
-                logging.warning(f"Invalid coordinates format: {coord_text}")
-                return None
-    return None
+    if not coordinates_field:
+        logging.warning(f"No 'curation:coordinates' field found in spatial details from {spatial_url}")
+        return None
+
+    coord_text = coordinates_field[0].get('@value')
+    if not coord_text or ',' not in coord_text:
+        logging.warning(f"Invalid coordinate format in spatial details from {spatial_url}")
+        return None
+
+    try:
+        lat, lon = map(float, coord_text.split(','))
+        return lat, lon
+    except ValueError:
+        logging.warning(f"Invalid coordinate values in spatial details from {spatial_url}")
+        return None
+
 
 def extract_coordinates(items):
-    coordinates = []
-    for item in tqdm(items, desc="Extracting coordinates"):
+    spatial_coverage_count = Counter()
+    items_with_spatial_data = 0
+
+    # First pass: count occurrences of each spatial coverage value
+    for item in tqdm(items, desc="Counting spatial coverage occurrences"):
         spatial_data = item.get('dcterms:spatial', [])
-        for spatial in spatial_data:
-            spatial_url = spatial.get('@id')
-            if spatial_url:
-                coords = fetch_coordinates(spatial_url)
-                if coords:
-                    coordinates.append(coords)
+        if spatial_data:
+            items_with_spatial_data += 1
+            for spatial in spatial_data:
+                spatial_url = spatial.get('@id')
+                if spatial_url:
+                    spatial_coverage_count[spatial_url] += 1
+                else:
+                    logging.warning(f"Spatial data in item {item.get('@id', 'Unknown')} has no '@id' field")
+
+    logging.info(f"Found {len(spatial_coverage_count)} unique spatial coverage values")
+    logging.info(f"{items_with_spatial_data} out of {len(items)} items have spatial data")
+
+    # Second pass: fetch coordinates for unique spatial coverage values
+    coordinates = []
+    unique_coords = {}
+    for spatial_url, count in tqdm(spatial_coverage_count.items(), desc="Fetching unique coordinates"):
+        coords = fetch_coordinates(spatial_url)
+        if coords:
+            unique_coords[spatial_url] = coords
+            coordinates.extend([coords] * count)
+        else:
+            logging.warning(f"No valid coordinates found for spatial coverage: {spatial_url}")
+
+    logging.info(f"Fetched coordinates for {len(unique_coords)} out of {len(spatial_coverage_count)} unique spatial coverage values")
+    logging.info(f"Total coordinates extracted: {len(coordinates)}")
+
     return coordinates
 
 
