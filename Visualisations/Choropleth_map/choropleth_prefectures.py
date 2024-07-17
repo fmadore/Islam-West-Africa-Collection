@@ -87,25 +87,35 @@ def extract_coordinates(items):
 
 
 def load_geojson(country):
-    # Create a valid filename by replacing spaces with underscores
-    filename = f"{country.lower().replace(' ', '_')}_administrative_boundaries_level6_counties_polygon.geojson"
-    geojson_path = os.path.join("data", filename)
+    # Define possible filenames
+    filenames = [
+        f"{country.lower().replace(' ', '_')}_prefectures.geojson",
+        f"{country.lower().replace(' ', '_')}_administrative_boundaries_level6_counties_polygon.geojson",
+        f"{country.lower().replace(' ', '_')}_administrative_boundaries_broad_districts_polygon.geojson",
+        f"{country.lower().replace(' ', '_')}_Prefectures_level_2.geojson"
+    ]
 
-    if not os.path.exists(geojson_path):
-        logging.error(f"GeoJSON file not found: {geojson_path}")
-        return None
+    for filename in filenames:
+        geojson_path = os.path.join("data", filename)
+        if os.path.exists(geojson_path):
+            gdf = gpd.read_file(geojson_path)
 
-    gdf = gpd.read_file(geojson_path)
+            # Check for 'name' column
+            if 'name' in gdf.columns:
+                return gdf
 
-    # Ensure the 'name' column is present
-    if 'name' not in gdf.columns:
-        if 'properties' in gdf.columns and isinstance(gdf['properties'].iloc[0], dict):
-            gdf['name'] = gdf['properties'].apply(lambda x: x.get('name', 'Unknown'))
-        else:
-            logging.error("Unable to find 'name' column in the GeoJSON file")
-            return None
+            # Check for 'properties' column with 'name' key
+            if 'properties' in gdf.columns and isinstance(gdf['properties'].iloc[0], dict):
+                gdf['name'] = gdf['properties'].apply(lambda x: x.get('name') or x.get('shape2', 'Unknown'))
+                return gdf
 
-    return gdf
+            # Check for 'shape2' column (specific to Togo file)
+            if 'shape2' in gdf.columns:
+                gdf['name'] = gdf['shape2']
+                return gdf
+
+    logging.error(f"No suitable GeoJSON file found for {country}")
+    return None
 
 def count_items_per_prefecture(coordinates, gdf):
     # Convert coordinates to GeoDataFrame
