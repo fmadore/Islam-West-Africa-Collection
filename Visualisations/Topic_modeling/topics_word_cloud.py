@@ -2,8 +2,12 @@ import os
 import shutil
 from dotenv import load_dotenv
 import requests
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+import concurrent.futures
 from tqdm import tqdm
 import logging
+import time
 import torch
 from transformers import CamembertTokenizer, CamembertModel
 from sklearn.cluster import KMeans
@@ -25,6 +29,11 @@ KEY_CREDENTIAL = os.getenv("API_KEY_CREDENTIAL")
 if not KEY_IDENTITY or not KEY_CREDENTIAL:
     logging.error("API_KEY_IDENTITY and API_KEY_CREDENTIAL must be set in the .env file.")
     exit(1)
+
+# Configure session with retry mechanism
+session = requests.Session()
+retries = Retry(total=5, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504])
+session.mount('https://', HTTPAdapter(max_retries=retries))
 
 # Function to clear the Hugging Face cache
 def clear_huggingface_cache():
@@ -60,46 +69,65 @@ def fetch_json(url):
         return None
 
 
-def fetch_items(item_set_id):
-    items = []
-    page = 1
-    url = f"{API_URL}/items?key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}&item_set_id={item_set_id}&per_page=50&page={page}"
+def fetch_items_page(item_set_id, page):
+    """Fetch items for a specific page of an item set."""
+    url = f"{API_URL}/items?key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}&item_set_id={item_set_id}&page={page}&per_page=100"
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = session.get(url, timeout=30)
+            response.raise_for_status()
+            data = response.json()
 
-    while url:
-        data = fetch_json(url)
-        if data is None:
-            break
-        if isinstance(data, list):
-            items.extend(data)
-            break  # If the response is a list, assume no pagination
-        elif isinstance(data, dict):
-            items.extend(data.get('data', []))
-            next_link = data.get('links', {}).get('next', {}).get('href')
-            if next_link:
-                url = f"{API_URL}{next_link}&key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}"
+            if 'items' in data:
+                # New API format
+                items = data['items']
+                has_next_page = data.get('next') is not None
+            elif isinstance(data, list):
+                # Old API format, list of items
+                items = data
+                has_next_page = len(items) == 100  # Assume there's a next page if we got 100 items
+            elif isinstance(data, dict) and 'data' in data:
+                # Old API format, dictionary with 'data' key
+                items = data['data']
+                has_next_page = 'next' in data.get('links', {})
             else:
-                url = None
-        else:
-            logging.error(f"Unexpected data format: {data}")
-            break
-    return items
+                logging.error(f"Unexpected data format from API: {data}")
+                return [], False
+
+            return items, has_next_page
+        except requests.exceptions.RequestException as e:
+            logging.warning(f"Attempt {attempt + 1} failed for set {item_set_id}, page {page}: {e}")
+            if attempt == max_retries - 1:
+                logging.error(f"Failed to retrieve items for set {item_set_id}, page {page} after {max_retries} attempts")
+                return [], False
+            time.sleep(2 ** attempt)  # Exponential backoff
 
 
-def fetch_items_from_set(item_set_ids):
-    items = []
-    for set_id in tqdm(item_set_ids, desc="Fetching item sets"):
-        items.extend(fetch_items(set_id))
-    return items
+def get_items_by_set(item_set_id):
+    """Retrieve all items for a specific item set ID using threading to parallelize page fetching."""
+    all_items = []
+    page = 1
+    has_next_page = True
 
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        while has_next_page:
+            future = executor.submit(fetch_items_page, item_set_id, page)
+            items, has_next_page = future.result()
+            all_items.extend(items)
+            logging.info(f"Fetched {len(items)} items from set {item_set_id}, page {page}")
+            page += 1
+
+    logging.info(f"Total fetched {len(all_items)} items from set {item_set_id}")
+    return all_items
 
 def extract_texts(items):
+    """Extract content from items."""
     texts = []
-    for item in tqdm(items, desc="Extracting texts"):
-        if "bibo:content" in item:
-            content_blocks = item["bibo:content"]
-            for content in content_blocks:
-                if content.get('property_label') == 'content':
-                    texts.append(content.get('@value', ''))
+    for item in items:
+        for content in item.get('bibo:content', []):
+            if content.get('type') == 'literal':
+                texts.append(content.get('@value', ''))
     return texts
 
 
@@ -140,17 +168,18 @@ def generate_word_cloud(word_freq, title, filename):
 
 
 def process_country_data(country_name, item_sets):
-    items = fetch_items_from_set(item_sets)
-    texts = extract_texts(items)
-    print(f"Number of texts extracted for {country_name}: {len(texts)}")
+    logging.info(f"Processing data for {country_name}")
+    all_items = []
+    for set_id in tqdm(item_sets, desc=f"Fetching {country_name} item sets"):
+        items = get_items_by_set(set_id)
+        all_items.extend(items)
 
-    embeddings = get_embeddings(texts)
-    cluster_labels = cluster_texts(embeddings)
+    logging.info(f"Total items fetched for {country_name}: {len(all_items)}")
 
-    for cluster in range(5):
-        top_words = get_top_words(texts, cluster_labels, cluster)
-        generate_word_cloud(top_words, f"{country_name} - Topic {cluster + 1}",
-                            f"{country_name.lower()}_topic_{cluster + 1}_wordcloud.png")
+    texts = extract_texts(all_items)
+    logging.info(f"Total texts extracted for {country_name}: {len(texts)}")
+
+    return texts
 
 
 def main():
