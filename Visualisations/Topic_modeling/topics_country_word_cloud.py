@@ -202,6 +202,7 @@ def get_top_words_for_topic(texts, top_docs):
 
 
 def generate_word_cloud(word_freq, title, filename):
+    logging.info(f"Generating word cloud: {title}")
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(word_freq)
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
@@ -210,6 +211,7 @@ def generate_word_cloud(word_freq, title, filename):
     plt.tight_layout(pad=0)
     plt.savefig(filename, format='png')
     plt.close()
+    logging.info(f"Word cloud saved: {filename}")
 
 
 def process_country_data(country_name, item_sets, tokenizer, model):
@@ -220,6 +222,13 @@ def process_country_data(country_name, item_sets, tokenizer, model):
         all_items.extend(items)
         gc.collect()  # Force garbage collection
 
+    logging.info(f"Total items fetched for {country_name}: {len(all_items)}")
+
+    texts = extract_texts(all_items)
+    logging.info(f"Total texts extracted for {country_name}: {len(texts)}")
+    del all_items
+    gc.collect()
+
     logging.info(f"Starting embedding generation for {len(texts)} texts")
     try:
         embeddings = get_embeddings(texts, tokenizer, model)
@@ -228,16 +237,14 @@ def process_country_data(country_name, item_sets, tokenizer, model):
         logging.error(f"Failed to generate embeddings for {country_name}: {str(e)}")
         return None, None
 
-    texts = extract_texts(all_items)
-    logging.info(f"Total texts extracted for {country_name}: {len(texts)}")
-    del all_items
-    gc.collect()
-
-    logging.info(f"Starting embedding generation for {len(texts)} texts")
-    embeddings = get_embeddings(texts, tokenizer, model)
-    logging.info(f"Embeddings generated for {country_name}: {embeddings.shape}")
-
     kmeans, top_docs_per_topic, cluster_labels = perform_topic_modeling(embeddings)
+
+    logging.info(f"Generating word clouds for {country_name}")
+    for topic_idx, top_docs in enumerate(top_docs_per_topic):
+        topic_word_freq = get_top_words_for_topic(texts, top_docs)
+        filename = f"{country_name.lower()}_topic_{topic_idx + 1}_wordcloud.png"
+        generate_word_cloud(topic_word_freq, f"{country_name} - Topic {topic_idx + 1}", filename)
+    logging.info(f"Word cloud generation completed for {country_name}")
 
     for topic_idx, top_docs in enumerate(top_docs_per_topic):
         topic_word_freq = get_top_words_for_topic(texts, top_docs)
@@ -254,7 +261,7 @@ def main():
     torch.set_num_threads(1)  # Limit PyTorch to single thread to avoid conflicts
 
     benin_item_sets = [2187, 2188, 2189, 2185, 5502, 2186, 2191, 2190, 4922, 5501, 5500]
-    burkina_faso_item_sets = [2200, 2215, 2214, 2207, 2201, 2199, 23273, 5503, 2209, 2210, 2213]
+    burkina_faso_item_sets = [2200]
 
     tokenizer, model = load_camembert()
     if torch.cuda.is_available():
