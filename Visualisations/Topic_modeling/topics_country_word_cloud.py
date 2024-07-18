@@ -17,6 +17,9 @@ import matplotlib
 matplotlib.use('Agg')  # Use Agg backend to avoid GUI
 import matplotlib.pyplot as plt
 import gc
+import spacy
+from nltk.corpus import stopwords
+import re
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -37,6 +40,35 @@ if not KEY_IDENTITY or not KEY_CREDENTIAL:
 session = requests.Session()
 retries = Retry(total=5, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504])
 session.mount('https://', HTTPAdapter(max_retries=retries))
+
+# Load French NLP model
+nlp = spacy.load("fr_core_news_sm")
+
+# Load French stop words
+french_stopwords = set(stopwords.words('french'))
+additional_stopwords = {'El', '000', '%'}  # Add any other words to remove
+french_stopwords.update(additional_stopwords)
+french_stopwords = set(word.lower() for word in french_stopwords)  # Ensure all stopwords are lowercase
+
+# Compile regular expressions
+newline_re = re.compile(r'\n')
+apostrophe_re = re.compile(r"'")
+whitespace_re = re.compile(r"\s+")
+oe_re = re.compile(r"œ")
+
+
+# Function to preprocess text
+def preprocess_text(text):
+    # Apply regex replacements
+    text = newline_re.sub(' ', text)
+    text = apostrophe_re.sub("'", text)
+    text = oe_re.sub("oe", text)
+    text = text.lower()
+
+    doc = nlp(text)
+    lemmatized = [token.lemma_ for token in doc if
+                  not token.is_stop and token.is_alpha and token.lemma_.lower() not in french_stopwords]
+    return whitespace_re.sub(' ', ' '.join(lemmatized)).strip()
 
 # Function to clear the Hugging Face cache
 def clear_huggingface_cache():
@@ -124,13 +156,23 @@ def get_items_by_set(item_set_id):
     logging.info(f"Total fetched {len(all_items)} items from set {item_set_id}")
     return all_items
 
+
 def extract_texts(items):
-    """Extract content from items."""
+    """Extract content from items and preprocess."""
     texts = []
-    for item in items:
+    total_items = len(items)
+    for i, item in enumerate(tqdm(items, desc="Preprocessing texts", total=total_items)):
         for content in item.get('bibo:content', []):
             if content.get('type') == 'literal':
-                texts.append(content.get('@value', ''))
+                preprocessed_text = preprocess_text(content.get('@value', ''))
+                if preprocessed_text:  # Only add non-empty preprocessed texts
+                    texts.append(preprocessed_text)
+
+        # Log progress every 1000 items
+        if (i + 1) % 1000 == 0:
+            logging.info(f"Preprocessed {i + 1}/{total_items} items")
+
+    logging.info(f"Preprocessing completed. Total texts extracted: {len(texts)}")
     return texts
 
 
@@ -201,8 +243,12 @@ def get_top_words_for_topic(texts, top_docs):
     return dict(sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:50])
 
 
-def generate_word_cloud(word_freq, title, filename):
+def generate_word_cloud(word_freq, title, filename, overwrite=True):
     logging.info(f"Generating word cloud: {title}")
+    if os.path.exists(filename) and not overwrite:
+        logging.info(f"File {filename} already exists. Skipping.")
+        return
+
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(word_freq)
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
@@ -240,16 +286,16 @@ def process_country_data(country_name, item_sets, tokenizer, model):
     kmeans, top_docs_per_topic, cluster_labels = perform_topic_modeling(embeddings)
 
     logging.info(f"Generating word clouds for {country_name}")
-    for topic_idx, top_docs in enumerate(top_docs_per_topic):
-        topic_word_freq = get_top_words_for_topic(texts, top_docs)
-        filename = f"{country_name.lower()}_topic_{topic_idx + 1}_wordcloud.png"
-        generate_word_cloud(topic_word_freq, f"{country_name} - Topic {topic_idx + 1}", filename)
-    logging.info(f"Word cloud generation completed for {country_name}")
 
     for topic_idx, top_docs in enumerate(top_docs_per_topic):
         topic_word_freq = get_top_words_for_topic(texts, top_docs)
-        generate_word_cloud(topic_word_freq, f"{country_name} - Topic {topic_idx + 1}",
-                            f"{country_name.lower()}_topic_{topic_idx + 1}_wordcloud.png")
+        filename = f"{country_name.lower()}_topic_{topic_idx + 1}_wordcloud.png"
+        generate_word_cloud(topic_word_freq, f"{country_name} - Topic {topic_idx + 1}", filename, overwrite=True)
+
+        if os.path.exists(filename):
+            logging.info(f"Confirmed: {filename} was created/updated.")
+        else:
+            logging.error(f"Error: {filename} was not created/updated.")
 
     del embeddings
     gc.collect()
