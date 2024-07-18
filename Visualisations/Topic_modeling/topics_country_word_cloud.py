@@ -307,7 +307,7 @@ def main():
     torch.set_num_threads(1)  # Limit PyTorch to single thread to avoid conflicts
 
     benin_item_sets = [2187, 2188, 2189, 2185, 5502, 2186, 2191, 2190, 4922, 5501, 5500]
-    burkina_faso_item_sets = [2200]
+    burkina_faso_item_sets = [2199, 2200, 23448, 23273, 23449, 5503, 2215, 2214, 2207, 2209, 2210, 2213, 2201]
 
     tokenizer, model = load_camembert()
     if torch.cuda.is_available():
