@@ -45,16 +45,16 @@ def extract_keywords_with_ai(query):
             model="claude-3-5-sonnet-20240620",
             max_tokens=100,
             temperature=0,
-            system="You are an AI assistant that extracts important keywords and concepts from questions about Islam in West Africa. Respond with only the extracted keywords, separated by commas.",
+            system="You are an AI assistant that extracts important keywords and concepts from questions about Islam in West Africa. Respond with only the extracted keywords in French, separated by commas. If the input is not in French, translate the keywords to French.",
             messages=[
                 {
                     "role": "user",
-                    "content": f"Extract important keywords and concepts from this question: {query}"
+                    "content": f"Extract important keywords and concepts from this question, and provide them in French: {query}"
                 }
             ]
         )
         keywords = [keyword.strip() for keyword in message.content[0].text.split(',')]
-        logging.info(f"AI-extracted keywords: {keywords}")
+        logging.info(f"AI-extracted French keywords: {keywords}")
         return keywords
     except Exception as e:
         logging.error(f"Error in extract_keywords_with_ai: {str(e)}")
