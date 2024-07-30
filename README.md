@@ -65,3 +65,16 @@ Spreadsheets used to create [digital exhibits](https://islam.zmo.de/s/westafrica
 ### Data Visualizations
 
 This repository includes several visualisations created using Python and Plotly, showcasing trends and insights from the IWAC data. View them in the `Visualisations` folder or on the [project website](https://iwac.frederickmadore.com/s/westafrica/page/digital-humanities/).
+
+## License
+
+This project is dual-licensed to ensure both the code and data remain freely available for educational and non-commercial use:
+
+- All source code is licensed under the [GNU General Public License v3.0 (GPL-3.0)](LICENSE-GPL).
+- All data and content are licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](LICENSE-CC-BY-NC).
+
+This means you are free to use, modify, and distribute both the code and data for non-commercial purposes, as long as you provide appropriate attribution to the original creators and share any modifications under the same terms.
+
+For more details, see the [LICENSE-GPL](LICENSE-GPL) and [LICENSE-CC-BY-NC](LICENSE-CC-BY-NC) files in this repository.
+
+If you wish to use any part of this project for commercial purposes, please contact [Your Name or Organization] for permission.
