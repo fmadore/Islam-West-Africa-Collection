@@ -50,10 +50,11 @@ Contains CSV and JSON-LD files with detailed metadata for all items in the IWAC.
 
 CSV Format: Comma-delimited, double-quoted, '/' as escape character, '|' as multi-value separator
 
-Metadata Schema: Mix of Dublin Core, Bibliographic Ontology, Friend of a Friend, and Geonames
+#### JSON-LD Files (`Metadata/JSON-LD/`)
+All metadata is also available in JSON-LD format, with filenames corresponding to the CSV files.
 
-#### JSON
-Metadata is also available in [JSON-LD](https://github.com/fmadore/Islam-West-Africa-Collection/tree/main/Metadata/JSON) format.
+#### Metadata Schema
+The metadata uses a mix of schemas including Dublin Core, Bibliographic Ontology, Friend of a Friend, and Geonames.
 
 ### TimelineJS
 Spreadsheets used to create [digital exhibits](https://islam.zmo.de/s/westafrica/page/exhibits) with [Timeline JS](https://timeline.knightlab.com/).
