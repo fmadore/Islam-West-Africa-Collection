@@ -50,4 +50,4 @@ Spreadsheets used to create [digital exhibits](https://islam.zmo.de/s/westafrica
 
 ## Data Visualizations
 
-This repository includes several visualisations created using Python and Plotly, showcasing trends and insights from the IWAC data. View them in the `Visualisations` folder or on the [project website]([https://your-project-website.com](https://iwac.frederickmadore.com/s/westafrica/page/digital-humanities)).
+This repository includes several visualisations created using Python and Plotly, showcasing trends and insights from the IWAC data. View them in the `Visualisations` folder or on the [project website](https://your-project-website.com](https://iwac.frederickmadore.com/s/westafrica/page/digital-humanities/).
