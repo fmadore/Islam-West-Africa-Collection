@@ -62,6 +62,6 @@ The metadata uses a mix of schemas including Dublin Core, Bibliographic Ontology
 ### TimelineJS
 Spreadsheets used to create [digital exhibits](https://islam.zmo.de/s/westafrica/page/exhibits) with [Timeline JS](https://timeline.knightlab.com/).
 
-## Data Visualizations
+### Data Visualizations
 
 This repository includes several visualisations created using Python and Plotly, showcasing trends and insights from the IWAC data. View them in the `Visualisations` folder or on the [project website](https://iwac.frederickmadore.com/s/westafrica/page/digital-humanities/).
