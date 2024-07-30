@@ -1,17 +1,31 @@
-# Islam West Africa Collection
+# Islam West Africa Collection (IWAC)
+
+## Project Overview
 
 [![DOI](https://zenodo.org/badge/664653958.svg)](https://zenodo.org/doi/10.5281/zenodo.10390351)
 
-Directed by [Frédérick Madore](https://frederickmadore.com/), the *Islam West Africa Collection* (IWAC) is a collaborative and open-access digital database supported by the [Leibniz-Zentrum Moderner Orient (ZMO)](https://www.zmo.de/en) and funded by the Berlin Senate Department for Science, Health and Care. Building on the success of the award-winning [*Islam Burkina Faso Collection*](https://web.archive.org/web/20231207083222/https://islam.domains.uflib.ufl.edu/s/bf/page/home) launched in 2021, the current repository features over 7,500 archival documents, newspaper articles, Islamic publications of various kinds, audio and video recordings, and photographs on Islam and Muslims in Burkina Faso, Benin, Niger, Nigeria, Togo and Côte d'Ivoire. The majority of documents are in French, with others available in Hausa, Arabic, Dendi, and English. The database also indexes over 850 references to relevant academic references such as books, articles, chapters, theses, reports and blog posts. Each document is tagged with detailed metadata and subjected to optical character recognition (OCR), making it easily accessible via keyword searches or more advanced multi-criteria searches. The IWAC also includes a comprehensive index of over 2,400 events, languages, locations, organizations, people, and topics.
+The *Islam West Africa Collection* (IWAC) is a comprehensive, open-access digital database focused on Islam and Muslims in West Africa. Directed by [Frédérick Madore](https://frederickmadore.com/), this project is supported by the [Leibniz-Zentrum Moderner Orient (ZMO)](https://www.zmo.de/en) and funded by the Berlin Senate Department for Science, Health and Care.
 
-English website: [https://islam.zmo.de/s/westafrica/](https://islam.zmo.de/s/westafrica/)
+### Key Features:
+- 8,800+ documents including archival materials, newspaper articles, and multimedia content
+- Coverage of Burkina Faso, Benin, Niger, Nigeria, Togo, and Côte d'Ivoire
+- Multilingual content (French, Hausa, Arabic, Dendi, English)
+- 850+ indexed academic references
+- 2,400+ indexed events, languages, locations, organizations, people, and topics
 
-Site en français: [https://islam.zmo.de/s/afrique_ouest/](https://islam.zmo.de/s/afrique_ouest/)
+## Access the Collection
 
-## Folder "Metadata"
-Contains all the metadata of the items in the IWAC
+- [English Website](https://islam.zmo.de/s/westafrica/)
+- [Site en français](https://islam.zmo.de/s/afrique_ouest/)
 
-### Contains:
+## Repository Structure
+
+### Chatbot
+
+### Metadata
+Contains CSV and JSON-LD files with detailed metadata for all items in the IWAC.
+
+#### CSV Files:
 - Audio-visual documents metadata ("audio-visual_documents.csv")
 - Bibliographical references metadata ("references.csv")
 - Documents metadata ("documents.csv")
@@ -24,29 +38,16 @@ Contains all the metadata of the items in the IWAC
 - Persons metadata ("index_persons.csv")
 - Topics metadata ("index_topics.csv")
 
-### CSV files format:
-- Delimiter: ,
-- Enclosure: "
-- Escape: /
-- Multi-value separator: |
+CSV Format: Comma-delimited, double-quoted, '/' as escape character, '|' as multi-value separator
 
-### Metadata:
-- Metadata names or headers are Rdf names
-- The metadata is a mix of "Dublin Core", "Bibliographic Ontology", "Friend of a Friend", and "Geonames"
-- Format of uri: Uri and label separated by a space
+Metadata Schema: Mix of Dublin Core, Bibliographic Ontology, Friend of a Friend, and Geonames
 
-### JSON
+#### JSON
 Metadata is also available in [JSON-LD](https://github.com/fmadore/Islam-West-Africa-Collection/tree/main/Metadata/JSON) format.
 
-## Folder "Jupyter notebooks"
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fmadore/Islam-West-Africa-Collection/HEAD)
+### TimelineJS
+Spreadsheets used to create [digital exhibits](https://islam.zmo.de/s/westafrica/page/exhibits) with [Timeline JS](https://timeline.knightlab.com/).
 
-This folder contains the Jupyter notebooks that were used to create the visualisations that showcase the possibilities of [digital humanities](https://islam.zmo.de/s/westafrica/page/digital-humanities) with the IWAC dataset. To access and run the Jupyter notebooks in this repository, simply click on the Binder button shown above. This will launch a virtual environment within your browser, allowing you to open and run the notebooks seamlessly, without the need for any installation.
-There are 4 notebooks in the folder:
-1. [Sentiment_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Textual%20analysis/Sentiment%20analysis/Sentiment_analysis.ipynb)
-2. [Spatial_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Spatial%20analysis/Spatial_analysis.ipynb)
-3. [Temporal_analysis.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Textual%20analysis/Temporal%20analysis/Temporal_analysis.ipynb)
-4. [Topic_modelling.ipynb](https://github.com/fmadore/Islam-West-Africa-Collection/blob/main/Jupyter%20notebooks/Textual%20analysis/Topic%20modelling/Topic_modelling.ipynb)
+## Data Visualizations
 
-## Folder "TimelineJS"
-It contains a copy of the spreadsheets that were used to create the [digital exhibits](https://islam.zmo.de/s/westafrica/page/exhibits) using [Timeline JS](https://timeline.knightlab.com/).
+This repository includes several visualisations created using Python and Plotly, showcasing trends and insights from the IWAC data. View them in the `Visualisations` folder or on the [project website]([https://your-project-website.com](https://iwac.frederickmadore.com/s/westafrica/page/digital-humanities)).
