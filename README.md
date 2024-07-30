@@ -53,6 +53,9 @@ CSV Format: Comma-delimited, double-quoted, '/' as escape character, '|' as mult
 #### JSON-LD Files (`Metadata/JSON-LD/`)
 All metadata is also available in JSON-LD format, with filenames corresponding to the CSV files.
 
+#### Resource Templates (`Metadata/Resource Templates/`)
+Contains Omeka S resource templates in JSON format. These templates define the structure and properties for different types of resources in the IWAC.
+
 #### Metadata Schema
 The metadata uses a mix of schemas including Dublin Core, Bibliographic Ontology, Friend of a Friend, and Geonames.
 
