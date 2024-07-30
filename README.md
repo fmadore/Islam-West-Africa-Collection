@@ -22,6 +22,16 @@ The *Islam West Africa Collection* (IWAC) is a comprehensive, open-access digita
 
 ### Chatbot
 
+The IWAC Chat Explorer is an AI-powered web application that implements an augmented retrieval strategy to explore the *Islam West Africa Collection*.
+
+Key Features:
+- Interactive chat interface for querying the IWAC dataset
+- Augmented retrieval system combining document search and AI-generated responses
+- Context-aware responses using the Claude 3.5 Sonnet model from Anthropic
+- Source attribution for AI-generated responses
+
+For detailed information on setup, usage, and technical details, please see the [IWAC Chat Explorer README](./Chatbot/README.md).
+
 ### Metadata
 Contains CSV and JSON-LD files with detailed metadata for all items in the IWAC.
 
