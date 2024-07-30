@@ -76,5 +76,3 @@ This project is dual-licensed to ensure both the code and data remain freely ava
 This means you are free to use, modify, and distribute both the code and data for non-commercial purposes, as long as you provide appropriate attribution to the original creators and share any modifications under the same terms.
 
 For more details, see the [LICENSE-GPL](LICENSE-GPL) and [LICENSE-CC-BY-NC](LICENSE-CC-BY-NC) files in this repository.
-
-If you wish to use any part of this project for commercial purposes, please contact [Your Name or Organization] for permission.
