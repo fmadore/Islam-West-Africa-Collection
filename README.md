@@ -35,7 +35,7 @@ For detailed information on setup, usage, and technical details, please see the 
 ### Metadata
 Contains CSV and JSON-LD files with detailed metadata for all items in the IWAC.
 
-#### CSV Files:
+#### CSV Files (`Metadata/CSV/`)
 - Audio-visual documents metadata ("audio-visual_documents.csv")
 - Bibliographical references metadata ("references.csv")
 - Documents metadata ("documents.csv")
