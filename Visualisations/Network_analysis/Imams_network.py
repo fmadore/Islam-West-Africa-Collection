@@ -1,7 +1,7 @@
 import requests
 import networkx as nx
 import matplotlib.pyplot as plt
-from collections import Counter
+from collections import Counter, defaultdict
 from tqdm import tqdm
 from pyvis.network import Network
 import folium
@@ -20,14 +20,29 @@ def get_resource_data(resource_id):
     return response.json()
 
 
+def categorize_subject(subject_data):
+    item_set = subject_data.get('o:item_set', [])
+    if item_set and isinstance(item_set[0], dict):
+        set_id = item_set[0].get('o:id')
+        if set_id == 1:
+            return 'Topic'
+        elif set_id == 2:
+            return 'Event'
+        elif set_id == 266:
+            return 'Person'
+        elif set_id == 854:
+            return 'Organization'
+    return None
+
+
 def extract_subjects(resource_data):
-    subjects = []
+    subjects = defaultdict(list)
     for subject in resource_data.get('dcterms:subject', []):
         if isinstance(subject, dict) and '@id' in subject:
             subject_data = get_resource_data(subject['@id'].split('/')[-1])
-            subjects.append(subject_data.get('o:title', 'Unknown Subject'))
-        elif isinstance(subject, str):
-            subjects.append(subject)
+            category = categorize_subject(subject_data)
+            if category:
+                subjects[category].append(subject_data.get('o:title', 'Unknown Subject'))
     return subjects
 
 
@@ -58,6 +73,7 @@ G = nx.Graph()
 # Collect data for each imam
 imam_data = {}
 all_locations = []
+all_subjects = defaultdict(list)
 
 for imam_id in tqdm(imam_ids, desc="Processing imams"):
     try:
@@ -66,7 +82,7 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
         G.add_node(imam_name)
         imam_data[imam_name] = {
             'documents': [],
-            'subjects': [],
+            'subjects': defaultdict(list),
             'locations': []
         }
 
@@ -77,7 +93,10 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
                 resource_data = get_resource_data(resource_id)
 
                 imam_data[imam_name]['documents'].append(doc.get('o:title', 'Unknown Document'))
-                imam_data[imam_name]['subjects'].extend(extract_subjects(resource_data))
+                subjects = extract_subjects(resource_data)
+                for category, subject_list in subjects.items():
+                    imam_data[imam_name]['subjects'][category].extend(subject_list)
+                    all_subjects[category].extend(subject_list)
                 locations = extract_locations(resource_data)
                 imam_data[imam_name]['locations'].extend(locations)
                 all_locations.extend(locations)
@@ -110,12 +129,12 @@ print("\nTop 3 Imams by Eigenvector Centrality:")
 for imam, centrality in sorted(eigenvector_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
     print(f"{imam}: {centrality:.3f}")
 
-# Analyze common subjects and locations
-all_subjects = [subject for imam in imam_data.values() for subject in imam['subjects']]
-
-print("\nTop 5 Common Subjects:")
-for subject, count in Counter(all_subjects).most_common(5):
-    print(f"{subject}: {count}")
+# Analyze common subjects by category
+print("\nTop 5 Common Subjects by Category:")
+for category in ['Topic', 'Event', 'Person', 'Organization']:
+    print(f"\n{category}:")
+    for subject, count in Counter(all_subjects[category]).most_common(5):
+        print(f"{subject}: {count}")
 
 print("\nTop 5 Common Locations:")
 location_counter = Counter(loc['name'] for loc in all_locations)
