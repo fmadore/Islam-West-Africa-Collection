@@ -89,7 +89,7 @@ def get_country_coordinates(country_id):
 def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_cent, filename='palladio_nodes.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['Id', 'Label', 'Type', 'Country', 'Degree Centrality', 'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count', 'Unique Subjects', 'Unique Locations']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
         writer.writeheader()
         for imam, data in imam_data.items():
             writer.writerow({
@@ -97,9 +97,9 @@ def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_
                 'Label': imam,
                 'Type': 'Imam',
                 'Country': data['country'],
-                'Degree Centrality': degree_cent[imam],
-                'Eigenvector Centrality': eigenvector_cent[imam],
-                'Betweenness Centrality': betweenness_cent[imam],
+                'Degree Centrality': f"{degree_cent[imam]:.6f}",
+                'Eigenvector Centrality': f"{eigenvector_cent[imam]:.6f}",
+                'Betweenness Centrality': f"{betweenness_cent[imam]:.6f}",
                 'Document Count': len(data['documents']),
                 'Unique Subjects': sum(len(set(subjects)) for subjects in data['subjects'].values()),
                 'Unique Locations': len(set(loc['name'] for loc in data['locations']))
@@ -202,10 +202,7 @@ def export_palladio_timeline(imam_data, filename='palladio_timeline.csv'):
 # List of imam item numbers
 imam_ids = [1124, 2150]
 
-# Create a graph
 G = nx.Graph()
-
-# Collect data for each imam
 imam_data = {}
 all_locations = []
 all_subjects = defaultdict(list)
@@ -251,7 +248,6 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
     except Exception as e:
         print(f"Error processing imam with ID {imam_id}: {str(e)}")
 
-
 # Create edges based on shared documents, subjects, and locations
 for imam1, imam2 in combinations(imam_data.keys(), 2):
     shared_docs = set(doc['title'] for doc in imam_data[imam1]['documents']) & set(
@@ -288,24 +284,13 @@ print("\nTop 3 Imams by Betweenness Centrality:")
 for imam, centrality in sorted(betweenness_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
     print(f"{imam}: {centrality:.3f}")
 
-# Analyze common subjects by category
-print("\nTop 5 Common Subjects by Category:")
-for category in ['Topic', 'Event', 'Person', 'Organization']:
-    print(f"\n{category}:")
-    for subject, count in Counter(all_subjects[category]).most_common(5):
-        print(f"{subject}: {count}")
-
-print("\nTop 5 Common Locations:")
-location_counter = Counter(loc['name'] for loc in all_locations)
-for location, count in location_counter.most_common(5):
-    print(f"{location}: {count}")
-
 # Export data for Palladio
 export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_cent)
 export_palladio_edges(G)
 export_palladio_subjects(imam_data)
 export_palladio_locations(imam_data)
 export_palladio_timeline(imam_data)
+export_palladio_countries(imam_data)
 
 print("\nAnalysis complete. Data exports created for Palladio:")
 print("1. palladio_nodes.csv - Imam data")
@@ -313,3 +298,4 @@ print("2. palladio_edges.csv - Network connections")
 print("3. palladio_subjects.csv - Subject data")
 print("4. palladio_locations.csv - Location data")
 print("5. palladio_timeline.csv - Timeline data")
+print("6. palladio_countries.csv - Country data")
