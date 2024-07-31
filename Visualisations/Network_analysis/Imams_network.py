@@ -2,10 +2,9 @@ import requests
 import networkx as nx
 from collections import Counter, defaultdict
 from tqdm import tqdm
-from pyvis.network import Network
-import folium
-from folium.plugins import MarkerCluster
 import csv
+from datetime import datetime
+from itertools import combinations
 
 base_url = "https://iwac.frederickmadore.com/api"
 
@@ -64,9 +63,17 @@ def extract_locations(resource_data):
     return locations
 
 
-def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, filename='palladio_nodes.csv'):
+def extract_date(resource_data):
+    date = resource_data.get('dcterms:date', [])
+    if date and isinstance(date[0], dict):
+        return date[0].get('@value')
+    return None
+
+
+def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_cent, filename='palladio_nodes.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Id', 'Label', 'Type', 'Degree Centrality', 'Eigenvector Centrality']
+        fieldnames = ['Id', 'Label', 'Type', 'Degree Centrality', 'Eigenvector Centrality', 'Betweenness Centrality',
+                      'Document Count', 'Unique Subjects', 'Unique Locations']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for imam, data in imam_data.items():
@@ -75,52 +82,77 @@ def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, filename='pa
                 'Label': imam,
                 'Type': 'Imam',
                 'Degree Centrality': degree_cent[imam],
-                'Eigenvector Centrality': eigenvector_cent[imam]
+                'Eigenvector Centrality': eigenvector_cent[imam],
+                'Betweenness Centrality': betweenness_cent[imam],
+                'Document Count': len(data['documents']),
+                'Unique Subjects': sum(len(set(subjects)) for subjects in data['subjects'].values()),
+                'Unique Locations': len(set(loc['name'] for loc in data['locations']))
             })
 
 
 def export_palladio_edges(G, filename='palladio_edges.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Source', 'Target', 'Weight']
+        fieldnames = ['Source', 'Target', 'Weight', 'Shared Subjects', 'Shared Locations']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for edge in G.edges(data=True):
             writer.writerow({
                 'Source': edge[0],
                 'Target': edge[1],
-                'Weight': edge[2]['weight']
+                'Weight': edge[2]['weight'],
+                'Shared Subjects': edge[2]['shared_subjects'],
+                'Shared Locations': edge[2]['shared_locations']
             })
 
 
 def export_palladio_subjects(imam_data, filename='palladio_subjects.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Imam', 'Subject', 'Category']
+        fieldnames = ['Imam', 'Subject', 'Category', 'Frequency']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for imam, data in imam_data.items():
             for category, subjects in data['subjects'].items():
-                for subject in subjects:
+                subject_counts = Counter(subjects)
+                for subject, count in subject_counts.items():
                     writer.writerow({
                         'Imam': imam,
                         'Subject': subject,
-                        'Category': category
+                        'Category': category,
+                        'Frequency': count
                     })
 
 
 def export_palladio_locations(imam_data, filename='palladio_locations.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Imam', 'Location', 'Latitude', 'Longitude']
+        fieldnames = ['Imam', 'Location', 'Latitude', 'Longitude', 'Frequency']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for imam, data in imam_data.items():
+            location_counts = Counter(loc['name'] for loc in data['locations'])
             for location in data['locations']:
                 if location['coordinates']:
                     writer.writerow({
                         'Imam': imam,
                         'Location': location['name'],
                         'Latitude': location['coordinates'][0],
-                        'Longitude': location['coordinates'][1]
+                        'Longitude': location['coordinates'][1],
+                        'Frequency': location_counts[location['name']]
                     })
+
+
+def export_palladio_timeline(imam_data, filename='palladio_timeline.csv'):
+    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Imam', 'Date', 'Document Count']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for imam, data in imam_data.items():
+            date_counts = Counter(doc['date'] for doc in data['documents'] if doc['date'])
+            for date, count in date_counts.items():
+                writer.writerow({
+                    'Imam': imam,
+                    'Date': date,
+                    'Document Count': count
+                })
 
 
 # List of imam item numbers
@@ -151,11 +183,15 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
                 resource_id = doc['@id'].split('/')[-1]
                 resource_data = get_resource_data(resource_id)
 
-                imam_data[imam_name]['documents'].append(doc.get('o:title', 'Unknown Document'))
+                doc_title = doc.get('o:title', 'Unknown Document')
+                doc_date = extract_date(resource_data)
+                imam_data[imam_name]['documents'].append({'title': doc_title, 'date': doc_date})
+
                 subjects = extract_subjects(resource_data)
                 for category, subject_list in subjects.items():
                     imam_data[imam_name]['subjects'][category].extend(subject_list)
                     all_subjects[category].extend(subject_list)
+
                 locations = extract_locations(resource_data)
                 imam_data[imam_name]['locations'].extend(locations)
                 all_locations.extend(locations)
@@ -164,13 +200,20 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
     except Exception as e:
         print(f"Error processing imam with ID {imam_id}: {str(e)}")
 
-# Create edges based on shared documents
-for imam1 in imam_data:
-    for imam2 in imam_data:
-        if imam1 != imam2:
-            shared_docs = set(imam_data[imam1]['documents']) & set(imam_data[imam2]['documents'])
-            if shared_docs:
-                G.add_edge(imam1, imam2, weight=len(shared_docs))
+# Create edges based on shared documents, subjects, and locations
+for imam1, imam2 in combinations(imam_data.keys(), 2):
+    shared_docs = set(doc['title'] for doc in imam_data[imam1]['documents']) & set(
+        doc['title'] for doc in imam_data[imam2]['documents'])
+    shared_subjects = set.union(*[set(imam_data[imam1]['subjects'][cat]) for cat in imam_data[imam1]['subjects']]) & \
+                      set.union(*[set(imam_data[imam2]['subjects'][cat]) for cat in imam_data[imam2]['subjects']])
+    shared_locations = set(loc['name'] for loc in imam_data[imam1]['locations']) & set(
+        loc['name'] for loc in imam_data[imam2]['locations'])
+
+    if shared_docs or shared_subjects or shared_locations:
+        G.add_edge(imam1, imam2,
+                   weight=len(shared_docs),
+                   shared_subjects=len(shared_subjects),
+                   shared_locations=len(shared_locations))
 
 # Network analysis
 print("Network Analysis:")
@@ -179,6 +222,7 @@ print(f"Number of edges: {G.number_of_edges()}")
 
 degree_cent = nx.degree_centrality(G)
 eigenvector_cent = nx.eigenvector_centrality(G, weight='weight')
+betweenness_cent = nx.betweenness_centrality(G, weight='weight')
 
 print("\nTop 3 Imams by Degree Centrality:")
 for imam, centrality in sorted(degree_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
@@ -186,6 +230,10 @@ for imam, centrality in sorted(degree_cent.items(), key=lambda x: x[1], reverse=
 
 print("\nTop 3 Imams by Eigenvector Centrality:")
 for imam, centrality in sorted(eigenvector_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
+    print(f"{imam}: {centrality:.3f}")
+
+print("\nTop 3 Imams by Betweenness Centrality:")
+for imam, centrality in sorted(betweenness_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
     print(f"{imam}: {centrality:.3f}")
 
 # Analyze common subjects by category
@@ -200,43 +248,16 @@ location_counter = Counter(loc['name'] for loc in all_locations)
 for location, count in location_counter.most_common(5):
     print(f"{location}: {count}")
 
-# Create an interactive network visualization
-net = Network(height="750px", width="100%", bgcolor="#222222", font_color="white")
-
-for node in G.nodes():
-    net.add_node(node, label=node,
-                 title=f"Degree Centrality: {degree_cent[node]:.3f}\nEigenvector Centrality: {eigenvector_cent[node]:.3f}")
-
-for edge in G.edges(data=True):
-    net.add_edge(edge[0], edge[1], value=edge[2]['weight'], title=f"Shared Documents: {edge[2]['weight']}")
-
-net.barnes_hut()
-net.save_graph("interactive_imam_network.html")
-
-# Create a map visualization
-m = folium.Map(location=[12.36566, -1.53388], zoom_start=6)  # Centered on Ouagadougou
-marker_cluster = MarkerCluster().add_to(m)
-
-for location in all_locations:
-    if location['coordinates']:
-        folium.Marker(
-            location=[float(location['coordinates'][0]), float(location['coordinates'][1])],
-            popup=location['name'],
-            tooltip=location['name']
-        ).add_to(marker_cluster)
-
-m.save("imam_locations_map.html")
-
 # Export data for Palladio
-export_palladio_nodes(imam_data, degree_cent, eigenvector_cent)
+export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_cent)
 export_palladio_edges(G)
 export_palladio_subjects(imam_data)
 export_palladio_locations(imam_data)
+export_palladio_timeline(imam_data)
 
-print("\nAnalysis complete. Visualizations and data exports created:")
-print("1. interactive_imam_network.html - Interactive network visualization")
-print("2. imam_locations_map.html - Map of locations")
-print("3. palladio_nodes.csv - Imam data for Palladio")
-print("4. palladio_edges.csv - Network connections for Palladio")
-print("5. palladio_subjects.csv - Subject data for Palladio")
-print("6. palladio_locations.csv - Location data for Palladio")
+print("\nAnalysis complete. Data exports created for Palladio:")
+print("1. palladio_nodes.csv - Imam data")
+print("2. palladio_edges.csv - Network connections")
+print("3. palladio_subjects.csv - Subject data")
+print("4. palladio_locations.csv - Location data")
+print("5. palladio_timeline.csv - Timeline data")
