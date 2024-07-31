@@ -64,9 +64,10 @@ def extract_locations(resource_data):
 
 
 def extract_date(resource_data):
-    date = resource_data.get('dcterms:date', [])
-    if date and isinstance(date[0], dict):
-        return date[0].get('@value')
+    date_data = resource_data.get('dcterms:date', [])
+    for date_item in date_data:
+        if isinstance(date_item, dict) and date_item.get('type') == 'numeric:timestamp':
+            return date_item.get('@value')
     return None
 
 
@@ -142,21 +143,26 @@ def export_palladio_locations(imam_data, filename='palladio_locations.csv'):
 
 def export_palladio_timeline(imam_data, filename='palladio_timeline.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Imam', 'Date', 'Document Count']
+        fieldnames = ['Imam', 'Date', 'Document Count', 'Document Titles']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for imam, data in imam_data.items():
-            date_counts = Counter(doc['date'] for doc in data['documents'] if doc['date'])
-            for date, count in date_counts.items():
+            date_docs = defaultdict(list)
+            for doc in data['documents']:
+                if doc['date']:
+                    date_docs[doc['date']].append(doc['title'])
+
+            for date, docs in date_docs.items():
                 writer.writerow({
                     'Imam': imam,
                     'Date': date,
-                    'Document Count': count
+                    'Document Count': len(docs),
+                    'Document Titles': '; '.join(docs)
                 })
 
 
 # List of imam item numbers
-imam_ids = [1124, 2150, 1615, 861, 945, 944, 855, 1940, 925]
+imam_ids = [1124, 2150]
 
 # Create a graph
 G = nx.Graph()
@@ -177,8 +183,7 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
             'locations': []
         }
 
-        for doc in tqdm(imam['@reverse'].get('dcterms:subject', []), desc=f"Processing documents for {imam_name}",
-                        leave=False):
+        for doc in tqdm(imam['@reverse'].get('dcterms:subject', []), desc=f"Processing documents for {imam_name}", leave=False):
             try:
                 resource_id = doc['@id'].split('/')[-1]
                 resource_data = get_resource_data(resource_id)
