@@ -71,10 +71,24 @@ def extract_date(resource_data):
     return None
 
 
+def extract_country(imam_data):
+    for spatial in imam_data.get('dcterms:spatial', []):
+        if isinstance(spatial, dict) and spatial.get('type') == 'resource:item':
+            return spatial.get('display_title')
+    return "Unknown"
+
+def get_country_coordinates(country_id):
+    country_data = get_resource_data(country_id)
+    coordinates = country_data.get('curation:coordinates', [])
+    for coord in coordinates:
+        if isinstance(coord, dict) and coord.get('type') == 'literal':
+            return coord.get('@value')
+    return None
+
+
 def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_cent, filename='palladio_nodes.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Id', 'Label', 'Type', 'Degree Centrality', 'Eigenvector Centrality', 'Betweenness Centrality',
-                      'Document Count', 'Unique Subjects', 'Unique Locations']
+        fieldnames = ['Id', 'Label', 'Type', 'Country', 'Degree Centrality', 'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count', 'Unique Subjects', 'Unique Locations']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for imam, data in imam_data.items():
@@ -82,6 +96,7 @@ def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_
                 'Id': imam,
                 'Label': imam,
                 'Type': 'Imam',
+                'Country': data['country'],
                 'Degree Centrality': degree_cent[imam],
                 'Eigenvector Centrality': eigenvector_cent[imam],
                 'Betweenness Centrality': betweenness_cent[imam],
@@ -103,6 +118,29 @@ def export_palladio_edges(G, filename='palladio_edges.csv'):
                 'Weight': edge[2]['weight'],
                 'Shared Subjects': edge[2]['shared_subjects'],
                 'Shared Locations': edge[2]['shared_locations']
+            })
+
+
+def export_palladio_countries(imam_data, filename='palladio_countries.csv'):
+    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Country', 'Latitude', 'Longitude', 'Imam Count']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        country_data = defaultdict(lambda: {'imams': set(), 'coordinates': None})
+
+        for imam, data in imam_data.items():
+            country = data['country']
+            country_data[country]['imams'].add(imam)
+            if not country_data[country]['coordinates']:
+                country_data[country]['coordinates'] = data['country_coordinates']
+
+        for country, data in country_data.items():
+            lat, lon = data['coordinates'].split(', ') if data['coordinates'] else (None, None)
+            writer.writerow({
+                'Country': country,
+                'Latitude': lat,
+                'Longitude': lon,
+                'Imam Count': len(data['imams'])
             })
 
 
@@ -176,14 +214,22 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
     try:
         imam = get_imam_data(imam_id)
         imam_name = imam['o:title']
-        G.add_node(imam_name)
+        country = extract_country(imam)
+        country_id = next((spatial['@id'].split('/')[-1] for spatial in imam.get('dcterms:spatial', [])
+                           if isinstance(spatial, dict) and spatial.get('type') == 'resource:item'), None)
+        country_coordinates = get_country_coordinates(country_id) if country_id else None
+
+        G.add_node(imam_name, country=country)
         imam_data[imam_name] = {
             'documents': [],
             'subjects': defaultdict(list),
-            'locations': []
+            'locations': [],
+            'country': country,
+            'country_coordinates': country_coordinates
         }
 
-        for doc in tqdm(imam['@reverse'].get('dcterms:subject', []), desc=f"Processing documents for {imam_name}", leave=False):
+        for doc in tqdm(imam['@reverse'].get('dcterms:subject', []), desc=f"Processing documents for {imam_name}",
+                        leave=False):
             try:
                 resource_id = doc['@id'].split('/')[-1]
                 resource_data = get_resource_data(resource_id)
@@ -204,6 +250,7 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
                 print(f"Error processing document for {imam_name}: {str(e)}")
     except Exception as e:
         print(f"Error processing imam with ID {imam_id}: {str(e)}")
+
 
 # Create edges based on shared documents, subjects, and locations
 for imam1, imam2 in combinations(imam_data.keys(), 2):
