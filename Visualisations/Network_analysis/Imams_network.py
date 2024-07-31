@@ -1,11 +1,11 @@
 import requests
 import networkx as nx
-import matplotlib.pyplot as plt
 from collections import Counter, defaultdict
 from tqdm import tqdm
 from pyvis.network import Network
 import folium
 from folium.plugins import MarkerCluster
+import csv
 
 base_url = "https://iwac.frederickmadore.com/api"
 
@@ -62,6 +62,65 @@ def extract_locations(resource_data):
             except Exception as e:
                 print(f"Error processing location: {location}. Error: {str(e)}")
     return locations
+
+
+def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, filename='palladio_nodes.csv'):
+    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Id', 'Label', 'Type', 'Degree Centrality', 'Eigenvector Centrality']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for imam, data in imam_data.items():
+            writer.writerow({
+                'Id': imam,
+                'Label': imam,
+                'Type': 'Imam',
+                'Degree Centrality': degree_cent[imam],
+                'Eigenvector Centrality': eigenvector_cent[imam]
+            })
+
+
+def export_palladio_edges(G, filename='palladio_edges.csv'):
+    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Source', 'Target', 'Weight']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for edge in G.edges(data=True):
+            writer.writerow({
+                'Source': edge[0],
+                'Target': edge[1],
+                'Weight': edge[2]['weight']
+            })
+
+
+def export_palladio_subjects(imam_data, filename='palladio_subjects.csv'):
+    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Imam', 'Subject', 'Category']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for imam, data in imam_data.items():
+            for category, subjects in data['subjects'].items():
+                for subject in subjects:
+                    writer.writerow({
+                        'Imam': imam,
+                        'Subject': subject,
+                        'Category': category
+                    })
+
+
+def export_palladio_locations(imam_data, filename='palladio_locations.csv'):
+    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Imam', 'Location', 'Latitude', 'Longitude']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for imam, data in imam_data.items():
+            for location in data['locations']:
+                if location['coordinates']:
+                    writer.writerow({
+                        'Imam': imam,
+                        'Location': location['name'],
+                        'Latitude': location['coordinates'][0],
+                        'Longitude': location['coordinates'][1]
+                    })
 
 
 # List of imam item numbers
@@ -168,4 +227,16 @@ for location in all_locations:
 
 m.save("imam_locations_map.html")
 
-print("\nAnalysis complete. Visualizations saved as 'interactive_imam_network.html' and 'imam_locations_map.html'.")
+# Export data for Palladio
+export_palladio_nodes(imam_data, degree_cent, eigenvector_cent)
+export_palladio_edges(G)
+export_palladio_subjects(imam_data)
+export_palladio_locations(imam_data)
+
+print("\nAnalysis complete. Visualizations and data exports created:")
+print("1. interactive_imam_network.html - Interactive network visualization")
+print("2. imam_locations_map.html - Map of locations")
+print("3. palladio_nodes.csv - Imam data for Palladio")
+print("4. palladio_edges.csv - Network connections for Palladio")
+print("5. palladio_subjects.csv - Subject data for Palladio")
+print("6. palladio_locations.csv - Location data for Palladio")
