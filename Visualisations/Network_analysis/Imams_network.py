@@ -1,5 +1,6 @@
 import requests
 import networkx as nx
+import matplotlib.pyplot as plt
 from collections import Counter
 from tqdm import tqdm
 from pyvis.network import Network
@@ -20,19 +21,31 @@ def get_resource_data(resource_id):
 
 
 def extract_subjects(resource_data):
-    return [subject['display_title'] for subject in resource_data.get('dcterms:subject', [])]
+    subjects = []
+    for subject in resource_data.get('dcterms:subject', []):
+        if isinstance(subject, dict) and '@id' in subject:
+            subject_data = get_resource_data(subject['@id'].split('/')[-1])
+            subjects.append(subject_data.get('o:title', 'Unknown Subject'))
+        elif isinstance(subject, str):
+            subjects.append(subject)
+    return subjects
 
 
 def extract_locations(resource_data):
     locations = []
     for location in resource_data.get('dcterms:spatial', []):
-        loc_data = get_resource_data(location['@id'].split('/')[-1])
-        coords = next(
-            (item['@value'] for item in loc_data.get('curation:coordinates', []) if item['type'] == 'literal'), None)
-        locations.append({
-            'name': location['display_title'],
-            'coordinates': coords.split(', ') if coords else None
-        })
+        if isinstance(location, dict) and '@id' in location:
+            try:
+                loc_data = get_resource_data(location['@id'].split('/')[-1])
+                coords = next(
+                    (item['@value'] for item in loc_data.get('curation:coordinates', []) if item['type'] == 'literal'),
+                    None)
+                locations.append({
+                    'name': loc_data.get('o:title', 'Unknown Location'),
+                    'coordinates': coords.split(', ') if coords else None
+                })
+            except Exception as e:
+                print(f"Error processing location: {location}. Error: {str(e)}")
     return locations
 
 
@@ -47,24 +60,31 @@ imam_data = {}
 all_locations = []
 
 for imam_id in tqdm(imam_ids, desc="Processing imams"):
-    imam = get_imam_data(imam_id)
-    imam_name = imam['o:title']
-    G.add_node(imam_name)
-    imam_data[imam_name] = {
-        'documents': [],
-        'subjects': [],
-        'locations': []
-    }
+    try:
+        imam = get_imam_data(imam_id)
+        imam_name = imam['o:title']
+        G.add_node(imam_name)
+        imam_data[imam_name] = {
+            'documents': [],
+            'subjects': [],
+            'locations': []
+        }
 
-    for doc in tqdm(imam['@reverse']['dcterms:subject'], desc=f"Processing documents for {imam_name}", leave=False):
-        resource_id = doc['@id'].split('/')[-1]
-        resource_data = get_resource_data(resource_id)
+        for doc in tqdm(imam['@reverse'].get('dcterms:subject', []), desc=f"Processing documents for {imam_name}",
+                        leave=False):
+            try:
+                resource_id = doc['@id'].split('/')[-1]
+                resource_data = get_resource_data(resource_id)
 
-        imam_data[imam_name]['documents'].append(doc['o:title'])
-        imam_data[imam_name]['subjects'].extend(extract_subjects(resource_data))
-        locations = extract_locations(resource_data)
-        imam_data[imam_name]['locations'].extend(locations)
-        all_locations.extend(locations)
+                imam_data[imam_name]['documents'].append(doc.get('o:title', 'Unknown Document'))
+                imam_data[imam_name]['subjects'].extend(extract_subjects(resource_data))
+                locations = extract_locations(resource_data)
+                imam_data[imam_name]['locations'].extend(locations)
+                all_locations.extend(locations)
+            except Exception as e:
+                print(f"Error processing document for {imam_name}: {str(e)}")
+    except Exception as e:
+        print(f"Error processing imam with ID {imam_id}: {str(e)}")
 
 # Create edges based on shared documents
 for imam1 in imam_data:
@@ -74,7 +94,7 @@ for imam1 in imam_data:
             if shared_docs:
                 G.add_edge(imam1, imam2, weight=len(shared_docs))
 
-# Network analysis (as before)
+# Network analysis
 print("Network Analysis:")
 print(f"Number of nodes: {G.number_of_nodes()}")
 print(f"Number of edges: {G.number_of_edges()}")
@@ -102,7 +122,7 @@ location_counter = Counter(loc['name'] for loc in all_locations)
 for location, count in location_counter.most_common(5):
     print(f"{location}: {count}")
 
-# Create an interactive network visualization (as before)
+# Create an interactive network visualization
 net = Network(height="750px", width="100%", bgcolor="#222222", font_color="white")
 
 for node in G.nodes():
