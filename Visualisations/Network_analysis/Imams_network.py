@@ -96,7 +96,7 @@ def format_date(date_str):
             return date_str  # Return original if parsing fails
 
 
-def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent, filename='combined_palladio_data.csv'):
+def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent, filename='palladio_data.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['Type', 'Id', 'Label', 'Country', 'Latitude', 'Longitude', 'Degree Centrality',
                       'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count',
@@ -267,4 +267,4 @@ for imam, centrality in sorted(betweenness_cent.items(), key=lambda x: x[1], rev
 export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent)
 
 print("\nAnalysis complete. Combined data export created for Palladio:")
-print("combined_palladio_data.csv - Contains all imam, network, subject, location, and timeline data")
+print("palladio_data.csv - Contains all imam, network, subject, location, and timeline data")
