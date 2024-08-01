@@ -96,7 +96,7 @@ def format_date(date_str):
             return date_str  # Return original if parsing fails
 
 
-def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent, filename='combined_palladio_data.csv'):
+def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent, filename='palladio_data.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['Type', 'Id', 'Label', 'Country', 'Latitude', 'Longitude', 'Degree Centrality',
                       'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count',
@@ -179,7 +179,7 @@ def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, b
                 })
 
 # Main execution
-imam_ids = [1124, 2150]  # Add more imam IDs as needed
+imam_ids = [1124, 2150, 1615, 861, 945, 944, 855, 1940, 925]  # Add more imam IDs as needed
 
 G = nx.Graph()
 imam_data = {}
@@ -263,12 +263,6 @@ print("\nTop 3 Imams by Betweenness Centrality:")
 for imam, centrality in sorted(betweenness_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
     print(f"{imam}: {centrality:.3f}")
 
-# Export combined data for Palladio
-export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent)
-
-print("\nAnalysis complete. Combined data export created for Palladio:")
-print("palladio_data.csv - Contains all imam, network, subject, location, and timeline data")
-
 
 def export_gephi_files(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent,
                        nodes_file='gephi_nodes.csv', edges_file='gephi_edges.csv'):
@@ -310,4 +304,12 @@ def export_gephi_files(imam_data, G, degree_cent, eigenvector_cent, betweenness_
                 'Shared Locations': edge[2]['shared_locations']
             })
 
-    print(f"Gephi files created: {nodes_file} and {edges_file}")
+    # Export combined data for Palladio
+    export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent)
+
+    # Export data for Gephi
+    export_gephi_files(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent)
+
+    print("\nAnalysis complete. Data exports created:")
+    print("palladio_data.csv - Contains all imam, network, subject, location, and timeline data")
+    print("gephi_nodes.csv and gephi_edges.csv - Contains node and edge data for Gephi")
