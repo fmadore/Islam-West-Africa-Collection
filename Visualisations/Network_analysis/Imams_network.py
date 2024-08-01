@@ -8,16 +8,13 @@ from itertools import combinations
 
 base_url = "https://iwac.frederickmadore.com/api"
 
-
 def get_imam_data(imam_id):
     response = requests.get(f"{base_url}/items/{imam_id}")
     return response.json()
 
-
 def get_resource_data(resource_id):
     response = requests.get(f"{base_url}/resources/{resource_id}")
     return response.json()
-
 
 def categorize_subject(subject_data):
     item_set = subject_data.get('o:item_set', [])
@@ -33,7 +30,6 @@ def categorize_subject(subject_data):
             return 'Organization'
     return None
 
-
 def extract_subjects(resource_data):
     subjects = defaultdict(list)
     for subject in resource_data.get('dcterms:subject', []):
@@ -43,7 +39,6 @@ def extract_subjects(resource_data):
             if category:
                 subjects[category].append(subject_data.get('o:title', 'Unknown Subject'))
     return subjects
-
 
 def extract_locations(resource_data):
     locations = []
@@ -62,14 +57,12 @@ def extract_locations(resource_data):
                 print(f"Error processing location: {location}. Error: {str(e)}")
     return locations
 
-
 def extract_date(resource_data):
     date_data = resource_data.get('dcterms:date', [])
     for date_item in date_data:
         if isinstance(date_item, dict) and date_item.get('type') == 'numeric:timestamp':
             return date_item.get('@value')
     return None
-
 
 def extract_country(imam_data):
     for spatial in imam_data.get('dcterms:spatial', []):
@@ -86,17 +79,42 @@ def get_country_coordinates(country_id):
     return None
 
 
-def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_cent, filename='palladio_nodes.csv'):
+def clean_text(text):
+    """Clean text by replacing problematic characters with HTML entities."""
+    return text.replace(',', '&#44;').replace(';', '&#59;').replace('-', '&#45;').replace('/', '&#47;')
+
+def format_date(date_str):
+    """Format date string, adding day if missing."""
+    try:
+        date = datetime.strptime(date_str, "%Y-%m-%d")
+        return date.strftime("%Y-%m-%d")
+    except ValueError:
+        try:
+            date = datetime.strptime(date_str, "%Y-%m")
+            return date.strftime("%Y-%m-01")
+        except ValueError:
+            return date_str  # Return original if parsing fails
+
+
+def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent, filename='combined_palladio_data.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Id', 'Label', 'Type', 'Country', 'Degree Centrality', 'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count', 'Unique Subjects', 'Unique Locations']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
+        fieldnames = ['Type', 'Id', 'Label', 'Country', 'Latitude', 'Longitude', 'Degree Centrality',
+                      'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count',
+                      'Unique Subjects', 'Unique Locations', 'Source', 'Target', 'Weight',
+                      'Shared Subjects', 'Shared Locations', 'Subject', 'Subject Category',
+                      'Subject Frequency', 'Location', 'Location Frequency', 'Date', 'Document Titles']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
         writer.writeheader()
+
+        # Write imam data
         for imam, data in imam_data.items():
             writer.writerow({
-                'Id': imam,
-                'Label': imam,
                 'Type': 'Imam',
-                'Country': data['country'],
+                'Id': clean_text(imam),
+                'Label': clean_text(imam),
+                'Country': clean_text(data['country']),
+                'Latitude': data['country_coordinates'].split(', ')[0] if data['country_coordinates'] else '',
+                'Longitude': data['country_coordinates'].split(', ')[1] if data['country_coordinates'] else '',
                 'Degree Centrality': f"{degree_cent[imam]:.6f}",
                 'Eigenvector Centrality': f"{eigenvector_cent[imam]:.6f}",
                 'Betweenness Centrality': f"{betweenness_cent[imam]:.6f}",
@@ -105,102 +123,63 @@ def export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_
                 'Unique Locations': len(set(loc['name'] for loc in data['locations']))
             })
 
-
-def export_palladio_edges(G, filename='palladio_edges.csv'):
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Source', 'Target', 'Weight', 'Shared Subjects', 'Shared Locations']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        # Write edge data
         for edge in G.edges(data=True):
             writer.writerow({
-                'Source': edge[0],
-                'Target': edge[1],
+                'Type': 'Edge',
+                'Source': clean_text(edge[0]),
+                'Target': clean_text(edge[1]),
                 'Weight': edge[2]['weight'],
                 'Shared Subjects': edge[2]['shared_subjects'],
                 'Shared Locations': edge[2]['shared_locations']
             })
 
-
-def export_palladio_countries(imam_data, filename='palladio_countries.csv'):
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Country', 'Latitude', 'Longitude', 'Imam Count']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        country_data = defaultdict(lambda: {'imams': set(), 'coordinates': None})
-
-        for imam, data in imam_data.items():
-            country = data['country']
-            country_data[country]['imams'].add(imam)
-            if not country_data[country]['coordinates']:
-                country_data[country]['coordinates'] = data['country_coordinates']
-
-        for country, data in country_data.items():
-            lat, lon = data['coordinates'].split(', ') if data['coordinates'] else (None, None)
-            writer.writerow({
-                'Country': country,
-                'Latitude': lat,
-                'Longitude': lon,
-                'Imam Count': len(data['imams'])
-            })
-
-
-def export_palladio_subjects(imam_data, filename='palladio_subjects.csv'):
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Imam', 'Subject', 'Category', 'Frequency']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        # Write subject data
         for imam, data in imam_data.items():
             for category, subjects in data['subjects'].items():
                 subject_counts = Counter(subjects)
                 for subject, count in subject_counts.items():
                     writer.writerow({
-                        'Imam': imam,
-                        'Subject': subject,
-                        'Category': category,
-                        'Frequency': count
+                        'Type': 'Subject',
+                        'Id': clean_text(imam),
+                        'Subject': clean_text(subject),
+                        'Subject Category': clean_text(category),
+                        'Subject Frequency': count
                     })
 
-
-def export_palladio_locations(imam_data, filename='palladio_locations.csv'):
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Imam', 'Location', 'Latitude', 'Longitude', 'Frequency']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        # Write location data
         for imam, data in imam_data.items():
             location_counts = Counter(loc['name'] for loc in data['locations'])
             for location in data['locations']:
                 if location['coordinates']:
                     writer.writerow({
-                        'Imam': imam,
-                        'Location': location['name'],
+                        'Type': 'Location',
+                        'Id': clean_text(imam),
+                        'Location': clean_text(location['name']),
                         'Latitude': location['coordinates'][0],
                         'Longitude': location['coordinates'][1],
-                        'Frequency': location_counts[location['name']]
+                        'Location Frequency': location_counts[location['name']]
                     })
 
-
-def export_palladio_timeline(imam_data, filename='palladio_timeline.csv'):
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Imam', 'Date', 'Document Count', 'Document Titles']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        # Write timeline data
         for imam, data in imam_data.items():
             date_docs = defaultdict(list)
             for doc in data['documents']:
                 if doc['date']:
-                    date_docs[doc['date']].append(doc['title'])
+                    formatted_date = format_date(doc['date'])
+                    date_docs[formatted_date].append(doc['title'])
 
             for date, docs in date_docs.items():
                 writer.writerow({
-                    'Imam': imam,
+                    'Type': 'Timeline',
+                    'Id': clean_text(imam),
                     'Date': date,
                     'Document Count': len(docs),
-                    'Document Titles': '; '.join(docs)
+                    'Document Titles': clean_text('; '.join(docs))
                 })
 
-
-# List of imam item numbers
-imam_ids = [1124, 2150]
+# Main execution
+imam_ids = [1124, 2150]  # Add more imam IDs as needed
 
 G = nx.Graph()
 imam_data = {}
@@ -284,18 +263,8 @@ print("\nTop 3 Imams by Betweenness Centrality:")
 for imam, centrality in sorted(betweenness_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
     print(f"{imam}: {centrality:.3f}")
 
-# Export data for Palladio
-export_palladio_nodes(imam_data, degree_cent, eigenvector_cent, betweenness_cent)
-export_palladio_edges(G)
-export_palladio_subjects(imam_data)
-export_palladio_locations(imam_data)
-export_palladio_timeline(imam_data)
-export_palladio_countries(imam_data)
+# Export combined data for Palladio
+export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent)
 
-print("\nAnalysis complete. Data exports created for Palladio:")
-print("1. palladio_nodes.csv - Imam data")
-print("2. palladio_edges.csv - Network connections")
-print("3. palladio_subjects.csv - Subject data")
-print("4. palladio_locations.csv - Location data")
-print("5. palladio_timeline.csv - Timeline data")
-print("6. palladio_countries.csv - Country data")
+print("\nAnalysis complete. Combined data export created for Palladio:")
+print("combined_palladio_data.csv - Contains all imam, network, subject, location, and timeline data")
