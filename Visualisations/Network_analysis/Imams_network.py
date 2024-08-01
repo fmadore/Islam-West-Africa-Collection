@@ -96,23 +96,23 @@ def format_date(date_str):
             return date_str  # Return original if parsing fails
 
 
-def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent, filename='palladio_data.csv'):
+def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent, filename='combined_palladio_data.csv'):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['Type', 'Id', 'Label', 'Country', 'Latitude', 'Longitude', 'Degree Centrality',
                       'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count',
                       'Unique Subjects', 'Unique Locations', 'Source', 'Target', 'Weight',
                       'Shared Subjects', 'Shared Locations', 'Subject', 'Subject Category',
                       'Subject Frequency', 'Location', 'Location Frequency', 'Date', 'Document Titles']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
         writer.writeheader()
 
         # Write imam data
         for imam, data in imam_data.items():
             writer.writerow({
                 'Type': 'Imam',
-                'Id': clean_text(imam),
-                'Label': clean_text(imam),
-                'Country': clean_text(data['country']),
+                'Id': imam,
+                'Label': imam,
+                'Country': data['country'],
                 'Latitude': data['country_coordinates'].split(', ')[0] if data['country_coordinates'] else '',
                 'Longitude': data['country_coordinates'].split(', ')[1] if data['country_coordinates'] else '',
                 'Degree Centrality': f"{degree_cent[imam]:.6f}",
@@ -127,8 +127,8 @@ def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, b
         for edge in G.edges(data=True):
             writer.writerow({
                 'Type': 'Edge',
-                'Source': clean_text(edge[0]),
-                'Target': clean_text(edge[1]),
+                'Source': edge[0],
+                'Target': edge[1],
                 'Weight': edge[2]['weight'],
                 'Shared Subjects': edge[2]['shared_subjects'],
                 'Shared Locations': edge[2]['shared_locations']
@@ -141,9 +141,9 @@ def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, b
                 for subject, count in subject_counts.items():
                     writer.writerow({
                         'Type': 'Subject',
-                        'Id': clean_text(imam),
-                        'Subject': clean_text(subject),
-                        'Subject Category': clean_text(category),
+                        'Id': imam,
+                        'Subject': subject,
+                        'Subject Category': category,
                         'Subject Frequency': count
                     })
 
@@ -154,8 +154,8 @@ def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, b
                 if location['coordinates']:
                     writer.writerow({
                         'Type': 'Location',
-                        'Id': clean_text(imam),
-                        'Location': clean_text(location['name']),
+                        'Id': imam,
+                        'Location': location['name'],
                         'Latitude': location['coordinates'][0],
                         'Longitude': location['coordinates'][1],
                         'Location Frequency': location_counts[location['name']]
@@ -172,10 +172,10 @@ def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, b
             for date, docs in date_docs.items():
                 writer.writerow({
                     'Type': 'Timeline',
-                    'Id': clean_text(imam),
+                    'Id': imam,
                     'Date': date,
                     'Document Count': len(docs),
-                    'Document Titles': clean_text('; '.join(docs))
+                    'Document Titles': '; '.join(docs)
                 })
 
 # Main execution
@@ -268,3 +268,46 @@ export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betwe
 
 print("\nAnalysis complete. Combined data export created for Palladio:")
 print("palladio_data.csv - Contains all imam, network, subject, location, and timeline data")
+
+
+def export_gephi_files(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent,
+                       nodes_file='gephi_nodes.csv', edges_file='gephi_edges.csv'):
+    # Export nodes
+    with open(nodes_file, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Id', 'Label', 'Country', 'Latitude', 'Longitude', 'Degree Centrality',
+                      'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count',
+                      'Unique Subjects', 'Unique Locations']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
+        writer.writeheader()
+
+        for imam, data in imam_data.items():
+            writer.writerow({
+                'Id': imam,
+                'Label': imam,
+                'Country': data['country'],
+                'Latitude': data['country_coordinates'].split(', ')[0] if data['country_coordinates'] else '',
+                'Longitude': data['country_coordinates'].split(', ')[1] if data['country_coordinates'] else '',
+                'Degree Centrality': f"{degree_cent[imam]:.6f}",
+                'Eigenvector Centrality': f"{eigenvector_cent[imam]:.6f}",
+                'Betweenness Centrality': f"{betweenness_cent[imam]:.6f}",
+                'Document Count': len(data['documents']),
+                'Unique Subjects': sum(len(set(subjects)) for subjects in data['subjects'].values()),
+                'Unique Locations': len(set(loc['name'] for loc in data['locations']))
+            })
+
+    # Export edges
+    with open(edges_file, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Source', 'Target', 'Weight', 'Shared Subjects', 'Shared Locations']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
+        writer.writeheader()
+
+        for edge in G.edges(data=True):
+            writer.writerow({
+                'Source': edge[0],
+                'Target': edge[1],
+                'Weight': edge[2]['weight'],
+                'Shared Subjects': edge[2]['shared_subjects'],
+                'Shared Locations': edge[2]['shared_locations']
+            })
+
+    print(f"Gephi files created: {nodes_file} and {edges_file}")
