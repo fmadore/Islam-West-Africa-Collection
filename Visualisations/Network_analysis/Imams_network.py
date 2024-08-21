@@ -4,7 +4,7 @@ from collections import Counter, defaultdict
 from tqdm import tqdm
 import csv
 from datetime import datetime
-from itertools import combinations
+import os
 
 base_url = "https://iwac.frederickmadore.com/api"
 
@@ -178,6 +178,46 @@ def export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, b
                     'Document Titles': '; '.join(docs)
                 })
 
+def export_gephi_files(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent,
+                       nodes_file='gephi_nodes.csv', edges_file='gephi_edges.csv'):
+    # Export nodes
+    with open(nodes_file, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Id', 'Label', 'Country', 'Latitude', 'Longitude', 'Degree Centrality',
+                      'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count',
+                      'Unique Subjects', 'Unique Locations']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
+        writer.writeheader()
+
+        for imam, data in imam_data.items():
+            writer.writerow({
+                'Id': imam,
+                'Label': imam,
+                'Country': data['country'],
+                'Latitude': data['country_coordinates'].split(', ')[0] if data['country_coordinates'] else '',
+                'Longitude': data['country_coordinates'].split(', ')[1] if data['country_coordinates'] else '',
+                'Degree Centrality': f"{degree_cent[imam]:.6f}",
+                'Eigenvector Centrality': f"{eigenvector_cent[imam]:.6f}",
+                'Betweenness Centrality': f"{betweenness_cent[imam]:.6f}",
+                'Document Count': len(data['documents']),
+                'Unique Subjects': sum(len(set(subjects)) for subjects in data['subjects'].values()),
+                'Unique Locations': len(set(loc['name'] for loc in data['locations']))
+            })
+
+    # Export edges
+    with open(edges_file, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['Source', 'Target', 'Weight', 'Shared Subjects', 'Shared Locations']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
+        writer.writeheader()
+
+        for edge in G.edges(data=True):
+            writer.writerow({
+                'Source': edge[0],
+                'Target': edge[1],
+                'Weight': edge[2]['weight'],
+                'Shared Subjects': edge[2]['shared_subjects'],
+                'Shared Locations': edge[2]['shared_locations']
+            })
+
 # Main execution
 imam_ids = [1124, 2150, 1615, 861, 945, 944, 855, 1940, 925]  # Add more imam IDs as needed
 
@@ -224,92 +264,50 @@ for imam_id in tqdm(imam_ids, desc="Processing imams"):
                 all_locations.extend(locations)
             except Exception as e:
                 print(f"Error processing document for {imam_name}: {str(e)}")
+
+        print(f"Successfully processed imam: {imam_name}")
     except Exception as e:
         print(f"Error processing imam with ID {imam_id}: {str(e)}")
 
-# Create edges based on shared documents, subjects, and locations
-for imam1, imam2 in combinations(imam_data.keys(), 2):
-    shared_docs = set(doc['title'] for doc in imam_data[imam1]['documents']) & set(
-        doc['title'] for doc in imam_data[imam2]['documents'])
-    shared_subjects = set.union(*[set(imam_data[imam1]['subjects'][cat]) for cat in imam_data[imam1]['subjects']]) & \
-                      set.union(*[set(imam_data[imam2]['subjects'][cat]) for cat in imam_data[imam2]['subjects']])
-    shared_locations = set(loc['name'] for loc in imam_data[imam1]['locations']) & set(
-        loc['name'] for loc in imam_data[imam2]['locations'])
-
-    if shared_docs or shared_subjects or shared_locations:
-        G.add_edge(imam1, imam2,
-                   weight=len(shared_docs),
-                   shared_subjects=len(shared_subjects),
-                   shared_locations=len(shared_locations))
-
-# Network analysis
-print("Network Analysis:")
+print("\nNetwork Analysis:")
 print(f"Number of nodes: {G.number_of_nodes()}")
 print(f"Number of edges: {G.number_of_edges()}")
 
-degree_cent = nx.degree_centrality(G)
-eigenvector_cent = nx.eigenvector_centrality(G, weight='weight')
-betweenness_cent = nx.betweenness_centrality(G, weight='weight')
+# Handle centrality measures for a single node
+if G.number_of_nodes() == 1:
+    imam_name = list(G.nodes())[0]
+    degree_cent = {imam_name: 0}
+    eigenvector_cent = {imam_name: 1}
+    betweenness_cent = {imam_name: 0}
+else:
+    degree_cent = nx.degree_centrality(G)
+    eigenvector_cent = nx.eigenvector_centrality(G, weight='weight')
+    betweenness_cent = nx.betweenness_centrality(G, weight='weight')
 
-print("\nTop 3 Imams by Degree Centrality:")
-for imam, centrality in sorted(degree_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
-    print(f"{imam}: {centrality:.3f}")
+centrality_data = {
+    imam: (degree_cent[imam], eigenvector_cent[imam], betweenness_cent[imam])
+    for imam in imam_data.keys()
+}
 
-print("\nTop 3 Imams by Eigenvector Centrality:")
-for imam, centrality in sorted(eigenvector_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
-    print(f"{imam}: {centrality:.3f}")
+print("\nCentrality measures:")
+for imam, (deg, eig, bet) in centrality_data.items():
+    print(f"{imam}: Degree={deg:.3f}, Eigenvector={eig:.3f}, Betweenness={bet:.3f}")
 
-print("\nTop 3 Imams by Betweenness Centrality:")
-for imam, centrality in sorted(betweenness_cent.items(), key=lambda x: x[1], reverse=True)[:3]:
-    print(f"{imam}: {centrality:.3f}")
+print("\nExporting data to CSV files...")
 
-
-def export_gephi_files(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent,
-                       nodes_file='gephi_nodes.csv', edges_file='gephi_edges.csv'):
-    # Export nodes
-    with open(nodes_file, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Id', 'Label', 'Country', 'Latitude', 'Longitude', 'Degree Centrality',
-                      'Eigenvector Centrality', 'Betweenness Centrality', 'Document Count',
-                      'Unique Subjects', 'Unique Locations']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
-        writer.writeheader()
-
-        for imam, data in imam_data.items():
-            writer.writerow({
-                'Id': imam,
-                'Label': imam,
-                'Country': data['country'],
-                'Latitude': data['country_coordinates'].split(', ')[0] if data['country_coordinates'] else '',
-                'Longitude': data['country_coordinates'].split(', ')[1] if data['country_coordinates'] else '',
-                'Degree Centrality': f"{degree_cent[imam]:.6f}",
-                'Eigenvector Centrality': f"{eigenvector_cent[imam]:.6f}",
-                'Betweenness Centrality': f"{betweenness_cent[imam]:.6f}",
-                'Document Count': len(data['documents']),
-                'Unique Subjects': sum(len(set(subjects)) for subjects in data['subjects'].values()),
-                'Unique Locations': len(set(loc['name'] for loc in data['locations']))
-            })
-
-    # Export edges
-    with open(edges_file, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Source', 'Target', 'Weight', 'Shared Subjects', 'Shared Locations']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
-        writer.writeheader()
-
-        for edge in G.edges(data=True):
-            writer.writerow({
-                'Source': edge[0],
-                'Target': edge[1],
-                'Weight': edge[2]['weight'],
-                'Shared Subjects': edge[2]['shared_subjects'],
-                'Shared Locations': edge[2]['shared_locations']
-            })
-
+try:
     # Export combined data for Palladio
     export_combined_palladio_data(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent)
+    print("Successfully created palladio_data.csv")
+except Exception as e:
+    print(f"Error creating palladio_data.csv: {str(e)}")
 
+try:
     # Export data for Gephi
     export_gephi_files(imam_data, G, degree_cent, eigenvector_cent, betweenness_cent)
+    print("Successfully created gephi_nodes.csv and gephi_edges.csv")
+except Exception as e:
+    print(f"Error creating Gephi files: {str(e)}")
 
-    print("\nAnalysis complete. Data exports created:")
-    print("palladio_data.csv - Contains all imam, network, subject, location, and timeline data")
-    print("gephi_nodes.csv and gephi_edges.csv - Contains node and edge data for Gephi")
+print(f"\nCurrent working directory: {os.getcwd()}")
+print("Script execution completed.")
