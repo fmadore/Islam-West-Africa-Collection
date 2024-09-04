@@ -31,9 +31,10 @@ class OmekaApiClient:
         page = 1
         per_page = 100
 
-        logger.info(f"Starting to fetch items for resource class {resource_class_id}...")
+        item_type = self.get_item_type_name(resource_class_id)
+        logger.info(f"Starting to fetch {item_type}...")
 
-        with tqdm(desc=f"Fetching items (class {resource_class_id})", unit="item") as pbar:
+        with tqdm(desc=f"Fetching {item_type}", unit="item") as pbar:
             while True:
                 url = f"{self.api_url}/items?resource_class_id={resource_class_id}&key_identity={self.key_identity}&key_credential={self.key_credential}&page={page}&per_page={per_page}"
                 try:
@@ -51,8 +52,32 @@ class OmekaApiClient:
                     logger.error(f"Error fetching data from API: {str(e)}")
                     break
 
-        logger.info(f"Fetched {len(items)} items for resource class {resource_class_id}")
+        logger.info(f"Fetched {len(items)} {item_type}")
         return items
+
+    def get_item_type_name(self, resource_class_id):
+        item_type_map = {
+            49: "documents",
+            38: "audio/visual documents",
+            58: "images",
+            244: "index items",
+            54: "index items",
+            9: "index items",
+            96: "index items",
+            94: "index items",
+            60: "issues",
+            36: "newspaper articles",
+            35: "references",
+            43: "references",
+            88: "references",
+            40: "references",
+            82: "references",
+            178: "references",
+            52: "references",
+            77: "references",
+            305: "references"
+        }
+        return item_type_map.get(resource_class_id, f"items (class {resource_class_id})")
 
     def fetch_item_sets(self):
         item_sets = []
@@ -118,17 +143,31 @@ class OmekaApiClient:
         return references
 
     def fetch_all_items(self):
-        documents = self.fetch_items(49)  # resource_class_id for documents
-        audio_visual = self.fetch_items(38)  # resource_class_id for audio/visual documents
-        images = self.fetch_items(58)  # resource_class_id for images
+        logger.info("Starting to fetch all items...")
+        
+        documents = self.fetch_items(49)
+        audio_visual = self.fetch_items(38)
+        images = self.fetch_items(58)
+        
+        logger.info("Starting to fetch index items...")
         index_items = []
         for resource_class_id in [244, 54, 9, 96, 94]:
             index_items.extend(self.fetch_items(resource_class_id))
-        issues = self.fetch_items(60)  # resource_class_id for issues
-        newspaper_articles = self.fetch_items(36)  # resource_class_id for newspaper articles
-        item_sets = self.fetch_item_sets()  # Fetch item sets
-        media = self.fetch_media()  # Fetch media
-        references = self.fetch_references()  # Fetch references
+        logger.info(f"Fetched {len(index_items)} index items")
+        
+        issues = self.fetch_items(60)
+        newspaper_articles = self.fetch_items(36)
+        
+        logger.info("Starting to fetch item sets...")
+        item_sets = self.fetch_item_sets()
+        
+        logger.info("Starting to fetch media...")
+        media = self.fetch_media()
+        
+        logger.info("Starting to fetch references...")
+        references = self.fetch_references()
+        
+        logger.info("Finished fetching all items.")
         return documents + audio_visual + images + index_items + issues + newspaper_articles, item_sets, media, references
 
     def fetch_item_set_titles(self):
