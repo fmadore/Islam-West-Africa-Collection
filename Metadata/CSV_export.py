@@ -319,9 +319,13 @@ def get_value(item, field, subfield=None):
     
     # Special cases
     if field == 'dcterms:rights' or field == 'bibo:doi':
-        return str(item[field][0]['o:label'] if item[field] else '')
+        if item[field] and isinstance(item[field], list) and len(item[field]) > 0:
+            return str(item[field][0].get('o:label', '') or item[field][0].get('@value', ''))
+        return ''
     if field == 'fabio:hasURL':
-        return str(item[field][0]['@id'] if item[field] else '')
+        if item[field] and isinstance(item[field], list) and len(item[field]) > 0:
+            return str(item[field][0].get('@id', ''))
+        return ''
     
     if isinstance(item[field], list):
         display_titles = [str(v.get('display_title', '')) for v in item[field] if 'display_title' in v]
@@ -537,12 +541,20 @@ def map_item_set(item):
     }
 
 def map_media(item):
+    # Get the item ID, handling the case where it might be nested
+    item_id = item.get('o:item', {}).get('o:id', '')
+    if not item_id:
+        item_id = get_value(item, 'o:item')
+    
+    # Construct the item URL only if we have a valid item ID
+    item_url = f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{item_id}" if item_id else ""
+
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/media/{get_value(item, 'o:id')}",
         'o:resource_class': 'o:Media',
         'o:media_type': get_value(item, 'o:media_type'),
-        'o:item': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:item', 'o:id')}",
+        'o:item': item_url,
         'o:original_url': get_value(item, 'o:original_url'),
     }
 
