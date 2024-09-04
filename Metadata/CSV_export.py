@@ -316,25 +316,36 @@ def get_value(item, field, subfield=None):
     """Utility function to safely get a value from an item."""
     if field not in item or item[field] is None:
         return ''
+    
+    # Special cases
+    if field == 'dcterms:rights' or field == 'bibo:doi':
+        return str(item[field][0]['o:label'] if item[field] else '')
+    if field == 'fabio:hasURL':
+        return str(item[field][0]['@id'] if item[field] else '')
+    
     if isinstance(item[field], list):
-        if subfield:
-            return '|'.join([str(v.get(subfield, '')) for v in item[field] if subfield in v])
-        else:
-            return '|'.join([str(v) for v in item[field]])
+        display_titles = [str(v.get('display_title', '')) for v in item[field] if 'display_title' in v]
+        if display_titles:
+            return '|'.join(filter(None, display_titles))
+        values = [str(v.get('@value', '')) for v in item[field] if '@value' in v]
+        return '|'.join(filter(None, values))
     if subfield:
         if isinstance(item[field], dict):
-            return item[field].get(subfield, '')
+            return str(item[field].get('display_title', '') or item[field].get('@value', ''))
         else:
             return ''
-    return item[field]
+    return str(item[field])
 
 def join_values(item, field, subfield):
     """Utility function to join multiple values with a separator."""
     if field not in item:
         return ''
     if field == 'o:item_set':
-        return '|'.join([val.get('@id', '') for val in item[field]])
-    values = [val.get(subfield, '') for val in item[field] if isinstance(val, dict)]
+        return '|'.join([str(val.get('@id', '')) for val in item[field]])
+    display_titles = [str(val.get('display_title', '')) for val in item[field] if isinstance(val, dict) and 'display_title' in val]
+    if display_titles:
+        return '|'.join(filter(None, display_titles))
+    values = [str(val.get('@value', '')) for val in item[field] if isinstance(val, dict) and '@value' in val]
     return '|'.join(filter(None, values))
 
 # Item mapping functions
@@ -342,70 +353,70 @@ def map_document(item):
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
-        'dcterms:identifier': get_value(item, 'dcterms:identifier', '@value'),
+        'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Document',
-        'o:item_set': join_values(item, 'o:item_set', '@id'),
+        'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_value(item, 'o:media', '@id'),
-        'dcterms:title': get_value(item, 'dcterms:title', '@value'),
-        'dcterms:creator': join_values(item, 'dcterms:creator', 'display_title'),
-        'dcterms:date': get_value(item, 'dcterms:date', '@value'),
-        'dcterms:abstract': get_value(item, 'dcterms:abstract', '@value'),
-        'bibo:numPages': get_value(item, 'bibo:numPages', '@value'),
-        'dcterms:subject': join_values(item, 'dcterms:subject', 'display_title'),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', 'display_title'),
-        'dcterms:rights': get_value(item, 'dcterms:rights', 'o:label'),
-        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder', 'display_title'),
-        'dcterms:language': get_value(item, 'dcterms:language', 'display_title'),
-        'dcterms:source': get_value(item, 'dcterms:source', 'display_title'),
-        'dcterms:contributor': join_values(item, 'dcterms:contributor', 'display_title'),
-        'bibo:content': get_value(item, 'bibo:content', '@value'),
+        'dcterms:title': get_value(item, 'dcterms:title'),
+        'dcterms:creator': join_values(item, 'dcterms:creator', ''),
+        'dcterms:date': get_value(item, 'dcterms:date'),
+        'dcterms:abstract': get_value(item, 'dcterms:abstract'),
+        'bibo:numPages': get_value(item, 'bibo:numPages'),
+        'dcterms:subject': join_values(item, 'dcterms:subject', ''),
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'dcterms:rights': get_value(item, 'dcterms:rights'),
+        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder'),
+        'dcterms:language': get_value(item, 'dcterms:language'),
+        'dcterms:source': get_value(item, 'dcterms:source'),
+        'dcterms:contributor': join_values(item, 'dcterms:contributor', ''),
+        'bibo:content': get_value(item, 'bibo:content'),
     }
 
 def map_audio_visual_document(item):
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
-        'dcterms:identifier': get_value(item, 'dcterms:identifier', '@value'),
+        'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:AudioVisualDocument',
-        'o:item_set': join_values(item, 'o:item_set', '@id'),
+        'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_value(item, 'o:media', '@id'),
-        'dcterms:title': get_value(item, 'dcterms:title', '@value'),
-        'dcterms:creator': join_values(item, 'dcterms:creator', 'display_title'),
-        'dcterms:publisher': join_values(item, 'dcterms:publisher', '@value'),
-        'dcterms:description': get_value(item, 'dcterms:description', '@value'),
-        'dcterms:date': get_value(item, 'dcterms:date', '@value'),
-        'bibo:volume': get_value(item, 'bibo:volume', '@value'),
-        'bibo:issue': get_value(item, 'bibo:issue', '@value'),
-        'dcterms:isPartOf': get_value(item, 'dcterms:isPartOf', '@value'),
-        'dcterms:extent': get_value(item, 'dcterms:extent', '@value'),
-        'dcterms:medium': get_value(item, 'dcterms:medium', 'display_title'),
-        'dcterms:subject': join_values(item, 'dcterms:subject', 'display_title'),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', 'display_title'),
-        'dcterms:rights': get_value(item, 'dcterms:rights', 'o:label'),
-        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder', 'display_title'),
-        'dcterms:language': get_value(item, 'dcterms:language', 'display_title'),
-        'dcterms:source': get_value(item, 'dcterms:source', 'display_title'),
-        'dcterms:contributor': join_values(item, 'dcterms:contributor', 'display_title'),
-        'bibo:content': get_value(item, 'bibo:content', '@value'),
+        'dcterms:title': get_value(item, 'dcterms:title'),
+        'dcterms:creator': join_values(item, 'dcterms:creator', ''),
+        'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
+        'dcterms:description': get_value(item, 'dcterms:description'),
+        'dcterms:date': get_value(item, 'dcterms:date'),
+        'bibo:volume': get_value(item, 'bibo:volume'),
+        'bibo:issue': get_value(item, 'bibo:issue'),
+        'dcterms:isPartOf': get_value(item, 'dcterms:isPartOf'),
+        'dcterms:extent': get_value(item, 'dcterms:extent'),
+        'dcterms:medium': get_value(item, 'dcterms:medium'),
+        'dcterms:subject': join_values(item, 'dcterms:subject', ''),
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'dcterms:rights': get_value(item, 'dcterms:rights'),
+        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder'),
+        'dcterms:language': get_value(item, 'dcterms:language'),
+        'dcterms:source': get_value(item, 'dcterms:source'),
+        'dcterms:contributor': join_values(item, 'dcterms:contributor', ''),
+        'bibo:content': get_value(item, 'bibo:content'),
     }
 
 def map_image(item):
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
-        'dcterms:identifier': get_value(item, 'dcterms:identifier', '@value'),
+        'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Image',
-        'o:item_set': join_values(item, 'o:item_set', '@id'),
+        'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_value(item, 'o:media', '@id'),
-        'dcterms:title': get_value(item, 'dcterms:title', '@value'),
-        'dcterms:creator': join_values(item, 'dcterms:creator', 'display_title'),
-        'dcterms:date': get_value(item, 'dcterms:date', '@value'),
-        'dcterms:description': get_value(item, 'dcterms:description', '@value'),
-        'dcterms:subject': join_values(item, 'dcterms:subject', 'display_title'),
-        'dcterms:rights': get_value(item, 'dcterms:rights', 'o:label'),
-        'dcterms:source': get_value(item, 'dcterms:source', 'display_title'),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', 'display_title'),
-        'coordinates': get_value(item, 'curation:coordinates', '@value'),
+        'dcterms:title': get_value(item, 'dcterms:title'),
+        'dcterms:creator': join_values(item, 'dcterms:creator', ''),
+        'dcterms:date': get_value(item, 'dcterms:date'),
+        'dcterms:description': get_value(item, 'dcterms:description'),
+        'dcterms:subject': join_values(item, 'dcterms:subject', ''),
+        'dcterms:rights': get_value(item, 'dcterms:rights'),
+        'dcterms:source': get_value(item, 'dcterms:source'),
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'coordinates': get_value(item, 'curation:coordinates'),
     }
 
 def map_index(item):
@@ -421,108 +432,108 @@ def map_index(item):
     def get_fr_value(field):
         values = item.get(field, [])
         fr_values = [v['@value'] for v in values if v.get('@language') == 'fr']
-        return '|'.join(fr_values) if fr_values else get_value(item, field, '@value')
+        return '|'.join(fr_values) if fr_values else get_value(item, field)
 
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
-        'dcterms:identifier': get_value(item, 'dcterms:identifier', '@value'),
+        'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': resource_class_map.get(resource_class_id, ''),
-        'o:item_set': join_values(item, 'o:item_set', '@id'),
+        'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_value(item, 'o:media', '@id'),
         'dcterms:title': get_fr_value('dcterms:title'),
         'dcterms:alternative': get_fr_value('dcterms:alternative'),
-        'dcterms:created': get_value(item, 'dcterms:created', '@value'),
-        'dcterms:date': get_value(item, 'dcterms:date', '@value'),
-        'dcterms:description': get_value(item, 'dcterms:description', '@value'),
-        'dcterms:relation': join_values(item, 'dcterms:relation', 'display_title'),
-        'dcterms:isReplacedBy': join_values(item, 'dcterms:isReplacedBy', 'display_title'),
-        'dcterms:replaces': join_values(item, 'dcterms:replaces', 'display_title'),
-        'dcterms:isPartOf': get_value(item, 'dcterms:isPartOf', 'display_title'),
-        'dcterms:hasPart': get_value(item, 'dcterms:hasPart', 'display_title'),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', 'display_title'),
-        'foaf:firstName': get_value(item, 'foaf:firstName', '@value'),
-        'foaf:lastName': get_value(item, 'foaf:lastName', '@value'),
-        'foaf:gender': get_value(item, 'foaf:gender', 'display_title'),
-        'foaf:birthday': get_value(item, 'foaf:birthday', '@value'),
-        'coordinates': get_value(item, 'curation:coordinates', '@value'),
+        'dcterms:created': get_value(item, 'dcterms:created'),
+        'dcterms:date': get_value(item, 'dcterms:date'),
+        'dcterms:description': get_value(item, 'dcterms:description'),
+        'dcterms:relation': join_values(item, 'dcterms:relation', ''),
+        'dcterms:isReplacedBy': join_values(item, 'dcterms:isReplacedBy', ''),
+        'dcterms:replaces': join_values(item, 'dcterms:replaces', ''),
+        'dcterms:isPartOf': get_value(item, 'dcterms:isPartOf'),
+        'dcterms:hasPart': get_value(item, 'dcterms:hasPart'),
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'foaf:firstName': get_value(item, 'foaf:firstName'),
+        'foaf:lastName': get_value(item, 'foaf:lastName'),
+        'foaf:gender': get_value(item, 'foaf:gender'),
+        'foaf:birthday': get_value(item, 'foaf:birthday'),
+        'coordinates': get_value(item, 'curation:coordinates'),
     }
 
 def map_issue(item):
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
-        'dcterms:identifier': get_value(item, 'dcterms:identifier', '@value'),
+        'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Issue',
-        'o:item_set': join_values(item, 'o:item_set', '@id'),
+        'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_value(item, 'o:media', '@id'),
-        'dcterms:title': get_value(item, 'dcterms:title', '@value'),
-        'dcterms:creator': join_values(item, 'dcterms:creator', 'display_title'),
-        'dcterms:publisher': join_values(item, 'dcterms:publisher', 'display_title'),
-        'dcterms:date': get_value(item, 'dcterms:date', '@value'),
-        'bibo:issue': get_value(item, 'bibo:issue', '@value'),
-        'dcterms:abstract': get_value(item, 'dcterms:abstract', '@value'),
-        'bibo:numPages': get_value(item, 'bibo:numPages', '@value'),
-        'dcterms:subject': join_values(item, 'dcterms:subject', 'display_title'),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', 'display_title'),
-        'dcterms:rights': get_value(item, 'dcterms:rights', 'o:label'),
-        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder', 'display_title'),
-        'dcterms:language': get_value(item, 'dcterms:language', 'display_title'),
-        'dcterms:source': get_value(item, 'dcterms:source', 'display_title'),
-        'dcterms:contributor': join_values(item, 'dcterms:contributor', 'display_title'),
-        'fabio:hasURL': get_value(item, 'fabio:hasURL', '@id'),
-        'bibo:content': get_value(item, 'bibo:content', '@value'),
+        'dcterms:title': get_value(item, 'dcterms:title'),
+        'dcterms:creator': join_values(item, 'dcterms:creator', ''),
+        'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
+        'dcterms:date': get_value(item, 'dcterms:date'),
+        'bibo:issue': get_value(item, 'bibo:issue'),
+        'dcterms:abstract': get_value(item, 'dcterms:abstract'),
+        'bibo:numPages': get_value(item, 'bibo:numPages'),
+        'dcterms:subject': join_values(item, 'dcterms:subject', ''),
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'dcterms:rights': get_value(item, 'dcterms:rights'),
+        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder'),
+        'dcterms:language': get_value(item, 'dcterms:language'),
+        'dcterms:source': get_value(item, 'dcterms:source'),
+        'dcterms:contributor': join_values(item, 'dcterms:contributor', ''),
+        'fabio:hasURL': get_value(item, 'fabio:hasURL'),
+        'bibo:content': get_value(item, 'bibo:content'),
     }
 
 def map_newspaper_article(item):
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
-        'dcterms:identifier': get_value(item, 'dcterms:identifier', '@value'),
+        'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Article',
-        'o:item_set': join_values(item, 'o:item_set', '@id'),
+        'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_value(item, 'o:media', '@id'),
-        'dcterms:title': get_value(item, 'dcterms:title', '@value'),
-        'dcterms:creator': join_values(item, 'dcterms:creator', 'display_title'),
-        'dcterms:publisher': join_values(item, 'dcterms:publisher', 'display_title'),
-        'dcterms:date': get_value(item, 'dcterms:date', '@value'),
-        'dcterms:abstract': get_value(item, 'dcterms:abstract', '@value'),
-        'bibo:pages': get_value(item, 'bibo:pages', '@value'),
-        'bibo:numPages': get_value(item, 'bibo:numPages', '@value'),
-        'dcterms:subject': join_values(item, 'dcterms:subject', 'display_title'),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', 'display_title'),
-        'dcterms:rights': get_value(item, 'dcterms:rights', 'o:label'),
-        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder', 'display_title'),
-        'dcterms:language': get_value(item, 'dcterms:language', 'display_title'),
-        'dcterms:source': get_value(item, 'dcterms:source', 'display_title'),
-        'dcterms:contributor': join_values(item, 'dcterms:contributor', 'display_title'),
-        'fabio:hasURL': get_value(item, 'fabio:hasURL', '@id'),
-        'bibo:content': get_value(item, 'bibo:content', '@value'),
+        'dcterms:title': get_value(item, 'dcterms:title'),
+        'dcterms:creator': join_values(item, 'dcterms:creator', ''),
+        'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
+        'dcterms:date': get_value(item, 'dcterms:date'),
+        'dcterms:abstract': get_value(item, 'dcterms:abstract'),
+        'bibo:pages': get_value(item, 'bibo:pages'),
+        'bibo:numPages': get_value(item, 'bibo:numPages'),
+        'dcterms:subject': join_values(item, 'dcterms:subject', ''),
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'dcterms:rights': get_value(item, 'dcterms:rights'),
+        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder'),
+        'dcterms:language': get_value(item, 'dcterms:language'),
+        'dcterms:source': get_value(item, 'dcterms:source'),
+        'dcterms:contributor': join_values(item, 'dcterms:contributor', ''),
+        'fabio:hasURL': get_value(item, 'fabio:hasURL'),
+        'bibo:content': get_value(item, 'bibo:content'),
     }
 
 def map_item_set(item):
     def get_fr_value(field):
         values = item.get(field, [])
         fr_values = [v['@value'] for v in values if v.get('@language') == 'fr']
-        return '|'.join(fr_values) if fr_values else get_value(item, field, '@value')
+        return '|'.join(fr_values) if fr_values else get_value(item, field)
 
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item-set/{get_value(item, 'o:id')}",
-        'dcterms:identifier': get_value(item, 'dcterms:identifier', '@value'),
+        'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'o:ItemSet',
         'o:title': get_value(item, 'o:title'),
         'dcterms:description': get_fr_value('dcterms:description'),
-        'dcterms:creator': join_values(item, 'dcterms:creator', 'display_title'),
-        'dcterms:date': get_value(item, 'dcterms:date', '@value'),
-        'dcterms:replaces': join_values(item, 'dcterms:replaces', 'display_title'),
-        'dcterms:isReplacedBy': join_values(item, 'dcterms:isReplacedBy', 'display_title'),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', 'display_title'),
-        'dcterms:language': get_value(item, 'dcterms:language', 'display_title'),
-        'dcterms:rights': get_value(item, 'dcterms:rights', 'o:label'),
-        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder', 'display_title'),
-        'dcterms:source': get_value(item, 'dcterms:source', 'display_title'),
-        'dcterms:contributor': join_values(item, 'dcterms:contributor', 'display_title'),
+        'dcterms:creator': join_values(item, 'dcterms:creator', ''),
+        'dcterms:date': get_value(item, 'dcterms:date'),
+        'dcterms:replaces': join_values(item, 'dcterms:replaces', ''),
+        'dcterms:isReplacedBy': join_values(item, 'dcterms:isReplacedBy', ''),
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'dcterms:language': get_value(item, 'dcterms:language'),
+        'dcterms:rights': get_value(item, 'dcterms:rights'),
+        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder'),
+        'dcterms:source': get_value(item, 'dcterms:source'),
+        'dcterms:contributor': join_values(item, 'dcterms:contributor', ''),
     }
 
 def map_media(item):
@@ -552,36 +563,35 @@ def map_reference(item):
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
-        'dcterms:identifier': get_value(item, 'dcterms:identifier', '@value'),
+        'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': resource_class_map.get(resource_class_id, ''),
-        'o:item_set': join_values(item, 'o:item_set', '@id'),
+        'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_value(item, 'o:media', '@id'),
-        'dcterms:title': get_value(item, 'dcterms:title', '@value'),
-        'bibo:authorList': join_values(item, 'bibo:authorList', 'display_title'),
-        'bibo:editorList': join_values(item, 'bibo:editorList', 'display_title'),
-        'bibo:reviewOf': join_values(item, 'bibo:reviewOf', 'display_title'),
-        'dcterms:publisher': join_values(item, 'dcterms:publisher', 'display_title'),
-        'dcterms:date': get_value(item, 'dcterms:date', '@value'),
-        'dcterms:type': get_value(item, 'dcterms:type', 'display_title'),
-        'dcterms:alternative': get_value(item, 'dcterms:alternative', '@value'),
-        'bibo:chapter': get_value(item, 'bibo:chapter', '@value'),
-        'bibo:volume': get_value(item, 'bibo:volume', '@value'),
-        'bibo:issue': get_value(item, 'bibo:issue', '@value'),
-        'dcterms:abstract': get_value(item, 'dcterms:abstract', '@value'),
-        'bibo:edition': get_value(item, 'bibo:edition', '@value'),
-        'bibo:pages': get_value(item, 'bibo:pages', '@value'),
-        'bibo:numPages': get_value(item, 'bibo:numPages', '@value'),
-        'bibo:pageStart': get_value(item, 'bibo:pageStart', '@value'),
-        'bibo:pageEnd': get_value(item, 'bibo:pageEnd', '@value'),
-        'dcterms:extent': get_value(item, 'dcterms:extent', '@value'),
-        'dcterms:isPartOf': get_value(item, 'dcterms:isPartOf', '@value'),
-        'dcterms:provenance': get_value(item, 'dcterms:provenance', '@value'),
-        'dcterms:subject': join_values(item, 'dcterms:subject', 'display_title'),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', 'display_title'),
-        'dcterms:language': get_value(item, 'dcterms:language', 'display_title'),
-        'bibo:doi': get_value(item, 'bibo:doi', 'o:label'),
-        'fabio:hasURL': get_value(item, 'fabio:hasURL', '@id'),
-        'bibo:content': get_value(item, 'bibo:content', '@value'),
+        'dcterms:title': get_value(item, 'dcterms:title'),
+        'bibo:authorList': join_values(item, 'bibo:authorList', ''),
+        'bibo:editorList': join_values(item, 'bibo:editorList', ''),
+        'bibo:reviewOf': join_values(item, 'bibo:reviewOf', ''),
+        'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
+        'dcterms:date': get_value(item, 'dcterms:date'),
+        'dcterms:type': get_value(item, 'dcterms:type'),
+        'dcterms:alternative': get_value(item, 'dcterms:alternative'),
+        'bibo:chapter': get_value(item, 'bibo:chapter'),
+        'bibo:volume': get_value(item, 'bibo:volume'),
+        'bibo:issue': get_value(item, 'bibo:issue'),
+        'dcterms:abstract': get_value(item, 'dcterms:abstract'),
+        'bibo:edition': get_value(item, 'bibo:edition'),
+        'bibo:numPages': get_value(item, 'bibo:numPages'),
+        'bibo:pageStart': get_value(item, 'bibo:pageStart'),
+        'bibo:pageEnd': get_value(item, 'bibo:pageEnd'),
+        'dcterms:extent': get_value(item, 'dcterms:extent'),
+        'dcterms:isPartOf': get_value(item, 'dcterms:isPartOf'),
+        'dcterms:provenance': get_value(item, 'dcterms:provenance'),
+        'dcterms:subject': join_values(item, 'dcterms:subject', ''),
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'dcterms:language': get_value(item, 'dcterms:language'),
+        'bibo:doi': get_value(item, 'bibo:doi'),
+        'fabio:hasURL': get_value(item, 'fabio:hasURL'),
+        'bibo:content': get_value(item, 'bibo:content'),
     }
 
 def main():
