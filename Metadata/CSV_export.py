@@ -4,6 +4,8 @@ import logging
 import requests
 from tqdm import tqdm
 from dotenv import load_dotenv
+from dataclasses import dataclass
+from typing import List, Dict, Any, Callable
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -12,21 +14,34 @@ logger = logging.getLogger(__name__)
 # Load environment variables
 load_dotenv(os.path.join(os.path.dirname(__file__), '..', '..', '.env'))
 
-# Configuration
+@dataclass
 class Config:
-    API_URL = os.getenv('OMEKA_BASE_URL')
-    API_KEY_IDENTITY = os.getenv('OMEKA_KEY_IDENTITY')
-    API_KEY_CREDENTIAL = os.getenv('OMEKA_KEY_CREDENTIAL')
-    OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'CSV')
+    API_URL: str = os.getenv('OMEKA_BASE_URL')
+    API_KEY_IDENTITY: str = os.getenv('OMEKA_KEY_IDENTITY')
+    API_KEY_CREDENTIAL: str = os.getenv('OMEKA_KEY_CREDENTIAL')
+    OUTPUT_DIR: str = os.path.join(os.path.dirname(__file__), 'CSV')
 
-# API Client
 class OmekaApiClient:
-    def __init__(self, api_url, key_identity, key_credential):
-        self.api_url = api_url
-        self.key_identity = key_identity
-        self.key_credential = key_credential
+    def __init__(self, config: Config):
+        self.config = config
 
-    def fetch_items(self, resource_class_id):
+    def _make_request(self, endpoint: str, params: Dict[str, Any] = None) -> List[Dict[str, Any]]:
+        if params is None:
+            params = {}
+        params.update({
+            'key_identity': self.config.API_KEY_IDENTITY,
+            'key_credential': self.config.API_KEY_CREDENTIAL
+        })
+        url = f"{self.config.API_URL}/{endpoint}"
+        try:
+            response = requests.get(url, params=params)
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as e:
+            logger.error(f"Error fetching data from API: {str(e)}")
+            return []
+
+    def fetch_items(self, resource_class_id: int) -> List[Dict[str, Any]]:
         items = []
         page = 1
         per_page = 100
@@ -36,26 +51,21 @@ class OmekaApiClient:
 
         with tqdm(desc=f"Fetching {item_type}", unit="item") as pbar:
             while True:
-                url = f"{self.api_url}/items?resource_class_id={resource_class_id}&key_identity={self.key_identity}&key_credential={self.key_credential}&page={page}&per_page={per_page}"
-                try:
-                    response = requests.get(url)
-                    response.raise_for_status()
-                    data = response.json()
-
-                    if not data:
-                        break
-
-                    items.extend(data)
-                    pbar.update(len(data))
-                    page += 1
-                except requests.RequestException as e:
-                    logger.error(f"Error fetching data from API: {str(e)}")
+                data = self._make_request('items', {
+                    'resource_class_id': resource_class_id,
+                    'page': page,
+                    'per_page': per_page
+                })
+                if not data:
                     break
+                items.extend(data)
+                pbar.update(len(data))
+                page += 1
 
         logger.info(f"Fetched {len(items)} {item_type}")
         return items
 
-    def get_item_type_name(self, resource_class_id):
+    def get_item_type_name(self, resource_class_id: int) -> str:
         item_type_map = {
             49: "documents",
             38: "audio/visual documents",
@@ -79,7 +89,7 @@ class OmekaApiClient:
         }
         return item_type_map.get(resource_class_id, f"items (class {resource_class_id})")
 
-    def fetch_item_sets(self):
+    def fetch_item_sets(self) -> List[Dict[str, Any]]:
         item_sets = []
         page = 1
         per_page = 100
@@ -88,26 +98,20 @@ class OmekaApiClient:
 
         with tqdm(desc="Fetching item sets", unit="item") as pbar:
             while True:
-                url = f"{self.api_url}/item_sets?key_identity={self.key_identity}&key_credential={self.key_credential}&page={page}&per_page={per_page}"
-                try:
-                    response = requests.get(url)
-                    response.raise_for_status()
-                    data = response.json()
-
-                    if not data:
-                        break
-
-                    item_sets.extend([item for item in data if item.get('o:is_public')])
-                    pbar.update(len(data))
-                    page += 1
-                except requests.RequestException as e:
-                    logger.error(f"Error fetching data from API: {str(e)}")
+                data = self._make_request('item_sets', {
+                    'page': page,
+                    'per_page': per_page
+                })
+                if not data:
                     break
+                item_sets.extend([item for item in data if item.get('o:is_public')])
+                pbar.update(len(data))
+                page += 1
 
         logger.info(f"Fetched {len(item_sets)} item sets")
         return item_sets
 
-    def fetch_media(self):
+    def fetch_media(self) -> List[Dict[str, Any]]:
         media = []
         page = 1
         per_page = 100
@@ -116,33 +120,27 @@ class OmekaApiClient:
 
         with tqdm(desc="Fetching media", unit="item") as pbar:
             while True:
-                url = f"{self.api_url}/media?key_identity={self.key_identity}&key_credential={self.key_credential}&page={page}&per_page={per_page}"
-                try:
-                    response = requests.get(url)
-                    response.raise_for_status()
-                    data = response.json()
-
-                    if not data:
-                        break
-
-                    media.extend([item for item in data if item.get('o:is_public')])
-                    pbar.update(len(data))
-                    page += 1
-                except requests.RequestException as e:
-                    logger.error(f"Error fetching data from API: {str(e)}")
+                data = self._make_request('media', {
+                    'page': page,
+                    'per_page': per_page
+                })
+                if not data:
                     break
+                media.extend([item for item in data if item.get('o:is_public')])
+                pbar.update(len(data))
+                page += 1
 
         logger.info(f"Fetched {len(media)} media items")
         return media
 
-    def fetch_references(self):
+    def fetch_references(self) -> List[Dict[str, Any]]:
         reference_classes = [35, 43, 88, 40, 82, 178, 52, 77, 305]
         references = []
         for resource_class_id in reference_classes:
             references.extend(self.fetch_items(resource_class_id))
         return references
 
-    def fetch_all_items(self):
+    def fetch_all_items(self) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
         logger.info("Starting to fetch all items...")
         
         documents = self.fetch_items(49)
@@ -170,7 +168,7 @@ class OmekaApiClient:
         logger.info("Finished fetching all items.")
         return documents + audio_visual + images + index_items + issues + newspaper_articles, item_sets, media, references
 
-    def fetch_item_set_titles(self):
+    def fetch_item_set_titles(self) -> Dict[int, str]:
         item_set_titles = {}
         page = 1
         per_page = 100
@@ -178,30 +176,24 @@ class OmekaApiClient:
         logger.info("Fetching item set titles...")
 
         while True:
-            url = f"{self.api_url}/item_sets?key_identity={self.key_identity}&key_credential={self.key_credential}&page={page}&per_page={per_page}"
-            try:
-                response = requests.get(url)
-                response.raise_for_status()
-                data = response.json()
-
-                if not data:
-                    break
-
-                for item_set in data:
-                    item_set_id = item_set['o:id']
-                    item_set_titles[item_set_id] = item_set.get('o:title', '')
-
-                page += 1
-            except requests.RequestException as e:
-                logger.error(f"Error fetching item set titles: {str(e)}")
+            data = self._make_request('item_sets', {
+                'page': page,
+                'per_page': per_page
+            })
+            if not data:
                 break
+            for item_set in data:
+                item_set_id = item_set['o:id']
+                item_set_titles[item_set_id] = item_set.get('o:title', '')
+            page += 1
 
         logger.info(f"Fetched {len(item_set_titles)} item set titles")
         return item_set_titles
 
-# Data Processor
 class DataProcessor:
-    def __init__(self, raw_data, item_sets, media, references, item_set_titles):
+    def __init__(self, raw_data: List[Dict[str, Any]], item_sets: List[Dict[str, Any]], 
+                 media: List[Dict[str, Any]], references: List[Dict[str, Any]], 
+                 item_set_titles: Dict[int, str]):
         self.raw_data = raw_data
         self.item_sets = item_sets
         self.media = media
@@ -209,38 +201,43 @@ class DataProcessor:
         self.item_set_titles = item_set_titles
         self.processed_data = None
 
-    def process(self):
+    def process(self) -> Dict[str, List[Dict[str, Any]]]:
         processed_data = {
             'audio_visual_documents': [],
             'documents': [],
             'images': [],
             'index': [],
             'issues': [],
-            'item_sets': [],  # Add item_sets to the processed_data dictionary
-            'media': [],  # Add media to the processed_data dictionary
+            'item_sets': [],
+            'media': [],
             'newspaper_articles': [],
             'references': []
+        }
+
+        mapping_functions = {
+            'audio_visual_documents': map_audio_visual_document,
+            'documents': map_document,
+            'images': map_image,
+            'index': map_index,
+            'issues': map_issue,
+            'newspaper_articles': map_newspaper_article
         }
 
         for item in tqdm(self.raw_data, desc="Processing items"):
             item_type = self.determine_item_type(item)
             if item_type in processed_data:
-                processed_data[item_type].append(self.map_item(item, item_type))
+                mapping_function = mapping_functions.get(item_type, lambda x: x)
+                processed_data[item_type].append(mapping_function(item))
 
-        for item_set in tqdm(self.item_sets, desc="Processing item sets"):
-            processed_data['item_sets'].append(map_item_set(item_set))
-
-        for media_item in tqdm(self.media, desc="Processing media"):
-            processed_data['media'].append(map_media(media_item))
-
-        for reference in tqdm(self.references, desc="Processing references"):
-            processed_data['references'].append(map_reference(reference))
+        processed_data['item_sets'] = [map_item_set(item_set) for item_set in tqdm(self.item_sets, desc="Processing item sets")]
+        processed_data['media'] = [map_media(media_item) for media_item in tqdm(self.media, desc="Processing media")]
+        processed_data['references'] = [map_reference(reference) for reference in tqdm(self.references, desc="Processing references")]
 
         logger.info("Data processing completed")
-        self.processed_data = processed_data  # Store the processed data
+        self.processed_data = processed_data
         return processed_data
 
-    def determine_item_type(self, item):
+    def determine_item_type(self, item: Dict[str, Any]) -> str:
         item_types = item.get('@type', [])
         resource_class = item.get('o:resource_class', {}).get('o:id')
         if 'o:Item' in item_types:
@@ -258,21 +255,6 @@ class DataProcessor:
                 return 'newspaper_articles'
         return 'other'  # Default category
 
-    def map_item(self, item, item_type):
-        if item_type == 'documents':
-            return map_document(item)
-        elif item_type == 'audio_visual_documents':
-            return map_audio_visual_document(item)
-        elif item_type == 'images':
-            return map_image(item)
-        elif item_type == 'index':
-            return map_index(item)
-        elif item_type == 'issues':
-            return map_issue(item)
-        elif item_type == 'newspaper_articles':
-            return map_newspaper_article(item)
-        return item  # Default mapping
-
     def process_item_sets(self):
         for item_type, items in self.processed_data.items():
             for item in items:
@@ -285,9 +267,8 @@ class DataProcessor:
                             item_set_names.append(self.item_set_titles.get(int(item_set_id), ''))
                     item['o:item_set'] = '|'.join(filter(None, item_set_names))
 
-# File Generator
 class FileGenerator:
-    def __init__(self, processed_data, output_dir):
+    def __init__(self, processed_data: Dict[str, List[Dict[str, Any]]], output_dir: str):
         self.processed_data = processed_data
         self.output_dir = output_dir
 
@@ -298,7 +279,7 @@ class FileGenerator:
             if items:
                 self.generate_csv_file(item_type, items)
 
-    def generate_csv_file(self, item_type, items):
+    def generate_csv_file(self, item_type: str, items: List[Dict[str, Any]]):
         filepath = os.path.join(self.output_dir, f"{item_type}.csv")
         
         with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
@@ -306,13 +287,11 @@ class FileGenerator:
                 fieldnames = items[0].keys()
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
-                for item in items:
-                    writer.writerow(item)
+                writer.writerows(items)
 
         logger.info(f"Generated {filepath}")
 
-# Utility functions
-def get_value(item, field, subfield=None):
+def get_value(item: Dict[str, Any], field: str, subfield: str = None) -> str:
     """Utility function to safely get a value from an item."""
     if field not in item or item[field] is None:
         return ''
@@ -344,7 +323,7 @@ def get_value(item, field, subfield=None):
             return ''
     return str(item[field])
 
-def join_values(item, field, subfield):
+def join_values(item: Dict[str, Any], field: str, subfield: str) -> str:
     """Utility function to join multiple values with a separator."""
     if field not in item:
         return ''
@@ -356,8 +335,7 @@ def join_values(item, field, subfield):
     values = [str(val.get('@value', '')) for val in item[field] if isinstance(val, dict) and '@value' in val]
     return '|'.join(filter(None, values))
 
-# Item mapping functions
-def map_document(item):
+def map_document(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -380,7 +358,7 @@ def map_document(item):
         'bibo:content': get_value(item, 'bibo:content'),
     }
 
-def map_audio_visual_document(item):
+def map_audio_visual_document(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -408,7 +386,7 @@ def map_audio_visual_document(item):
         'bibo:content': get_value(item, 'bibo:content'),
     }
 
-def map_image(item):
+def map_image(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -427,7 +405,7 @@ def map_image(item):
         'coordinates': get_value(item, 'curation:coordinates'),
     }
 
-def map_index(item):
+def map_index(item: Dict[str, Any]) -> Dict[str, Any]:
     resource_class_id = item.get('o:resource_class', {}).get('o:id')
     resource_class_map = {
         244: 'fabio:AuthorityFile',
@@ -437,7 +415,7 @@ def map_index(item):
         94: 'foaf:Person'
     }
 
-    def get_fr_value(field):
+    def get_fr_value(field: str) -> str:
         values = item.get(field, [])
         fr_values = [v['@value'] for v in values if v.get('@language') == 'fr']
         return '|'.join(fr_values) if fr_values else get_value(item, field)
@@ -467,7 +445,7 @@ def map_index(item):
         'coordinates': get_value(item, 'curation:coordinates'),
     }
 
-def map_issue(item):
+def map_issue(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -493,7 +471,7 @@ def map_issue(item):
         'bibo:content': get_value(item, 'bibo:content'),
     }
 
-def map_newspaper_article(item):
+def map_newspaper_article(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -519,8 +497,8 @@ def map_newspaper_article(item):
         'bibo:content': get_value(item, 'bibo:content'),
     }
 
-def map_item_set(item):
-    def get_fr_value(field):
+def map_item_set(item: Dict[str, Any]) -> Dict[str, Any]:
+    def get_fr_value(field: str) -> str:
         values = item.get(field, [])
         fr_values = [v['@value'] for v in values if v.get('@language') == 'fr']
         return '|'.join(fr_values) if fr_values else get_value(item, field)
@@ -544,7 +522,7 @@ def map_item_set(item):
         'dcterms:contributor': join_values(item, 'dcterms:contributor', ''),
     }
 
-def map_media(item):
+def map_media(item: Dict[str, Any]) -> Dict[str, Any]:
     # Get the item ID, handling the case where it might be nested
     item_id = item.get('o:item', {}).get('o:id', '')
     if not item_id:
@@ -562,7 +540,7 @@ def map_media(item):
         'o:original_url': get_value(item, 'o:original_url'),
     }
 
-def map_reference(item):
+def map_reference(item: Dict[str, Any]) -> Dict[str, Any]:
     resource_class_map = {
         35: "bibo:AcademicArticle",
         43: "bibo:Chapter",
@@ -610,7 +588,7 @@ def map_reference(item):
         'bibo:content': get_value(item, 'bibo:content'),
     }
 
-def get_media_ids(item):
+def get_media_ids(item: Dict[str, Any]) -> str:
     if 'o:media' in item and isinstance(item['o:media'], list):
         return '|'.join([str(media.get('o:id', '')) for media in item['o:media']])
     return ''
@@ -619,36 +597,28 @@ def main():
     try:
         logger.info("Starting the Omeka data export process...")
         
-        # Initialize configuration
         config = Config()
         logger.info(f"Configuration loaded. API URL: {config.API_URL}")
 
-        # Ensure the output directory exists
         os.makedirs(config.OUTPUT_DIR, exist_ok=True)
 
-        # Initialize API client
-        api_client = OmekaApiClient(config.API_URL, config.API_KEY_IDENTITY, config.API_KEY_CREDENTIAL)
+        api_client = OmekaApiClient(config)
 
-        # Fetch item set titles
         item_set_titles = api_client.fetch_item_set_titles()
 
-        # Fetch data from API
         raw_data, item_sets, media, references = api_client.fetch_all_items()
 
         if not raw_data and not item_sets and not media and not references:
             logger.warning("No data fetched from the API. Exiting.")
             return
 
-        # Process data
         logger.info("Processing fetched data...")
         processor = DataProcessor(raw_data, item_sets, media, references, item_set_titles)
         processed_data = processor.process()
 
-        # Process item sets
         logger.info("Processing item sets...")
         processor.process_item_sets()
 
-        # Generate files
         logger.info("Generating CSV files...")
         generator = FileGenerator(processor.processed_data, config.OUTPUT_DIR)
         generator.generate_all_files()
