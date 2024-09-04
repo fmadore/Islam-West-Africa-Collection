@@ -318,7 +318,11 @@ def get_value(item, field, subfield=None):
         return ''
     
     # Special cases
-    if field == 'dcterms:rights' or field == 'bibo:doi':
+    if field == 'dcterms:rights':
+        if item[field] and isinstance(item[field], list) and len(item[field]) > 0:
+            return str(item[field][0].get('o:label', '') or item[field][0].get('@value', ''))
+        return ''
+    if field == 'bibo:doi':
         if item[field] and isinstance(item[field], list) and len(item[field]) > 0:
             return str(item[field][0].get('o:label', '') or item[field][0].get('@value', ''))
         return ''
@@ -360,7 +364,7 @@ def map_document(item):
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Document',
         'o:item_set': join_values(item, 'o:item_set', ''),
-        'o:media/file': get_value(item, 'o:media', '@id'),
+        'o:media/file': get_media_ids(item),
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:date': get_value(item, 'dcterms:date'),
@@ -383,7 +387,7 @@ def map_audio_visual_document(item):
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:AudioVisualDocument',
         'o:item_set': join_values(item, 'o:item_set', ''),
-        'o:media/file': get_value(item, 'o:media', '@id'),
+        'o:media/file': get_media_ids(item),
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
@@ -411,7 +415,7 @@ def map_image(item):
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Image',
         'o:item_set': join_values(item, 'o:item_set', ''),
-        'o:media/file': get_value(item, 'o:media', '@id'),
+        'o:media/file': get_media_ids(item),
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:date': get_value(item, 'dcterms:date'),
@@ -444,7 +448,7 @@ def map_index(item):
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': resource_class_map.get(resource_class_id, ''),
         'o:item_set': join_values(item, 'o:item_set', ''),
-        'o:media/file': get_value(item, 'o:media', '@id'),
+        'o:media/file': get_media_ids(item),
         'dcterms:title': get_fr_value('dcterms:title'),
         'dcterms:alternative': get_fr_value('dcterms:alternative'),
         'dcterms:created': get_value(item, 'dcterms:created'),
@@ -470,7 +474,7 @@ def map_issue(item):
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Issue',
         'o:item_set': join_values(item, 'o:item_set', ''),
-        'o:media/file': get_value(item, 'o:media', '@id'),
+        'o:media/file': get_media_ids(item),
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
@@ -496,7 +500,7 @@ def map_newspaper_article(item):
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Article',
         'o:item_set': join_values(item, 'o:item_set', ''),
-        'o:media/file': get_value(item, 'o:media', '@id'),
+        'o:media/file': get_media_ids(item),
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
@@ -578,7 +582,7 @@ def map_reference(item):
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': resource_class_map.get(resource_class_id, ''),
         'o:item_set': join_values(item, 'o:item_set', ''),
-        'o:media/file': get_value(item, 'o:media', '@id'),
+        'o:media/file': get_media_ids(item),
         'dcterms:title': get_value(item, 'dcterms:title'),
         'bibo:authorList': join_values(item, 'bibo:authorList', ''),
         'bibo:editorList': join_values(item, 'bibo:editorList', ''),
@@ -605,6 +609,11 @@ def map_reference(item):
         'fabio:hasURL': get_value(item, 'fabio:hasURL'),
         'bibo:content': get_value(item, 'bibo:content'),
     }
+
+def get_media_ids(item):
+    if 'o:media' in item and isinstance(item['o:media'], list):
+        return '|'.join([str(media.get('o:id', '')) for media in item['o:media']])
+    return ''
 
 def main():
     try:
