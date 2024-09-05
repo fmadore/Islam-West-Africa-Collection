@@ -84,13 +84,6 @@ class JsonFileGenerator:
         filename = f"{clean_label}.json"
         filepath = os.path.join(self.output_dir, filename)
         
-        # Handle filename conflicts
-        counter = 1
-        while os.path.exists(filepath):
-            filename = f"{clean_label}_{counter}.json"
-            filepath = os.path.join(self.output_dir, filename)
-            counter += 1
-        
         with open(filepath, 'w', encoding='utf-8') as jsonfile:
             json.dump(template, jsonfile, ensure_ascii=False, indent=2)
 
