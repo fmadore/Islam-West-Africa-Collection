@@ -70,22 +70,22 @@ class OmekaApiClient:
             49: "documents",
             38: "audio/visual documents",
             58: "images",
-            244: "index items",
-            54: "index items",
-            9: "index items",
-            96: "index items",
-            94: "index items",
+            244: "index items (authority files)",
+            54: "index items (events)",
+            9: "index items (locations)",
+            96: "index items (organizations)",
+            94: "index items (persons)",
             60: "issues",
             36: "newspaper articles",
-            35: "references",
-            43: "references",
-            88: "references",
-            40: "references",
-            82: "references",
-            178: "references",
-            52: "references",
-            77: "references",
-            305: "references"
+            35: "references (articles)",
+            43: "references (chapters)",
+            88: "references (theses)",
+            40: "references (books)",
+            82: "references (reports)",
+            178: "references (reviews)",
+            52: "references (books)",
+            77: "references (communications)",
+            305: "references (blog posts)"
         }
         return item_type_map.get(resource_class_id, f"items (class {resource_class_id})")
 
@@ -193,11 +193,11 @@ class JsonLdProcessor:
         for item in tqdm(self.raw_data, desc="Processing items"):
             item_type = self.determine_item_type(item)
             if item_type in processed_data:
-                processed_data[item_type].append(self.to_json_ld(item))
+                processed_data[item_type].append(item)
 
-        processed_data['item_sets'] = [self.to_json_ld(item_set) for item_set in tqdm(self.item_sets, desc="Processing item sets")]
-        processed_data['media'] = [self.to_json_ld(media_item) for media_item in tqdm(self.media, desc="Processing media")]
-        processed_data['references'] = [self.to_json_ld(reference) for reference in tqdm(self.references, desc="Processing references")]
+        processed_data['item_sets'] = self.item_sets
+        processed_data['media'] = self.media
+        processed_data['references'] = self.references
 
         logger.info("Data processing completed")
         self.processed_data = processed_data
@@ -220,77 +220,6 @@ class JsonLdProcessor:
             elif resource_class == 36:
                 return 'newspaper_articles'
         return 'other'  # Default category
-
-    def to_json_ld(self, item: Dict[str, Any]) -> Dict[str, Any]:
-        json_ld = {
-            "@context": "http://schema.org/",
-            "@type": self.get_schema_type(item),
-            "@id": f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{item['o:id']}",
-            "identifier": item.get('dcterms:identifier', [{}])[0].get('@value', ''),
-        }
-
-        for key, value in item.items():
-            if key.startswith('o:') or key.startswith('dcterms:') or key.startswith('bibo:') or key.startswith('foaf:'):
-                json_ld_key = self.map_key_to_schema_org(key)
-                if isinstance(value, list):
-                    json_ld[json_ld_key] = [self.process_value(v) for v in value]
-                else:
-                    json_ld[json_ld_key] = self.process_value(value)
-
-        return json_ld
-
-    def get_schema_type(self, item: Dict[str, Any]) -> str:
-        resource_class = item.get('o:resource_class', {}).get('o:id')
-        schema_type_map = {
-            49: "DigitalDocument",
-            38: "AudioObject",
-            58: "ImageObject",
-            244: "Thing",
-            54: "Event",
-            9: "Place",
-            96: "Organization",
-            94: "Person",
-            60: "PublicationIssue",
-            36: "NewsArticle",
-            35: "ScholarlyArticle",
-            43: "Chapter",
-            88: "Thesis",
-            40: "Book",
-            82: "Report",
-            178: "Review",
-            52: "Book",
-            77: "Message",
-            305: "BlogPosting"
-        }
-        return schema_type_map.get(resource_class, "Thing")
-
-    def map_key_to_schema_org(self, key: str) -> str:
-        mapping = {
-            'dcterms:title': 'name',
-            'dcterms:creator': 'author',
-            'dcterms:date': 'datePublished',
-            'dcterms:description': 'description',
-            'dcterms:subject': 'keywords',
-            'dcterms:spatial': 'spatialCoverage',
-            'dcterms:rights': 'license',
-            'dcterms:language': 'inLanguage',
-            'dcterms:source': 'isBasedOn',
-            'bibo:numPages': 'numberOfPages',
-            'bibo:volume': 'volumeNumber',
-            'bibo:issue': 'issueNumber',
-            'bibo:doi': 'doi',
-            'fabio:hasURL': 'url',
-            'o:media': 'associatedMedia'
-        }
-        return mapping.get(key, key.split(':')[-1])
-
-    def process_value(self, value: Any) -> Any:
-        if isinstance(value, dict):
-            if '@value' in value:
-                return value['@value']
-            elif '@id' in value:
-                return {"@id": value['@id']}
-        return value
 
 class JsonLdFileGenerator:
     def __init__(self, processed_data: Dict[str, List[Dict[str, Any]]], output_dir: str):
