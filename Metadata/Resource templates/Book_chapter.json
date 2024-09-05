@@ -1,349 +1,298 @@
 {
-    "o:label": "Book chapter",
-    "o:resource_template_property": [
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": true,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "title",
-            "label": "Title"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "literal",
-                    "label": "Text"
-                },
-                {
-                    "name": "resource:item",
-                    "label": "Item"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "authorList",
-            "label": "list of authors"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "literal",
-                    "label": "Text"
-                },
-                {
-                    "name": "resource:item",
-                    "label": "Item"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "editorList",
-            "label": "list of editors"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "abstract",
-            "label": "Abstract"
-        },
-        {
-            "o:alternate_label": "Book Title",
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "alternative",
-            "label": "Alternative Title"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "numeric:integer",
-                    "label": "Integer"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "edition",
-            "label": "edition"
-        },
-        {
-            "o:alternate_label": "Place of Publication",
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "provenance",
-            "label": "Provenance"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "publisher",
-            "label": "Publisher"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "numeric:timestamp",
-                    "label": "Timestamp"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "date",
-            "label": "Date"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "numeric:integer",
-                    "label": "Integer"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "chapter",
-            "label": "chapter"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "numeric:integer",
-                    "label": "Integer"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "pageStart",
-            "label": "page start"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "numeric:integer",
-                    "label": "Integer"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "pageEnd",
-            "label": "page end"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "resource:item",
-                    "label": "Item"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "language",
-            "label": "Language"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "resource:item",
-                    "label": "Item"
-                },
-                {
-                    "name": "customvocab:6",
-                    "label": "Notices d'autorit\u00e9"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "type",
-            "label": "Type"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "resource:item",
-                    "label": "Item"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "subject",
-            "label": "Subject"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "uri",
-                    "label": "URI"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "doi",
-            "label": "doi"
-        },
-        {
-            "o:alternate_label": "Wikidata QID",
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "uri",
-                    "label": "URI"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "identifier",
-            "label": "Identifier"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "resource:item",
-                    "label": "Item"
-                },
-                {
-                    "name": "customvocab:4",
-                    "label": "Emplacements"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-            "vocabulary_label": "Dublin Core",
-            "local_name": "spatial",
-            "label": "Spatial Coverage"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "content",
-            "label": "content"
-        },
-        {
-            "o:alternate_label": null,
-            "o:alternate_comment": null,
-            "o:is_required": false,
-            "o:is_private": false,
-            "o:default_lang": null,
-            "data_types": [
-                {
-                    "name": "resource:item",
-                    "label": "Item"
-                }
-            ],
-            "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-            "vocabulary_label": "Bibliographic Ontology",
-            "local_name": "cites",
-            "label": "cites"
-        }
-    ],
-    "o:resource_class": {
-        "vocabulary_namespace_uri": "http:\/\/purl.org\/ontology\/bibo\/",
-        "vocabulary_label": "Bibliographic Ontology",
-        "local_name": "Chapter",
-        "label": "Chapter"
+  "@context": "https://iwac.frederickmadore.com/api-context",
+  "@id": "https://iwac.frederickmadore.com/api/resource_templates/11",
+  "@type": "o:ResourceTemplate",
+  "o:id": 11,
+  "o:label": "Book chapter",
+  "o:owner": {
+    "@id": "https://iwac.frederickmadore.com/api/users/1",
+    "o:id": 1
+  },
+  "o:resource_class": {
+    "@id": "https://iwac.frederickmadore.com/api/resource_classes/43",
+    "o:id": 43
+  },
+  "o:title_property": {
+    "@id": "https://iwac.frederickmadore.com/api/properties/1",
+    "o:id": 1
+  },
+  "o:description_property": {
+    "@id": "https://iwac.frederickmadore.com/api/properties/19",
+    "o:id": 19
+  },
+  "o:resource_template_property": [
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/1",
+        "o:id": 1
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [],
+      "o:is_required": true,
+      "o:is_private": false,
+      "o:default_lang": null
     },
-    "o:title_property": {
-        "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-        "vocabulary_label": "Dublin Core",
-        "local_name": "title",
-        "label": "Title"
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/58",
+        "o:id": 58
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "literal",
+        "resource:item"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
     },
-    "o:description_property": {
-        "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
-        "vocabulary_label": "Dublin Core",
-        "local_name": "abstract",
-        "label": "Abstract"
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/67",
+        "o:id": 67
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "literal",
+        "resource:item"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/19",
+        "o:id": 19
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/17",
+        "o:id": 17
+      },
+      "o:alternate_label": "Book Title",
+      "o:alternate_comment": null,
+      "o:data_type": [],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/94",
+        "o:id": 94
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "numeric:integer"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/51",
+        "o:id": 51
+      },
+      "o:alternate_label": "Place of Publication",
+      "o:alternate_comment": null,
+      "o:data_type": [],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/5",
+        "o:id": 5
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/7",
+        "o:id": 7
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "numeric:timestamp"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/89",
+        "o:id": 89
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "numeric:integer"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/111",
+        "o:id": 111
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "numeric:integer"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/110",
+        "o:id": 110
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "numeric:integer"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/12",
+        "o:id": 12
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/8",
+        "o:id": 8
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item",
+        "customvocab:6"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/3",
+        "o:id": 3
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/92",
+        "o:id": 92
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "uri"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/10",
+        "o:id": 10
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "literal",
+        "uri"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/40",
+        "o:id": 40
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item",
+        "customvocab:4"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/91",
+        "o:id": 91
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://iwac.frederickmadore.com/api/properties/60",
+        "o:id": 60
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
     }
+  ]
 }
