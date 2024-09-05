@@ -32,7 +32,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-13T19:38:48+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -74,6 +74,15 @@
         "@value": "Describes a resource whose label represents a topic",
         "@language": "en"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000001"
+      }
     ]
   },
   {
@@ -109,7 +118,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-13T19:39:29+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -151,6 +160,15 @@
         "@value": "Main events of the database",
         "@language": "en"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000002"
+      }
     ]
   },
   {
@@ -186,7 +204,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-13T20:51:53+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -228,6 +246,15 @@
         "@value": "Main persons of the database",
         "@language": "en"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000003"
+      }
     ]
   },
   {
@@ -263,7 +290,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-13T20:52:50+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -286,6 +313,15 @@
         "is_public": true,
         "@value": "Authority files",
         "@language": "en"
+      }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000004"
       }
     ]
   },
@@ -322,7 +358,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T08:16:10+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -364,6 +400,15 @@
         "@value": "Main locations of the database",
         "@language": "en"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000005"
+      }
     ]
   },
   {
@@ -399,7 +444,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T10:48:34+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -441,6 +486,15 @@
         "@value": "Main organizations or groups of the database",
         "@language": "en"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000006"
+      }
     ]
   },
   {
@@ -476,7 +530,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T11:17:07+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -544,6 +598,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000007"
+      }
     ]
   },
   {
@@ -579,7 +642,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T13:17:23+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -751,6 +814,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000008"
+      }
     ]
   },
   {
@@ -789,7 +861,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T09:44:18+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -895,6 +967,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q119889397",
         "o:label": "Q119889397"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000009"
       }
     ],
     "@reverse": {
@@ -1164,7 +1243,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T12:07:28+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -1270,6 +1349,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q121338136",
         "o:label": "Q121338136"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000010"
       }
     ],
     "@reverse": {
@@ -1511,7 +1597,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T11:48:49+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -1697,6 +1783,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q115453877",
         "o:label": "Q115453877"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000011"
       }
     ],
     "@reverse": {
@@ -2398,7 +2491,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T11:48:12+00:00",
+      "@value": "2024-09-05T14:17:38+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -2563,6 +2656,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q115453822",
         "o:label": "Q115453822"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000012"
       }
     ],
     "@reverse": {
@@ -2824,7 +2924,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T11:49:31+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -2973,6 +3073,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q18344583",
         "o:label": "Q18344583"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000013"
       }
     ],
     "@reverse": {
@@ -12648,7 +12755,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-16T10:03:21+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -12754,6 +12861,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q107020918",
         "o:label": "Q107020918"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000014"
       }
     ],
     "@reverse": {
@@ -13053,7 +13167,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T09:46:44+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -13172,6 +13286,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q118128339",
         "o:label": "Q118128339"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000015"
       }
     ],
     "@reverse": {
@@ -13754,7 +13875,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T11:58:22+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -13838,6 +13959,15 @@
         "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
         "o:label": "In Copyright - Educational Use Permitted"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000016"
+      }
     ]
   },
   {
@@ -13873,7 +14003,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T11:59:59+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -13992,6 +14122,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000017"
+      }
     ]
   },
   {
@@ -14027,7 +14166,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T12:00:59+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -14124,6 +14263,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000018"
+      }
     ]
   },
   {
@@ -14162,7 +14310,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T10:00:04+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -14316,6 +14464,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q119573392",
         "o:label": "Q119573392"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000019"
       }
     ],
     "@reverse": {
@@ -14403,7 +14558,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-16T14:58:28+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -14568,6 +14723,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q114033809",
         "o:label": "Q114033809"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000020"
       }
     ],
     "@reverse": {
@@ -14675,7 +14837,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T10:04:36+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -14807,6 +14969,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q114030636",
         "o:label": "Q114030636"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000021"
       }
     ],
     "@reverse": {
@@ -14894,7 +15063,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T10:06:37+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -15059,6 +15228,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q114033925",
         "o:label": "Q114033925"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000022"
       }
     ],
     "@reverse": {
@@ -16374,7 +16550,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T09:46:01+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -16480,6 +16656,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q2928499",
         "o:label": "Q2928499"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000023"
       }
     ],
     "@reverse": {
@@ -17810,7 +17993,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T12:41:28+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -17959,6 +18142,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q27718764",
         "o:label": "Q27718764"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000024"
       }
     ],
     "@reverse": {
@@ -18144,7 +18334,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T15:35:02+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -18266,6 +18456,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q2282052",
         "o:label": "Q2282052"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000025"
       }
     ],
     "@reverse": {
@@ -23571,7 +23768,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-16T10:04:57+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -23709,6 +23906,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q114033874",
         "o:label": "Q114033874"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000026"
       }
     ],
     "@reverse": {
@@ -23944,7 +24148,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-16T10:05:09+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -24079,6 +24283,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q113584826",
         "o:label": "Q113584826"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000027"
       }
     ],
     "@reverse": {
@@ -24172,7 +24383,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-16T10:05:35+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -24307,6 +24518,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q113584804",
         "o:label": "Q113584804"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000028"
       }
     ],
     "@reverse": {
@@ -24416,7 +24634,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T10:13:33+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -24519,6 +24737,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q113864200",
         "o:label": "Q113864200"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000029"
       }
     ],
     "@reverse": {
@@ -24674,7 +24899,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T10:14:35+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -24828,6 +25053,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q113813222",
         "o:label": "Q113813222"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000030"
       }
     ],
     "@reverse": {
@@ -24923,7 +25155,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T15:33:24+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -25045,6 +25277,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q1810032",
         "o:label": "Q1810032"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000031"
       }
     ],
     "@reverse": {
@@ -28976,7 +29215,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T09:54:55+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -29082,6 +29321,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q21129743",
         "o:label": "Q21129743"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000032"
       }
     ],
     "@reverse": {
@@ -31841,7 +32087,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T09:55:57+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -31947,6 +32193,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q117854439",
         "o:label": "Q117854439"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000033"
       }
     ],
     "@reverse": {
@@ -32049,7 +32302,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T12:55:05+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -32133,6 +32386,15 @@
         "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
         "o:label": "In Copyright - Educational Use Permitted"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000034"
+      }
     ]
   },
   {
@@ -32168,7 +32430,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T12:56:11+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -32309,6 +32571,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000035"
+      }
     ]
   },
   {
@@ -32347,7 +32618,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T09:56:32+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -32453,6 +32724,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q117851281",
         "o:label": "Q117851281"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000036"
       }
     ],
     "@reverse": {
@@ -32532,7 +32810,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-16T10:05:25+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -32667,6 +32945,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q1880658",
         "o:label": "Q1880658"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000037"
       }
     ],
     "@reverse": {
@@ -34935,7 +35220,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-16T10:05:17+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -35083,6 +35368,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q113799970",
         "o:label": "Q113799970"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000038"
       }
     ],
     "@reverse": {
@@ -35319,7 +35611,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T13:03:53+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -35403,6 +35695,15 @@
         "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
         "o:label": "In Copyright - Educational Use Permitted"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000039"
+      }
     ]
   },
   {
@@ -35438,7 +35739,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-16T10:05:54+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -35546,6 +35847,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000040"
+      }
     ]
   },
   {
@@ -35584,7 +35894,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T09:49:35+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -35706,6 +36016,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q122839781",
         "o:label": "Q122839781"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000041"
       }
     ],
     "@reverse": {
@@ -35769,7 +36086,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T10:03:31+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -35883,6 +36200,15 @@
         "thumbnail_type": "image/jpeg"
       }
     ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000042"
+      }
+    ],
     "@reverse": {
       "dcterms:publisher": [
         {
@@ -35929,7 +36255,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T13:10:06+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -36013,6 +36339,15 @@
         "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
         "o:label": "In Copyright - Educational Use Permitted"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000043"
+      }
     ]
   },
   {
@@ -36048,7 +36383,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T13:11:20+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -36181,6 +36516,15 @@
         "thumbnail_title": "VincentFavier_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000044"
+      }
     ]
   },
   {
@@ -36219,7 +36563,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T10:02:22+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -36341,6 +36685,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q122839759",
         "o:label": "Q122839759"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000045"
       }
     ],
     "@reverse": {
@@ -36409,7 +36760,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T13:16:38+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -36531,6 +36882,15 @@
         "thumbnail_title": "VincentFavier_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000046"
+      }
     ]
   },
   {
@@ -36569,7 +36929,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T10:17:21+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -36701,6 +37061,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q116745414",
         "o:label": "Q116745414"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000047"
       }
     ],
     "@reverse": {
@@ -36771,7 +37138,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T13:20:28+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -36855,6 +37222,15 @@
         "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
         "o:label": "In Copyright - Educational Use Permitted"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000048"
+      }
     ]
   },
   {
@@ -36890,7 +37266,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-06-05T12:40:45+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -37020,6 +37396,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000049"
+      }
     ]
   },
   {
@@ -37058,7 +37443,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T14:44:47+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -37164,6 +37549,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q3211145",
         "o:label": "Q3211145"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000050"
       }
     ],
     "@reverse": {
@@ -37488,7 +37880,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-08-31T20:53:43+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -37656,6 +38048,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q115449268",
         "o:label": "Q115449268"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000051"
       }
     ],
     "@reverse": {
@@ -38413,7 +38812,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-07-03T12:17:11+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -38598,6 +38997,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q115236251",
         "o:label": "Q115236251"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000052"
       }
     ],
     "@reverse": {
@@ -42045,7 +42451,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-23T07:12:56+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -42151,6 +42557,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q107020904",
         "o:label": "Q107020904"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000053"
       }
     ],
     "@reverse": {
@@ -42960,7 +43373,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-23T16:20:21+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -43066,6 +43479,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q79644823",
         "o:label": "Q79644823"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000054"
       }
     ],
     "@reverse": {
@@ -43449,7 +43869,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T09:45:25+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -43555,6 +43975,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q124466726",
         "o:label": "Q124466726"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000055"
       }
     ],
     "@reverse": {
@@ -43766,7 +44193,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-04-09T13:31:21+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -43888,6 +44315,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q116877541",
         "o:label": "Q116877541"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000056"
       }
     ],
     "@reverse": {
@@ -44150,7 +44584,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-15T13:06:05+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -44256,6 +44690,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q124048781",
         "o:label": "Q124048781"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000057"
       }
     ],
     "@reverse": {
@@ -44307,7 +44748,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-16T11:20:53+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -44413,6 +44854,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q119886991",
         "o:label": "Q119886991"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000058"
       }
     ],
     "@reverse": {
@@ -44944,7 +45392,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-07-05T07:56:54+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -45023,6 +45471,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q3225314",
         "o:label": "Q3225314"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000059"
       }
     ],
     "@reverse": {
@@ -45070,7 +45525,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-04-18T16:30:24+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -45230,6 +45685,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q125400271",
         "o:label": "Q125400271"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000060"
       }
     ],
     "@reverse": {
@@ -47921,7 +48383,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-04-13T09:39:53+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -48027,6 +48489,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q3067072",
         "o:label": "Q3067072"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000061"
       }
     ],
     "@reverse": {
@@ -48531,7 +49000,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-04-18T06:27:48+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -48628,6 +49097,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000062"
+      }
     ]
   },
   {
@@ -48663,7 +49141,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-04-18T06:28:31+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -48771,6 +49249,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000063"
+      }
     ]
   },
   {
@@ -48809,7 +49296,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-08T05:42:29+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -48947,6 +49434,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q16525428",
         "o:label": "Q16525428"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000064"
       }
     ],
     "@reverse": {
@@ -50054,7 +50548,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-07-03T05:55:26+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -50182,6 +50676,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q125935340",
         "o:label": "Q125935340"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000065"
       }
     ],
     "@reverse": {
@@ -50412,7 +50913,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-05-31T11:08:05+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -50522,6 +51023,15 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000066"
+      }
     ]
   },
   {
@@ -50560,7 +51070,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-07-05T08:08:42+00:00",
+      "@value": "2024-09-05T14:17:39+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -50669,6 +51179,13 @@
         "is_public": true,
         "@id": "https://www.wikidata.org/wiki/Q3086698",
         "o:label": "Q3086698"
+      },
+      {
+        "type": "literal",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@value": "iwac-collection-0000067"
       }
     ],
     "@reverse": {
