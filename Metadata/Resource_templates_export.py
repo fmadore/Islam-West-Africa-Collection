@@ -5,6 +5,7 @@ import requests
 from tqdm import tqdm
 from dotenv import load_dotenv
 from dataclasses import dataclass
+import re
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -74,7 +75,21 @@ class JsonFileGenerator:
 
     def generate_json_file(self, template: dict):
         template_id = template.get('o:id', 'unknown')
-        filepath = os.path.join(self.output_dir, f"resource_template_{template_id}.json")
+        template_label = template.get('o:label', f'Unknown_{template_id}')
+        
+        # Clean the label to create a valid filename
+        clean_label = re.sub(r'[^\w\-_\. ]', '_', template_label)
+        clean_label = clean_label.replace(' ', '_')
+        
+        filename = f"{clean_label}.json"
+        filepath = os.path.join(self.output_dir, filename)
+        
+        # Handle filename conflicts
+        counter = 1
+        while os.path.exists(filepath):
+            filename = f"{clean_label}_{counter}.json"
+            filepath = os.path.join(self.output_dir, filename)
+            counter += 1
         
         with open(filepath, 'w', encoding='utf-8') as jsonfile:
             json.dump(template, jsonfile, ensure_ascii=False, indent=2)
