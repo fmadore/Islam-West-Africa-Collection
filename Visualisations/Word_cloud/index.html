@@ -6,6 +6,7 @@
     <title>Interactive Word Cloud</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         #wordcloud { width: 100%; height: 600px; }
@@ -20,7 +21,7 @@
             pointer-events: none;
             opacity: 0;
         }
-        #countrySelector, #wordCountSlider { margin: 20px 0; }
+        #countrySelector, #wordCountSlider, #saveButton { margin: 20px 0; }
         #controls { display: flex; justify-content: center; align-items: center; gap: 20px; }
     </style>
 </head>
@@ -37,6 +38,7 @@
             <input type="range" id="wordCountSlider" min="10" max="100" value="100">
             <label for="wordCountSlider">Number of words: <span id="wordCountValue">100</span></label>
         </div>
+        <button id="saveButton">Save as PNG</button>
     </div>
     <div id="wordcloud"></div>
     <div id="tooltip"></div>
@@ -132,6 +134,16 @@
             });
         }
 
+        // Function to save the word cloud as PNG
+        function saveAsPNG() {
+            html2canvas(document.querySelector("#wordcloud")).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'word_cloud.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+
         // Initial word cloud creation
         createWordCloud('combined', 100);
 
@@ -145,6 +157,9 @@
             document.getElementById('wordCountValue').textContent = this.value;
             createWordCloud(document.getElementById('countrySelector').value, parseInt(this.value));
         });
+
+        // Event listener for save button
+        document.getElementById('saveButton').addEventListener('click', saveAsPNG);
     </script>
 </body>
 </html>
