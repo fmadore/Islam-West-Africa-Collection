@@ -47,6 +47,11 @@
             return word.replace(/['']/, '').trim();
         }
 
+        // Function to normalize sizes to a range of 10 to 100
+        function normalizeSize(size, minSize, maxSize) {
+            return 10 + (size - minSize) * (90) / (maxSize - minSize);
+        }
+
         // Function to load JSON data and create the word cloud
         function createWordCloud(country, wordCount) {
             const jsonFile = country === 'combined' ? 'combined_word_frequencies.json' : `${country}_word_frequencies.json`;
@@ -54,10 +59,24 @@
             d3.json(jsonFile).then(function(data) {
                 let words;
                 if (country === 'combined') {
-                    // Flatten the combined data
-                    words = Object.values(data).flatMap(countryData => 
-                        countryData.map(word => ({...word, country: Object.keys(data).find(key => data[key] === countryData)}))
-                    );
+                    // Aggregate word frequencies across all countries
+                    const wordMap = new Map();
+                    Object.entries(data).forEach(([countryName, countryWords]) => {
+                        countryWords.forEach(word => {
+                            if (wordMap.has(word.text)) {
+                                const existingWord = wordMap.get(word.text);
+                                existingWord.size += word.size;
+                                existingWord.countries.push(countryName);
+                            } else {
+                                wordMap.set(word.text, {
+                                    text: word.text,
+                                    size: word.size,
+                                    countries: [countryName]
+                                });
+                            }
+                        });
+                    });
+                    words = Array.from(wordMap.values());
                 } else {
                     words = data;
                 }
@@ -66,9 +85,18 @@
                 words = words.map(w => ({...w, text: cleanWord(w.text)})).filter(w => w.text.length > 0);
 
                 // Limit the number of words based on the slider value
-                words = words.slice(0, wordCount);
+                words = words.sort((a, b) => b.size - a.size).slice(0, wordCount);
 
-                console.log("Words to be displayed:", words); // Add this line for debugging
+                // Normalize sizes
+                const minSize = Math.min(...words.map(w => w.size));
+                const maxSize = Math.max(...words.map(w => w.size));
+                words = words.map(w => ({
+                    ...w,
+                    originalSize: w.size,
+                    size: normalizeSize(w.size, minSize, maxSize)
+                }));
+
+                console.log("Words to be displayed:", words);
 
                 const width = 800;
                 const height = 600;
@@ -78,13 +106,13 @@
                     .words(words)
                     .padding(5)
                     .rotate(() => ~~(Math.random() * 2) * 90)
-                    .fontSize(d => Math.sqrt(d.size) * 2) // Adjust the scaling factor
+                    .fontSize(d => d.size)
                     .on("end", draw);
 
                 layout.start();
 
                 function draw(words) {
-                    console.log("Words after layout:", words); // Add this line for debugging
+                    console.log("Words after layout:", words);
 
                     d3.select("#wordcloud").select("svg").remove();
 
@@ -114,9 +142,9 @@
                             tooltip.transition()
                                 .duration(200)
                                 .style("opacity", .9);
-                            let tooltipText = `Word: ${d.text}<br>Frequency: ${d.size}`;
+                            let tooltipText = `Word: ${d.text}<br>Frequency: ${d.originalSize}`;
                             if (country === 'combined') {
-                                tooltipText += `<br>Country: ${d.country}`;
+                                tooltipText += `<br>Countries: ${d.countries.join(', ')}`;
                             }
                             tooltip.html(tooltipText)
                                 .style("left", (event.pageX) + "px")
