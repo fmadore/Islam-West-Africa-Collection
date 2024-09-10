@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Cloud</title>
+    <title>IWAC Word Cloud</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
@@ -22,12 +22,11 @@
             opacity: 0;
         }
         #countrySelector, #wordCountSlider, #saveButton { margin: 20px 0; }
-        #controls { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
-        #zoomSlider { margin: 20px 0; }
+        #controls { display: flex; justify-content: center; align-items: center; gap: 20px; }
     </style>
 </head>
 <body>
-    <h1>Word Cloud</h1>
+    <h1>IWAC Word Cloud</h1>
     <div id="controls">
         <select id="countrySelector">
             <option value="combined">All Countries</option>
@@ -38,10 +37,6 @@
         <div>
             <input type="range" id="wordCountSlider" min="10" max="100" value="100">
             <label for="wordCountSlider">Number of words: <span id="wordCountValue">100</span></label>
-        </div>
-        <div>
-            <input type="range" id="zoomSlider" min="0.5" max="2" step="0.1" value="1">
-            <label for="zoomSlider">Zoom: <span id="zoomValue">1x</span></label>
         </div>
         <button id="saveButton">Save as PNG</button>
     </div>
@@ -54,7 +49,7 @@
         }
 
         // Function to load JSON data and create the word cloud
-        function createWordCloud(country, wordCount, zoom) {
+        function createWordCloud(country, wordCount) {
             const jsonFile = country === 'combined' ? 'combined_word_frequencies.json' : `${country}_word_frequencies.json`;
             
             d3.json(jsonFile).then(function(data) {
@@ -97,7 +92,7 @@
                     const tooltip = d3.select("#tooltip");
 
                     const wordGroup = svg.append("g")
-                        .attr("transform", `translate(${layout.size()[0] / 2},${layout.size()[1] / 2}) scale(${zoom})`)
+                        .attr("transform", `translate(${layout.size()[0] / 2},${layout.size()[1] / 2})`)
                         .selectAll("text")
                         .data(words)
                         .enter().append("text")
@@ -150,29 +145,17 @@
         }
 
         // Initial word cloud creation
-        createWordCloud('combined', 100, 1);
+        createWordCloud('combined', 100);
 
         // Event listener for country selection
         document.getElementById('countrySelector').addEventListener('change', function() {
-            createWordCloud(this.value, 
-                            parseInt(document.getElementById('wordCountSlider').value),
-                            parseFloat(document.getElementById('zoomSlider').value));
+            createWordCloud(this.value, parseInt(document.getElementById('wordCountSlider').value));
         });
 
         // Event listener for word count slider
         document.getElementById('wordCountSlider').addEventListener('input', function() {
             document.getElementById('wordCountValue').textContent = this.value;
-            createWordCloud(document.getElementById('countrySelector').value, 
-                            parseInt(this.value),
-                            parseFloat(document.getElementById('zoomSlider').value));
-        });
-
-        // Event listener for zoom slider
-        document.getElementById('zoomSlider').addEventListener('input', function() {
-            document.getElementById('zoomValue').textContent = this.value + 'x';
-            createWordCloud(document.getElementById('countrySelector').value, 
-                            parseInt(document.getElementById('wordCountSlider').value),
-                            parseFloat(this.value));
+            createWordCloud(document.getElementById('countrySelector').value, parseInt(this.value));
         });
 
         // Event listener for save button
