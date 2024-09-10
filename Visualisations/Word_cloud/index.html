@@ -78,7 +78,7 @@
                     .words(words)
                     .padding(5)
                     .rotate(() => ~~(Math.random() * 2) * 90)
-                    .fontSize(d => Math.sqrt(d.size)) // Adjust this line
+                    .fontSize(d => Math.sqrt(d.size) * 2) // Adjust the scaling factor
                     .on("end", draw);
 
                 layout.start();
