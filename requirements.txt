@@ -1,3 +1,7 @@
 folium
 geopandas
 pandas
+python-dotenv
+requests
+tqdm
+nltk
