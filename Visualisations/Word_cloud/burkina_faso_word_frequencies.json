@@ -1,402 +1,402 @@
 [
   {
     "text": "musulman",
-    "size": 653
+    "size": 12306
   },
   {
     "text": "burkina",
-    "size": 595
-  },
-  {
-    "text": "faso",
-    "size": 372
-  },
-  {
-    "text": "prière",
-    "size": 285
-  },
-  {
-    "text": "national",
-    "size": 258
-  },
-  {
-    "text": "ramadan",
-    "size": 257
-  },
-  {
-    "text": "président",
-    "size": 256
-  },
-  {
-    "text": "dieu",
-    "size": 255
-  },
-  {
-    "text": "religieux",
-    "size": 251
-  },
-  {
-    "text": "islamique",
-    "size": 247
-  },
-  {
-    "text": "communauté",
-    "size": 246
+    "size": 8338
   },
   {
     "text": "pays",
-    "size": 245
+    "size": 5183
   },
   {
-    "text": "burkinabè",
-    "size": 244
+    "text": "dieu",
+    "size": 5118
   },
   {
-    "text": "mosquée",
-    "size": 233
-  },
-  {
-    "text": "hadj",
-    "size": 230
-  },
-  {
-    "text": "jeûne",
-    "size": 229
-  },
-  {
-    "text": "jour",
-    "size": 216
+    "text": "faso",
+    "size": 4889
   },
   {
     "text": "islam",
-    "size": 215
+    "size": 4868
   },
   {
-    "text": "paix",
-    "size": 210
+    "text": "hadj",
+    "size": 4843
+  },
+  {
+    "text": "communauté",
+    "size": 4722
+  },
+  {
+    "text": "islamique",
+    "size": 4476
+  },
+  {
+    "text": "jour",
+    "size": 4425
+  },
+  {
+    "text": "prière",
+    "size": 4105
   },
   {
     "text": "grand",
-    "size": 199
+    "size": 4099
   },
   {
-    "text": "association",
-    "size": 198
+    "text": "président",
+    "size": 4062
   },
   {
-    "text": "bon",
-    "size": 189
-  },
-  {
-    "text": "imam",
-    "size": 188
+    "text": "paix",
+    "size": 3933
   },
   {
     "text": "mois",
-    "size": 183
+    "size": 3873
   },
   {
-    "text": "ministre",
-    "size": 182
+    "text": "religieux",
+    "size": 3660
   },
   {
-    "text": "bien",
-    "size": 180
-  },
-  {
-    "text": "homme",
-    "size": 180
-  },
-  {
-    "text": "prendre",
-    "size": 179
-  },
-  {
-    "text": "etat",
-    "size": 177
-  },
-  {
-    "text": "allah",
-    "size": 173
+    "text": "national",
+    "size": 3550
   },
   {
     "text": "fidèle",
-    "size": 172
+    "size": 3452
+  },
+  {
+    "text": "burkinabè",
+    "size": 3435
+  },
+  {
+    "text": "bien",
+    "size": 3382
   },
   {
     "text": "ouagadougou",
-    "size": 171
+    "size": 3304
   },
   {
-    "text": "année",
-    "size": 162
+    "text": "prendre",
+    "size": 3287
   },
   {
     "text": "venir",
-    "size": 159
+    "size": 3209
   },
   {
-    "text": "devoir",
-    "size": 156
+    "text": "mosquée",
+    "size": 3191
   },
   {
-    "text": "social",
-    "size": 152
+    "text": "jeûne",
+    "size": 3160
   },
   {
-    "text": "politique",
-    "size": 148
+    "text": "homme",
+    "size": 3128
   },
   {
-    "text": "enfant",
-    "size": 145
+    "text": "année",
+    "size": 3084
   },
   {
-    "text": "place",
-    "size": 143
+    "text": "bon",
+    "size": 2985
   },
   {
-    "text": "dernier",
-    "size": 141
+    "text": "imam",
+    "size": 2959
   },
   {
-    "text": "temps",
-    "size": 140
+    "text": "association",
+    "size": 2955
   },
   {
     "text": "femme",
-    "size": 136
-  },
-  {
-    "text": "vie",
-    "size": 136
-  },
-  {
-    "text": "vivre",
-    "size": 134
-  },
-  {
-    "text": "mettre",
-    "size": 132
-  },
-  {
-    "text": "sécurité",
-    "size": 131
-  },
-  {
-    "text": "ensemble",
-    "size": 130
-  },
-  {
-    "text": "donner",
-    "size": 130
-  },
-  {
-    "text": "famille",
-    "size": 129
-  },
-  {
-    "text": "lieu",
-    "size": 124
-  },
-  {
-    "text": "action",
-    "size": 122
-  },
-  {
-    "text": "terroriste",
-    "size": 122
-  },
-  {
-    "text": "2015",
-    "size": 121
-  },
-  {
-    "text": "religion",
-    "size": 117
-  },
-  {
-    "text": "foi",
-    "size": 116
-  },
-  {
-    "text": "population",
-    "size": 114
-  },
-  {
-    "text": "occasion",
-    "size": 113
-  },
-  {
-    "text": "groupe",
-    "size": 113
-  },
-  {
-    "text": "solidarité",
-    "size": 113
-  },
-  {
-    "text": "coran",
-    "size": 113
-  },
-  {
-    "text": "question",
-    "size": 111
-  },
-  {
-    "text": "faib",
-    "size": 111
-  },
-  {
-    "text": "fête",
-    "size": 110
-  },
-  {
-    "text": "non",
-    "size": 110
+    "size": 2877
   },
   {
     "text": "pèlerin",
-    "size": 109
-  },
-  {
-    "text": "situation",
-    "size": 107
-  },
-  {
-    "text": "membre",
-    "size": 107
-  },
-  {
-    "text": "force",
-    "size": 102
-  },
-  {
-    "text": "prophète",
-    "size": 102
-  },
-  {
-    "text": "attaque",
-    "size": 101
+    "size": 2877
   },
   {
     "text": "organisation",
-    "size": 99
+    "size": 2752
   },
   {
-    "text": "acte",
-    "size": 99
+    "text": "dernier",
+    "size": 2747
   },
   {
-    "text": "2016",
-    "size": 95
+    "text": "prophète",
+    "size": 2724
   },
   {
-    "text": "frère",
-    "size": 95
+    "text": "etat",
+    "size": 2708
   },
   {
-    "text": "gouvernement",
-    "size": 94
+    "text": "fête",
+    "size": 2693
   },
   {
-    "text": "fédération",
-    "size": 93
+    "text": "ministre",
+    "size": 2661
   },
   {
-    "text": "permettre",
-    "size": 92
+    "text": "religion",
+    "size": 2659
   },
   {
-    "text": "responsable",
-    "size": 92
+    "text": "ramadan",
+    "size": 2555
   },
   {
-    "text": "2020",
-    "size": 89
+    "text": "lieu",
+    "size": 2494
   },
   {
-    "text": "formation",
-    "size": 89
+    "text": "social",
+    "size": 2362
   },
   {
-    "text": "appeler",
-    "size": 88
-  },
-  {
-    "text": "ouédraogo",
-    "size": 88
-  },
-  {
-    "text": "passer",
-    "size": 87
-  },
-  {
-    "text": "cerfi",
-    "size": 87
-  },
-  {
-    "text": "charge",
-    "size": 85
+    "text": "coran",
+    "size": 2342
   },
   {
     "text": "monde",
-    "size": 85
+    "size": 2328
   },
   {
-    "text": "autorité",
-    "size": 84
+    "text": "devoir",
+    "size": 2292
   },
   {
-    "text": "ailleurs",
-    "size": 84
+    "text": "mettre",
+    "size": 2217
+  },
+  {
+    "text": "place",
+    "size": 2113
+  },
+  {
+    "text": "donner",
+    "size": 2102
+  },
+  {
+    "text": "allah",
+    "size": 2043
+  },
+  {
+    "text": "politique",
+    "size": 2017
+  },
+  {
+    "text": "vie",
+    "size": 1978
+  },
+  {
+    "text": "général",
+    "size": 1952
+  },
+  {
+    "text": "membre",
+    "size": 1926
+  },
+  {
+    "text": "nuit",
+    "size": 1910
+  },
+  {
+    "text": "permettre",
+    "size": 1877
+  },
+  {
+    "text": "question",
+    "size": 1835
+  },
+  {
+    "text": "enfant",
+    "size": 1833
+  },
+  {
+    "text": "ouédraogo",
+    "size": 1817
   },
   {
     "text": "an",
-    "size": 84
+    "size": 1809
   },
   {
-    "text": "compte",
-    "size": 84
+    "text": "autorité",
+    "size": 1805
   },
   {
-    "text": "nation",
-    "size": 83
+    "text": "population",
+    "size": 1798
   },
   {
-    "text": "trouver",
-    "size": 83
+    "text": "vivre",
+    "size": 1773
   },
   {
-    "text": "prier",
-    "size": 83
+    "text": "ensemble",
+    "size": 1757
   },
   {
-    "text": "zakat",
-    "size": 83
+    "text": "non",
+    "size": 1750
   },
   {
-    "text": "agir",
-    "size": 82
+    "text": "chef",
+    "size": 1731
+  },
+  {
+    "text": "pèlerinage",
+    "size": 1723
+  },
+  {
+    "text": "passer",
+    "size": 1709
+  },
+  {
+    "text": "temps",
+    "size": 1670
+  },
+  {
+    "text": "famille",
+    "size": 1652
+  },
+  {
+    "text": "sécurité",
+    "size": 1641
   },
   {
     "text": "jeune",
-    "size": 82
+    "size": 1586
+  },
+  {
+    "text": "occasion",
+    "size": 1549
+  },
+  {
+    "text": "action",
+    "size": 1547
+  },
+  {
+    "text": "acte",
+    "size": 1546
+  },
+  {
+    "text": "gouvernement",
+    "size": 1530
+  },
+  {
+    "text": "formation",
+    "size": 1523
+  },
+  {
+    "text": "développement",
+    "size": 1510
+  },
+  {
+    "text": "saint",
+    "size": 1497
   },
   {
     "text": "connaître",
-    "size": 81
+    "size": 1491
   },
   {
-    "text": "cadre",
-    "size": 79
+    "text": "responsable",
+    "size": 1478
   },
   {
-    "text": "projet",
-    "size": 79
+    "text": "fin",
+    "size": 1478
   },
   {
-    "text": "expliquer",
-    "size": 78
+    "text": "école",
+    "size": 1451
+  },
+  {
+    "text": "demander",
+    "size": 1447
+  },
+  {
+    "text": "mecque",
+    "size": 1437
+  },
+  {
+    "text": "beaucoup",
+    "size": 1429
+  },
+  {
+    "text": "société",
+    "size": 1428
+  },
+  {
+    "text": "situation",
+    "size": 1426
+  },
+  {
+    "text": "moment",
+    "size": 1424
+  },
+  {
+    "text": "trouver",
+    "size": 1405
+  },
+  {
+    "text": "chose",
+    "size": 1399
+  },
+  {
+    "text": "travers",
+    "size": 1399
+  },
+  {
+    "text": "problème",
+    "size": 1388
+  },
+  {
+    "text": "foi",
+    "size": 1386
+  },
+  {
+    "text": "heure",
+    "size": 1378
+  },
+  {
+    "text": "fois",
+    "size": 1375
+  },
+  {
+    "text": "travail",
+    "size": 1370
+  },
+  {
+    "text": "organiser",
+    "size": 1360
+  },
+  {
+    "text": "cours",
+    "size": 1325
+  },
+  {
+    "text": "activité",
+    "size": 1306
+  },
+  {
+    "text": "appeler",
+    "size": 1303
   }
 ]
