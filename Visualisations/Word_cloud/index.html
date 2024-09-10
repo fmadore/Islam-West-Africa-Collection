@@ -28,20 +28,50 @@
 <body>
     <div id="controls">
         <select id="countrySelector">
-            <option value="combined">All Countries</option>
+            <option value="combined" data-en="All Countries" data-fr="Tous les pays"></option>
             <option value="bénin">Bénin</option>
             <option value="burkina_faso">Burkina Faso</option>
             <option value="togo">Togo</option>
         </select>
         <div>
             <input type="range" id="wordCountSlider" min="10" max="100" value="100">
-            <label for="wordCountSlider">Number of words: <span id="wordCountValue">100</span></label>
+            <label for="wordCountSlider"><span id="wordCountLabel"></span>: <span id="wordCountValue">100</span></label>
         </div>
-        <button id="saveButton">Save as PNG</button>
+        <button id="saveButton"></button>
     </div>
     <div id="wordcloud"></div>
     <div id="tooltip"></div>
     <script>
+        // Language detection and translation
+        const userLang = navigator.language || navigator.userLanguage;
+        const isFrench = userLang.startsWith('fr');
+
+        const translations = {
+            en: {
+                allCountries: "All Countries",
+                numberOfWords: "Number of words",
+                saveAsPNG: "Save as PNG",
+                word: "Word",
+                frequency: "Frequency",
+                countries: "Countries"
+            },
+            fr: {
+                allCountries: "Tous les pays",
+                numberOfWords: "Nombre de mots",
+                saveAsPNG: "Enregistrer en PNG",
+                word: "Mot",
+                frequency: "Fréquence",
+                countries: "Pays"
+            }
+        };
+
+        const t = isFrench ? translations.fr : translations.en;
+
+        // Update UI elements with translations
+        document.querySelector('#countrySelector option[value="combined"]').textContent = t.allCountries;
+        document.getElementById('wordCountLabel').textContent = t.numberOfWords;
+        document.getElementById('saveButton').textContent = t.saveAsPNG;
+
         // Function to clean words (remove apostrophes and trim)
         function cleanWord(word) {
             return word.replace(/['']/, '').trim();
@@ -142,9 +172,9 @@
                             tooltip.transition()
                                 .duration(200)
                                 .style("opacity", .9);
-                            let tooltipText = `Word: ${d.text}<br>Frequency: ${d.originalSize}`;
+                            let tooltipText = `${t.word}: ${d.text}<br>${t.frequency}: ${d.originalSize}`;
                             if (country === 'combined') {
-                                tooltipText += `<br>Countries: ${d.countries.join(', ')}`;
+                                tooltipText += `<br>${t.countries}: ${d.countries.join(', ')}`;
                             }
                             tooltip.html(tooltipText)
                                 .style("left", (event.pageX) + "px")
