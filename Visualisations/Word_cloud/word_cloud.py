@@ -71,7 +71,13 @@ def preprocess_texts(texts):
         # Processing text with spaCy
         doc = nlp(text)
         tokens = [token.lemma_ for token in doc 
-                  if token.lemma_ not in french_stopwords and not token.is_punct and not token.is_space]
+                  if token.lemma_ not in french_stopwords 
+                  and not token.is_punct 
+                  and not token.is_space
+                  and len(token.lemma_) > 1  # Exclude single-character tokens
+                  and not token.lemma_.startswith("'")  # Exclude tokens starting with apostrophe
+                  and not token.lemma_ in ["n'", "s'", "d'", "l'", "c'", "j'", "m'", "t'", "qu'"]  # Exclude specific French contractions
+                  ]
 
         processed_texts.extend(tokens)
     return processed_texts
@@ -92,7 +98,7 @@ for country, sets in ITEM_SETS.items():
                 if value['type'] == 'literal':
                     country_texts.append(value['@value'])
     preprocessed_texts = preprocess_texts(country_texts)
-    all_word_frequencies[country] = get_word_frequencies(preprocessed_texts)
+    all_word_frequencies[country] = get_word_frequencies(preprocessed_texts, top_n=100)  # Limit to top 100 words
 
 # Generate JSON files for each country
 for country, word_freq in all_word_frequencies.items():
