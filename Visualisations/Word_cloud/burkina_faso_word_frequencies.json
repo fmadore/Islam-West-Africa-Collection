@@ -1,13 +1,5 @@
 [
   {
-    "text": "être",
-    "size": 4038
-  },
-  {
-    "text": "avoir",
-    "size": 3338
-  },
-  {
     "text": "tout",
     "size": 750
   },
@@ -16,24 +8,12 @@
     "size": 656
   },
   {
-    "text": "faire",
-    "size": 596
-  },
-  {
     "text": "burkina",
     "size": 595
   },
   {
-    "text": "pouvoir",
-    "size": 500
-  },
-  {
     "text": "plus",
     "size": 459
-  },
-  {
-    "text": "dire",
-    "size": 437
   },
   {
     "text": "faso",
@@ -164,10 +144,6 @@
     "size": 189
   },
   {
-    "text": "aller",
-    "size": 186
-  },
-  {
     "text": "celer",
     "size": 186
   },
@@ -216,10 +192,6 @@
     "size": 159
   },
   {
-    "text": "vouloir",
-    "size": 159
-  },
-  {
     "text": "social",
     "size": 152
   },
@@ -238,10 +210,6 @@
   {
     "text": "politique",
     "size": 148
-  },
-  {
-    "text": "falloir",
-    "size": 146
   },
   {
     "text": "où",
@@ -286,10 +254,6 @@
   {
     "text": "mettre",
     "size": 132
-  },
-  {
-    "text": "savoir",
-    "size": 131
   },
   {
     "text": "sécurité",
@@ -398,5 +362,41 @@
   {
     "text": "non",
     "size": 110
+  },
+  {
+    "text": "pèlerin",
+    "size": 109
+  },
+  {
+    "text": "situation",
+    "size": 107
+  },
+  {
+    "text": "membre",
+    "size": 107
+  },
+  {
+    "text": "quand",
+    "size": 107
+  },
+  {
+    "text": "tenir",
+    "size": 103
+  },
+  {
+    "text": "fait",
+    "size": 103
+  },
+  {
+    "text": "force",
+    "size": 102
+  },
+  {
+    "text": "prophète",
+    "size": 102
+  },
+  {
+    "text": "afin",
+    "size": 101
   }
 ]

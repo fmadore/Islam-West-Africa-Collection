@@ -19,7 +19,7 @@ load_dotenv(os.path.join(root_dir, '.env'))
 # NLTK and spaCy setup
 nltk.download('stopwords')
 french_stopwords = set(stopwords.words('french'))
-additional_stopwords = {'El', '000', '%'}
+additional_stopwords = {'El', '000', '%', "être", "avoir", "faire", "dire", "aller", "voir", "savoir", "pouvoir", "falloir", "vouloir"}
 french_stopwords.update(additional_stopwords)
 french_stopwords = set(word.lower() for word in french_stopwords)
 
@@ -100,10 +100,6 @@ for country, sets in ITEM_SETS.items():
                     country_texts.append(value['@value'])
     preprocessed_texts = preprocess_texts(country_texts)
     all_word_frequencies[country] = get_word_frequencies(preprocessed_texts, top_n=100)  # Limit to top 100 words
-
-# Update the french_stopwords
-additional_stopwords.update({"être", "avoir", "faire", "dire", "aller", "voir", "savoir", "pouvoir", "falloir", "vouloir"})
-french_stopwords.update(additional_stopwords)
 
 # Generate JSON files for each country
 for country, word_freq in all_word_frequencies.items():

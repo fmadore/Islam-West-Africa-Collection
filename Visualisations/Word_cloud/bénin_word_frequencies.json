@@ -4,14 +4,6 @@
     "size": 506
   },
   {
-    "text": "avoir",
-    "size": 467
-  },
-  {
-    "text": "être",
-    "size": 394
-  },
-  {
     "text": "d’",
     "size": 204
   },
@@ -22,10 +14,6 @@
   {
     "text": "musulman",
     "size": 90
-  },
-  {
-    "text": "faire",
-    "size": 77
   },
   {
     "text": "imam",
@@ -86,10 +74,6 @@
   {
     "text": "deux",
     "size": 41
-  },
-  {
-    "text": "pouvoir",
-    "size": 39
   },
   {
     "text": "islamique",
@@ -192,10 +176,6 @@
     "size": 27
   },
   {
-    "text": "aller",
-    "size": 27
-  },
-  {
     "text": "ministre",
     "size": 27
   },
@@ -274,10 +254,6 @@
   {
     "text": "-t",
     "size": 21
-  },
-  {
-    "text": "dire",
-    "size": 20
   },
   {
     "text": "comme",
@@ -397,6 +373,30 @@
   },
   {
     "text": "saoudite",
+    "size": 16
+  },
+  {
+    "text": "pays",
+    "size": 16
+  },
+  {
+    "text": "depuis",
+    "size": 16
+  },
+  {
+    "text": "homme",
+    "size": 16
+  },
+  {
+    "text": "république",
+    "size": 16
+  },
+  {
+    "text": "moment",
+    "size": 16
+  },
+  {
+    "text": "femme",
     "size": 16
   }
 ]
