@@ -68,6 +68,8 @@
                 // Limit the number of words based on the slider value
                 words = words.slice(0, wordCount);
 
+                console.log("Words to be displayed:", words); // Add this line for debugging
+
                 const width = 800;
                 const height = 600;
 
@@ -76,12 +78,14 @@
                     .words(words)
                     .padding(5)
                     .rotate(() => ~~(Math.random() * 2) * 90)
-                    .fontSize(d => Math.sqrt(d.size) * 5)
+                    .fontSize(d => Math.sqrt(d.size)) // Adjust this line
                     .on("end", draw);
 
                 layout.start();
 
                 function draw(words) {
+                    console.log("Words after layout:", words); // Add this line for debugging
+
                     d3.select("#wordcloud").select("svg").remove();
 
                     const svg = d3.select("#wordcloud").append("svg")
