@@ -24,7 +24,7 @@ french_stopwords.update(additional_stopwords)
 french_stopwords = set(word.lower() for word in french_stopwords)
 
 # Load French language model
-nlp = spacy.load('fr_core_news_sm')
+nlp = spacy.load('fr_core_news_lg')
 
 API_URL = os.getenv('OMEKA_BASE_URL')
 KEY_IDENTITY = os.getenv('OMEKA_KEY_IDENTITY')
