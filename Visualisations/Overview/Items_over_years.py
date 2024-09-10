@@ -100,7 +100,9 @@ def visualize_items_over_years(items_by_year_type, language='en'):
     fig.update_layout(barmode='stack', xaxis={'type': 'category', 'categoryorder': 'category ascending'})
     
     # Save the file in the same directory as the script
-    fig.write_html(label['filename'])
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(script_dir, label['filename'])
+    fig.write_html(output_path)
     fig.show()
 
 
