@@ -41,6 +41,11 @@
     <div id="wordcloud"></div>
     <div id="tooltip"></div>
     <script>
+        // Function to clean words (remove apostrophes and trim)
+        function cleanWord(word) {
+            return word.replace(/['']/, '').trim();
+        }
+
         // Function to load JSON data and create the word cloud
         function createWordCloud(country, wordCount) {
             const jsonFile = country === 'combined' ? 'combined_word_frequencies.json' : `${country}_word_frequencies.json`;
@@ -55,6 +60,9 @@
                 } else {
                     words = data;
                 }
+
+                // Clean words and remove empty ones
+                words = words.map(w => ({...w, text: cleanWord(w.text)})).filter(w => w.text.length > 0);
 
                 // Limit the number of words based on the slider value
                 words = words.slice(0, wordCount);
