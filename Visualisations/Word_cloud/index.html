@@ -20,22 +20,29 @@
             pointer-events: none;
             opacity: 0;
         }
-        #countrySelector { margin: 20px 0; }
+        #countrySelector, #wordCountSlider { margin: 20px 0; }
+        #controls { display: flex; justify-content: center; align-items: center; gap: 20px; }
     </style>
 </head>
 <body>
     <h1>Interactive Word Cloud</h1>
-    <select id="countrySelector">
-        <option value="combined">All Countries</option>
-        <option value="bénin">Bénin</option>
-        <option value="burkina_faso">Burkina Faso</option>
-        <option value="togo">Togo</option>
-    </select>
+    <div id="controls">
+        <select id="countrySelector">
+            <option value="combined">All Countries</option>
+            <option value="bénin">Bénin</option>
+            <option value="burkina_faso">Burkina Faso</option>
+            <option value="togo">Togo</option>
+        </select>
+        <div>
+            <input type="range" id="wordCountSlider" min="10" max="100" value="100">
+            <label for="wordCountSlider">Number of words: <span id="wordCountValue">100</span></label>
+        </div>
+    </div>
     <div id="wordcloud"></div>
     <div id="tooltip"></div>
     <script>
         // Function to load JSON data and create the word cloud
-        function createWordCloud(country) {
+        function createWordCloud(country, wordCount) {
             const jsonFile = country === 'combined' ? 'combined_word_frequencies.json' : `${country}_word_frequencies.json`;
             
             d3.json(jsonFile).then(function(data) {
@@ -48,6 +55,9 @@
                 } else {
                     words = data;
                 }
+
+                // Limit the number of words based on the slider value
+                words = words.slice(0, wordCount);
 
                 const width = 800;
                 const height = 600;
@@ -115,11 +125,17 @@
         }
 
         // Initial word cloud creation
-        createWordCloud('combined');
+        createWordCloud('combined', 100);
 
         // Event listener for country selection
         document.getElementById('countrySelector').addEventListener('change', function() {
-            createWordCloud(this.value);
+            createWordCloud(this.value, parseInt(document.getElementById('wordCountSlider').value));
+        });
+
+        // Event listener for word count slider
+        document.getElementById('wordCountSlider').addEventListener('input', function() {
+            document.getElementById('wordCountValue').textContent = this.value;
+            createWordCloud(document.getElementById('countrySelector').value, parseInt(this.value));
         });
     </script>
 </body>
