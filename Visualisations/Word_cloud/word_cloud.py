@@ -35,9 +35,9 @@ ITEM_SETS = {
     'Togo': [9458]
 }
 
-# Regular expressions for text cleanup
+# Update the regular expressions for text cleanup
 newline_re = re.compile(r'\n')
-apostrophe_re = re.compile(r"'")
+apostrophe_re = re.compile(r"['']")  # This will match both curly and straight apostrophes
 whitespace_re = re.compile(r'\s+')
 oe_re = re.compile(r'œ')
 
@@ -63,7 +63,7 @@ def preprocess_texts(texts):
     processed_texts = []
     for text in tqdm(texts, desc="Preprocessing texts"):
         text = newline_re.sub(' ', text)  # Replaces newlines with spaces
-        text = apostrophe_re.sub("'", text)  # Normalizes apostrophes
+        text = apostrophe_re.sub("'", text)  # Normalizes all apostrophes to straight ones
         text = whitespace_re.sub(" ", text)  # Collapses multiple spaces
         text = oe_re.sub("oe", text)  # Replaces special oe ligature with oe
         text = text.strip().lower()  # Convert to lower case and strip whitespace
@@ -76,7 +76,8 @@ def preprocess_texts(texts):
                   and not token.is_space
                   and len(token.lemma_) > 1  # Exclude single-character tokens
                   and not token.lemma_.startswith("'")  # Exclude tokens starting with apostrophe
-                  and not token.lemma_ in ["n'", "s'", "d'", "l'", "c'", "j'", "m'", "t'", "qu'"]  # Exclude specific French contractions
+                  and not token.lemma_.endswith("'")  # Exclude tokens ending with apostrophe
+                  and "'" not in token.lemma_  # Exclude tokens containing apostrophes
                   ]
 
         processed_texts.extend(tokens)
@@ -99,6 +100,10 @@ for country, sets in ITEM_SETS.items():
                     country_texts.append(value['@value'])
     preprocessed_texts = preprocess_texts(country_texts)
     all_word_frequencies[country] = get_word_frequencies(preprocessed_texts, top_n=100)  # Limit to top 100 words
+
+# Update the french_stopwords
+additional_stopwords.update({"être", "avoir", "faire", "dire", "aller", "voir", "savoir", "pouvoir", "falloir", "vouloir"})
+french_stopwords.update(additional_stopwords)
 
 # Generate JSON files for each country
 for country, word_freq in all_word_frequencies.items():
