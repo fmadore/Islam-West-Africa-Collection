@@ -1,43 +1,19 @@
 [
   {
-    "text": "tout",
-    "size": 750
-  },
-  {
     "text": "musulman",
-    "size": 656
+    "size": 653
   },
   {
     "text": "burkina",
     "size": 595
   },
   {
-    "text": "plus",
-    "size": 459
-  },
-  {
     "text": "faso",
     "size": 372
   },
   {
-    "text": "devoir",
-    "size": 360
-  },
-  {
-    "text": "autre",
-    "size": 338
-  },
-  {
-    "text": "comme",
-    "size": 329
-  },
-  {
     "text": "prière",
     "size": 285
-  },
-  {
-    "text": "celui",
-    "size": 264
   },
   {
     "text": "national",
@@ -60,10 +36,6 @@
     "size": 251
   },
   {
-    "text": "burkinabè",
-    "size": 247
-  },
-  {
     "text": "islamique",
     "size": 247
   },
@@ -76,7 +48,7 @@
     "size": 245
   },
   {
-    "text": "aussi",
+    "text": "burkinabè",
     "size": 244
   },
   {
@@ -92,10 +64,6 @@
     "size": 229
   },
   {
-    "text": "luire",
-    "size": 218
-  },
-  {
     "text": "jour",
     "size": 216
   },
@@ -108,10 +76,6 @@
     "size": 210
   },
   {
-    "text": "personne",
-    "size": 208
-  },
-  {
     "text": "grand",
     "size": 199
   },
@@ -120,36 +84,12 @@
     "size": 198
   },
   {
-    "text": "allah",
-    "size": 197
-  },
-  {
-    "text": "si",
-    "size": 196
-  },
-  {
-    "text": "-t",
-    "size": 193
-  },
-  {
-    "text": "selon",
-    "size": 193
-  },
-  {
     "text": "bon",
     "size": 189
   },
   {
     "text": "imam",
-    "size": 189
-  },
-  {
-    "text": "celer",
-    "size": 186
-  },
-  {
-    "text": "entrer",
-    "size": 185
+    "size": 188
   },
   {
     "text": "mois",
@@ -176,6 +116,10 @@
     "size": 177
   },
   {
+    "text": "allah",
+    "size": 173
+  },
+  {
     "text": "fidèle",
     "size": 172
   },
@@ -192,28 +136,16 @@
     "size": 159
   },
   {
+    "text": "devoir",
+    "size": 156
+  },
+  {
     "text": "social",
     "size": 152
   },
   {
-    "text": "certain",
-    "size": 149
-  },
-  {
-    "text": "donc",
-    "size": 149
-  },
-  {
-    "text": "deux",
-    "size": 148
-  },
-  {
     "text": "politique",
     "size": 148
-  },
-  {
-    "text": "où",
-    "size": 145
   },
   {
     "text": "enfant",
@@ -229,10 +161,6 @@
   },
   {
     "text": "temps",
-    "size": 141
-  },
-  {
-    "text": "premier",
     "size": 140
   },
   {
@@ -246,10 +174,6 @@
   {
     "text": "vivre",
     "size": 134
-  },
-  {
-    "text": "ainsi",
-    "size": 132
   },
   {
     "text": "mettre",
@@ -272,24 +196,8 @@
     "size": 129
   },
   {
-    "text": "car",
-    "size": 128
-  },
-  {
-    "text": "sans",
-    "size": 127
-  },
-  {
-    "text": "après",
-    "size": 124
-  },
-  {
     "text": "lieu",
     "size": 124
-  },
-  {
-    "text": "également",
-    "size": 122
   },
   {
     "text": "action",
@@ -304,10 +212,6 @@
     "size": 121
   },
   {
-    "text": "sou",
-    "size": 118
-  },
-  {
     "text": "religion",
     "size": 117
   },
@@ -318,10 +222,6 @@
   {
     "text": "population",
     "size": 114
-  },
-  {
-    "text": "avant",
-    "size": 113
   },
   {
     "text": "occasion",
@@ -344,16 +244,8 @@
     "size": 111
   },
   {
-    "text": "contre",
-    "size": 111
-  },
-  {
     "text": "faib",
     "size": 111
-  },
-  {
-    "text": "permettre",
-    "size": 110
   },
   {
     "text": "fête",
@@ -376,18 +268,6 @@
     "size": 107
   },
   {
-    "text": "quand",
-    "size": 107
-  },
-  {
-    "text": "tenir",
-    "size": 103
-  },
-  {
-    "text": "fait",
-    "size": 103
-  },
-  {
     "text": "force",
     "size": 102
   },
@@ -396,7 +276,127 @@
     "size": 102
   },
   {
-    "text": "afin",
+    "text": "attaque",
     "size": 101
+  },
+  {
+    "text": "organisation",
+    "size": 99
+  },
+  {
+    "text": "acte",
+    "size": 99
+  },
+  {
+    "text": "2016",
+    "size": 95
+  },
+  {
+    "text": "frère",
+    "size": 95
+  },
+  {
+    "text": "gouvernement",
+    "size": 94
+  },
+  {
+    "text": "fédération",
+    "size": 93
+  },
+  {
+    "text": "permettre",
+    "size": 92
+  },
+  {
+    "text": "responsable",
+    "size": 92
+  },
+  {
+    "text": "2020",
+    "size": 89
+  },
+  {
+    "text": "formation",
+    "size": 89
+  },
+  {
+    "text": "appeler",
+    "size": 88
+  },
+  {
+    "text": "ouédraogo",
+    "size": 88
+  },
+  {
+    "text": "passer",
+    "size": 87
+  },
+  {
+    "text": "cerfi",
+    "size": 87
+  },
+  {
+    "text": "charge",
+    "size": 85
+  },
+  {
+    "text": "monde",
+    "size": 85
+  },
+  {
+    "text": "autorité",
+    "size": 84
+  },
+  {
+    "text": "ailleurs",
+    "size": 84
+  },
+  {
+    "text": "an",
+    "size": 84
+  },
+  {
+    "text": "compte",
+    "size": 84
+  },
+  {
+    "text": "nation",
+    "size": 83
+  },
+  {
+    "text": "trouver",
+    "size": 83
+  },
+  {
+    "text": "prier",
+    "size": 83
+  },
+  {
+    "text": "zakat",
+    "size": 83
+  },
+  {
+    "text": "agir",
+    "size": 82
+  },
+  {
+    "text": "jeune",
+    "size": 82
+  },
+  {
+    "text": "connaître",
+    "size": 81
+  },
+  {
+    "text": "cadre",
+    "size": 79
+  },
+  {
+    "text": "projet",
+    "size": 79
+  },
+  {
+    "text": "expliquer",
+    "size": 78
   }
 ]

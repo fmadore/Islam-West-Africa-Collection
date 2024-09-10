@@ -16,16 +16,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.dirname(os.path.dirname(script_dir))
 load_dotenv(os.path.join(root_dir, '.env'))
 
-# NLTK and spaCy setup
-nltk.download('stopwords')
-french_stopwords = set(stopwords.words('french'))
-additional_stopwords = {'El', '000', '%', "être", "avoir", "faire", "dire", "aller", "voir", "savoir", "pouvoir", "falloir", "vouloir"}
-french_stopwords.update(additional_stopwords)
-french_stopwords = set(word.lower() for word in french_stopwords)
-
-# Load French language model
-nlp = spacy.load('fr_core_news_lg')
-
+# Add these lines back
 API_URL = os.getenv('OMEKA_BASE_URL')
 KEY_IDENTITY = os.getenv('OMEKA_KEY_IDENTITY')
 KEY_CREDENTIAL = os.getenv('OMEKA_KEY_CREDENTIAL')
@@ -34,6 +25,25 @@ ITEM_SETS = {
     'Burkina Faso': [2199],
     'Togo': [9458]
 }
+
+# NLTK and spaCy setup
+nltk.download('stopwords')
+french_stopwords = set(stopwords.words('french'))
+additional_stopwords = {'El', '000', '%', "être", "avoir", "faire", "dire", "aller", "voir", "savoir", "pouvoir", "falloir", "vouloir"}
+french_stopwords.update(additional_stopwords)
+
+# Load French language model
+nlp = spacy.load('fr_core_news_lg')
+
+# Get spaCy's French stopwords
+spacy_french_stopwords = nlp.Defaults.stop_words
+french_stopwords.update(spacy_french_stopwords)
+
+french_stopwords = set(word.lower() for word in french_stopwords)
+
+# Add common contractions
+contractions = {"d'", "l'", "n'", "qu'", "j'", "t'", "s'", "m'"}
+french_stopwords.update(contractions)
 
 # Update the regular expressions for text cleanup
 newline_re = re.compile(r'\n')
@@ -62,23 +72,36 @@ def preprocess_texts(texts):
     """Preprocess and clean texts for further processing."""
     processed_texts = []
     for text in tqdm(texts, desc="Preprocessing texts"):
-        text = newline_re.sub(' ', text)  # Replaces newlines with spaces
-        text = apostrophe_re.sub("'", text)  # Normalizes all apostrophes to straight ones
-        text = whitespace_re.sub(" ", text)  # Collapses multiple spaces
-        text = oe_re.sub("oe", text)  # Replaces special oe ligature with oe
-        text = text.strip().lower()  # Convert to lower case and strip whitespace
+        # Basic text cleaning
+        text = newline_re.sub(' ', text)
+        text = apostrophe_re.sub("'", text)
+        text = whitespace_re.sub(" ", text)
+        text = oe_re.sub("oe", text)
+        text = text.strip().lower()
 
         # Processing text with spaCy
         doc = nlp(text)
-        tokens = [token.lemma_ for token in doc 
-                  if token.lemma_ not in french_stopwords 
-                  and not token.is_punct 
-                  and not token.is_space
-                  and len(token.lemma_) > 1  # Exclude single-character tokens
-                  and not token.lemma_.startswith("'")  # Exclude tokens starting with apostrophe
-                  and not token.lemma_.endswith("'")  # Exclude tokens ending with apostrophe
-                  and "'" not in token.lemma_  # Exclude tokens containing apostrophes
-                  ]
+        tokens = []
+        for token in doc:
+            if (token.lemma_.lower() not in french_stopwords 
+                and not token.is_punct 
+                and not token.is_space
+                and len(token.lemma_) > 1
+                and not token.is_stop
+                and token.pos_ not in ['ADP', 'DET', 'PRON', 'AUX', 'SCONJ', 'CCONJ']):
+                
+                # Handle contractions
+                if token.text.lower() in contractions:
+                    continue
+                
+                lemma = token.lemma_.lower()
+                
+                # Additional checks
+                if (lemma not in french_stopwords 
+                    and "'" not in lemma 
+                    and not lemma.startswith("'") 
+                    and not lemma.endswith("'")):
+                    tokens.append(lemma)
 
         processed_texts.extend(tokens)
     return processed_texts

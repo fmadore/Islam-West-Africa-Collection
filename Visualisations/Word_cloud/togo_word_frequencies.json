@@ -1,31 +1,11 @@
 [
   {
-    "text": "l’",
-    "size": 19
-  },
-  {
-    "text": "tout",
-    "size": 12
-  },
-  {
-    "text": "d’",
-    "size": 10
-  },
-  {
     "text": "dieu",
     "size": 9
   },
   {
     "text": "pays",
     "size": 9
-  },
-  {
-    "text": "devoir",
-    "size": 9
-  },
-  {
-    "text": "n’",
-    "size": 7
   },
   {
     "text": "hadj",
@@ -40,10 +20,6 @@
     "size": 6
   },
   {
-    "text": "devant",
-    "size": 6
-  },
-  {
     "text": "union",
     "size": 5
   },
@@ -52,19 +28,7 @@
     "size": 5
   },
   {
-    "text": "permettre",
-    "size": 5
-  },
-  {
-    "text": "tenir",
-    "size": 5
-  },
-  {
-    "text": "s’",
-    "size": 5
-  },
-  {
-    "text": "qu’",
+    "text": "devoir",
     "size": 5
   },
   {
@@ -88,19 +52,7 @@
     "size": 4
   },
   {
-    "text": "nouveau",
-    "size": 4
-  },
-  {
     "text": "oui",
-    "size": 4
-  },
-  {
-    "text": "sans",
-    "size": 4
-  },
-  {
-    "text": "certain",
     "size": 4
   },
   {
@@ -108,7 +60,7 @@
     "size": 4
   },
   {
-    "text": "encore",
+    "text": "permettre",
     "size": 4
   },
   {
@@ -128,10 +80,6 @@
     "size": 3
   },
   {
-    "text": "entrer",
-    "size": 3
-  },
-  {
     "text": "paix",
     "size": 3
   },
@@ -144,23 +92,7 @@
     "size": 3
   },
   {
-    "text": "alors",
-    "size": 3
-  },
-  {
     "text": "population",
-    "size": 3
-  },
-  {
-    "text": "afin",
-    "size": 3
-  },
-  {
-    "text": "comment",
-    "size": 3
-  },
-  {
-    "text": "ni",
     "size": 3
   },
   {
@@ -173,10 +105,6 @@
   },
   {
     "text": "congrès",
-    "size": 3
-  },
-  {
-    "text": "comme",
     "size": 3
   },
   {
@@ -216,10 +144,6 @@
     "size": 2
   },
   {
-    "text": "divers",
-    "size": 2
-  },
-  {
     "text": "richesse",
     "size": 2
   },
@@ -237,10 +161,6 @@
   },
   {
     "text": "peuple",
-    "size": 2
-  },
-  {
-    "text": "différent",
     "size": 2
   },
   {
@@ -264,10 +184,6 @@
     "size": 2
   },
   {
-    "text": "avant",
-    "size": 2
-  },
-  {
     "text": "chose",
     "size": 2
   },
@@ -277,10 +193,6 @@
   },
   {
     "text": "valeur",
-    "size": 2
-  },
-  {
-    "text": "celui",
     "size": 2
   },
   {
@@ -328,18 +240,6 @@
     "size": 2
   },
   {
-    "text": "autre",
-    "size": 2
-  },
-  {
-    "text": "plus",
-    "size": 2
-  },
-  {
-    "text": "temps",
-    "size": 2
-  },
-  {
     "text": "tendre",
     "size": 2
   },
@@ -364,23 +264,11 @@
     "size": 2
   },
   {
-    "text": "selon",
-    "size": 2
-  },
-  {
     "text": "exister",
     "size": 2
   },
   {
-    "text": "suivant",
-    "size": 2
-  },
-  {
     "text": "diriger",
-    "size": 2
-  },
-  {
-    "text": "personne",
     "size": 2
   },
   {
@@ -398,5 +286,117 @@
   {
     "text": "12",
     "size": 2
+  },
+  {
+    "text": "grand",
+    "size": 2
+  },
+  {
+    "text": "lomé",
+    "size": 2
+  },
+  {
+    "text": "officiel",
+    "size": 2
+  },
+  {
+    "text": "bureau",
+    "size": 2
+  },
+  {
+    "text": "communauté",
+    "size": 2
+  },
+  {
+    "text": "impliquer",
+    "size": 2
+  },
+  {
+    "text": "gouvernement",
+    "size": 2
+  },
+  {
+    "text": "transition",
+    "size": 2
+  },
+  {
+    "text": "enrichir",
+    "size": 2
+  },
+  {
+    "text": "abdoulaye",
+    "size": 2
+  },
+  {
+    "text": "ousmane",
+    "size": 2
+  },
+  {
+    "text": "soumettre",
+    "size": 1
+  },
+  {
+    "text": "lecteur",
+    "size": 1
+  },
+  {
+    "text": "contenu",
+    "size": 1
+  },
+  {
+    "text": "sermon",
+    "size": 1
+  },
+  {
+    "text": "prononcer",
+    "size": 1
+  },
+  {
+    "text": "nassiki",
+    "size": 1
+  },
+  {
+    "text": "a.",
+    "size": 1
+  },
+  {
+    "text": "omorou",
+    "size": 1
+  },
+  {
+    "text": "président",
+    "size": 1
+  },
+  {
+    "text": "clement",
+    "size": 1
+  },
+  {
+    "text": "misericordieux",
+    "size": 1
+  },
+  {
+    "text": "soeur",
+    "size": 1
+  },
+  {
+    "text": "maison",
+    "size": 1
+  },
+  {
+    "text": "célébration",
+    "size": 1
+  },
+  {
+    "text": "31ème",
+    "size": 1
+  },
+  {
+    "text": "anniversaire",
+    "size": 1
+  },
+  {
+    "text": "accession",
+    "size": 1
   }
 ]

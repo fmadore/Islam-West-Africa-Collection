@@ -1,43 +1,19 @@
 [
   {
-    "text": "l’",
-    "size": 506
-  },
-  {
-    "text": "d’",
-    "size": 204
-  },
-  {
     "text": "bénin",
     "size": 101
   },
   {
     "text": "musulman",
-    "size": 90
+    "size": 89
   },
   {
     "text": "imam",
     "size": 69
   },
   {
-    "text": "qu’",
-    "size": 65
-  },
-  {
-    "text": "tout",
-    "size": 65
-  },
-  {
     "text": "président",
     "size": 62
-  },
-  {
-    "text": "n’",
-    "size": 61
-  },
-  {
-    "text": "plus",
-    "size": 60
   },
   {
     "text": "mosquée",
@@ -48,19 +24,7 @@
     "size": 47
   },
   {
-    "text": "s’",
-    "size": 47
-  },
-  {
-    "text": "c’",
-    "size": 45
-  },
-  {
     "text": "union",
-    "size": 44
-  },
-  {
-    "text": "selon",
     "size": 44
   },
   {
@@ -70,10 +34,6 @@
   {
     "text": "commune",
     "size": 43
-  },
-  {
-    "text": "deux",
-    "size": 41
   },
   {
     "text": "islamique",
@@ -112,10 +72,6 @@
     "size": 32
   },
   {
-    "text": "autre",
-    "size": 32
-  },
-  {
     "text": "ramadan",
     "size": 31
   },
@@ -126,10 +82,6 @@
   {
     "text": "organisation",
     "size": 31
-  },
-  {
-    "text": "premier",
-    "size": 30
   },
   {
     "text": "circonscription",
@@ -160,18 +112,6 @@
     "size": 28
   },
   {
-    "text": "devoir",
-    "size": 28
-  },
-  {
-    "text": "après",
-    "size": 28
-  },
-  {
-    "text": "entrer",
-    "size": 28
-  },
-  {
     "text": "religieux",
     "size": 27
   },
@@ -189,10 +129,6 @@
   },
   {
     "text": "gouvernement",
-    "size": 26
-  },
-  {
-    "text": "contre",
     "size": 26
   },
   {
@@ -216,10 +152,6 @@
     "size": 23
   },
   {
-    "text": "plusieurs",
-    "size": 23
-  },
-  {
     "text": "fruit",
     "size": 22
   },
@@ -240,28 +172,12 @@
     "size": 22
   },
   {
-    "text": "luire",
-    "size": 21
-  },
-  {
     "text": "construction",
     "size": 21
   },
   {
     "text": "mettre",
     "size": 21
-  },
-  {
-    "text": "-t",
-    "size": 21
-  },
-  {
-    "text": "comme",
-    "size": 20
-  },
-  {
-    "text": "aussi",
-    "size": 20
   },
   {
     "text": "communiqué",
@@ -296,14 +212,6 @@
     "size": 18
   },
   {
-    "text": "permettre",
-    "size": 18
-  },
-  {
-    "text": "trois",
-    "size": 18
-  },
-  {
     "text": "média",
     "size": 18
   },
@@ -324,15 +232,7 @@
     "size": 17
   },
   {
-    "text": "certain",
-    "size": 17
-  },
-  {
     "text": "jeûne",
-    "size": 17
-  },
-  {
-    "text": "si",
     "size": 17
   },
   {
@@ -380,10 +280,6 @@
     "size": 16
   },
   {
-    "text": "depuis",
-    "size": 16
-  },
-  {
     "text": "homme",
     "size": 16
   },
@@ -398,5 +294,109 @@
   {
     "text": "femme",
     "size": 16
+  },
+  {
+    "text": "dimanche",
+    "size": 15
+  },
+  {
+    "text": "dieu",
+    "size": 15
+  },
+  {
+    "text": "année",
+    "size": 15
+  },
+  {
+    "text": "fois",
+    "size": 15
+  },
+  {
+    "text": "infrastructure",
+    "size": 14
+  },
+  {
+    "text": "radio",
+    "size": 14
+  },
+  {
+    "text": "journée",
+    "size": 14
+  },
+  {
+    "text": "parakou",
+    "size": 14
+  },
+  {
+    "text": "grand",
+    "size": 14
+  },
+  {
+    "text": "permettre",
+    "size": 14
+  },
+  {
+    "text": "heure",
+    "size": 14
+  },
+  {
+    "text": "20",
+    "size": 14
+  },
+  {
+    "text": "cours",
+    "size": 14
+  },
+  {
+    "text": "rjp2",
+    "size": 14
+  },
+  {
+    "text": "scolaire",
+    "size": 14
+  },
+  {
+    "text": "salle",
+    "size": 14
+  },
+  {
+    "text": "banc",
+    "size": 14
+  },
+  {
+    "text": "fcfa",
+    "size": 14
+  },
+  {
+    "text": "chargé",
+    "size": 14
+  },
+  {
+    "text": "occasion",
+    "size": 13
+  },
+  {
+    "text": "décider",
+    "size": 13
+  },
+  {
+    "text": "politique",
+    "size": 13
+  },
+  {
+    "text": "suite",
+    "size": 13
+  },
+  {
+    "text": "27",
+    "size": 13
+  },
+  {
+    "text": "jour",
+    "size": 13
+  },
+  {
+    "text": "grâce",
+    "size": 13
   }
 ]
