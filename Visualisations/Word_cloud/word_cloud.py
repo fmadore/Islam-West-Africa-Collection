@@ -16,14 +16,13 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.dirname(os.path.dirname(script_dir))
 load_dotenv(os.path.join(root_dir, '.env'))
 
-# Add these lines back
 API_URL = os.getenv('OMEKA_BASE_URL')
 KEY_IDENTITY = os.getenv('OMEKA_KEY_IDENTITY')
 KEY_CREDENTIAL = os.getenv('OMEKA_KEY_CREDENTIAL')
 ITEM_SETS = {
-    'Bénin': [2185],
-    'Burkina Faso': [2199],
-    'Togo': [9458]
+    'Bénin': [2185, 2185, 5502, 2186, 2188, 2187, 2191, 2190, 2189, 4922, 5501, 5500],
+    'Burkina Faso': [2199, 2200, 23273, 5503, 2215, 2214, 2207, 2209, 2210, 2213, 2201],
+    'Togo': [25304, 9458, 5498, 5499]
 }
 
 # NLTK and spaCy setup
@@ -88,7 +87,9 @@ def preprocess_texts(texts):
                 and not token.is_space
                 and len(token.lemma_) > 1
                 and not token.is_stop
-                and token.pos_ not in ['ADP', 'DET', 'PRON', 'AUX', 'SCONJ', 'CCONJ']):
+                and token.pos_ not in ['ADP', 'DET', 'PRON', 'AUX', 'SCONJ', 'CCONJ']
+                and not token.is_digit  # Add this line to exclude numbers
+                and not token.like_num):  # Add this line to exclude number-like tokens
                 
                 # Handle contractions
                 if token.text.lower() in contractions:
@@ -100,7 +101,8 @@ def preprocess_texts(texts):
                 if (lemma not in french_stopwords 
                     and "'" not in lemma 
                     and not lemma.startswith("'") 
-                    and not lemma.endswith("'")):
+                    and not lemma.endswith("'")
+                    and not lemma.isdigit()):  # Add this line to exclude any remaining digit strings
                     tokens.append(lemma)
 
         processed_texts.extend(tokens)
