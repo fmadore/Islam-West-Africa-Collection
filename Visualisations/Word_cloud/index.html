@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Word Cloud</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #wordcloud { width: 100%; height: 600px; }
+        #tooltip {
+            position: absolute;
+            text-align: center;
+            padding: 5px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: 0;
+        }
+        #countrySelector { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Interactive Word Cloud</h1>
+    <select id="countrySelector">
+        <option value="combined">All Countries</option>
+        <option value="bénin">Bénin</option>
+        <option value="burkina_faso">Burkina Faso</option>
+        <option value="togo">Togo</option>
+    </select>
+    <div id="wordcloud"></div>
+    <div id="tooltip"></div>
+    <script>
+        // Function to load JSON data and create the word cloud
+        function createWordCloud(country) {
+            const jsonFile = country === 'combined' ? 'combined_word_frequencies.json' : `${country}_word_frequencies.json`;
+            
+            d3.json(jsonFile).then(function(data) {
+                let words;
+                if (country === 'combined') {
+                    // Flatten the combined data
+                    words = Object.values(data).flatMap(countryData => 
+                        countryData.map(word => ({...word, country: Object.keys(data).find(key => data[key] === countryData)}))
+                    );
+                } else {
+                    words = data;
+                }
+
+                const width = 800;
+                const height = 600;
+
+                const layout = d3.layout.cloud()
+                    .size([width, height])
+                    .words(words)
+                    .padding(5)
+                    .rotate(() => ~~(Math.random() * 2) * 90)
+                    .fontSize(d => Math.sqrt(d.size) * 5)
+                    .on("end", draw);
+
+                layout.start();
+
+                function draw(words) {
+                    d3.select("#wordcloud").select("svg").remove();
+
+                    const svg = d3.select("#wordcloud").append("svg")
+                        .attr("width", layout.size()[0])
+                        .attr("height", layout.size()[1]);
+
+                    const tooltip = d3.select("#tooltip");
+
+                    const wordGroup = svg.append("g")
+                        .attr("transform", `translate(${layout.size()[0] / 2},${layout.size()[1] / 2})`)
+                        .selectAll("text")
+                        .data(words)
+                        .enter().append("text")
+                        .style("font-size", d => `${d.size}px`)
+                        .style("fill", () => d3.schemeCategory10[~~(Math.random() * 10)])
+                        .attr("text-anchor", "middle")
+                        .attr("transform", d => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
+                        .text(d => d.text)
+                        .on("mouseover", function(event, d) {
+                            d3.select(this).transition()
+                                .duration(200)
+                                .style("font-size", `${d.size * 1.2}px`)
+                                .style("font-weight", "bold");
+
+                            tooltip.transition()
+                                .duration(200)
+                                .style("opacity", .9);
+                            let tooltipText = `Word: ${d.text}<br>Frequency: ${d.size}`;
+                            if (country === 'combined') {
+                                tooltipText += `<br>Country: ${d.country}`;
+                            }
+                            tooltip.html(tooltipText)
+                                .style("left", (event.pageX) + "px")
+                                .style("top", (event.pageY - 28) + "px");
+                        })
+                        .on("mouseout", function(d) {
+                            d3.select(this).transition()
+                                .duration(200)
+                                .style("font-size", `${d.size}px`)
+                                .style("font-weight", "normal");
+
+                            tooltip.transition()
+                                .duration(500)
+                                .style("opacity", 0);
+                        });
+                }
+            }).catch(function(error) {
+                console.log("Error loading the JSON file:", error);
+            });
+        }
+
+        // Initial word cloud creation
+        createWordCloud('combined');
+
+        // Event listener for country selection
+        document.getElementById('countrySelector').addEventListener('change', function() {
+            createWordCloud(this.value);
+        });
+    </script>
+</body>
+</html>
