@@ -24,20 +24,33 @@ acceptable_ids = {
     305: {"en": "Blog article", "fr": "Article de blog"}
 }
 
+# Add this constant for the reference resource classes
+REFERENCE_RESOURCE_CLASSES = [35, 43, 88, 40, 82, 178, 52, 77, 305]
+
+# Add a new constant for media resource classes
+MEDIA_RESOURCE_CLASSES = [36, 60]  # Press article and Islamic newspaper
+
+# Update the labels dictionary
 labels = {
     'en': {
-        'title': 'Distribution of items by type and country',
+        'title': 'Distribution of items by category, type, and country',
+        'category': 'Category',
         'type': 'Item type',
         'country': 'Country',
         'count': 'Number of items',
-        'filename': 'items_by_type_and_country_sunburst_en.html'
+        'filename': 'items_by_category_type_and_country_sunburst_en.html',
+        'references': 'References',
+        'media': 'Media'
     },
     'fr': {
-        'title': 'Répartition des éléments par type et pays',
+        'title': 'Répartition des éléments par catégorie, type et pays',
+        'category': 'Catégorie',
         'type': 'Type d\'élément',
         'country': 'Pays',
         'count': 'Nombre d\'éléments',
-        'filename': 'items_by_type_and_country_sunburst_fr.html'
+        'filename': 'items_by_category_type_and_country_sunburst_fr.html',
+        'references': 'Références',
+        'media': 'Médias'
     }
 }
 
@@ -78,13 +91,19 @@ def fetch_items():
     return items
 
 def categorize_items(items, country_dict, language):
-    items_by_type_and_country = defaultdict(lambda: defaultdict(int))
+    items_by_category_type_and_country = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
     for item in items:
         resource_class = item.get('o:resource_class', {})
         if isinstance(resource_class, dict):
             class_id = resource_class.get('o:id')
             if class_id in acceptable_ids:
                 item_type = acceptable_ids[class_id][language]
+                if class_id in REFERENCE_RESOURCE_CLASSES:
+                    category = labels[language]['references']
+                elif class_id in MEDIA_RESOURCE_CLASSES:
+                    category = labels[language]['media']
+                else:
+                    category = item_type
                 item_sets = item.get('o:item_set', [])
                 country = 'Unknown Country'
                 for item_set in item_sets:
@@ -92,22 +111,24 @@ def categorize_items(items, country_dict, language):
                     if item_set_id in country_dict:
                         country = country_dict[item_set_id]
                         break
-                items_by_type_and_country[item_type][country] += 1
-    return items_by_type_and_country
+                items_by_category_type_and_country[category][item_type][country] += 1
+    return items_by_category_type_and_country
 
-def create_sunburst_chart(items_by_type_and_country, language):
+def create_sunburst_chart(items_by_category_type_and_country, language):
     data = []
-    for item_type, countries in items_by_type_and_country.items():
-        for country, count in countries.items():
-            data.append({
-                labels[language]['type']: item_type,
-                labels[language]['country']: country,
-                labels[language]['count']: count
-            })
+    for category, types in items_by_category_type_and_country.items():
+        for item_type, countries in types.items():
+            for country, count in countries.items():
+                data.append({
+                    labels[language]['category']: category,
+                    labels[language]['type']: item_type,
+                    labels[language]['country']: country,
+                    labels[language]['count']: count
+                })
 
     fig = px.sunburst(
         data,
-        path=[labels[language]['type'], labels[language]['country']],
+        path=[labels[language]['category'], labels[language]['type'], labels[language]['country']],
         values=labels[language]['count'],
         title=labels[language]['title']
     )
@@ -126,5 +147,5 @@ items = fetch_items()
 
 # Create visualizations for both languages
 for lang in ['en', 'fr']:
-    items_by_type_and_country = categorize_items(items, country_dict, lang)
-    create_sunburst_chart(items_by_type_and_country, lang)
+    items_by_category_type_and_country = categorize_items(items, country_dict, lang)
+    create_sunburst_chart(items_by_category_type_and_country, lang)
