@@ -137,8 +137,8 @@ def main():
         create_top_authors_chart(author_count, country, language='en')
         for author, count in author_count.items():
             all_author_count[author] += count
-    create_top_authors_chart(all_author_count, "All Countries", language='fr')
-    create_top_authors_chart(all_author_count, "All Countries", language='en')
+    create_top_authors_chart(all_author_count, "tous les pays", language='fr')
+    create_top_authors_chart(all_author_count, "all countries", language='en')
 
 if __name__ == "__main__":
     main()
