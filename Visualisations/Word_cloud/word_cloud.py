@@ -28,7 +28,7 @@ ITEM_SETS = {
 # NLTK and spaCy setup
 nltk.download('stopwords')
 french_stopwords = set(stopwords.words('french'))
-additional_stopwords = {'El', '000', '%', "être", "avoir", "faire", "dire", "aller", "voir", "savoir", "pouvoir", "falloir", "vouloir"}
+additional_stopwords = {'El', '000', '%', "être", "avoir", "faire", "dire", "aller", "voir", "savoir", "pouvoir", "falloir", "vouloir", "m."}
 french_stopwords.update(additional_stopwords)
 
 # Load French language model
