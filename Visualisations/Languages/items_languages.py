@@ -2,6 +2,7 @@ import requests
 import plotly.express as px
 from collections import defaultdict, Counter
 from tqdm import tqdm
+import os
 
 api_url = "https://iwac.frederickmadore.com/api"
 resource_classes = [35, 43, 88, 40, 82, 178, 52, 77, 305, 58, 49, 36, 60, 38]  # Resource class IDs
@@ -45,7 +46,11 @@ def create_pie_chart(language_labels, language_count, title, filename):
     values = list(language_count.values())
 
     fig = px.pie(names=labels, values=values, title=title)
-    fig.write_html(filename)  # Save the figure as an HTML file
+    
+    # Save the figure as an HTML file in the same directory as the script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, filename)
+    fig.write_html(file_path)  # Save the figure as an HTML file
     fig.show()
 
 # Fetch items and aggregate by language IDs
