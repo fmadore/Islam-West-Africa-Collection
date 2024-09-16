@@ -62,14 +62,42 @@
             const duration = 1000;
             const delay = 250;
 
-            const keyframes = data.flatMap((d, i) => {
+            // Create a set of all unique keywords
+            const allKeywords = new Set(data.flatMap(yearData => yearData.data.map(item => item.name)));
+
+            // Create a map to store cumulative values for each keyword
+            let cumulativeMap = new Map(Array.from(allKeywords).map(keyword => [keyword, 0]));
+
+            // Cumulate the values over years
+            const cumulativeData = data.map(yearData => {
+                const yearKeywords = new Set(yearData.data.map(item => item.name));
+                
+                const cumulativeYearData = {
+                    year: yearData.year,
+                    data: Array.from(allKeywords).map(keyword => {
+                        const yearValue = yearData.data.find(item => item.name === keyword)?.value || 0;
+                        const newValue = cumulativeMap.get(keyword) + yearValue;
+                        cumulativeMap.set(keyword, newValue);
+                        return {
+                            name: keyword,
+                            value: newValue
+                        };
+                    })
+                };
+                return cumulativeYearData;
+            });
+
+            const keyframes = cumulativeData.flatMap((d, i) => {
                 const interpolator = d3.interpolateArray(
-                    data[i].data,
-                    data[i + 1]?.data || data[i].data
+                    cumulativeData[i].data,
+                    cumulativeData[i + 1]?.data || cumulativeData[i].data
                 );
                 return d3.range(0, 1, 1 / 4).map(t => ({
                     year: d.year + t,
-                    data: interpolator(t).sort((a, b) => d3.descending(a.value, b.value)).slice(0, n)
+                    data: interpolator(t)
+                        .map(d => ({...d, value: Math.round(d.value)}))
+                        .sort((a, b) => d3.descending(a.value, b.value))
+                        .slice(0, n)
                 }));
             });
 
@@ -124,7 +152,7 @@
                     .transition(t)
                     .attr("x", d => xScale(d.value) - 5)
                     .attr("y", d => yScale(d.name) + yScale.bandwidth() / 2)
-                    .text(d => `${d.name} (${d.value.toLocaleString()})`);
+                    .text(d => `${d.name} (${d.value})`); // Remove toLocaleString() to avoid commas
 
                 labels.exit()
                     .transition(t)
