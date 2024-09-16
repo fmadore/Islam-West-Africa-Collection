@@ -87,12 +87,12 @@
 
             d3.json(`bar_chart_race_data_${country}.json`).then(jsonData => {
                 const data = jsonData.data;
-                const allSubjects = jsonData.top_10_subjects; // This is now all subjects that ever appeared in top 10
+                const allSubjects = jsonData.top_10_subjects;
 
                 titleText.text(`Top 10 Keyword Occurrences in ${country}`);
 
-                const duration = 250;
-                const delay = 30;
+                const duration = 1000;
+                const delay = 500;
 
                 const color = d3.scaleOrdinal(d3.schemeTableau10).domain(allSubjects);
 
@@ -147,8 +147,10 @@
                         .attr("y", d => yScale(d.name) + yScale.bandwidth() / 2)
                         .attr("dy", "0.35em")
                         .attr("text-anchor", "end")
+                        .attr("opacity", 0)
                         .text(d => `${d.name} (${d.value})`)
                         .transition(t)
+                        .attr("opacity", 1)
                         .attr("x", d => xScale(d.value) - 4);
 
                     labels
@@ -159,6 +161,7 @@
 
                     labels.exit()
                         .transition(t)
+                        .attr("opacity", 0)
                         .remove();
 
                     yearLabel.text(keyframe.year);
