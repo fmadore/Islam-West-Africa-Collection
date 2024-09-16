@@ -129,13 +129,13 @@
                     .attr("y", d => yScale(d.name))
                     .attr("height", yScale.bandwidth())
                     .attr("width", d => xScale(d.value))
-                    .attr("fill", d => colorScale(d.name));
+                    .attr("fill", d => colorScale(d.name));  // Use colorScale here
 
                 bars
                     .transition(t)
                     .attr("y", d => yScale(d.name))
                     .attr("width", d => xScale(d.value))
-                    .attr("fill", d => colorScale(d.name));
+                    .attr("fill", d => colorScale(d.name));  // And here
 
                 bars.exit()
                     .transition(t)
