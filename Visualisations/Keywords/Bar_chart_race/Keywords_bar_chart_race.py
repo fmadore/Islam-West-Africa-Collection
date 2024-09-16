@@ -58,28 +58,34 @@ def prepare_bar_chart_race_data(df, country):
     # Group by year and subject, count occurrences
     df_grouped = df.groupby([df['Date'].dt.year, 'Subject']).size().reset_index(name='Count')
     
-    # Pivot the data to create a wide format
-    df_wide = df_grouped.pivot(index='Date', columns='Subject', values='Count').fillna(0)
+    # Sort by year to ensure chronological order
+    df_grouped = df_grouped.sort_values('Date')
     
-    # Sort columns by total count
-    column_sums = df_wide.sum().sort_values(ascending=False)
-    df_wide = df_wide[column_sums.index]
-    
-    # Keep only top 10 subjects
-    df_wide = df_wide.iloc[:, :10]
+    # Calculate cumulative occurrences for each subject
+    cumulative_counts = df_grouped.groupby('Subject')['Count'].cumsum().rename('CumulativeCount')
+    df_grouped['CumulativeCount'] = cumulative_counts
     
     # Prepare data in the format needed for D3.js Bar Chart Race
     data = []
-    for year in df_wide.index:
-        year_data = df_wide.loc[year].reset_index()
+    all_subjects = set()
+    
+    for year, group in df_grouped.groupby('Date'):
+        year_data = group.set_index('Subject')[['CumulativeCount']].rename(columns={'CumulativeCount': 'value'})
+        year_data = year_data.reset_index()
         year_data.columns = ['name', 'value']
         year_data = year_data.sort_values('value', ascending=False)
+        
+        # Keep only top 10 for this year
+        year_data = year_data.head(10)
+        
+        all_subjects.update(year_data['name'])
+        
         data.append({
             'year': int(year),
             'data': year_data.to_dict('records')
         })
     
-    return data
+    return data, list(all_subjects)
 
 # Function to save data as JSON for D3.js
 def save_bar_chart_race_data(data, country, output_filename):
@@ -102,6 +108,12 @@ country_item_sets = {
 # Process and create Bar Chart Race data for each country
 for country, item_sets in country_item_sets.items():
     df = fetch_and_process_data(api_url, item_sets, country)
-    bar_chart_race_data = prepare_bar_chart_race_data(df, country)
-    save_bar_chart_race_data(bar_chart_race_data, country, "bar_chart_race_data")
+    bar_chart_race_data, top_10_subjects = prepare_bar_chart_race_data(df, country)
+    
+    # Save the data and top 10 subjects
+    output_data = {
+        'data': bar_chart_race_data,
+        'top_10_subjects': top_10_subjects
+    }
+    save_bar_chart_race_data(output_data, country, "bar_chart_race_data")
     tqdm.write(f"Bar Chart Race data has been created for {country}.")

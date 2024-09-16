@@ -85,47 +85,18 @@
         function loadData(country) {
             initializeChart(); // Reset chart for new country
 
-            d3.json(`bar_chart_race_data_${country}.json`).then(data => {
-                titleText.text(`Keyword Occurrences in ${country}`);
+            d3.json(`bar_chart_race_data_${country}.json`).then(jsonData => {
+                const data = jsonData.data;
+                const allSubjects = jsonData.top_10_subjects; // This is now all subjects that ever appeared in top 10
 
-                const n = 10;
+                titleText.text(`Top 10 Keyword Occurrences in ${country}`);
+
                 const duration = 250;
                 const delay = 30;
 
-                const allKeywords = new Set(data.flatMap(yearData => yearData.data.map(item => item.name)));
-                const color = d3.scaleOrdinal(d3.schemeTableau10).domain(allKeywords);
+                const color = d3.scaleOrdinal(d3.schemeTableau10).domain(allSubjects);
 
-                let cumulativeMap = new Map(Array.from(allKeywords).map(keyword => [keyword, 0]));
-
-                const cumulativeData = data.map(yearData => {
-                    const cumulativeYearData = {
-                        year: yearData.year,
-                        data: Array.from(allKeywords).map(keyword => {
-                            const yearValue = yearData.data.find(item => item.name === keyword)?.value || 0;
-                            const newValue = cumulativeMap.get(keyword) + yearValue;
-                            cumulativeMap.set(keyword, newValue);
-                            return {
-                                name: keyword,
-                                value: newValue
-                            };
-                        })
-                    };
-                    return cumulativeYearData;
-                });
-
-                const keyframes = cumulativeData.flatMap((d, i) => {
-                    const interpolator = d3.interpolateArray(
-                        cumulativeData[i].data,
-                        cumulativeData[i + 1]?.data || cumulativeData[i].data
-                    );
-                    return d3.range(0, 1, 1 / 4).map(t => ({
-                        year: d.year + t,
-                        data: interpolator(t)
-                            .map(d => ({...d, value: Math.round(d.value)}))
-                            .sort((a, b) => d3.descending(a.value, b.value))
-                            .slice(0, n)
-                    }));
-                });
+                const keyframes = data;
 
                 let frame = 0;
                 let isPlaying = false;
@@ -133,7 +104,7 @@
                 function updateChart() {
                     const keyframe = keyframes[frame];
 
-                    xScale.domain([0, keyframe.data[0].value]);
+                    xScale.domain([0, d3.max(keyframe.data, d => d.value)]);
                     yScale.domain(keyframe.data.map(d => d.name));
 
                     const t = d3.transition().duration(duration).ease(d3.easeLinear);
@@ -152,13 +123,13 @@
                         .attr("x", 0)
                         .attr("y", d => yScale(d.name))
                         .attr("height", yScale.bandwidth())
-                        .attr("width", d => xScale(d.value) - xScale(0))
+                        .attr("width", d => xScale(d.value))
                         .attr("fill", d => color(d.name));
 
                     bars
                         .transition(t)
                         .attr("y", d => yScale(d.name))
-                        .attr("width", d => xScale(d.value) - xScale(0))
+                        .attr("width", d => xScale(d.value))
                         .attr("fill", d => color(d.name));
 
                     bars.exit()
@@ -190,7 +161,7 @@
                         .transition(t)
                         .remove();
 
-                    yearLabel.text(Math.round(keyframe.year));
+                    yearLabel.text(keyframe.year);
 
                     frame = (frame + 1) % keyframes.length;
                     if (frame === 0 && isPlaying) {
