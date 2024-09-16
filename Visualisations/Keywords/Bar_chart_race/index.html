@@ -128,6 +128,7 @@
                 });
 
                 let frame = 0;
+                let isPlaying = false;
 
                 function updateChart() {
                     const keyframe = keyframes[frame];
@@ -192,19 +193,28 @@
                     yearLabel.text(Math.round(keyframe.year));
 
                     frame = (frame + 1) % keyframes.length;
-                    if (frame === 0) {
-                        timer.stop();
-                        d3.select("#play-button").text("Play");
+                    if (frame === 0 && isPlaying) {
+                        stopAnimation();
                     }
                 }
 
+                function startAnimation() {
+                    isPlaying = true;
+                    timer = d3.interval(updateChart, duration + delay);
+                    d3.select("#play-button").text("Pause");
+                }
+
+                function stopAnimation() {
+                    isPlaying = false;
+                    if (timer) timer.stop();
+                    d3.select("#play-button").text("Play");
+                }
+
                 d3.select("#play-button").on("click", function() {
-                    if (timer) {
-                        timer.stop();
-                        d3.select(this).text("Play");
+                    if (isPlaying) {
+                        stopAnimation();
                     } else {
-                        timer = d3.interval(updateChart, duration + delay);
-                        d3.select(this).text("Pause");
+                        startAnimation();
                     }
                 });
 
@@ -215,15 +225,25 @@
 
         d3.select("#country-select").on("change", function() {
             const country = this.value;
-            if (timer) {
-                timer.stop();
-                d3.select("#play-button").text("Play");
-            }
+            stopAnimation();
             loadData(country);
         });
 
         // Load initial data
         loadData("Bénin");
+
+        // Add these functions outside of loadData
+        function startAnimation() {
+            isPlaying = true;
+            timer = d3.interval(updateChart, duration + delay);
+            d3.select("#play-button").text("Pause");
+        }
+
+        function stopAnimation() {
+            isPlaying = false;
+            if (timer) timer.stop();
+            d3.select("#play-button").text("Play");
+        }
     </script>
 </body>
 </html>
