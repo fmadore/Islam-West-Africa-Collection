@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keyword Occurrences Bar Chart Race</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; }
         #chart { width: 960px; height: 500px; margin: 0 auto; }
@@ -13,7 +14,7 @@
         .axis { font-size: 12px; }
         .title { font-size: 18px; text-anchor: middle; }
         .year { font-size: 64px; text-anchor: end; }
-        .bar-label { fill: white; font-weight: bold; }
+        .bar-label { fill: black; font-weight: bold; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
     </style>
 </head>
 <body>
@@ -54,9 +55,6 @@
             .attr("x", innerWidth)
             .attr("y", innerHeight - 5);
 
-        // Add this color scale
-        const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-
         d3.json("bar_chart_race_data_Bénin.json").then(data => {
             const n = 10;
             const duration = 1000;
@@ -64,6 +62,11 @@
 
             // Create a set of all unique keywords
             const allKeywords = new Set(data.flatMap(yearData => yearData.data.map(item => item.name)));
+
+            // Create a color scale with a unique color for each keyword
+            const colorScale = d3.scaleOrdinal()
+                .domain(Array.from(allKeywords))
+                .range(d3.quantize(t => d3.interpolateRainbow(t * 0.8 + 0.1), allKeywords.size));
 
             // Create a map to store cumulative values for each keyword
             let cumulativeMap = new Map(Array.from(allKeywords).map(keyword => [keyword, 0]));
@@ -149,13 +152,13 @@
                     .attr("y", d => yScale(d.name) + yScale.bandwidth() / 2)
                     .attr("dy", "0.35em")
                     .attr("text-anchor", "end")
-                    .text(d => d.name);
+                    .text(d => `${d.name} (${d.value})`);
 
                 labels
                     .transition(t)
                     .attr("x", d => xScale(d.value) - 5)
                     .attr("y", d => yScale(d.name) + yScale.bandwidth() / 2)
-                    .text(d => `${d.name} (${d.value})`); // Remove toLocaleString() to avoid commas
+                    .text(d => `${d.name} (${d.value})`);
 
                 labels.exit()
                     .transition(t)
