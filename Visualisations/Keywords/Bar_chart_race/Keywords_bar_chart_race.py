@@ -62,27 +62,25 @@ def prepare_bar_chart_race_data(df, country):
     df_grouped = df_grouped.sort_values('Date')
     
     # Calculate cumulative occurrences for each subject
-    cumulative_counts = df_grouped.groupby('Subject').cumsum().rename(columns={'Count': 'CumulativeCount'})
-    df_grouped['CumulativeCount'] = cumulative_counts['CumulativeCount']
-    
-    # Prepare data in the format needed for D3.js Bar Chart Race
+    cumulative_counts = {}
     data = []
     all_subjects = set()
     
     for year, group in df_grouped.groupby('Date'):
-        year_data = group.set_index('Subject')[['CumulativeCount']].rename(columns={'CumulativeCount': 'value'})
-        year_data = year_data.reset_index()
-        year_data.columns = ['name', 'value']
-        year_data = year_data.sort_values('value', ascending=False)
+        for _, row in group.iterrows():
+            subject = row['Subject']
+            count = row['Count']
+            cumulative_counts[subject] = cumulative_counts.get(subject, 0) + count
         
-        # Keep only top 10 for this year
-        year_data = year_data.head(10)
+        year_data = [{'name': subject, 'value': count} for subject, count in cumulative_counts.items()]
+        year_data.sort(key=lambda x: x['value'], reverse=True)
+        top_10 = year_data[:10]
         
-        all_subjects.update(year_data['name'])
+        all_subjects.update(item['name'] for item in top_10)
         
         data.append({
             'year': int(year),
-            'data': year_data.to_dict('records')
+            'data': top_10
         })
     
     return data, list(all_subjects)
