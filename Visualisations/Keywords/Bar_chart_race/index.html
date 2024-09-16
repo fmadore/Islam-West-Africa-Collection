@@ -21,7 +21,7 @@
     <script>
         const width = 960;
         const height = 500;
-        const margin = { top: 50, right: 30, bottom: 30, left: 180 };
+        const margin = { top: 50, right: 30, bottom: 10, left: 180 };
         const innerWidth = width - margin.left - margin.right;
         const innerHeight = height - margin.top - margin.bottom;
 
@@ -42,9 +42,9 @@
         const xScale = d3.scaleLinear().range([0, innerWidth]);
         const yScale = d3.scaleBand().range([0, innerHeight]).padding(0.1);
 
+        // Move x-axis to the top
         const xAxis = g.append("g")
-            .attr("class", "axis")
-            .attr("transform", `translate(0,${innerHeight})`);
+            .attr("class", "axis x-axis");
 
         const yAxis = g.append("g")
             .attr("class", "axis");
@@ -110,7 +110,10 @@
 
                 const t = d3.transition().duration(duration).ease(d3.easeLinear);
 
-                xAxis.transition(t).call(d3.axisBottom(xScale).ticks(5));
+                // Update x-axis at the top
+                xAxis.transition(t)
+                    .call(d3.axisTop(xScale).ticks(5));
+
                 yAxis.transition(t).call(d3.axisLeft(yScale));
 
                 const bars = g.selectAll(".bar")
