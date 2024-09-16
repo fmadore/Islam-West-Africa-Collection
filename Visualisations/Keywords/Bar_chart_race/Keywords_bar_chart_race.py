@@ -62,8 +62,8 @@ def prepare_bar_chart_race_data(df, country):
     df_grouped = df_grouped.sort_values('Date')
     
     # Calculate cumulative occurrences for each subject
-    cumulative_counts = df_grouped.groupby('Subject')['Count'].cumsum().rename('CumulativeCount')
-    df_grouped['CumulativeCount'] = cumulative_counts
+    cumulative_counts = df_grouped.groupby('Subject').cumsum().rename(columns={'Count': 'CumulativeCount'})
+    df_grouped['CumulativeCount'] = cumulative_counts['CumulativeCount']
     
     # Prepare data in the format needed for D3.js Bar Chart Race
     data = []
