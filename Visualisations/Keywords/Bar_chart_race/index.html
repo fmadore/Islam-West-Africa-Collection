@@ -9,7 +9,6 @@
     <style>
         body { font-family: Arial, sans-serif; }
         #chart { width: 960px; height: 500px; margin: 0 auto; }
-        .bar { fill: steelblue; }
         .label { font-size: 12px; }
         .axis { font-size: 12px; }
         .title { font-size: 18px; text-anchor: middle; }
@@ -57,16 +56,14 @@
 
         d3.json("bar_chart_race_data_Bénin.json").then(data => {
             const n = 10;
-            const duration = 1000;
-            const delay = 250;
+            const duration = 250;
+            const delay = 30;
 
             // Create a set of all unique keywords
             const allKeywords = new Set(data.flatMap(yearData => yearData.data.map(item => item.name)));
 
             // Create a color scale with a unique color for each keyword
-            const colorScale = d3.scaleOrdinal()
-                .domain(Array.from(allKeywords))
-                .range(d3.quantize(t => d3.interpolateRainbow(t * 0.8 + 0.1), allKeywords.size));
+            const color = d3.scaleOrdinal(d3.schemeTableau10).domain(allKeywords);
 
             // Create a map to store cumulative values for each keyword
             let cumulativeMap = new Map(Array.from(allKeywords).map(keyword => [keyword, 0]));
@@ -108,7 +105,7 @@
             let timer = d3.interval(() => {
                 const keyframe = keyframes[frame];
 
-                xScale.domain([0, d3.max(keyframe.data, d => d.value)]);
+                xScale.domain([0, keyframe.data[0].value]);
                 yScale.domain(keyframe.data.map(d => d.name));
 
                 const t = d3.transition().duration(duration).ease(d3.easeLinear);
@@ -128,14 +125,14 @@
                     .attr("x", 0)
                     .attr("y", d => yScale(d.name))
                     .attr("height", yScale.bandwidth())
-                    .attr("width", d => xScale(d.value))
-                    .attr("fill", d => colorScale(d.name));  // Use colorScale here
+                    .attr("width", d => xScale(d.value) - xScale(0))
+                    .attr("fill", d => color(d.name));  // Use colorScale here
 
                 bars
                     .transition(t)
                     .attr("y", d => yScale(d.name))
-                    .attr("width", d => xScale(d.value))
-                    .attr("fill", d => colorScale(d.name));  // And here
+                    .attr("width", d => xScale(d.value) - xScale(0))
+                    .attr("fill", d => color(d.name));  // And here
 
                 bars.exit()
                     .transition(t)
@@ -148,21 +145,21 @@
                 labels.enter()
                     .append("text")
                     .attr("class", "bar-label")
-                    .attr("x", d => xScale(d.value) - 5)
+                    .attr("x", d => xScale(d.value) - 4)
                     .attr("y", d => yScale(d.name) + yScale.bandwidth() / 2)
                     .attr("dy", "0.35em")
                     .attr("text-anchor", "end")
-                    .text(d => `${d.name} (${d.value})`);
+                    .text(d => d.name)
+                    .transition(t)
+                    .attr("x", d => xScale(d.value) - 4);
 
                 labels
                     .transition(t)
-                    .attr("x", d => xScale(d.value) - 5)
                     .attr("y", d => yScale(d.name) + yScale.bandwidth() / 2)
-                    .text(d => `${d.name} (${d.value})`);
+                    .attr("x", d => xScale(d.value) - 4);
 
                 labels.exit()
                     .transition(t)
-                    .attr("x", d => xScale(0))
                     .remove();
 
                 yearLabel.text(Math.round(keyframe.year));
