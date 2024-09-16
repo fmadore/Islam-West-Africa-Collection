@@ -14,6 +14,11 @@
         .title { font-size: 18px; text-anchor: middle; }
         .year { font-size: 64px; text-anchor: end; }
         .bar-label { fill: black; font-weight: bold; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
+        .y-axis .domain,
+        .y-axis .tick line,
+        .y-axis .tick text {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -47,7 +52,7 @@
             .attr("class", "axis x-axis");
 
         const yAxis = g.append("g")
-            .attr("class", "axis");
+            .attr("class", "axis y-axis");
 
         const yearLabel = g.append("text")
             .attr("class", "year")
@@ -114,7 +119,8 @@
                 xAxis.transition(t)
                     .call(d3.axisTop(xScale).ticks(5));
 
-                yAxis.transition(t).call(d3.axisLeft(yScale));
+                // Update y-axis (now without text)
+                yAxis.transition(t).call(d3.axisLeft(yScale).tickSize(0));
 
                 const bars = g.selectAll(".bar")
                     .data(keyframe.data, d => d.name);
@@ -149,14 +155,15 @@
                     .attr("y", d => yScale(d.name) + yScale.bandwidth() / 2)
                     .attr("dy", "0.35em")
                     .attr("text-anchor", "end")
-                    .text(d => d.name)
+                    .text(d => `${d.name} (${d.value})`)
                     .transition(t)
                     .attr("x", d => xScale(d.value) - 4);
 
                 labels
                     .transition(t)
                     .attr("y", d => yScale(d.name) + yScale.bandwidth() / 2)
-                    .attr("x", d => xScale(d.value) - 4);
+                    .attr("x", d => xScale(d.value) - 4)
+                    .text(d => `${d.name} (${d.value})`);
 
                 labels.exit()
                     .transition(t)
