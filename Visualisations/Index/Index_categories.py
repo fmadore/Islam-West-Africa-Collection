@@ -4,7 +4,7 @@ from tqdm.asyncio import tqdm_asyncio
 import plotly.graph_objects as go
 from typing import List, Dict, Any
 
-API_URL = "https://iwac.frederickmadore.com/api"
+API_URL = "https://islam.zmo.de/api"
 ITEM_SET_IDS = [1, 2, 854, 268, 266]
 
 
