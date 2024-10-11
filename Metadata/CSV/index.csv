@@ -158,7 +158,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 15832,https://iwac.frederickmadore.com/s/afrique_ouest/item/15832,iwac-index-0000157,fabio:AuthorityFile,Notices d'autorité,,Établissement de santé,Établissement médical,,,,,,,,,,,,,,
 15833,https://iwac.frederickmadore.com/s/afrique_ouest/item/15833,iwac-index-0000158,fabio:AuthorityFile,Notices d'autorité,,Médersa,Madrasah,,,,,,,,,,,,,,
 15834,https://iwac.frederickmadore.com/s/afrique_ouest/item/15834,iwac-index-0000159,fabio:AuthorityFile,Notices d'autorité,,Organisation islamique,Islamic organisation,,,,,,,,Club des Amis de l'AJMCI|Association des Jeunes Musulmans de Côte d'Ivoire|Cellule Féminine de l'AMSCI|Comité National pour l'Organisation du Pèlerinage à la Mecque (CI)|Bureau Ivoirien du Hadj et de la Oumra|Fédération Ivoirienne Pour l'Organisation du Pèlerinage à la Mecque|COPRESS-AEEMB|Association des Élèves et Étudiants Musulmans au Burkina|Fondation Islamique Aboudou Assouma pour la Charité|Union Musulmane du Togo,,,,,,
-15835,https://iwac.frederickmadore.com/s/afrique_ouest/item/15835,iwac-index-0000160,fabio:AuthorityFile,Notices d'autorité,,Pays,,,,,,,,,Nigéria|Ghana,,,,,,
+15835,https://iwac.frederickmadore.com/s/afrique_ouest/item/15835,iwac-index-0000160,fabio:AuthorityFile,Notices d'autorité,,Pays,,,,,,,,,Nigéria|Ghana|Arabie saoudite,,,,,,
 15836,https://iwac.frederickmadore.com/s/afrique_ouest/item/15836,iwac-index-0000161,fabio:AuthorityFile,Notices d'autorité,,Organisation chrétienne,,,,,,,,,,,,,,,
 15837,https://iwac.frederickmadore.com/s/afrique_ouest/item/15837,iwac-index-0000162,fabio:AuthorityFile,Notices d'autorité,,Organisation non gouvernementale,ONG,,,,,,,,,,,,,,
 15838,https://iwac.frederickmadore.com/s/afrique_ouest/item/15838,iwac-index-0000163,fabio:AuthorityFile,Notices d'autorité,,Parti politique,,,,,,,,,,,,,,,
@@ -613,7 +613,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 274,https://iwac.frederickmadore.com/s/afrique_ouest/item/274,iwac-index-0000612,dcterms:Location,Emplacements,,Allada,,,,,,,,Bénin,,,,,,,"6.66547, 2.15138"
 275,https://iwac.frederickmadore.com/s/afrique_ouest/item/275,iwac-index-0000613,dcterms:Location,Emplacements,290,Allemagne,,,,,,,,Pays,,,,,,,"51.5, 10.5"
 276,https://iwac.frederickmadore.com/s/afrique_ouest/item/276,iwac-index-0000614,dcterms:Location,Emplacements,,Aplahoué,,,,,,,,Bénin,,,,,,,"6.93333, 1.68333"
-277,https://iwac.frederickmadore.com/s/afrique_ouest/item/277,iwac-index-0000615,dcterms:Location,Emplacements,291,Arabie saoudite,,,,,,,,Pays,Djeddah|Médine,,,,,,"25.0, 45.0"
+277,https://iwac.frederickmadore.com/s/afrique_ouest/item/277,iwac-index-0000615,dcterms:Location,Emplacements,291,Arabie saoudite,Arabie Séoudite,,,,,,,Pays,Djeddah|Médine,,,,,,"25.0, 45.0"
 278,https://iwac.frederickmadore.com/s/afrique_ouest/item/278,iwac-index-0000616,dcterms:Location,Emplacements,,Athiémé,,,,,,,,Bénin,,,,,,,"6.5808, 1.6696"
 279,https://iwac.frederickmadore.com/s/afrique_ouest/item/279,iwac-index-0000617,dcterms:Location,Emplacements,,Banfora,,,,,,,,Burkina Faso,,,,,,,"10.63333, -4.76667"
 280,https://iwac.frederickmadore.com/s/afrique_ouest/item/280,iwac-index-0000618,dcterms:Location,Emplacements,,Banikoara,,,,,,,,Bénin,,,,,,,"11.33966, 2.45915"
@@ -844,7 +844,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 543,https://iwac.frederickmadore.com/s/afrique_ouest/item/543,iwac-index-0000843,dcterms:Location,Emplacements,,Syrie,,,,,,,,Pays,,,,,,,"35.0, 38.0"
 544,https://iwac.frederickmadore.com/s/afrique_ouest/item/544,iwac-index-0000844,dcterms:Location,Emplacements,2229,Togo,,,,,,,,Pays,,,,,,,"8.66667, 1.08333"
 545,https://iwac.frederickmadore.com/s/afrique_ouest/item/545,iwac-index-0000845,dcterms:Location,Emplacements,,Turquie,,,,,,,,Pays,,,,,,,"39.0, 35.0"
-546,https://iwac.frederickmadore.com/s/afrique_ouest/item/546,iwac-index-0000846,dcterms:Location,Emplacements,2208,Burkina Faso,Haute-Volta,,,Pays d'Afrique de l'Ouest|Sovereign state in West Africa,,,,Pays,,,,,,,"12.5, -1.66667"
+546,https://iwac.frederickmadore.com/s/afrique_ouest/item/546,iwac-index-0000846,dcterms:Location,Emplacements,2208,Burkina Faso,Haute-Volta,,,Pays d'Afrique de l'Ouest|Sovereign state in West Africa,,,,Pays,Niangoloko|Garango|Bitou|Zorgho|Sebba|Réo|Ouargaye|Diébougou|Diapaga|Dano|Boussé,,,,,,"12.5, -1.66667"
 547,https://iwac.frederickmadore.com/s/afrique_ouest/item/547,iwac-index-0000847,dcterms:Location,Emplacements,,Cameroun,,,,,,,,Pays,,,,,,,"6.0, 12.5"
 548,https://iwac.frederickmadore.com/s/afrique_ouest/item/548,iwac-index-0000848,dcterms:Location,Emplacements,,Gabon,,,,,,,,Pays,,,,,,,"-1.0, 11.75"
 549,https://iwac.frederickmadore.com/s/afrique_ouest/item/549,iwac-index-0000849,dcterms:Location,Emplacements,,Inde,,,,,,,,Pays,,,,,,,"22.0, 79.0"
@@ -864,7 +864,10 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 563,https://iwac.frederickmadore.com/s/afrique_ouest/item/563,iwac-index-0000863,dcterms:Location,Emplacements,564,Bibliothèque d'État de Berlin,,,,,,,,Allemagne,,,,,,,"52.5064, 13.3703"
 13118,https://iwac.frederickmadore.com/s/afrique_ouest/item/13118,iwac-index-0000864,dcterms:Location,Emplacements,,Accra,,,,,,,,Ghana,,,,,,,"5.533333, -0.216667"
 14218,https://iwac.frederickmadore.com/s/afrique_ouest/item/14218,iwac-index-0000865,dcterms:Location,Emplacements,,Sèmè-Podji,Sèmè-Kpodji|Sémè-Podji,,,,,,,Bénin,,,,,,,"6.366667, 2.616667"
+14322,https://iwac.frederickmadore.com/s/afrique_ouest/item/14322,,dcterms:Location,Emplacements,,Titao,,,,,,,,Burkina Faso,,,,,,,"13.766735, -2.073643"
 14355,https://iwac.frederickmadore.com/s/afrique_ouest/item/14355,iwac-index-0000866,dcterms:Location,Emplacements,,Sokoto,,,,,,,,Nigéria,,,,,,,"13.062222, 5.233889"
+14379,https://iwac.frederickmadore.com/s/afrique_ouest/item/14379,,dcterms:Location,Emplacements,,Houndé,,,,,,,,Burkina Faso,,,,,,,"11.5, -3.516667"
+14385,https://iwac.frederickmadore.com/s/afrique_ouest/item/14385,,dcterms:Location,Emplacements,,Toma,,,,,,,,Burkina Faso,,,,,,,"12.766667, -2.883333"
 15482,https://iwac.frederickmadore.com/s/afrique_ouest/item/15482,iwac-index-0000867,dcterms:Location,Emplacements,,Kano,,,,,,,,Nigéria,,,,,,,"12, 8.516667"
 23465,https://iwac.frederickmadore.com/s/afrique_ouest/item/23465,iwac-index-0000868,dcterms:Location,Emplacements,,Korhogo,,,,Ville de Côte d'Ivoire|City in Côte d'Ivoire,,,,Côte d'Ivoire,,,,,,,"9.457778, -5.629444"
 23506,https://iwac.frederickmadore.com/s/afrique_ouest/item/23506,iwac-index-0000869,dcterms:Location,Emplacements,,Université Islamique Al-Fourqane,UIFCI,,,,,,,Université|Côte d'Ivoire,,,,,,,"5.318399197445977, -4.112374498969468"
@@ -884,6 +887,17 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 25155,https://iwac.frederickmadore.com/s/afrique_ouest/item/25155,iwac-index-0000883,dcterms:Location,Emplacements,,Russie,,,,,,,,Pays,,,,,,,"66.416667, 94.25"
 25602,https://iwac.frederickmadore.com/s/afrique_ouest/item/25602,iwac-index-0000884,dcterms:Location,Emplacements,,Gambie,Gambia,,,,,,,,,,,,,,"13.5, -15.5"
 31354,https://iwac.frederickmadore.com/s/afrique_ouest/item/31354,iwac-index-0000885,dcterms:Location,Emplacements,,Grande mosquée du port de Lomé,,,,,,,,Togo|Mosquée,,,,,,,
+33155,https://iwac.frederickmadore.com/s/afrique_ouest/item/33155,,dcterms:Location,Emplacements,,Boussé,,,,,,,,Burkina Faso,,,,,,,"12.666666666667, -1.8975"
+33156,https://iwac.frederickmadore.com/s/afrique_ouest/item/33156,,dcterms:Location,Emplacements,,Dano,,,,,,,,Burkina Faso,,,,,,,"11.1438, -3.06196"
+33157,https://iwac.frederickmadore.com/s/afrique_ouest/item/33157,,dcterms:Location,Emplacements,,Diapaga,,,,,,,,Burkina Faso,,,,,,,"12.06666667, 1.78333333"
+33158,https://iwac.frederickmadore.com/s/afrique_ouest/item/33158,,dcterms:Location,Emplacements,,Diébougou,,,,,,,,Burkina Faso,,,,,,,"10.966666666667, -3.25"
+33159,https://iwac.frederickmadore.com/s/afrique_ouest/item/33159,,dcterms:Location,Emplacements,,Ouargaye,,,,,,,,Burkina Faso,,,,,,,"11.50333333, 0.05722222"
+33160,https://iwac.frederickmadore.com/s/afrique_ouest/item/33160,,dcterms:Location,Emplacements,,Réo,,,,,,,,Burkina Faso,,,,,,,"12.316666666667, -2.4666666666667"
+33161,https://iwac.frederickmadore.com/s/afrique_ouest/item/33161,,dcterms:Location,Emplacements,,Sebba,,,,,,,,Burkina Faso,,,,,,,"13.43916667, 0.52888889"
+33162,https://iwac.frederickmadore.com/s/afrique_ouest/item/33162,,dcterms:Location,Emplacements,,Zorgho,,,,,,,,Burkina Faso,,,,,,,"12.25, -0.61666666666667"
+33163,https://iwac.frederickmadore.com/s/afrique_ouest/item/33163,,dcterms:Location,Emplacements,,Bitou,Bittou,,,,,,,Burkina Faso,,,,,,,"11.25, -0.3"
+33164,https://iwac.frederickmadore.com/s/afrique_ouest/item/33164,,dcterms:Location,Emplacements,,Garango,,,,,,,,Burkina Faso,,,,,,,"11.804722222222, -0.54888888888889"
+33165,https://iwac.frederickmadore.com/s/afrique_ouest/item/33165,,dcterms:Location,Emplacements,,Niangoloko,,,,,,,,Burkina Faso,,,,,,,"10.283333333333, -4.9166666666667"
 569,https://iwac.frederickmadore.com/s/afrique_ouest/item/569,iwac-index-0000886,foaf:Organization,Associations,589,Association des Élèves et Étudiants Musulmans au Burkina,AEEMB,1986-01-21,,"Officiellement reconnue en 1986, l'AEEMB vise la promotion de l'islam dans le milieu éducatif francophone. L'association a été active de manière informelle sous d’autres noms à partir des années 1970 : Union Discipline Croyance, Troupe Muhammad et Association Musulmane des Scolaires Voltaïques.|Officially recognized in 1986, the AEEMB aims to promote Islam in the francophone educational community. The association has been informally active under other names since the 1970s: Union Discipline Croyance (Discipline Belief Union), Troupe Muhammad (Muhammad Troop).",Maternité Sakina,,,Fédération des Associations Islamiques du Burkina|Organisation de la Jeunesse Musulmane en Afrique de l'Ouest|Organisation islamique,COPRESS-AEEMB,Burkina Faso,,,,,
 570,https://iwac.frederickmadore.com/s/afrique_ouest/item/570,iwac-index-0000887,foaf:Organization,Associations,,Association des Femmes Islamiques du Burkina,AFIB,1996-09-21,,National coalition of Muslim women|Regroupement national de femmes musulmanes,,,,Organisation islamique,,Burkina Faso,,,,,
 571,https://iwac.frederickmadore.com/s/afrique_ouest/item/571,iwac-index-0000888,foaf:Organization,Associations,590,"Cercle d'Études, de Recherches et de Formation Islamiques",CERFI,1989-01,,The CERFI is a kind of extension of the Association des Élèves et Étudiants Musulmans au Burkina (AEEMB) for activists who have entered the labour market|Le CERFI est en quelque sorte le prolongement de l'Association des Élèves et Étudiants Musulmans au Burkina (AEEMB) pour les militants qui ont intégré le marché du travail,"Mosquée du Cercle d'Études, de Recherches et de Formation Islamiques",,Organisation des Femmes Musulmanes du Burkina,Fédération des Associations Islamiques du Burkina|Organisation de la Jeunesse Musulmane en Afrique de l'Ouest|Organisation islamique,,Burkina Faso,,,,,
