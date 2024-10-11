@@ -1,7 +1,7 @@
 [
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11374",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11374",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -9,23 +9,23 @@
     "o:id": 11374,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Association des Jeunes Musulmans à Ouidi (AJMO) : historique et grandes orientations",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/ad04d5188892d5268b1c3253fda1a972345713ec.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/ad04d5188892d5268b1c3253fda1a972345713ec.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/ad04d5188892d5268b1c3253fda1a972345713ec.jpg"
+      "large": "https://islam.zmo.de/files/large/ad04d5188892d5268b1c3253fda1a972345713ec.jpg",
+      "medium": "https://islam.zmo.de/files/medium/ad04d5188892d5268b1c3253fda1a972345713ec.jpg",
+      "square": "https://islam.zmo.de/files/square/ad04d5188892d5268b1c3253fda1a972345713ec.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:50:08+00:00",
@@ -36,36 +36,36 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11390",
+      "@id": "https://islam.zmo.de/api/media/11390",
       "o:id": 11390
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11390",
+        "@id": "https://islam.zmo.de/api/media/11390",
         "o:id": 11390
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22948",
+        "@id": "https://islam.zmo.de/api/media/22948",
         "o:id": 22948
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22949",
+        "@id": "https://islam.zmo.de/api/media/22949",
         "o:id": 22949
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -110,12 +110,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/569",
+        "@id": "https://islam.zmo.de/api/items/569",
         "value_resource_id": 569,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association des Élèves et Étudiants Musulmans au Burkina",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
         "thumbnail_title": "AssociationdesÉlèvesetÉtudiantsMusulmansauBurkina_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -126,7 +126,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -137,12 +137,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -163,7 +163,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -176,7 +176,7 @@
         "property_id": 11,
         "property_label": "Source",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/859",
+        "@id": "https://islam.zmo.de/api/items/859",
         "value_resource_id": 859,
         "value_resource_name": "items",
         "url": null,
@@ -189,7 +189,7 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/859",
+        "@id": "https://islam.zmo.de/api/items/859",
         "value_resource_id": 859,
         "value_resource_name": "items",
         "url": null,
@@ -216,8 +216,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11375",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11375",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -225,23 +225,23 @@
     "o:id": 11375,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Rapport général du séminaire régional de formation islamique (SEREFI) tenu du 16 au 23 août 2014 au lycée provincial de Tougan/Sourou 2014",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/9a69463ea62ce11717abc7c6cf544f1f54e5e519.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/9a69463ea62ce11717abc7c6cf544f1f54e5e519.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/9a69463ea62ce11717abc7c6cf544f1f54e5e519.jpg"
+      "large": "https://islam.zmo.de/files/large/9a69463ea62ce11717abc7c6cf544f1f54e5e519.jpg",
+      "medium": "https://islam.zmo.de/files/medium/9a69463ea62ce11717abc7c6cf544f1f54e5e519.jpg",
+      "square": "https://islam.zmo.de/files/square/9a69463ea62ce11717abc7c6cf544f1f54e5e519.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:50:28+00:00",
@@ -252,64 +252,64 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11391",
+      "@id": "https://islam.zmo.de/api/media/11391",
       "o:id": 11391
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11391",
+        "@id": "https://islam.zmo.de/api/media/11391",
         "o:id": 11391
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22950",
+        "@id": "https://islam.zmo.de/api/media/22950",
         "o:id": 22950
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22951",
+        "@id": "https://islam.zmo.de/api/media/22951",
         "o:id": 22951
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22952",
+        "@id": "https://islam.zmo.de/api/media/22952",
         "o:id": 22952
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22953",
+        "@id": "https://islam.zmo.de/api/media/22953",
         "o:id": 22953
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22954",
+        "@id": "https://islam.zmo.de/api/media/22954",
         "o:id": 22954
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22955",
+        "@id": "https://islam.zmo.de/api/media/22955",
         "o:id": 22955
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22956",
+        "@id": "https://islam.zmo.de/api/media/22956",
         "o:id": 22956
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22957",
+        "@id": "https://islam.zmo.de/api/media/22957",
         "o:id": 22957
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22958",
+        "@id": "https://islam.zmo.de/api/media/22958",
         "o:id": 22958
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -328,12 +328,12 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/569",
+        "@id": "https://islam.zmo.de/api/items/569",
         "value_resource_id": 569,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association des Élèves et Étudiants Musulmans au Burkina",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
         "thumbnail_title": "AssociationdesÉlèvesetÉtudiantsMusulmansauBurkina_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -364,12 +364,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/569",
+        "@id": "https://islam.zmo.de/api/items/569",
         "value_resource_id": 569,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association des Élèves et Étudiants Musulmans au Burkina",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
         "thumbnail_title": "AssociationdesÉlèvesetÉtudiantsMusulmansauBurkina_1.jpg",
         "thumbnail_type": "image/jpeg"
       },
@@ -378,12 +378,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/571",
+        "@id": "https://islam.zmo.de/api/items/571",
         "value_resource_id": 571,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Cercle d'Études, de Recherches et de Formation Islamiques",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
         "thumbnail_title": "CercledÉtudesdeRecherchesetdeFormationIslamiques_1.jpg",
         "thumbnail_type": "image/jpeg"
       },
@@ -401,7 +401,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/284",
+        "@id": "https://islam.zmo.de/api/items/284",
         "value_resource_id": 284,
         "value_resource_name": "items",
         "url": null,
@@ -412,7 +412,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -423,7 +423,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/401",
+        "@id": "https://islam.zmo.de/api/items/401",
         "value_resource_id": 401,
         "value_resource_name": "items",
         "url": null,
@@ -434,7 +434,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/404",
+        "@id": "https://islam.zmo.de/api/items/404",
         "value_resource_id": 404,
         "value_resource_name": "items",
         "url": null,
@@ -445,12 +445,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -471,7 +471,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -484,12 +484,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -514,8 +514,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11376",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11376",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -523,23 +523,23 @@
     "o:id": 11376,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Affiche de la conférence \"Rôle et place de la jeunesse musulmane dans la société\"",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/a93ac82dbac050d0182cce1f6e0027eb3727e0e8.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/a93ac82dbac050d0182cce1f6e0027eb3727e0e8.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/a93ac82dbac050d0182cce1f6e0027eb3727e0e8.jpg"
+      "large": "https://islam.zmo.de/files/large/a93ac82dbac050d0182cce1f6e0027eb3727e0e8.jpg",
+      "medium": "https://islam.zmo.de/files/medium/a93ac82dbac050d0182cce1f6e0027eb3727e0e8.jpg",
+      "square": "https://islam.zmo.de/files/square/a93ac82dbac050d0182cce1f6e0027eb3727e0e8.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:50:34+00:00",
@@ -550,32 +550,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11392",
+      "@id": "https://islam.zmo.de/api/media/11392",
       "o:id": 11392
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11392",
+        "@id": "https://islam.zmo.de/api/media/11392",
         "o:id": 11392
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22959",
+        "@id": "https://islam.zmo.de/api/media/22959",
         "o:id": 22959
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -621,7 +621,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/9",
+        "@id": "https://islam.zmo.de/api/items/9",
         "value_resource_id": 9,
         "value_resource_name": "items",
         "url": null,
@@ -641,12 +641,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -667,7 +667,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -680,7 +680,7 @@
         "property_id": 11,
         "property_label": "Source",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/859",
+        "@id": "https://islam.zmo.de/api/items/859",
         "value_resource_id": 859,
         "value_resource_name": "items",
         "url": null,
@@ -693,7 +693,7 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/859",
+        "@id": "https://islam.zmo.de/api/items/859",
         "value_resource_id": 859,
         "value_resource_name": "items",
         "url": null,
@@ -720,8 +720,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11377",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11377",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -729,23 +729,23 @@
     "o:id": 11377,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Projet d'ouverture de 60 centres d'alphabétisation au profit des femmes musulmanes du Burkina",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/6f5c46cc298587ceefaeb8c18232538a90919c48.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/6f5c46cc298587ceefaeb8c18232538a90919c48.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/6f5c46cc298587ceefaeb8c18232538a90919c48.jpg"
+      "large": "https://islam.zmo.de/files/large/6f5c46cc298587ceefaeb8c18232538a90919c48.jpg",
+      "medium": "https://islam.zmo.de/files/medium/6f5c46cc298587ceefaeb8c18232538a90919c48.jpg",
+      "square": "https://islam.zmo.de/files/square/6f5c46cc298587ceefaeb8c18232538a90919c48.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:50:52+00:00",
@@ -756,48 +756,48 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11393",
+      "@id": "https://islam.zmo.de/api/media/11393",
       "o:id": 11393
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11393",
+        "@id": "https://islam.zmo.de/api/media/11393",
         "o:id": 11393
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22960",
+        "@id": "https://islam.zmo.de/api/media/22960",
         "o:id": 22960
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22961",
+        "@id": "https://islam.zmo.de/api/media/22961",
         "o:id": 22961
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22962",
+        "@id": "https://islam.zmo.de/api/media/22962",
         "o:id": 22962
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22963",
+        "@id": "https://islam.zmo.de/api/media/22963",
         "o:id": 22963
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22964",
+        "@id": "https://islam.zmo.de/api/media/22964",
         "o:id": 22964
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -816,7 +816,7 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/696",
+        "@id": "https://islam.zmo.de/api/items/696",
         "value_resource_id": 696,
         "value_resource_name": "items",
         "url": null,
@@ -849,7 +849,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/56",
+        "@id": "https://islam.zmo.de/api/items/56",
         "value_resource_id": 56,
         "value_resource_name": "items",
         "url": null,
@@ -860,7 +860,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/36",
+        "@id": "https://islam.zmo.de/api/items/36",
         "value_resource_id": 36,
         "value_resource_name": "items",
         "url": null,
@@ -894,7 +894,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -905,12 +905,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -931,7 +931,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -944,12 +944,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -974,8 +974,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11378",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11378",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -983,23 +983,23 @@
     "o:id": 11378,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Dépliant \"Infos Pratiques Islam\"",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/2ea9e196e609eba9cafe0d3e92195d3dc4e3318b.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/2ea9e196e609eba9cafe0d3e92195d3dc4e3318b.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/2ea9e196e609eba9cafe0d3e92195d3dc4e3318b.jpg"
+      "large": "https://islam.zmo.de/files/large/2ea9e196e609eba9cafe0d3e92195d3dc4e3318b.jpg",
+      "medium": "https://islam.zmo.de/files/medium/2ea9e196e609eba9cafe0d3e92195d3dc4e3318b.jpg",
+      "square": "https://islam.zmo.de/files/square/2ea9e196e609eba9cafe0d3e92195d3dc4e3318b.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:50:55+00:00",
@@ -1010,36 +1010,36 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11394",
+      "@id": "https://islam.zmo.de/api/media/11394",
       "o:id": 11394
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11394",
+        "@id": "https://islam.zmo.de/api/media/11394",
         "o:id": 11394
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22965",
+        "@id": "https://islam.zmo.de/api/media/22965",
         "o:id": 22965
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22966",
+        "@id": "https://islam.zmo.de/api/media/22966",
         "o:id": 22966
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -1068,7 +1068,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/60",
+        "@id": "https://islam.zmo.de/api/items/60",
         "value_resource_id": 60,
         "value_resource_name": "items",
         "url": null,
@@ -1079,7 +1079,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/85",
+        "@id": "https://islam.zmo.de/api/items/85",
         "value_resource_id": 85,
         "value_resource_name": "items",
         "url": null,
@@ -1092,12 +1092,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -1118,7 +1118,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -1131,12 +1131,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -1161,8 +1161,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11379",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11379",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -1170,23 +1170,23 @@
     "o:id": 11379,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Dépliant Jama'at Islamique Ahmadiyya Burkina Faso",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/e8c2ceba1f6ddf5f43c58a1b8032074ef48afae4.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/e8c2ceba1f6ddf5f43c58a1b8032074ef48afae4.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/e8c2ceba1f6ddf5f43c58a1b8032074ef48afae4.jpg"
+      "large": "https://islam.zmo.de/files/large/e8c2ceba1f6ddf5f43c58a1b8032074ef48afae4.jpg",
+      "medium": "https://islam.zmo.de/files/medium/e8c2ceba1f6ddf5f43c58a1b8032074ef48afae4.jpg",
+      "square": "https://islam.zmo.de/files/square/e8c2ceba1f6ddf5f43c58a1b8032074ef48afae4.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:14+00:00",
@@ -1197,52 +1197,52 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11395",
+      "@id": "https://islam.zmo.de/api/media/11395",
       "o:id": 11395
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11395",
+        "@id": "https://islam.zmo.de/api/media/11395",
         "o:id": 11395
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22967",
+        "@id": "https://islam.zmo.de/api/media/22967",
         "o:id": 22967
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22968",
+        "@id": "https://islam.zmo.de/api/media/22968",
         "o:id": 22968
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22969",
+        "@id": "https://islam.zmo.de/api/media/22969",
         "o:id": 22969
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22970",
+        "@id": "https://islam.zmo.de/api/media/22970",
         "o:id": 22970
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22971",
+        "@id": "https://islam.zmo.de/api/media/22971",
         "o:id": 22971
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22972",
+        "@id": "https://islam.zmo.de/api/media/22972",
         "o:id": 22972
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -1308,7 +1308,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -1319,7 +1319,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/550",
+        "@id": "https://islam.zmo.de/api/items/550",
         "value_resource_id": 550,
         "value_resource_name": "items",
         "url": null,
@@ -1330,12 +1330,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -1356,7 +1356,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -1369,12 +1369,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -1399,8 +1399,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11380",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11380",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -1408,23 +1408,23 @@
     "o:id": 11380,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Grille de programmes Radio IQRA",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/01680d64875cd835fe881c312445a3ed14c1ff52.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/01680d64875cd835fe881c312445a3ed14c1ff52.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/01680d64875cd835fe881c312445a3ed14c1ff52.jpg"
+      "large": "https://islam.zmo.de/files/large/01680d64875cd835fe881c312445a3ed14c1ff52.jpg",
+      "medium": "https://islam.zmo.de/files/medium/01680d64875cd835fe881c312445a3ed14c1ff52.jpg",
+      "square": "https://islam.zmo.de/files/square/01680d64875cd835fe881c312445a3ed14c1ff52.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:17+00:00",
@@ -1435,32 +1435,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11396",
+      "@id": "https://islam.zmo.de/api/media/11396",
       "o:id": 11396
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11396",
+        "@id": "https://islam.zmo.de/api/media/11396",
         "o:id": 11396
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22973",
+        "@id": "https://islam.zmo.de/api/media/22973",
         "o:id": 22973
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -1508,12 +1508,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -1534,7 +1534,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -1547,12 +1547,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -1577,8 +1577,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11381",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11381",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -1586,23 +1586,23 @@
     "o:id": 11381,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Dépliant Qatar Charity",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/de906ce4fb4ac6de09b0833494adfdf6779b01a4.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/de906ce4fb4ac6de09b0833494adfdf6779b01a4.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/de906ce4fb4ac6de09b0833494adfdf6779b01a4.jpg"
+      "large": "https://islam.zmo.de/files/large/de906ce4fb4ac6de09b0833494adfdf6779b01a4.jpg",
+      "medium": "https://islam.zmo.de/files/medium/de906ce4fb4ac6de09b0833494adfdf6779b01a4.jpg",
+      "square": "https://islam.zmo.de/files/square/de906ce4fb4ac6de09b0833494adfdf6779b01a4.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:36+00:00",
@@ -1613,28 +1613,28 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11397",
+      "@id": "https://islam.zmo.de/api/media/11397",
       "o:id": 11397
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11397",
+        "@id": "https://islam.zmo.de/api/media/11397",
         "o:id": 11397
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -1663,7 +1663,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/55",
+        "@id": "https://islam.zmo.de/api/items/55",
         "value_resource_id": 55,
         "value_resource_name": "items",
         "url": null,
@@ -1683,7 +1683,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/542",
+        "@id": "https://islam.zmo.de/api/items/542",
         "value_resource_id": 542,
         "value_resource_name": "items",
         "url": null,
@@ -1694,12 +1694,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -1720,7 +1720,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -1733,12 +1733,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -1763,8 +1763,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11382",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11382",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -1772,23 +1772,23 @@
     "o:id": 11382,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Rapport général : Forum national sur la laïcité au Burkina Faso",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/b1d77e9dac8d65002d794dfcccb521264f1dd38a.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/b1d77e9dac8d65002d794dfcccb521264f1dd38a.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/b1d77e9dac8d65002d794dfcccb521264f1dd38a.jpg"
+      "large": "https://islam.zmo.de/files/large/b1d77e9dac8d65002d794dfcccb521264f1dd38a.jpg",
+      "medium": "https://islam.zmo.de/files/medium/b1d77e9dac8d65002d794dfcccb521264f1dd38a.jpg",
+      "square": "https://islam.zmo.de/files/square/b1d77e9dac8d65002d794dfcccb521264f1dd38a.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:39+00:00",
@@ -1799,412 +1799,412 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11398",
+      "@id": "https://islam.zmo.de/api/media/11398",
       "o:id": 11398
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11398",
+        "@id": "https://islam.zmo.de/api/media/11398",
         "o:id": 11398
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22974",
+        "@id": "https://islam.zmo.de/api/media/22974",
         "o:id": 22974
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22975",
+        "@id": "https://islam.zmo.de/api/media/22975",
         "o:id": 22975
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22976",
+        "@id": "https://islam.zmo.de/api/media/22976",
         "o:id": 22976
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22977",
+        "@id": "https://islam.zmo.de/api/media/22977",
         "o:id": 22977
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22978",
+        "@id": "https://islam.zmo.de/api/media/22978",
         "o:id": 22978
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22979",
+        "@id": "https://islam.zmo.de/api/media/22979",
         "o:id": 22979
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22980",
+        "@id": "https://islam.zmo.de/api/media/22980",
         "o:id": 22980
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22981",
+        "@id": "https://islam.zmo.de/api/media/22981",
         "o:id": 22981
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22982",
+        "@id": "https://islam.zmo.de/api/media/22982",
         "o:id": 22982
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22983",
+        "@id": "https://islam.zmo.de/api/media/22983",
         "o:id": 22983
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22984",
+        "@id": "https://islam.zmo.de/api/media/22984",
         "o:id": 22984
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22985",
+        "@id": "https://islam.zmo.de/api/media/22985",
         "o:id": 22985
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22986",
+        "@id": "https://islam.zmo.de/api/media/22986",
         "o:id": 22986
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22987",
+        "@id": "https://islam.zmo.de/api/media/22987",
         "o:id": 22987
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22988",
+        "@id": "https://islam.zmo.de/api/media/22988",
         "o:id": 22988
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22989",
+        "@id": "https://islam.zmo.de/api/media/22989",
         "o:id": 22989
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22990",
+        "@id": "https://islam.zmo.de/api/media/22990",
         "o:id": 22990
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22991",
+        "@id": "https://islam.zmo.de/api/media/22991",
         "o:id": 22991
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22992",
+        "@id": "https://islam.zmo.de/api/media/22992",
         "o:id": 22992
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22993",
+        "@id": "https://islam.zmo.de/api/media/22993",
         "o:id": 22993
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22994",
+        "@id": "https://islam.zmo.de/api/media/22994",
         "o:id": 22994
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22995",
+        "@id": "https://islam.zmo.de/api/media/22995",
         "o:id": 22995
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22996",
+        "@id": "https://islam.zmo.de/api/media/22996",
         "o:id": 22996
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22997",
+        "@id": "https://islam.zmo.de/api/media/22997",
         "o:id": 22997
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22998",
+        "@id": "https://islam.zmo.de/api/media/22998",
         "o:id": 22998
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/22999",
+        "@id": "https://islam.zmo.de/api/media/22999",
         "o:id": 22999
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23000",
+        "@id": "https://islam.zmo.de/api/media/23000",
         "o:id": 23000
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23001",
+        "@id": "https://islam.zmo.de/api/media/23001",
         "o:id": 23001
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23002",
+        "@id": "https://islam.zmo.de/api/media/23002",
         "o:id": 23002
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23003",
+        "@id": "https://islam.zmo.de/api/media/23003",
         "o:id": 23003
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23004",
+        "@id": "https://islam.zmo.de/api/media/23004",
         "o:id": 23004
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23005",
+        "@id": "https://islam.zmo.de/api/media/23005",
         "o:id": 23005
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23006",
+        "@id": "https://islam.zmo.de/api/media/23006",
         "o:id": 23006
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23007",
+        "@id": "https://islam.zmo.de/api/media/23007",
         "o:id": 23007
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23008",
+        "@id": "https://islam.zmo.de/api/media/23008",
         "o:id": 23008
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23009",
+        "@id": "https://islam.zmo.de/api/media/23009",
         "o:id": 23009
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23010",
+        "@id": "https://islam.zmo.de/api/media/23010",
         "o:id": 23010
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23011",
+        "@id": "https://islam.zmo.de/api/media/23011",
         "o:id": 23011
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23012",
+        "@id": "https://islam.zmo.de/api/media/23012",
         "o:id": 23012
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23013",
+        "@id": "https://islam.zmo.de/api/media/23013",
         "o:id": 23013
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23014",
+        "@id": "https://islam.zmo.de/api/media/23014",
         "o:id": 23014
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23015",
+        "@id": "https://islam.zmo.de/api/media/23015",
         "o:id": 23015
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23016",
+        "@id": "https://islam.zmo.de/api/media/23016",
         "o:id": 23016
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23017",
+        "@id": "https://islam.zmo.de/api/media/23017",
         "o:id": 23017
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23018",
+        "@id": "https://islam.zmo.de/api/media/23018",
         "o:id": 23018
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23019",
+        "@id": "https://islam.zmo.de/api/media/23019",
         "o:id": 23019
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23020",
+        "@id": "https://islam.zmo.de/api/media/23020",
         "o:id": 23020
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23021",
+        "@id": "https://islam.zmo.de/api/media/23021",
         "o:id": 23021
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23022",
+        "@id": "https://islam.zmo.de/api/media/23022",
         "o:id": 23022
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23023",
+        "@id": "https://islam.zmo.de/api/media/23023",
         "o:id": 23023
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23024",
+        "@id": "https://islam.zmo.de/api/media/23024",
         "o:id": 23024
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23025",
+        "@id": "https://islam.zmo.de/api/media/23025",
         "o:id": 23025
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23026",
+        "@id": "https://islam.zmo.de/api/media/23026",
         "o:id": 23026
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23027",
+        "@id": "https://islam.zmo.de/api/media/23027",
         "o:id": 23027
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23028",
+        "@id": "https://islam.zmo.de/api/media/23028",
         "o:id": 23028
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23029",
+        "@id": "https://islam.zmo.de/api/media/23029",
         "o:id": 23029
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23030",
+        "@id": "https://islam.zmo.de/api/media/23030",
         "o:id": 23030
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23031",
+        "@id": "https://islam.zmo.de/api/media/23031",
         "o:id": 23031
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23032",
+        "@id": "https://islam.zmo.de/api/media/23032",
         "o:id": 23032
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23033",
+        "@id": "https://islam.zmo.de/api/media/23033",
         "o:id": 23033
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23034",
+        "@id": "https://islam.zmo.de/api/media/23034",
         "o:id": 23034
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23035",
+        "@id": "https://islam.zmo.de/api/media/23035",
         "o:id": 23035
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23036",
+        "@id": "https://islam.zmo.de/api/media/23036",
         "o:id": 23036
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23037",
+        "@id": "https://islam.zmo.de/api/media/23037",
         "o:id": 23037
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23038",
+        "@id": "https://islam.zmo.de/api/media/23038",
         "o:id": 23038
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23039",
+        "@id": "https://islam.zmo.de/api/media/23039",
         "o:id": 23039
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23040",
+        "@id": "https://islam.zmo.de/api/media/23040",
         "o:id": 23040
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23041",
+        "@id": "https://islam.zmo.de/api/media/23041",
         "o:id": 23041
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23042",
+        "@id": "https://islam.zmo.de/api/media/23042",
         "o:id": 23042
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23043",
+        "@id": "https://islam.zmo.de/api/media/23043",
         "o:id": 23043
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23044",
+        "@id": "https://islam.zmo.de/api/media/23044",
         "o:id": 23044
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23045",
+        "@id": "https://islam.zmo.de/api/media/23045",
         "o:id": 23045
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23046",
+        "@id": "https://islam.zmo.de/api/media/23046",
         "o:id": 23046
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23047",
+        "@id": "https://islam.zmo.de/api/media/23047",
         "o:id": 23047
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23048",
+        "@id": "https://islam.zmo.de/api/media/23048",
         "o:id": 23048
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23049",
+        "@id": "https://islam.zmo.de/api/media/23049",
         "o:id": 23049
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23050",
+        "@id": "https://islam.zmo.de/api/media/23050",
         "o:id": 23050
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23051",
+        "@id": "https://islam.zmo.de/api/media/23051",
         "o:id": 23051
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23052",
+        "@id": "https://islam.zmo.de/api/media/23052",
         "o:id": 23052
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23053",
+        "@id": "https://islam.zmo.de/api/media/23053",
         "o:id": 23053
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23054",
+        "@id": "https://islam.zmo.de/api/media/23054",
         "o:id": 23054
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23055",
+        "@id": "https://islam.zmo.de/api/media/23055",
         "o:id": 23055
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23056",
+        "@id": "https://islam.zmo.de/api/media/23056",
         "o:id": 23056
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23057",
+        "@id": "https://islam.zmo.de/api/media/23057",
         "o:id": 23057
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23058",
+        "@id": "https://islam.zmo.de/api/media/23058",
         "o:id": 23058
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23059",
+        "@id": "https://islam.zmo.de/api/media/23059",
         "o:id": 23059
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23060",
+        "@id": "https://islam.zmo.de/api/media/23060",
         "o:id": 23060
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23061",
+        "@id": "https://islam.zmo.de/api/media/23061",
         "o:id": 23061
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23062",
+        "@id": "https://islam.zmo.de/api/media/23062",
         "o:id": 23062
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23063",
+        "@id": "https://islam.zmo.de/api/media/23063",
         "o:id": 23063
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23064",
+        "@id": "https://islam.zmo.de/api/media/23064",
         "o:id": 23064
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23065",
+        "@id": "https://islam.zmo.de/api/media/23065",
         "o:id": 23065
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23066",
+        "@id": "https://islam.zmo.de/api/media/23066",
         "o:id": 23066
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23067",
+        "@id": "https://islam.zmo.de/api/media/23067",
         "o:id": 23067
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23068",
+        "@id": "https://islam.zmo.de/api/media/23068",
         "o:id": 23068
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23069",
+        "@id": "https://islam.zmo.de/api/media/23069",
         "o:id": 23069
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -2275,7 +2275,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/42",
+        "@id": "https://islam.zmo.de/api/items/42",
         "value_resource_id": 42,
         "value_resource_name": "items",
         "url": null,
@@ -2314,7 +2314,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/5",
+        "@id": "https://islam.zmo.de/api/items/5",
         "value_resource_id": 5,
         "value_resource_name": "items",
         "url": null,
@@ -2339,7 +2339,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/44",
+        "@id": "https://islam.zmo.de/api/items/44",
         "value_resource_id": 44,
         "value_resource_name": "items",
         "url": null,
@@ -2350,7 +2350,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/61",
+        "@id": "https://islam.zmo.de/api/items/61",
         "value_resource_id": 61,
         "value_resource_name": "items",
         "url": null,
@@ -2370,7 +2370,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/279",
+        "@id": "https://islam.zmo.de/api/items/279",
         "value_resource_id": 279,
         "value_resource_name": "items",
         "url": null,
@@ -2381,7 +2381,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/284",
+        "@id": "https://islam.zmo.de/api/items/284",
         "value_resource_id": 284,
         "value_resource_name": "items",
         "url": null,
@@ -2392,7 +2392,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/303",
+        "@id": "https://islam.zmo.de/api/items/303",
         "value_resource_id": 303,
         "value_resource_name": "items",
         "url": null,
@@ -2403,7 +2403,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/304",
+        "@id": "https://islam.zmo.de/api/items/304",
         "value_resource_id": 304,
         "value_resource_name": "items",
         "url": null,
@@ -2414,7 +2414,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/318",
+        "@id": "https://islam.zmo.de/api/items/318",
         "value_resource_id": 318,
         "value_resource_name": "items",
         "url": null,
@@ -2425,7 +2425,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -2436,7 +2436,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/377",
+        "@id": "https://islam.zmo.de/api/items/377",
         "value_resource_id": 377,
         "value_resource_name": "items",
         "url": null,
@@ -2447,7 +2447,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/400",
+        "@id": "https://islam.zmo.de/api/items/400",
         "value_resource_id": 400,
         "value_resource_name": "items",
         "url": null,
@@ -2458,7 +2458,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/358",
+        "@id": "https://islam.zmo.de/api/items/358",
         "value_resource_id": 358,
         "value_resource_name": "items",
         "url": null,
@@ -2469,7 +2469,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/350",
+        "@id": "https://islam.zmo.de/api/items/350",
         "value_resource_id": 350,
         "value_resource_name": "items",
         "url": null,
@@ -2480,12 +2480,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/541",
+        "@id": "https://islam.zmo.de/api/items/541",
         "value_resource_id": 541,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Nigéria",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/8d875d891e7e7b9873c5013cc2bcc050f92ff738.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/8d875d891e7e7b9873c5013cc2bcc050f92ff738.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/1920px-Flag_of_Nigeria.svg.png",
         "thumbnail_type": "image/png"
       },
@@ -2494,12 +2494,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -2520,7 +2520,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -2533,12 +2533,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -2563,8 +2563,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11383",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11383",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -2572,23 +2572,23 @@
     "o:id": 11383,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Concours de mémorisation et de récitation du Saint Coran par les femmes musulmanes",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/dcac6fe58a903e39bb04a08f87f8a4304079490a.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/dcac6fe58a903e39bb04a08f87f8a4304079490a.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/dcac6fe58a903e39bb04a08f87f8a4304079490a.jpg"
+      "large": "https://islam.zmo.de/files/large/dcac6fe58a903e39bb04a08f87f8a4304079490a.jpg",
+      "medium": "https://islam.zmo.de/files/medium/dcac6fe58a903e39bb04a08f87f8a4304079490a.jpg",
+      "square": "https://islam.zmo.de/files/square/dcac6fe58a903e39bb04a08f87f8a4304079490a.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:40+00:00",
@@ -2599,36 +2599,36 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11399",
+      "@id": "https://islam.zmo.de/api/media/11399",
       "o:id": 11399
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11399",
+        "@id": "https://islam.zmo.de/api/media/11399",
         "o:id": 11399
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23070",
+        "@id": "https://islam.zmo.de/api/media/23070",
         "o:id": 23070
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23071",
+        "@id": "https://islam.zmo.de/api/media/23071",
         "o:id": 23071
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -2647,7 +2647,7 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/696",
+        "@id": "https://islam.zmo.de/api/items/696",
         "value_resource_id": 696,
         "value_resource_name": "items",
         "url": null,
@@ -2680,7 +2680,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/36",
+        "@id": "https://islam.zmo.de/api/items/36",
         "value_resource_id": 36,
         "value_resource_name": "items",
         "url": null,
@@ -2700,12 +2700,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -2726,7 +2726,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -2739,12 +2739,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -2769,8 +2769,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11384",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11384",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -2778,23 +2778,23 @@
     "o:id": 11384,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Résolutions, motions et recommandations de la CMHV",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/80e6fd98c518dbcabec5a85726005fbbf7b8aba6.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/80e6fd98c518dbcabec5a85726005fbbf7b8aba6.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/80e6fd98c518dbcabec5a85726005fbbf7b8aba6.jpg"
+      "large": "https://islam.zmo.de/files/large/80e6fd98c518dbcabec5a85726005fbbf7b8aba6.jpg",
+      "medium": "https://islam.zmo.de/files/medium/80e6fd98c518dbcabec5a85726005fbbf7b8aba6.jpg",
+      "square": "https://islam.zmo.de/files/square/80e6fd98c518dbcabec5a85726005fbbf7b8aba6.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:43+00:00",
@@ -2805,84 +2805,84 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11400",
+      "@id": "https://islam.zmo.de/api/media/11400",
       "o:id": 11400
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11400",
+        "@id": "https://islam.zmo.de/api/media/11400",
         "o:id": 11400
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23072",
+        "@id": "https://islam.zmo.de/api/media/23072",
         "o:id": 23072
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23073",
+        "@id": "https://islam.zmo.de/api/media/23073",
         "o:id": 23073
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23074",
+        "@id": "https://islam.zmo.de/api/media/23074",
         "o:id": 23074
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23075",
+        "@id": "https://islam.zmo.de/api/media/23075",
         "o:id": 23075
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23076",
+        "@id": "https://islam.zmo.de/api/media/23076",
         "o:id": 23076
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23077",
+        "@id": "https://islam.zmo.de/api/media/23077",
         "o:id": 23077
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23078",
+        "@id": "https://islam.zmo.de/api/media/23078",
         "o:id": 23078
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23079",
+        "@id": "https://islam.zmo.de/api/media/23079",
         "o:id": 23079
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23080",
+        "@id": "https://islam.zmo.de/api/media/23080",
         "o:id": 23080
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23081",
+        "@id": "https://islam.zmo.de/api/media/23081",
         "o:id": 23081
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23082",
+        "@id": "https://islam.zmo.de/api/media/23082",
         "o:id": 23082
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23083",
+        "@id": "https://islam.zmo.de/api/media/23083",
         "o:id": 23083
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23084",
+        "@id": "https://islam.zmo.de/api/media/23084",
         "o:id": 23084
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23085",
+        "@id": "https://islam.zmo.de/api/media/23085",
         "o:id": 23085
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -2901,7 +2901,7 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/735",
+        "@id": "https://islam.zmo.de/api/items/735",
         "value_resource_id": 735,
         "value_resource_name": "items",
         "url": null,
@@ -2978,7 +2978,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/55",
+        "@id": "https://islam.zmo.de/api/items/55",
         "value_resource_id": 55,
         "value_resource_name": "items",
         "url": null,
@@ -2989,7 +2989,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/56",
+        "@id": "https://islam.zmo.de/api/items/56",
         "value_resource_id": 56,
         "value_resource_name": "items",
         "url": null,
@@ -3000,7 +3000,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/29",
+        "@id": "https://islam.zmo.de/api/items/29",
         "value_resource_id": 29,
         "value_resource_name": "items",
         "url": null,
@@ -3011,7 +3011,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/9",
+        "@id": "https://islam.zmo.de/api/items/9",
         "value_resource_id": 9,
         "value_resource_name": "items",
         "url": null,
@@ -3029,7 +3029,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/60",
+        "@id": "https://islam.zmo.de/api/items/60",
         "value_resource_id": 60,
         "value_resource_name": "items",
         "url": null,
@@ -3049,7 +3049,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/279",
+        "@id": "https://islam.zmo.de/api/items/279",
         "value_resource_id": 279,
         "value_resource_name": "items",
         "url": null,
@@ -3060,7 +3060,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/284",
+        "@id": "https://islam.zmo.de/api/items/284",
         "value_resource_id": 284,
         "value_resource_name": "items",
         "url": null,
@@ -3071,7 +3071,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/303",
+        "@id": "https://islam.zmo.de/api/items/303",
         "value_resource_id": 303,
         "value_resource_name": "items",
         "url": null,
@@ -3082,7 +3082,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -3093,7 +3093,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/377",
+        "@id": "https://islam.zmo.de/api/items/377",
         "value_resource_id": 377,
         "value_resource_name": "items",
         "url": null,
@@ -3104,7 +3104,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/373",
+        "@id": "https://islam.zmo.de/api/items/373",
         "value_resource_id": 373,
         "value_resource_name": "items",
         "url": null,
@@ -3115,7 +3115,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/401",
+        "@id": "https://islam.zmo.de/api/items/401",
         "value_resource_id": 401,
         "value_resource_name": "items",
         "url": null,
@@ -3126,12 +3126,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -3152,7 +3152,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -3165,12 +3165,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -3195,8 +3195,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11385",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11385",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -3204,23 +3204,23 @@
     "o:id": 11385,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Institut Musulman d'Enseignement et d'Education (IM2E)",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/afc45fa5dc122c134d99ed5c86f5442a02e040ec.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/afc45fa5dc122c134d99ed5c86f5442a02e040ec.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/afc45fa5dc122c134d99ed5c86f5442a02e040ec.jpg"
+      "large": "https://islam.zmo.de/files/large/afc45fa5dc122c134d99ed5c86f5442a02e040ec.jpg",
+      "medium": "https://islam.zmo.de/files/medium/afc45fa5dc122c134d99ed5c86f5442a02e040ec.jpg",
+      "square": "https://islam.zmo.de/files/square/afc45fa5dc122c134d99ed5c86f5442a02e040ec.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:50+00:00",
@@ -3231,32 +3231,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11401",
+      "@id": "https://islam.zmo.de/api/media/11401",
       "o:id": 11401
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11401",
+        "@id": "https://islam.zmo.de/api/media/11401",
         "o:id": 11401
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23086",
+        "@id": "https://islam.zmo.de/api/media/23086",
         "o:id": 23086
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -3275,12 +3275,12 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/571",
+        "@id": "https://islam.zmo.de/api/items/571",
         "value_resource_id": 571,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Cercle d'Études, de Recherches et de Formation Islamiques",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
         "thumbnail_title": "CercledÉtudesdeRecherchesetdeFormationIslamiques_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -3320,7 +3320,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/56",
+        "@id": "https://islam.zmo.de/api/items/56",
         "value_resource_id": 56,
         "value_resource_name": "items",
         "url": null,
@@ -3338,12 +3338,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/571",
+        "@id": "https://islam.zmo.de/api/items/571",
         "value_resource_id": 571,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Cercle d'Études, de Recherches et de Formation Islamiques",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
         "thumbnail_title": "CercledÉtudesdeRecherchesetdeFormationIslamiques_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -3354,7 +3354,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -3365,12 +3365,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -3391,7 +3391,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -3404,12 +3404,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -3434,8 +3434,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11386",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11386",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -3443,23 +3443,23 @@
     "o:id": 11386,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Invitation CERFI. Intellectuel Musulman : être avec Dieu pour mieux bâtir la cité / Regards croisés sur la situation nationale",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/c5f7bb51b086617fc1062c678e14bd32951d9e76.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/c5f7bb51b086617fc1062c678e14bd32951d9e76.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/c5f7bb51b086617fc1062c678e14bd32951d9e76.jpg"
+      "large": "https://islam.zmo.de/files/large/c5f7bb51b086617fc1062c678e14bd32951d9e76.jpg",
+      "medium": "https://islam.zmo.de/files/medium/c5f7bb51b086617fc1062c678e14bd32951d9e76.jpg",
+      "square": "https://islam.zmo.de/files/square/c5f7bb51b086617fc1062c678e14bd32951d9e76.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:51+00:00",
@@ -3470,32 +3470,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11402",
+      "@id": "https://islam.zmo.de/api/media/11402",
       "o:id": 11402
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11402",
+        "@id": "https://islam.zmo.de/api/media/11402",
         "o:id": 11402
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23087",
+        "@id": "https://islam.zmo.de/api/media/23087",
         "o:id": 23087
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -3541,12 +3541,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/571",
+        "@id": "https://islam.zmo.de/api/items/571",
         "value_resource_id": 571,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Cercle d'Études, de Recherches et de Formation Islamiques",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
         "thumbnail_title": "CercledÉtudesdeRecherchesetdeFormationIslamiques_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -3557,7 +3557,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -3568,12 +3568,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -3594,7 +3594,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -3607,12 +3607,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -3637,8 +3637,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11387",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11387",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -3646,23 +3646,23 @@
     "o:id": 11387,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Déclaration liminaire. 25e Anniversaire de l'Association des Elèves et Etudiants Musulmans au Burkina (AEEMB)",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/270114141b00b659e66fc3c19af20f7b8215c69c.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/270114141b00b659e66fc3c19af20f7b8215c69c.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/270114141b00b659e66fc3c19af20f7b8215c69c.jpg"
+      "large": "https://islam.zmo.de/files/large/270114141b00b659e66fc3c19af20f7b8215c69c.jpg",
+      "medium": "https://islam.zmo.de/files/medium/270114141b00b659e66fc3c19af20f7b8215c69c.jpg",
+      "square": "https://islam.zmo.de/files/square/270114141b00b659e66fc3c19af20f7b8215c69c.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:51:53+00:00",
@@ -3673,40 +3673,40 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11403",
+      "@id": "https://islam.zmo.de/api/media/11403",
       "o:id": 11403
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11403",
+        "@id": "https://islam.zmo.de/api/media/11403",
         "o:id": 11403
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23088",
+        "@id": "https://islam.zmo.de/api/media/23088",
         "o:id": 23088
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23089",
+        "@id": "https://islam.zmo.de/api/media/23089",
         "o:id": 23089
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23090",
+        "@id": "https://islam.zmo.de/api/media/23090",
         "o:id": 23090
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -3725,12 +3725,12 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/569",
+        "@id": "https://islam.zmo.de/api/items/569",
         "value_resource_id": 569,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association des Élèves et Étudiants Musulmans au Burkina",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
         "thumbnail_title": "AssociationdesÉlèvesetÉtudiantsMusulmansauBurkina_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -3761,12 +3761,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/569",
+        "@id": "https://islam.zmo.de/api/items/569",
         "value_resource_id": 569,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association des Élèves et Étudiants Musulmans au Burkina",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
         "thumbnail_title": "AssociationdesÉlèvesetÉtudiantsMusulmansauBurkina_1.jpg",
         "thumbnail_type": "image/jpeg"
       },
@@ -3784,7 +3784,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/284",
+        "@id": "https://islam.zmo.de/api/items/284",
         "value_resource_id": 284,
         "value_resource_name": "items",
         "url": null,
@@ -3795,7 +3795,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -3806,7 +3806,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/294",
+        "@id": "https://islam.zmo.de/api/items/294",
         "value_resource_id": 294,
         "value_resource_name": "items",
         "url": null,
@@ -3817,12 +3817,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -3843,7 +3843,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -3856,12 +3856,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -3886,8 +3886,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11388",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11388",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -3895,23 +3895,23 @@
     "o:id": 11388,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Dépliant pour la promotion du Centre culturel islamique de l'AEEMB",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/4f956426d9e97ba8e2fc016bd8c2d231ccc732ed.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/4f956426d9e97ba8e2fc016bd8c2d231ccc732ed.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/4f956426d9e97ba8e2fc016bd8c2d231ccc732ed.jpg"
+      "large": "https://islam.zmo.de/files/large/4f956426d9e97ba8e2fc016bd8c2d231ccc732ed.jpg",
+      "medium": "https://islam.zmo.de/files/medium/4f956426d9e97ba8e2fc016bd8c2d231ccc732ed.jpg",
+      "square": "https://islam.zmo.de/files/square/4f956426d9e97ba8e2fc016bd8c2d231ccc732ed.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:52:02+00:00",
@@ -3922,32 +3922,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11404",
+      "@id": "https://islam.zmo.de/api/media/11404",
       "o:id": 11404
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11404",
+        "@id": "https://islam.zmo.de/api/media/11404",
         "o:id": 11404
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23091",
+        "@id": "https://islam.zmo.de/api/media/23091",
         "o:id": 23091
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -3966,12 +3966,12 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/569",
+        "@id": "https://islam.zmo.de/api/items/569",
         "value_resource_id": 569,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association des Élèves et Étudiants Musulmans au Burkina",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
         "thumbnail_title": "AssociationdesÉlèvesetÉtudiantsMusulmansauBurkina_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -4001,12 +4001,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/569",
+        "@id": "https://islam.zmo.de/api/items/569",
         "value_resource_id": 569,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association des Élèves et Étudiants Musulmans au Burkina",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/c7807babf6c1423ebd7bc5f225d6bcb1e9846239.jpg",
         "thumbnail_title": "AssociationdesÉlèvesetÉtudiantsMusulmansauBurkina_1.jpg",
         "thumbnail_type": "image/jpeg"
       },
@@ -4031,7 +4031,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -4042,7 +4042,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/294",
+        "@id": "https://islam.zmo.de/api/items/294",
         "value_resource_id": 294,
         "value_resource_name": "items",
         "url": null,
@@ -4053,12 +4053,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -4079,7 +4079,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -4092,12 +4092,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -4122,8 +4122,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11389",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11389",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -4131,23 +4131,23 @@
     "o:id": 11389,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Module de formation sur \"Connaissance de l'ACEEMUB\"",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg"
+      "large": "https://islam.zmo.de/files/large/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg",
+      "medium": "https://islam.zmo.de/files/medium/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg",
+      "square": "https://islam.zmo.de/files/square/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T13:52:17+00:00",
@@ -4158,88 +4158,88 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11405",
+      "@id": "https://islam.zmo.de/api/media/11405",
       "o:id": 11405
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11405",
+        "@id": "https://islam.zmo.de/api/media/11405",
         "o:id": 11405
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23092",
+        "@id": "https://islam.zmo.de/api/media/23092",
         "o:id": 23092
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23093",
+        "@id": "https://islam.zmo.de/api/media/23093",
         "o:id": 23093
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23094",
+        "@id": "https://islam.zmo.de/api/media/23094",
         "o:id": 23094
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23095",
+        "@id": "https://islam.zmo.de/api/media/23095",
         "o:id": 23095
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23096",
+        "@id": "https://islam.zmo.de/api/media/23096",
         "o:id": 23096
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23097",
+        "@id": "https://islam.zmo.de/api/media/23097",
         "o:id": 23097
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23098",
+        "@id": "https://islam.zmo.de/api/media/23098",
         "o:id": 23098
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23099",
+        "@id": "https://islam.zmo.de/api/media/23099",
         "o:id": 23099
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23100",
+        "@id": "https://islam.zmo.de/api/media/23100",
         "o:id": 23100
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23101",
+        "@id": "https://islam.zmo.de/api/media/23101",
         "o:id": 23101
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23102",
+        "@id": "https://islam.zmo.de/api/media/23102",
         "o:id": 23102
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23103",
+        "@id": "https://islam.zmo.de/api/media/23103",
         "o:id": 23103
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23104",
+        "@id": "https://islam.zmo.de/api/media/23104",
         "o:id": 23104
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23105",
+        "@id": "https://islam.zmo.de/api/media/23105",
         "o:id": 23105
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23106",
+        "@id": "https://islam.zmo.de/api/media/23106",
         "o:id": 23106
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23452",
+        "@id": "https://islam.zmo.de/api/item_sets/23452",
         "o:id": 23452
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -4258,12 +4258,12 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/587",
+        "@id": "https://islam.zmo.de/api/items/587",
         "value_resource_id": 587,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association Culturelle des Étudiants et Élèves Musulmans du Bénin",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/7e0b76eb5e4bc0fd72c3185ef6a998af857c92be.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/7e0b76eb5e4bc0fd72c3185ef6a998af857c92be.jpg",
         "thumbnail_title": "AssociationCulturelledesÉtudiantsetÉlèvesMusulmansduBénin_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -4319,12 +4319,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/574",
+        "@id": "https://islam.zmo.de/api/items/574",
         "value_resource_id": 574,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Agence des Musulmans d'Afrique/Direct-Aid",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/d4c5147d444f0adf2006a0b2e227a45f2e2e9a10.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/d4c5147d444f0adf2006a0b2e227a45f2e2e9a10.jpg",
         "thumbnail_title": "AfricaMuslimsAgency_1.png",
         "thumbnail_type": "image/png"
       },
@@ -4368,12 +4368,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/587",
+        "@id": "https://islam.zmo.de/api/items/587",
         "value_resource_id": 587,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Association Culturelle des Étudiants et Élèves Musulmans du Bénin",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/7e0b76eb5e4bc0fd72c3185ef6a998af857c92be.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/7e0b76eb5e4bc0fd72c3185ef6a998af857c92be.jpg",
         "thumbnail_title": "AssociationCulturelledesÉtudiantsetÉlèvesMusulmansduBénin_1.jpg",
         "thumbnail_type": "image/jpeg"
       },
@@ -4396,7 +4396,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/55",
+        "@id": "https://islam.zmo.de/api/items/55",
         "value_resource_id": 55,
         "value_resource_name": "items",
         "url": null,
@@ -4407,7 +4407,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/44",
+        "@id": "https://islam.zmo.de/api/items/44",
         "value_resource_id": 44,
         "value_resource_name": "items",
         "url": null,
@@ -4455,12 +4455,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/283",
+        "@id": "https://islam.zmo.de/api/items/283",
         "value_resource_id": 283,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Bénin",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/7278e9454c96fa96a14ca5f92e3fc988f48bac7a.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/7278e9454c96fa96a14ca5f92e3fc988f48bac7a.jpg",
         "thumbnail_title": "Benin_1.png",
         "thumbnail_type": "image/png"
       }
@@ -4481,7 +4481,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -4494,12 +4494,12 @@
         "property_id": 11,
         "property_label": "Source",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -4510,12 +4510,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -4540,8 +4540,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/11406",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/11406",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -4549,23 +4549,23 @@
     "o:id": 11406,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Islam, paix et développement : le citoyen musulman face au défi sécuritaire",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/1fc86359df3f5860baa650fb475977b314a4f299.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/1fc86359df3f5860baa650fb475977b314a4f299.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/1fc86359df3f5860baa650fb475977b314a4f299.jpg"
+      "large": "https://islam.zmo.de/files/large/1fc86359df3f5860baa650fb475977b314a4f299.jpg",
+      "medium": "https://islam.zmo.de/files/medium/1fc86359df3f5860baa650fb475977b314a4f299.jpg",
+      "square": "https://islam.zmo.de/files/square/1fc86359df3f5860baa650fb475977b314a4f299.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T14:15:08+00:00",
@@ -4576,88 +4576,88 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/11407",
+      "@id": "https://islam.zmo.de/api/media/11407",
       "o:id": 11407
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11407",
+        "@id": "https://islam.zmo.de/api/media/11407",
         "o:id": 11407
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/11408",
+        "@id": "https://islam.zmo.de/api/media/11408",
         "o:id": 11408
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23107",
+        "@id": "https://islam.zmo.de/api/media/23107",
         "o:id": 23107
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23108",
+        "@id": "https://islam.zmo.de/api/media/23108",
         "o:id": 23108
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23109",
+        "@id": "https://islam.zmo.de/api/media/23109",
         "o:id": 23109
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23110",
+        "@id": "https://islam.zmo.de/api/media/23110",
         "o:id": 23110
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23111",
+        "@id": "https://islam.zmo.de/api/media/23111",
         "o:id": 23111
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23112",
+        "@id": "https://islam.zmo.de/api/media/23112",
         "o:id": 23112
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23113",
+        "@id": "https://islam.zmo.de/api/media/23113",
         "o:id": 23113
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23114",
+        "@id": "https://islam.zmo.de/api/media/23114",
         "o:id": 23114
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23115",
+        "@id": "https://islam.zmo.de/api/media/23115",
         "o:id": 23115
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23116",
+        "@id": "https://islam.zmo.de/api/media/23116",
         "o:id": 23116
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23117",
+        "@id": "https://islam.zmo.de/api/media/23117",
         "o:id": 23117
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23118",
+        "@id": "https://islam.zmo.de/api/media/23118",
         "o:id": 23118
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23119",
+        "@id": "https://islam.zmo.de/api/media/23119",
         "o:id": 23119
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/23120",
+        "@id": "https://islam.zmo.de/api/media/23120",
         "o:id": 23120
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23453",
+        "@id": "https://islam.zmo.de/api/item_sets/23453",
         "o:id": 23453
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -4676,7 +4676,7 @@
         "property_id": 2,
         "property_label": "Creator",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/980",
+        "@id": "https://islam.zmo.de/api/items/980",
         "value_resource_id": 980,
         "value_resource_name": "items",
         "url": null,
@@ -4718,7 +4718,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/980",
+        "@id": "https://islam.zmo.de/api/items/980",
         "value_resource_id": 980,
         "value_resource_name": "items",
         "url": null,
@@ -4729,7 +4729,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/131",
+        "@id": "https://islam.zmo.de/api/items/131",
         "value_resource_id": 131,
         "value_resource_name": "items",
         "url": null,
@@ -4740,7 +4740,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/128",
+        "@id": "https://islam.zmo.de/api/items/128",
         "value_resource_id": 128,
         "value_resource_name": "items",
         "url": null,
@@ -4751,12 +4751,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/571",
+        "@id": "https://islam.zmo.de/api/items/571",
         "value_resource_id": 571,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Cercle d'Études, de Recherches et de Formation Islamiques",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/dfda4f403e36b1bec4ab9783f45ddf4be248778e.jpg",
         "thumbnail_title": "CercledÉtudesdeRecherchesetdeFormationIslamiques_1.jpg",
         "thumbnail_type": "image/jpeg"
       },
@@ -4765,7 +4765,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/81",
+        "@id": "https://islam.zmo.de/api/items/81",
         "value_resource_id": 81,
         "value_resource_name": "items",
         "url": null,
@@ -4776,7 +4776,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/33",
+        "@id": "https://islam.zmo.de/api/items/33",
         "value_resource_id": 33,
         "value_resource_name": "items",
         "url": null,
@@ -4789,7 +4789,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/441",
+        "@id": "https://islam.zmo.de/api/items/441",
         "value_resource_id": 441,
         "value_resource_name": "items",
         "url": null,
@@ -4800,7 +4800,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/376",
+        "@id": "https://islam.zmo.de/api/items/376",
         "value_resource_id": 376,
         "value_resource_name": "items",
         "url": null,
@@ -4811,12 +4811,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/546",
+        "@id": "https://islam.zmo.de/api/items/546",
         "value_resource_id": 546,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Burkina Faso",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
         "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
         "thumbnail_type": "image/png"
       }
@@ -4837,7 +4837,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -4850,12 +4850,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -4880,8 +4880,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/26328",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/26328",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -4889,23 +4889,23 @@
     "o:id": 26328,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Récépissé Union Musulmane Togolaise",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/9394821b05992f5a868ea942aae26db41a681f62.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/9394821b05992f5a868ea942aae26db41a681f62.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/9394821b05992f5a868ea942aae26db41a681f62.jpg"
+      "large": "https://islam.zmo.de/files/large/9394821b05992f5a868ea942aae26db41a681f62.jpg",
+      "medium": "https://islam.zmo.de/files/medium/9394821b05992f5a868ea942aae26db41a681f62.jpg",
+      "square": "https://islam.zmo.de/files/square/9394821b05992f5a868ea942aae26db41a681f62.jpg"
     },
     "o:created": {
       "@value": "2024-05-31T11:04:34+00:00",
@@ -4916,32 +4916,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/26330",
+      "@id": "https://islam.zmo.de/api/media/26330",
       "o:id": 26330
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/26330",
+        "@id": "https://islam.zmo.de/api/media/26330",
         "o:id": 26330
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/26332",
+        "@id": "https://islam.zmo.de/api/media/26332",
         "o:id": 26332
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/26327",
+        "@id": "https://islam.zmo.de/api/item_sets/26327",
         "o:id": 26327
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -4980,7 +4980,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/830",
+        "@id": "https://islam.zmo.de/api/items/830",
         "value_resource_id": 830,
         "value_resource_name": "items",
         "url": null,
@@ -4993,7 +4993,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/457",
+        "@id": "https://islam.zmo.de/api/items/457",
         "value_resource_id": 457,
         "value_resource_name": "items",
         "url": null,
@@ -5016,7 +5016,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -5029,7 +5029,7 @@
         "property_id": 11,
         "property_label": "Source",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/26329",
+        "@id": "https://islam.zmo.de/api/items/26329",
         "value_resource_id": 26329,
         "value_resource_name": "items",
         "url": null,
@@ -5042,12 +5042,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -5072,8 +5072,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/26334",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/26334",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -5081,23 +5081,23 @@
     "o:id": 26334,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Invitation",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/48476d755cb2dab4fb96946f1dfb3079e576104c.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/48476d755cb2dab4fb96946f1dfb3079e576104c.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/48476d755cb2dab4fb96946f1dfb3079e576104c.jpg"
+      "large": "https://islam.zmo.de/files/large/48476d755cb2dab4fb96946f1dfb3079e576104c.jpg",
+      "medium": "https://islam.zmo.de/files/medium/48476d755cb2dab4fb96946f1dfb3079e576104c.jpg",
+      "square": "https://islam.zmo.de/files/square/48476d755cb2dab4fb96946f1dfb3079e576104c.jpg"
     },
     "o:created": {
       "@value": "2024-05-31T11:32:20+00:00",
@@ -5108,32 +5108,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/26335",
+      "@id": "https://islam.zmo.de/api/media/26335",
       "o:id": 26335
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/26335",
+        "@id": "https://islam.zmo.de/api/media/26335",
         "o:id": 26335
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/26336",
+        "@id": "https://islam.zmo.de/api/media/26336",
         "o:id": 26336
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/26327",
+        "@id": "https://islam.zmo.de/api/item_sets/26327",
         "o:id": 26327
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -5172,7 +5172,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/26333",
+        "@id": "https://islam.zmo.de/api/items/26333",
         "value_resource_id": 26333,
         "value_resource_name": "items",
         "url": null,
@@ -5183,7 +5183,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/55",
+        "@id": "https://islam.zmo.de/api/items/55",
         "value_resource_id": 55,
         "value_resource_name": "items",
         "url": null,
@@ -5194,7 +5194,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/2150",
+        "@id": "https://islam.zmo.de/api/items/2150",
         "value_resource_id": 2150,
         "value_resource_name": "items",
         "url": null,
@@ -5207,12 +5207,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/308",
+        "@id": "https://islam.zmo.de/api/items/308",
         "value_resource_id": 308,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Égypte",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/82f70900635cba8bacecdc05c7f38ecbb2eebe7f.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/82f70900635cba8bacecdc05c7f38ecbb2eebe7f.jpg",
         "thumbnail_title": "Egypt_1.png",
         "thumbnail_type": "image/png"
       }
@@ -5233,7 +5233,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -5246,7 +5246,7 @@
         "property_id": 11,
         "property_label": "Source",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/26329",
+        "@id": "https://islam.zmo.de/api/items/26329",
         "value_resource_id": 26329,
         "value_resource_name": "items",
         "url": null,
@@ -5259,12 +5259,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -5289,8 +5289,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/26337",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/26337",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -5298,23 +5298,23 @@
     "o:id": 26337,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Lettre d'Eyadéma au grand cheik d'El Ashar",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/01929efd816fa1b6b17d63939488890426f66930.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/01929efd816fa1b6b17d63939488890426f66930.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/01929efd816fa1b6b17d63939488890426f66930.jpg"
+      "large": "https://islam.zmo.de/files/large/01929efd816fa1b6b17d63939488890426f66930.jpg",
+      "medium": "https://islam.zmo.de/files/medium/01929efd816fa1b6b17d63939488890426f66930.jpg",
+      "square": "https://islam.zmo.de/files/square/01929efd816fa1b6b17d63939488890426f66930.jpg"
     },
     "o:created": {
       "@value": "2024-05-31T11:40:55+00:00",
@@ -5325,32 +5325,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/26338",
+      "@id": "https://islam.zmo.de/api/media/26338",
       "o:id": 26338
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/26338",
+        "@id": "https://islam.zmo.de/api/media/26338",
         "o:id": 26338
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/26339",
+        "@id": "https://islam.zmo.de/api/media/26339",
         "o:id": 26339
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/26327",
+        "@id": "https://islam.zmo.de/api/item_sets/26327",
         "o:id": 26327
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -5389,7 +5389,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/55",
+        "@id": "https://islam.zmo.de/api/items/55",
         "value_resource_id": 55,
         "value_resource_name": "items",
         "url": null,
@@ -5400,12 +5400,12 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/2128",
+        "@id": "https://islam.zmo.de/api/items/2128",
         "value_resource_id": 2128,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Gnassingbé Eyadéma",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/206743a2b99eaf4a191452d8a922c3c7f70617cb.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/206743a2b99eaf4a191452d8a922c3c7f70617cb.jpg",
         "thumbnail_title": "GnassingbéEyadéma_1.jpg",
         "thumbnail_type": "image/jpeg"
       },
@@ -5414,7 +5414,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/2150",
+        "@id": "https://islam.zmo.de/api/items/2150",
         "value_resource_id": 2150,
         "value_resource_name": "items",
         "url": null,
@@ -5425,7 +5425,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/830",
+        "@id": "https://islam.zmo.de/api/items/830",
         "value_resource_id": 830,
         "value_resource_name": "items",
         "url": null,
@@ -5438,12 +5438,12 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/308",
+        "@id": "https://islam.zmo.de/api/items/308",
         "value_resource_id": 308,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Égypte",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/82f70900635cba8bacecdc05c7f38ecbb2eebe7f.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/82f70900635cba8bacecdc05c7f38ecbb2eebe7f.jpg",
         "thumbnail_title": "Egypt_1.png",
         "thumbnail_type": "image/png"
       },
@@ -5452,7 +5452,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/480",
+        "@id": "https://islam.zmo.de/api/items/480",
         "value_resource_id": 480,
         "value_resource_name": "items",
         "url": null,
@@ -5475,7 +5475,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -5488,7 +5488,7 @@
         "property_id": 11,
         "property_label": "Source",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/26329",
+        "@id": "https://islam.zmo.de/api/items/26329",
         "value_resource_id": 26329,
         "value_resource_name": "items",
         "url": null,
@@ -5501,12 +5501,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -5531,8 +5531,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/26340",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/26340",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -5540,23 +5540,23 @@
     "o:id": 26340,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Autorisation",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/e8c92f043a8746b4ac41f3a0865695001f1d1ecf.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/e8c92f043a8746b4ac41f3a0865695001f1d1ecf.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/e8c92f043a8746b4ac41f3a0865695001f1d1ecf.jpg"
+      "large": "https://islam.zmo.de/files/large/e8c92f043a8746b4ac41f3a0865695001f1d1ecf.jpg",
+      "medium": "https://islam.zmo.de/files/medium/e8c92f043a8746b4ac41f3a0865695001f1d1ecf.jpg",
+      "square": "https://islam.zmo.de/files/square/e8c92f043a8746b4ac41f3a0865695001f1d1ecf.jpg"
     },
     "o:created": {
       "@value": "2024-05-31T11:50:37+00:00",
@@ -5567,32 +5567,32 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/26341",
+      "@id": "https://islam.zmo.de/api/media/26341",
       "o:id": 26341
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/26341",
+        "@id": "https://islam.zmo.de/api/media/26341",
         "o:id": 26341
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/26342",
+        "@id": "https://islam.zmo.de/api/media/26342",
         "o:id": 26342
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/26327",
+        "@id": "https://islam.zmo.de/api/item_sets/26327",
         "o:id": 26327
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -5631,7 +5631,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/26333",
+        "@id": "https://islam.zmo.de/api/items/26333",
         "value_resource_id": 26333,
         "value_resource_name": "items",
         "url": null,
@@ -5642,7 +5642,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/13622",
+        "@id": "https://islam.zmo.de/api/items/13622",
         "value_resource_id": 13622,
         "value_resource_name": "items",
         "url": null,
@@ -5653,7 +5653,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/55",
+        "@id": "https://islam.zmo.de/api/items/55",
         "value_resource_id": 55,
         "value_resource_name": "items",
         "url": null,
@@ -5664,7 +5664,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/26343",
+        "@id": "https://islam.zmo.de/api/items/26343",
         "value_resource_id": 26343,
         "value_resource_name": "items",
         "url": null,
@@ -5675,7 +5675,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/2150",
+        "@id": "https://islam.zmo.de/api/items/2150",
         "value_resource_id": 2150,
         "value_resource_name": "items",
         "url": null,
@@ -5686,7 +5686,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/14057",
+        "@id": "https://islam.zmo.de/api/items/14057",
         "value_resource_id": 14057,
         "value_resource_name": "items",
         "url": null,
@@ -5697,7 +5697,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/830",
+        "@id": "https://islam.zmo.de/api/items/830",
         "value_resource_id": 830,
         "value_resource_name": "items",
         "url": null,
@@ -5710,7 +5710,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/457",
+        "@id": "https://islam.zmo.de/api/items/457",
         "value_resource_id": 457,
         "value_resource_name": "items",
         "url": null,
@@ -5733,7 +5733,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -5746,7 +5746,7 @@
         "property_id": 11,
         "property_label": "Source",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/26329",
+        "@id": "https://islam.zmo.de/api/items/26329",
         "value_resource_id": 26329,
         "value_resource_name": "items",
         "url": null,
@@ -5759,12 +5759,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
@@ -5789,8 +5789,8 @@
     ]
   },
   {
-    "@context": "https://iwac.frederickmadore.com/api-context",
-    "@id": "https://iwac.frederickmadore.com/api/items/31903",
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/items/31903",
     "@type": [
       "o:Item",
       "bibo:Document"
@@ -5798,23 +5798,23 @@
     "o:id": 31903,
     "o:is_public": true,
     "o:owner": {
-      "@id": "https://iwac.frederickmadore.com/api/users/1",
+      "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
     },
     "o:resource_class": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_classes/49",
+      "@id": "https://islam.zmo.de/api/resource_classes/49",
       "o:id": 49
     },
     "o:resource_template": {
-      "@id": "https://iwac.frederickmadore.com/api/resource_templates/8",
+      "@id": "https://islam.zmo.de/api/resource_templates/8",
       "o:id": 8
     },
     "o:thumbnail": null,
     "o:title": "Procès verbal de réunion du comité mixte gouvernement-communauté musulmane d'organisation du séminaire bilan sur \"l'islam et la pratique de la laïcité au Bénin\"",
     "thumbnail_display_urls": {
-      "large": "https://iwac.frederickmadore.com/files/large/77ea46d32345656e1dad818f6b999095b0bcb844.jpg",
-      "medium": "https://iwac.frederickmadore.com/files/medium/77ea46d32345656e1dad818f6b999095b0bcb844.jpg",
-      "square": "https://iwac.frederickmadore.com/files/square/77ea46d32345656e1dad818f6b999095b0bcb844.jpg"
+      "large": "https://islam.zmo.de/files/large/77ea46d32345656e1dad818f6b999095b0bcb844.jpg",
+      "medium": "https://islam.zmo.de/files/medium/77ea46d32345656e1dad818f6b999095b0bcb844.jpg",
+      "square": "https://islam.zmo.de/files/square/77ea46d32345656e1dad818f6b999095b0bcb844.jpg"
     },
     "o:created": {
       "@value": "2024-07-05T08:54:30+00:00",
@@ -5825,28 +5825,28 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://iwac.frederickmadore.com/api/media/31905",
+      "@id": "https://islam.zmo.de/api/media/31905",
       "o:id": 31905
     },
     "o:media": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/media/31905",
+        "@id": "https://islam.zmo.de/api/media/31905",
         "o:id": 31905
       }
     ],
     "o:item_set": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/item_sets/23452",
+        "@id": "https://islam.zmo.de/api/item_sets/23452",
         "o:id": 23452
       }
     ],
     "o:site": [
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/1",
+        "@id": "https://islam.zmo.de/api/sites/1",
         "o:id": 1
       },
       {
-        "@id": "https://iwac.frederickmadore.com/api/sites/2",
+        "@id": "https://islam.zmo.de/api/sites/2",
         "o:id": 2
       }
     ],
@@ -5885,7 +5885,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/1940",
+        "@id": "https://islam.zmo.de/api/items/1940",
         "value_resource_id": 1940,
         "value_resource_name": "items",
         "url": null,
@@ -5896,7 +5896,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/2029",
+        "@id": "https://islam.zmo.de/api/items/2029",
         "value_resource_id": 2029,
         "value_resource_name": "items",
         "url": null,
@@ -5907,7 +5907,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/42",
+        "@id": "https://islam.zmo.de/api/items/42",
         "value_resource_id": 42,
         "value_resource_name": "items",
         "url": null,
@@ -5918,7 +5918,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/5",
+        "@id": "https://islam.zmo.de/api/items/5",
         "value_resource_id": 5,
         "value_resource_name": "items",
         "url": null,
@@ -5929,7 +5929,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/44",
+        "@id": "https://islam.zmo.de/api/items/44",
         "value_resource_id": 44,
         "value_resource_name": "items",
         "url": null,
@@ -5947,7 +5947,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/61",
+        "@id": "https://islam.zmo.de/api/items/61",
         "value_resource_id": 61,
         "value_resource_name": "items",
         "url": null,
@@ -5958,7 +5958,7 @@
         "property_id": 3,
         "property_label": "Subject",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/99",
+        "@id": "https://islam.zmo.de/api/items/99",
         "value_resource_id": 99,
         "value_resource_name": "items",
         "url": null,
@@ -5978,7 +5978,7 @@
         "property_id": 40,
         "property_label": "Spatial Coverage",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/299",
+        "@id": "https://islam.zmo.de/api/items/299",
         "value_resource_id": 299,
         "value_resource_name": "items",
         "url": null,
@@ -6001,7 +6001,7 @@
         "property_id": 12,
         "property_label": "Language",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/8355",
+        "@id": "https://islam.zmo.de/api/items/8355",
         "value_resource_id": 8355,
         "value_resource_name": "items",
         "url": null,
@@ -6014,7 +6014,7 @@
         "property_id": 11,
         "property_label": "Source",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/1945",
+        "@id": "https://islam.zmo.de/api/items/1945",
         "value_resource_id": 1945,
         "value_resource_name": "items",
         "url": null,
@@ -6027,12 +6027,12 @@
         "property_id": 6,
         "property_label": "Contributor",
         "is_public": true,
-        "@id": "https://iwac.frederickmadore.com/api/items/858",
+        "@id": "https://islam.zmo.de/api/items/858",
         "value_resource_id": 858,
         "value_resource_name": "items",
         "url": null,
         "display_title": "Frédérick Madore",
-        "thumbnail_url": "https://iwac.frederickmadore.com/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
