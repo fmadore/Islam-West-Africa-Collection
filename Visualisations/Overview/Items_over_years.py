@@ -4,7 +4,7 @@ import plotly.express as px
 from tqdm import tqdm
 import os
 
-api_url = "https://iwac.frederickmadore.com/api"
+api_url = "https://islam.zmo.de/api"
 
 # Define class IDs with their corresponding names in both English and French
 acceptable_ids = {
