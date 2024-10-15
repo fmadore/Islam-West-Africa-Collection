@@ -618,6 +618,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 43071,https://iwac.frederickmadore.com/s/afrique_ouest/item/43071,,bibo:Event,Évènements,,Congrès AJMCI (1994),,,1994,,,,,Association des Jeunes Musulmans de Côte d'Ivoire,,Côte d'Ivoire,,,,,
 43072,https://iwac.frederickmadore.com/s/afrique_ouest/item/43072,,bibo:Event,Évènements,,Congrès AFMCI (1994),,,1994,,,,,Association des Femmes Musulmanes de Côte d'Ivoire,,Côte d'Ivoire,,,,,
 43073,https://iwac.frederickmadore.com/s/afrique_ouest/item/43073,,bibo:Event,Évènements,,Congrès CNI (1993),,,1993,,,,,Conseil National Islamique,,Côte d'Ivoire,,,,,
+44599,https://iwac.frederickmadore.com/s/afrique_ouest/item/44599,,bibo:Event,Évènements,,Congrès CNI (1995),,,1995,,,,,Conseil National Islamique,,Côte d'Ivoire,,,,,
 269,https://iwac.frederickmadore.com/s/afrique_ouest/item/269,iwac-index-0000607,dcterms:Location,Emplacements,,Abidjan,,,,,,,,Côte d'Ivoire,,,,,,,"5.35444, -4.00167"
 270,https://iwac.frederickmadore.com/s/afrique_ouest/item/270,iwac-index-0000608,dcterms:Location,Emplacements,,Abomey,,,,,,,,Bénin,,,,,,,"7.18286, 1.99119"
 271,https://iwac.frederickmadore.com/s/afrique_ouest/item/271,iwac-index-0000609,dcterms:Location,Emplacements,,Abomey-Calavi,,,,,,,,Bénin,,,,,,,"6.44852, 2.35566"
@@ -2810,3 +2811,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 43062,https://iwac.frederickmadore.com/s/afrique_ouest/item/43062,,foaf:Person,Individus,,Émile Constant Bombet,,,,Homme politique ivoirien|Ivorian politician,,,,Politicien.ne,,Côte d'Ivoire,Émile Constant,Bombet,Homme,,
 43063,https://iwac.frederickmadore.com/s/afrique_ouest/item/43063,,foaf:Person,Individus,,Balla Keita,,,,,,,,Politicien.ne,,Côte d'Ivoire,Balla,Keita,Homme,,
 43069,https://iwac.frederickmadore.com/s/afrique_ouest/item/43069,,foaf:Person,Individus,,Félix Houphouët-Boigny,,,1993-12-07,,Élection présidentielle ivoirienne de 1990,,,Politicien.ne,,Côte d'Ivoire,Félix,Houphouët-Boigny,Homme,1905-10,
+44307,https://iwac.frederickmadore.com/s/afrique_ouest/item/44307,,foaf:Person,Individus,,Ibrahim Binaté,,,,,,,,,,Côte d'Ivoire,Ibrahim,Binaté,Homme,,
+44416,https://iwac.frederickmadore.com/s/afrique_ouest/item/44416,,foaf:Person,Individus,,Mokodu Thiam,,,,,,,,,,Côte d'Ivoire,Mokodu,Thiam,Homme,,
+44465,https://iwac.frederickmadore.com/s/afrique_ouest/item/44465,,foaf:Person,Individus,,Affou Sanogo,,,,,,,,,,Côte d'Ivoire,Affou,Sanogo,Homme,,
+44514,https://iwac.frederickmadore.com/s/afrique_ouest/item/44514,,foaf:Person,Individus,,Kader Kéita,,,,,,,,,,Côte d'Ivoire,Kader,Kéita,,,
