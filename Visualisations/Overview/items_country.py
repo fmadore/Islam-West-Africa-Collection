@@ -5,7 +5,7 @@ from tqdm import tqdm
 import concurrent.futures
 import os
 
-api_url = "https://iwac.frederickmadore.com/api"
+api_url = "https://islam.zmo.de/api"
 session = requests.Session()
 
 item_set_ids = [
