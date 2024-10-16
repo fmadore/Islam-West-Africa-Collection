@@ -24215,8 +24215,8 @@
         "value_resource_name": "item_sets",
         "url": null,
         "display_title": "Le vrai visage de l'islam",
-        "thumbnail_url": "https://islam.zmo.de/files/square/c499e0f49684a0e777e05c77dfcd5adeb78d9131.jpg",
-        "thumbnail_title": "2014-04-05_Levraivisagedelislam14.pdf",
+        "thumbnail_url": "https://islam.zmo.de/files/square/c37b78746857e3c025d438d3a30d97ad3e859305.jpg",
+        "thumbnail_title": "iwac-issue-0000162.pdf",
         "thumbnail_type": "application/pdf"
       }
     ],
@@ -24450,8 +24450,8 @@
         "value_resource_name": "item_sets",
         "url": null,
         "display_title": "L'Autre Regard",
-        "thumbnail_url": "https://islam.zmo.de/files/square/2a220c351adbc87ba9043d648f63e8e2d6efe077.jpg",
-        "thumbnail_title": "2015-05-05_LAutreRegard26.pdf",
+        "thumbnail_url": "https://islam.zmo.de/files/square/f2bf6318f82ea0dbbff5dfc14e01033ee0d53bce.jpg",
+        "thumbnail_title": "iwac-issue-0000163.pdf",
         "thumbnail_type": "application/pdf"
       }
     ],
@@ -49487,7 +49487,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25317",
-          "o:title": "Sokodé : Des prières musulmanes dans la région Centrale pour la paix au Togo"
+          "o:title": "Sokodé : des prières musulmanes dans la région Centrale pour la paix au Togo"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25318",
@@ -49507,15 +49507,15 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25322",
-          "o:title": "Centrale/Aid El-Fitr : Les musulmans prient pour la paix et la réussite des prochaines élections"
+          "o:title": "Centrale/Aid El-Fitr : les musulmans prient pour la paix et la réussite des prochaines élections"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25323",
-          "o:title": "Ogou/fête de ramadan : Des prières musulmanes marquent la célébration dans la région des Plateaux-Est"
+          "o:title": "Ogou/fête de ramadan : des prières musulmanes marquent la célébration dans la région des Plateaux-Est"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25324",
-          "o:title": "Kloto : don de vivres a la communaute musulmane de la zone-ouest des plateaux par le chef de l'Etat"
+          "o:title": "Kloto : don de vivres à la communaute musulmane de la zone-ouest des plateaux par le chef de l'Etat"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25325",
@@ -49555,11 +49555,11 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25334",
-          "o:title": "Ogou/ célébration de la fête de tabaski : des fidèles musulmans des Plateaux-est ont rendu gloire et grâce à Allah pour ses multiples faveurs"
+          "o:title": "Ogou / célébration de la fête de tabaski : des fidèles musulmans des Plateaux-est ont rendu gloire et grâce à Allah pour ses multiples faveurs"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25335",
-          "o:title": "Plateaux –ouest / prière de l'Aïd El Kebir : la communauté musulmane a respecté la tradition"
+          "o:title": "Plateaux-ouest / prière de l'Aïd El Kebir : la communauté musulmane a respecté la tradition"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25336",
@@ -49603,7 +49603,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25346",
-          "o:title": "Oti/ jeune de ramadan : El hadj Ouattara Youssouf assiste les musulmans vulnérables de Mango en kits alimentaires"
+          "o:title": "Oti / jeune de ramadan : El hadj Ouattara Youssouf assiste les musulmans vulnérables de Mango en kits alimentaires"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25347",
@@ -49651,7 +49651,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25358",
-          "o:title": "Wawa/ Don du chef de l'État à la communauté musulmane de la préfecture"
+          "o:title": "Wawa : don du chef de l'État à la communauté musulmane de la préfecture"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25359",
@@ -49667,11 +49667,11 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25362",
-          "o:title": "Tchaoudjo/ jeûne de ramadan : l'ABEA vole au secours des musulmans vulnérables"
+          "o:title": "Tchaoudjo / jeûne de ramadan : l'ABEA vole au secours des musulmans vulnérables"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25363",
-          "o:title": "Assoli/ jeûne de ramadan : l'ONG “Direct Aid ” assiste son personnel et des musulmans nécessiteux"
+          "o:title": "Assoli/ jeûne de ramadan : l'ONG \"Direct Aid\" assiste son personnel et des musulmans nécessiteux"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25364",
@@ -49679,7 +49679,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25365",
-          "o:title": "Kloto/ Célébration de l'Aïd El Fitr : une grande prière musulmane pour rendre grâce à Allah"
+          "o:title": "Kloto / Célébration de l'Aïd El Fitr : une grande prière musulmane pour rendre grâce à Allah"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25366",
@@ -49691,7 +49691,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25368",
-          "o:title": "Tchaoudjo/législatives et régionales du 29 avril : Des offices religieux dans la Centrale pour la réussite des élections au Togo"
+          "o:title": "Tchaoudjo/législatives et régionales du 29 avril : des offices religieux dans la Centrale pour la réussite des élections au Togo"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25369",
@@ -49699,7 +49699,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25370",
-          "o:title": "Religion/des supplications à Allah dans les savanes pour le bon déroulement du double scrutin du 29 avril"
+          "o:title": "Religion : des supplications à Allah dans les savanes pour le bon déroulement du double scrutin du 29 avril"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25371",
@@ -49711,7 +49711,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25373",
-          "o:title": "Yoto : Des offices religieux pour marquer le 12ème anniversaire du parti UNIR"
+          "o:title": "Yoto : des offices religieux pour marquer le 12ème anniversaire du parti UNIR"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25374",
@@ -49727,7 +49727,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25377",
-          "o:title": "Tchaoudjo/Ramadan : L'association Al-Ihsane offre des vivres à 900 familles nécessiteuses"
+          "o:title": "Tchaoudjo/Ramadan : l'association Al-Ihsane offre des vivres à 900 familles nécessiteuses"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25378",
@@ -49739,7 +49739,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25380",
-          "o:title": "Sotouboua/Législatives et régionales du 20 avril : Le parti UNIR a présenté ses candidats aux militants"
+          "o:title": "Sotouboua/Législatives et régionales du 20 avril : le parti UNIR a présenté ses candidats aux militants"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25381",
@@ -49762,12 +49762,8 @@
           "o:title": "Tchaoudjo/accès pour tous à l'ecole : l'ABEA octroi des bourses d'études à trente enfants orphelins de Sokodé"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/25386",
-          "o:title": "Tchaoudjo/accès pour tous à l'école : l'ABEA octroi des bourses d'études à trente enfants orphelins de Sokodé"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/25387",
-          "o:title": "Tchamba/Jeûne du mois du Ramadan : Le CCAODS offre des vivres aux démunis du canton de Koussountou"
+          "o:title": "Tchamba/Jeûne du mois du Ramadan : le CCAODS offre des vivres aux démunis du canton de Koussountou"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25388",
@@ -49779,15 +49775,15 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25390",
-          "o:title": "Tchaoudjo/Concours international de récitation du Coran : Les lauréats de la 20è édition récompensés"
+          "o:title": "Tchaoudjo/Concours international de récitation du Coran : les lauréats de la 20è édition récompensés"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25391",
-          "o:title": "Cinkassé/Des prières et invocations pour la paix et la sécurité au Togo"
+          "o:title": "Cinkassé : des prières et invocations pour la paix et la sécurité au Togo"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25392",
-          "o:title": "Kloto/ L'ONG Centre de charité pour l'appel, l'orientation et le développement social offre des enveloppes financières aux personnes démunies"
+          "o:title": "Kloto : l'ONG Centre de charité pour l'appel, l'orientation et le développement social offre des enveloppes financières aux personnes démunies"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25393",
@@ -49804,10 +49800,6 @@
         {
           "@id": "https://islam.zmo.de/api/resources/25396",
           "o:title": "Ogou/19ème anniversaire du rappel à Dieu de feu président Gnassingbé Eyadema : des offices religieux pour le repos de son âme"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/25397",
-          "o:title": "Renforcer le secteur des industries Halal : un forum planche sur la question dans la ville de la Mecque"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25398",
@@ -49850,12 +49842,8 @@
           "o:title": "Kozah/Gestion des conflits conjugaux et matrimoniaux : un conseil matrimonial islamique en gestation"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/25408",
-          "o:title": "Le forum international sur la haine et la violence dans les médias s'ouvre le dimanche prochain à Djeddah"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/25409",
-          "o:title": "Blitta : L'ONG Direct Aid Togo offre de l'eau potable aux populations de Laouwaï et Katakpé"
+          "o:title": "Blitta : l'ONG Direct Aid Togo offre de l'eau potable aux populations de Laouwaï et Katakpé"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25410",
@@ -49875,7 +49863,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25414",
-          "o:title": "Tchaoudjo : L'ONG Daroul Cour'an offre un ponceau aux populations"
+          "o:title": "Tchaoudjo : l'ONG Daroul Cour'an offre un ponceau aux populations"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25415",
@@ -49887,15 +49875,15 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25417",
-          "o:title": "Haho/ culture : Des rituelles et des invocations des oracles en prelude à “Agbogboza”"
+          "o:title": "Haho/ culture : des rituelles et des invocations des oracles en prelude à “Agbogboza”"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25418",
-          "o:title": "59è édition de D'pontre/ N'nidak (fete des ignames) : Les festivités démarrées dans le grand Bassar"
+          "o:title": "59è édition de D'pontre/ N'nidak (fete des ignames) : les festivités démarrées dans le grand Bassar"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25419",
-          "o:title": "Tchaoudjo/ société : L'ONG CTPD mobilise les leaders communautaires et les jeunes pour la paix"
+          "o:title": "Tchaoudjo/ société : l'ONG CTPD mobilise les leaders communautaires et les jeunes pour la paix"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25420",
@@ -49903,7 +49891,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25421",
-          "o:title": "Tchaoudjo : Lutte contre l'insalubrité publique Une opération ville propre organisée à Sokodé"
+          "o:title": "Tchaoudjo / Lutte contre l'insalubrité publique : une opération ville propre organisée à Sokodé"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25422",
@@ -49927,7 +49915,7 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25427",
-          "o:title": "Tchaoudjo/Tabaski : L'ONG Direct Aid-Sokodé a distribué des sachets de viandes à 350 personnes démunies"
+          "o:title": "Tchaoudjo/Tabaski : l'ONG Direct Aid-Sokodé a distribué des sachets de viandes à 350 personnes démunies"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25428",
@@ -49951,11 +49939,11 @@
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25433",
-          "o:title": "Ramadan : De milliers de fidèles ont assisté aux « grandes prières » dans la région centrale"
+          "o:title": "Ramadan : de milliers de fidèles ont assisté aux « grandes prières » dans la région centrale"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25434",
-          "o:title": "Tchaoudjo/Mois du ramadan : L'ONG AOIB offre des kits alimentaires à 700 personnes vulnérables à Sokodé"
+          "o:title": "Tchaoudjo/Mois du ramadan : l'ONG AOIB offre des kits alimentaires à 700 personnes vulnérables à Sokodé"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25435",
@@ -50034,10 +50022,6 @@
           "o:title": "Bas-Mono/religion : une mosquée moderne réceptionnée à Afagnan"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/25454",
-          "o:title": "L'UNA condamne fermement la mise à feu d'un exemplaire du saint coran en Suède"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/25455",
           "o:title": "Bassar : des offices religieux pour implorer la protection divine sur le chef de l'Etat"
         },
@@ -50084,10 +50068,6 @@
         {
           "@id": "https://islam.zmo.de/api/resources/25466",
           "o:title": "Journée mondiale contre le sida : l'ONG AJMB sensibilise des élèves"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/25467",
-          "o:title": "Les produits Halal : un déficit commercial de 63 milliards de dollars us"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/25468",
@@ -51193,6 +51173,1106 @@
         {
           "@id": "https://islam.zmo.de/api/resources/31885",
           "o:title": "Associations musulmanes : premier séminaire international d'Abidjan"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/39797",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 39797,
+    "o:is_public": true,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": {
+      "@id": "https://islam.zmo.de/api/assets/70",
+      "o:id": 70
+    },
+    "o:title": "Plume Libre",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/asset/1fe4e7f21936e938dc70ea5761baeea75015107b.png",
+      "medium": "https://islam.zmo.de/files/asset/1fe4e7f21936e938dc70ea5761baeea75015107b.png",
+      "square": "https://islam.zmo.de/files/asset/1fe4e7f21936e938dc70ea5761baeea75015107b.png"
+    },
+    "o:created": {
+      "@value": "2024-10-14T04:51:28+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-10-15T08:50:08+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=39797"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Plume Libre"
+      }
+    ],
+    "dcterms:description": [
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Mensuel ivoirien d'informations générales",
+        "@language": "fr"
+      },
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Ivorian monthly general news magazine",
+        "@language": "en"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "1991-10/2001-05-18"
+      }
+    ],
+    "dcterms:spatial": [
+      {
+        "type": "customvocab:4",
+        "property_id": 40,
+        "property_label": "Spatial Coverage",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/298",
+        "value_resource_id": 298,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Côte d'Ivoire",
+        "thumbnail_url": "https://islam.zmo.de/files/square/e76603c6a90bc729b2356f4f17b9ba162a0e88c0.jpg",
+        "thumbnail_title": "IvoryCoast_1.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:language": [
+      {
+        "type": "customvocab:6",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/8355",
+        "value_resource_id": 8355,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Français"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
+      }
+    ],
+    "dcterms:source": [
+      {
+        "type": "resource:item",
+        "property_id": 11,
+        "property_label": "Source",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/39798",
+        "value_resource_id": 39798,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Archives nationales de Côte d'Ivoire"
+      }
+    ],
+    "dcterms:contributor": [
+      {
+        "type": "customvocab:3",
+        "property_id": 6,
+        "property_label": "Contributor",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/858",
+        "value_resource_id": 858,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Frédérick Madore",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_title": "FrédérickMadore_1.jpg",
+        "thumbnail_type": "image/jpeg"
+      }
+    ],
+    "@reverse": {
+      "dcterms:publisher": [
+        {
+          "@id": "https://islam.zmo.de/api/resources/44752",
+          "o:title": "Plume Libre #38"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44753",
+          "o:title": "Plume Libre #01"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44754",
+          "o:title": "Plume Libre #02"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44755",
+          "o:title": "Plume Libre #03"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44756",
+          "o:title": "Plume Libre #04"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44757",
+          "o:title": "Plume Libre #05"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44758",
+          "o:title": "Plume Libre #06"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44759",
+          "o:title": "Plume Libre #07"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44760",
+          "o:title": "Plume Libre #08"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44761",
+          "o:title": "Plume Libre #09"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44762",
+          "o:title": "Plume Libre #10"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44763",
+          "o:title": "Plume Libre #11"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44764",
+          "o:title": "Plume Libre #12"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44765",
+          "o:title": "Plume Libre #13"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44766",
+          "o:title": "Plume Libre #14"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44767",
+          "o:title": "Plume Libre #15"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44768",
+          "o:title": "Plume Libre #16"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44769",
+          "o:title": "Plume Libre #17"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44770",
+          "o:title": "Plume Libre #18"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44771",
+          "o:title": "Plume Libre #19"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44792",
+          "o:title": "Plume Libre #20"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44793",
+          "o:title": "Plume Libre #21"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44794",
+          "o:title": "Plume Libre #22"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44795",
+          "o:title": "Plume Libre #24"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44796",
+          "o:title": "Plume Libre #25"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44797",
+          "o:title": "Plume Libre #26"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44798",
+          "o:title": "Plume Libre #27"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44799",
+          "o:title": "Plume Libre #28"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44800",
+          "o:title": "Plume Libre #29"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44801",
+          "o:title": "Plume Libre #30"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44802",
+          "o:title": "Plume Libre #31"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44803",
+          "o:title": "Plume Libre #32"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44804",
+          "o:title": "Plume Libre #34"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44805",
+          "o:title": "Plume Libre #33"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44806",
+          "o:title": "Plume Libre #35"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44807",
+          "o:title": "Plume Libre #36"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44808",
+          "o:title": "Plume Libre #37"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44809",
+          "o:title": "Plume Libre #39"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44810",
+          "o:title": "Plume Libre #40"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44811",
+          "o:title": "Plume Libre #41"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44832",
+          "o:title": "Plume Libre #42"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44833",
+          "o:title": "Plume Libre #43"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44834",
+          "o:title": "Plume Libre #46"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44835",
+          "o:title": "Plume Libre #55"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44836",
+          "o:title": "Plume Libre #58"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44837",
+          "o:title": "Plume Libre #60"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44838",
+          "o:title": "Plume Libre #63"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44846",
+          "o:title": "Plume Libre hors-série #1"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/44848",
+          "o:title": "Plume Libre hors-série #2"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/43051",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 43051,
+    "o:is_public": true,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": {
+      "@id": "https://islam.zmo.de/api/assets/71",
+      "o:id": 71
+    },
+    "o:title": "Agence Ivoirienne de Presse",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/asset/7631c06eecb9ab50d7d221b01312074a424bbf65.png",
+      "medium": "https://islam.zmo.de/files/asset/7631c06eecb9ab50d7d221b01312074a424bbf65.png",
+      "square": "https://islam.zmo.de/files/asset/7631c06eecb9ab50d7d221b01312074a424bbf65.png"
+    },
+    "o:created": {
+      "@value": "2024-10-15T06:47:16+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-10-15T06:49:20+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=43051"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Agence Ivoirienne de Presse"
+      }
+    ],
+    "dcterms:description": [
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Métadonnées d'articles provenant de l'Agence Ivoirienne de Presse (2011-2023)",
+        "@language": "fr"
+      },
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Metadata of articles from the Agence Ivoirienne de Presse (2011-2023)",
+        "@language": "en"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "2011/2023"
+      }
+    ],
+    "dcterms:spatial": [
+      {
+        "type": "customvocab:4",
+        "property_id": 40,
+        "property_label": "Spatial Coverage",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/298",
+        "value_resource_id": 298,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Côte d'Ivoire",
+        "thumbnail_url": "https://islam.zmo.de/files/square/e76603c6a90bc729b2356f4f17b9ba162a0e88c0.jpg",
+        "thumbnail_title": "IvoryCoast_1.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:language": [
+      {
+        "type": "customvocab:6",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/8355",
+        "value_resource_id": 8355,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Français"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC/1.0/",
+        "o:label": "In Copyright"
+      }
+    ],
+    "dcterms:contributor": [
+      {
+        "type": "customvocab:3",
+        "property_id": 6,
+        "property_label": "Contributor",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/858",
+        "value_resource_id": 858,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Frédérick Madore",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_title": "FrédérickMadore_1.jpg",
+        "thumbnail_type": "image/jpeg"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/43622",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 43622,
+    "o:is_public": true,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": {
+      "@id": "https://islam.zmo.de/api/assets/72",
+      "o:id": 72
+    },
+    "o:title": "Alif",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/asset/577788c92f4a69572a267818701982fca1efb863.png",
+      "medium": "https://islam.zmo.de/files/asset/577788c92f4a69572a267818701982fca1efb863.png",
+      "square": "https://islam.zmo.de/files/asset/577788c92f4a69572a267818701982fca1efb863.png"
+    },
+    "o:created": {
+      "@value": "2024-10-15T09:03:28+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-10-15T09:08:12+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=43622"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Alif"
+      }
+    ],
+    "dcterms:description": [
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Mensuel islamique d'informations et de formation de Côte d'Ivoire",
+        "@language": "fr"
+      },
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Monthly Islamic news and training magazine from Côte d'Ivoire",
+        "@language": "en"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "1992-03/1995-07"
+      }
+    ],
+    "dcterms:spatial": [
+      {
+        "type": "customvocab:4",
+        "property_id": 40,
+        "property_label": "Spatial Coverage",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/298",
+        "value_resource_id": 298,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Côte d'Ivoire",
+        "thumbnail_url": "https://islam.zmo.de/files/square/e76603c6a90bc729b2356f4f17b9ba162a0e88c0.jpg",
+        "thumbnail_title": "IvoryCoast_1.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:language": [
+      {
+        "type": "customvocab:6",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/8355",
+        "value_resource_id": 8355,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Français"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-RUU/1.0/",
+        "o:label": "In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable"
+      }
+    ],
+    "dcterms:source": [
+      {
+        "type": "resource:item",
+        "property_id": 11,
+        "property_label": "Source",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/39798",
+        "value_resource_id": 39798,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Archives nationales de Côte d'Ivoire"
+      }
+    ],
+    "dcterms:contributor": [
+      {
+        "type": "customvocab:3",
+        "property_id": 6,
+        "property_label": "Contributor",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/858",
+        "value_resource_id": 858,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Frédérick Madore",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_title": "FrédérickMadore_1.jpg",
+        "thumbnail_type": "image/jpeg"
+      }
+    ],
+    "@reverse": {
+      "dcterms:publisher": [
+        {
+          "@id": "https://islam.zmo.de/api/resources/45326",
+          "o:title": "Alif #01"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45327",
+          "o:title": "Alif #02"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45328",
+          "o:title": "Alif #03"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45329",
+          "o:title": "Alif #04"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45330",
+          "o:title": "Alif #05"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45331",
+          "o:title": "Alif #06"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45332",
+          "o:title": "Alif #07"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45333",
+          "o:title": "Alif #08"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45334",
+          "o:title": "Alif #09"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45335",
+          "o:title": "Alif #10"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45336",
+          "o:title": "Alif #11"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45337",
+          "o:title": "Alif #12"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45338",
+          "o:title": "Alif #13"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45339",
+          "o:title": "Alif #14"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45340",
+          "o:title": "Alif #15"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45341",
+          "o:title": "Alif #16"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45342",
+          "o:title": "Alif #17"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45343",
+          "o:title": "Alif #18"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45344",
+          "o:title": "Alif #19"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45345",
+          "o:title": "Alif #20"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45366",
+          "o:title": "Alif #21"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45367",
+          "o:title": "Alif #22"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45368",
+          "o:title": "Alif #23"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45369",
+          "o:title": "Alif #24"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45370",
+          "o:title": "Alif #25"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45371",
+          "o:title": "Alif #26"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45372",
+          "o:title": "Alif #27"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45373",
+          "o:title": "Alif #28"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45374",
+          "o:title": "Alif #29"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45375",
+          "o:title": "Alif #30"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45376",
+          "o:title": "Alif #31"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45377",
+          "o:title": "Alif #32"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/45390",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 45390,
+    "o:is_public": true,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": {
+      "@id": "https://islam.zmo.de/api/assets/74",
+      "o:id": 74
+    },
+    "o:title": "Notre Voie",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/asset/df72843b6df5296fba3c69b760dca74ce331d9f9.gif",
+      "medium": "https://islam.zmo.de/files/asset/df72843b6df5296fba3c69b760dca74ce331d9f9.gif",
+      "square": "https://islam.zmo.de/files/asset/df72843b6df5296fba3c69b760dca74ce331d9f9.gif"
+    },
+    "o:created": {
+      "@value": "2024-10-15T14:12:41+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-10-15T14:14:44+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=45390"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Notre Voie"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "1998-04/2020-05"
+      }
+    ],
+    "dcterms:spatial": [
+      {
+        "type": "customvocab:4",
+        "property_id": 40,
+        "property_label": "Spatial Coverage",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/298",
+        "value_resource_id": 298,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Côte d'Ivoire",
+        "thumbnail_url": "https://islam.zmo.de/files/square/e76603c6a90bc729b2356f4f17b9ba162a0e88c0.jpg",
+        "thumbnail_title": "IvoryCoast_1.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:language": [
+      {
+        "type": "customvocab:6",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/8355",
+        "value_resource_id": 8355,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Français"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
+      }
+    ],
+    "dcterms:source": [
+      {
+        "type": "resource:item",
+        "property_id": 11,
+        "property_label": "Source",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/821",
+        "value_resource_id": 821,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Centre de Recherche et d'Action pour la Paix",
+        "thumbnail_url": "https://islam.zmo.de/files/square/60b6b856b5c40dbdce003715f3b36575a399b0ae.jpg",
+        "thumbnail_title": "Centre de Recherche et d'Action pour la Paix.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:contributor": [
+      {
+        "type": "customvocab:3",
+        "property_id": 6,
+        "property_label": "Contributor",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/858",
+        "value_resource_id": 858,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Frédérick Madore",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_title": "FrédérickMadore_1.jpg",
+        "thumbnail_type": "image/jpeg"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/45829",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 45829,
+    "o:is_public": true,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": {
+      "@id": "https://islam.zmo.de/api/assets/75",
+      "o:id": 75
+    },
+    "o:title": "Al-Azan",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/asset/2935d535070430d76e3c2eed6783fa7fb48ce3fb.png",
+      "medium": "https://islam.zmo.de/files/asset/2935d535070430d76e3c2eed6783fa7fb48ce3fb.png",
+      "square": "https://islam.zmo.de/files/asset/2935d535070430d76e3c2eed6783fa7fb48ce3fb.png"
+    },
+    "o:created": {
+      "@value": "2024-10-16T07:39:00+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-10-16T08:24:50+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=45829"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Al-Azan"
+      }
+    ],
+    "dcterms:description": [
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Bulletin Mensuel de l'AJMCI Plateau-Dokui",
+        "@language": "fr"
+      },
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Monthly bulletin of AJMCI Plateau-Dokui",
+        "@language": "en"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "2002-06/2006-06"
+      }
+    ],
+    "dcterms:spatial": [
+      {
+        "type": "customvocab:4",
+        "property_id": 40,
+        "property_label": "Spatial Coverage",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/298",
+        "value_resource_id": 298,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Côte d'Ivoire",
+        "thumbnail_url": "https://islam.zmo.de/files/square/e76603c6a90bc729b2356f4f17b9ba162a0e88c0.jpg",
+        "thumbnail_title": "IvoryCoast_1.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:language": [
+      {
+        "type": "customvocab:6",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/8355",
+        "value_resource_id": 8355,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Français"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
+      }
+    ],
+    "dcterms:source": [
+      {
+        "type": "resource:item",
+        "property_id": 11,
+        "property_label": "Source",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/1789",
+        "value_resource_id": 1789,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Nurudine Oyewolé"
+      }
+    ],
+    "dcterms:contributor": [
+      {
+        "type": "customvocab:3",
+        "property_id": 6,
+        "property_label": "Contributor",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/858",
+        "value_resource_id": 858,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Frédérick Madore",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_title": "FrédérickMadore_1.jpg",
+        "thumbnail_type": "image/jpeg"
+      }
+    ],
+    "@reverse": {
+      "dcterms:publisher": [
+        {
+          "@id": "https://islam.zmo.de/api/resources/45833",
+          "o:title": "Al-Azan #107"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45834",
+          "o:title": "Al-Azan #110"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45835",
+          "o:title": "Al-Azan #129"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45836",
+          "o:title": "Al-Azan #131"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45837",
+          "o:title": "Al-Azan #133"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45838",
+          "o:title": "Al-Azan #135"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45839",
+          "o:title": "Al-Azan #137"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45840",
+          "o:title": "Al-Azan #139"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45841",
+          "o:title": "Al-Azan #140"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45842",
+          "o:title": "Al-Azan #141"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45843",
+          "o:title": "Al-Azan #142"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45844",
+          "o:title": "Al-Azan #143"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45845",
+          "o:title": "Al-Azan #144"
         }
       ]
     }
