@@ -4,7 +4,7 @@ from collections import defaultdict, Counter
 from tqdm import tqdm
 import os
 
-api_url = "https://iwac.frederickmadore.com/api"
+api_url = "https://islam.zmo.de/api"
 resource_classes = [35, 43, 88, 40, 82, 178, 52, 77, 305, 58, 49, 36, 60, 38]  # Resource class IDs
 
 def fetch_language_labels(language_ids):
