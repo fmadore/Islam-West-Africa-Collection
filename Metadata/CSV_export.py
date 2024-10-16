@@ -338,7 +338,7 @@ def join_values(item: Dict[str, Any], field: str, subfield: str) -> str:
 def map_document(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Document',
         'o:item_set': join_values(item, 'o:item_set', ''),
@@ -361,7 +361,7 @@ def map_document(item: Dict[str, Any]) -> Dict[str, Any]:
 def map_audio_visual_document(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:AudioVisualDocument',
         'o:item_set': join_values(item, 'o:item_set', ''),
@@ -389,7 +389,7 @@ def map_audio_visual_document(item: Dict[str, Any]) -> Dict[str, Any]:
 def map_image(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Image',
         'o:item_set': join_values(item, 'o:item_set', ''),
@@ -448,7 +448,7 @@ def map_index(item: Dict[str, Any]) -> Dict[str, Any]:
 def map_issue(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Issue',
         'o:item_set': join_values(item, 'o:item_set', ''),
@@ -474,7 +474,7 @@ def map_issue(item: Dict[str, Any]) -> Dict[str, Any]:
 def map_newspaper_article(item: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'bibo:Article',
         'o:item_set': join_values(item, 'o:item_set', ''),
@@ -505,7 +505,7 @@ def map_item_set(item: Dict[str, Any]) -> Dict[str, Any]:
 
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item-set/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/item-set/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': 'o:ItemSet',
         'o:title': get_value(item, 'o:title'),
@@ -529,11 +529,11 @@ def map_media(item: Dict[str, Any]) -> Dict[str, Any]:
         item_id = get_value(item, 'o:item')
     
     # Construct the item URL only if we have a valid item ID
-    item_url = f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{item_id}" if item_id else ""
+    item_url = f"https://islam.zmo.de/s/afrique_ouest/item/{item_id}" if item_id else ""
 
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/media/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/media/{get_value(item, 'o:id')}",
         'o:resource_class': 'o:Media',
         'o:media_type': get_value(item, 'o:media_type'),
         'o:item': item_url,
@@ -556,7 +556,7 @@ def map_reference(item: Dict[str, Any]) -> Dict[str, Any]:
     
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': resource_class_map.get(resource_class_id, ''),
         'o:item_set': join_values(item, 'o:item_set', ''),
