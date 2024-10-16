@@ -93,7 +93,7 @@ def create_interactive_keyword_graphs(df, country, output_filename):
         logger.info(f"Interactive graph for {country} in {lang} saved to {output_path}")
 
 # Example usage
-api_url = "https://iwac.frederickmadore.com/api"
+api_url = "https://islam.zmo.de/api"
 country_item_sets = {
     "Bénin": ["2187", "2188", "2189"],
     "Burkina Faso": ["2200", "2215", "2214", "2207", "2201"],
