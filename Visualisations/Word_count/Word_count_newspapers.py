@@ -15,7 +15,7 @@ env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
 # Load environment variables from .env file
 load_dotenv(dotenv_path=env_path)
 
-API_URL = "https://iwac.frederickmadore.com/api"
+API_URL = "https://islam.zmo.de/api"
 KEY_IDENTITY = os.getenv("API_KEY_IDENTITY")
 KEY_CREDENTIAL = os.getenv("API_KEY_CREDENTIAL")
 ITEM_SETS = {
