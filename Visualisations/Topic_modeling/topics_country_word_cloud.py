@@ -28,7 +28,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 load_dotenv()
 
 # Define API credentials
-API_URL = "https://iwac.frederickmadore.com/api"
+API_URL = "https://islam.zmo.de/api"
 KEY_IDENTITY = os.getenv("API_KEY_IDENTITY")
 KEY_CREDENTIAL = os.getenv("API_KEY_CREDENTIAL")
 
