@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import os
 
 # API URL and item set identifiers
-api_url = "https://iwac.frederickmadore.com/api"
+api_url = "https://islam.zmo.de/api"
 country_item_sets = {
     2193: 'Benin',
     2212: 'Burkina Faso',
@@ -73,7 +73,7 @@ def create_top_authors_chart(author_count, country, top_n=20, language='fr'):
         author_ids.append(fetch_author_id(author))
     
     # Create hyperlinks
-    base_url = "https://iwac.frederickmadore.com/s/afrique_ouest/item/" if language == 'fr' else "https://iwac.frederickmadore.com/s/westafrica/item/"
+    base_url = "https://islam.zmo.de/s/afrique_ouest/item/" if language == 'fr' else "https://islam.zmo.de/s/westafrica/item/"
     hyperlinks = [f"{base_url}{id}" if id else "" for id in author_ids]
     
     # Translations
