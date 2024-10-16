@@ -4,7 +4,7 @@ from collections import defaultdict, OrderedDict
 from tqdm import tqdm
 import os
 
-api_url = "https://iwac.frederickmadore.com/api"
+api_url = "https://islam.zmo.de/api"
 item_set_id = 2193
 country_item_sets = {
     2193: 'Bénin',
