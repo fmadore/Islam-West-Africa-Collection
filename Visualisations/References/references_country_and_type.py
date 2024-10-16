@@ -4,7 +4,7 @@ import plotly.express as px
 from tqdm import tqdm
 from typing import Dict, List, Any, Tuple, Set
 
-API_URL = "https://iwac.frederickmadore.com/api"
+API_URL = "https://islam.zmo.de/api"
 ITEM_SET_IDS = [2193, 2212, 2217, 2222, 2225, 2228]
 RESOURCE_CLASSES = [35, 43, 88, 40, 82, 178, 52, 77, 305]
 
