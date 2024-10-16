@@ -1250,6 +1250,8 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 31357,https://iwac.frederickmadore.com/s/afrique_ouest/item/31357,iwac-index-0001220,foaf:Organization,Associations,,Collectif Sauvons le Togo,,,,,,,,Parti politique,,Togo,,,,,
 31358,https://iwac.frederickmadore.com/s/afrique_ouest/item/31358,iwac-index-0001221,foaf:Organization,Associations,,Al Wifaq,Al Wifaq pour le Développement Social et Culturel,,,,,,,Organisation islamique,,Togo,,,,,
 43053,https://iwac.frederickmadore.com/s/afrique_ouest/item/43053,,foaf:Organization,Associations,,Cercle d’études et de recherches islamiques en Côte d'Ivoire,CERICI,,,,,,,Organisation islamique,,Côte d'Ivoire,,,,,
+45830,https://iwac.frederickmadore.com/s/afrique_ouest/item/45830,,foaf:Organization,Associations,,Communauté Musulmane du Plateau Dokui,COMUDO,,,,,,,Organisation islamique,,Côte d'Ivoire,,,,,
+45831,https://iwac.frederickmadore.com/s/afrique_ouest/item/45831,,foaf:Organization,Associations,,Collectif des Communautés Musulmanes de Cocody,CCMC,,,,,,,Organisation islamique,,Côte d'Ivoire,,,,,
 855,https://iwac.frederickmadore.com/s/afrique_ouest/item/855,iwac-index-0001222,foaf:Person,Individus,,Abdoul Salam Tiemtoré,,,1998-02-13,Burkinabè imam and former president of the CMHV/CMBF|Imam burkinabè et ancien président de la CMHV/CMBF,Mahamoudou Tiemtoré,,,Communauté Musulmane de Haute-Volta|Communauté Musulmane du Burkina Faso|Grande Mosquée de Ouagadougou|Imam,,Burkina Faso,Abdoul Salam,Tiemtoré,Homme,1900,
 856,https://iwac.frederickmadore.com/s/afrique_ouest/item/856,iwac-index-0001223,foaf:Person,Individus,,Abdoulaye Fodé Doukouré,,,1974,Founder of the tijâniyya Hamawiyya of Hamdalaye|Fondateur de la tijâniyya Hamawiyya d'Hamdalaye,Aboubacar Doukouré,,,Imam,,Burkina Faso|Hamdalaye,Abdoulaye Fodé,Doukouré,Homme,1885,
 857,https://iwac.frederickmadore.com/s/afrique_ouest/item/857,iwac-index-0001224,foaf:Person,Individus,,Moussa Nombo,,,,Ancien président du CERFI,,,,"Cercle d'Études, de Recherches et de Formation Islamiques",,Burkina Faso,Moussa,Nombo,Homme,,
@@ -2815,3 +2817,4 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 44416,https://iwac.frederickmadore.com/s/afrique_ouest/item/44416,,foaf:Person,Individus,,Mokodu Thiam,,,,,,,,,,Côte d'Ivoire,Mokodu,Thiam,Homme,,
 44465,https://iwac.frederickmadore.com/s/afrique_ouest/item/44465,,foaf:Person,Individus,,Affou Sanogo,,,,,,,,,,Côte d'Ivoire,Affou,Sanogo,Homme,,
 44514,https://iwac.frederickmadore.com/s/afrique_ouest/item/44514,,foaf:Person,Individus,,Kader Kéita,,,,,,,,,,Côte d'Ivoire,Kader,Kéita,,,
+45832,https://iwac.frederickmadore.com/s/afrique_ouest/item/45832,,foaf:Person,Individus,,Salif Traoré,,,,,,,,,,Côte d'Ivoire,Salif,Traoré,,,
