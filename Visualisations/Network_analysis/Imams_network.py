@@ -5,7 +5,7 @@ from tqdm import tqdm
 import csv
 import os
 
-base_url = "https://iwac.frederickmadore.com/api"
+base_url = "https://islam.zmo.de/api"
 
 def get_imam_data(imam_id):
     response = requests.get(f"{base_url}/items/{imam_id}")
@@ -104,8 +104,15 @@ def create_network(imam_data):
     return G
 
 def export_gephi_files(G, nodes_file='gephi_nodes.csv', edges_file='gephi_edges.csv'):
+    # Get the directory of the current script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Create full paths for the output files
+    nodes_path = os.path.join(script_dir, nodes_file)
+    edges_path = os.path.join(script_dir, edges_file)
+
     # Export nodes
-    with open(nodes_file, 'w', newline='', encoding='utf-8') as csvfile:
+    with open(nodes_path, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['Id', 'Label', 'Type', 'Country']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
         writer.writeheader()
@@ -119,7 +126,7 @@ def export_gephi_files(G, nodes_file='gephi_nodes.csv', edges_file='gephi_edges.
             })
 
     # Export edges with weight
-    with open(edges_file, 'w', newline='', encoding='utf-8') as csvfile:
+    with open(edges_path, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['Source', 'Target', 'Type', 'Weight']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL, escapechar='\\')
         writer.writeheader()
@@ -131,6 +138,10 @@ def export_gephi_files(G, nodes_file='gephi_nodes.csv', edges_file='gephi_edges.
                 'Type': data.get('type', ''),
                 'Weight': data.get('weight', 1)
             })
+
+    print(f"Files saved in: {script_dir}")
+    print(f"Nodes file: {nodes_file}")
+    print(f"Edges file: {edges_file}")
 
 # Main execution
 imam_ids = [1124, 2150, 1615, 861, 945, 944, 855, 1940, 925]  # Add more imam IDs as needed
