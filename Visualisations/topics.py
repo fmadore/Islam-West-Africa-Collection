@@ -27,7 +27,7 @@ whitespace_re = re.compile(r"\s+")
 oe_re = re.compile(r"œ")
 
 def fetch_items_from_set(item_set_ids):
-    base_url = "https://iwac.frederickmadore.com/api/items"
+    base_url = "https://islam.zmo.de/api/items"
     items = []
     for set_id in tqdm(item_set_ids, desc="Fetching item sets"):
         page = 1
