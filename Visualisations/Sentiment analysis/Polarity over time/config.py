@@ -1,5 +1,5 @@
 # Base URL for the API
-BASE_URL = "https://iwac.frederickmadore.com/api/items"
+BASE_URL = "https://islam.zmo.de/api/items"
 
 # Item sets by country
 ITEM_SETS = {
