@@ -6,6 +6,9 @@ from tqdm import tqdm
 from dotenv import load_dotenv
 from dataclasses import dataclass
 from typing import List, Dict, Any, Callable
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+import time
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -24,6 +27,15 @@ class Config:
 class OmekaApiClient:
     def __init__(self, config: Config):
         self.config = config
+        self.session = self._create_retry_session()
+
+    def _create_retry_session(self):
+        session = requests.Session()
+        retries = Retry(total=5,
+                        backoff_factor=0.1,
+                        status_forcelist=[500, 502, 503, 504])
+        session.mount('https://', HTTPAdapter(max_retries=retries))
+        return session
 
     def _make_request(self, endpoint: str, params: Dict[str, Any] = None) -> List[Dict[str, Any]]:
         if params is None:
@@ -33,13 +45,22 @@ class OmekaApiClient:
             'key_credential': self.config.API_KEY_CREDENTIAL
         })
         url = f"{self.config.API_URL}/{endpoint}"
-        try:
-            response = requests.get(url, params=params)
-            response.raise_for_status()
-            return response.json()
-        except requests.RequestException as e:
-            logger.error(f"Error fetching data from API: {str(e)}")
-            return []
+        max_retries = 5
+        retry_delay = 5  # seconds
+
+        for attempt in range(max_retries):
+            try:
+                response = self.session.get(url, params=params, timeout=30)
+                response.raise_for_status()
+                return response.json()
+            except requests.RequestException as e:
+                logger.warning(f"Request failed (attempt {attempt + 1}/{max_retries}): {str(e)}")
+                if attempt < max_retries - 1:
+                    logger.info(f"Retrying in {retry_delay} seconds...")
+                    time.sleep(retry_delay)
+                else:
+                    logger.error(f"Max retries reached. Unable to fetch data from API: {str(e)}")
+                    return []
 
     def fetch_items(self, resource_class_id: int) -> List[Dict[str, Any]]:
         items = []
@@ -61,6 +82,8 @@ class OmekaApiClient:
                 items.extend(data)
                 pbar.update(len(data))
                 page += 1
+                if len(data) < per_page:
+                    break  # Last page reached
 
         logger.info(f"Fetched {len(items)} {item_type}")
         return items
