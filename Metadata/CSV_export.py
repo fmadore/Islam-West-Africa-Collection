@@ -445,7 +445,7 @@ def map_index(item: Dict[str, Any]) -> Dict[str, Any]:
 
     return {
         'o:id': get_value(item, 'o:id'),
-        'url': f"https://iwac.frederickmadore.com/s/afrique_ouest/item/{get_value(item, 'o:id')}",
+        'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
         'o:resource_class': resource_class_map.get(resource_class_id, ''),
         'o:item_set': join_values(item, 'o:item_set', ''),
