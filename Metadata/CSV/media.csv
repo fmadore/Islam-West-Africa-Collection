@@ -1237,8 +1237,6 @@ o:id,url,o:resource_class,o:media_type,o:item,o:original_url
 26339,https://islam.zmo.de/s/afrique_ouest/media/26339,o:Media,image/tiff,https://islam.zmo.de/s/afrique_ouest/item/26337,https://islam.zmo.de/files/original/dc1cc396be08b8e319f7eaf307d80d1093947d51.tif
 26341,https://islam.zmo.de/s/afrique_ouest/media/26341,o:Media,application/pdf,https://islam.zmo.de/s/afrique_ouest/item/26340,https://islam.zmo.de/files/original/e8c92f043a8746b4ac41f3a0865695001f1d1ecf.pdf
 26342,https://islam.zmo.de/s/afrique_ouest/media/26342,o:Media,image/tiff,https://islam.zmo.de/s/afrique_ouest/item/26340,https://islam.zmo.de/files/original/c25af33327b2682ef55eeb2b3f89f333a579d077.tif
-31880,https://islam.zmo.de/s/afrique_ouest/media/31880,o:Media,application/pdf,https://islam.zmo.de/s/afrique_ouest/item/31879,https://islam.zmo.de/files/original/d655525d6f0a93ca950ea6c7b3cb78b875147609.pdf
-31881,https://islam.zmo.de/s/afrique_ouest/media/31881,o:Media,image/tiff,https://islam.zmo.de/s/afrique_ouest/item/31879,https://islam.zmo.de/files/original/4eab0cf969bc40a6949e87a6b1f3d6ad2e93a2b0.tiff
 31905,https://islam.zmo.de/s/afrique_ouest/media/31905,o:Media,application/pdf,https://islam.zmo.de/s/afrique_ouest/item/31903,https://islam.zmo.de/files/original/77ea46d32345656e1dad818f6b999095b0bcb844.pdf
 31907,https://islam.zmo.de/s/afrique_ouest/media/31907,o:Media,image/jpeg,https://islam.zmo.de/s/afrique_ouest/item/31906,https://islam.zmo.de/files/original/3e37b7c4a61d4859b3208cde1739f77360fc962f.jpeg
 31908,https://islam.zmo.de/s/afrique_ouest/media/31908,o:Media,application/pdf,https://islam.zmo.de/s/afrique_ouest/item/11410,https://islam.zmo.de/files/original/738ed0610382a380abe58a86f47e9e38c79c2486.pdf
@@ -13371,3 +13369,5 @@ o:id,url,o:resource_class,o:media_type,o:item,o:original_url
 46151,https://islam.zmo.de/s/afrique_ouest/media/46151,o:Media,image/tiff,https://islam.zmo.de/s/afrique_ouest/item/46032,https://islam.zmo.de/files/original/365f719924195b5124370601d7e6a2d2d3add2d9.tiff
 46152,https://islam.zmo.de/s/afrique_ouest/media/46152,o:Media,image/tiff,https://islam.zmo.de/s/afrique_ouest/item/46039,https://islam.zmo.de/files/original/9610e2872c4d1387dcbfd499d401fab7cced3f46.tiff
 46153,https://islam.zmo.de/s/afrique_ouest/media/46153,o:Media,image/tiff,https://islam.zmo.de/s/afrique_ouest/item/46033,https://islam.zmo.de/files/original/95b6279eda4014a3a5342716391d71b428714067.tiff
+46155,https://islam.zmo.de/s/afrique_ouest/media/46155,o:Media,application/pdf,https://islam.zmo.de/s/afrique_ouest/item/31879,https://islam.zmo.de/files/original/579e81f36f36cc079b753afbb9dbc2fa6033baf7.pdf
+46156,https://islam.zmo.de/s/afrique_ouest/media/46156,o:Media,image/tiff,https://islam.zmo.de/s/afrique_ouest/item/31879,https://islam.zmo.de/files/original/1016ad52ae4da8e6a10a136a7e0d7f1ea8688034.tiff
