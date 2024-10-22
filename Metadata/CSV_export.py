@@ -9,6 +9,8 @@ from typing import List, Dict, Any, Callable
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 import time
+from urllib.parse import urljoin
+import json
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -213,15 +215,20 @@ class OmekaApiClient:
         logger.info(f"Fetched {len(item_set_titles)} item set titles")
         return item_set_titles
 
+    def fetch_media_data(self, media_id: str) -> Dict[str, Any]:
+        endpoint = f'media/{media_id}'
+        return self._make_request(endpoint)
+
 class DataProcessor:
     def __init__(self, raw_data: List[Dict[str, Any]], item_sets: List[Dict[str, Any]], 
                  media: List[Dict[str, Any]], references: List[Dict[str, Any]], 
-                 item_set_titles: Dict[int, str]):
+                 item_set_titles: Dict[int, str], api_client: OmekaApiClient):
         self.raw_data = raw_data
         self.item_sets = item_sets
         self.media = media
         self.references = references
         self.item_set_titles = item_set_titles
+        self.api_client = api_client
         self.processed_data = None
 
     def process(self) -> Dict[str, List[Dict[str, Any]]]:
@@ -239,11 +246,11 @@ class DataProcessor:
 
         mapping_functions = {
             'audio_visual_documents': map_audio_visual_document,
-            'documents': map_document,
+            'documents': lambda item: map_document(item, self.api_client),
             'images': map_image,
             'index': map_index,
-            'issues': map_issue,
-            'newspaper_articles': map_newspaper_article
+            'issues': lambda item: map_issue(item, self.api_client),
+            'newspaper_articles': lambda item: map_newspaper_article(item, self.api_client)
         }
 
         for item in tqdm(self.raw_data, desc="Processing items"):
@@ -358,7 +365,13 @@ def join_values(item: Dict[str, Any], field: str, subfield: str) -> str:
     values = [str(val.get('@value', '')) for val in item[field] if isinstance(val, dict) and '@value' in val]
     return '|'.join(filter(None, values))
 
-def map_document(item: Dict[str, Any]) -> Dict[str, Any]:
+def map_document(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
+    primary_media_url = ''
+    if 'o:primary_media' in item and item['o:primary_media']:
+        media_id = item['o:primary_media']['@id'].split('/')[-1]
+        media_data = api_client.fetch_media_data(media_id)
+        primary_media_url = media_data.get('o:original_url', '')
+
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -366,6 +379,7 @@ def map_document(item: Dict[str, Any]) -> Dict[str, Any]:
         'o:resource_class': 'bibo:Document',
         'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_media_ids(item),
+        'o:primary_media': primary_media_url,  # New column
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:date': get_value(item, 'dcterms:date'),
@@ -468,7 +482,13 @@ def map_index(item: Dict[str, Any]) -> Dict[str, Any]:
         'coordinates': get_value(item, 'curation:coordinates'),
     }
 
-def map_issue(item: Dict[str, Any]) -> Dict[str, Any]:
+def map_issue(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
+    primary_media_url = ''
+    if 'o:primary_media' in item and item['o:primary_media']:
+        media_id = item['o:primary_media']['@id'].split('/')[-1]
+        media_data = api_client.fetch_media_data(media_id)
+        primary_media_url = media_data.get('o:original_url', '')
+
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -476,6 +496,7 @@ def map_issue(item: Dict[str, Any]) -> Dict[str, Any]:
         'o:resource_class': 'bibo:Issue',
         'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_media_ids(item),
+        'o:primary_media': primary_media_url,  # New column
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
@@ -494,7 +515,13 @@ def map_issue(item: Dict[str, Any]) -> Dict[str, Any]:
         'bibo:content': get_value(item, 'bibo:content'),
     }
 
-def map_newspaper_article(item: Dict[str, Any]) -> Dict[str, Any]:
+def map_newspaper_article(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
+    primary_media_url = ''
+    if 'o:primary_media' in item and item['o:primary_media']:
+        media_id = item['o:primary_media']['@id'].split('/')[-1]
+        media_data = api_client.fetch_media_data(media_id)
+        primary_media_url = media_data.get('o:original_url', '')
+
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -502,6 +529,7 @@ def map_newspaper_article(item: Dict[str, Any]) -> Dict[str, Any]:
         'o:resource_class': 'bibo:Article',
         'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_media_ids(item),
+        'o:primary_media': primary_media_url,  # New column
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
@@ -636,7 +664,7 @@ def main():
             return
 
         logger.info("Processing fetched data...")
-        processor = DataProcessor(raw_data, item_sets, media, references, item_set_titles)
+        processor = DataProcessor(raw_data, item_sets, media, references, item_set_titles, api_client)
         processed_data = processor.process()
 
         logger.info("Processing item sets...")
