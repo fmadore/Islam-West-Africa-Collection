@@ -379,7 +379,7 @@ def map_document(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, 
         'o:resource_class': 'bibo:Document',
         'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_media_ids(item),
-        'o:primary_media': primary_media_url,  # New column
+        'o:primary_media': primary_media_url,
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:date': get_value(item, 'dcterms:date'),
