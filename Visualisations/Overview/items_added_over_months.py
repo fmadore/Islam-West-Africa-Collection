@@ -71,12 +71,17 @@ def fetch_items(language='en'):
                         else:
                             continue
 
-                        created_date = item.get('o:created', '')
-                        if created_date:
-                            date_obj = datetime.strptime(created_date, "%Y-%m-%dT%H:%M:%S%z")
-                            month_year = date_obj.strftime("%Y-%m")
-                            for id in item_classes:
-                                items_by_month_type[month_year][acceptable_ids[id][language]] += 1
+                        created_date = item.get('o:created', {})
+                        if created_date and isinstance(created_date, dict):
+                            date_value = created_date.get('@value', '')
+                            if date_value:
+                                try:
+                                    date_obj = datetime.strptime(date_value, "%Y-%m-%dT%H:%M:%S%z")
+                                    month_year = date_obj.strftime("%Y-%m")
+                                    for id in item_classes:
+                                        items_by_month_type[month_year][acceptable_ids[id][language]] += 1
+                                except ValueError:
+                                    print(f"Warning: Unable to parse date {date_value}")
                 page += 1
 
     return items_by_month_type
