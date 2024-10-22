@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 import concurrent.futures
 import time
 from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
+from urllib3.util.retry import Retry
 
 # Define the path to the .env file
 env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
@@ -15,13 +15,13 @@ env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
 # Load environment variables from .env file
 load_dotenv(dotenv_path=env_path)
 
-API_URL = "https://islam.zmo.de/api"
+API_URL = os.getenv("OMEKA_BASE_URL")
 KEY_IDENTITY = os.getenv("API_KEY_IDENTITY")
 KEY_CREDENTIAL = os.getenv("API_KEY_CREDENTIAL")
 ITEM_SETS = {
     'Bénin': [2185, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5500, 5501, 5502, 2195, 10223],
     'Burkina Faso': [2199, 2200, 2201, 2207, 2209, 2210, 2213, 2214, 2215, 5503, 23273, 2197, 2196, 2206, 2198, 2203, 2205, 2204, 2202],
-    'Côte d\'Ivoire': [23253, 43622, 39797, 45829],
+    'Côte d\'Ivoire': [23253, 43622, 39797, 45829, 45390, 31882],
     'Niger': [2223, 2218, 2219],
     'Togo': [9458, 2226, 5499, 5498, 26319]
 }
