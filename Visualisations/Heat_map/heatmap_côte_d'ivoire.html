@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8bf2ef251be99a034252207b565e133b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div style="position: fixed; 
+                        top: 10px; 
+                        left: 50px; 
+                        z-index: 9999; 
+                        background-color: white; 
+                        padding: 10px; 
+                        border-radius: 5px; 
+                        border: 2px solid gray;">
+                <h3>Côte d'Ivoire Data Distribution</h3>
+            </div>
+        
+    
+            <div class="folium-map" id="map_8bf2ef251be99a034252207b565e133b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8bf2ef251be99a034252207b565e133b = L.map(
+                "map_8bf2ef251be99a034252207b565e133b",
+                {
+                    center: [15.502477159624766, 2.1952999955924684],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e0aa955ba296b81dba8624f6f9df4d67 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_e0aa955ba296b81dba8624f6f9df4d67.addTo(map_8bf2ef251be99a034252207b565e133b);
+        
+    
+            var heat_map_520f76d91da832e9108e00a882073801 = L.heatLayer(
+                [[5.35444, -4.00167], [12.5, -1.66667], [18.0, -2.0], [14.5, -14.25], [5.345556, -3.986111], [5.35, -3.9], [5.35444, -4.00167], [31.5, 34.75], [10.83333, -10.66667], [18.0, -2.0], [14.5, -14.25], [12.5, -1.66667], [46.0, 2.0], [5.35444, -4.00167], [5.35444, -4.00167], [9.457778, -5.629444], [46.0, 2.0], [46.0, 2.0], [14.5, -14.25], [46.0, 2.0], [25.0, 45.0], [21.4225, 39.826111], [5.35444, -4.00167], [5.35444, -4.00167], [5.418889, -4.020556], [5.418889, -4.020556], [5.35444, -4.00167], [5.35444, -4.00167], [9.457778, -5.629444], [5.35444, -4.00167], [9.5, 2.25], [10.83333, -10.66667], [18.0, -2.0], [28.5, -10.0], [14.5, -14.25], [18.0, 9.0], [8.66667, 1.08333], [12.5, -1.66667], [5.319408854484132, -4.015756299712146], [5.35444, -4.00167], [28.5, -10.0], [22.0, 79.0], [5.35444, -4.00167], [5.35444, -4.00167], [5.35444, -4.00167], [5.35444, -4.00167], [5.35444, -4.00167], [28.5, -10.0], [9.457778, -5.629444], [5.35444, -4.00167], [18.0, 9.0], [5.35444, -4.00167], [8.1, -1.2], [10.83333, -10.66667], [18.0, -2.0], [28.5, -10.0], [5.35444, -4.00167], [35.68536, 139.75309], [5.35444, -4.00167], [25.0, 45.0], [9.5, 2.25], [46.0, 2.0], [10.83333, -10.66667], [18.0, -2.0], [14.5, -14.25], [47.00016, 8.01427], [18.0, 9.0], [12.5, -1.66667]],
+                {"blur": 10, "gradient": {"0.4": "blue", "0.6": "purple", "0.8": "red", "1.0": "white"}, "maxZoom": 18, "minOpacity": 0.3, "radius": 15}
+            );
+        
+    
+            heat_map_520f76d91da832e9108e00a882073801.addTo(map_8bf2ef251be99a034252207b565e133b);
+        
+</script>
+</html>
