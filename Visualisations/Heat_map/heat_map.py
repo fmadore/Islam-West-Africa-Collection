@@ -135,7 +135,7 @@ class OmekaHeatmapGenerator:
         coordinates = [coord for coord in results if coord is not None]
         return coordinates
 
-    def generate_heatmap(self, coordinates: List[Tuple[float, float]], filename: str, title: str = None) -> None:
+    def generate_heatmap(self, coordinates: List[Tuple[float, float]], filename: str) -> None:
         """Generate and save heatmap visualization."""
         if not coordinates:
             self.logger.info(f"No valid coordinates found for {filename}")
@@ -164,22 +164,6 @@ class OmekaHeatmapGenerator:
             }
         ).add_to(m)
 
-        # Add title if provided
-        if title:
-            title_html = f'''
-                <div style="position: fixed; 
-                            top: 10px; 
-                            left: 50px; 
-                            z-index: 9999; 
-                            background-color: white; 
-                            padding: 10px; 
-                            border-radius: 5px; 
-                            border: 2px solid gray;">
-                    <h3>{title}</h3>
-                </div>
-            '''
-            m.get_root().html.add_child(folium.Element(title_html))
-
         # Save the map
         output_path = self.script_dir / f"{filename}.html"
         m.save(str(output_path))
@@ -201,8 +185,7 @@ class OmekaHeatmapGenerator:
 
         self.generate_heatmap(
             country_coordinates, 
-            f"heatmap_{country.replace(' ', '_').lower()}", 
-            f"{country} Data Distribution"
+            f"heatmap_{country.replace(' ', '_').lower()}"
         )
         self.logger.info(f"Total items processed for {country}: {total_items}")
         return total_items
@@ -212,8 +195,7 @@ class OmekaHeatmapGenerator:
         self.logger.info("Generating consolidated IWAC heatmap...")
         self.generate_heatmap(
             self.all_coordinates,
-            "heatmap_IWAC",
-            "IWAC Data Distribution - All Countries"
+            "heatmap_IWAC"
         )
         self.logger.info(f"Total coordinates in consolidated map: {len(self.all_coordinates)}")
 
