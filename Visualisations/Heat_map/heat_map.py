@@ -6,136 +6,213 @@ from folium.plugins import HeatMap
 import pandas as pd
 import logging
 from dotenv import load_dotenv
+from concurrent.futures import ThreadPoolExecutor
+from typing import List, Tuple, Optional, Dict, Any
+from pathlib import Path
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+class OmekaHeatmapGenerator:
+    def __init__(self):
+        # Configure logging
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            datefmt='%Y-%m-%d %H:%M:%S'
+        )
+        self.logger = logging.getLogger(__name__)
+        
+        # Setup paths
+        self.script_dir = Path(__file__).parent
+        self.env_path = self.script_dir.parent / '.env'
+        
+        # Load and validate environment variables
+        self._load_environment()
+        
+        # Initialize session for better performance
+        self.session = requests.Session()
+        
+        # Configure rate limiting
+        self.max_workers = 5
+        
+    def _load_environment(self) -> None:
+        """Load and validate environment variables."""
+        load_dotenv(dotenv_path=self.env_path)
+        
+        self.api_url = os.getenv("OMEKA_BASE_URL")
+        self.key_identity = os.getenv("OMEKA_KEY_IDENTITY")
+        self.key_credential = os.getenv("OMEKA_KEY_CREDENTIAL")
+        
+        if not all([self.api_url, self.key_identity, self.key_credential]):
+            raise EnvironmentError(
+                "OMEKA_BASE_URL, OMEKA_KEY_IDENTITY, and OMEKA_KEY_CREDENTIAL "
+                "must be set in the .env file."
+            )
 
-# Load environment variables from .env file
-env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
-load_dotenv(dotenv_path=env_path)
+    def fetch_json(self, url: str) -> Optional[Dict[str, Any]]:
+        """Fetch JSON data from URL with error handling and retries."""
+        try:
+            response = self.session.get(url)
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as e:
+            self.logger.error(f"Request failed for URL {url}: {e}")
+            return None
 
-# Define API credentials
-API_URL = os.getenv("OMEKA_BASE_URL")
-KEY_IDENTITY = os.getenv("OMEKA_KEY_IDENTITY")
-KEY_CREDENTIAL = os.getenv("OMEKA_KEY_CREDENTIAL")
+    def fetch_items(self, item_set_id: int) -> List[Dict[str, Any]]:
+        """Fetch all items from a given item set with pagination support."""
+        items = []
+        page = 1
+        base_url = (
+            f"{self.api_url}/items?"
+            f"key_identity={self.key_identity}&"
+            f"key_credential={self.key_credential}&"
+            f"item_set_id={item_set_id}&per_page=50"
+        )
 
-if not API_URL or not KEY_IDENTITY or not KEY_CREDENTIAL:
-    logging.error("OMEKA_BASE_URL, OMEKA_KEY_IDENTITY, and OMEKA_KEY_CREDENTIAL must be set in the .env file.")
-    exit(1)
-
-
-def fetch_json(url):
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        logging.error(f"Request failed for URL {url}: {e}")
-        return None
-
-
-def fetch_items(item_set_id):
-    items = []
-    page = 1
-    url = f"{API_URL}/items?key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}&item_set_id={item_set_id}&per_page=50&page={page}"
-
-    while url:
-        data = fetch_json(url)
-        if data is None:
-            break
-        if isinstance(data, list):
-            items.extend(data)
-            break  # If the response is a list, assume no pagination
-        elif isinstance(data, dict):
-            items.extend(data.get('data', []))
-            next_link = data.get('links', {}).get('next', {}).get('href')
-            if next_link:
-                url = f"{API_URL}{next_link}&key_identity={KEY_IDENTITY}&key_credential={KEY_CREDENTIAL}"
+        while True:
+            url = f"{base_url}&page={page}"
+            data = self.fetch_json(url)
+            
+            if not data:
+                break
+                
+            if isinstance(data, list):
+                items.extend(data)
+                break
+            elif isinstance(data, dict):
+                items.extend(data.get('data', []))
+                if not data.get('links', {}).get('next'):
+                    break
+                page += 1
             else:
-                url = None
-        else:
-            logging.error(f"Unexpected data format: {data}")
-            break
-    return items
+                self.logger.error(f"Unexpected data format: {data}")
+                break
+                
+        return items
 
+    def fetch_coordinates(self, spatial_url: str) -> Optional[Tuple[float, float]]:
+        """Extract coordinates from spatial data URL."""
+        spatial_details = self.fetch_json(spatial_url)
+        if not spatial_details:
+            return None
 
-def fetch_coordinates(spatial_url):
-    spatial_details = fetch_json(spatial_url)
-    if not spatial_details:
-        return None
+        coordinates_field = spatial_details.get('curation:coordinates', [])
+        if not coordinates_field:
+            return None
 
-    coordinates_field = spatial_details.get('curation:coordinates', [])
-    if coordinates_field:
         coord_text = coordinates_field[0].get('@value')
-        if coord_text and ',' in coord_text:
-            try:
-                lat, lon = map(float, coord_text.split(','))
-                return lat, lon
-            except ValueError:
-                logging.warning(f"Invalid coordinates format: {coord_text}")
-                return None
-    return None
+        if not coord_text or ',' not in coord_text:
+            return None
 
+        try:
+            lat, lon = map(float, coord_text.split(','))
+            return lat, lon
+        except ValueError:
+            self.logger.warning(f"Invalid coordinates format: {coord_text}")
+            return None
 
-def extract_coordinates(items):
-    coordinates = []
-    for item in tqdm(items, desc="Extracting coordinates"):
-        spatial_data = item.get('dcterms:spatial', [])
-        for spatial in spatial_data:
-            spatial_url = spatial.get('@id')
-            if spatial_url:
-                coords = fetch_coordinates(spatial_url)
-                if coords:
-                    coordinates.append(coords)
-    return coordinates
+    def extract_coordinates(self, items: List[Dict[str, Any]]) -> List[Tuple[float, float]]:
+        """Extract coordinates from items using parallel processing."""
+        coordinates = []
+        spatial_urls = []
+        
+        # Collect all spatial URLs
+        for item in items:
+            for spatial in item.get('dcterms:spatial', []):
+                if spatial_url := spatial.get('@id'):
+                    spatial_urls.append(spatial_url)
 
+        # Process URLs in parallel
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            results = list(tqdm(
+                executor.map(self.fetch_coordinates, spatial_urls),
+                desc="Extracting coordinates",
+                total=len(spatial_urls)
+            ))
+            
+        coordinates = [coord for coord in results if coord is not None]
+        return coordinates
 
-def generate_heatmap(coordinates, country):
-    if not coordinates:
-        logging.info(f"No valid coordinates found for {country}, heatmap not generated.")
-        return
+    def generate_heatmap(self, coordinates: List[Tuple[float, float]], country: str) -> None:
+        """Generate and save heatmap visualization."""
+        if not coordinates:
+            self.logger.info(f"No valid coordinates found for {country}")
+            return
 
-    map_center = pd.DataFrame(coordinates, columns=['Latitude', 'Longitude']).mean().to_list()
-    m = folium.Map(location=map_center, zoom_start=2)  # Global view
+        df = pd.DataFrame(coordinates, columns=['Latitude', 'Longitude'])
+        map_center = df.mean().tolist()
+        
+        m = folium.Map(
+            location=map_center,
+            zoom_start=2,
+            tiles='CartoDB positron'  # Clean, modern map style
+        )
 
-    HeatMap(coordinates).add_to(m)
+        # Add heatmap layer with custom gradient
+        HeatMap(
+            coordinates,
+            min_opacity=0.3,
+            radius=15,
+            blur=10,
+            gradient={
+                0.4: 'blue',
+                0.6: 'purple',
+                0.8: 'red',
+                1.0: 'white'
+            }
+        ).add_to(m)
 
-    # Get the directory of the current script
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+        # Add a title
+        title_html = f'''
+            <div style="position: fixed; 
+                        top: 10px; 
+                        left: 50px; 
+                        z-index: 9999; 
+                        background-color: white; 
+                        padding: 10px; 
+                        border-radius: 5px; 
+                        border: 2px solid gray;">
+                <h3>{country} Data Distribution</h3>
+            </div>
+        '''
+        m.get_root().html.add_child(folium.Element(title_html))
+
+        # Save the map
+        output_path = self.script_dir / f"heatmap_{country.replace(' ', '_').lower()}.html"
+        m.save(str(output_path))
+        self.logger.info(f"Heatmap saved as {output_path}")
+
+    def process_country(self, country: str, item_set_ids: List[int]) -> int:
+        """Process all item sets for a country."""
+        self.logger.info(f"Processing data for {country}")
+        all_coordinates = []
+        total_items = 0
+
+        for item_set_id in item_set_ids:
+            items = self.fetch_items(item_set_id)
+            if items:
+                total_items += len(items)
+                coordinates = self.extract_coordinates(items)
+                all_coordinates.extend(coordinates)
+
+        self.generate_heatmap(all_coordinates, country)
+        self.logger.info(f"Total items processed for {country}: {total_items}")
+        return total_items
+
+def main():
+    countries = {
+        'Benin': [2185, 5502, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5501, 5500],
+        'Burkina Faso': [2199, 2200, 2215, 2214, 2207, 2201, 23448, 5503, 2209, 2210, 2213],
+        'Togo': [25304, 9458, 5498],
+        'Côte d\'Ivoire': [43051, 31882, 15845, 45390]
+    }
+
+    generator = OmekaHeatmapGenerator()
+    total_global_items = sum(
+        generator.process_country(country, item_set_ids)
+        for country, item_set_ids in countries.items()
+    )
     
-    # Create the file path in the same directory as the script
-    html_file_path = os.path.join(script_dir, f"heatmap_{country.replace(' ', '_').lower()}.html")
-    
-    m.save(html_file_path)
-    logging.info(f"Heatmap saved as {html_file_path}")
+    generator.logger.info(f"Total items processed globally: {total_global_items}")
 
-
-def extract_and_plot(item_set_ids, country):
-    all_coordinates = []
-    total_items = 0  # Counter for total items
-
-    for item_set_id in item_set_ids:
-        items = fetch_items(item_set_id)
-        if items:
-            total_items += len(items)
-            coordinates = extract_coordinates(items)
-            all_coordinates.extend(coordinates)
-
-    generate_heatmap(all_coordinates, country)
-    logging.info(f"Total items processed for {country}: {total_items}")
-
-
-countries = {
-    'Benin': [2185, 5502, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5501, 5500],
-    'Burkina Faso': [2199, 2200, 2215, 2214, 2207, 2201, 23448, 5503, 2209, 2210, 2213],
-    'Togo': [25304, 9458, 5498],
-    'Côte d\'Ivoire': [43051, 31882, 15845, 45390]
-}
-
-total_global_items = 0  # Global counter for all items processed
-
-for country, item_set_ids in countries.items():
-    logging.info(f"Processing data for {country}")
-    extract_and_plot(item_set_ids, country)
-
-logging.info(f"Total items processed globally: {total_global_items}")
+if __name__ == "__main__":
+    main()
