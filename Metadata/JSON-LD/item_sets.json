@@ -1801,6 +1801,10 @@
         {
           "@id": "https://islam.zmo.de/api/resources/1970",
           "o:title": "Luc Assogba"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/15427",
+          "o:title": "Emmanuel Kouagou"
         }
       ],
       "dcterms:isReplacedBy": [
@@ -2451,6 +2455,30 @@
         {
           "@id": "https://islam.zmo.de/api/resources/8739",
           "o:title": "Dans le sens du renforcement des liens d'amitié entre les Peuples béninois et libyen"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45951",
+          "o:title": "Fin du premier symposium international sur le Livre Vert à Benghazi : un précieux instrument au service du Peuple libyen"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45961",
+          "o:title": "1er symposium international sur le Livre vert à Benghazi : le Président KEREKOU est rentré samedi dernier à Cotonou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45962",
+          "o:title": "Les Peuples béninois et arabe libyen résolus à lutter coude à coude pour le triomphe total de leur juste cause (communiqué conjoint)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45963",
+          "o:title": "Meeting populaire au Stade de l'Amitié : \"Tout le Peuple béninois éprouve une immense joie d'accuillir le Grand Leader de la Révolution d'El Fateh\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45968",
+          "o:title": "Visite d'Etat et d'amitié du chef de l'Etat en Jamahiriya Arabe Libyenne Populaire Socialiste : les relations bénino libyennes se trouvent plus renforcées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45969",
+          "o:title": "Conférence de solidarité avec le Peuple arabe libyen : le Bénin réaffirme la nécessité de renforcer le front anti-impérialiste"
         }
       ]
     }
@@ -3099,6 +3127,22 @@
         {
           "@id": "https://islam.zmo.de/api/resources/23391",
           "o:title": "Simone Ahitcheme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45924",
+          "o:title": "Gontran Hounsounou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45925",
+          "o:title": "Michel Massessi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45926",
+          "o:title": "Fidèle Djimadja"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45928",
+          "o:title": "Elom Kpadonou"
         }
       ],
       "dcterms:isReplacedBy": [
@@ -3171,10 +3215,6 @@
         {
           "@id": "https://islam.zmo.de/api/resources/4567",
           "o:title": "Lancement du programme English Access Miscroscholarship : renforcer les capacités de 40 élèves"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/4568",
-          "o:title": "Fête de la Tabaski : une célébration sous le signe du partage et de la paix à Akpakpa"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/4569",
@@ -7011,6 +7051,10 @@
         {
           "@id": "https://islam.zmo.de/api/resources/9106",
           "o:title": "Trois ans de gestion du Hadj : la recette du président Talon porte ses fruits"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46033",
+          "o:title": "Fête de la Tabaski : une célébration sous le signe du partage et de la paix à Akpakpa"
         }
       ],
       "dcterms:publisher": [
@@ -7065,10 +7109,6 @@
         {
           "@id": "https://islam.zmo.de/api/resources/4567",
           "o:title": "Lancement du programme English Access Miscroscholarship : renforcer les capacités de 40 élèves"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/4568",
-          "o:title": "Fête de la Tabaski : une célébration sous le signe du partage et de la paix à Akpakpa"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/4569",
@@ -10277,6 +10317,162 @@
         {
           "@id": "https://islam.zmo.de/api/resources/23447",
           "o:title": "La Jama’at islamique Ahmadiyya Bénin distribue des cadeaux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45952",
+          "o:title": "8è Conférence du dialogue parlementaire afro-arabe : renforcer la complémentarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45953",
+          "o:title": "23ème réunion des gouverneurs de la BID : aider la Banque à faire face aux défis du 3è millénaire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45954",
+          "o:title": "Fin de la 23ème réunion des gouverneurs de la BID : les comptes de la société d'assurace de la BID approuvés par les gouverneurs"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45955",
+          "o:title": "Les confessions religieuses du Zou et des Collines se prononcent sur la santé familiale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45956",
+          "o:title": "Fin du 9ème Sommet de l'OCI à Doha : le président Kérékou est rentré hier du Qatar"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45957",
+          "o:title": "Pèlerinage annuel à la Mecque : deux millions de fidèles…"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45958",
+          "o:title": "Visite au Bénin du roi Mohammed VI du Maroc : les points saillants d'un séjour fructueux (communiqué conjoint)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45959",
+          "o:title": "Hadj 2011 : départ hier pour la Mecque d'une première vague de 1.100 pèlerins béninois"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45960",
+          "o:title": "Modernisation du système sanitaire béninois : 15 milliards F CFA pour la construction de l'Hôpital de la Mère et de l'Enfant de Porto-Novo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45964",
+          "o:title": "Fête de la Tabaski : des prières et des bêtes immolées à la place Idi à Cadjèhoun"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45965",
+          "o:title": "Préparatifs de la fête de la Tabaski : mévente dans les marchés de mouton"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45966",
+          "o:title": "Célébration de l'Aïd el-Kébir : des prières pour une abondance de richesses"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45967",
+          "o:title": "Interdiction de l'expression de la foi dans la rue : la déclaration du ministre Djogbénou contraire à la Constitution"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45970",
+          "o:title": "Célébration de la fête du Ramadan : paix et cohésion sociale souhaitée dans le Borgou et l'Alibori"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45991",
+          "o:title": "Célébration de la fête du Ramadan : exhortation à la réconciliation et à l'union à Porto-Novo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45992",
+          "o:title": "Célébration de la fête du Ramadan : Ahmaddiyya invite à plus de solidarité à Bohicon"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45993",
+          "o:title": "Célébration de la fête du Ramadan : l'Union des femmes musulmanes du Mono marque les festivités"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45994",
+          "o:title": "Célébration de la fête du Ramadan : les fidèles d'Adjagbo invités au respect continu des règles de l'islam"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45995",
+          "o:title": "Célébration de la fête du Ramadan : la piété et la dévotion recommandées au-delà de l'Aïd el-Fitr"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45996",
+          "o:title": "Célébration de la fête du Ramadan : appel à cultiver les bons comportements à Natitingou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45997",
+          "o:title": "Célébration de l'Aïd el-fitr : Bohicon prie pour la paix et appelle à la solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45998",
+          "o:title": "Célébration de l'Aïd el-fitr : appel à préserver la paix dans le paix à Natitingou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45999",
+          "o:title": "Célébration de l'Aïd el-fitr : un appel à demeurer dans la piété lancé à Athiémé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46000",
+          "o:title": "Célébration de l'Aïd el-fitr : prière pour la paix et la prospérité à Lokossa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46001",
+          "o:title": "Célébration de l'Aïd el-fitr : la fête célébrée à Abomey-Calavi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46002",
+          "o:title": "Célébration de l'Aïd el-fitr : Me Adrien Houngbédji rehausse la prière musulmane à Porto-Novo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46003",
+          "o:title": "Célébration de l'Aïd el-Kébir : exhortation à la réconciliation et au pardon à Bohicon"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46004",
+          "o:title": "Célébration de l'Aïd el-Kébir : sous le signe de la paix pour le Bénin à Lokossa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46005",
+          "o:title": "Célébration de l'Aïd el-Kébir : les musulmans de Porto-Novo renouvellent leur foi à Allah"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46006",
+          "o:title": "Célébration de l'Aïd el-Kébir : la Communauté musulmane d'Abomey-Calavi prône la solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46007",
+          "o:title": "Célébration de l'Aïd el-Kébir : invocations et sacrifice en commémoration de l'offrande d'Abraham"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46008",
+          "o:title": "Fête de la Tabaski : occasion de grâce et de grande adoration à Parakou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46009",
+          "o:title": "Fête de la Tabaski : les musulmans de Bohicon ont sacrifié à la tradition"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46029",
+          "o:title": "Fête de la Tabaski : exhortations à la paix à Lokossa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46030",
+          "o:title": "Fête de la Tabaski : invocations pour l'unité à Natitingou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46031",
+          "o:title": "Fête de la Tabaski : la clémence divine implorée à Abomey-Calavi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46032",
+          "o:title": "Fête de la Tabaski : les adeptes de sacrifices humains invités à s'inspirer d'Allah"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46033",
+          "o:title": "Fête de la Tabaski : une célébration sous le signe du partage et de la paix à Akpakpa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46039",
+          "o:title": "Célébration de l'Aïd el-fitr : les fidèles musulmans invités à continuer les bonnes œuvres"
         }
       ],
       "dcterms:source": [
@@ -10323,10 +10519,6 @@
         {
           "@id": "https://islam.zmo.de/api/resources/4567",
           "o:title": "Lancement du programme English Access Miscroscholarship : renforcer les capacités de 40 élèves"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/4568",
-          "o:title": "Fête de la Tabaski : une célébration sous le signe du partage et de la paix à Akpakpa"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/4569",
@@ -12715,6 +12907,170 @@
         {
           "@id": "https://islam.zmo.de/api/resources/8731",
           "o:title": "Visite d'Etat et d'amitié du chef de l'Etat en Jamahiriya Arabe Libyenne Populaire Socialiste : les relations bénino libyennes se trouvent plus renforcées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45955",
+          "o:title": "Les confessions religieuses du Zou et des Collines se prononcent sur la santé familiale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45964",
+          "o:title": "Fête de la Tabaski : des prières et des bêtes immolées à la place Idi à Cadjèhoun"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45966",
+          "o:title": "Célébration de l'Aïd el-Kébir : des prières pour une abondance de richesses"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45970",
+          "o:title": "Célébration de la fête du Ramadan : paix et cohésion sociale souhaitée dans le Borgou et l'Alibori"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45991",
+          "o:title": "Célébration de la fête du Ramadan : exhortation à la réconciliation et à l'union à Porto-Novo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45992",
+          "o:title": "Célébration de la fête du Ramadan : Ahmaddiyya invite à plus de solidarité à Bohicon"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45993",
+          "o:title": "Célébration de la fête du Ramadan : l'Union des femmes musulmanes du Mono marque les festivités"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45994",
+          "o:title": "Célébration de la fête du Ramadan : les fidèles d'Adjagbo invités au respect continu des règles de l'islam"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45995",
+          "o:title": "Célébration de la fête du Ramadan : la piété et la dévotion recommandées au-delà de l'Aïd el-Fitr"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45996",
+          "o:title": "Célébration de la fête du Ramadan : appel à cultiver les bons comportements à Natitingou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45997",
+          "o:title": "Célébration de l'Aïd el-fitr : Bohicon prie pour la paix et appelle à la solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45998",
+          "o:title": "Célébration de l'Aïd el-fitr : appel à préserver la paix dans le paix à Natitingou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45999",
+          "o:title": "Célébration de l'Aïd el-fitr : un appel à demeurer dans la piété lancé à Athiémé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46000",
+          "o:title": "Célébration de l'Aïd el-fitr : prière pour la paix et la prospérité à Lokossa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46001",
+          "o:title": "Célébration de l'Aïd el-fitr : la fête célébrée à Abomey-Calavi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46002",
+          "o:title": "Célébration de l'Aïd el-fitr : Me Adrien Houngbédji rehausse la prière musulmane à Porto-Novo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46003",
+          "o:title": "Célébration de l'Aïd el-Kébir : exhortation à la réconciliation et au pardon à Bohicon"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46004",
+          "o:title": "Célébration de l'Aïd el-Kébir : sous le signe de la paix pour le Bénin à Lokossa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46005",
+          "o:title": "Célébration de l'Aïd el-Kébir : les musulmans de Porto-Novo renouvellent leur foi à Allah"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46006",
+          "o:title": "Célébration de l'Aïd el-Kébir : la Communauté musulmane d'Abomey-Calavi prône la solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46007",
+          "o:title": "Célébration de l'Aïd el-Kébir : invocations et sacrifice en commémoration de l'offrande d'Abraham"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46008",
+          "o:title": "Fête de la Tabaski : occasion de grâce et de grande adoration à Parakou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46009",
+          "o:title": "Fête de la Tabaski : les musulmans de Bohicon ont sacrifié à la tradition"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46029",
+          "o:title": "Fête de la Tabaski : exhortations à la paix à Lokossa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46030",
+          "o:title": "Fête de la Tabaski : invocations pour l'unité à Natitingou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46031",
+          "o:title": "Fête de la Tabaski : la clémence divine implorée à Abomey-Calavi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46032",
+          "o:title": "Fête de la Tabaski : les adeptes de sacrifices humains invités à s'inspirer d'Allah"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45952",
+          "o:title": "8è Conférence du dialogue parlementaire afro-arabe : renforcer la complémentarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45953",
+          "o:title": "23ème réunion des gouverneurs de la BID : aider la Banque à faire face aux défis du 3è millénaire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45954",
+          "o:title": "Fin de la 23ème réunion des gouverneurs de la BID : les comptes de la société d'assurace de la BID approuvés par les gouverneurs"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45956",
+          "o:title": "Fin du 9ème Sommet de l'OCI à Doha : le président Kérékou est rentré hier du Qatar"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45957",
+          "o:title": "Pèlerinage annuel à la Mecque : deux millions de fidèles…"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45958",
+          "o:title": "Visite au Bénin du roi Mohammed VI du Maroc : les points saillants d'un séjour fructueux (communiqué conjoint)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45959",
+          "o:title": "Hadj 2011 : départ hier pour la Mecque d'une première vague de 1.100 pèlerins béninois"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45960",
+          "o:title": "Modernisation du système sanitaire béninois : 15 milliards F CFA pour la construction de l'Hôpital de la Mère et de l'Enfant de Porto-Novo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45965",
+          "o:title": "Préparatifs de la fête de la Tabaski : mévente dans les marchés de mouton"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45967",
+          "o:title": "Interdiction de l'expression de la foi dans la rue : la déclaration du ministre Djogbénou contraire à la Constitution"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45968",
+          "o:title": "Visite d'Etat et d'amitié du chef de l'Etat en Jamahiriya Arabe Libyenne Populaire Socialiste : les relations bénino libyennes se trouvent plus renforcées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45969",
+          "o:title": "Conférence de solidarité avec le Peuple arabe libyen : le Bénin réaffirme la nécessité de renforcer le front anti-impérialiste"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46039",
+          "o:title": "Célébration de l'Aïd el-fitr : les fidèles musulmans invités à continuer les bonnes œuvres"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46033",
+          "o:title": "Fête de la Tabaski : une célébration sous le signe du partage et de la paix à Akpakpa"
         }
       ]
     }
@@ -18294,6 +18650,30 @@
         {
           "@id": "https://islam.zmo.de/api/resources/20407",
           "o:title": "San San Bambou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45929",
+          "o:title": "Casimir Ki"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45930",
+          "o:title": "Clément Tapsoba"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45931",
+          "o:title": "Apolline Ouédraogo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45932",
+          "o:title": "Kogoda Alassane Ouédraogo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45933",
+          "o:title": "Emile Bassono"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/45934",
+          "o:title": "Ahmadou Boli"
         }
       ]
     }
@@ -37409,6 +37789,56 @@
   },
   {
     "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/2230",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 2230,
+    "o:is_public": false,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": null,
+    "o:title": "CSV Import",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/large/42564751945fb181a74cfd365fea40ead5ead28c.jpg",
+      "medium": "https://islam.zmo.de/files/medium/42564751945fb181a74cfd365fea40ead5ead28c.jpg",
+      "square": "https://islam.zmo.de/files/square/42564751945fb181a74cfd365fea40ead5ead28c.jpg"
+    },
+    "o:created": {
+      "@value": "2024-03-14T14:44:48+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-03-14T14:44:48+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=2230"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "CSV Import"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
     "@id": "https://islam.zmo.de/api/item_sets/4922",
     "@type": [
       "o:ItemSet",
@@ -45358,6 +45788,56 @@
   },
   {
     "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/12826",
+    "@type": [
+      "o:ItemSet",
+      "fabio:AuthorityFile"
+    ],
+    "o:id": 12826,
+    "o:is_public": false,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/244",
+      "o:id": 244
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/3",
+      "o:id": 3
+    },
+    "o:thumbnail": null,
+    "o:title": "Notices d'autorités à traiter",
+    "thumbnail_display_urls": {
+      "large": null,
+      "medium": null,
+      "square": null
+    },
+    "o:created": {
+      "@value": "2024-03-17T15:26:51+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-03-17T15:26:51+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=12826"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Notices d'autorités à traiter"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
     "@id": "https://islam.zmo.de/api/item_sets/15845",
     "@type": [
       "o:ItemSet",
@@ -45392,7 +45872,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-05T14:17:39+00:00",
+      "@value": "2024-10-21T13:49:05+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -45406,6 +45886,15 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Le Patriote"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "1992-05/2019-11"
       }
     ],
     "dcterms:spatial": [
@@ -45485,6 +45974,12 @@
         {
           "@id": "https://islam.zmo.de/api/resources/31879",
           "o:title": "7e SIFRAM : la problématique de l'organisation au menu"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "https://islam.zmo.de/api/resources/46154",
+          "o:title": "D. Al Séni"
         }
       ]
     }
@@ -48969,6 +49464,296 @@
   },
   {
     "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/23448",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 23448,
+    "o:is_public": false,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": {
+      "@id": "https://islam.zmo.de/api/assets/64",
+      "o:id": 64
+    },
+    "o:title": "Faso Actu",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/asset/a9c6f5aa03fae02ec604bdb5b78d83eff75d9a73.png",
+      "medium": "https://islam.zmo.de/files/asset/a9c6f5aa03fae02ec604bdb5b78d83eff75d9a73.png",
+      "square": "https://islam.zmo.de/files/asset/a9c6f5aa03fae02ec604bdb5b78d83eff75d9a73.png"
+    },
+    "o:created": {
+      "@value": "2024-04-13T20:11:36+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-04-13T20:14:19+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=23448"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Faso Actu"
+      }
+    ],
+    "dcterms:description": [
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Métadonnées d'articles provenant du journal Faso Actu (2011-2024)",
+        "@language": "fr"
+      },
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Metadata of articles from the newspaper Faso Actu (2011-2024)",
+        "@language": "en"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "2011/2024"
+      }
+    ],
+    "dcterms:spatial": [
+      {
+        "type": "customvocab:4",
+        "property_id": 40,
+        "property_label": "Spatial Coverage",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/546",
+        "value_resource_id": 546,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Burkina Faso",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:language": [
+      {
+        "type": "customvocab:6",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/8355",
+        "value_resource_id": 8355,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Français"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC/1.0/",
+        "o:label": "In Copyright"
+      }
+    ],
+    "dcterms:contributor": [
+      {
+        "type": "customvocab:3",
+        "property_id": 6,
+        "property_label": "Contributor",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/858",
+        "value_resource_id": 858,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Frédérick Madore",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_title": "FrédérickMadore_1.jpg",
+        "thumbnail_type": "image/jpeg"
+      }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "uri",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@id": "https://www.wikidata.org/wiki/Q125464316",
+        "o:label": "Q125464316"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/23449",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 23449,
+    "o:is_public": false,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": {
+      "@id": "https://islam.zmo.de/api/assets/63",
+      "o:id": 63
+    },
+    "o:title": "Infowakat",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/asset/870504202794044d08d603dadaece7209a5255d3.png",
+      "medium": "https://islam.zmo.de/files/asset/870504202794044d08d603dadaece7209a5255d3.png",
+      "square": "https://islam.zmo.de/files/asset/870504202794044d08d603dadaece7209a5255d3.png"
+    },
+    "o:created": {
+      "@value": "2024-04-14T16:31:28+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-04-14T16:34:39+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=23449"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Infowakat"
+      }
+    ],
+    "dcterms:description": [
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Métadonnées d'articles provenant du journal Infowakat (2015-2024)",
+        "@language": "fr"
+      },
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Metadata of articles from the newspaper Infowakat (2015-2024)",
+        "@language": "en"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "2015/2024"
+      }
+    ],
+    "dcterms:spatial": [
+      {
+        "type": "customvocab:4",
+        "property_id": 40,
+        "property_label": "Spatial Coverage",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/546",
+        "value_resource_id": 546,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Burkina Faso",
+        "thumbnail_url": "https://islam.zmo.de/files/square/042b42c5fa822096fbd61a5d6c877755e2fc32d6.jpg",
+        "thumbnail_title": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:language": [
+      {
+        "type": "customvocab:6",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/8355",
+        "value_resource_id": 8355,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Français"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC/1.0/",
+        "o:label": "In Copyright"
+      }
+    ],
+    "dcterms:contributor": [
+      {
+        "type": "customvocab:3",
+        "property_id": 6,
+        "property_label": "Contributor",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/858",
+        "value_resource_id": 858,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Frédérick Madore",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_title": "FrédérickMadore_1.jpg",
+        "thumbnail_type": "image/jpeg"
+      }
+    ],
+    "dcterms:identifier": [
+      {
+        "type": "uri",
+        "property_id": 10,
+        "property_label": "Identifier",
+        "is_public": true,
+        "@id": "https://www.wikidata.org/wiki/Q125472612",
+        "o:label": "Q125472612"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
     "@id": "https://islam.zmo.de/api/item_sets/23452",
     "@type": [
       "o:ItemSet",
@@ -48991,9 +49776,9 @@
     "o:thumbnail": null,
     "o:title": "Documents divers (Bénin)",
     "thumbnail_display_urls": {
-      "large": "https://islam.zmo.de/files/large/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg",
-      "medium": "https://islam.zmo.de/files/medium/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg",
-      "square": "https://islam.zmo.de/files/square/1ea30f8a665cc8b6634ed083479b276ab85647d2.jpg"
+      "large": "https://islam.zmo.de/files/large/63117519e741240bffedcb53fc7248a80b96f854.jpg",
+      "medium": "https://islam.zmo.de/files/medium/63117519e741240bffedcb53fc7248a80b96f854.jpg",
+      "square": "https://islam.zmo.de/files/square/63117519e741240bffedcb53fc7248a80b96f854.jpg"
     },
     "o:created": {
       "@value": "2024-04-18T06:26:33+00:00",
@@ -49132,9 +49917,9 @@
     "o:thumbnail": null,
     "o:title": "Documents divers (Burkina Faso)",
     "thumbnail_display_urls": {
-      "large": "https://islam.zmo.de/files/large/ad04d5188892d5268b1c3253fda1a972345713ec.jpg",
-      "medium": "https://islam.zmo.de/files/medium/ad04d5188892d5268b1c3253fda1a972345713ec.jpg",
-      "square": "https://islam.zmo.de/files/square/ad04d5188892d5268b1c3253fda1a972345713ec.jpg"
+      "large": "https://islam.zmo.de/files/large/543bbaf0bc21851acce890cda1e15b78762291c3.jpg",
+      "medium": "https://islam.zmo.de/files/medium/543bbaf0bc21851acce890cda1e15b78762291c3.jpg",
+      "square": "https://islam.zmo.de/files/square/543bbaf0bc21851acce890cda1e15b78762291c3.jpg"
     },
     "o:created": {
       "@value": "2024-04-18T06:28:31+00:00",
@@ -50880,9 +51665,9 @@
     "o:thumbnail": null,
     "o:title": "Documents divers (Togo)",
     "thumbnail_display_urls": {
-      "large": "https://islam.zmo.de/files/large/9394821b05992f5a868ea942aae26db41a681f62.jpg",
-      "medium": "https://islam.zmo.de/files/medium/9394821b05992f5a868ea942aae26db41a681f62.jpg",
-      "square": "https://islam.zmo.de/files/square/9394821b05992f5a868ea942aae26db41a681f62.jpg"
+      "large": "https://islam.zmo.de/files/large/c3fd2cc4c136dd7236b1136bfe428465e913f982.jpg",
+      "medium": "https://islam.zmo.de/files/medium/c3fd2cc4c136dd7236b1136bfe428465e913f982.jpg",
+      "square": "https://islam.zmo.de/files/square/c3fd2cc4c136dd7236b1136bfe428465e913f982.jpg"
     },
     "o:created": {
       "@value": "2024-05-31T11:01:48+00:00",
@@ -52071,7 +52856,1505 @@
         "thumbnail_title": "FrédérickMadore_1.jpg",
         "thumbnail_type": "image/jpeg"
       }
-    ]
+    ],
+    "@reverse": {
+      "dcterms:isPartOf": [
+        {
+          "@id": "https://islam.zmo.de/api/resources/46335",
+          "o:title": "Henri Kouassi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46336",
+          "o:title": "Franck Dally"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46337",
+          "o:title": "S. K. B."
+        }
+      ],
+      "dcterms:publisher": [
+        {
+          "@id": "https://islam.zmo.de/api/resources/46338",
+          "o:title": "3ème Journée de la croyante du Mouvement Al Mouwahhidoune : les femmes musulmanes instruites sur le planning familial"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46339",
+          "o:title": "Clôture du SIFEF 2004 : les femmes musulmanes s'engagent pour la réconciliation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46340",
+          "o:title": "Destruction du siège en construction de la CEEMUCI : le comité de crise accuse"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46341",
+          "o:title": "Les femmes musulmanes prônent la tolérance"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46342",
+          "o:title": "XVIIe séminaire national de l'AEEMCI : la jeunesse musulmane interpelle Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46343",
+          "o:title": "Koudouss fait ses propositions de sortie de crise à Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46344",
+          "o:title": "Présidentielle du 31 octobre : les musulmans sunnites veulent une campagne apaisée et civilisée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46345",
+          "o:title": "Réconciliation nationale : ceux qui vont faire échouer Banny"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46346",
+          "o:title": "Communauté musulmane : Dramane Ouattara divise les fidèles"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46347",
+          "o:title": "À tout vent : Idriss Koudous et Aboubacar Fofana"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46348",
+          "o:title": "Nuit du Mahoulid. Idriss Koudouss : \"Pourquoi je ne suis pas dans un hôtel\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46349",
+          "o:title": "Dénigrement et délation autour de Ouattara : la grosse colère d'Idriss Koudouss"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46350",
+          "o:title": "Après l'ivoirité, le \"rattrapage\" ethnique, les concepts ségrégationnistes de Ouattara et Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46351",
+          "o:title": "Affi N'Guessan depuis Abengourou : \"Ce régime a empoisonné la Côte d'Ivoire\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46352",
+          "o:title": "Réconciliation nationale : l'Imam Bakary Chérif appelle à la libération des prisonniers politiques"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46353",
+          "o:title": "Désignation de Youssouf Bakayoko à la tête de la CEI : révélation troublante sur le rôle joué par l'imam Diakité Ousmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46354",
+          "o:title": "Pose de la première pierre d'une mosquée sunnite"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46355",
+          "o:title": "Colère. Retard dans l'octroi d'une fréquence radio : la fronde des musulmans contre le gouvernement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46356",
+          "o:title": "Jeûne Musulman : la Primature fait un don de 15 millions au Cosim"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46357",
+          "o:title": "Journée nationale de la paix : des musulmans projettent une marche"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46362",
+          "o:title": "Mariages musulmans : les fidèles invités à respecter les principes de l’Islam"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46363",
+          "o:title": "Religion : les vérités d'une autorité préfectorale aux musulmans de Gagnoa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46364",
+          "o:title": "Fin du jeûne musulman : c'est demain la fête de la rupture"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46365",
+          "o:title": "Gagnoa : les musulmans invités au partage et à la réconciliation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46366",
+          "o:title": "La télévision Al Bayane sur la bouquet Canal+Afrique L'iman Cissé Djiguiba, Dg : \"La télévision Al Bayane compte prendre toute sa place\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46367",
+          "o:title": "Religion : le Cosim dément toute réaction à la déclaration de l'église catholique"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46368",
+          "o:title": "Wazifa Internationale 2019 : les tijanis ont prié pour la paix en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46369",
+          "o:title": "Première édition de la Wadzifa internationale en Côte d’Ivoire : la grande messe des tidjanis"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46370",
+          "o:title": "Journée du 15 novembre : la communauté Ahmadiyya marche pour la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46371",
+          "o:title": "En prélude à la journée nationale de la paix : la communauté islamique Ahmadi s’active"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46372",
+          "o:title": "Religion : grosse colère de l'Imam Mamadou Traoré"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46373",
+          "o:title": "Islam : le président Alassane Ouattara à la nuit du destin"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46374",
+          "o:title": "Religion et comportement social : ce que deviennent des musulmans après le ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46375",
+          "o:title": "Béoumi / Conflit inter communautaire : une prière œcuménique pour la cohésion sociale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46376",
+          "o:title": "Nuit du Maoulid 2019 : les Imams dénoncent la corruption en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46377",
+          "o:title": "Mosquée Mohammed VI d'Abidjan : une capacité de 7000 à 12000 places"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46378",
+          "o:title": "Religion : la communauté musulmane en deuil"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46379",
+          "o:title": "Nuit du destin 2020 à Abidjan : le musulman ivoirien face à l'épreuve"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46380",
+          "o:title": "Mutilations génitales féminines : la Fondation Djigui pour un programme national de lutte"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46381",
+          "o:title": "Cérémonie de prière et de bénédiction : pour l'émancipation des femmes musulmanes"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46383",
+          "o:title": "Korhogo. Séminaire de formation islamique. L'imam Aboubacar Fofana (Porte-parole du COSIM) : \"Notre communauté est marginalisée\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46384",
+          "o:title": "Deuil : l'imam Brédji décédé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46385",
+          "o:title": "Nouvelle tournée africaine du Roi du Maroc : Mohamed VI à Abidjan aujourd'hui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46386",
+          "o:title": "Gagnoa : un iman approuve l’excision et l’immigration clandestine"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46387",
+          "o:title": "Affaire \"gestion de la mosquée de Man\" : Bamba Messamba fait réculer les femmes"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46388",
+          "o:title": "Alors qu'il est membre de la CEI : un Imam appelle à voter Ouattara dans une mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46389",
+          "o:title": "Désignation de Youssouf Bakayoko à la tête de la CEI : Ouattara et Bédié refusent la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46390",
+          "o:title": "Réaction à propos de l'arrestation de Blé Goudé Charles (SG de la FESCI). El Hadj Idriss Koudouss (Président du CNI) : \"Il y a eu trahison\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46391",
+          "o:title": "La Confédération islamique appelle au rejet du tribalisme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46392",
+          "o:title": "Formation des animateurs d'associations islamiques : les attentes comblées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46393",
+          "o:title": "Refusant de prier pour Bédié, les musulmans ferment la grande mosquée de Daloa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46394",
+          "o:title": "Les musulmans face à Gbagbo ce matin"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46395",
+          "o:title": "\"Il n'y aura pas de guerre en Côte d'Ivoire au nom de la religion\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46396",
+          "o:title": "Transfert de la capitale et ambassade d'Arabie saoudite"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46397",
+          "o:title": "La Côte d'Ivoire, un Etat religieusement neutre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46398",
+          "o:title": "La Laïcité de l'Etat entre sens et contre sens en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46399",
+          "o:title": "Forum pour la réconciliation nationale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46400",
+          "o:title": "Jeûne du Ramadan : les musulmans de Côte d'Ivoire en pénitence"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46401",
+          "o:title": "\"Dans le futur, il y aura un Etat palestinien indépendant\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46402",
+          "o:title": "Célébration de \"La Nuit du Destin\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46414",
+          "o:title": "Fête du ramadan : les musulmans ont célébré hier la fin du jeûne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46415",
+          "o:title": "Conseil national des imams et muezzins de Côte d'Ivoire : Al Coran veut réhabiliter ces leaders musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46416",
+          "o:title": "Message du nouvel An du chef de l'Etat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46417",
+          "o:title": "Pèlerinage à la Mecque (Hadj 2002)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46418",
+          "o:title": "Le président Gbagbo a tenu sa promesse"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46419",
+          "o:title": "Pèlerinage à la Mecque (Hadj) 2002 : le maire de Yopougon soutient la communauté musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46420",
+          "o:title": "\"Le terrorisme est l'arme des lâches\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46421",
+          "o:title": "L'imam Cherif Bakary (président du FOI) dément : \"Le ministe Boga Doudou n'y est pour rien\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46422",
+          "o:title": "Organisation du pèlerinage à la Mecque (Hadj) 2002 : la contribution du gouvernement dévoilée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46423",
+          "o:title": "Retour des pèlerins envoyés à la Mecque par la présidence"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46424",
+          "o:title": "Établissement de la Banque islamique de développement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46425",
+          "o:title": "Crise à l'association islamique Al-Coran : un collectif destitue Harrissou Fofana"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46426",
+          "o:title": "El Hadj Harrissou Fofana : \"Ma vie est menacée\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46427",
+          "o:title": "Les messages du Front de la Oummat et de Al-Coran au président Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46428",
+          "o:title": "Bien-être de la communauté musulmane : incidents tragiques à Daloa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46429",
+          "o:title": "Déclaration de la communauté musulmane de Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46430",
+          "o:title": "\"Cette célébration prouve que chértiens et musulmans sont unis"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46431",
+          "o:title": "Meeting de l'ONG \"La Voix du Nord\" : \"Les premières victimes de cette guerre sont nos parents du Nord\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46432",
+          "o:title": "Musulmans et chrétiens ont prié à la grande mosquée d'Attécoubé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46433",
+          "o:title": "Les musulmans ont célébré l'Aïd el Fitr"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46434",
+          "o:title": "La Banque islamique de développement prête à investir en Côte d'Ivoire malgré la crise politico-militaire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46435",
+          "o:title": "Hadj 2003"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46436",
+          "o:title": "Supérieur Ediémou : \"Il n'existe pas en côte d'Ivoire, une guerre entre chrétiens et musulmans\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46437",
+          "o:title": "Hadj 2003 : l'ambassadeur d'Arabie-Saoudite rassure la communauté musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46438",
+          "o:title": "Hadj 2003 : le premier contingent s'est envolé hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46439",
+          "o:title": "Pèlerinage à la Mecque 2003 : le plus gros convoi ivoirien est parti"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46440",
+          "o:title": "Commémoration de la mort de l'imam Hussein : les Libanais d'Al-Ghadir donnent leur sang"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46441",
+          "o:title": "La nuit du Mahoulid : les musulmans ont prié pour la paix en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46442",
+          "o:title": "L'imam Bakary chérif (président du FOI) : \"C'est Gbagbo seul qui peut ramener la paix\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46443",
+          "o:title": "Processus de réconciliation nationale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46444",
+          "o:title": "Les meilleurs hommes religieux récompensés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46445",
+          "o:title": "Hadj 2004 : le ministre des Cultes arrête de nouvelles mesures"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46446",
+          "o:title": "À propos de son évacuation à Paris pour raison de santé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46447",
+          "o:title": "Agora : Laurent Gbagbo et la laïcité de l'Etat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46448",
+          "o:title": "Leçons de religion"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46449",
+          "o:title": "Jeûne musulman : pourquoi les dépenses des ménages augmentent"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46450",
+          "o:title": "Renouvellement des directions des UFR de Cocody : au nom d'Allah, Cissé Djiguiba bat campagne pour le RDR"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46451",
+          "o:title": "Mouvement islamique Ahmadiyya mondial : un émissaire du calife chez Amani N'Guessan et Mabri Toikeusse"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46452",
+          "o:title": "Mouvement islamique Ahmadiyya de Côte d'Ivoire : une délégation de fidèles au Ghana et au Burkina"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46453",
+          "o:title": "Réhabilitation des écoles : la Banque islamique offre plus de 6 milliards à l'éducation nationale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46454",
+          "o:title": "Au coeur d'une nuit sacrée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46455",
+          "o:title": "Nuit du Maoulid : les musulmans souhaitent la paix et la réconciliation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46456",
+          "o:title": "Axe Abidjan-Alger - 30 bourses d'études algériennes aux bacheliers ivoiriens"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46457",
+          "o:title": "Mouvement Ançar Dine CI : Une \"Nuit des défunts\" célébrée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46458",
+          "o:title": "Bilan du Hadj 2004 : Harrissou Fofana charge Gnonkonté"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46459",
+          "o:title": "Opération solidarité ramadan 2004 ; la 8ème édition a démarré samedi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46460",
+          "o:title": "Ramadan : l'épreuve du jeûne commence aujourd'hui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46461",
+          "o:title": "Fête du ramadan : sous le signe de la réconciliation et de la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46462",
+          "o:title": "Les musulmans ont prié pour la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46463",
+          "o:title": "Les leaders religieux chez Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46464",
+          "o:title": "Les religieux invitent Seydou Diarra à prendre les devants"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46465",
+          "o:title": "Bilan positif pour Ivoire Airways"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46466",
+          "o:title": "\"Certaines catastrophes naturelles sont des châtiments divins\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46467",
+          "o:title": "Candidature de Ouattara à la présidentielle d'octobre : les religieux dénoncent l'injustice faite à la Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46468",
+          "o:title": "Les aveux de l'imam Idriss Koudouss"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46469",
+          "o:title": "Diaby Koweit : \"Déposons les armes et allons aux urnes\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46470",
+          "o:title": "Visite de Jacques Anouma au conseil national islamique : \"Nous voulons confier notre mission aux hommes de Dieu que vous êtes\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46471",
+          "o:title": "Trois associations musulmanes accablent l'ANAC"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46472",
+          "o:title": "Jeune 2005 : Michel Gbagbo offre 40 sacs de sucre à la communauté musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46473",
+          "o:title": "Le CNI offre des vivres et non vivres aux déshérités"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46474",
+          "o:title": "Anouma remercie le Cardinal Agré et l'Imam Koudouss"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46475",
+          "o:title": "L'imam Idriss Koudouss prône l'apaisement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46476",
+          "o:title": "La Convention de la société civile exige d'être consultée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46477",
+          "o:title": "Diaby Koweït : \"Il faut un homme intègre et attaché aux intérêts de la Côte d'Ivoire\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46478",
+          "o:title": "Système éducatif en Côte d'Ivoire : l'enseignement privé, quelle utilité ?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46479",
+          "o:title": "Voici la plate-forme d'appel téléphonique des musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46480",
+          "o:title": "Les religieux vers un pacte de non agression"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46481",
+          "o:title": "Caricatures du Saint Prophète de l'Islam : les ahmadis condamnent mais appellent à la retenue"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46482",
+          "o:title": "Imam Légré Yaya révèle : \"Koudouss prêche la haine dans sa mosquée\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46483",
+          "o:title": "Bakary Chérif aux imams : \"Prions pour que Gbagbo et Banny soient inspirés\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46484",
+          "o:title": "Les musulmans prônent la paix et solidarité inter-religieuse"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46485",
+          "o:title": "Réunion bilan du Hadj 2006 : le ministre Dja Blé met les musulmans en confiance"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46486",
+          "o:title": "La jeunesse musulmane formée à la culture de paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46487",
+          "o:title": "Affaire Hadj 2004 : un promoteur réclame 41 millions à Dja Blé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46488",
+          "o:title": "Zanzan : Gbagbo chez l'imam de la grande mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46489",
+          "o:title": "La Oummat islamique s'implique par la prière"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46490",
+          "o:title": "El Hadj Bakary Chérif : \"Les imams doivent se départir de la politique\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46491",
+          "o:title": "Violences contre et entre les religions : l'Ahmadiyya pour une coexistence pacifique"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46492",
+          "o:title": "Banque islamique de développement (BID) : le vice-président en visite en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46493",
+          "o:title": "El Hadj Légré Yayiah : \"Notre soutien aux actions pour la paix en Côte d'Ivoire est sans faille\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46494",
+          "o:title": "L'opération de déparasitage des élèves lancée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46495",
+          "o:title": "3ème édition de la mémorisation du Coran : Kouyaté Aboubacar et Sylla Ousmane iront en Lybie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46496",
+          "o:title": "Future mosquée de la gendarmerie : le président pose la première pierre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46497",
+          "o:title": "Nuit du destin, un moment de dévotion à l'islam"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46498",
+          "o:title": "Nuit du destin ou \"laïlatoul kadr\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46499",
+          "o:title": "\"Allah veut inciter les musulmans à la piété\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46500",
+          "o:title": "Journée-hommage au Mufti du Cosim, Cheick Aboubacar Fofana appelle à la solidarité entre les fidèles"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46501",
+          "o:title": "Apurement des dettes du Hadj 2004, Bema Fofana adresse ses factures à l'Etat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46502",
+          "o:title": "1ère journée des consultations du chef de l'État, les leaders religieux exigent le désarmement des rebelles"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46503",
+          "o:title": "L'imam Légré Yaya et le Raëlien Djossovi : \"Que les forces de la Licorne en l'ONUCI quittent la Côte d'Ivoire\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46504",
+          "o:title": "Hadj 2006 : les organisateurs appellent l'État au secours"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46505",
+          "o:title": "Le Hadj 2006 annulé, les explications du ministre Bamba Cheick Daniel"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46506",
+          "o:title": "À propos de 2000 pèlerins restés à Abidjan, l'Imam Moustapha Sy : \"Que l'Etat organise le pélerinage\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46507",
+          "o:title": "Les premiers pèlerins ivoiriens quittent la Mecque aujourd'hui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46508",
+          "o:title": "Agboville, Abouo N'Dori réhabilite la grande mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46509",
+          "o:title": "Litige foncier entre le COSIM et le CNI : Cheick Fofana-Koudouss, la bagarre!"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46510",
+          "o:title": "Conférence des imams, le nouveau Cheick Aïma s'installe le 29 avril"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46511",
+          "o:title": "2ème conférence ordinaire des imams, Cheick Bouakari Fofana intronisé guide spirituel"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46512",
+          "o:title": "Pour assouvir ses ambitions, Ouattara appelle les imams au secours"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46513",
+          "o:title": "Le Conseil national remercie le président Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46514",
+          "o:title": "Le COSIM condamne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46515",
+          "o:title": "La communauté musulmane en deuil, Oustaz Mohamed Lamine n'est plus"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46516",
+          "o:title": "Les musulmans souhaitent être plus présents dans le comité de pilotage"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46517",
+          "o:title": "Concours sous régional de psalmodie du Coran : 14 candidats en compétition"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46518",
+          "o:title": "Nuit du destin : les musulmans célèbrent la descente du Coran"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46519",
+          "o:title": "Adiaké : le DLC de Laurent Gbagbo offre du sucre aux musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46520",
+          "o:title": "Nuit du destin : l'Imam Bakary Chérif exhorte les hommes politiques à prôner la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46521",
+          "o:title": "Hadj 2007 à Issia : Bohoun et Tagro offrent 15 places aux musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46522",
+          "o:title": "Dire Bien : de la place Bédié à la place Inch'Allah"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46523",
+          "o:title": "2ème Salon des médias et des NTIC : les Ahmadis ivoiriens satisfaits de leur présence"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46524",
+          "o:title": "Signature des dispositions complémentaires de l'Accord de Ouaga : Diaby Kowéit félicite Gbagbo et Soro"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46525",
+          "o:title": "En prélude aux élections générales : des femmes musulmanes d'Attécoubé aux côtés de Marie Odette Lorougnon"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46526",
+          "o:title": "Pour célébrer la fin du Ramadan : Al Bayane et Khaled célèbrent la femme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46527",
+          "o:title": "1er congrès régional des femmes musulmanes de l'Afrique de l'ouest, à Abidjan : les travaux prennent fin aujourd'hui au Palais de la culture"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46528",
+          "o:title": "Lutte contre les MGF : l'Imam Cissé Djiguiba appelle les décideurs à faire appliquer la loi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46529",
+          "o:title": "Joachim Ottro, DGA de Air Ivoire, dressant le bilan du Hadj 2009 : \"La seule difficulté enregistrée était l'excédent de bagages\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46530",
+          "o:title": "HADJ 2009 : plus de 3000 pèlerins ivoiriens en route pour la Mecque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46531",
+          "o:title": "Fête du Ramadan-El Hadj Mamadou Traoré (Imam de la grande mosquée de la Riviera Golf) : \"œuvrez pour la cohésion sociale\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46532",
+          "o:title": "Yamoussoukro : le gouverneur soutient les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46533",
+          "o:title": "Lutte contre le terrorisme : une ONG veut l'implication des religieux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46534",
+          "o:title": "6ème congrès de l'Association des jeunes musulmans : El Hadj Nurudine se succède à lui-même"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46535",
+          "o:title": "Soubré : Boikary Fofana déconseille la politique dans les mosquées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46536",
+          "o:title": "Lancement officiel du Hadj 2009 à Yamoussoukro : l'Etat fixe la participation de chaque pèlerin à 1, 5 million FCFA"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46537",
+          "o:title": "Organisation du Hadj 2009 : l'Etat préfinance 4000 logements pour les pèlerins"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46538",
+          "o:title": "Conseil national islamique : les musulmans ouvrent une université à Abidjan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46539",
+          "o:title": "En prélude au Hadj 2009 : une délégation ivoirienne en Arabie saoudite"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46540",
+          "o:title": "Fêtes islamiques : le Cheick Boikary Fofana plaide pour l'unicité des dates"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46541",
+          "o:title": "Convention de la jeunesse de l'AMSCI à la Bourse du travail"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46542",
+          "o:title": "Education nationale : Gossio apporte son appui au groupe Al Anssar"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46543",
+          "o:title": "Retour de la paix dans la communauté musulmane : Gbagbo scelle l'union entre les frères ennemis"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46544",
+          "o:title": "Hadj en Côte d'Ivoire : les propositions des Sunnites pour une meilleure organisation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46545",
+          "o:title": "Communauté musulmane de Yopougon-Andokoi : Guillaume Soro inaugure la mosquée Fanny Inza"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46546",
+          "o:title": "Communauté musulmane : l'Imam Moussa Dramé élevé au rang d'ambassadeur de la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46547",
+          "o:title": "Organisation du pèlerinage à la Mecque : les musulmans réfléchissent sur le retrait ou non de l'Etat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46548",
+          "o:title": "Pèlerinage à la Mecque : le Cosim adopte une structure unique pour gérer le Hadj"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46549",
+          "o:title": "Hadj en Côte d'Ivoire : les acteurs en concertation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46550",
+          "o:title": "Mahoulid des enfants : les tout-petits à l'ecole du prophète Mahmmed"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46551",
+          "o:title": "La communauté musulmane exprime sa gratitude à Odette Sauyet"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46552",
+          "o:title": "Hadj 2008 : les musulmans de Yamoussoukro reconnaissants à Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46553",
+          "o:title": "Conseil supérieur islamique (CSI) : Dr. Moustapha Sy succède à feu Diaby Koweit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46554",
+          "o:title": "Hadj 2008 : la communauté musulmane de cocody rend hommage à ses fidèles"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46555",
+          "o:title": "Après le retour des pèlerins d'Issia : la communauté musulmane reconnaissante à Désiré Tagro"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46556",
+          "o:title": "Hadj 2008 : enfin, tous les pèlerins sont là !"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46557",
+          "o:title": "Hadj 2008 à La Mecque : 336 des 1605 pèlerins bloqués sont rentrés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46558",
+          "o:title": "Plus de 1500 pèlerins bloqués en Arabie saoudite : le COSIM appelle Gbagbo au secours"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46559",
+          "o:title": "Les derniers pèlerins sont rentrés hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46560",
+          "o:title": "Hadj 2008 en Arabie Saoudite : deux pèlerins de Gabon remercient le président Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46561",
+          "o:title": "Processus de sortie de crise en Côte d'Ivoire : les sages conseils du Mufti Mustapha Sy aux musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46562",
+          "o:title": "Hadj 2008 : le 1er contingent de pèlerins ivoiriens à Abidjan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46563",
+          "o:title": "L'Arabie Saoudite veut s'inspirer de l'expérience ivoirienne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46564",
+          "o:title": "Fête de la Tabaski : les musulmans pour un esprit d'apaisement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46565",
+          "o:title": "Fête de la Tabaski : la commémoration ce lundi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46566",
+          "o:title": "Ahmed Mohamed Ali, président de la Banque islamique de développement : \"La Côte d'Ivoire est un partenaire privilégié\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46567",
+          "o:title": "Hadj 2008 : retour des premiers pélérins le 11 décembre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46568",
+          "o:title": "Islam, fonctionnement du Codis et NTIC : les imams un peu plus outillés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46569",
+          "o:title": "Hadj 2008 : Désiré Tagro exprime la satisfaction du gouvernement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46570",
+          "o:title": "Enseignement supérieur : l'Université musulmane ouvre en février"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46571",
+          "o:title": "Hadj 2008 : le premier départ ce samedi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46572",
+          "o:title": "Les imams de Bondoukou à Laurent Gbagbo : \"Vous n'avez pas trahi votre peuple\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46573",
+          "o:title": "Hadj 2008 : 70 encadreurs renforcent leurs capacités"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46574",
+          "o:title": "Sortie de crise : le Front de la oummat islamique prie pour la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46575",
+          "o:title": "Annulation de la rencontre Simone Gbagbo-Musulmans à Bouaké : les Imams accusent les Forces nouvelles"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46576",
+          "o:title": "Concours international de lecture du Coran"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46577",
+          "o:title": "Élèves et étudiants musulmans de Côte d'Ivoire : les autorités recommandent la cohésion"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46578",
+          "o:title": "Séminaire de formation : 139 Imams instruits renforcent leurs capacités"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46579",
+          "o:title": "Communauté musulmane de la Police nationale : El Hadj Bamba Chouaholio élu président"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46580",
+          "o:title": "Hidiayatou Nach-ine 2008 : l'institut veut plus d'écoles coraniques"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46581",
+          "o:title": "Désiré Tagro au Cheick Boikary Fofana : \"Nous comptons sur votre neutralité et votre droiture\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46582",
+          "o:title": "Enseignement confessionnel islamique : 1935 candidats ont composé hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46583",
+          "o:title": "Concours de mémorisation et psalmodié du Saint Coran : les lauréats connus"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46584",
+          "o:title": "Programme spécial d'urgence de la Côte d'Ivoire : les Fonds arabes promettent 191,9 milliards de FCFA"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46585",
+          "o:title": "Programme spécial d'urgence de sortie de crise : la Banque islamique de développement au chevet de la RCI"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46586",
+          "o:title": "Mawlid Baye Niasse du Cercle Nasrul-Ilm RCI : le Cheick Aliou Cissé attendu à Abidjan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46587",
+          "o:title": "Éducation nationale : les musulmans souhaitent l'introduction de l'arabe"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46588",
+          "o:title": "Les questions des réfugiés et du Hadj débattues"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46589",
+          "o:title": "Programme d'urgence post-crise : la Banque islamique de développement accorde 13,5 milliards FCFA"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46590",
+          "o:title": "Les enseignements et la vie du prophète Mahomet dispensés à bas âge"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46591",
+          "o:title": "Processus de sortie de crise : l'Imam Aboubacar Fofana encourage Blaise Compaoré"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46592",
+          "o:title": "Bilan du Hadj 2007 : les musulmans satisfaits"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46593",
+          "o:title": "Association des musulmans sunnites : les structures de base de la section de Yopougon installées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46594",
+          "o:title": "5ème congrès de l'AJMCI : des réformes annoncées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46595",
+          "o:title": "Les Musulmans de Guiglo souhaitent un second mandat pour Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46596",
+          "o:title": "Don d'ouvrages : 167 livres et un disque compact remis au conseil islamique de Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46597",
+          "o:title": "Restauration des pompes villageoises : l'Ahmadiyya s'engage aux côtés de l'État"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46598",
+          "o:title": "Pour le succès de sa mission : Malick Coulibaly à la mosquée d'Attécoubé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46599",
+          "o:title": "Déclarations des imams et des Forces nouvelles sur la fraude électorale : Coincidences troublantes"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46600",
+          "o:title": "Séminaire à Duékoué : Eric Kaé aux musulmans : \"Oui à la solidarité dans le malheur, non à la solidarité dans le mal\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46601",
+          "o:title": "Organisation du Hadj : des associations musulmanes pour une concertation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46602",
+          "o:title": "Diffusion de la culture de paix : les prédicateurs de 9 pays renforcent leurs capacités"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46603",
+          "o:title": "Jeunesse sunnite : davantage de lumière sur le baptême en islam"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46604",
+          "o:title": "Fête de la lumière à Kapélé (Korhogo) / L'imam Sanogo : \"Nous sommes avec Gbagbo\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46605",
+          "o:title": "Organisation du Hadj 2010 : la Oummat appelle à une concertation nationale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46606",
+          "o:title": "Don de sang de la communauté libanaise : Al Gadir offre une centaine de poches au centre de transfusion sanguine"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46607",
+          "o:title": "9ème Concours national de lecture du Coran : la finale ce dimanche"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46608",
+          "o:title": "9ème Concours de mémorisation du Coran : Barry Allaréli, lauréat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46609",
+          "o:title": "Fraude sur la nationalité : l'Imam adjoint de Bonoua remis en liberté"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46610",
+          "o:title": "Mosquée d'Attécoubé : les musulmans rendent hommage à Marie-Odette Lorougnon"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46611",
+          "o:title": "Education nationale : des enseignants plaident pour la langue arabe à l'école"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46612",
+          "o:title": "Lancement officiel du Hadj 2010 : le coût du pèlerinage sera connu vendredi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46613",
+          "o:title": "Conseil national islamique : Idriss Koudouss investit le président régional du Sud Comoé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46614",
+          "o:title": "Laurent Gbagbo : \"Nous allons applanir les difficultés relatives au Hadj\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46615",
+          "o:title": "Remise de don à la communauté musulmane d'Abobo-gare. Kima Emile : \"Priez pour que la Côte d'Ivoire retrouve la paix\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46616",
+          "o:title": "Ramadan : le maire de Marcory offre des vivres aux musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46617",
+          "o:title": "Organisation du Hadj 2010 : la Confédération islamique de développement veut apporter sa contribution en transport"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46618",
+          "o:title": "Korhogo : Gbagbo offre 20 tonnes de sucre et de riz aux musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46619",
+          "o:title": "Nuit du destin 2010 : première édition du \"Méga Qadr\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46620",
+          "o:title": "Daloa : Gbagbo fait des dons en nature et en espèces aux musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46621",
+          "o:title": "Aboisso : Gbagbo soulage la communauté musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46622",
+          "o:title": "Yakassé-Attobrou : le DDC solidaire des musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46623",
+          "o:title": "Adzopé : Gbagbo soulage les fidèles musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46624",
+          "o:title": "Hadj 2010 : le départ des pèlerins débute le 20 octobre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46625",
+          "o:title": "Nuit du destin. Pr Tariq Ramadan : \"Il faut réformer l'esprit du musulman\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46626",
+          "o:title": "Fête du Ramadan : le pardon et la réconciliation au centre de la célébration"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46627",
+          "o:title": "Café politique d'Abidjan. Charles Blé Goudé aux associations musulmanes : \"L'islam n'est pas la religion d'un parti politique\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46628",
+          "o:title": "Coopération internationale : des investisseurs saoudiens au Port d'Abidjan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46629",
+          "o:title": "Avant la proclamation des résultats de l'élection présidentielle / Mgr Jean-Pierre Kutwa : \"Notre prise de position déterminera le devenir de la patrie\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46630",
+          "o:title": "Second tour de l'élection présidentielle : le Collectif des religieux exhorte à l'acceptation du résultat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46631",
+          "o:title": "Les écoles confessionnelles islamiques bientôt intégrées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46632",
+          "o:title": "Crise post-électorale en Côte d'Ivoire : le Jihad !"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46633",
+          "o:title": "Lancement officiel du Hadj 2011 : le pélerinage fixé à 1,5 million Fcfa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46634",
+          "o:title": "El Hadj Koné Aboubakar : \"L'Etat doit aider les écoles confessionnelles islamiques\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46635",
+          "o:title": "AGO des imams sunnites : rendez-vous le 16 septembre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46636",
+          "o:title": "Musulmans et Chrétiens de Côte d’Ivoire, Comment les religions ont déclenché la crise ivoirienne!"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46637",
+          "o:title": "Comment les religions ont déclenché la crise ivoirienne !"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46638",
+          "o:title": "A propos de la réconciliation nationale / Charles Konan Banny : Ce ne sera ni vengeance, ni impunité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46639",
+          "o:title": "Convention annuelle de la communauté Ahmadiyya : Amir Abdoul Quayoum appelle à la paix inter-religieuse"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46640",
+          "o:title": "El Hadj Fadiga Moussa (Chef des sunnites) : “Que l’Etat se tienne à équidistance des réligions”"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46641",
+          "o:title": "Intégration dans le système éducatif ivoirien : 1020 écoles islamiques seront évaluées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46642",
+          "o:title": "7ème Maoulid des enfants à Cocody : les tout-petits apprennent Mahomet"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46643",
+          "o:title": "Communauté islamique Ahmadiyya : plus de 100 mosquées construites depuis 1961"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46644",
+          "o:title": "Lors de son interview vendredi dernier, Les belles \"perles\" de Ouattara"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46645",
+          "o:title": "Ligue des écoles confessionnelles islamiques : œuvrer à la reconnaissance des diplômes par l'Etat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46646",
+          "o:title": "Enseignement confessionnel islamique : la direction nationale installée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46647",
+          "o:title": "Boikary Fofana : «Le pays est dirigé par un musulman, le ministre de l'intérieur est musulman, la directrice des cultes est musulmane »"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46648",
+          "o:title": "7ème concours régionale de psalmodie du Saint Coran : l'ivoirien Bah Amir Salmane lauréat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46649",
+          "o:title": "District d'Abidjan : le COSIM et les agents reçoivent plus de 64 millions FCFA de vivres"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46651",
+          "o:title": "Recevant Michel Gbagbo à son domicile / L'Imam Idriss Koudouss : \"Tu fais beaucoup pour les musulmans, tu es humain\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46653",
+          "o:title": "Ramadan : \"La nuit du destin\" a lieu demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46655",
+          "o:title": "Système scolaire ivoirien : l'Imam Aboubacary Sidiki plaide pour la langue arabe"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46656",
+          "o:title": "Tabaski 2012 : le COSIM, le CODIS et le HCI fixent la date"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46657",
+          "o:title": "De retour de la mecque : 27 pèlerins célébrés à Agnibilékrou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46658",
+          "o:title": "Clôture de la 3ème conférence du COSIM : les imams demandent l'introduction de l'arabe dans le système éducatif ivoirien"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46659",
+          "o:title": "Nuit du Maouloud : les imams demandent la circulation de l’argent"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46660",
+          "o:title": "23ème anniversaire de la communauté islamique Mouhammadiyyat : Abdourahamane Konaté prône la paix et la réconciliation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46661",
+          "o:title": "Entretien avec El Hadj Abdourahamane Konaté, fondateur de la communauté Mouhammadiyyat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46662",
+          "o:title": "Augmentation du prix du Hadj : la \"solution\" de Ouattara pour les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46663",
+          "o:title": "Causes de la guerre en Côte d'Ivoire : Cissé Djiguiba accuse l'ivoirité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46664",
+          "o:title": "Hadj 2013 : dérogation exceptionnelle pour les retardataires"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46665",
+          "o:title": "Enseignement confessionnel islamique : 4169 candidats composent dans 518 centres"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46666",
+          "o:title": "Jeûne musulman : le Fpi apporte son soutien aux JV11"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46667",
+          "o:title": "El Hadj Mamadou Traoré Bombossiba (103 ans) : \" Dieu est en train d'accélérer la libération de Gbagbo \""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46668",
+          "o:title": "Finale de l'émission \"Jeunesse en Action\" : sous-comité universitaire de Cocody vainqueur"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46669",
+          "o:title": "L'imam El Hadj M. T. Bombonsiba (103 ans) persiste : \"Dans le plan de Dieu, Gbagbo arrive !\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46670",
+          "o:title": "Réunion annuelle de la Mission islamique Ahmadiyya : les crimes commis au nom d'Allah dénoncés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46671",
+          "o:title": "Pour son soutien à Gbagbo : un musulman chassé de la mosquée Yopougon-Koweit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46672",
+          "o:title": "Intervention des micro-finances dans le Pndc : la Bid impose la finance islamique"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46673",
+          "o:title": "Communauté musulmane du Plateau : un comité pour lutter contre la mendicité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46674",
+          "o:title": "Jeûne musulman et familles sinistrées : la mairie d'Attécoubé solidaire de ses administrés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46675",
+          "o:title": "Jeûne musulman : Le ministère de la communication offre du sucre et du lait à Notre Voie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46676",
+          "o:title": "Solidarité aux musulmans : le ministère du Budget soutient les musulmans de Notre Voie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46677",
+          "o:title": "Soutien aux musulmans de Yopougon : Michel Gbagbo offre du sucre et du riz"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46678",
+          "o:title": "Célébration de la Nuit du destin : Boikary Fofana dénonce le phénomène des «microbes»"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46679",
+          "o:title": "Fin du jeûne musulman : le Pape François lance un appel aux confessions religieuses"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46680",
+          "o:title": "Jeûne musulman : la Refondation S.A et le Conseil Café-cacao solidaires de Notre Voie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46681",
+          "o:title": "Ramadan : Affi rompt le jeûne avec les musulmans du FPI"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46682",
+          "o:title": "Fête de Ramadan 2014 : l'imam Mamadou Traoré exhorte à la justice"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46683",
+          "o:title": "Prière de la Tabaski : l'imam Mamadou Traoré exhorte les musulmans à l'amour"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46684",
+          "o:title": "Nuit du Maouloud 2015 : la lutte contre la pauvreté au centre des préoccupations"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46685",
+          "o:title": "Bondoukou/El Hadj Timité Kolonga (imam central) : \"Tous les grands chantiers promis par Ouattara, nous n'avons encore rien vu\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46686",
+          "o:title": "Abidjan : 200 à 300 manifestants anti-Charlie dans les rues"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46687",
+          "o:title": "Au nom de notre Foi  : \"Je ne suis pas Charlie\" et toi ? (3)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46688",
+          "o:title": "Menaces Jihadistes dans le Nord du pays  : la réponse peu rassurante du ministre de la défense"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46689",
+          "o:title": "Ramadan 2015 : les fidèles musulmans ont entamé 30 jours de jeûne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46690",
+          "o:title": "Ramadan : le groupe Sifca pense aux musulmans de Notre Voie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46691",
+          "o:title": "Abdourahmane Cissé soutient les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46692",
+          "o:title": "Jeûne musulman : le Conseil du Café-Cacao offre du sucre et du lait à Notre Voie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46693",
+          "o:title": "Rupture du Jeûne à M'Badon : Affi N'Guesan exprime sa solidarité à la communauté musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46694",
+          "o:title": "Nuit du destin 2015 : les musulmans font leur mea culpa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46695",
+          "o:title": "Mois de ramadan : la CGRAE solidaire des musulmans de Notre Voie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46696",
+          "o:title": "Prière de fin de ramadan 2015/ Imam Mamadou Traoré : \"Ne vous laissez pas tenter par le mouvement djihadiste\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46697",
+          "o:title": "Daloa : l’imam el Hadj Abas diaby appelle à la tolérance"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46698",
+          "o:title": "Fayda Voice 2015 : un festival culturel islamique pour inculquer des valeurs à la jeunesse"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46699",
+          "o:title": "Bilan à mi-parcours du Hadj 2015 : 4197 pèlerins à la Mecque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46700",
+          "o:title": "Diawala : plusieurs villages veulent se prémunir contre le Djihadisme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46701",
+          "o:title": "Après le drame à la Mecque : le FPI exprime sa compassion aux musulmans et exige une enquête ivoirienne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46703",
+          "o:title": "Célébration de \"Kairouan, capitale de la culture islamique pour l'année 2009\" : une manifestation multidimensionnelle"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46704",
+          "o:title": "Convention de la jeunesse de l’AMSCI à la Bourse du travail : rendez-vous ce dimanche"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46705",
+          "o:title": "Conseil national islamique : les musulmans de Côte d’Ivoire ouvrent une université à Abidjan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46706",
+          "o:title": "Le président du Rdr offre 2 tonnes de sucre aux musulmans pour le jeûne   Alassane Ouattara se ridiculise"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46710",
+          "o:title": "Fête du Ramadan : le pardon et la réconciliation au centre de la célébration"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46711",
+          "o:title": "Intégration dans le système éducatif ivoirien : 1020 écoles islamiques seront évaluées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46712",
+          "o:title": "Nuit du destin : les musulmans prennent d’assaut les mosquées ce soir"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46713",
+          "o:title": "Nuit du destin 2015 : les musulmans font leur mea culpa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46714",
+          "o:title": "Hadj 2015 : le DG des cultes annonce la fin des inscriptions"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46715",
+          "o:title": "Organisation du pèlerinage à la Mecque : les musulmans réfléchissent sur le retrait ou non de l’Etat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46717",
+          "o:title": "Conseil supérieur islamique (CSI) : Dr. Moustapha Sy succède à feu Diaby Koweit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46719",
+          "o:title": "L’intégralité de la réaction de la Coordination des femmes patriotes"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46720",
+          "o:title": "Communauté musulmane de Yopougon-Andokoi : Guillaume Soro inaugure la mosquée Fanny Inza"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46721",
+          "o:title": "Jeûne musulman : la mairie de Cocody offre 1525 kg de sucre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46722",
+          "o:title": "En pleine voie : le laboureur et ses opposants"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46723",
+          "o:title": "Au nom du chef de l’Etat : le DDC de Gbagbo aux USA soutient les musulmans ivoiriens"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46724",
+          "o:title": "Yopougon : les pèlerins du Hadj reconnaissants à Gbamnan Djidan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46725",
+          "o:title": "Hadj 2008 : les musulmans de Yamoussoukro reconnaissants à Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46726",
+          "o:title": "Réconciliation nationale : ceux qui vont faire échouer Banny"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46729",
+          "o:title": "Projet de nouvelle constitution : les religieux demandent à réfléchir pour se décider"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46730",
+          "o:title": "Drame à Abobo-Agbékoi : l'imam s’écroule devant la mosquée et meurt"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46731",
+          "o:title": "Club des hommes d’affaires musulmans de Côte d'Ivoire : les nouveaux membres investis samedi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46732",
+          "o:title": "SEM Amin Nejad, ambassadeur d'Iran : \"L'utilisation du nucléaire à des fins pacifiques est un droit légal\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46733",
+          "o:title": "Daloa. L’Imam Abdullah Bamba : \"La corruption est encore présente dans les services\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/46734",
+          "o:title": "Gagnoa : un iman approuve l’excision et l’immigration clandestine"
+        }
+      ]
+    }
   },
   {
     "@context": "https://islam.zmo.de/api-context",
@@ -52276,5 +54559,55 @@
         }
       ]
     }
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/46157",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 46157,
+    "o:is_public": false,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": null,
+    "o:title": "CSV IMport 2",
+    "thumbnail_display_urls": {
+      "large": null,
+      "medium": null,
+      "square": null
+    },
+    "o:created": {
+      "@value": "2024-10-21T14:58:53+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-10-21T14:58:53+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=46157"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "CSV IMport 2"
+      }
+    ]
   }
 ]
