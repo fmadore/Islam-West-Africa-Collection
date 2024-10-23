@@ -12,3 +12,4 @@ Visualisations/Overview/items_over_years.log
 Metadata/omeka_export.log
 /Visualisations/Choropleth_map/logs
 Visualisations/Choropleth_map/spatial_processing.log
+Visualisations/Index/api_fetcher.log
