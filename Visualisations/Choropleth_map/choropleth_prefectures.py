@@ -16,11 +16,10 @@ class GeoDataProcessor:
         self.script_dir = Path(__file__).parent.resolve()
         
         # Create necessary directories
-        self.output_dir = self.script_dir / 'output'
         self.data_dir = self.script_dir / 'data'
         self.logs_dir = self.script_dir / 'logs'
         
-        for directory in [self.output_dir, self.data_dir, self.logs_dir]:
+        for directory in [self.data_dir, self.logs_dir]:
             directory.mkdir(exist_ok=True)
             
         # Configure logging
@@ -231,7 +230,8 @@ class GeoDataProcessor:
         m.add_child(info)
         m.keep_in_front(info)
 
-        output_file = self.output_dir / f'choropleth_{country.replace(" ", "_").lower()}_prefectures.html'
+        # Change the output file path to save in the script directory
+        output_file = self.script_dir / f'choropleth_{country.replace(" ", "_").lower()}_prefectures.html'
         m.save(str(output_file))
         logging.info(f"Choropleth map saved as {output_file}")
 
