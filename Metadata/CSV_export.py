@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from dataclasses import dataclass
 from typing import List, Dict, Any, Callable
 from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
+from urllib3.util import Retry
 import time
 from urllib.parse import urljoin
 import json
@@ -680,3 +680,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
