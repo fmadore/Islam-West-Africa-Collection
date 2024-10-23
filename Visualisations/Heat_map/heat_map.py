@@ -100,7 +100,12 @@ def generate_heatmap(coordinates, country):
 
     HeatMap(coordinates).add_to(m)
 
-    html_file_path = f"heatmap_{country.replace(' ', '_').lower()}.html"
+    # Get the directory of the current script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Create the file path in the same directory as the script
+    html_file_path = os.path.join(script_dir, f"heatmap_{country.replace(' ', '_').lower()}.html")
+    
     m.save(html_file_path)
     logging.info(f"Heatmap saved as {html_file_path}")
 
@@ -124,7 +129,7 @@ countries = {
     'Benin': [2185, 5502, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5501, 5500],
     'Burkina Faso': [2199, 2200, 2215, 2214, 2207, 2201, 23448, 5503, 2209, 2210, 2213],
     'Togo': [25304, 9458, 5498],
-    'Côte d\'Ivoire': [43051, 31882, 15845, 45390]  # Added Côte d'Ivoire
+    'Côte d\'Ivoire': [43051, 31882, 15845, 45390]
 }
 
 total_global_items = 0  # Global counter for all items processed
