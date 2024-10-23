@@ -17,12 +17,12 @@ env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
 load_dotenv(dotenv_path=env_path)
 
 # Define API credentials
-API_URL = "https://islam.zmo.de/api"
-KEY_IDENTITY = os.getenv("API_KEY_IDENTITY")
-KEY_CREDENTIAL = os.getenv("API_KEY_CREDENTIAL")
+API_URL = os.getenv("OMEKA_BASE_URL")
+KEY_IDENTITY = os.getenv("OMEKA_KEY_IDENTITY")
+KEY_CREDENTIAL = os.getenv("OMEKA_KEY_CREDENTIAL")
 
-if not KEY_IDENTITY or not KEY_CREDENTIAL:
-    logging.error("API_KEY_IDENTITY and API_KEY_CREDENTIAL must be set in the .env file.")
+if not API_URL or not KEY_IDENTITY or not KEY_CREDENTIAL:
+    logging.error("OMEKA_BASE_URL, OMEKA_KEY_IDENTITY, and OMEKA_KEY_CREDENTIAL must be set in the .env file.")
     exit(1)
 
 def fetch_json(url):
