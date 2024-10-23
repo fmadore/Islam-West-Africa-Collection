@@ -10,3 +10,4 @@ omeka_script.log
 Visualisations/Overview/data_cache.json
 Visualisations/Overview/items_over_years.log
 Metadata/omeka_export.log
+/Visualisations/Choropleth_map/logs
