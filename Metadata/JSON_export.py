@@ -1,172 +1,205 @@
 import os
 import json
 import logging
+from enum import Enum
 import requests
 from tqdm import tqdm
 from dotenv import load_dotenv
-from dataclasses import dataclass
-from typing import List, Dict, Any, Callable
+from dataclasses import dataclass, field
+from typing import List, Dict, Any, Optional, Iterator
+from pathlib import Path
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Load environment variables
-load_dotenv(os.path.join(os.path.dirname(__file__), '..', '..', '.env'))
+class ResourceClassId(Enum):
+    """Enum for resource class IDs to improve maintainability and type safety"""
+    DOCUMENTS = 49
+    AUDIO_VISUAL = 38
+    IMAGES = 58
+    INDEX_AUTHORITY = 244
+    INDEX_EVENTS = 54
+    INDEX_LOCATIONS = 9
+    INDEX_ORGANIZATIONS = 96
+    INDEX_PERSONS = 94
+    ISSUES = 60
+    NEWSPAPER_ARTICLES = 36
+    REF_ARTICLES = 35
+    REF_CHAPTERS = 43
+    REF_THESES = 88
+    REF_BOOKS = 40
+    REF_REPORTS = 82
+    REF_REVIEWS = 178
+    REF_BOOKS_ALT = 52
+    REF_COMMUNICATIONS = 77
+    REF_BLOG_POSTS = 305
 
 @dataclass
 class Config:
-    API_URL: str = os.getenv('OMEKA_BASE_URL')
-    API_KEY_IDENTITY: str = os.getenv('OMEKA_KEY_IDENTITY')
-    API_KEY_CREDENTIAL: str = os.getenv('OMEKA_KEY_CREDENTIAL')
-    OUTPUT_DIR: str = os.path.join(os.path.dirname(__file__), 'JSON-LD')
+    """Configuration class with validation and default values"""
+    API_URL: str = field(default_factory=lambda: os.getenv('OMEKA_BASE_URL', ''))
+    API_KEY_IDENTITY: str = field(default_factory=lambda: os.getenv('OMEKA_KEY_IDENTITY', ''))
+    API_KEY_CREDENTIAL: str = field(default_factory=lambda: os.getenv('OMEKA_KEY_CREDENTIAL', ''))
+    OUTPUT_DIR: Path = field(default_factory=lambda: Path(__file__).parent / 'JSON-LD')
+
+    def __post_init__(self):
+        if not all([self.API_URL, self.API_KEY_IDENTITY, self.API_KEY_CREDENTIAL]):
+            raise ValueError("Missing required environment variables")
+        
+        # Ensure API_URL doesn't end with trailing slash
+        self.API_URL = self.API_URL.rstrip('/')
+
+class ApiError(Exception):
+    """Custom exception for API-related errors"""
+    pass
 
 class OmekaApiClient:
     def __init__(self, config: Config):
         self.config = config
-
-    def _make_request(self, endpoint: str, params: Dict[str, Any] = None) -> List[Dict[str, Any]]:
-        if params is None:
-            params = {}
-        params.update({
-            'key_identity': self.config.API_KEY_IDENTITY,
-            'key_credential': self.config.API_KEY_CREDENTIAL
+        self.session = requests.Session()
+        self.session.params.update({
+            'key_identity': config.API_KEY_IDENTITY,
+            'key_credential': config.API_KEY_CREDENTIAL
         })
-        url = f"{self.config.API_URL}/{endpoint}"
-        try:
-            response = requests.get(url, params=params)
-            response.raise_for_status()
-            return response.json()
-        except requests.RequestException as e:
-            logger.error(f"Error fetching data from API: {str(e)}")
-            return []
 
-    def fetch_items(self, resource_class_id: int) -> List[Dict[str, Any]]:
-        items = []
+    def _make_request(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        """Make API request with improved error handling and retry logic"""
+        url = f"{self.config.API_URL}/{endpoint}"
+        params = params or {}
+        
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = self.session.get(url, params=params, timeout=30)
+                response.raise_for_status()
+                return response.json()
+            except requests.RequestException as e:
+                if attempt == max_retries - 1:
+                    raise ApiError(f"Failed to fetch data from {url}: {str(e)}")
+                logger.warning(f"Attempt {attempt + 1} failed, retrying...")
+                continue
+        return []
+
+    def _paginated_fetch(self, endpoint: str, params: Dict[str, Any] = None) -> Iterator[Dict[str, Any]]:
+        """Generic paginated fetch method"""
+        params = params or {}
         page = 1
         per_page = 100
 
+        while True:
+            params.update({'page': page, 'per_page': per_page})
+            data = self._make_request(endpoint, params)
+            if not data:
+                break
+            yield from data
+            page += 1
+
+    def fetch_items(self, resource_class_id: ResourceClassId) -> List[Dict[str, Any]]:
+        """Fetch items with improved type safety"""
+        items = []
         item_type = self.get_item_type_name(resource_class_id)
-        logger.info(f"Starting to fetch {item_type}...")
+        logger.info(f"Fetching {item_type}...")
 
         with tqdm(desc=f"Fetching {item_type}", unit="item") as pbar:
-            while True:
-                data = self._make_request('items', {
-                    'resource_class_id': resource_class_id,
-                    'page': page,
-                    'per_page': per_page
-                })
-                if not data:
-                    break
-                items.extend(data)
-                pbar.update(len(data))
-                page += 1
+            for item in self._paginated_fetch('items', {'resource_class_id': resource_class_id.value}):
+                items.append(item)
+                pbar.update(1)
 
         logger.info(f"Fetched {len(items)} {item_type}")
         return items
 
-    def get_item_type_name(self, resource_class_id: int) -> str:
+    @staticmethod
+    def get_item_type_name(resource_class_id: ResourceClassId) -> str:
+        """Get item type name with type safety"""
         item_type_map = {
-            49: "documents",
-            38: "audio/visual documents",
-            58: "images",
-            244: "index items (authority files)",
-            54: "index items (events)",
-            9: "index items (locations)",
-            96: "index items (organizations)",
-            94: "index items (persons)",
-            60: "issues",
-            36: "newspaper articles",
-            35: "references (articles)",
-            43: "references (chapters)",
-            88: "references (theses)",
-            40: "references (books)",
-            82: "references (reports)",
-            178: "references (reviews)",
-            52: "references (books)",
-            77: "references (communications)",
-            305: "references (blog posts)"
+            ResourceClassId.DOCUMENTS: "documents",
+            ResourceClassId.AUDIO_VISUAL: "audio/visual documents",
+            ResourceClassId.IMAGES: "images",
+            ResourceClassId.INDEX_AUTHORITY: "index items (authority files)",
+            ResourceClassId.INDEX_EVENTS: "index items (events)",
+            ResourceClassId.INDEX_LOCATIONS: "index items (locations)",
+            ResourceClassId.INDEX_ORGANIZATIONS: "index items (organizations)",
+            ResourceClassId.INDEX_PERSONS: "index items (persons)",
+            ResourceClassId.ISSUES: "issues",
+            ResourceClassId.NEWSPAPER_ARTICLES: "newspaper articles",
+            ResourceClassId.REF_ARTICLES: "references (articles)",
+            ResourceClassId.REF_CHAPTERS: "references (chapters)",
+            ResourceClassId.REF_THESES: "references (theses)",
+            ResourceClassId.REF_BOOKS: "references (books)",
+            ResourceClassId.REF_REPORTS: "references (reports)",
+            ResourceClassId.REF_REVIEWS: "references (reviews)",
+            ResourceClassId.REF_BOOKS_ALT: "references (books)",
+            ResourceClassId.REF_COMMUNICATIONS: "references (communications)",
+            ResourceClassId.REF_BLOG_POSTS: "references (blog posts)"
         }
-        return item_type_map.get(resource_class_id, f"items (class {resource_class_id})")
+        return item_type_map.get(resource_class_id, f"items (class {resource_class_id.value})")
 
-    def fetch_item_sets(self) -> List[Dict[str, Any]]:
-        item_sets = []
-        page = 1
-        per_page = 100
-
-        logger.info("Starting to fetch item sets...")
-
-        with tqdm(desc="Fetching item sets", unit="item") as pbar:
-            while True:
-                data = self._make_request('item_sets', {
-                    'page': page,
-                    'per_page': per_page
-                })
-                if not data:
-                    break
-                item_sets.extend([item for item in data if item.get('o:is_public')])
-                pbar.update(len(data))
-                page += 1
-
-        logger.info(f"Fetched {len(item_sets)} item sets")
-        return item_sets
-
-    def fetch_media(self) -> List[Dict[str, Any]]:
-        media = []
-        page = 1
-        per_page = 100
-
-        logger.info("Starting to fetch media...")
-
-        with tqdm(desc="Fetching media", unit="item") as pbar:
-            while True:
-                data = self._make_request('media', {
-                    'page': page,
-                    'per_page': per_page
-                })
-                if not data:
-                    break
-                media.extend([item for item in data if item.get('o:is_public')])
-                pbar.update(len(data))
-                page += 1
-
-        logger.info(f"Fetched {len(media)} media items")
-        return media
-
-    def fetch_references(self) -> List[Dict[str, Any]]:
-        reference_classes = [35, 43, 88, 40, 82, 178, 52, 77, 305]
+    def fetch_all_items(self) -> tuple[List[Dict[str, Any]], ...]:
+        """Fetch all items with improved organization"""
+        logger.info("Starting comprehensive data fetch...")
+        
+        # Fetch main items
+        documents = self.fetch_items(ResourceClassId.DOCUMENTS)
+        audio_visual = self.fetch_items(ResourceClassId.AUDIO_VISUAL)
+        images = self.fetch_items(ResourceClassId.IMAGES)
+        
+        # Fetch index items
+        index_items = []
+        index_classes = [
+            ResourceClassId.INDEX_AUTHORITY,
+            ResourceClassId.INDEX_EVENTS,
+            ResourceClassId.INDEX_LOCATIONS,
+            ResourceClassId.INDEX_ORGANIZATIONS,
+            ResourceClassId.INDEX_PERSONS
+        ]
+        for resource_class_id in index_classes:
+            index_items.extend(self.fetch_items(resource_class_id))
+        
+        # Fetch other items
+        issues = self.fetch_items(ResourceClassId.ISSUES)
+        newspaper_articles = self.fetch_items(ResourceClassId.NEWSPAPER_ARTICLES)
+        
+        # Fetch sets and media
+        item_sets = list(self._paginated_fetch('item_sets'))
+        media = list(self._paginated_fetch('media'))
+        
+        # Fetch references
         references = []
+        reference_classes = [
+            ResourceClassId.REF_ARTICLES,
+            ResourceClassId.REF_CHAPTERS,
+            ResourceClassId.REF_THESES,
+            ResourceClassId.REF_BOOKS,
+            ResourceClassId.REF_REPORTS,
+            ResourceClassId.REF_REVIEWS,
+            ResourceClassId.REF_BOOKS_ALT,
+            ResourceClassId.REF_COMMUNICATIONS,
+            ResourceClassId.REF_BLOG_POSTS
+        ]
         for resource_class_id in reference_classes:
             references.extend(self.fetch_items(resource_class_id))
-        return references
+        
+        logger.info("Completed comprehensive data fetch")
+        return (
+            documents + audio_visual + images + index_items + issues + newspaper_articles,
+            item_sets,
+            media,
+            references
+        )
 
-    def fetch_all_items(self) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
-        logger.info("Starting to fetch all items...")
-        
-        documents = self.fetch_items(49)
-        audio_visual = self.fetch_items(38)
-        images = self.fetch_items(58)
-        
-        logger.info("Starting to fetch index items...")
-        index_items = []
-        for resource_class_id in [244, 54, 9, 96, 94]:
-            index_items.extend(self.fetch_items(resource_class_id))
-        logger.info(f"Fetched {len(index_items)} index items")
-        
-        issues = self.fetch_items(60)
-        newspaper_articles = self.fetch_items(36)
-        
-        logger.info("Starting to fetch item sets...")
-        item_sets = self.fetch_item_sets()
-        
-        logger.info("Starting to fetch media...")
-        media = self.fetch_media()
-        
-        logger.info("Starting to fetch references...")
-        references = self.fetch_references()
-        
-        logger.info("Finished fetching all items.")
-        return documents + audio_visual + images + index_items + issues + newspaper_articles, item_sets, media, references
+@dataclass
+class ProcessedData:
+    """Data class for processed items"""
+    audio_visual_documents: List[Dict[str, Any]] = field(default_factory=list)
+    documents: List[Dict[str, Any]] = field(default_factory=list)
+    images: List[Dict[str, Any]] = field(default_factory=list)
+    index: List[Dict[str, Any]] = field(default_factory=list)
+    issues: List[Dict[str, Any]] = field(default_factory=list)
+    item_sets: List[Dict[str, Any]] = field(default_factory=list)
+    media: List[Dict[str, Any]] = field(default_factory=list)
+    newspaper_articles: List[Dict[str, Any]] = field(default_factory=list)
+    references: List[Dict[str, Any]] = field(default_factory=list)
 
 class JsonLdProcessor:
     def __init__(self, raw_data: List[Dict[str, Any]], item_sets: List[Dict[str, Any]], 
@@ -175,100 +208,116 @@ class JsonLdProcessor:
         self.item_sets = item_sets
         self.media = media
         self.references = references
-        self.processed_data = None
 
-    def process(self) -> Dict[str, List[Dict[str, Any]]]:
-        processed_data = {
-            'audio_visual_documents': [],
-            'documents': [],
-            'images': [],
-            'index': [],
-            'issues': [],
-            'item_sets': [],
-            'media': [],
-            'newspaper_articles': [],
-            'references': []
-        }
+    def process(self) -> ProcessedData:
+        """Process data with improved type safety"""
+        processed_data = ProcessedData()
+        processed_data.item_sets = self.item_sets
+        processed_data.media = self.media
+        processed_data.references = self.references
 
         for item in tqdm(self.raw_data, desc="Processing items"):
             item_type = self.determine_item_type(item)
-            if item_type in processed_data:
-                processed_data[item_type].append(item)
-
-        processed_data['item_sets'] = self.item_sets
-        processed_data['media'] = self.media
-        processed_data['references'] = self.references
+            if hasattr(processed_data, item_type):
+                getattr(processed_data, item_type).append(item)
 
         logger.info("Data processing completed")
-        self.processed_data = processed_data
         return processed_data
 
-    def determine_item_type(self, item: Dict[str, Any]) -> str:
+    @staticmethod
+    def determine_item_type(item: Dict[str, Any]) -> str:
+        """Determine item type with improved logic"""
         item_types = item.get('@type', [])
-        resource_class = item.get('o:resource_class', {}).get('o:id')
-        if 'o:Item' in item_types:
-            if 'bibo:AudioVisualDocument' in item_types:
-                return 'audio_visual_documents'
-            elif 'bibo:Document' in item_types:
-                return 'documents'
-            elif 'bibo:Image' in item_types:
-                return 'images'
-            elif resource_class in [244, 54, 9, 96, 94]:
-                return 'index'
-            elif resource_class == 60:
-                return 'issues'
-            elif resource_class == 36:
-                return 'newspaper_articles'
-        return 'other'  # Default category
+        resource_class_id = item.get('o:resource_class', {}).get('o:id')
+        
+        if 'o:Item' not in item_types:
+            return 'other'
+            
+        type_mapping = {
+            'bibo:AudioVisualDocument': 'audio_visual_documents',
+            'bibo:Document': 'documents',
+            'bibo:Image': 'images'
+        }
+        
+        for item_type, mapped_type in type_mapping.items():
+            if item_type in item_types:
+                return mapped_type
+                
+        resource_class_mapping = {
+            ResourceClassId.INDEX_AUTHORITY.value: 'index',
+            ResourceClassId.INDEX_EVENTS.value: 'index',
+            ResourceClassId.INDEX_LOCATIONS.value: 'index',
+            ResourceClassId.INDEX_ORGANIZATIONS.value: 'index',
+            ResourceClassId.INDEX_PERSONS.value: 'index',
+            ResourceClassId.ISSUES.value: 'issues',
+            ResourceClassId.NEWSPAPER_ARTICLES.value: 'newspaper_articles'
+        }
+        
+        return resource_class_mapping.get(resource_class_id, 'other')
 
 class JsonLdFileGenerator:
-    def __init__(self, processed_data: Dict[str, List[Dict[str, Any]]], output_dir: str):
+    def __init__(self, processed_data: ProcessedData, output_dir: Path):
         self.processed_data = processed_data
         self.output_dir = output_dir
 
     def generate_all_files(self):
-        os.makedirs(self.output_dir, exist_ok=True)
+        """Generate JSON-LD files with improved error handling"""
+        self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        for item_type, items in self.processed_data.items():
+        for field_name in self.processed_data.__dataclass_fields__:
+            items = getattr(self.processed_data, field_name)
             if items:
-                self.generate_json_file(item_type, items)
+                self.generate_json_file(field_name, items)
 
     def generate_json_file(self, item_type: str, items: List[Dict[str, Any]]):
-        filepath = os.path.join(self.output_dir, f"{item_type}.json")
+        """Generate individual JSON-LD file with improved error handling"""
+        filepath = self.output_dir / f"{item_type}.json"
         
-        with open(filepath, 'w', encoding='utf-8') as jsonfile:
-            json.dump(items, jsonfile, ensure_ascii=False, indent=2)
-
-        logger.info(f"Generated {filepath}")
+        try:
+            with filepath.open('w', encoding='utf-8') as jsonfile:
+                json.dump(items, jsonfile, ensure_ascii=False, indent=2)
+            logger.info(f"Generated {filepath}")
+        except IOError as e:
+            logger.error(f"Failed to write {filepath}: {str(e)}")
+            raise
 
 def main():
+    """Main function with improved error handling and organization"""
     try:
         logger.info("Starting the Omeka data export process...")
         
+        # Load environment variables
+        load_dotenv(Path(__file__).parent.parent.parent / '.env')
+        
+        # Initialize configuration
         config = Config()
         logger.info(f"Configuration loaded. API URL: {config.API_URL}")
 
-        os.makedirs(config.OUTPUT_DIR, exist_ok=True)
-
+        # Create API client and fetch data
         api_client = OmekaApiClient(config)
-
         raw_data, item_sets, media, references = api_client.fetch_all_items()
 
-        if not raw_data and not item_sets and not media and not references:
+        if not any([raw_data, item_sets, media, references]):
             logger.warning("No data fetched from the API. Exiting.")
             return
 
-        logger.info("Processing fetched data...")
+        # Process and generate files
         processor = JsonLdProcessor(raw_data, item_sets, media, references)
         processed_data = processor.process()
 
-        logger.info("Generating JSON-LD files...")
-        generator = JsonLdFileGenerator(processor.processed_data, config.OUTPUT_DIR)
+        generator = JsonLdFileGenerator(processed_data, config.OUTPUT_DIR)
         generator.generate_all_files()
 
-        logger.info("All files generated successfully.")
+        logger.info("Data export completed successfully.")
+    except ValueError as e:
+        logger.error(f"Configuration error: {str(e)}")
+        raise
+    except ApiError as e:
+        logger.error(f"API error: {str(e)}")
+        raise
     except Exception as e:
         logger.error(f"An unexpected error occurred: {str(e)}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
     main()
