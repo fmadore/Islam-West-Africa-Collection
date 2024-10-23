@@ -15,12 +15,12 @@ env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
 load_dotenv(dotenv_path=env_path)
 
 # Define API credentials
-API_URL = "https://islam.zmo.de/api"
-KEY_IDENTITY = os.getenv("API_KEY_IDENTITY")
-KEY_CREDENTIAL = os.getenv("API_KEY_CREDENTIAL")
+API_URL = os.getenv("OMEKA_BASE_URL")
+KEY_IDENTITY = os.getenv("OMEKA_KEY_IDENTITY")
+KEY_CREDENTIAL = os.getenv("OMEKA_KEY_CREDENTIAL")
 
-if not KEY_IDENTITY or not KEY_CREDENTIAL:
-    logging.error("API_KEY_IDENTITY and API_KEY_CREDENTIAL must be set in the .env file.")
+if not API_URL or not KEY_IDENTITY or not KEY_CREDENTIAL:
+    logging.error("OMEKA_BASE_URL, OMEKA_KEY_IDENTITY, and OMEKA_KEY_CREDENTIAL must be set in the .env file.")
     exit(1)
 
 
@@ -123,7 +123,8 @@ def extract_and_plot(item_set_ids, country):
 countries = {
     'Benin': [2185, 5502, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5501, 5500],
     'Burkina Faso': [2199, 2200, 2215, 2214, 2207, 2201, 23448, 5503, 2209, 2210, 2213],
-    'Togo': [25304, 9458, 5498]
+    'Togo': [25304, 9458, 5498],
+    'Côte d\'Ivoire': [43051, 31882, 15845, 45390]  # Added Côte d'Ivoire
 }
 
 total_global_items = 0  # Global counter for all items processed
