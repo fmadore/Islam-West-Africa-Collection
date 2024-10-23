@@ -33,6 +33,9 @@ class OmekaHeatmapGenerator:
         # Configure rate limiting
         self.max_workers = 5
         
+        # Store all coordinates for consolidated map
+        self.all_coordinates = []
+        
     def _load_environment(self) -> None:
         """Load and validate environment variables."""
         load_dotenv(dotenv_path=self.env_path)
@@ -132,10 +135,10 @@ class OmekaHeatmapGenerator:
         coordinates = [coord for coord in results if coord is not None]
         return coordinates
 
-    def generate_heatmap(self, coordinates: List[Tuple[float, float]], country: str) -> None:
+    def generate_heatmap(self, coordinates: List[Tuple[float, float]], filename: str, title: str = None) -> None:
         """Generate and save heatmap visualization."""
         if not coordinates:
-            self.logger.info(f"No valid coordinates found for {country}")
+            self.logger.info(f"No valid coordinates found for {filename}")
             return
 
         df = pd.DataFrame(coordinates, columns=['Latitude', 'Longitude'])
@@ -143,8 +146,8 @@ class OmekaHeatmapGenerator:
         
         m = folium.Map(
             location=map_center,
-            zoom_start=2,
-            tiles='CartoDB positron'  # Clean, modern map style
+            zoom_start=4,
+            tiles='CartoDB positron'
         )
 
         # Add heatmap layer with custom gradient
@@ -161,30 +164,31 @@ class OmekaHeatmapGenerator:
             }
         ).add_to(m)
 
-        # Add a title
-        title_html = f'''
-            <div style="position: fixed; 
-                        top: 10px; 
-                        left: 50px; 
-                        z-index: 9999; 
-                        background-color: white; 
-                        padding: 10px; 
-                        border-radius: 5px; 
-                        border: 2px solid gray;">
-                <h3>{country} Data Distribution</h3>
-            </div>
-        '''
-        m.get_root().html.add_child(folium.Element(title_html))
+        # Add title if provided
+        if title:
+            title_html = f'''
+                <div style="position: fixed; 
+                            top: 10px; 
+                            left: 50px; 
+                            z-index: 9999; 
+                            background-color: white; 
+                            padding: 10px; 
+                            border-radius: 5px; 
+                            border: 2px solid gray;">
+                    <h3>{title}</h3>
+                </div>
+            '''
+            m.get_root().html.add_child(folium.Element(title_html))
 
         # Save the map
-        output_path = self.script_dir / f"heatmap_{country.replace(' ', '_').lower()}.html"
+        output_path = self.script_dir / f"{filename}.html"
         m.save(str(output_path))
         self.logger.info(f"Heatmap saved as {output_path}")
 
     def process_country(self, country: str, item_set_ids: List[int]) -> int:
         """Process all item sets for a country."""
         self.logger.info(f"Processing data for {country}")
-        all_coordinates = []
+        country_coordinates = []
         total_items = 0
 
         for item_set_id in item_set_ids:
@@ -192,11 +196,26 @@ class OmekaHeatmapGenerator:
             if items:
                 total_items += len(items)
                 coordinates = self.extract_coordinates(items)
-                all_coordinates.extend(coordinates)
+                country_coordinates.extend(coordinates)
+                self.all_coordinates.extend(coordinates)  # Add to consolidated data
 
-        self.generate_heatmap(all_coordinates, country)
+        self.generate_heatmap(
+            country_coordinates, 
+            f"heatmap_{country.replace(' ', '_').lower()}", 
+            f"{country} Data Distribution"
+        )
         self.logger.info(f"Total items processed for {country}: {total_items}")
         return total_items
+
+    def generate_consolidated_map(self):
+        """Generate a consolidated map with all data points."""
+        self.logger.info("Generating consolidated IWAC heatmap...")
+        self.generate_heatmap(
+            self.all_coordinates,
+            "heatmap_IWAC",
+            "IWAC Data Distribution - All Countries"
+        )
+        self.logger.info(f"Total coordinates in consolidated map: {len(self.all_coordinates)}")
 
 def main():
     countries = {
@@ -207,10 +226,15 @@ def main():
     }
 
     generator = OmekaHeatmapGenerator()
+    
+    # Process each country
     total_global_items = sum(
         generator.process_country(country, item_set_ids)
         for country, item_set_ids in countries.items()
     )
+    
+    # Generate consolidated map
+    generator.generate_consolidated_map()
     
     generator.logger.info(f"Total items processed globally: {total_global_items}")
 
