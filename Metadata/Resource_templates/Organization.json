@@ -1,39 +1,42 @@
 {
-  "@context": "https://iwac.frederickmadore.com/api-context",
-  "@id": "https://iwac.frederickmadore.com/api/resource_templates/9",
+  "@context": "https://islam.zmo.de/api-context",
+  "@id": "https://islam.zmo.de/api/resource_templates/7",
   "@type": "o:ResourceTemplate",
-  "o:id": 9,
-  "o:label": "Audio",
+  "o:id": 7,
+  "o:label": "Organization",
   "o:owner": {
-    "@id": "https://iwac.frederickmadore.com/api/users/1",
+    "@id": "https://islam.zmo.de/api/users/1",
     "o:id": 1
   },
   "o:resource_class": {
-    "@id": "https://iwac.frederickmadore.com/api/resource_classes/30",
-    "o:id": 30
+    "@id": "https://islam.zmo.de/api/resource_classes/96",
+    "o:id": 96
   },
-  "o:title_property": null,
+  "o:title_property": {
+    "@id": "https://islam.zmo.de/api/properties/1",
+    "o:id": 1
+  },
   "o:description_property": {
-    "@id": "https://iwac.frederickmadore.com/api/properties/19",
-    "o:id": 19
+    "@id": "https://islam.zmo.de/api/properties/4",
+    "o:id": 4
   },
   "o:resource_template_property": [
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/1",
+        "@id": "https://islam.zmo.de/api/properties/1",
         "o:id": 1
       },
       "o:alternate_label": null,
       "o:alternate_comment": null,
       "o:data_type": [],
-      "o:is_required": true,
+      "o:is_required": false,
       "o:is_private": false,
       "o:default_lang": null
     },
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/2",
-        "o:id": 2
+        "@id": "https://islam.zmo.de/api/properties/17",
+        "o:id": 17
       },
       "o:alternate_label": null,
       "o:alternate_comment": null,
@@ -44,34 +47,7 @@
     },
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/7",
-        "o:id": 7
-      },
-      "o:alternate_label": null,
-      "o:alternate_comment": null,
-      "o:data_type": [
-        "numeric:timestamp",
-        "numeric:duration"
-      ],
-      "o:is_required": false,
-      "o:is_private": false,
-      "o:default_lang": null
-    },
-    {
-      "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/19",
-        "o:id": 19
-      },
-      "o:alternate_label": null,
-      "o:alternate_comment": null,
-      "o:data_type": [],
-      "o:is_required": false,
-      "o:is_private": false,
-      "o:default_lang": null
-    },
-    {
-      "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/4",
+        "@id": "https://islam.zmo.de/api/properties/4",
         "o:id": 4
       },
       "o:alternate_label": null,
@@ -83,13 +59,13 @@
     },
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/3",
-        "o:id": 3
+        "@id": "https://islam.zmo.de/api/properties/20",
+        "o:id": 20
       },
       "o:alternate_label": null,
       "o:alternate_comment": null,
       "o:data_type": [
-        "resource:item"
+        "numeric:timestamp"
       ],
       "o:is_required": false,
       "o:is_private": false,
@@ -97,13 +73,90 @@
     },
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/40",
+        "@id": "https://islam.zmo.de/api/properties/29",
+        "o:id": 29
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item",
+        "customvocab:5"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://islam.zmo.de/api/properties/30",
+        "o:id": 30
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item",
+        "customvocab:5"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://islam.zmo.de/api/properties/13",
+        "o:id": 13
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "literal",
+        "resource:item",
+        "customvocab:5"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://islam.zmo.de/api/properties/33",
+        "o:id": 33
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item",
+        "customvocab:6"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://islam.zmo.de/api/properties/34",
+        "o:id": 34
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "resource:item",
+        "customvocab:5"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
+        "@id": "https://islam.zmo.de/api/properties/40",
         "o:id": 40
       },
       "o:alternate_label": null,
       "o:alternate_comment": null,
       "o:data_type": [
-        "resource:item"
+        "resource:item",
+        "customvocab:4"
       ],
       "o:is_required": false,
       "o:is_private": false,
@@ -111,13 +164,14 @@
     },
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/15",
-        "o:id": 15
+        "@id": "https://islam.zmo.de/api/properties/10",
+        "o:id": 10
       },
       "o:alternate_label": null,
       "o:alternate_comment": null,
       "o:data_type": [
-        "rights_statement"
+        "literal",
+        "uri"
       ],
       "o:is_required": false,
       "o:is_private": false,
@@ -125,54 +179,14 @@
     },
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/12",
-        "o:id": 12
+        "@id": "https://islam.zmo.de/api/properties/278",
+        "o:id": 278
       },
       "o:alternate_label": null,
       "o:alternate_comment": null,
       "o:data_type": [
-        "resource:item"
+        "uri"
       ],
-      "o:is_required": false,
-      "o:is_private": false,
-      "o:default_lang": null
-    },
-    {
-      "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/11",
-        "o:id": 11
-      },
-      "o:alternate_label": null,
-      "o:alternate_comment": null,
-      "o:data_type": [
-        "resource:item"
-      ],
-      "o:is_required": false,
-      "o:is_private": false,
-      "o:default_lang": null
-    },
-    {
-      "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/6",
-        "o:id": 6
-      },
-      "o:alternate_label": null,
-      "o:alternate_comment": null,
-      "o:data_type": [
-        "resource:item"
-      ],
-      "o:is_required": false,
-      "o:is_private": false,
-      "o:default_lang": null
-    },
-    {
-      "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/91",
-        "o:id": 91
-      },
-      "o:alternate_label": null,
-      "o:alternate_comment": null,
-      "o:data_type": [],
       "o:is_required": false,
       "o:is_private": false,
       "o:default_lang": null

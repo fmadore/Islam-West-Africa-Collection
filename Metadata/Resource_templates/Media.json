@@ -1,23 +1,23 @@
 {
-  "@context": "https://iwac.frederickmadore.com/api-context",
-  "@id": "https://iwac.frederickmadore.com/api/resource_templates/20",
+  "@context": "https://islam.zmo.de/api-context",
+  "@id": "https://islam.zmo.de/api/resource_templates/20",
   "@type": "o:ResourceTemplate",
   "o:id": 20,
   "o:label": "Media",
   "o:owner": {
-    "@id": "https://iwac.frederickmadore.com/api/users/1",
+    "@id": "https://islam.zmo.de/api/users/1",
     "o:id": 1
   },
   "o:resource_class": null,
   "o:title_property": {
-    "@id": "https://iwac.frederickmadore.com/api/properties/1",
+    "@id": "https://islam.zmo.de/api/properties/1",
     "o:id": 1
   },
   "o:description_property": null,
   "o:resource_template_property": [
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/1",
+        "@id": "https://islam.zmo.de/api/properties/1",
         "o:id": 1
       },
       "o:alternate_label": null,
@@ -29,7 +29,7 @@
     },
     {
       "o:property": {
-        "@id": "https://iwac.frederickmadore.com/api/properties/4",
+        "@id": "https://islam.zmo.de/api/properties/4",
         "o:id": 4
       },
       "o:alternate_label": null,
