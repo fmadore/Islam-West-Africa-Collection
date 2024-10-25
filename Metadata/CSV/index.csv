@@ -150,6 +150,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 12889,https://islam.zmo.de/s/afrique_ouest/item/12889,iwac-index-0000149,fabio:AuthorityFile,Sujets,,Ijtihad,,,,Effort de réflexion personnelle sur un point de droit dans l'islam|Islamic legal term referring to independent reasoning,,,,,,,,,,,
 12891,https://islam.zmo.de/s/afrique_ouest/item/12891,iwac-index-0000150,fabio:AuthorityFile,Sujets|Évènements,,Nuit du Destin,Laylat al-Qadr,,,,,,,,,,,,,,
 13236,https://islam.zmo.de/s/afrique_ouest/item/13236,iwac-index-0000151,fabio:AuthorityFile,Sujets,,Abstinence,,,,,,,,,,,,,,,
+13241,https://islam.zmo.de/s/afrique_ouest/item/13241,,fabio:AuthorityFile,Sujets,,Actions sociales,,,,,,,,,,,,,,,
 13930,https://islam.zmo.de/s/afrique_ouest/item/13930,iwac-index-0000152,fabio:AuthorityFile,Sujets,,Tem,Kotokoli|Cotocoli,,,Groupe ethnique|Ethnic group,,,,Ethnie,,Togo,,,,,
 15242,https://islam.zmo.de/s/afrique_ouest/item/15242,iwac-index-0000153,fabio:AuthorityFile,Sujets,,Adossa,,,,Danse,,,,,,Togo,,,,,
 15829,https://islam.zmo.de/s/afrique_ouest/item/15829,iwac-index-0000154,fabio:AuthorityFile,Notices d'autorité,,Université,,,,,,,,,,,,,,,
@@ -635,6 +636,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 48423,https://islam.zmo.de/s/afrique_ouest/item/48423,,bibo:Event,Évènements,,Congrès OJEMAO (2017),,,2017-07,,,,,Organisation de la Jeunesse Musulmane en Afrique de l'Ouest|Organisation de la Jeunesse Musulmane en Afrique de l'Ouest,,Côte d'Ivoire,,,,,
 48424,https://islam.zmo.de/s/afrique_ouest/item/48424,,bibo:Event,Évènements,,Coup d'État de 1999 en Côte d'Ivoire,,,1999-12-24,,,,,,,Côte d'Ivoire,,,,,
 48428,https://islam.zmo.de/s/afrique_ouest/item/48428,,bibo:Event,Évènements,,Référendum constitutionnel ivoirien de 2000,,,2000-07-24,,,,,,,Côte d'Ivoire,,,,,
+57954,https://islam.zmo.de/s/afrique_ouest/item/57954,,bibo:Event,Évènements,,Congrès AJMCI (2018),,,2018,,,,,Association des Jeunes Musulmans de Côte d'Ivoire,,Côte d'Ivoire,,,,,
 269,https://islam.zmo.de/s/afrique_ouest/item/269,iwac-index-0000607,dcterms:Location,Emplacements,,Abidjan,,,,,,,,Côte d'Ivoire,,,,,,,"5.35444, -4.00167"
 270,https://islam.zmo.de/s/afrique_ouest/item/270,iwac-index-0000608,dcterms:Location,Emplacements,,Abomey,,,,,,,,Bénin,,,,,,,"7.18286, 1.99119"
 271,https://islam.zmo.de/s/afrique_ouest/item/271,iwac-index-0000609,dcterms:Location,Emplacements,,Abomey-Calavi,,,,,,,,Bénin,,,,,,,"6.44852, 2.35566"
