@@ -152,6 +152,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 13236,https://islam.zmo.de/s/afrique_ouest/item/13236,iwac-index-0000151,fabio:AuthorityFile,Sujets,,Abstinence,,,,,,,,,,,,,,,
 13241,https://islam.zmo.de/s/afrique_ouest/item/13241,,fabio:AuthorityFile,Sujets,,Actions sociales,,,,,,,,,,,,,,,
 13930,https://islam.zmo.de/s/afrique_ouest/item/13930,iwac-index-0000152,fabio:AuthorityFile,Sujets,,Tem,Kotokoli|Cotocoli,,,Groupe ethnique|Ethnic group,,,,Ethnie,,Togo,,,,,
+14391,https://islam.zmo.de/s/afrique_ouest/item/14391,,fabio:AuthorityFile,Sujets,,Imamat,,,,,,,,,,,,,,,
 15242,https://islam.zmo.de/s/afrique_ouest/item/15242,iwac-index-0000153,fabio:AuthorityFile,Sujets,,Adossa,,,,Danse,,,,,,Togo,,,,,
 15829,https://islam.zmo.de/s/afrique_ouest/item/15829,iwac-index-0000154,fabio:AuthorityFile,Notices d'autorité,,Université,,,,,,,,,Université de Kara,,,,,,
 15830,https://islam.zmo.de/s/afrique_ouest/item/15830,iwac-index-0000155,fabio:AuthorityFile,Notices d'autorité,,Parc national,,,,,,,,,,,,,,,
@@ -434,6 +435,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 46237,https://islam.zmo.de/s/afrique_ouest/item/46237,,fabio:AuthorityFile,Sujets,,Rattrapage ethnique,,,,,,,,,,Côte d'Ivoire,,,,,
 48415,https://islam.zmo.de/s/afrique_ouest/item/48415,,fabio:AuthorityFile,Sujets,,Assassinat d'imams,,,,,,,,,,Côte d'Ivoire,,,,,
 48429,https://islam.zmo.de/s/afrique_ouest/item/48429,,fabio:AuthorityFile,Sujets,,Rohingya,,,,,,,,,,,,,,,
+60568,https://islam.zmo.de/s/afrique_ouest/item/60568,,fabio:AuthorityFile,Sujets,,Radicalisation,Radicalisme,,,,,,,,,,,,,,
 117,https://islam.zmo.de/s/afrique_ouest/item/117,iwac-index-0000429,bibo:Event,Évènements,,11 septembre 2001,,,2001-09-11,"Série d'attentats-suicides en avion perpétrés aux États-Unis, le 11 septembre 2001|2001 Islamist terrorist attacks in the U.S.",Terrorisme et radicalisation,,,,,États-Unis,,,,,
 118,https://islam.zmo.de/s/afrique_ouest/item/118,iwac-index-0000430,bibo:Event,Évènements,,Élection présidentielle de 1991 au Burkina Faso,,,1991-12-01,,,,,Élections au Burkina Faso,,Burkina Faso,,,,,
 119,https://islam.zmo.de/s/afrique_ouest/item/119,iwac-index-0000431,bibo:Event,Évènements,,Élection présidentielle de 1998 au Burkina Faso,,,1998-11-15,,,,,Élections au Burkina Faso,,Burkina Faso,,,,,
@@ -569,6 +571,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 249,https://islam.zmo.de/s/afrique_ouest/item/249,iwac-index-0000561,bibo:Event,Évènements,,Congrès UMT (1981),,,1981-02-20/1981-02-21,,,,,Union Musulmane du Togo,,Lomé|Togo,,,,,
 13750,https://islam.zmo.de/s/afrique_ouest/item/13750,iwac-index-0000562,bibo:Event,Évènements,,Catastrophe aérienne de Sarakawa,,,1974-01-24,,,,,,,Sarakawa|Togo,,,,,
 15355,https://islam.zmo.de/s/afrique_ouest/item/15355,iwac-index-0000563,bibo:Event,Évènements,,Congrès UMT (1986),,,1986,,,,,,,Togo,,,,,
+15616,https://islam.zmo.de/s/afrique_ouest/item/15616,,bibo:Event,Sujets|Évènements,,Concours National de Récitation du Saint Coran,CNRSC,,,,,,,,,Togo,,,,,
 23459,https://islam.zmo.de/s/afrique_ouest/item/23459,iwac-index-0000564,bibo:Event,Évènements,,Congrès AEEMCI (2010),,,2010,,,,,Association des Élèves et Étudiants Musulmans de Côte d'Ivoire,,Côte d'Ivoire,,,,,
 23461,https://islam.zmo.de/s/afrique_ouest/item/23461,iwac-index-0000565,bibo:Event,Évènements,,Salon National de la Culture Islamique,SANACI,,,,,,,,,Côte d'Ivoire,,,,,
 23464,https://islam.zmo.de/s/afrique_ouest/item/23464,iwac-index-0000566,bibo:Event,Évènements,,Festival Islamique d'Abidjan,FIPA,,,,,,,,,Côte d'Ivoire,,,,,
@@ -611,6 +614,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 23657,https://islam.zmo.de/s/afrique_ouest/item/23657,iwac-index-0000603,bibo:Event,Évènements,,Congrès AJMCI (2012),,,2012,,,,,,,Côte d'Ivoire,,,,,
 23676,https://islam.zmo.de/s/afrique_ouest/item/23676,iwac-index-0000604,bibo:Event,Évènements,,Congrès COSIM (2019),,,2019,,,,,,,Côte d'Ivoire,,,,,
 23700,https://islam.zmo.de/s/afrique_ouest/item/23700,iwac-index-0000605,bibo:Event,Évènements,,Élections en Côte d'Ivoire,,,,,,,,,Élection présidentielle ivoirienne de 2010|Élection présidentielle ivoirienne de 2015|Élection présidentielle ivoirienne de 2020,Côte d'Ivoire,,,,,
+27761,https://islam.zmo.de/s/afrique_ouest/item/27761,,bibo:Event,Évènements,,Élections législatives togolaises de 2013,,,2013-07-25,,,,,,,Togo,,,,,
 31359,https://islam.zmo.de/s/afrique_ouest/item/31359,iwac-index-0000606,bibo:Event,Évènements,,Incendies marchés Lomé et Kara (2013),,,2013-01,,,,,,,Togo,,,,,
 43052,https://islam.zmo.de/s/afrique_ouest/item/43052,,bibo:Event,Évènements,,Procès CNI-CSI,,,1994,,Conseil National Islamique|Conseil Supérieur Islamique,,,,,Côte d'Ivoire,,,,,
 43057,https://islam.zmo.de/s/afrique_ouest/item/43057,,bibo:Event,Évènements,,Intervention policière mosquée d'Abobo Banco II,,,1994,,,,,,,Côte d'Ivoire,,,,,
@@ -645,7 +649,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 274,https://islam.zmo.de/s/afrique_ouest/item/274,iwac-index-0000612,dcterms:Location,Emplacements,,Allada,,,,,,,,Bénin,,,,,,,"6.66547, 2.15138"
 275,https://islam.zmo.de/s/afrique_ouest/item/275,iwac-index-0000613,dcterms:Location,Emplacements,290,Allemagne,,,,,,,,Pays,,,,,,,"51.5, 10.5"
 276,https://islam.zmo.de/s/afrique_ouest/item/276,iwac-index-0000614,dcterms:Location,Emplacements,,Aplahoué,,,,,,,,Bénin,,,,,,,"6.93333, 1.68333"
-277,https://islam.zmo.de/s/afrique_ouest/item/277,iwac-index-0000615,dcterms:Location,Emplacements,291,Arabie saoudite,Arabie Séoudite,,,,,,,Pays,Djeddah|Médine|La Mecque,,,,,,"25.0, 45.0"
+277,https://islam.zmo.de/s/afrique_ouest/item/277,iwac-index-0000615,dcterms:Location,Emplacements,291,Arabie saoudite,Arabie Séoudite,,,,,,,Pays,Djeddah|Médine|La Mecque|Mont Arafat,,,,,,"25.0, 45.0"
 278,https://islam.zmo.de/s/afrique_ouest/item/278,iwac-index-0000616,dcterms:Location,Emplacements,,Athiémé,,,,,,,,Bénin,,,,,,,"6.5808, 1.6696"
 279,https://islam.zmo.de/s/afrique_ouest/item/279,iwac-index-0000617,dcterms:Location,Emplacements,,Banfora,,,,,,,,Burkina Faso,,,,,,,"10.63333, -4.76667"
 280,https://islam.zmo.de/s/afrique_ouest/item/280,iwac-index-0000618,dcterms:Location,Emplacements,,Banikoara,,,,,,,,Bénin,,,,,,,"11.33966, 2.45915"
@@ -874,7 +878,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 541,https://islam.zmo.de/s/afrique_ouest/item/541,iwac-index-0000841,dcterms:Location,Emplacements,2224,Nigéria,,,,,,,,Pays,Kano|Lagos|Sokoto|Yola|Zaria,,,,,,"10.0, 8.0"
 542,https://islam.zmo.de/s/afrique_ouest/item/542,iwac-index-0000842,dcterms:Location,Emplacements,,Qatar,,,,,,,,Pays,,,,,,,"25.5, 51.25"
 543,https://islam.zmo.de/s/afrique_ouest/item/543,iwac-index-0000843,dcterms:Location,Emplacements,,Syrie,,,,,,,,Pays,,,,,,,"35.0, 38.0"
-544,https://islam.zmo.de/s/afrique_ouest/item/544,iwac-index-0000844,dcterms:Location,Emplacements,2229,Togo,,,,,,,,Pays,,,,,,,"8.66667, 1.08333"
+544,https://islam.zmo.de/s/afrique_ouest/item/544,iwac-index-0000844,dcterms:Location,Emplacements,2229,Togo,,,,,,,,Pays,Blitta|Nosté|Nyékonakpoé,,,,,,"8.66667, 1.08333"
 545,https://islam.zmo.de/s/afrique_ouest/item/545,iwac-index-0000845,dcterms:Location,Emplacements,,Turquie,,,,,,,,Pays,,,,,,,"39.0, 35.0"
 546,https://islam.zmo.de/s/afrique_ouest/item/546,iwac-index-0000846,dcterms:Location,Emplacements,2208,Burkina Faso,Haute-Volta,,,Pays d'Afrique de l'Ouest|Sovereign state in West Africa,,,,Pays,Niangoloko|Garango|Bitou|Zorgho|Sebba|Réo|Ouargaye|Diébougou|Diapaga|Dano|Boussé,,,,,,"12.5, -1.66667"
 547,https://islam.zmo.de/s/afrique_ouest/item/547,iwac-index-0000847,dcterms:Location,Emplacements,,Cameroun,,,,,,,,Pays,,,,,,,"6.0, 12.5"
@@ -919,6 +923,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 25155,https://islam.zmo.de/s/afrique_ouest/item/25155,iwac-index-0000883,dcterms:Location,Emplacements,,Russie,,,,,,,,Pays,,,,,,,"66.416667, 94.25"
 25602,https://islam.zmo.de/s/afrique_ouest/item/25602,iwac-index-0000884,dcterms:Location,Emplacements,,Gambie,Gambia,,,,,,,,,,,,,,"13.5, -15.5"
 27738,https://islam.zmo.de/s/afrique_ouest/item/27738,,dcterms:Location,Emplacements,,Université de Kara,UK,,,,,,,Université|Togo,,,,,,,"9.530556, 1.208333"
+27795,https://islam.zmo.de/s/afrique_ouest/item/27795,,dcterms:Location,Emplacements,,Oti,,,,,,,,Togo,,,,,,,"10.357222, 0.471111"
 31354,https://islam.zmo.de/s/afrique_ouest/item/31354,iwac-index-0000885,dcterms:Location,Emplacements,,Grande mosquée du port de Lomé,,,,,,,,Togo|Mosquée,,,,,,,
 33155,https://islam.zmo.de/s/afrique_ouest/item/33155,,dcterms:Location,Emplacements,,Boussé,,,,,,,,Burkina Faso,,,,,,,"12.666666666667, -1.8975"
 33156,https://islam.zmo.de/s/afrique_ouest/item/33156,,dcterms:Location,Emplacements,,Dano,,,,,,,,Burkina Faso,,,,,,,"11.1438, -3.06196"
@@ -962,7 +967,6 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 60457,https://islam.zmo.de/s/afrique_ouest/item/60457,,dcterms:Location,Emplacements,,Afghanistan,,,,,,,,,,,,,,,"33,66"
 60458,https://islam.zmo.de/s/afrique_ouest/item/60458,,dcterms:Location,Emplacements,,Agbalépédogan,,,,,,,,Togo,,,,,,,"6.19943,1.19883"
 60459,https://islam.zmo.de/s/afrique_ouest/item/60459,,dcterms:Location,Emplacements,,Agbandi,,,,,,,,Togo,,,,,,,"8.22371017106444,1.1360012215229036"
-60460,https://islam.zmo.de/s/afrique_ouest/item/60460,,dcterms:Location,Emplacements,,Agou-Gadzépé,,,,,,,,Togo,,,,,,,"7.4669444444444,1.9169444444444"
 60461,https://islam.zmo.de/s/afrique_ouest/item/60461,,dcterms:Location,Emplacements,,Agoulou,,,,,,,,Togo,,,,,,,
 60462,https://islam.zmo.de/s/afrique_ouest/item/60462,,dcterms:Location,Emplacements,,Akébou,,,,,,,,Togo,,,,,,,"7.6559489,0.7922752"
 60463,https://islam.zmo.de/s/afrique_ouest/item/60463,,dcterms:Location,Emplacements,,Aléhéridè,,,,,,,,Togo,,,,,,,"9.2166666666667,1.2"
@@ -981,9 +985,9 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 60476,https://islam.zmo.de/s/afrique_ouest/item/60476,,dcterms:Location,Emplacements,,Bas-Mono,,,,,,,,Togo,,,,,,,"6.48333333,1.65"
 60477,https://islam.zmo.de/s/afrique_ouest/item/60477,,dcterms:Location,Emplacements,,Basssar,,,,,,,,Togo,,,,,,,"9.25,0.78333333"
 60478,https://islam.zmo.de/s/afrique_ouest/item/60478,,dcterms:Location,Emplacements,,Berlin,,,,,,,,Allemagne,,,,,,,"52.516666666667,13.383333333333"
-60479,https://islam.zmo.de/s/afrique_ouest/item/60479,,dcterms:Location,Emplacements,,Bethléem,,,,,,,,Palestine,,,,,,,"31.704444444444,35.206111111111"
+60479,https://islam.zmo.de/s/afrique_ouest/item/60479,,dcterms:Location,Emplacements,,Bethléem,Bethlehem,,,,,,,Palestine,,,,,,,"31.704444444444,35.206111111111"
 60480,https://islam.zmo.de/s/afrique_ouest/item/60480,,dcterms:Location,Emplacements,,Binah,,,,,,,,Togo,,,,,,,"9.75,1.31667"
-60481,https://islam.zmo.de/s/afrique_ouest/item/60481,,dcterms:Location,Emplacements,,Blitta,,,,,,,,Togo,,,,,,,
+60481,https://islam.zmo.de/s/afrique_ouest/item/60481,,dcterms:Location,Emplacements,,Blitta,Blitta-Gare,,,,,,,Togo,,,,,,,
 60482,https://islam.zmo.de/s/afrique_ouest/item/60482,,dcterms:Location,Emplacements,,Borgou,,,,,,,,Togo,,,,,,,
 60483,https://islam.zmo.de/s/afrique_ouest/item/60483,,dcterms:Location,Emplacements,,Cisjordanie,,,,,,,,Palestine,,,,,,,"32,35.35"
 60484,https://islam.zmo.de/s/afrique_ouest/item/60484,,dcterms:Location,Emplacements,,Dakar,,,,,,,,Sénégal,,,,,,,"14.731944444444,-17.457222222222"
@@ -1033,10 +1037,10 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 60528,https://islam.zmo.de/s/afrique_ouest/item/60528,,dcterms:Location,Emplacements,,Nangbani,,,,,,,,Togo,,,,,,,"9.2666666666667,0.8"
 60529,https://islam.zmo.de/s/afrique_ouest/item/60529,,dcterms:Location,Emplacements,,Natchiboré,,,,,,,,Togo,,,,,,,
 60530,https://islam.zmo.de/s/afrique_ouest/item/60530,,dcterms:Location,Emplacements,,Nawaré,,,,,,,,Togo,,,,,,,
-60531,https://islam.zmo.de/s/afrique_ouest/item/60531,,dcterms:Location,Emplacements,,Nosté,Notse|Notsè,,,,,,,Togo,,,,,,,"6.948333333333333,1.1680555555555556"
+60531,https://islam.zmo.de/s/afrique_ouest/item/60531,,dcterms:Location,Emplacements,,Nosté,Notsè|Notse,,,,,,,Togo,,,,,,,"6.948333333333333,1.1680555555555556"
 60532,https://islam.zmo.de/s/afrique_ouest/item/60532,,dcterms:Location,Emplacements,,Nouakchott,,,,,,,,Mauritanie,,,,,,,"18.08581,-15.9785"
 60533,https://islam.zmo.de/s/afrique_ouest/item/60533,,dcterms:Location,Emplacements,,Nyamassila,,,,,,,,Togo,,,,,,,"7.9824,1.2044"
-60534,https://islam.zmo.de/s/afrique_ouest/item/60534,,dcterms:Location,Emplacements,,Nyékonakpoé,,,,,,,,Togo,,,,,,,"6.1305555555555555,1.2055555555555555"
+60534,https://islam.zmo.de/s/afrique_ouest/item/60534,,dcterms:Location,Emplacements,,Nyékonakpoé,Nyékonakpoè,,,,,,,Togo,,,,,,,"6.1305555555555555,1.2055555555555555"
 60535,https://islam.zmo.de/s/afrique_ouest/item/60535,,dcterms:Location,Emplacements,,Ouganda,,,,,,,,,,,,,,,"1.28,32.39"
 60536,https://islam.zmo.de/s/afrique_ouest/item/60536,,dcterms:Location,Emplacements,,Pagouda,,,,,,,,Togo,,,,,,,"9.75,1.316667"
 60537,https://islam.zmo.de/s/afrique_ouest/item/60537,,dcterms:Location,Emplacements,,Pessidè,,,,,,,,Togo,,,,,,,
@@ -1059,7 +1063,22 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 60554,https://islam.zmo.de/s/afrique_ouest/item/60554,,dcterms:Location,Emplacements,,Wassarabo,,,,,,,,Togo,,,,,,,
 60555,https://islam.zmo.de/s/afrique_ouest/item/60555,,dcterms:Location,Emplacements,,Yoto,,,,,,,,Togo,,,,,,,"6.58333333,1.5"
 60556,https://islam.zmo.de/s/afrique_ouest/item/60556,,dcterms:Location,Emplacements,,Yémen,,,,,,,,,,,,,,,"15.5,48"
-60557,https://islam.zmo.de/s/afrique_ouest/item/60557,,dcterms:Location,,,Kenya,,,,,,,,Pays,,,,,,,
+60557,https://islam.zmo.de/s/afrique_ouest/item/60557,,dcterms:Location,,,Kenya,,,,,,,,Pays,,,,,,,"1, 38"
+60558,https://islam.zmo.de/s/afrique_ouest/item/60558,,dcterms:Location,Emplacements,,Agoé-Nyivé,Agoé Nyivé|Agoè Nyivé|Agoè-Nyivé,,,,,,,Togo,,,,,,,
+60559,https://islam.zmo.de/s/afrique_ouest/item/60559,,dcterms:Location,Emplacements,,Région des plateaux,,,,,,,,Togo,,,,,,,"7.5, 1.1"
+60560,https://islam.zmo.de/s/afrique_ouest/item/60560,,dcterms:Location,Emplacements,,Kadambara,,,,,,,,Togo,,,,,,,
+60561,https://islam.zmo.de/s/afrique_ouest/item/60561,,dcterms:Location,Emplacements,,Agou,,,,,,,,Togo,,,,,,,"7.466667, 1.916667"
+60562,https://islam.zmo.de/s/afrique_ouest/item/60562,,dcterms:Location,Emplacements,,Wawa,,,,,,,,Togo,,,,,,,"7.583333, 0.6"
+60563,https://islam.zmo.de/s/afrique_ouest/item/60563,,dcterms:Location,Emplacements,,Didaourè,,,,,,,,Togo,,,,,,,
+60564,https://islam.zmo.de/s/afrique_ouest/item/60564,,dcterms:Location,Emplacements,,Mô,,,,,,,,Togo,,,,,,,"8.77, 0.56"
+60565,https://islam.zmo.de/s/afrique_ouest/item/60565,,dcterms:Location,Emplacements,,Est-Mono,,,,,,,,Togo,,,,,,,"7.4475, 0.847222"
+60566,https://islam.zmo.de/s/afrique_ouest/item/60566,,dcterms:Location,Emplacements,,Tône,,,,,,,,Togo,,,,,,,"10.916667, 0.166667"
+60567,https://islam.zmo.de/s/afrique_ouest/item/60567,,dcterms:Location,Emplacements,,Kévé,,,,,,,,Togo,,,,,,,"6.427811, 0.924481"
+60569,https://islam.zmo.de/s/afrique_ouest/item/60569,,dcterms:Location,Emplacements,,Adougba,,,,,,,,Togo,,,,,,,
+60570,https://islam.zmo.de/s/afrique_ouest/item/60570,,dcterms:Location,Emplacements,,Agbonou,,,,,,,,Togo,,,,,,,
+60571,https://islam.zmo.de/s/afrique_ouest/item/60571,,dcterms:Location,Emplacements,,Daoudè,,,,,,,,Togo,,,,,,,
+60572,https://islam.zmo.de/s/afrique_ouest/item/60572,,dcterms:Location,Emplacements,,Kouloundè,,,,,,,,Togo,,,,,,,
+60573,https://islam.zmo.de/s/afrique_ouest/item/60573,,dcterms:Location,Emplacements,,Tchawanda,,,,,,,,Togo,,,,,,,
 569,https://islam.zmo.de/s/afrique_ouest/item/569,iwac-index-0000886,foaf:Organization,Associations,589,Association des Élèves et Étudiants Musulmans au Burkina,AEEMB,1986-01-21,,"Officiellement reconnue en 1986, l'AEEMB vise la promotion de l'islam dans le milieu éducatif francophone. L'association a été active de manière informelle sous d’autres noms à partir des années 1970 : Union Discipline Croyance, Troupe Muhammad et Association Musulmane des Scolaires Voltaïques.|Officially recognized in 1986, the AEEMB aims to promote Islam in the francophone educational community. The association has been informally active under other names since the 1970s: Union Discipline Croyance (Discipline Belief Union), Troupe Muhammad (Muhammad Troop).",Maternité Sakina,,,Fédération des Associations Islamiques du Burkina|Organisation de la Jeunesse Musulmane en Afrique de l'Ouest|Organisation islamique,COPRESS-AEEMB,Burkina Faso,,,,,
 570,https://islam.zmo.de/s/afrique_ouest/item/570,iwac-index-0000887,foaf:Organization,Associations,,Association des Femmes Islamiques du Burkina,AFIB,1996-09-21,,National coalition of Muslim women|Regroupement national de femmes musulmanes,,,,Organisation islamique,,Burkina Faso,,,,,
 571,https://islam.zmo.de/s/afrique_ouest/item/571,iwac-index-0000888,foaf:Organization,Associations,590,"Cercle d'Études, de Recherches et de Formation Islamiques",CERFI,1989-01,,The CERFI is a kind of extension of the Association des Élèves et Étudiants Musulmans au Burkina (AEEMB) for activists who have entered the labour market|Le CERFI est en quelque sorte le prolongement de l'Association des Élèves et Étudiants Musulmans au Burkina (AEEMB) pour les militants qui ont intégré le marché du travail,"Mosquée du Cercle d'Études, de Recherches et de Formation Islamiques",,Organisation des Femmes Musulmanes du Burkina,Fédération des Associations Islamiques du Burkina|Organisation de la Jeunesse Musulmane en Afrique de l'Ouest|Organisation islamique,,Burkina Faso,,,,,
@@ -1293,6 +1312,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 14135,https://islam.zmo.de/s/afrique_ouest/item/14135,iwac-index-0001117,foaf:Organization,Associations,,"Ligue des Oulémas, Prêcheurs et Imams du Sahel",LOPIS,,,,,,,Organisation islamique,,,,,,,
 14809,https://islam.zmo.de/s/afrique_ouest/item/14809,iwac-index-0001118,foaf:Organization,Associations,,Église Protestante Méthodiste du Bénin,EPMB,,,,,,,Organisation chrétienne,,Bénin,,,,,
 14916,https://islam.zmo.de/s/afrique_ouest/item/14916,iwac-index-0001119,foaf:Organization,Associations,,Organisation de l'Unité Africaine,OUA,,,,,,,,,,,,,,
+15603,https://islam.zmo.de/s/afrique_ouest/item/15603,,foaf:Organization,Associations,,Ensemble Agence de Voyage du Togo pour le Hadj,ENAVOTH,,,,,,,Organisation islamique,,Togo,,,,,
 15846,https://islam.zmo.de/s/afrique_ouest/item/15846,iwac-index-0001120,foaf:Organization,Associations,,Fondation Aorèma,,,,,,,,Organisation non gouvernementale,,Burkina Faso,,,,,
 23121,https://islam.zmo.de/s/afrique_ouest/item/23121,iwac-index-0001121,foaf:Organization,Associations,,Centre Africain de Diffusion Islamique et Scientifique,CADIS,,,,Ahmed Simozrag,,,Organisation islamique,,Burkina Faso,,,,,
 23122,https://islam.zmo.de/s/afrique_ouest/item/23122,iwac-index-0001122,foaf:Organization,Associations,,Association Islamique pour l'Assistance aux Détenus,AIPAD,,,,,,,Organisation islamique,,Burkina Faso,,,,,
@@ -1389,6 +1409,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 26344,https://islam.zmo.de/s/afrique_ouest/item/26344,iwac-index-0001214,foaf:Organization,Associations,,Dossier de l'Islam,Malafou Islam,,,,Kassim Mensah,,,Organisation islamique,,Togo,,,,,
 26349,https://islam.zmo.de/s/afrique_ouest/item/26349,iwac-index-0001215,foaf:Organization,Associations,,Commission Nationale du Hadj,CNH,,,,Hadj,,,Organisation islamique,,Togo,,,,,
 27737,https://islam.zmo.de/s/afrique_ouest/item/27737,iwac-index-0001216,foaf:Organization,Associations,,"Organisation pour le Développement, l'Éducation et le Suivi des Convertis en Islam",ODESCI,,,,,,,Organisation islamique,,Togo,,,,,
+27741,https://islam.zmo.de/s/afrique_ouest/item/27741,,foaf:Organization,Associations,,Parti National Panafricain,PNP,,,,,,,Parti politique,,Togo,,,,,
 27786,https://islam.zmo.de/s/afrique_ouest/item/27786,iwac-index-0001217,foaf:Organization,Associations,,"Commission Nationale de Lutte contre la Prolifération, la Circulation et le Trafic Illicite des Armes Légères et de Petits Calibres",CNLPAL,,,,,,,,,Togo,,,,,
 31350,https://islam.zmo.de/s/afrique_ouest/item/31350,iwac-index-0001218,foaf:Organization,Associations,,Alliance Nationale pour le Changement,ANC,,,,,,,Parti politique,,Togo,,,,,
 31351,https://islam.zmo.de/s/afrique_ouest/item/31351,iwac-index-0001219,foaf:Organization,Associations,,Conférence des Évêques du Togo,CET,,,,,,,Organisation chrétienne,,Togo,,,,,
@@ -2680,7 +2701,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 2125,https://islam.zmo.de/s/afrique_ouest/item/2125,iwac-index-0002476,foaf:Person,Individus,,Kukovi Benyi Gabriel Polycarpe Johnson,Kwaovi Benyi Johnson|Kwaovi-Benyi Johnson|Polycarpe Johnson,,,,,,,Politicien.ne|Togo-Presse,,Togo,,,,1924,
 2126,https://islam.zmo.de/s/afrique_ouest/item/2126,iwac-index-0002477,foaf:Person,Individus,,Olalekan Rasheed Azeez,Aziz Rachid Olalékan,,,,,,,Agence des Musulmans d'Afrique/Direct-Aid,,Togo,,,Homme,,
 2127,https://islam.zmo.de/s/afrique_ouest/item/2127,iwac-index-0002478,foaf:Person,Individus,,Maman N'Danida,,,1984-06-28,Mother of Gnassingbé Eyadéma|Mère de Gnassingbé Eyadéma,Gnassingbé Eyadéma,,,,,Togo,,N'Danida,Femme,,
-2128,https://islam.zmo.de/s/afrique_ouest/item/2128,iwac-index-0002479,foaf:Person,Individus,2130,Gnassingbé Eyadéma,Étienne Eyadéma Gnassingbé,,2005-02-05,President of Togo (1967–2005)|Président du Togo (1967–2005),Maman N'Danida,,,Militaire|Politicien.ne|Rassemblement du Peuple Togolais,,Togo,Gnassingbé,Eyadéma,Homme,1935-12-26,
+2128,https://islam.zmo.de/s/afrique_ouest/item/2128,iwac-index-0002479,foaf:Person,Individus,2130,Gnassingbé Eyadéma,Étienne Eyadéma Gnassingbé,,2005-02-05,President of Togo (1967–2005)|Président du Togo (1967–2005),Maman N'Danida|Faure Gnassingbé,,,Militaire|Politicien.ne|Rassemblement du Peuple Togolais,,Togo,Gnassingbé,Eyadéma,Homme,1935-12-26,
 2129,https://islam.zmo.de/s/afrique_ouest/item/2129,iwac-index-0002480,foaf:Person,Individus,,Abass Bonfoh,,,2021-06-30,Togolese politician|homme politique togolais,,,,Politicien.ne|Rassemblement du Peuple Togolais,,Togo,Abass,Bonfoh,Homme,1948-11-23,
 2131,https://islam.zmo.de/s/afrique_ouest/item/2131,iwac-index-0002481,foaf:Person,Individus,,Boukari Bassabi Bonfoh,Boukary Bonfoh|Boukari Bonfoh|Bassabi Bonfoh|Bassabi Kondi Bonfoh,,1986,Imam and former President of the Muslim Union of Togo (1981-1986)|Imam et ancien président de l'Union musulmane du Togo (1981-1986),,,,Imam|Union Musulmane du Togo,,Togo,,,Homme,,
 2132,https://islam.zmo.de/s/afrique_ouest/item/2132,iwac-index-0002482,foaf:Person,Individus,,Nassiki Awrufo,Aoufoh Oumorou Nassiki|Awurofo Nassiki|Nassiki Awouroufo|Nassiki Awroufo,,,Former President of the Muslim Union of Togo (1986-1992)|Ancien président de l'Union Musulmane du Togo (1986-1992),,,,Imam|Union Musulmane du Togo,,Togo,Nassiki,Awrufo,Homme,,
@@ -2759,6 +2780,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 15106,https://islam.zmo.de/s/afrique_ouest/item/15106,iwac-index-0002555,foaf:Person,Individus,,Amos Agbindo-Bankolé,,,,,,,,Pasteur,,Bénin,,,Homme,,
 15190,https://islam.zmo.de/s/afrique_ouest/item/15190,iwac-index-0002556,foaf:Person,Individus,,Merneptah Noufou Zougmoré,,,,,,,,Journaliste|L'Evénement,,Burkina Faso,,,,,
 15260,https://islam.zmo.de/s/afrique_ouest/item/15260,iwac-index-0002557,foaf:Person,Individus,,Jaber Al Ahmed Al Sabah,Jaber al-Ahmad al-Sabah,,,,,,,Politicien.ne,,Koweït,,,Homme,,
+15348,https://islam.zmo.de/s/afrique_ouest/item/15348,,foaf:Person,Individus,,Faure Gnassingbé,Faure Essozimna Gnassingbé,,,,Gnassingbé Eyadéma,,,Politicien.ne,,Togo,Faure,Gnassingbé,Homme,1966-06-06,
 15363,https://islam.zmo.de/s/afrique_ouest/item/15363,iwac-index-0002558,foaf:Person,Individus,,Taofik Bonfoh,,,,,,,,,,Togo,Taofik,Bonfoh,,,
 15419,https://islam.zmo.de/s/afrique_ouest/item/15419,iwac-index-0002559,foaf:Person,Individus,,Reinhard Bonnke,,,2019-12-07,Évangéliste pentecôtiste allemand|German Pentecostal evangelist,,,,Pasteur,,Allemagne,Reinhard,Bonnke,,1940-04-19,
 15427,https://islam.zmo.de/s/afrique_ouest/item/15427,,foaf:Person,Individus,,Emmanuel Kouagou,E. Kouagou,,,,,,,Journaliste|Ehuzu,,Bénin,Emmanuel,Kouagou,,,
@@ -2967,6 +2989,8 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 26356,https://islam.zmo.de/s/afrique_ouest/item/26356,iwac-index-0002764,foaf:Person,Individus,,Bintou Koné,"Koné, Bintou",,,,,,,Chercheur.e,,,Bintou,Koné,,,
 26358,https://islam.zmo.de/s/afrique_ouest/item/26358,iwac-index-0002765,foaf:Person,Individus,,Sidi Barry,"Barry, Sidi",,,,,,,Chercheur.e,,,Sidi,Barry,,,
 26359,https://islam.zmo.de/s/afrique_ouest/item/26359,iwac-index-0002766,foaf:Person,Individus,,Abi-Alfa Izotou,,,,,,,,Le Rendez-Vous,,Togo,Abi-Alfa,Izotou,Homme,,
+27735,https://islam.zmo.de/s/afrique_ouest/item/27735,,foaf:Person,Individus,,Ibrahima Ouro-Gouni,,,,,,,,Association des Élèves et Étudiants Musulmans au Togo,,Togo,Ibrahima,Ouro-Gouni,,,
+27752,https://islam.zmo.de/s/afrique_ouest/item/27752,,foaf:Person,Individus,,Agbéyomé Kodjo,Kodjo Agbéyomé|Messan Agbéyomé Kodjo,,2024-03-03,,,,,Politicien.ne,,Togo,Agbéyomé,Kodjo,Homme,1954-10-12,
 31349,https://islam.zmo.de/s/afrique_ouest/item/31349,iwac-index-0002767,foaf:Person,Individus,,Kpatcha Gnassingbé,,,,,,,,Politicien.ne,,Togo,Kpatcha,Gnassingbé,Homme,1970-09-06,
 31352,https://islam.zmo.de/s/afrique_ouest/item/31352,iwac-index-0002768,foaf:Person,Individus,,Abbassy Ibrahim,,,,,,,,,,Togo,,,,,
 31353,https://islam.zmo.de/s/afrique_ouest/item/31353,iwac-index-0002769,foaf:Person,Individus,,Tikpi Salifou Atchadam,,,,,,,,Politicien.ne,,Togo,Tikpi Salifou,Atchadam,Homme,1967,
