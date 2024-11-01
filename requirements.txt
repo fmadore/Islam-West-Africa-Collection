@@ -1,8 +1,45 @@
-folium
-geopandas
+# Data manipulation and analysis
 pandas
-python-dotenv
-requests
-tqdm
-nltk
+geopandas
+numpy
+
+# Visualization
 plotly
+folium
+
+# HTTP and API
+requests
+aiohttp
+urllib3
+backoff  # For implementing retry logic
+
+# Progress bars and utilities
+tqdm
+
+# Environment variables
+python-dotenv
+
+# Natural Language Processing
+nltk
+scikit-learn  # For TfidfVectorizer and cosine_similarity
+tiktoken  # For token counting
+textblob  # For sentiment analysis
+textblob-fr  # For French language support in TextBlob
+stanza  # For advanced NLP tasks and multilingual support
+
+# Web Framework
+flask
+markupsafe  # For Markup
+
+# AI/LLM
+anthropic  # For Claude API
+
+# Async utilities
+asyncio
+
+# Geographic data processing
+pyproj
+
+# Optional dependencies for better performance
+ujson  # Fast JSON processing
+orjson  # Even faster JSON processing
