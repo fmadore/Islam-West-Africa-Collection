@@ -159,12 +159,12 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 15242,https://islam.zmo.de/s/afrique_ouest/item/15242,iwac-index-0000153,fabio:AuthorityFile,Sujets,,Adossa,,,,Danse,,,,,,Togo,,,,,
 15339,https://islam.zmo.de/s/afrique_ouest/item/15339,iwac-index-0002779,fabio:AuthorityFile,Sujets,,Unité et divisions,,,,,,,,,,,,,,,
 15829,https://islam.zmo.de/s/afrique_ouest/item/15829,iwac-index-0000154,fabio:AuthorityFile,Notices d'autorité,,Université,,,,,,,,,Université de Kara,,,,,,
-15830,https://islam.zmo.de/s/afrique_ouest/item/15830,iwac-index-0000155,fabio:AuthorityFile,Notices d'autorité,,Parc national,,,,,,,,,,,,,,,
+15830,https://islam.zmo.de/s/afrique_ouest/item/15830,iwac-index-0000155,fabio:AuthorityFile,Notices d'autorité,,Parc national,,,,,,,,,Parc national du W,,,,,,
 15831,https://islam.zmo.de/s/afrique_ouest/item/15831,iwac-index-0000156,fabio:AuthorityFile,Notices d'autorité,,Mosquée,,,,Lieu de culte où se rassemblent les musulmans pour les prières communes|Place of worship for followers of Islam,,,,,Grande mosquée du port de Lomé|Mosquée centrale d'Aïdjèdo|Mosquée centrale de Dassa-Zoumè|Grande Mosquée d'Adjamé,,,,,,
 15832,https://islam.zmo.de/s/afrique_ouest/item/15832,iwac-index-0000157,fabio:AuthorityFile,Notices d'autorité,,Établissement de santé,Établissement médical,,,,,,,,,,,,,,
 15833,https://islam.zmo.de/s/afrique_ouest/item/15833,iwac-index-0000158,fabio:AuthorityFile,Notices d'autorité,,Médersa,Madrasah,,,,,,,,,,,,,,
 15834,https://islam.zmo.de/s/afrique_ouest/item/15834,iwac-index-0000159,fabio:AuthorityFile,Notices d'autorité,,Organisation islamique,Islamic organisation,,,,,,,,Club des Amis de l'AJMCI|Association des Jeunes Musulmans de Côte d'Ivoire|Cellule Féminine de l'AMSCI|Comité National pour l'Organisation du Pèlerinage à la Mecque (CI)|Bureau Ivoirien du Hadj et de la Oumra|Fédération Ivoirienne Pour l'Organisation du Pèlerinage à la Mecque|COPRESS-AEEMB|Association des Élèves et Étudiants Musulmans au Burkina|Fondation Islamique Aboudou Assouma pour la Charité|Union Musulmane du Togo|Organisation de la Jeunesse Musulmane en Afrique de l'Ouest|Communauté Musulmane de la Riviera,,,,,,
-15835,https://islam.zmo.de/s/afrique_ouest/item/15835,iwac-index-0000160,fabio:AuthorityFile,Notices d'autorité,,Pays,,,,,,,,,Nigéria|Ghana|Arabie saoudite|Burkina Faso|Côte d'Ivoire|États-Unis|Émirats arabes unis|Guinée|Kenya,,,,,,
+15835,https://islam.zmo.de/s/afrique_ouest/item/15835,iwac-index-0000160,fabio:AuthorityFile,Notices d'autorité,,Pays,,,,,,,,,Nigéria|Ghana|Arabie saoudite|Burkina Faso|Côte d'Ivoire|États-Unis|Émirats arabes unis|Guinée|Kenya|Chine|Brésil,,,,,,
 15836,https://islam.zmo.de/s/afrique_ouest/item/15836,iwac-index-0000161,fabio:AuthorityFile,Notices d'autorité,,Organisation chrétienne,,,,,,,,,,,,,,,
 15837,https://islam.zmo.de/s/afrique_ouest/item/15837,iwac-index-0000162,fabio:AuthorityFile,Notices d'autorité,,Organisation non gouvernementale,ONG,,,,,,,,,,,,,,
 15838,https://islam.zmo.de/s/afrique_ouest/item/15838,iwac-index-0000163,fabio:AuthorityFile,Notices d'autorité,,Parti politique,,,,,,,,,,,,,,,
@@ -665,7 +665,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 280,https://islam.zmo.de/s/afrique_ouest/item/280,iwac-index-0000618,dcterms:Location,Emplacements,,Banikoara,,,,,,,,Bénin,,,,,,,"11.33966, 2.45915"
 281,https://islam.zmo.de/s/afrique_ouest/item/281,iwac-index-0000619,dcterms:Location,Emplacements,,Bassila,,,,,,,,Bénin,,,,,,,"9.00814, 1.6654"
 282,https://islam.zmo.de/s/afrique_ouest/item/282,iwac-index-0000620,dcterms:Location,Emplacements,,Bembèrèkè,,,,,,,,Bénin,,,,,,,"10.22827, 2.66335"
-283,https://islam.zmo.de/s/afrique_ouest/item/283,iwac-index-0000621,dcterms:Location,Emplacements,292,Bénin,Dahomey,,,,,,,Pays,,,,,,,"9.5, 2.25"
+283,https://islam.zmo.de/s/afrique_ouest/item/283,iwac-index-0000621,dcterms:Location,Emplacements,292,Bénin,Dahomey,,,,,,,Pays,Parc national du W,,,,,,"9.5, 2.25"
 284,https://islam.zmo.de/s/afrique_ouest/item/284,iwac-index-0000622,dcterms:Location,Emplacements,,Bobo-Dioulasso,Bobo Dioulasso,,,,,,,Burkina Faso,,,,,,,"11.17715, -4.2979"
 285,https://islam.zmo.de/s/afrique_ouest/item/285,iwac-index-0000623,dcterms:Location,Emplacements,,Bogandé,,,,,,,,Burkina Faso,,,,,,,"12.9704, -0.14953"
 286,https://islam.zmo.de/s/afrique_ouest/item/286,iwac-index-0000624,dcterms:Location,Emplacements,,Bohicon,,,,,,,,Bénin,,,,,,,"7.17826, 2.0667"
@@ -744,7 +744,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 378,https://islam.zmo.de/s/afrique_ouest/item/378,iwac-index-0000697,dcterms:Location,Emplacements,,Ouidah,,,,,,,,Bénin,,,,,,,"6.36307, 2.08506"
 379,https://islam.zmo.de/s/afrique_ouest/item/379,iwac-index-0000698,dcterms:Location,Emplacements,,Parakou,,,,,,,,Bénin,,,,,,,"9.33716, 2.63031"
 380,https://islam.zmo.de/s/afrique_ouest/item/380,iwac-index-0000699,dcterms:Location,Emplacements,,Parc national de la Pendjari,,,,,,,,Bénin|Parc national,,,,,,,"11.2482, 1.59839"
-381,https://islam.zmo.de/s/afrique_ouest/item/381,iwac-index-0000700,dcterms:Location,Emplacements,,Parc national du W,,,,,,,,Bénin|Burkina Faso|Niger|Parc national,,,,,,,"12.07596, 2.5235"
+381,https://islam.zmo.de/s/afrique_ouest/item/381,iwac-index-0000700,dcterms:Location,Emplacements,,Parc national du W,Parc W,,,,,,,Bénin|Burkina Faso|Niger|Parc national,,,,,,,"12.07596, 2.5235"
 382,https://islam.zmo.de/s/afrique_ouest/item/382,iwac-index-0000701,dcterms:Location,Emplacements,,Place de la Révolution,Place de la Nation,,,,,,,Burkina Faso,,,,,,,
 383,https://islam.zmo.de/s/afrique_ouest/item/383,iwac-index-0000702,dcterms:Location,Emplacements,,Pô,,,,,,,,Burkina Faso,,,,,,,"11.16972, -1.145"
 384,https://islam.zmo.de/s/afrique_ouest/item/384,iwac-index-0000703,dcterms:Location,Emplacements,,Pobé,Pobè,,,,,,,Bénin,,,,,,,"6.98008, 2.6649"
@@ -884,13 +884,13 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 537,https://islam.zmo.de/s/afrique_ouest/item/537,iwac-index-0000837,dcterms:Location,Emplacements,,Ogou,,,,Préfecture de la région des plateaux au Togo|Prefecture of the plateaux region in Togo,,,,Togo,,,,,,,"7.516667, 1.116667"
 538,https://islam.zmo.de/s/afrique_ouest/item/538,iwac-index-0000838,dcterms:Location,Emplacements,,Maison du Hadj,,,,,,,,Togo,,,,,,,"6.181735, 1.255005"
 539,https://islam.zmo.de/s/afrique_ouest/item/539,iwac-index-0000839,dcterms:Location,Emplacements,,Mauritanie,,,,,,,,Pays,,,,,,,"20.25, -10.5"
-540,https://islam.zmo.de/s/afrique_ouest/item/540,iwac-index-0000840,dcterms:Location,Emplacements,2221,Niger,,,,,,,,Pays,,,,,,,"18.0, 9.0"
+540,https://islam.zmo.de/s/afrique_ouest/item/540,iwac-index-0000840,dcterms:Location,Emplacements,2221,Niger,,,,,,,,Pays,Parc national du W,,,,,,"18.0, 9.0"
 541,https://islam.zmo.de/s/afrique_ouest/item/541,iwac-index-0000841,dcterms:Location,Emplacements,2224,Nigéria,,,,,,,,Pays,Kano|Lagos|Sokoto|Yola|Zaria,,,,,,"10.0, 8.0"
 542,https://islam.zmo.de/s/afrique_ouest/item/542,iwac-index-0000842,dcterms:Location,Emplacements,,Qatar,,,,,,,,Pays,,,,,,,"25.5, 51.25"
 543,https://islam.zmo.de/s/afrique_ouest/item/543,iwac-index-0000843,dcterms:Location,Emplacements,,Syrie,,,,,,,,Pays,,,,,,,"35.0, 38.0"
 544,https://islam.zmo.de/s/afrique_ouest/item/544,iwac-index-0000844,dcterms:Location,Emplacements,2229,Togo,,,,,,,,Pays,Blitta|Nosté|Nyékonakpoé,,,,,,"8.66667, 1.08333"
 545,https://islam.zmo.de/s/afrique_ouest/item/545,iwac-index-0000845,dcterms:Location,Emplacements,,Turquie,,,,,,,,Pays,,,,,,,"39.0, 35.0"
-546,https://islam.zmo.de/s/afrique_ouest/item/546,iwac-index-0000846,dcterms:Location,Emplacements,2208,Burkina Faso,Haute-Volta,,,Pays d'Afrique de l'Ouest|Sovereign state in West Africa,,,,Pays,Niangoloko|Garango|Bitou|Zorgho|Sebba|Réo|Ouargaye|Diébougou|Diapaga|Dano|Boussé,,,,,,"12.5, -1.66667"
+546,https://islam.zmo.de/s/afrique_ouest/item/546,iwac-index-0000846,dcterms:Location,Emplacements,2208,Burkina Faso,Haute-Volta,,,Pays d'Afrique de l'Ouest|Sovereign state in West Africa,,,,Pays,Niangoloko|Garango|Bitou|Zorgho|Sebba|Réo|Ouargaye|Diébougou|Diapaga|Dano|Boussé|Parc national du W,,,,,,"12.5, -1.66667"
 547,https://islam.zmo.de/s/afrique_ouest/item/547,iwac-index-0000847,dcterms:Location,Emplacements,,Cameroun,,,,,,,,Pays,,,,,,,"6.0, 12.5"
 548,https://islam.zmo.de/s/afrique_ouest/item/548,iwac-index-0000848,dcterms:Location,Emplacements,,Gabon,,,,,,,,Pays,,,,,,,"-1.0, 11.75"
 549,https://islam.zmo.de/s/afrique_ouest/item/549,iwac-index-0000849,dcterms:Location,Emplacements,,Inde,,,,,,,,Pays,,,,,,,"22.0, 79.0"
@@ -908,15 +908,19 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 561,https://islam.zmo.de/s/afrique_ouest/item/561,iwac-index-0000861,dcterms:Location,Emplacements,,Corée du Nord,République populaire démocratique de Corée,,,,,,,,,,,,,,"40.0, 127.0"
 562,https://islam.zmo.de/s/afrique_ouest/item/562,iwac-index-0000862,dcterms:Location,Emplacements,,Namibie,,,,,,,,,,,,,,,"-23.0, 17.0"
 563,https://islam.zmo.de/s/afrique_ouest/item/563,iwac-index-0000863,dcterms:Location,Emplacements,564,Bibliothèque d'État de Berlin,,,,,,,,Allemagne,,,,,,,"52.5064, 13.3703"
+12866,https://islam.zmo.de/s/afrique_ouest/item/12866,,dcterms:Location,Emplacements,,Brésil,,,,,,,,Pays,,,,,,,"-14, -53"
 13118,https://islam.zmo.de/s/afrique_ouest/item/13118,iwac-index-0000864,dcterms:Location,Emplacements,,Accra,,,,,,,,Ghana,,,,,,,"5.533333, -0.216667"
 13416,https://islam.zmo.de/s/afrique_ouest/item/13416,iwac-index-0002819,dcterms:Location,Emplacements,,Cococodji,,,,,,,,Bénin,,,,,,,"6.387477, 2.272057"
 13642,https://islam.zmo.de/s/afrique_ouest/item/13642,iwac-index-0002820,dcterms:Location,Emplacements,,Mosquée centrale de Dassa-Zoumè,,,,,,,,Mosquée|Bénin,,,,,,,
 13719,https://islam.zmo.de/s/afrique_ouest/item/13719,iwac-index-0002821,dcterms:Location,Emplacements,,Mosquée centrale d'Aïdjèdo,,,,,,,,Mosquée|Bénin,,,,,,,
+13837,https://islam.zmo.de/s/afrique_ouest/item/13837,,dcterms:Location,Emplacements,,Chine,République populaire de Chine,,,,,,,Pays,,,,,,,"35.844722, 103.451944"
 14218,https://islam.zmo.de/s/afrique_ouest/item/14218,iwac-index-0000865,dcterms:Location,Emplacements,,Sèmè-Podji,Sèmè-Kpodji|Sémè-Podji,,,,,,,Bénin,,,,,,,"6.366667, 2.616667"
 14322,https://islam.zmo.de/s/afrique_ouest/item/14322,iwac-index-0002822,dcterms:Location,Emplacements,,Titao,,,,,,,,Burkina Faso,,,,,,,"13.766735, -2.073643"
 14355,https://islam.zmo.de/s/afrique_ouest/item/14355,iwac-index-0000866,dcterms:Location,Emplacements,,Sokoto,,,,,,,,Nigéria,,,,,,,"13.062222, 5.233889"
 14379,https://islam.zmo.de/s/afrique_ouest/item/14379,iwac-index-0002823,dcterms:Location,Emplacements,,Houndé,,,,,,,,Burkina Faso,,,,,,,"11.5, -3.516667"
 14385,https://islam.zmo.de/s/afrique_ouest/item/14385,iwac-index-0002824,dcterms:Location,Emplacements,,Toma,,,,,,,,Burkina Faso,,,,,,,"12.766667, -2.883333"
+14751,https://islam.zmo.de/s/afrique_ouest/item/14751,,dcterms:Location,Emplacements,,Akpakpa,,,,,,,,Bénin,,,,,,,"6.36634, 2.45579"
+14825,https://islam.zmo.de/s/afrique_ouest/item/14825,,dcterms:Location,Emplacements,,Sèmèrè,,,,,,,,Bénin,,,,,,,
 15400,https://islam.zmo.de/s/afrique_ouest/item/15400,iwac-index-0002825,dcterms:Location,Emplacements,,Site d'accueil des pèlerins (Akpakpa),,,,,,,,Bénin,,,,,,,
 15482,https://islam.zmo.de/s/afrique_ouest/item/15482,iwac-index-0000867,dcterms:Location,Emplacements,,Kano,,,,,,,,Nigéria,,,,,,,"12, 8.516667"
 23465,https://islam.zmo.de/s/afrique_ouest/item/23465,iwac-index-0000868,dcterms:Location,Emplacements,,Korhogo,,,,Ville de Côte d'Ivoire|City in Côte d'Ivoire,,,,Côte d'Ivoire,,,,,,,"9.457778, -5.629444"
@@ -989,7 +993,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 60466,https://islam.zmo.de/s/afrique_ouest/item/60466,iwac-index-0002875,dcterms:Location,Emplacements,,Aouda,,,,,,,,Togo,,,,,,,
 60467,https://islam.zmo.de/s/afrique_ouest/item/60467,iwac-index-0002876,dcterms:Location,Emplacements,,Apégamé,Apéganmé,,,,,,,Togo,,,,,,,"6.85,0.73333"
 60468,https://islam.zmo.de/s/afrique_ouest/item/60468,iwac-index-0002877,dcterms:Location,Emplacements,,Danyi-Apéyémé,,,,,,,,Togo,,,,,,,"7.25,0.95"
-60469,https://islam.zmo.de/s/afrique_ouest/item/60469,iwac-index-0002878,dcterms:Location,Emplacements,,Mont Arafat,,,,,,,,Arabie saoudite,,,,,,,"21.354831,39.983886"
+60469,https://islam.zmo.de/s/afrique_ouest/item/60469,iwac-index-0002878,dcterms:Location,Emplacements,,Mont Arafat,Arafat,,,,,,,Arabie saoudite,,,,,,,"21.354831,39.983886"
 60470,https://islam.zmo.de/s/afrique_ouest/item/60470,iwac-index-0002879,dcterms:Location,Emplacements,,Assahoun,,,,,,,,Togo,,,,,,,"6.4546,0.9096"
 60471,https://islam.zmo.de/s/afrique_ouest/item/60471,iwac-index-0002880,dcterms:Location,Emplacements,,Atalotè,,,,,,,,Togo,,,,,,,
 60472,https://islam.zmo.de/s/afrique_ouest/item/60472,iwac-index-0002881,dcterms:Location,Emplacements,,Avéta,Avéta,,,,,,,Togo,,,,,,,"6.272716667,1.288466667"
@@ -1101,6 +1105,16 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 61326,https://islam.zmo.de/s/afrique_ouest/item/61326,,dcterms:Location,Emplacements,,San-Pédro,San Pedro|San Pédro|San-Pedro,,,,,,,Côte d'Ivoire,,,,,,,
 61327,https://islam.zmo.de/s/afrique_ouest/item/61327,,dcterms:Location,Emplacements,,Stade Félix Houphouët-Boigny,,,,,,,,Côte d'Ivoire,,,,,,,"5.32825, -4.018417"
 61329,https://islam.zmo.de/s/afrique_ouest/item/61329,,dcterms:Location,Emplacements,,Centre culturel islamique Bilal (Port-Bouët II),,,,,,,,Côte d'Ivoire,,,,,,,
+62018,https://islam.zmo.de/s/afrique_ouest/item/62018,,dcterms:Location,Emplacements,,Alibori,,,,,,,,Bénin,,,,,,,"11.128611, 2.936944"
+62019,https://islam.zmo.de/s/afrique_ouest/item/62019,,dcterms:Location,Emplacements,,Cadjèhoun,Cadjéhoun|Cadjêhoun|Cadjehoun,,,,,,,Bénin,,,,,,,"6.359, 2.3971"
+62020,https://islam.zmo.de/s/afrique_ouest/item/62020,,dcterms:Location,Emplacements,,Bamako,,,,,,,,Mali,,,,,,,"12.645833, -7.992222"
+62024,https://islam.zmo.de/s/afrique_ouest/item/62024,,dcterms:Location,Emplacements,,Couffo,Kouffo,,,Département du Bénin|Department of Benin,,,,Bénin,,,,,,,"6.961944, 1.801667"
+62025,https://islam.zmo.de/s/afrique_ouest/item/62025,,dcterms:Location,Emplacements,,Donga,,,,Département du Bénin|Department of Benin,,,,Bénin,,,,,,,"9.7, 1.666667"
+62026,https://islam.zmo.de/s/afrique_ouest/item/62026,,dcterms:Location,Emplacements,,Porga,,,,,,,,Bénin,,,,,,,"11.05, 0.966667"
+62027,https://islam.zmo.de/s/afrique_ouest/item/62027,,dcterms:Location,Emplacements,,Gbedjromédé,Gbedjromede,,,,,,,Bénin,,,,,,,
+62028,https://islam.zmo.de/s/afrique_ouest/item/62028,,dcterms:Location,Emplacements,,Djakotomey,,,,,,,,Bénin,,,,,,,"6.9, 1.716667"
+62029,https://islam.zmo.de/s/afrique_ouest/item/62029,,dcterms:Location,Emplacements,,Kassakou,,,,,,,,Bénin,,,,,,,"11.083333, 2.9"
+62030,https://islam.zmo.de/s/afrique_ouest/item/62030,,dcterms:Location,Emplacements,,Ukraine,,,,,,,,Pays,,,,,,,"49, 32"
 569,https://islam.zmo.de/s/afrique_ouest/item/569,iwac-index-0000886,foaf:Organization,Associations,589,Association des Élèves et Étudiants Musulmans au Burkina,AEEMB,1986-01-21,,"Officiellement reconnue en 1986, l'AEEMB vise la promotion de l'islam dans le milieu éducatif francophone. L'association a été active de manière informelle sous d’autres noms à partir des années 1970 : Union Discipline Croyance, Troupe Muhammad et Association Musulmane des Scolaires Voltaïques.|Officially recognized in 1986, the AEEMB aims to promote Islam in the francophone educational community. The association has been informally active under other names since the 1970s: Union Discipline Croyance (Discipline Belief Union), Troupe Muhammad (Muhammad Troop).",Maternité Sakina,,,Fédération des Associations Islamiques du Burkina|Organisation de la Jeunesse Musulmane en Afrique de l'Ouest|Organisation islamique,COPRESS-AEEMB,Burkina Faso,,,,,
 570,https://islam.zmo.de/s/afrique_ouest/item/570,iwac-index-0000887,foaf:Organization,Associations,,Association des Femmes Islamiques du Burkina,AFIB,1996-09-21,,National coalition of Muslim women|Regroupement national de femmes musulmanes,,,,Organisation islamique,,Burkina Faso,,,,,
 571,https://islam.zmo.de/s/afrique_ouest/item/571,iwac-index-0000888,foaf:Organization,Associations,590,"Cercle d'Études, de Recherches et de Formation Islamiques",CERFI,1989-01,,The CERFI is a kind of extension of the Association des Élèves et Étudiants Musulmans au Burkina (AEEMB) for activists who have entered the labour market|Le CERFI est en quelque sorte le prolongement de l'Association des Élèves et Étudiants Musulmans au Burkina (AEEMB) pour les militants qui ont intégré le marché du travail,"Mosquée du Cercle d'Études, de Recherches et de Formation Islamiques",,Organisation des Femmes Musulmanes du Burkina,Fédération des Associations Islamiques du Burkina|Organisation de la Jeunesse Musulmane en Afrique de l'Ouest|Organisation islamique,,Burkina Faso,,,,,
@@ -3388,3 +3402,6 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 61370,https://islam.zmo.de/s/afrique_ouest/item/61370,,foaf:Person,Individus,,Romance Cheryl,,,,,,,,,,Côte d'Ivoire,,,,,
 61371,https://islam.zmo.de/s/afrique_ouest/item/61371,,foaf:Person,Individus,,Bamba Lassina Orondé Tianfo,,,,,,,,,,Côte d'Ivoire,,,,,
 61372,https://islam.zmo.de/s/afrique_ouest/item/61372,,foaf:Person,Individus,,Nick Zedenn,,,,,,,,,,Côte d'Ivoire,,,,,
+62031,https://islam.zmo.de/s/afrique_ouest/item/62031,,foaf:Person,Individus,,Kadiatou Touré Konaté,,,,,,,,,,Côte d'Ivoire,Kadiatou,Touré Konaté,,,
+62032,https://islam.zmo.de/s/afrique_ouest/item/62032,,foaf:Person,Individus,,Francis Wodié,Francis Romain Wodié,,,,,,,Politicien.ne,,Côte d'Ivoire,Francis,Wodié,,,
+62033,https://islam.zmo.de/s/afrique_ouest/item/62033,,foaf:Person,Individus,,Sékou Diarra,,,,,,,,,,Côte d'Ivoire,,,,,
