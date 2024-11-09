@@ -5,12 +5,15 @@ import requests
 from tqdm import tqdm
 from dotenv import load_dotenv
 from dataclasses import dataclass
-from typing import List, Dict, Any, Callable
+from typing import List, Dict, Any, Callable, Optional
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
 import time
 from urllib.parse import urljoin
 import json
+import asyncio
+import aiohttp
+import inspect
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -29,17 +32,20 @@ class Config:
 class OmekaApiClient:
     def __init__(self, config: Config):
         self.config = config
-        self.session = self._create_retry_session()
+        self.session = None
+    
+    async def _create_session(self):
+        if not self.session:
+            timeout = aiohttp.ClientTimeout(total=30)
+            self.session = aiohttp.ClientSession(timeout=timeout)
+        return self.session
 
-    def _create_retry_session(self):
-        session = requests.Session()
-        retries = Retry(total=5,
-                        backoff_factor=0.1,
-                        status_forcelist=[500, 502, 503, 504])
-        session.mount('https://', HTTPAdapter(max_retries=retries))
-        return session
+    async def _close_session(self):
+        if self.session:
+            await self.session.close()
+            self.session = None
 
-    def _make_request(self, endpoint: str, params: Dict[str, Any] = None) -> List[Dict[str, Any]]:
+    async def _make_request(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         if params is None:
             params = {}
         params.update({
@@ -48,47 +54,107 @@ class OmekaApiClient:
         })
         url = f"{self.config.API_URL}/{endpoint}"
         max_retries = 5
-        retry_delay = 5  # seconds
+        retry_delay = 5
 
+        session = await self._create_session()
+        
         for attempt in range(max_retries):
             try:
-                response = self.session.get(url, params=params, timeout=30)
-                response.raise_for_status()
-                return response.json()
-            except requests.RequestException as e:
+                async with session.get(url, params=params) as response:
+                    response.raise_for_status()
+                    return await response.json()
+            except (aiohttp.ClientError, asyncio.TimeoutError) as e:
                 logger.warning(f"Request failed (attempt {attempt + 1}/{max_retries}): {str(e)}")
                 if attempt < max_retries - 1:
                     logger.info(f"Retrying in {retry_delay} seconds...")
-                    time.sleep(retry_delay)
+                    await asyncio.sleep(retry_delay)
                 else:
                     logger.error(f"Max retries reached. Unable to fetch data from API: {str(e)}")
                     return []
 
-    def fetch_items(self, resource_class_id: int) -> List[Dict[str, Any]]:
+    async def fetch_items_page(self, resource_class_id: int, page: int, per_page: int) -> List[Dict[str, Any]]:
+        return await self._make_request('items', {
+            'resource_class_id': resource_class_id,
+            'page': page,
+            'per_page': per_page
+        })
+
+    async def fetch_items(self, resource_class_id: int) -> List[Dict[str, Any]]:
         items = []
-        page = 1
         per_page = 100
+        
+        # First request to get initial data and potentially total count
+        first_page = await self.fetch_items_page(resource_class_id, 1, per_page)
+        if not first_page:
+            return []
+            
+        items.extend(first_page)
+        
+        # If there might be more pages
+        if len(first_page) == per_page:
+            # Make subsequent requests concurrently
+            tasks = []
+            page = 2
+            while True:
+                next_page = await self.fetch_items_page(resource_class_id, page, per_page)
+                if not next_page or len(next_page) < per_page:
+                    if next_page:
+                        items.extend(next_page)
+                    break
+                items.extend(next_page)
+                page += 1
 
         item_type = self.get_item_type_name(resource_class_id)
-        logger.info(f"Starting to fetch {item_type}...")
-
-        with tqdm(desc=f"Fetching {item_type}", unit="item") as pbar:
-            while True:
-                data = self._make_request('items', {
-                    'resource_class_id': resource_class_id,
-                    'page': page,
-                    'per_page': per_page
-                })
-                if not data:
-                    break
-                items.extend(data)
-                pbar.update(len(data))
-                page += 1
-                if len(data) < per_page:
-                    break  # Last page reached
-
         logger.info(f"Fetched {len(items)} {item_type}")
         return items
+
+    async def fetch_all_items(self) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
+        logger.info("Starting to fetch all items...")
+        
+        # Fetch different types concurrently
+        tasks = [
+            self.fetch_items(49),  # documents
+            self.fetch_items(38),  # audio_visual
+            self.fetch_items(58),  # images
+        ]
+        
+        # Add index items tasks
+        for resource_class_id in [244, 54, 9, 96, 94]:
+            tasks.append(self.fetch_items(resource_class_id))
+            
+        # Add other tasks
+        tasks.extend([
+            self.fetch_items(60),  # issues
+            self.fetch_items(36),  # newspaper_articles
+            self.fetch_item_sets(),
+            self.fetch_media(),
+            self.fetch_references()
+        ])
+        
+        # Wait for all tasks to complete
+        results = await asyncio.gather(*tasks)
+        
+        # Combine results appropriately
+        documents = results[0]
+        audio_visual = results[1]
+        images = results[2]
+        index_items = []
+        for i in range(3, 8):  # Index items results
+            index_items.extend(results[i])
+        
+        issues = results[8]
+        newspaper_articles = results[9]
+        item_sets = results[10]
+        media = results[11]
+        references = results[12]
+        
+        logger.info("Finished fetching all items.")
+        return (
+            documents + audio_visual + images + index_items + issues + newspaper_articles,
+            item_sets,
+            media,
+            references
+        )
 
     def get_item_type_name(self, resource_class_id: int) -> str:
         item_type_map = {
@@ -114,7 +180,7 @@ class OmekaApiClient:
         }
         return item_type_map.get(resource_class_id, f"items (class {resource_class_id})")
 
-    def fetch_item_sets(self) -> List[Dict[str, Any]]:
+    async def fetch_item_sets(self) -> List[Dict[str, Any]]:
         item_sets = []
         page = 1
         per_page = 100
@@ -123,7 +189,7 @@ class OmekaApiClient:
 
         with tqdm(desc="Fetching item sets", unit="item") as pbar:
             while True:
-                data = self._make_request('item_sets', {
+                data = await self._make_request('item_sets', {
                     'page': page,
                     'per_page': per_page
                 })
@@ -136,7 +202,7 @@ class OmekaApiClient:
         logger.info(f"Fetched {len(item_sets)} item sets")
         return item_sets
 
-    def fetch_media(self) -> List[Dict[str, Any]]:
+    async def fetch_media(self) -> List[Dict[str, Any]]:
         media = []
         page = 1
         per_page = 100
@@ -145,7 +211,7 @@ class OmekaApiClient:
 
         with tqdm(desc="Fetching media", unit="item") as pbar:
             while True:
-                data = self._make_request('media', {
+                data = await self._make_request('media', {
                     'page': page,
                     'per_page': per_page
                 })
@@ -158,42 +224,19 @@ class OmekaApiClient:
         logger.info(f"Fetched {len(media)} media items")
         return media
 
-    def fetch_references(self) -> List[Dict[str, Any]]:
+    async def fetch_references(self) -> List[Dict[str, Any]]:
         reference_classes = [35, 43, 88, 40, 82, 178, 52, 77, 305]
         references = []
-        for resource_class_id in reference_classes:
-            references.extend(self.fetch_items(resource_class_id))
+        # Create tasks for all reference classes
+        tasks = [self.fetch_items(resource_class_id) for resource_class_id in reference_classes]
+        # Wait for all tasks to complete
+        results = await asyncio.gather(*tasks)
+        # Combine results
+        for result in results:
+            references.extend(result)
         return references
 
-    def fetch_all_items(self) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
-        logger.info("Starting to fetch all items...")
-        
-        documents = self.fetch_items(49)
-        audio_visual = self.fetch_items(38)
-        images = self.fetch_items(58)
-        
-        logger.info("Starting to fetch index items...")
-        index_items = []
-        for resource_class_id in [244, 54, 9, 96, 94]:
-            index_items.extend(self.fetch_items(resource_class_id))
-        logger.info(f"Fetched {len(index_items)} index items")
-        
-        issues = self.fetch_items(60)
-        newspaper_articles = self.fetch_items(36)
-        
-        logger.info("Starting to fetch item sets...")
-        item_sets = self.fetch_item_sets()
-        
-        logger.info("Starting to fetch media...")
-        media = self.fetch_media()
-        
-        logger.info("Starting to fetch references...")
-        references = self.fetch_references()
-        
-        logger.info("Finished fetching all items.")
-        return documents + audio_visual + images + index_items + issues + newspaper_articles, item_sets, media, references
-
-    def fetch_item_set_titles(self) -> Dict[int, str]:
+    async def fetch_item_set_titles(self) -> Dict[int, str]:
         item_set_titles = {}
         page = 1
         per_page = 100
@@ -201,7 +244,7 @@ class OmekaApiClient:
         logger.info("Fetching item set titles...")
 
         while True:
-            data = self._make_request('item_sets', {
+            data = await self._make_request('item_sets', {
                 'page': page,
                 'per_page': per_page
             })
@@ -215,9 +258,9 @@ class OmekaApiClient:
         logger.info(f"Fetched {len(item_set_titles)} item set titles")
         return item_set_titles
 
-    def fetch_media_data(self, media_id: str) -> Dict[str, Any]:
+    async def fetch_media_data(self, media_id: str) -> Dict[str, Any]:
         endpoint = f'media/{media_id}'
-        return self._make_request(endpoint)
+        return await self._make_request(endpoint)
 
 class DataProcessor:
     def __init__(self, raw_data: List[Dict[str, Any]], item_sets: List[Dict[str, Any]], 
@@ -231,7 +274,7 @@ class DataProcessor:
         self.api_client = api_client
         self.processed_data = None
 
-    def process(self) -> Dict[str, List[Dict[str, Any]]]:
+    async def process(self) -> Dict[str, List[Dict[str, Any]]]:
         processed_data = {
             'audio_visual_documents': [],
             'documents': [],
@@ -244,28 +287,85 @@ class DataProcessor:
             'references': []
         }
 
-        mapping_functions = {
-            'audio_visual_documents': map_audio_visual_document,
-            'documents': lambda item: map_document(item, self.api_client),
-            'images': map_image,
-            'index': map_index,
-            'issues': lambda item: map_issue(item, self.api_client),
-            'newspaper_articles': lambda item: map_newspaper_article(item, self.api_client)
+        # Separate async and non-async mapping functions
+        async_mapping_functions = {
+            'documents': map_document,
+            'issues': map_issue,
+            'newspaper_articles': map_newspaper_article
         }
 
-        for item in tqdm(self.raw_data, desc="Processing items"):
-            item_type = self.determine_item_type(item)
-            if item_type in processed_data:
-                mapping_function = mapping_functions.get(item_type, lambda x: x)
-                processed_data[item_type].append(mapping_function(item))
+        non_async_mapping_functions = {
+            'audio_visual_documents': map_audio_visual_document,
+            'images': map_image,
+            'index': map_index
+        }
 
-        processed_data['item_sets'] = [map_item_set(item_set) for item_set in tqdm(self.item_sets, desc="Processing item sets")]
-        processed_data['media'] = [map_media(media_item) for media_item in tqdm(self.media, desc="Processing media")]
-        processed_data['references'] = [map_reference(reference) for reference in tqdm(self.references, desc="Processing references")]
+        # Process items in batches
+        batch_size = 50
+        total_batches = (len(self.raw_data) + batch_size - 1) // batch_size
+
+        with tqdm(total=len(self.raw_data), desc="Processing items") as pbar:
+            for batch_idx in range(total_batches):
+                start_idx = batch_idx * batch_size
+                end_idx = min((batch_idx + 1) * batch_size, len(self.raw_data))
+                batch_items = self.raw_data[start_idx:end_idx]
+                
+                # Create tasks for batch processing
+                batch_tasks = []
+                for item in batch_items:
+                    item_type = self.determine_item_type(item)
+                    if item_type in processed_data:
+                        if item_type in async_mapping_functions:
+                            task = async_mapping_functions[item_type](item, self.api_client)
+                        else:
+                            task = non_async_mapping_functions.get(item_type, lambda x: x)(item)
+                        batch_tasks.append((item_type, task))
+
+                # Process batch concurrently
+                if batch_tasks:
+                    results = []
+                    for item_type, task in batch_tasks:
+                        if item_type in async_mapping_functions:
+                            result = await task
+                        else:
+                            result = task
+                        results.append((item_type, result))
+                    
+                    # Add results to processed_data
+                    for item_type, result in results:
+                        processed_data[item_type].append(result)
+                
+                pbar.update(len(batch_items))
+
+        # Process other items in parallel
+        logger.info("Processing remaining items...")
+        await asyncio.gather(
+            self._process_item_sets(processed_data),
+            self._process_media(processed_data),
+            self._process_references(processed_data)
+        )
 
         logger.info("Data processing completed")
         self.processed_data = processed_data
         return processed_data
+
+    async def _process_item_sets(self, processed_data):
+        processed_data['item_sets'] = [
+            map_item_set(item_set) 
+            for item_set in tqdm(self.item_sets, desc="Processing item sets")
+        ]
+
+    async def _process_media(self, processed_data):
+        processed_data['media'] = [
+            map_media(media_item) 
+            for media_item in tqdm(self.media, desc="Processing media")
+        ]
+
+    async def _process_references(self, processed_data):
+        processed_data['references'] = [
+            map_reference(reference) 
+            for reference in tqdm(self.references, desc="Processing references")
+        ]
 
     def determine_item_type(self, item: Dict[str, Any]) -> str:
         item_types = item.get('@type', [])
@@ -285,17 +385,21 @@ class DataProcessor:
                 return 'newspaper_articles'
         return 'other'  # Default category
 
-    def process_item_sets(self):
+    async def process_item_sets(self):
+        """Process item sets asynchronously"""
         for item_type, items in self.processed_data.items():
-            for item in items:
-                if 'o:item_set' in item:
-                    item_set_urls = item['o:item_set'].split('|')
+            for i, item in enumerate(items):
+                if inspect.iscoroutine(item):
+                    # Await coroutines if they haven't been awaited yet
+                    items[i] = await item
+                if 'o:item_set' in items[i]:
+                    item_set_urls = items[i]['o:item_set'].split('|')
                     item_set_names = []
                     for url in item_set_urls:
                         item_set_id = url.split('/')[-1]
                         if item_set_id.isdigit():
                             item_set_names.append(self.item_set_titles.get(int(item_set_id), ''))
-                    item['o:item_set'] = '|'.join(filter(None, item_set_names))
+                    items[i]['o:item_set'] = '|'.join(filter(None, item_set_names))
 
 class FileGenerator:
     def __init__(self, processed_data: Dict[str, List[Dict[str, Any]]], output_dir: str):
@@ -365,11 +469,11 @@ def join_values(item: Dict[str, Any], field: str, subfield: str) -> str:
     values = [str(val.get('@value', '')) for val in item[field] if isinstance(val, dict) and '@value' in val]
     return '|'.join(filter(None, values))
 
-def map_document(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
+async def map_document(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
     primary_media_url = ''
     if 'o:primary_media' in item and item['o:primary_media']:
         media_id = item['o:primary_media']['@id'].split('/')[-1]
-        media_data = api_client.fetch_media_data(media_id)
+        media_data = await api_client.fetch_media_data(media_id)
         primary_media_url = media_data.get('o:original_url', '')
 
     return {
@@ -482,11 +586,11 @@ def map_index(item: Dict[str, Any]) -> Dict[str, Any]:
         'coordinates': get_value(item, 'curation:coordinates'),
     }
 
-def map_issue(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
+async def map_issue(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
     primary_media_url = ''
     if 'o:primary_media' in item and item['o:primary_media']:
         media_id = item['o:primary_media']['@id'].split('/')[-1]
-        media_data = api_client.fetch_media_data(media_id)
+        media_data = await api_client.fetch_media_data(media_id)
         primary_media_url = media_data.get('o:original_url', '')
 
     return {
@@ -515,11 +619,11 @@ def map_issue(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any
         'bibo:content': get_value(item, 'bibo:content'),
     }
 
-def map_newspaper_article(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
+async def map_newspaper_article(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
     primary_media_url = ''
     if 'o:primary_media' in item and item['o:primary_media']:
         media_id = item['o:primary_media']['@id'].split('/')[-1]
-        media_data = api_client.fetch_media_data(media_id)
+        media_data = await api_client.fetch_media_data(media_id)
         primary_media_url = media_data.get('o:original_url', '')
 
     return {
@@ -644,7 +748,7 @@ def get_media_ids(item: Dict[str, Any]) -> str:
         return '|'.join([str(media.get('o:id', '')) for media in item['o:media']])
     return ''
 
-def main():
+async def async_main():
     try:
         logger.info("Starting the Omeka data export process...")
         
@@ -655,9 +759,8 @@ def main():
 
         api_client = OmekaApiClient(config)
 
-        item_set_titles = api_client.fetch_item_set_titles()
-
-        raw_data, item_sets, media, references = api_client.fetch_all_items()
+        item_set_titles = await api_client.fetch_item_set_titles()
+        raw_data, item_sets, media, references = await api_client.fetch_all_items()
 
         if not raw_data and not item_sets and not media and not references:
             logger.warning("No data fetched from the API. Exiting.")
@@ -665,10 +768,10 @@ def main():
 
         logger.info("Processing fetched data...")
         processor = DataProcessor(raw_data, item_sets, media, references, item_set_titles, api_client)
-        processed_data = processor.process()
+        processed_data = await processor.process()
 
         logger.info("Processing item sets...")
-        processor.process_item_sets()
+        await processor.process_item_sets()
 
         logger.info("Generating CSV files...")
         generator = FileGenerator(processor.processed_data, config.OUTPUT_DIR)
@@ -677,6 +780,11 @@ def main():
         logger.info("All files generated successfully.")
     except Exception as e:
         logger.error(f"An unexpected error occurred: {str(e)}", exc_info=True)
+    finally:
+        await api_client._close_session()
+
+def main():
+    asyncio.run(async_main())
 
 if __name__ == "__main__":
     main()
