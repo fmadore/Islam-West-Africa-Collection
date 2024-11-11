@@ -344,8 +344,36 @@ class DataProcessor:
         self.item_set_titles = item_set_titles
         self.api_client = api_client
         self.processed_data = None
+        self.batch_size = 50
+        # Create mapping caches
+        self._media_cache = {m['o:id']: m for m in media}
+        self._item_set_cache = {s['o:id']: s for s in item_sets}
+
+    def determine_item_type(self, item: Dict[str, Any]) -> str:
+        """Determine the type of an item based on its metadata."""
+        item_types = item.get('@type', [])
+        resource_class = item.get('o:resource_class', {}).get('o:id')
+        
+        if 'o:Item' in item_types:
+            if 'bibo:AudioVisualDocument' in item_types:
+                return 'audio_visual_documents'
+            elif 'bibo:Document' in item_types:
+                return 'documents'
+            elif 'bibo:Image' in item_types:
+                return 'images'
+            elif resource_class in [244, 54, 9, 96, 94]:  # Index item types
+                return 'index'
+            elif resource_class == 60:  # Issues
+                return 'issues'
+            elif resource_class == 36:  # Newspaper articles
+                return 'newspaper_articles'
+            
+        return 'other'  # Default category for unrecognized items
 
     async def process(self) -> Dict[str, List[Dict[str, Any]]]:
+        logger.info("Starting data processing pipeline...")
+        
+        # Initialize processed data structure with empty lists
         processed_data = {
             'audio_visual_documents': [],
             'documents': [],
@@ -358,119 +386,149 @@ class DataProcessor:
             'references': []
         }
 
-        # Separate async and non-async mapping functions
-        async_mapping_functions = {
-            'documents': map_document,
-            'issues': map_issue,
-            'newspaper_articles': map_newspaper_article
+        # Create processing pools for different types
+        processing_pools = {
+            'documents': [],
+            'issues': [],
+            'newspaper_articles': [],
+            'audio_visual_documents': [],
+            'images': [],
+            'index': []
         }
 
-        non_async_mapping_functions = {
-            'audio_visual_documents': map_audio_visual_document,
-            'images': map_image,
-            'index': map_index
-        }
+        # Sort items into processing pools
+        for item in self.raw_data:
+            item_type = self.determine_item_type(item)
+            if item_type in processing_pools:
+                processing_pools[item_type].append(item)
 
-        # Process items in batches
-        batch_size = 50
-        total_batches = (len(self.raw_data) + batch_size - 1) // batch_size
+        # Process each pool concurrently
+        async with asyncio.TaskGroup() as tg:
+            tasks = []
+            for item_type, items in processing_pools.items():
+                task = tg.create_task(
+                    self._process_pool(item_type, items, processed_data)
+                )
+                tasks.append(task)
 
-        with tqdm(total=len(self.raw_data), desc="Processing items") as pbar:
-            for batch_idx in range(total_batches):
-                start_idx = batch_idx * batch_size
-                end_idx = min((batch_idx + 1) * batch_size, len(self.raw_data))
-                batch_items = self.raw_data[start_idx:end_idx]
-                
-                # Create tasks for batch processing
-                batch_tasks = []
-                for item in batch_items:
-                    item_type = self.determine_item_type(item)
-                    if item_type in processed_data:
-                        if item_type in async_mapping_functions:
-                            task = async_mapping_functions[item_type](item, self.api_client)
-                        else:
-                            task = non_async_mapping_functions.get(item_type, lambda x: x)(item)
-                        batch_tasks.append((item_type, task))
-
-                # Process batch concurrently
-                if batch_tasks:
-                    results = []
-                    for item_type, task in batch_tasks:
-                        if item_type in async_mapping_functions:
-                            result = await task
-                        else:
-                            result = task
-                        results.append((item_type, result))
-                    
-                    # Add results to processed_data
-                    for item_type, result in results:
-                        processed_data[item_type].append(result)
-                
-                pbar.update(len(batch_items))
-
-        # Process other items in parallel
-        logger.info("Processing remaining items...")
-        await asyncio.gather(
-            self._process_item_sets(processed_data),
-            self._process_media(processed_data),
-            self._process_references(processed_data)
-        )
+            # Process other data types concurrently
+            tasks.extend([
+                tg.create_task(self._process_item_sets(processed_data)),
+                tg.create_task(self._process_media(processed_data)),
+                tg.create_task(self._process_references(processed_data))
+            ])
 
         logger.info("Data processing completed")
         self.processed_data = processed_data
         return processed_data
 
-    async def _process_item_sets(self, processed_data):
-        processed_data['item_sets'] = [
-            map_item_set(item_set) 
-            for item_set in tqdm(self.item_sets, desc="Processing item sets")
-        ]
+    async def _process_pool(self, item_type: str, items: List[Dict[str, Any]], 
+                          processed_data: Dict[str, List[Dict[str, Any]]]):
+        """Process a pool of items of the same type concurrently in batches."""
+        logger.info(f"Processing {len(items)} {item_type} items...")
+        
+        mapping_functions = {
+            'documents': map_document,
+            'issues': map_issue,
+            'newspaper_articles': map_newspaper_article,
+            'audio_visual_documents': map_audio_visual_document,
+            'images': map_image,
+            'index': map_index
+        }
 
-    async def _process_media(self, processed_data):
-        processed_data['media'] = [
-            map_media(media_item) 
-            for media_item in tqdm(self.media, desc="Processing media")
-        ]
+        mapper = mapping_functions[item_type]
+        is_async = asyncio.iscoroutinefunction(mapper)
+        
+        for i in range(0, len(items), self.batch_size):
+            batch = items[i:i + self.batch_size]
+            batch_tasks = []
+            
+            for item in batch:
+                if is_async:
+                    batch_tasks.append(mapper(item, self.api_client))
+                else:
+                    # For synchronous mappers, wrap in asyncio.to_thread
+                    batch_tasks.append(asyncio.to_thread(mapper, item))
+            
+            # Process batch concurrently
+            batch_results = await asyncio.gather(*batch_tasks)
+            processed_data[item_type].extend(batch_results)
 
-    async def _process_references(self, processed_data):
-        processed_data['references'] = [
-            map_reference(reference) 
-            for reference in tqdm(self.references, desc="Processing references")
-        ]
+    async def _process_item_sets(self, processed_data: Dict[str, List[Dict[str, Any]]]):
+        """Process item sets concurrently in batches."""
+        logger.info(f"Processing {len(self.item_sets)} item sets...")
+        
+        for i in range(0, len(self.item_sets), self.batch_size):
+            batch = self.item_sets[i:i + self.batch_size]
+            batch_tasks = [
+                asyncio.to_thread(map_item_set, item_set)
+                for item_set in batch
+            ]
+            batch_results = await asyncio.gather(*batch_tasks)
+            processed_data['item_sets'].extend(batch_results)
 
-    def determine_item_type(self, item: Dict[str, Any]) -> str:
-        item_types = item.get('@type', [])
-        resource_class = item.get('o:resource_class', {}).get('o:id')
-        if 'o:Item' in item_types:
-            if 'bibo:AudioVisualDocument' in item_types:
-                return 'audio_visual_documents'
-            elif 'bibo:Document' in item_types:
-                return 'documents'
-            elif 'bibo:Image' in item_types:
-                return 'images'
-            elif resource_class in [244, 54, 9, 96, 94]:
-                return 'index'
-            elif resource_class == 60:
-                return 'issues'
-            elif resource_class == 36:
-                return 'newspaper_articles'
-        return 'other'  # Default category
+    async def _process_media(self, processed_data: Dict[str, List[Dict[str, Any]]]):
+        """Process media items concurrently in batches."""
+        logger.info(f"Processing {len(self.media)} media items...")
+        
+        for i in range(0, len(self.media), self.batch_size):
+            batch = self.media[i:i + self.batch_size]
+            batch_tasks = [
+                asyncio.to_thread(map_media, media_item)
+                for media_item in batch
+            ]
+            batch_results = await asyncio.gather(*batch_tasks)
+            processed_data['media'].extend(batch_results)
+
+    async def _process_references(self, processed_data: Dict[str, List[Dict[str, Any]]]):
+        """Process references concurrently in batches."""
+        logger.info(f"Processing {len(self.references)} references...")
+        
+        for i in range(0, len(self.references), self.batch_size):
+            batch = self.references[i:i + self.batch_size]
+            batch_tasks = [
+                asyncio.to_thread(map_reference, reference)
+                for reference in batch
+            ]
+            batch_results = await asyncio.gather(*batch_tasks)
+            processed_data['references'].extend(batch_results)
+
+    def get_media_data(self, media_id: str) -> Optional[Dict[str, Any]]:
+        """Get media data from cache."""
+        return self._media_cache.get(media_id)
+
+    def get_item_set_data(self, item_set_id: str) -> Optional[Dict[str, Any]]:
+        """Get item set data from cache."""
+        return self._item_set_cache.get(item_set_id)
 
     async def process_item_sets(self):
-        """Process item sets asynchronously"""
-        for item_type, items in self.processed_data.items():
-            for i, item in enumerate(items):
-                if inspect.iscoroutine(item):
-                    # Await coroutines if they haven't been awaited yet
-                    items[i] = await item
-                if 'o:item_set' in items[i]:
-                    item_set_urls = items[i]['o:item_set'].split('|')
+        """Public method to process item sets."""
+        if self.processed_data is None:
+            self.processed_data = {
+                'audio_visual_documents': [],
+                'documents': [],
+                'images': [],
+                'index': [],
+                'issues': [],
+                'item_sets': [],
+                'media': [],
+                'newspaper_articles': [],
+                'references': []
+            }
+        
+        await self._process_item_sets(self.processed_data)
+        
+        # Process item set titles
+        if 'item_sets' in self.processed_data:
+            for i, item in enumerate(self.processed_data['item_sets']):
+                if 'o:item_set' in item:
+                    item_set_urls = item['o:item_set'].split('|')
                     item_set_names = []
                     for url in item_set_urls:
                         item_set_id = url.split('/')[-1]
                         if item_set_id.isdigit():
                             item_set_names.append(self.item_set_titles.get(int(item_set_id), ''))
-                    items[i]['o:item_set'] = '|'.join(filter(None, item_set_names))
+                    item['o:item_set'] = '|'.join(filter(None, item_set_names))
 
 class FileGenerator:
     def __init__(self, processed_data: Dict[str, List[Dict[str, Any]]], output_dir: str):
