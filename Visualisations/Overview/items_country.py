@@ -211,41 +211,6 @@ class DataVisualizer:
             'Nigéria': '#008080',  # Same teal
         }
 
-    def generate_color_palette(self, base_color: str, n_colors: int) -> List[str]:
-        """Generate a palette of harmonious colors based on the main color."""
-        import colorsys
-        
-        # Convert hex to RGB
-        h = base_color.lstrip('#')
-        rgb = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
-        
-        # Convert RGB to HSV
-        hsv = colorsys.rgb_to_hsv(rgb[0]/255, rgb[1]/255, rgb[2]/255)
-        
-        colors = []
-        for i in range(n_colors):
-            # Keep the same hue but create more dramatic variations
-            hue = hsv[0]
-            # Create more dramatic saturation changes
-            saturation = max(0.4, min(0.9, hsv[1] - (i * 0.1)))
-            # Create more dramatic value (brightness) changes
-            value = max(0.3, min(0.9, hsv[2] + (i * 0.15)))
-            
-            # Convert back to RGB
-            rgb = colorsys.hsv_to_rgb(hue, saturation, value)
-            
-            # Convert to hex
-            hex_color = '#{:02x}{:02x}{:02x}'.format(
-                int(rgb[0] * 255),
-                int(rgb[1] * 255),
-                int(rgb[2] * 255)
-            )
-            colors.append(hex_color)
-        
-        # Sort colors by brightness to ensure a consistent gradient
-        colors.sort(key=lambda x: sum(int(x.lstrip('#')[i:i+2], 16) for i in (0, 2, 4)))
-        return colors
-
     def create_visualization(self, items_by_country_and_set: Dict, language: str = 'en'):
         def format_number(n: int) -> str:
             return f"{n:,}".replace(',', ' ')
@@ -279,22 +244,17 @@ class DataVisualizer:
         data = []
         for country, sets in items_by_country_and_set.items():
             translated_country = self.country_names[language][country]
-            
             country_total = sum(sets.values())
-            country_percentage = (country_total / total_items) * 100
-            
             sorted_sets = dict(sorted(sets.items(), key=lambda x: x[1], reverse=True))
-            n_sets = len(sorted_sets)
-            color_palette = self.generate_color_palette(self.country_colors[country], n_sets)
             
-            for i, (set_title, count) in enumerate(sorted_sets.items()):
+            for set_title, count in sorted_sets.items():
                 set_percentage = (count / country_total) * 100
                 data.append({
                     'Country': f"<b style='font-size: 16px'>{translated_country}</b>",
                     'Item Set Title': f"<b>{set_title}</b>",
                     'Number of Items': count,
                     'text': f"<b>{set_title}</b><br>{text['total']}: {format_number(count)} {text['items']}<br>{set_percentage:.1f}%",
-                    'color': color_palette[i]
+                    'color': self.country_colors[country]  # Assign color directly here
                 })
 
         fig = px.treemap(
@@ -302,21 +262,21 @@ class DataVisualizer:
             path=['Country', 'Item Set Title'],
             values='Number of Items',
             title=title,
-            custom_data=['text']
+            custom_data=['text'],
+            color='color'  # Use the color field for coloring
         )
 
-        # Update traces for all nodes except root
+        # Update traces
         fig.update_traces(
             textinfo="label+value+percent parent",
             hovertemplate="%{customdata[0]}<extra></extra>",
-            marker_colors=[d['color'] for d in data],
             textfont={"size": 14},
             marker_line=dict(width=1, color='white'),
             opacity=0.85,
             root_color="lightgrey"
         )
 
-        # Simply remove hover for root node
+        # Remove hover for root node
         fig.data[0].texttemplate = ""
         fig.data[0].hovertemplate = None
 
