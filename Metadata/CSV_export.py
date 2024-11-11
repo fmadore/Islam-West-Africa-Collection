@@ -14,6 +14,9 @@ import json
 import asyncio
 import aiohttp
 import inspect
+import aiofiles
+from datetime import datetime, timedelta
+import hashlib
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -29,10 +32,53 @@ class Config:
     API_KEY_CREDENTIAL: str = os.getenv('OMEKA_KEY_CREDENTIAL')
     OUTPUT_DIR: str = os.path.join(os.path.dirname(__file__), 'CSV')
 
+class Cache:
+    def __init__(self, cache_dir: str = None):
+        self.cache_dir = cache_dir or os.path.join(os.path.dirname(__file__), 'cache')
+        os.makedirs(self.cache_dir, exist_ok=True)
+        self.cache_duration = timedelta(hours=24)  # Cache expires after 24 hours
+
+    def _get_cache_path(self, key: str) -> str:
+        # Create a hash of the key to use as filename
+        hashed_key = hashlib.md5(key.encode()).hexdigest()
+        return os.path.join(self.cache_dir, f"{hashed_key}.json")
+
+    async def get(self, key: str) -> Optional[Any]:
+        cache_path = self._get_cache_path(key)
+        try:
+            if not os.path.exists(cache_path):
+                return None
+
+            async with aiofiles.open(cache_path, 'r') as f:
+                cached_data = json.loads(await f.read())
+
+            # Check if cache has expired
+            cached_time = datetime.fromisoformat(cached_data['timestamp'])
+            if datetime.now() - cached_time > self.cache_duration:
+                return None
+
+            return cached_data['data']
+        except Exception as e:
+            logger.warning(f"Cache read error for key {key}: {str(e)}")
+            return None
+
+    async def set(self, key: str, value: Any) -> None:
+        cache_path = self._get_cache_path(key)
+        try:
+            cache_data = {
+                'timestamp': datetime.now().isoformat(),
+                'data': value
+            }
+            async with aiofiles.open(cache_path, 'w') as f:
+                await f.write(json.dumps(cache_data))
+        except Exception as e:
+            logger.warning(f"Cache write error for key {key}: {str(e)}")
+
 class OmekaApiClient:
     def __init__(self, config: Config):
         self.config = config
         self.session = None
+        self.cache = Cache()
     
     async def _create_session(self):
         if not self.session:
@@ -48,6 +94,17 @@ class OmekaApiClient:
     async def _make_request(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         if params is None:
             params = {}
+        
+        # Create a cache key from the endpoint and params
+        cache_key = f"{endpoint}:{json.dumps(params, sort_keys=True)}"
+        
+        # Try to get from cache first
+        cached_data = await self.cache.get(cache_key)
+        if cached_data is not None:
+            logger.debug(f"Cache hit for {endpoint}")
+            return cached_data
+
+        # If not in cache, make the API request
         params.update({
             'key_identity': self.config.API_KEY_IDENTITY,
             'key_credential': self.config.API_KEY_CREDENTIAL
@@ -62,7 +119,10 @@ class OmekaApiClient:
             try:
                 async with session.get(url, params=params) as response:
                     response.raise_for_status()
-                    return await response.json()
+                    data = await response.json()
+                    # Cache the successful response
+                    await self.cache.set(cache_key, data)
+                    return data
             except (aiohttp.ClientError, asyncio.TimeoutError) as e:
                 logger.warning(f"Request failed (attempt {attempt + 1}/{max_retries}): {str(e)}")
                 if attempt < max_retries - 1:
@@ -260,7 +320,18 @@ class OmekaApiClient:
 
     async def fetch_media_data(self, media_id: str) -> Dict[str, Any]:
         endpoint = f'media/{media_id}'
-        return await self._make_request(endpoint)
+        cache_key = f"media_data:{media_id}"
+        
+        # Try to get from cache first
+        cached_data = await self.cache.get(cache_key)
+        if cached_data is not None:
+            return cached_data
+            
+        # If not in cache, fetch and cache the data
+        data = await self._make_request(endpoint)
+        if data:
+            await self.cache.set(cache_key, data)
+        return data
 
 class DataProcessor:
     def __init__(self, raw_data: List[Dict[str, Any]], item_sets: List[Dict[str, Any]], 
