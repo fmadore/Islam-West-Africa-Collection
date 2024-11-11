@@ -4579,23 +4579,27 @@
     "o:thumbnail": null,
     "o:title": "Islam, paix et développement : le citoyen musulman face au défi sécuritaire",
     "thumbnail_display_urls": {
-      "large": "https://islam.zmo.de/files/large/6550805066d99347a986ffab64eaacbc1dd085cf.jpg",
-      "medium": "https://islam.zmo.de/files/medium/6550805066d99347a986ffab64eaacbc1dd085cf.jpg",
-      "square": "https://islam.zmo.de/files/square/6550805066d99347a986ffab64eaacbc1dd085cf.jpg"
+      "large": "https://islam.zmo.de/files/large/74404d408f83bbf130e463894eee13fc4cd81e9f.jpg",
+      "medium": "https://islam.zmo.de/files/medium/74404d408f83bbf130e463894eee13fc4cd81e9f.jpg",
+      "square": "https://islam.zmo.de/files/square/74404d408f83bbf130e463894eee13fc4cd81e9f.jpg"
     },
     "o:created": {
       "@value": "2024-03-16T14:15:08+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:53+00:00",
+      "@value": "2024-10-23T05:09:27+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
-      "@id": "https://islam.zmo.de/api/media/46874",
-      "o:id": 46874
+      "@id": "https://islam.zmo.de/api/media/47244",
+      "o:id": 47244
     },
     "o:media": [
+      {
+        "@id": "https://islam.zmo.de/api/media/47244",
+        "o:id": 47244
+      },
       {
         "@id": "https://islam.zmo.de/api/media/46874",
         "o:id": 46874
