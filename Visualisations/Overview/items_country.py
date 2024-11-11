@@ -128,6 +128,7 @@ class DataVisualizer:
         }
 
     def create_visualization(self, items_by_country_and_set: Dict, language: str = 'en'):
+        # Calculate total items first
         total_items = sum(
             count for country_data in items_by_country_and_set.values() 
             for count in country_data.values()
@@ -139,53 +140,41 @@ class DataVisualizer:
         }
         title = title_map.get(language, title_map['en'])
 
-        # First create the basic data structure
-        data = [
-            {
-                'Country': country,
-                'Item Set Title': set_title,
-                'Number of Items': count,
-                'Percentage': (count/total_items) * 100,
-            }
-            for country, sets in items_by_country_and_set.items()
-            for set_title, count in sets.items()
-        ]
-
-        # Then calculate country totals using the data
-        country_totals = defaultdict(int)
-        for item in data:
-            country_totals[item['Country']] += item['Number of Items']
-
-        # Now enhance the data with the country totals
-        data = [
-            {
-                **item,
-                'Country_Total': country_totals[item['Country']],
-                'Country_Percentage': (country_totals[item['Country']]/total_items) * 100,
-                'Custom_text': f"{item['Item Set Title']}<br>{item['Number of Items']:,} items ({item['Percentage']:.1f}%)",
-                'Country_text': f"{item['Country']}<br>{country_totals[item['Country']]:,} items ({(country_totals[item['Country']]/total_items)*100:.1f}%)"
-            }
-            for item in data
-        ]
+        # Create flattened data structure
+        data = []
+        for country, sets in items_by_country_and_set.items():
+            country_total = sum(sets.values())
+            country_percentage = (country_total / total_items) * 100
+            
+            # Sort sets by count in descending order
+            sorted_sets = dict(sorted(sets.items(), key=lambda x: x[1], reverse=True))
+            
+            for set_title, count in sorted_sets.items():
+                set_percentage = (count / country_total) * 100
+                data.append({
+                    'Country': country,
+                    'Item Set Title': set_title,
+                    'Number of Items': count,
+                    'text': f"{set_title}<br>{count:,} items ({set_percentage:.1f}% of {country})",
+                    'country_text': f"{country}<br>{country_total:,} items ({country_percentage:.1f}% of total)"
+                })
 
         fig = px.treemap(
             data,
             path=['Country', 'Item Set Title'],
             values='Number of Items',
             title=title,
-            custom_data=['Custom_text', 'Country_text']
+            custom_data=['text', 'country_text']
         )
 
         fig.update_traces(
             textinfo="label+value",
-            hovertemplate="<b>%{label}</b><br>%{value:,} items (%{percentRoot:.1f}%)<extra></extra>",
-            marker_colors=[self.country_colors.get(item['Country'], '#808080') for item in data],
-            # Increase text size for better readability
+            hovertemplate="<b>%{label}</b><br>%{value:,} items<extra></extra>",
+            marker_colors=[self.country_colors.get(d['Country'], '#808080') for d in data],
             textfont={"size": 14},
-            # Add border for better separation
             marker_line=dict(width=1, color='white'),
-            # Add opacity here instead
-            opacity=0.85
+            opacity=0.85,
+            root_color="lightgrey"
         )
 
         fig.update_layout(
@@ -198,9 +187,7 @@ class DataVisualizer:
                 'yanchor': 'top'
             },
             margin=dict(t=100, l=25, r=25, b=25),
-            # Add a subtle background color
             paper_bgcolor='rgba(250,250,250,1)',
-            # Add legend title
             treemapcolorway=[self.country_colors[country] for country in self.country_colors],
         )
         
