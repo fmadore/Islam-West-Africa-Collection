@@ -43,6 +43,7 @@ class APIClient:
         self.config = config
         self.session = self._create_session()
         self.config.cache_dir.mkdir(exist_ok=True)
+        self.use_cache = True
 
     def _create_session(self) -> requests.Session:
         session = requests.Session()
@@ -68,6 +69,8 @@ class APIClient:
         return self.config.cache_dir / f"{endpoint}_{params_hash}.json"
 
     def _get_cached_response(self, cache_path: Path) -> Optional[dict]:
+        if not self.use_cache:
+            return None
         if cache_path.exists():
             try:
                 with cache_path.open('r') as f:
@@ -290,6 +293,7 @@ class DataVisualizer:
             custom_data=['text']
         )
 
+        # Update traces for all nodes except root
         fig.update_traces(
             textinfo="label+value+percent parent",
             hovertemplate="%{customdata[0]}<extra></extra>",
@@ -300,9 +304,9 @@ class DataVisualizer:
             root_color="lightgrey"
         )
 
-        # Update the root text
+        # Simply remove hover for root node
         fig.data[0].texttemplate = ""
-        fig.data[0].hovertemplate = f"<b>Total:</b> %{{value:,.0f}}".replace(',', ' ') + " items<extra></extra>"
+        fig.data[0].hovertemplate = None
 
         fig.update_layout(
             font_family="Arial",
@@ -329,6 +333,14 @@ def clear_cache(cache_dir: Path, max_age_days: int = 7) -> None:
         if (current_time - cache_file.stat().st_mtime) > (max_age_days * 86400):
             cache_file.unlink()
 
+def prompt_cache_usage() -> bool:
+    """Prompt user for cache usage preference."""
+    while True:
+        response = input("Would you like to use cached data? (y/n): ").lower()
+        if response in ['y', 'n']:
+            return response == 'y'
+        print("Please enter 'y' for yes or 'n' for no.")
+
 def main(languages: List[str]):
     # Define item sets organized by country
     country_item_sets = {
@@ -341,7 +353,15 @@ def main(languages: List[str]):
     }
 
     config = APIConfig()
+    
+    # Add cache prompt at the start
+    use_cache = prompt_cache_usage()
+    if not use_cache:
+        clear_cache(config.cache_dir)  # Clear all cache if user doesn't want to use it
+    
     client = APIClient(config)
+    client.use_cache = use_cache  # Set the cache preference
+    
     processor = DataProcessor()
     visualizer = DataVisualizer(os.path.join(os.path.dirname(__file__), '..'))
 
