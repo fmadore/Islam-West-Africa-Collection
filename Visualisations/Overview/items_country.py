@@ -274,9 +274,9 @@ class DataVisualizer:
                 set_percentage = (count / country_total) * 100
                 data.append({
                     'Country': translated_country,
-                    'Item Set Title': set_title,
+                    'Item Set Title': f"<b>{set_title}</b>",
                     'Number of Items': count,
-                    'text': f"<b>{set_title}</b><br>{format_number(count)} items ({set_percentage:.1f}% of {translated_country})",
+                    'text': f"<b>{translated_country}</b><br><b>{set_title}</b><br>{format_number(count)} items ({set_percentage:.1f}% of {translated_country})",
                     'color': color_palette[i]
                 })
 
@@ -331,7 +331,7 @@ def main(languages: List[str]):
     # Define item sets organized by country
     country_item_sets = {
         'Bénin': [2185, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5500, 5501, 5502, 2195, 10223, 61062, 60638, 61063, 23452, 2192, 2193, 2194],
-        'Burkina Faso': [2199, 2200, 2201, 2207, 2209, 2210, 2213, 2214, 2215, 5503, 23273, 2197, 2196, 2206, 2198, 2203, 2205, 2204, 2202, 23453, 2211, 2212],
+        'Burkina Faso': [2199, 2200, 2201, 2207, 2209, 2210, 2213, 2214, 2215, 5503, 23273, 2197, 2196, 2206, 2198, 2203, 2205, 2204, 2202, 23453, 23448, 23449, 2211, 2212],
         'Côte d\'Ivoire': [23253, 43622, 39797, 45829, 45390, 31882, 57953, 57952, 57951, 57950, 57949, 57948, 57945, 57944, 57943, 62076, 61684, 61320, 61289, 43051, 48249, 15845, 2216, 2217],
         'Niger': [2223, 2218, 2219, 62021, 2220, 2222],
         'Togo': [9458, 2226, 5499, 5498, 26319, 25304, 26327, 2227, 2228],
