@@ -21,10 +21,10 @@ logger = logging.getLogger(__name__)
 @dataclass
 class APIConfig:
     base_url: str = "https://islam.zmo.de/api"
-    timeout: int = 10
-    max_retries: int = 3
-    backoff_factor: float = 0.3
-    max_workers: int = 10
+    timeout: int = 15
+    max_retries: int = 5
+    backoff_factor: float = 0.5
+    max_workers: int = 8
     items_per_page: int = 50
 
 @dataclass
@@ -116,6 +116,16 @@ class DataVisualizer:
     def __init__(self, output_dir: str):
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
+        
+        # Simplified color scheme - using color families instead
+        self.country_colors = {
+            'Burkina Faso': '#4B5BA0',  # Deeper blue
+            'Côte d\'Ivoire': '#D03B3B',  # Deeper red
+            'Bénin': '#2E7D32',  # Deeper green
+            'Togo': '#6A1B9A',  # Deeper purple
+            'Niger': '#E65100',  # Deeper orange
+            'Nigeria': '#00838F',  # Deeper cyan
+        }
 
     def create_visualization(self, items_by_country_and_set: Dict, language: str = 'en'):
         total_items = sum(
@@ -129,23 +139,70 @@ class DataVisualizer:
         }
         title = title_map.get(language, title_map['en'])
 
+        # First create the basic data structure
         data = [
             {
                 'Country': country,
                 'Item Set Title': set_title,
-                'Number of Items': count
+                'Number of Items': count,
+                'Percentage': (count/total_items) * 100,
             }
             for country, sets in items_by_country_and_set.items()
             for set_title, count in sets.items()
+        ]
+
+        # Then calculate country totals using the data
+        country_totals = defaultdict(int)
+        for item in data:
+            country_totals[item['Country']] += item['Number of Items']
+
+        # Now enhance the data with the country totals
+        data = [
+            {
+                **item,
+                'Country_Total': country_totals[item['Country']],
+                'Country_Percentage': (country_totals[item['Country']]/total_items) * 100,
+                'Custom_text': f"{item['Item Set Title']}<br>{item['Number of Items']:,} items ({item['Percentage']:.1f}%)",
+                'Country_text': f"{item['Country']}<br>{country_totals[item['Country']]:,} items ({(country_totals[item['Country']]/total_items)*100:.1f}%)"
+            }
+            for item in data
         ]
 
         fig = px.treemap(
             data,
             path=['Country', 'Item Set Title'],
             values='Number of Items',
-            title=title
+            title=title,
+            custom_data=['Custom_text', 'Country_text']
         )
-        fig.update_traces(textinfo="label+value+percent parent")
+
+        fig.update_traces(
+            textinfo="label+value",
+            hovertemplate="<b>%{label}</b><br>%{value:,} items (%{percentRoot:.1f}%)<extra></extra>",
+            marker_colors=[self.country_colors.get(item['Country'], '#808080') for item in data],
+            # Increase text size for better readability
+            textfont={"size": 14},
+            # Add border for better separation
+            marker_line=dict(width=1, color='white'),
+            # Add opacity here instead
+            opacity=0.85
+        )
+
+        fig.update_layout(
+            font_family="Arial",
+            title={
+                'font_size': 24,
+                'x': 0.5,
+                'xanchor': 'center',
+                'y': 0.95,
+                'yanchor': 'top'
+            },
+            margin=dict(t=100, l=25, r=25, b=25),
+            # Add a subtle background color
+            paper_bgcolor='rgba(250,250,250,1)',
+            # Add legend title
+            treemapcolorway=[self.country_colors[country] for country in self.country_colors],
+        )
         
         output_file = os.path.join(self.output_dir, f'item_distribution_by_country_and_set_{language}.html')
         fig.write_html(output_file)
