@@ -10,6 +10,10 @@ import os
 import time
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import functools
+import json
+from pathlib import Path
+import hashlib
 
 # Configure logging
 logging.basicConfig(
@@ -24,8 +28,9 @@ class APIConfig:
     timeout: int = 15
     max_retries: int = 5
     backoff_factor: float = 0.5
-    max_workers: int = 8
-    items_per_page: int = 50
+    max_workers: int = 12
+    items_per_page: int = 100
+    cache_dir: Path = Path(__file__).parent / "cache"
 
 @dataclass
 class ItemSetResult:
@@ -37,6 +42,7 @@ class APIClient:
     def __init__(self, config: APIConfig):
         self.config = config
         self.session = self._create_session()
+        self.config.cache_dir.mkdir(exist_ok=True)
 
     def _create_session(self) -> requests.Session:
         session = requests.Session()
@@ -45,16 +51,50 @@ class APIClient:
             backoff_factor=self.config.backoff_factor,
             status_forcelist=[429, 500, 502, 503, 504]
         )
-        adapter = HTTPAdapter(max_retries=retry_strategy)
+        adapter = HTTPAdapter(
+            max_retries=retry_strategy,
+            pool_connections=25,
+            pool_maxsize=25,
+            pool_block=True
+        )
         session.mount("http://", adapter)
         session.mount("https://", adapter)
         return session
 
+    @functools.lru_cache(maxsize=128)
+    def _get_cache_path(self, endpoint: str, params: str) -> Path:
+        # Create a unique cache file name based on the endpoint and parameters
+        params_hash = hashlib.md5(params.encode()).hexdigest()
+        return self.config.cache_dir / f"{endpoint}_{params_hash}.json"
+
+    def _get_cached_response(self, cache_path: Path) -> Optional[dict]:
+        if cache_path.exists():
+            try:
+                with cache_path.open('r') as f:
+                    return json.load(f)
+            except Exception as e:
+                logger.warning(f"Cache read error: {e}")
+        return None
+
+    def _cache_response(self, cache_path: Path, data: dict) -> None:
+        try:
+            with cache_path.open('w') as f:
+                json.dump(data, f)
+        except Exception as e:
+            logger.warning(f"Cache write error: {e}")
+
     def fetch_items(self, item_set_id: int) -> List[dict]:
+        cache_path = self._get_cache_path("items", f"set_{item_set_id}")
+        cached_data = self._get_cached_response(cache_path)
+        
+        if cached_data is not None:
+            return cached_data
+
         items = []
         page = 1
         while True:
             try:
+                time.sleep(0.1)  # 100ms delay
                 response = self.session.get(
                     f"{self.config.base_url}/items",
                     params={
@@ -73,23 +113,37 @@ class APIClient:
             except requests.exceptions.RequestException as e:
                 logger.error(f"Error fetching items for set {item_set_id}, page {page}: {str(e)}")
                 break
+
+        if items:
+            self._cache_response(cache_path, items)
         return items
 
     def fetch_item_set(self, item_set_id: int) -> Optional[dict]:
+        cache_path = self._get_cache_path("item_sets", str(item_set_id))
+        cached_data = self._get_cached_response(cache_path)
+        
+        if cached_data is not None:
+            return cached_data
+
         try:
             response = self.session.get(
                 f"{self.config.base_url}/item_sets/{item_set_id}",
                 timeout=self.config.timeout
             )
             response.raise_for_status()
-            return response.json()
+            data = response.json()
+            if data:
+                self._cache_response(cache_path, data)
+            return data
         except requests.exceptions.RequestException as e:
             logger.error(f"Error fetching item set {item_set_id}: {str(e)}")
             return None
 
 class DataProcessor:
     @staticmethod
-    def get_title_by_language(titles: List[dict], language: str) -> str:
+    @functools.lru_cache(maxsize=128)
+    def get_title_by_language(titles_str: str, language: str) -> str:
+        titles = json.loads(titles_str)
         for title in titles:
             if title.get('@language', '') == language:
                 return title['@value']
@@ -102,11 +156,12 @@ class DataProcessor:
                 return None, (item_set_id, "Failed to fetch item set data")
 
             titles = item_set_data.get('dcterms:title', [])
-            set_title = self.get_title_by_language(titles, language)
-            country = item_set_data.get('dcterms:spatial', [{}])[0].get('display_title', 'Unknown Country')
+            # Convert titles to string for caching
+            set_title = self.get_title_by_language(json.dumps(titles), language)
 
             items = client.fetch_items(item_set_id)
-            return ItemSetResult(country, set_title, len(items)), None
+            # Note: country will be passed from the main loop instead
+            return ItemSetResult(None, set_title, len(items)), None
 
         except Exception as e:
             logger.error(f"Error processing item set {item_set_id}: {str(e)}")
@@ -117,18 +172,72 @@ class DataVisualizer:
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Simplified color scheme - using color families instead
+        # Define country names in both languages
+        self.country_names = {
+            'en': {
+                'Bénin': 'Benin',
+                'Burkina Faso': 'Burkina Faso',
+                'Côte d\'Ivoire': 'Côte d\'Ivoire',
+                'Niger': 'Niger',
+                'Togo': 'Togo',
+                'Nigeria': 'Nigeria',
+                'Nigéria': 'Nigeria'
+            },
+            'fr': {
+                'Bénin': 'Bénin',
+                'Burkina Faso': 'Burkina Faso',
+                'Côte d\'Ivoire': 'Côte d\'Ivoire',
+                'Niger': 'Niger',
+                'Togo': 'Togo',
+                'Nigeria': 'Nigéria',
+                'Nigéria': 'Nigéria'
+            }
+        }
+        
+        # Main colors for countries
         self.country_colors = {
             'Burkina Faso': '#4B5BA0',  # Deeper blue
             'Côte d\'Ivoire': '#D03B3B',  # Deeper red
             'Bénin': '#2E7D32',  # Deeper green
+            'Benin': '#2E7D32',  # Same green for English variant
             'Togo': '#6A1B9A',  # Deeper purple
             'Niger': '#E65100',  # Deeper orange
             'Nigeria': '#00838F',  # Deeper cyan
+            'Nigéria': '#00838F',  # Same color for French variant
         }
 
+    def generate_color_palette(self, base_color: str, n_colors: int) -> List[str]:
+        """Generate a palette of harmonious colors based on the main color."""
+        import colorsys
+        
+        # Convert hex to RGB
+        h = base_color.lstrip('#')
+        rgb = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+        
+        # Convert RGB to HSV (better for creating variations)
+        hsv = colorsys.rgb_to_hsv(rgb[0]/255, rgb[1]/255, rgb[2]/255)
+        
+        colors = []
+        for i in range(n_colors):
+            # Slightly adjust hue and saturation while maintaining the base color's character
+            hue = (hsv[0] + (i * 0.05)) % 1.0  # Small hue shifts
+            saturation = max(0.3, hsv[1] - (i * 0.1))  # Gradually reduce saturation
+            value = min(0.95, hsv[2] + (i * 0.05))  # Slightly adjust value
+            
+            # Convert back to RGB
+            rgb = colorsys.hsv_to_rgb(hue, saturation, value)
+            
+            # Convert to hex
+            hex_color = '#{:02x}{:02x}{:02x}'.format(
+                int(rgb[0] * 255),
+                int(rgb[1] * 255),
+                int(rgb[2] * 255)
+            )
+            colors.append(hex_color)
+        
+        return colors
+
     def create_visualization(self, items_by_country_and_set: Dict, language: str = 'en'):
-        # Add a number formatting helper function
         def format_number(n: int) -> str:
             return f"{n:,}".replace(',', ' ')
 
@@ -144,23 +253,31 @@ class DataVisualizer:
         }
         title = title_map.get(language, title_map['en'])
 
-        # Create flattened data structure
+        # Create flattened data structure with translated country names
         data = []
         for country, sets in items_by_country_and_set.items():
+            # Translate country name based on language
+            translated_country = self.country_names[language][country]
+            
             country_total = sum(sets.values())
             country_percentage = (country_total / total_items) * 100
             
             # Sort sets by count in descending order
             sorted_sets = dict(sorted(sets.items(), key=lambda x: x[1], reverse=True))
             
-            for set_title, count in sorted_sets.items():
+            # Generate colors for this country's sets
+            n_sets = len(sorted_sets)
+            # Use original country name for color lookup
+            color_palette = self.generate_color_palette(self.country_colors[country], n_sets)
+            
+            for i, (set_title, count) in enumerate(sorted_sets.items()):
                 set_percentage = (count / country_total) * 100
                 data.append({
-                    'Country': country,
+                    'Country': translated_country,
                     'Item Set Title': set_title,
                     'Number of Items': count,
-                    'text': f"{set_title}<br>{format_number(count)} items ({set_percentage:.1f}% of {country})",
-                    'country_text': f"{country}<br>{format_number(country_total)} items ({country_percentage:.1f}% of total)"
+                    'text': f"<b>{set_title}</b><br>{format_number(count)} items ({set_percentage:.1f}% of {translated_country})",
+                    'color': color_palette[i]
                 })
 
         fig = px.treemap(
@@ -168,25 +285,22 @@ class DataVisualizer:
             path=['Country', 'Item Set Title'],
             values='Number of Items',
             title=title,
-            custom_data=['text', 'country_text']
+            custom_data=['text']
         )
 
         fig.update_traces(
             textinfo="label+value+percent parent",
-            hovertemplate="""
-                %{customdata[1] if '%{parent}' == 'total' else customdata[0]}
-                <extra></extra>
-            """,
-            marker_colors=[self.country_colors.get(d['Country'], '#808080') for d in data],
+            hovertemplate="%{customdata[0]}<extra></extra>",
+            marker_colors=[d['color'] for d in data],
             textfont={"size": 14},
             marker_line=dict(width=1, color='white'),
             opacity=0.85,
             root_color="lightgrey"
         )
 
-        # Update the root text separately with space-formatted numbers
-        fig.data[0].texttemplate = ""  # Hide text for root node
-        fig.data[0].hovertemplate = f"Total: %{{value:,.0f}}".replace(',', ' ') + " items<extra></extra>"
+        # Update the root text
+        fig.data[0].texttemplate = ""
+        fig.data[0].hovertemplate = f"<b>Total:</b> %{{value:,.0f}}".replace(',', ' ') + " items<extra></extra>"
 
         fig.update_layout(
             font_family="Arial",
@@ -199,7 +313,6 @@ class DataVisualizer:
             },
             margin=dict(t=100, l=25, r=25, b=25),
             paper_bgcolor='rgba(250,250,250,1)',
-            treemapcolorway=[self.country_colors[country] for country in self.country_colors],
         )
         
         output_file = os.path.join(self.output_dir, f'item_distribution_by_country_and_set_{language}.html')
@@ -207,12 +320,27 @@ class DataVisualizer:
         logger.info(f"Visualization saved to {output_file}")
         return fig
 
-def main(item_set_ids: List[int], languages: List[str]):
+def clear_cache(cache_dir: Path, max_age_days: int = 7) -> None:
+    """Clear cache files older than max_age_days."""
+    current_time = time.time()
+    for cache_file in cache_dir.glob("*.json"):
+        if (current_time - cache_file.stat().st_mtime) > (max_age_days * 86400):
+            cache_file.unlink()
+
+def main(languages: List[str]):
+    # Define item sets organized by country
+    country_item_sets = {
+        'Bénin': [2185, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5500, 5501, 5502, 2195, 10223, 61062, 60638, 61063, 23452, 2192, 2193, 2194],
+        'Burkina Faso': [2199, 2200, 2201, 2207, 2209, 2210, 2213, 2214, 2215, 5503, 23273, 2197, 2196, 2206, 2198, 2203, 2205, 2204, 2202, 23453, 2211, 2212],
+        'Côte d\'Ivoire': [23253, 43622, 39797, 45829, 45390, 31882, 57953, 57952, 57951, 57950, 57949, 57948, 57945, 57944, 57943, 62076, 61684, 61320, 61289, 43051, 48249, 15845, 2216, 2217],
+        'Niger': [2223, 2218, 2219, 62021, 2220, 2222],
+        'Togo': [9458, 2226, 5499, 5498, 26319, 25304, 26327, 2227, 2228],
+        'Nigeria': [2184, 2225]
+    }
+
     config = APIConfig()
     client = APIClient(config)
     processor = DataProcessor()
-    
-    # Use a relative path to go up one level from the script's location
     visualizer = DataVisualizer(os.path.join(os.path.dirname(__file__), '..'))
 
     for language in languages:
@@ -220,22 +348,25 @@ def main(item_set_ids: List[int], languages: List[str]):
         items_by_country_and_set = defaultdict(lambda: defaultdict(int))
         errors = []
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=config.max_workers) as executor:
-            future_to_item_set = {
-                executor.submit(processor.process_item_set, client, item_set_id, language): item_set_id 
-                for item_set_id in item_set_ids
-            }
-            
-            for future in tqdm(
-                concurrent.futures.as_completed(future_to_item_set),
-                total=len(item_set_ids),
-                desc=f"Processing item sets ({language})"
-            ):
-                result, error = future.result()
-                if error:
-                    errors.append(error)
-                elif result:
-                    items_by_country_and_set[result.country][result.set_title] += result.item_count
+        for country, item_set_ids in country_item_sets.items():
+            with concurrent.futures.ThreadPoolExecutor(max_workers=config.max_workers) as executor:
+                future_to_item_set = {
+                    executor.submit(processor.process_item_set, client, item_set_id, language): (item_set_id, country)
+                    for item_set_id in item_set_ids
+                }
+                
+                for future in tqdm(
+                    concurrent.futures.as_completed(future_to_item_set),
+                    total=len(item_set_ids),
+                    desc=f"Processing {country} item sets ({language})"
+                ):
+                    item_set_id, country = future_to_item_set[future]
+                    result, error = future.result()
+                    if error:
+                        errors.append(error)
+                    elif result:
+                        # Use the country from our dictionary instead of from the API
+                        items_by_country_and_set[country][result.set_title] += result.item_count
 
         if errors:
             logger.warning(f"Errors occurred with {len(errors)} item sets:")
@@ -246,14 +377,6 @@ def main(item_set_ids: List[int], languages: List[str]):
         fig.show()
 
 if __name__ == "__main__":
-    item_set_ids = [
-        2185, 2186, 2187, 2188, 2189, 2190, 2191, 2192, 2193, 2194, 2195, 4922,
-        5500, 5501, 5502, 10223, 2218, 2219, 2220, 2196, 2197, 2198, 2199, 2200,
-        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2209, 2210, 2211, 2212, 2213,
-        2214, 2215, 2216, 2217, 23452, 23453, 23273, 5503, 2222, 2223, 2184,
-        2225, 23253, 2226, 2227, 2228, 9458, 25304, 26327, 5499, 5498, 26319,
-        31882, 15845, 39797, 43622, 45829, 45390, 57953, 57952, 57951, 57950,
-        57949, 57948, 57945, 57944, 57943, 48249, 61062, 60638, 62076, 62021,
-        61684, 61320, 61289, 61063
-    ]
-    main(item_set_ids, ['en', 'fr'])
+    config = APIConfig()
+    clear_cache(config.cache_dir)  # Optional: clear old cache files
+    main(['en', 'fr'])
