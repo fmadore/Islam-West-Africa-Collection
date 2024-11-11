@@ -197,16 +197,16 @@ class DataVisualizer:
             }
         }
         
-        # Main colors for countries
+        # Updated colors with more distinct base colors for each country
         self.country_colors = {
-            'Burkina Faso': '#4B5BA0',  # Deeper blue
-            'Côte d\'Ivoire': '#D03B3B',  # Deeper red
-            'Bénin': '#2E7D32',  # Deeper green
-            'Benin': '#2E7D32',  # Same green for English variant
-            'Togo': '#6A1B9A',  # Deeper purple
-            'Niger': '#E65100',  # Deeper orange
-            'Nigeria': '#00838F',  # Deeper cyan
-            'Nigéria': '#00838F',  # Same color for French variant
+            'Burkina Faso': '#1E4D8C',  # Deep navy blue
+            'Côte d\'Ivoire': '#B22222',  # Deep red
+            'Bénin': '#006400',  # Dark green
+            'Benin': '#006400',  # Same dark green
+            'Togo': '#4B0082',  # Indigo
+            'Niger': '#8B4513',  # Saddle brown
+            'Nigeria': '#008080',  # Teal
+            'Nigéria': '#008080',  # Same teal
         }
 
     def generate_color_palette(self, base_color: str, n_colors: int) -> List[str]:
@@ -217,15 +217,17 @@ class DataVisualizer:
         h = base_color.lstrip('#')
         rgb = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
         
-        # Convert RGB to HSV (better for creating variations)
+        # Convert RGB to HSV
         hsv = colorsys.rgb_to_hsv(rgb[0]/255, rgb[1]/255, rgb[2]/255)
         
         colors = []
         for i in range(n_colors):
-            # Slightly adjust hue and saturation while maintaining the base color's character
-            hue = (hsv[0] + (i * 0.05)) % 1.0  # Small hue shifts
-            saturation = max(0.3, hsv[1] - (i * 0.1))  # Gradually reduce saturation
-            value = min(0.95, hsv[2] + (i * 0.05))  # Slightly adjust value
+            # Keep the same hue but create more dramatic variations
+            hue = hsv[0]
+            # Create more dramatic saturation changes
+            saturation = max(0.4, min(0.9, hsv[1] - (i * 0.1)))
+            # Create more dramatic value (brightness) changes
+            value = max(0.3, min(0.9, hsv[2] + (i * 0.15)))
             
             # Convert back to RGB
             rgb = colorsys.hsv_to_rgb(hue, saturation, value)
@@ -238,6 +240,8 @@ class DataVisualizer:
             )
             colors.append(hex_color)
         
+        # Sort colors by brightness to ensure a consistent gradient
+        colors.sort(key=lambda x: sum(int(x.lstrip('#')[i:i+2], 16) for i in (0, 2, 4)))
         return colors
 
     def create_visualization(self, items_by_country_and_set: Dict, language: str = 'en'):
