@@ -12,6 +12,7 @@ requests
 aiohttp
 urllib3
 backoff  # For implementing retry logic
+aiofiles  # For async file operations
 
 # Progress bars and utilities
 tqdm
