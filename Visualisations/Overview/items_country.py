@@ -241,6 +241,13 @@ class DataVisualizer:
         def format_number(n: int) -> str:
             return f"{n:,}".replace(',', ' ')
 
+        # Add language-specific text
+        text_map = {
+            'en': {'total': 'Total'},
+            'fr': {'total': 'Total'}
+        }
+        text = text_map.get(language, text_map['en'])
+
         # Calculate total items first
         total_items = sum(
             count for country_data in items_by_country_and_set.values() 
@@ -256,27 +263,22 @@ class DataVisualizer:
         # Create flattened data structure with translated country names
         data = []
         for country, sets in items_by_country_and_set.items():
-            # Translate country name based on language
             translated_country = self.country_names[language][country]
             
             country_total = sum(sets.values())
             country_percentage = (country_total / total_items) * 100
             
-            # Sort sets by count in descending order
             sorted_sets = dict(sorted(sets.items(), key=lambda x: x[1], reverse=True))
-            
-            # Generate colors for this country's sets
             n_sets = len(sorted_sets)
-            # Use original country name for color lookup
             color_palette = self.generate_color_palette(self.country_colors[country], n_sets)
             
             for i, (set_title, count) in enumerate(sorted_sets.items()):
                 set_percentage = (count / country_total) * 100
                 data.append({
-                    'Country': translated_country,
+                    'Country': f"<b style='font-size: 16px'>{translated_country}</b>",
                     'Item Set Title': f"<b>{set_title}</b>",
                     'Number of Items': count,
-                    'text': f"<b>{translated_country}</b><br><b>{set_title}</b><br>{format_number(count)} items ({set_percentage:.1f}% of {translated_country})",
+                    'text': f"<b>{set_title}</b><br>{text['total']}: {format_number(count)} items<br>{set_percentage:.1f}%",
                     'color': color_palette[i]
                 })
 
