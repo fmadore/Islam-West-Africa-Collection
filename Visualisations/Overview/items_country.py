@@ -128,6 +128,10 @@ class DataVisualizer:
         }
 
     def create_visualization(self, items_by_country_and_set: Dict, language: str = 'en'):
+        # Add a number formatting helper function
+        def format_number(n: int) -> str:
+            return f"{n:,}".replace(',', ' ')
+
         # Calculate total items first
         total_items = sum(
             count for country_data in items_by_country_and_set.values() 
@@ -135,8 +139,8 @@ class DataVisualizer:
         )
 
         title_map = {
-            'en': f'Distribution of {total_items:,} items by country and sub-collection',
-            'fr': f'Répartition des {total_items:,} éléments par pays et sous-collection'
+            'en': f'Distribution of {format_number(total_items)} items by country and sub-collection',
+            'fr': f'Répartition des {format_number(total_items)} éléments par pays et sous-collection'
         }
         title = title_map.get(language, title_map['en'])
 
@@ -155,8 +159,8 @@ class DataVisualizer:
                     'Country': country,
                     'Item Set Title': set_title,
                     'Number of Items': count,
-                    'text': f"{set_title}<br>{count:,} items ({set_percentage:.1f}% of {country})",
-                    'country_text': f"{country}<br>{country_total:,} items ({country_percentage:.1f}% of total)"
+                    'text': f"{set_title}<br>{format_number(count)} items ({set_percentage:.1f}% of {country})",
+                    'country_text': f"{country}<br>{format_number(country_total)} items ({country_percentage:.1f}% of total)"
                 })
 
         fig = px.treemap(
@@ -180,9 +184,9 @@ class DataVisualizer:
             root_color="lightgrey"
         )
 
-        # Update the root text separately
+        # Update the root text separately with space-formatted numbers
         fig.data[0].texttemplate = ""  # Hide text for root node
-        fig.data[0].hovertemplate = "Total: %{value:,} items<extra></extra>"  # Custom hover for root
+        fig.data[0].hovertemplate = f"Total: %{{value:,.0f}}".replace(',', ' ') + " items<extra></extra>"
 
         fig.update_layout(
             font_family="Arial",
