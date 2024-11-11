@@ -168,14 +168,21 @@ class DataVisualizer:
         )
 
         fig.update_traces(
-            textinfo="label+value",
-            hovertemplate="<b>%{label}</b><br>%{value:,} items<extra></extra>",
+            textinfo="label+value+percent parent",
+            hovertemplate="""
+                %{customdata[1] if '%{parent}' == 'total' else customdata[0]}
+                <extra></extra>
+            """,
             marker_colors=[self.country_colors.get(d['Country'], '#808080') for d in data],
             textfont={"size": 14},
             marker_line=dict(width=1, color='white'),
             opacity=0.85,
             root_color="lightgrey"
         )
+
+        # Update the root text separately
+        fig.data[0].texttemplate = ""  # Hide text for root node
+        fig.data[0].hovertemplate = "Total: %{value:,} items<extra></extra>"  # Custom hover for root
 
         fig.update_layout(
             font_family="Arial",
