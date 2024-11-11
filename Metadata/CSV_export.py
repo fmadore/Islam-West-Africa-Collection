@@ -24,6 +24,7 @@ import backoff
 from typing import Type, Union, Callable
 import sys
 from contextlib import asynccontextmanager
+import argparse
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -40,10 +41,12 @@ class Config:
     OUTPUT_DIR: str = os.path.join(os.path.dirname(__file__), 'CSV')
 
 class Cache:
-    def __init__(self, cache_dir: str = None):
+    def __init__(self, cache_dir: str = None, use_cache: bool = True):
         self.cache_dir = cache_dir or os.path.join(os.path.dirname(__file__), 'cache')
-        os.makedirs(self.cache_dir, exist_ok=True)
-        self.cache_duration = timedelta(hours=24)  # Cache expires after 24 hours
+        self.use_cache = use_cache
+        if self.use_cache:
+            os.makedirs(self.cache_dir, exist_ok=True)
+        self.cache_duration = timedelta(hours=24)
 
     def _get_cache_path(self, key: str) -> str:
         # Create a hash of the key to use as filename
@@ -51,6 +54,9 @@ class Cache:
         return os.path.join(self.cache_dir, f"{hashed_key}.json")
 
     async def get(self, key: str) -> Optional[Any]:
+        if not self.use_cache:
+            return None
+            
         cache_path = self._get_cache_path(key)
         try:
             if not os.path.exists(cache_path):
@@ -70,6 +76,9 @@ class Cache:
             return None
 
     async def set(self, key: str, value: Any) -> None:
+        if not self.use_cache:
+            return
+            
         cache_path = self._get_cache_path(key)
         try:
             cache_data = {
@@ -133,10 +142,10 @@ def async_retry(
     return decorator
 
 class OmekaApiClient:
-    def __init__(self, config: Config):
+    def __init__(self, config: Config, use_cache: bool = True):
         self.config = config
         self.session = None
-        self.cache = Cache()
+        self.cache = Cache(use_cache=use_cache)
     
     async def _create_session(self):
         if not self.session:
@@ -1085,6 +1094,19 @@ def get_media_ids(item: Dict[str, Any]) -> str:
 
 async def async_main():
     try:
+        # Ask user about cache usage
+        while True:
+            response = input("Do you want to use cached data if available? (y/n): ").lower()
+            if response in ['y', 'n']:
+                break
+            print("Please enter 'y' for yes or 'n' for no.")
+
+        use_cache = (response == 'y')
+        if not use_cache:
+            logger.info("Cache disabled - fetching fresh data from API")
+        else:
+            logger.info("Cache enabled - using cached data if available")
+        
         logger.info("Starting the Omeka data export process...")
         
         config = Config()
@@ -1092,7 +1114,7 @@ async def async_main():
 
         os.makedirs(config.OUTPUT_DIR, exist_ok=True)
 
-        api_client = OmekaApiClient(config)
+        api_client = OmekaApiClient(config, use_cache=use_cache)
 
         item_set_titles = await api_client.fetch_item_set_titles()
         raw_data, item_sets, media, references = await api_client.fetch_all_items()
