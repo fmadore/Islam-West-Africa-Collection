@@ -252,8 +252,14 @@ class DataVisualizer:
 
         # Add language-specific text
         text_map = {
-            'en': {'total': 'Total'},
-            'fr': {'total': 'Total'}
+            'en': {
+                'total': 'Total',
+                'items': 'items'
+            },
+            'fr': {
+                'total': 'Total',
+                'items': 'éléments'
+            }
         }
         text = text_map.get(language, text_map['en'])
 
@@ -287,7 +293,7 @@ class DataVisualizer:
                     'Country': f"<b style='font-size: 16px'>{translated_country}</b>",
                     'Item Set Title': f"<b>{set_title}</b>",
                     'Number of Items': count,
-                    'text': f"<b>{set_title}</b><br>{text['total']}: {format_number(count)} items<br>{set_percentage:.1f}%",
+                    'text': f"<b>{set_title}</b><br>{text['total']}: {format_number(count)} {text['items']}<br>{set_percentage:.1f}%",
                     'color': color_palette[i]
                 })
 
