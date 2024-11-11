@@ -17,6 +17,8 @@ import inspect
 import aiofiles
 from datetime import datetime, timedelta
 import hashlib
+from tqdm.asyncio import tqdm as async_tqdm
+from concurrent.futures import ThreadPoolExecutor
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -333,6 +335,56 @@ class OmekaApiClient:
             await self.cache.set(cache_key, data)
         return data
 
+class ProgressTracker:
+    def __init__(self):
+        self.start_time = None
+        self.total_items = 0
+        self.processed_items = 0
+        self._status = "Initializing"
+
+    def start(self, total_items: int):
+        self.start_time = time.time()
+        self.total_items = total_items
+        self.processed_items = 0
+        self._status = "Processing"
+
+    @property
+    def elapsed_time(self) -> float:
+        if self.start_time is None:
+            return 0
+        return time.time() - self.start_time
+
+    @property
+    def progress_percentage(self) -> float:
+        if self.total_items == 0:
+            return 0
+        return (self.processed_items / self.total_items) * 100
+
+    @property
+    def status(self) -> str:
+        return self._status
+
+    @status.setter
+    def status(self, value: str):
+        self._status = value
+        logger.info(f"Status: {value}")
+
+    def update(self, items_processed: int):
+        self.processed_items += items_processed
+        self._log_progress()
+
+    def _log_progress(self):
+        elapsed = self.elapsed_time
+        progress = self.progress_percentage
+        rate = self.processed_items / elapsed if elapsed > 0 else 0
+        
+        logger.info(
+            f"Progress: {progress:.1f}% ({self.processed_items}/{self.total_items}) | "
+            f"Rate: {rate:.1f} items/s | "
+            f"Elapsed: {elapsed:.1f}s | "
+            f"Status: {self._status}"
+        )
+
 class DataProcessor:
     def __init__(self, raw_data: List[Dict[str, Any]], item_sets: List[Dict[str, Any]], 
                  media: List[Dict[str, Any]], references: List[Dict[str, Any]], 
@@ -348,6 +400,7 @@ class DataProcessor:
         # Create mapping caches
         self._media_cache = {m['o:id']: m for m in media}
         self._item_set_cache = {s['o:id']: s for s in item_sets}
+        self.progress = ProgressTracker()
 
     def determine_item_type(self, item: Dict[str, Any]) -> str:
         """Determine the type of an item based on its metadata."""
@@ -372,8 +425,11 @@ class DataProcessor:
 
     async def process(self) -> Dict[str, List[Dict[str, Any]]]:
         logger.info("Starting data processing pipeline...")
+        total_items = (len(self.raw_data) + len(self.item_sets) + 
+                      len(self.media) + len(self.references))
+        self.progress.start(total_items)
+        self.progress.status = "Sorting items into processing pools"
         
-        # Initialize processed data structure with empty lists
         processed_data = {
             'audio_visual_documents': [],
             'documents': [],
@@ -386,7 +442,6 @@ class DataProcessor:
             'references': []
         }
 
-        # Create processing pools for different types
         processing_pools = {
             'documents': [],
             'issues': [],
@@ -396,13 +451,17 @@ class DataProcessor:
             'index': []
         }
 
-        # Sort items into processing pools
+        # Sort items into processing pools with progress bar
+        pbar = tqdm(total=len(self.raw_data), desc="Sorting items")
         for item in self.raw_data:
             item_type = self.determine_item_type(item)
             if item_type in processing_pools:
                 processing_pools[item_type].append(item)
+            pbar.update(1)
+        pbar.close()
 
-        # Process each pool concurrently
+        # Process pools with detailed progress tracking
+        self.progress.status = "Processing item pools"
         async with asyncio.TaskGroup() as tg:
             tasks = []
             for item_type, items in processing_pools.items():
@@ -411,22 +470,35 @@ class DataProcessor:
                 )
                 tasks.append(task)
 
-            # Process other data types concurrently
+            # Process other data types
             tasks.extend([
                 tg.create_task(self._process_item_sets(processed_data)),
                 tg.create_task(self._process_media(processed_data)),
                 tg.create_task(self._process_references(processed_data))
             ])
 
-        logger.info("Data processing completed")
-        self.processed_data = processed_data
+        self.progress.status = "Processing completed"
+        logger.info(f"Total processing time: {self.progress.elapsed_time:.2f} seconds")
         return processed_data
 
     async def _process_pool(self, item_type: str, items: List[Dict[str, Any]], 
                           processed_data: Dict[str, List[Dict[str, Any]]]):
-        """Process a pool of items of the same type concurrently in batches."""
-        logger.info(f"Processing {len(items)} {item_type} items...")
+        """Process a pool of items with progress tracking."""
+        self.progress.status = f"Processing {item_type}"
         
+        pbar = tqdm(total=len(items), desc=f"Processing {item_type}", unit="items")
+        for i in range(0, len(items), self.batch_size):
+            batch = items[i:i + self.batch_size]
+            batch_results = await self._process_batch(item_type, batch)
+            processed_data[item_type].extend(batch_results)
+            
+            items_processed = len(batch)
+            self.progress.update(items_processed)
+            pbar.update(items_processed)
+        pbar.close()
+
+    async def _process_batch(self, item_type: str, batch: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Process a batch of items concurrently."""
         mapping_functions = {
             'documents': map_document,
             'issues': map_issue,
@@ -439,25 +511,20 @@ class DataProcessor:
         mapper = mapping_functions[item_type]
         is_async = asyncio.iscoroutinefunction(mapper)
         
-        for i in range(0, len(items), self.batch_size):
-            batch = items[i:i + self.batch_size]
-            batch_tasks = []
-            
-            for item in batch:
-                if is_async:
-                    batch_tasks.append(mapper(item, self.api_client))
-                else:
-                    # For synchronous mappers, wrap in asyncio.to_thread
-                    batch_tasks.append(asyncio.to_thread(mapper, item))
-            
-            # Process batch concurrently
-            batch_results = await asyncio.gather(*batch_tasks)
-            processed_data[item_type].extend(batch_results)
+        batch_tasks = []
+        for item in batch:
+            if is_async:
+                batch_tasks.append(mapper(item, self.api_client))
+            else:
+                batch_tasks.append(asyncio.to_thread(mapper, item))
+        
+        return await asyncio.gather(*batch_tasks)
 
     async def _process_item_sets(self, processed_data: Dict[str, List[Dict[str, Any]]]):
-        """Process item sets concurrently in batches."""
-        logger.info(f"Processing {len(self.item_sets)} item sets...")
+        """Process item sets with progress tracking."""
+        self.progress.status = "Processing item sets"
         
+        pbar = tqdm(total=len(self.item_sets), desc="Processing item sets", unit="sets")
         for i in range(0, len(self.item_sets), self.batch_size):
             batch = self.item_sets[i:i + self.batch_size]
             batch_tasks = [
@@ -466,11 +533,17 @@ class DataProcessor:
             ]
             batch_results = await asyncio.gather(*batch_tasks)
             processed_data['item_sets'].extend(batch_results)
+            
+            items_processed = len(batch)
+            self.progress.update(items_processed)
+            pbar.update(items_processed)
+        pbar.close()
 
     async def _process_media(self, processed_data: Dict[str, List[Dict[str, Any]]]):
-        """Process media items concurrently in batches."""
-        logger.info(f"Processing {len(self.media)} media items...")
+        """Process media items with progress tracking."""
+        self.progress.status = "Processing media items"
         
+        pbar = tqdm(total=len(self.media), desc="Processing media items", unit="items")
         for i in range(0, len(self.media), self.batch_size):
             batch = self.media[i:i + self.batch_size]
             batch_tasks = [
@@ -479,11 +552,17 @@ class DataProcessor:
             ]
             batch_results = await asyncio.gather(*batch_tasks)
             processed_data['media'].extend(batch_results)
+            
+            items_processed = len(batch)
+            self.progress.update(items_processed)
+            pbar.update(items_processed)
+        pbar.close()
 
     async def _process_references(self, processed_data: Dict[str, List[Dict[str, Any]]]):
-        """Process references concurrently in batches."""
-        logger.info(f"Processing {len(self.references)} references...")
+        """Process references with progress tracking."""
+        self.progress.status = "Processing references"
         
+        pbar = tqdm(total=len(self.references), desc="Processing references", unit="refs")
         for i in range(0, len(self.references), self.batch_size):
             batch = self.references[i:i + self.batch_size]
             batch_tasks = [
@@ -492,6 +571,11 @@ class DataProcessor:
             ]
             batch_results = await asyncio.gather(*batch_tasks)
             processed_data['references'].extend(batch_results)
+            
+            items_processed = len(batch)
+            self.progress.update(items_processed)
+            pbar.update(items_processed)
+        pbar.close()
 
     def get_media_data(self, media_id: str) -> Optional[Dict[str, Any]]:
         """Get media data from cache."""
