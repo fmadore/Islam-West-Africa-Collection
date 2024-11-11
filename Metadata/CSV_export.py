@@ -19,6 +19,11 @@ from datetime import datetime, timedelta
 import hashlib
 from tqdm.asyncio import tqdm as async_tqdm
 from concurrent.futures import ThreadPoolExecutor
+from functools import wraps
+import backoff
+from typing import Type, Union, Callable
+import sys
+from contextlib import asynccontextmanager
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -76,6 +81,57 @@ class Cache:
         except Exception as e:
             logger.warning(f"Cache write error for key {key}: {str(e)}")
 
+class ProcessingError(Exception):
+    """Base class for processing errors"""
+    pass
+
+class APIError(ProcessingError):
+    """Errors related to API calls"""
+    pass
+
+class CacheError(ProcessingError):
+    """Errors related to caching"""
+    pass
+
+class MappingError(ProcessingError):
+    """Errors related to data mapping"""
+    pass
+
+@asynccontextmanager
+async def error_context(context: str):
+    """Context manager for error handling with proper cleanup"""
+    try:
+        yield
+    except Exception as e:
+        logger.error(f"Error in {context}: {str(e)}", exc_info=True)
+        raise
+
+def async_retry(
+    max_tries: int = 3,
+    exceptions: Union[Type[Exception], tuple[Type[Exception], ...]] = Exception,
+    logger: logging.Logger = logger,
+    delay: float = 1.0
+):
+    """Decorator for async retry logic with exponential backoff"""
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            attempt = 0
+            while attempt < max_tries:
+                try:
+                    return await func(*args, **kwargs)
+                except exceptions as e:
+                    attempt += 1
+                    if attempt == max_tries:
+                        logger.error(f"Failed after {max_tries} attempts: {str(e)}")
+                        raise
+                    wait_time = delay * (2 ** (attempt - 1))  # Exponential backoff
+                    logger.warning(f"Attempt {attempt} failed, retrying in {wait_time}s: {str(e)}")
+                    await asyncio.sleep(wait_time)
+            return None
+        return wrapper
+    return decorator
+
 class OmekaApiClient:
     def __init__(self, config: Config):
         self.config = config
@@ -93,46 +149,40 @@ class OmekaApiClient:
             await self.session.close()
             self.session = None
 
+    @async_retry(max_tries=5, exceptions=(aiohttp.ClientError, asyncio.TimeoutError))
     async def _make_request(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         if params is None:
             params = {}
         
-        # Create a cache key from the endpoint and params
         cache_key = f"{endpoint}:{json.dumps(params, sort_keys=True)}"
         
-        # Try to get from cache first
-        cached_data = await self.cache.get(cache_key)
-        if cached_data is not None:
-            logger.debug(f"Cache hit for {endpoint}")
-            return cached_data
+        try:
+            # Try cache first
+            cached_data = await self.cache.get(cache_key)
+            if cached_data is not None:
+                return cached_data
 
-        # If not in cache, make the API request
-        params.update({
-            'key_identity': self.config.API_KEY_IDENTITY,
-            'key_credential': self.config.API_KEY_CREDENTIAL
-        })
-        url = f"{self.config.API_URL}/{endpoint}"
-        max_retries = 5
-        retry_delay = 5
-
-        session = await self._create_session()
-        
-        for attempt in range(max_retries):
-            try:
+            # Make API request
+            params.update({
+                'key_identity': self.config.API_KEY_IDENTITY,
+                'key_credential': self.config.API_KEY_CREDENTIAL
+            })
+            url = f"{self.config.API_URL}/{endpoint}"
+            
+            async with error_context(f"API request to {endpoint}"):
+                session = await self._create_session()
                 async with session.get(url, params=params) as response:
                     response.raise_for_status()
                     data = await response.json()
-                    # Cache the successful response
                     await self.cache.set(cache_key, data)
                     return data
-            except (aiohttp.ClientError, asyncio.TimeoutError) as e:
-                logger.warning(f"Request failed (attempt {attempt + 1}/{max_retries}): {str(e)}")
-                if attempt < max_retries - 1:
-                    logger.info(f"Retrying in {retry_delay} seconds...")
-                    await asyncio.sleep(retry_delay)
-                else:
-                    logger.error(f"Max retries reached. Unable to fetch data from API: {str(e)}")
-                    return []
+
+        except aiohttp.ClientError as e:
+            raise APIError(f"API request failed: {str(e)}") from e
+        except json.JSONDecodeError as e:
+            raise APIError(f"Invalid JSON response: {str(e)}") from e
+        except Exception as e:
+            raise ProcessingError(f"Unexpected error: {str(e)}") from e
 
     async def fetch_items_page(self, resource_class_id: int, page: int, per_page: int) -> List[Dict[str, Any]]:
         return await self._make_request('items', {
@@ -424,62 +474,72 @@ class DataProcessor:
         return 'other'  # Default category for unrecognized items
 
     async def process(self) -> Dict[str, List[Dict[str, Any]]]:
-        logger.info("Starting data processing pipeline...")
-        total_items = (len(self.raw_data) + len(self.item_sets) + 
-                      len(self.media) + len(self.references))
-        self.progress.start(total_items)
-        self.progress.status = "Sorting items into processing pools"
-        
-        processed_data = {
-            'audio_visual_documents': [],
-            'documents': [],
-            'images': [],
-            'index': [],
-            'issues': [],
-            'item_sets': [],
-            'media': [],
-            'newspaper_articles': [],
-            'references': []
-        }
+        """Main processing method with enhanced error handling."""
+        try:
+            async with error_context("Data processing pipeline"):
+                logger.info("Starting data processing pipeline...")
+                total_items = (len(self.raw_data) + len(self.item_sets) + 
+                              len(self.media) + len(self.references))
+                self.progress.start(total_items)
+                self.progress.status = "Sorting items into processing pools"
+                
+                processed_data = {
+                    'audio_visual_documents': [],
+                    'documents': [],
+                    'images': [],
+                    'index': [],
+                    'issues': [],
+                    'item_sets': [],
+                    'media': [],
+                    'newspaper_articles': [],
+                    'references': []
+                }
 
-        processing_pools = {
-            'documents': [],
-            'issues': [],
-            'newspaper_articles': [],
-            'audio_visual_documents': [],
-            'images': [],
-            'index': []
-        }
+                processing_pools = {
+                    'documents': [],
+                    'issues': [],
+                    'newspaper_articles': [],
+                    'audio_visual_documents': [],
+                    'images': [],
+                    'index': []
+                }
 
-        # Sort items into processing pools with progress bar
-        pbar = tqdm(total=len(self.raw_data), desc="Sorting items")
-        for item in self.raw_data:
-            item_type = self.determine_item_type(item)
-            if item_type in processing_pools:
-                processing_pools[item_type].append(item)
-            pbar.update(1)
-        pbar.close()
+                # Sort items into processing pools with progress bar
+                pbar = tqdm(total=len(self.raw_data), desc="Sorting items")
+                for item in self.raw_data:
+                    item_type = self.determine_item_type(item)
+                    if item_type in processing_pools:
+                        processing_pools[item_type].append(item)
+                    pbar.update(1)
+                pbar.close()
 
-        # Process pools with detailed progress tracking
-        self.progress.status = "Processing item pools"
-        async with asyncio.TaskGroup() as tg:
-            tasks = []
-            for item_type, items in processing_pools.items():
-                task = tg.create_task(
-                    self._process_pool(item_type, items, processed_data)
-                )
-                tasks.append(task)
+                # Process pools with detailed progress tracking
+                self.progress.status = "Processing item pools"
+                async with asyncio.TaskGroup() as tg:
+                    tasks = []
+                    for item_type, items in processing_pools.items():
+                        task = tg.create_task(
+                            self._process_pool(item_type, items, processed_data)
+                        )
+                        tasks.append(task)
 
-            # Process other data types
-            tasks.extend([
-                tg.create_task(self._process_item_sets(processed_data)),
-                tg.create_task(self._process_media(processed_data)),
-                tg.create_task(self._process_references(processed_data))
-            ])
+                    # Process other data types
+                    tasks.extend([
+                        tg.create_task(self._process_item_sets(processed_data)),
+                        tg.create_task(self._process_media(processed_data)),
+                        tg.create_task(self._process_references(processed_data))
+                    ])
 
-        self.progress.status = "Processing completed"
-        logger.info(f"Total processing time: {self.progress.elapsed_time:.2f} seconds")
-        return processed_data
+                self.progress.status = "Processing completed"
+                logger.info(f"Total processing time: {self.progress.elapsed_time:.2f} seconds")
+                return processed_data
+        except Exception as e:
+            logger.critical(f"Critical error in processing pipeline: {str(e)}", exc_info=True)
+            # Attempt to save any processed data before exiting
+            self._save_partial_results()
+            raise
+        finally:
+            await self._cleanup()
 
     async def _process_pool(self, item_type: str, items: List[Dict[str, Any]], 
                           processed_data: Dict[str, List[Dict[str, Any]]]):
@@ -498,7 +558,7 @@ class DataProcessor:
         pbar.close()
 
     async def _process_batch(self, item_type: str, batch: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """Process a batch of items concurrently."""
+        """Process a batch of items with error handling."""
         mapping_functions = {
             'documents': map_document,
             'issues': map_issue,
@@ -510,15 +570,58 @@ class DataProcessor:
 
         mapper = mapping_functions[item_type]
         is_async = asyncio.iscoroutinefunction(mapper)
-        
-        batch_tasks = []
-        for item in batch:
-            if is_async:
-                batch_tasks.append(mapper(item, self.api_client))
-            else:
-                batch_tasks.append(asyncio.to_thread(mapper, item))
-        
-        return await asyncio.gather(*batch_tasks)
+        results = []
+        errors = []
+
+        async with error_context(f"Processing batch of {item_type}"):
+            for item in batch:
+                try:
+                    if is_async:
+                        result = await mapper(item, self.api_client)
+                    else:
+                        result = await asyncio.to_thread(mapper, item)
+                    results.append(result)
+                except Exception as e:
+                    logger.error(f"Error processing {item_type} item {item.get('o:id', 'unknown')}: {str(e)}")
+                    errors.append({
+                        'item_type': item_type,
+                        'item_id': item.get('o:id', 'unknown'),
+                        'error': str(e)
+                    })
+                    # Add a placeholder result to maintain data integrity
+                    results.append(self._create_error_placeholder(item_type, item))
+
+            # Log batch processing summary
+            if errors:
+                logger.warning(f"Batch processing completed with {len(errors)} errors")
+                self._save_errors(errors)
+
+            return results
+
+    def _create_error_placeholder(self, item_type: str, item: Dict[str, Any]) -> Dict[str, Any]:
+        """Create a placeholder for failed items."""
+        base_placeholder = {
+            'o:id': item.get('o:id', 'unknown'),
+            'processing_error': 'Failed to process item'
+        }
+        # Add minimum required fields based on item type
+        return base_placeholder
+
+    def _save_errors(self, errors: List[Dict[str, Any]]):
+        """Save processing errors to a file for later analysis."""
+        error_file = os.path.join(self.config.OUTPUT_DIR, 'processing_errors.json')
+        try:
+            existing_errors = []
+            if os.path.exists(error_file):
+                with open(error_file, 'r') as f:
+                    existing_errors = json.load(f)
+            
+            existing_errors.extend(errors)
+            
+            with open(error_file, 'w') as f:
+                json.dump(existing_errors, f, indent=2)
+        except Exception as e:
+            logger.error(f"Failed to save errors to file: {str(e)}")
 
     async def _process_item_sets(self, processed_data: Dict[str, List[Dict[str, Any]]]):
         """Process item sets with progress tracking."""
@@ -613,6 +716,25 @@ class DataProcessor:
                         if item_set_id.isdigit():
                             item_set_names.append(self.item_set_titles.get(int(item_set_id), ''))
                     item['o:item_set'] = '|'.join(filter(None, item_set_names))
+
+    def _save_partial_results(self):
+        """Save any processed data in case of critical failure."""
+        if self.processed_data:
+            partial_results_file = os.path.join(self.config.OUTPUT_DIR, 'partial_results.json')
+            try:
+                with open(partial_results_file, 'w') as f:
+                    json.dump(self.processed_data, f, indent=2)
+                logger.info(f"Saved partial results to {partial_results_file}")
+            except Exception as e:
+                logger.error(f"Failed to save partial results: {str(e)}")
+
+    async def _cleanup(self):
+        """Cleanup resources in case of errors."""
+        try:
+            if hasattr(self, 'api_client'):
+                await self.api_client._close_session()
+        except Exception as e:
+            logger.error(f"Error during cleanup: {str(e)}")
 
 class FileGenerator:
     def __init__(self, processed_data: Dict[str, List[Dict[str, Any]]], output_dir: str):
