@@ -35,7 +35,7 @@ class APIConfig:
 @dataclass
 class ItemSetResult:
     country: str
-    set_title: str
+    set_titles: Dict[str, str]
     item_count: int
 
 class APIClient:
@@ -144,27 +144,29 @@ class APIClient:
 
 class DataProcessor:
     @staticmethod
-    @functools.lru_cache(maxsize=128)
-    def get_title_by_language(titles_str: str, language: str) -> str:
-        titles = json.loads(titles_str)
+    def get_title_by_language(titles: List[dict], language: str) -> str:
+        """Get title in specified language, or fallback to first available."""
         for title in titles:
             if title.get('@language', '') == language:
                 return title['@value']
         return titles[0]['@value'] if titles else 'Unknown Set Title'
 
-    def process_item_set(self, client: APIClient, item_set_id: int, language: str) -> Tuple[Optional[ItemSetResult], Optional[Tuple]]:
+    def process_item_set(self, client: APIClient, item_set_id: int) -> Tuple[Optional[ItemSetResult], Optional[Tuple]]:
+        """Process item set and collect titles for all supported languages at once."""
         try:
             item_set_data = client.fetch_item_set(item_set_id)
             if not item_set_data:
                 return None, (item_set_id, "Failed to fetch item set data")
 
             titles = item_set_data.get('dcterms:title', [])
-            # Convert titles to string for caching
-            set_title = self.get_title_by_language(json.dumps(titles), language)
+            
+            # Collect titles for all languages at once
+            set_titles = {}
+            for lang in ['en', 'fr']:
+                set_titles[lang] = self.get_title_by_language(titles, lang)
 
             items = client.fetch_items(item_set_id)
-            # Note: country will be passed from the main loop instead
-            return ItemSetResult(None, set_title, len(items)), None
+            return ItemSetResult(None, set_titles, len(items)), None
 
         except Exception as e:
             logger.error(f"Error processing item set {item_set_id}: {str(e)}")
@@ -369,38 +371,42 @@ def main(languages: List[str]):
     processor = DataProcessor()
     visualizer = DataVisualizer(os.path.join(os.path.dirname(__file__), '..'))
 
+    # Process data once for all languages
+    logger.info("Processing data for all languages")
+    items_by_country_and_set = {lang: defaultdict(lambda: defaultdict(int)) for lang in languages}
+    errors = []
+
+    for country, item_set_ids in country_item_sets.items():
+        with concurrent.futures.ThreadPoolExecutor(max_workers=config.max_workers) as executor:
+            future_to_item_set = {
+                executor.submit(processor.process_item_set, client, item_set_id): (item_set_id, country)
+                for item_set_id in item_set_ids
+            }
+            
+            for future in tqdm(
+                concurrent.futures.as_completed(future_to_item_set),
+                total=len(item_set_ids),
+                desc=f"Processing {country} item sets"
+            ):
+                item_set_id, country = future_to_item_set[future]
+                result, error = future.result()
+                if error:
+                    errors.append(error)
+                elif result:
+                    # Store results for all languages at once
+                    for lang in languages:
+                        items_by_country_and_set[lang][country][result.set_titles[lang]] += result.item_count
+
+    # Create visualizations for each language using the collected data
     for language in languages:
-        logger.info(f"Processing data for language: {language}")
-        items_by_country_and_set = defaultdict(lambda: defaultdict(int))
-        errors = []
-
-        for country, item_set_ids in country_item_sets.items():
-            with concurrent.futures.ThreadPoolExecutor(max_workers=config.max_workers) as executor:
-                future_to_item_set = {
-                    executor.submit(processor.process_item_set, client, item_set_id, language): (item_set_id, country)
-                    for item_set_id in item_set_ids
-                }
-                
-                for future in tqdm(
-                    concurrent.futures.as_completed(future_to_item_set),
-                    total=len(item_set_ids),
-                    desc=f"Processing {country} item sets ({language})"
-                ):
-                    item_set_id, country = future_to_item_set[future]
-                    result, error = future.result()
-                    if error:
-                        errors.append(error)
-                    elif result:
-                        # Use the country from our dictionary instead of from the API
-                        items_by_country_and_set[country][result.set_title] += result.item_count
-
-        if errors:
-            logger.warning(f"Errors occurred with {len(errors)} item sets:")
-            for item_set_id, error in errors:
-                logger.warning(f"Item set {item_set_id}: {error}")
-
-        fig = visualizer.create_visualization(items_by_country_and_set, language)
+        logger.info(f"Creating visualization for language: {language}")
+        fig = visualizer.create_visualization(items_by_country_and_set[language], language)
         fig.show()
+
+    if errors:
+        logger.warning(f"Errors occurred with {len(errors)} item sets:")
+        for item_set_id, error in errors:
+            logger.warning(f"Item set {item_set_id}: {error}")
 
 if __name__ == "__main__":
     config = APIConfig()
