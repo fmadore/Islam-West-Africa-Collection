@@ -118,15 +118,53 @@ class ChartCreator:
                 marker=dict(
                     color=counts,
                     colorscale='Viridis',
-                    colorbar=dict(title=text['legend'])
+                    colorbar=dict(
+                        title=text['legend'],
+                        titleside="right",
+                        thickness=20
+                    )
+                ),
+                hovertemplate=(
+                    "<b>%{y}</b><br>" +
+                    text['legend'] + ": %{x:,.0f}<br>" +
+                    "<extra></extra>"
                 )
             )
         ]).update_layout(
-            title=self.title,
-            xaxis_title=text['x_axis'],
-            yaxis_title=text['y_axis'],
+            title=dict(
+                text=self.title,
+                x=0.5,  # Center the title
+                y=0.95,
+                font=dict(size=24)
+            ),
+            xaxis_title=dict(
+                text=text['x_axis'],
+                font=dict(size=16)
+            ),
+            yaxis_title=dict(
+                text=text['y_axis'],
+                font=dict(size=16)
+            ),
             height=800,
-            yaxis=dict(autorange="reversed")
+            width=1200,  # Fixed width for better readability
+            yaxis=dict(
+                autorange="reversed",
+                tickfont=dict(size=14)  # Larger font for author names
+            ),
+            xaxis=dict(
+                tickfont=dict(size=14),  # Larger font for numbers
+                gridcolor='lightgrey',
+                showgrid=True
+            ),
+            plot_bgcolor='white',  # White background
+            paper_bgcolor='white',
+            margin=dict(l=10, r=10, t=80, b=10),  # Adjust margins
+            showlegend=False,  # Hide legend since we have a colorbar
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=14,
+                font_family="Arial"
+            )
         )
     
     def _save_figure(self, fig, country: str, language: str) -> None:
