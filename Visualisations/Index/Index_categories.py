@@ -31,6 +31,13 @@ MAX_RETRIES = 3
 RATE_LIMIT = 5  # Maximum concurrent requests
 REQUEST_DELAY = 0.1  # Delay between requests in seconds
 
+# Add these constants near the top of the file, after other constants
+CHART_COLORS = {
+    'bar_color': '#1f77b4',  # A professional blue shade
+    'grid_color': '#E5E5E5',  # Light gray for grid
+    'text_color': '#2F2F2F'   # Dark gray for text
+}
+
 class APIError(Exception):
     """Custom exception for API-related errors."""
     pass
@@ -150,7 +157,6 @@ def create_bar_chart(
     filename: str
 ) -> None:
     """Create and save a bar chart for the item set details with sorted x-axis."""
-    # Save in the same directory as the script
     output_path = os.path.join(SCRIPT_DIR, filename)
 
     # Create a list of tuples containing (label, count)
@@ -161,21 +167,32 @@ def create_bar_chart(
     sorted_data = sorted(data, key=lambda x: x[1], reverse=True)
     labels, values = zip(*sorted_data)
     total_items = sum(values)
+    
+    # Calculate percentages
+    percentages = [f"{(value/total_items)*100:.1f}%" for value in values]
 
     # Create figure with custom styling
     fig = go.Figure(data=[
         go.Bar(
             x=labels,
             y=values,
-            text=values,
+            text=[f"{value}<br>({pct})" for value, pct in zip(values, percentages)],
             textposition='auto',
-            hovertemplate='%{x}<br>Count: %{y}<extra></extra>'
+            hovertemplate=(
+                "<b>%{x}</b><br>" +
+                "Count: %{y:,}<br>" +
+                "Percentage: %{customdata}<br>" +
+                "<extra></extra>"
+            ),
+            customdata=percentages,
+            marker_color=CHART_COLORS['bar_color'],
+            textfont=dict(color='white')
         )
     ])
 
     fig.update_layout(
         title={
-            'text': f"{title} (total: {total_items})",
+            'text': f"{title}<br><span style='font-size: 14px;'>Total: {total_items:,} items</span>",
             'y': 0.95,
             'x': 0.5,
             'xanchor': 'center',
@@ -184,8 +201,27 @@ def create_bar_chart(
         xaxis_title=x_title,
         yaxis_title=y_title,
         template='plotly_white',
-        hoverlabel=dict(bgcolor="white"),
-        margin=dict(t=100, l=70, r=40, b=70)
+        hoverlabel=dict(
+            bgcolor="white",
+            font_size=14
+        ),
+        margin=dict(t=120, l=70, r=40, b=120),  # Increased bottom margin for rotated labels
+        showlegend=False,
+        plot_bgcolor='white',
+        xaxis=dict(
+            tickangle=45,  # Rotate labels
+            tickfont=dict(size=12, color=CHART_COLORS['text_color']),
+            gridcolor=CHART_COLORS['grid_color']
+        ),
+        yaxis=dict(
+            gridcolor=CHART_COLORS['grid_color'],
+            tickfont=dict(size=12, color=CHART_COLORS['text_color']),
+            tickformat=',d'  # Add thousand separators
+        ),
+        font=dict(
+            family="Arial, sans-serif",
+            color=CHART_COLORS['text_color']
+        )
     )
 
     # Save the figure
