@@ -447,13 +447,14 @@ class ProgressTracker:
 class DataProcessor:
     def __init__(self, raw_data: List[Dict[str, Any]], item_sets: List[Dict[str, Any]], 
                  media: List[Dict[str, Any]], references: List[Dict[str, Any]], 
-                 item_set_titles: Dict[int, str], api_client: OmekaApiClient):
+                 item_set_titles: Dict[int, str], api_client: OmekaApiClient, config: Config):
         self.raw_data = raw_data
         self.item_sets = item_sets
         self.media = media
         self.references = references
         self.item_set_titles = item_set_titles
         self.api_client = api_client
+        self.config = config
         self.processed_data = None
         self.batch_size = 50
         # Create mapping caches
@@ -1130,7 +1131,8 @@ async def async_main():
             return
 
         logger.info("Processing fetched data...")
-        processor = DataProcessor(raw_data, item_sets, media, references, item_set_titles, api_client)
+        processor = DataProcessor(raw_data, item_sets, media, references, 
+                                item_set_titles, api_client, config)
         processed_data = await processor.process()
 
         logger.info(f"Processed data contains categories: {list(processed_data.keys())}")
