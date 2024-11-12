@@ -297,7 +297,7 @@ class OmekaApiClient:
             178: "references (reviews)",
             52: "references (edited books)",
             77: "references (communications)",
-            305: "references (web sites)"
+            305: "references (blog posts)"
         }
         return item_type_map.get(resource_class_id, f"items (class {resource_class_id})")
 
@@ -905,6 +905,11 @@ def map_index(item: Dict[str, Any]) -> Dict[str, Any]:
         fr_values = [v['@value'] for v in values if v.get('@language') == 'fr']
         return '|'.join(fr_values) if fr_values else get_value(item, field)
 
+    # Get type display titles
+    type_values = item.get('dcterms:type', [])
+    type_display_titles = [t.get('display_title', '') for t in type_values if t.get('display_title')]
+    type_string = '|'.join(filter(None, type_display_titles))
+
     return {
         'o:id': get_value(item, 'o:id'),
         'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
@@ -923,6 +928,7 @@ def map_index(item: Dict[str, Any]) -> Dict[str, Any]:
         'dcterms:isPartOf': get_value(item, 'dcterms:isPartOf'),
         'dcterms:hasPart': get_value(item, 'dcterms:hasPart'),
         'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
+        'dcterms:type': type_string,
         'foaf:firstName': get_value(item, 'foaf:firstName'),
         'foaf:lastName': get_value(item, 'foaf:lastName'),
         'foaf:gender': get_value(item, 'foaf:gender'),
