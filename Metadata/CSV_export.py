@@ -295,8 +295,8 @@ class OmekaApiClient:
             40: "references (books)",
             82: "references (reports)",
             178: "references (reviews)",
-            52: "references (communications)",
-            77: "references (newspapers)",
+            52: "references (edited books)",
+            77: "references (communications)",
             305: "references (web sites)"
         }
         return item_type_map.get(resource_class_id, f"items (class {resource_class_id})")
@@ -753,21 +753,21 @@ class FileGenerator:
     def generate_all_files(self):
         os.makedirs(self.output_dir, exist_ok=True)
 
-        for item_type, items in self.processed_data.items():
-            if items:
-                self.generate_csv_file(item_type, items)
-
-    def generate_csv_file(self, item_type: str, items: List[Dict[str, Any]]):
-        filepath = os.path.join(self.output_dir, f"{item_type}.csv")
+        # Log what data we have
+        logger.info(f"Generating files for categories: {list(self.processed_data.keys())}")
         
-        with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
-            if items:
-                fieldnames = items[0].keys()
-                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                writer.writeheader()
-                writer.writerows(items)
-
-        logger.info(f"Generated {filepath}")
+        for item_type, items in self.processed_data.items():
+            if items:  # Only generate files for non-empty data
+                filepath = os.path.join(self.output_dir, f"{item_type}.csv")
+                with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
+                    if items:
+                        fieldnames = items[0].keys()
+                        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                        writer.writeheader()
+                        writer.writerows(items)
+                logger.info(f"Generated {filepath} with {len(items)} items")
+            else:
+                logger.warning(f"No data to generate file for {item_type}")
 
 def get_value(item: Dict[str, Any], field: str, subfield: str = None) -> str:
     """Utility function to safely get a value from an item."""
@@ -1127,11 +1127,9 @@ async def async_main():
         processor = DataProcessor(raw_data, item_sets, media, references, item_set_titles, api_client)
         processed_data = await processor.process()
 
-        logger.info("Processing item sets...")
-        await processor.process_item_sets()
-
+        logger.info(f"Processed data contains categories: {list(processed_data.keys())}")
         logger.info("Generating CSV files...")
-        generator = FileGenerator(processor.processed_data, config.OUTPUT_DIR)
+        generator = FileGenerator(processed_data, config.OUTPUT_DIR)
         generator.generate_all_files()
 
         logger.info("All files generated successfully.")
