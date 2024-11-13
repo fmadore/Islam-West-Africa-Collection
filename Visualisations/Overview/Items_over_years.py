@@ -249,6 +249,12 @@ class Visualizer:
     
     def create_visualization(self, items_by_year_type: DefaultDict[str, DefaultDict[str, int]], language: str = 'en'):
         """Create and save the visualization."""
+        # First, calculate total counts for each type to determine order
+        type_totals = defaultdict(int)
+        for year_data in items_by_year_type.values():
+            for type_name, count in year_data.items():
+                type_totals[type_name] += count
+        
         # Create color mapping using English names as keys
         color_map = {
             type_info[language]: type_info["color"]  # Map translated name to color
@@ -270,10 +276,13 @@ class Visualizer:
                     'Year': year,
                     'Type': translated_type,
                     'Number of Items': count,
-                    'Original_Type': type_name  # Keep original English name for color mapping
+                    'Original_Type': type_name,  # Keep original English name for color mapping
+                    'Total_Type': type_totals[type_name]  # Add total for sorting
                 })
 
-        data = sorted(data, key=lambda x: x['Type'])
+        # Sort data by total count (descending) to put largest values at bottom
+        data = sorted(data, key=lambda x: (-x['Total_Type'], x['Type']))
+
         label = self.config.LABELS[language]
 
         # Calculate total counts per year
