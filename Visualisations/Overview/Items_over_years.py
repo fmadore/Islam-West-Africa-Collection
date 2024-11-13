@@ -54,17 +54,91 @@ class Config:
     LABELS: Dict[str, Dict[str, str]] = field(default_factory=lambda: {
         'en': {
             'title': 'Number of items in the database by type over years',
-            'number_of_items': 'Number of items',
+            'number_of_items': 'items',
             'year': 'Year',
             'type': 'Item type',
             'filename': 'item_distribution_over_years_english.html'
         },
         'fr': {
             'title': 'Nombre d\'éléments de la base de données par type au fil des ans',
-            'number_of_items': 'Nombre d\'éléments',
+            'number_of_items': 'éléments',
             'year': 'Année',
             'type': 'Type d\'élément',
             'filename': 'item_distribution_over_years_french.html'
+        }
+    })
+
+    # Color palette with bilingual labels
+    COLOR_PALETTE: Dict[str, Dict[str, str]] = field(default_factory=lambda: {
+        "Blog article": {
+            "en": "Blog article",
+            "fr": "Article de blog",
+            "color": "#FF6B6B"
+        },
+        "Press article": {
+            "en": "Press article",
+            "fr": "Article de presse",
+            "color": "#4ECDC4"
+        },
+        "Journal article": {
+            "en": "Journal article",
+            "fr": "Article de revue",
+            "color": "#45B7D1"
+        },
+        "Book": {
+            "en": "Book",
+            "fr": "Livre",
+            "color": "#96CEB4"
+        },
+        "Book review": {
+            "en": "Book review",
+            "fr": "Compte rendu de livre",
+            "color": "#FFEEAD"
+        },
+        "Chapter": {
+            "en": "Chapter",
+            "fr": "Chapitre",
+            "color": "#D4A5A5"
+        },
+        "Communication": {
+            "en": "Communication",
+            "fr": "Communication",
+            "color": "#9B9B9B"
+        },
+        "Edited volume": {
+            "en": "Edited volume",
+            "fr": "Ouvrage collectif",
+            "color": "#FFD93D"
+        },
+        "Image": {
+            "en": "Image",
+            "fr": "Image",
+            "color": "#6C5B7B"
+        },
+        "Islamic newspaper": {
+            "en": "Islamic newspaper",
+            "fr": "Journal islamique",
+            "color": "#C06C84"
+        },
+        "Other document": {
+            "en": "Other document",
+            "fr": "Document divers",
+            "color": "#F8B195"
+        },
+        "Report": {
+            "en": "Report",
+            "fr": "Rapport",
+            "color": "#355C7D"
+        },
+        "Thesis": {
+            "en": "Thesis",
+            "fr": "Thèse",
+            "color": "#99B898"
+        },
+        "Audiovisual document": {
+            "en": "Audiovisual document",
+            "fr": "Document audiovisuel",
+            "color": "#2A363B"
         }
     })
 
@@ -171,10 +245,28 @@ class Visualizer:
     
     def create_visualization(self, items_by_year_type: DefaultDict[str, DefaultDict[str, int]], language: str = 'en'):
         """Create and save the visualization."""
+        # Create color mapping for current language
+        color_map = {
+            self.config.COLOR_PALETTE[type_key][language]: self.config.COLOR_PALETTE[type_key]["color"]
+            for type_key in self.config.COLOR_PALETTE
+        }
+
+        # Prepare data with translated type names
         data = []
         for year, types in sorted(items_by_year_type.items()):
             for type_name, count in types.items():
-                data.append({'Year': year, 'Type': type_name, 'Number of Items': count})
+                # Find the translated name from the original English name
+                translated_type = type_name
+                for type_key, type_info in self.config.COLOR_PALETTE.items():
+                    if type_info['en'] == type_name:
+                        translated_type = type_info[language]
+                        break
+                
+                data.append({
+                    'Year': year,
+                    'Type': translated_type,
+                    'Number of Items': count
+                })
 
         data = sorted(data, key=lambda x: x['Type'])
         label = self.config.LABELS[language]
@@ -190,16 +282,56 @@ class Visualizer:
                 'Year': label['year'],
                 'Type': label['type']
             },
-            hover_data={'Number of Items': True}
+            hover_data={'Number of Items': ':,.0f'},
+            color_discrete_map=color_map
         )
         
-        fig.update_traces(textposition='inside')
         fig.update_layout(
             barmode='stack',
-            xaxis={'type': 'category', 'categoryorder': 'category ascending'},
+            xaxis={
+                'type': 'category',
+                'categoryorder': 'category ascending',
+                'tickangle': 45,
+                'tickmode': 'linear',
+                'dtick': 5,
+            },
             showlegend=True,
-            legend={'title': label['type']},
+            legend={
+                'title': label['type'],
+                'orientation': 'h',
+                'yanchor': 'bottom',
+                'y': -0.3,
+                'xanchor': 'center',
+                'x': 0.5
+            },
+            margin=dict(b=150),
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            yaxis=dict(
+                gridcolor='lightgrey',
+                zeroline=True,
+                zerolinecolor='grey',
+                zerolinewidth=1
+            ),
         )
+
+        fig.update_yaxes(separatethousands=True)
+
+        # Update hover template with simplified format
+        if language == 'fr':
+            hover_template = (
+                "%{x}<br>" +
+                "<b>%{data.name}</b><br>" +  # Type first
+                "%{y:,.0f} " + label['number_of_items'] + "<extra></extra>"  # "X éléments"
+            )
+        else:
+            hover_template = (
+                "%{x}<br>" +
+                "%{y:,.0f} " + label['number_of_items'] + "<br>" +  # "X items"
+                "<b>%{data.name}</b><extra></extra>"
+            )
+
+        fig.update_traces(hovertemplate=hover_template)
 
         # Create the full path for the output file
         output_path = os.path.join(SCRIPT_DIR, label['filename'])
