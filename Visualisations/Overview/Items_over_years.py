@@ -57,14 +57,16 @@ class Config:
             'number_of_items': 'items',
             'year': 'Year',
             'type': 'Item type',
-            'filename': 'item_distribution_over_years_english.html'
+            'filename': 'item_distribution_over_years_english.html',
+            'total': 'Total'
         },
         'fr': {
             'title': 'Nombre d\'éléments de la base de données par type au fil des ans',
             'number_of_items': 'éléments',
             'year': 'Année',
             'type': 'Type d\'élément',
-            'filename': 'item_distribution_over_years_french.html'
+            'filename': 'item_distribution_over_years_french.html',
+            'total': 'Total'
         }
     })
 
@@ -271,6 +273,12 @@ class Visualizer:
         data = sorted(data, key=lambda x: x['Type'])
         label = self.config.LABELS[language]
 
+        # Calculate total counts per year
+        yearly_totals = {}
+        for year, types in sorted(items_by_year_type.items()):
+            yearly_totals[year] = sum(types.values())
+
+        # Create the stacked bar chart
         fig = px.bar(
             data,
             x='Year',
@@ -285,7 +293,25 @@ class Visualizer:
             hover_data={'Number of Items': ':,.0f'},
             color_discrete_map=color_map
         )
+
+        # Add the total line
+        fig.add_scatter(
+            x=list(yearly_totals.keys()),
+            y=list(yearly_totals.values()),
+            mode='lines',
+            name=label.get('total', 'Total') if language == 'en' else 'Total',
+            line=dict(
+                color='rgba(0, 0, 0, 0.7)',
+                width=2,
+                dash='dot'
+            ),
+            hovertemplate="%{x}<br>" +
+                         "<b>Total:</b> %{y:,.0f} " + 
+                         label['number_of_items'] +
+                         "<extra></extra>"
+        )
         
+        # Update layout with secondary y-axis settings
         fig.update_layout(
             barmode='stack',
             xaxis={
@@ -302,7 +328,8 @@ class Visualizer:
                 'yanchor': 'bottom',
                 'y': -0.3,
                 'xanchor': 'center',
-                'x': 0.5
+                'x': 0.5,
+                'traceorder': 'normal'  # Ensure total line appears at the end
             },
             margin=dict(b=150),
             plot_bgcolor='white',
@@ -311,27 +338,74 @@ class Visualizer:
                 gridcolor='lightgrey',
                 zeroline=True,
                 zerolinecolor='grey',
-                zerolinewidth=1
+                zerolinewidth=1,
             ),
+            hovermode='x unified'  # Show all hover info for the same x-value
         )
 
         fig.update_yaxes(separatethousands=True)
 
-        # Update hover template with simplified format
+        # Update hover template for the bars
         if language == 'fr':
             hover_template = (
-                "%{x}<br>" +
-                "<b>%{data.name}</b><br>" +  # Type first
+                "<b>%{data.name}</b><br>" +  # Type
                 "%{y:,.0f} " + label['number_of_items'] + "<extra></extra>"  # "X éléments"
             )
         else:
             hover_template = (
-                "%{x}<br>" +
-                "%{y:,.0f} " + label['number_of_items'] + "<br>" +  # "X items"
-                "<b>%{data.name}</b><extra></extra>"
+                "<b>%{data.name}</b><br>" +  # Type
+                "%{y:,.0f} " + label['number_of_items'] + "<extra></extra>"  # "X items"
             )
 
         fig.update_traces(hovertemplate=hover_template)
+
+        # Update total line hover template
+        total_hover_template = (
+            "<b>" + label['total'] + "</b><br>" +
+            "%{y:,.0f} " + label['number_of_items'] + "<extra></extra>"
+        )
+
+        # Update the total line trace
+        fig.data[-1].update(hovertemplate=total_hover_template)
+
+        # Update layout to show year in hover title
+        fig.update_layout(
+            barmode='stack',
+            xaxis={
+                'type': 'category',
+                'categoryorder': 'category ascending',
+                'tickangle': 45,
+                'tickmode': 'linear',
+                'dtick': 5,
+            },
+            showlegend=True,
+            legend={
+                'title': label['type'],
+                'orientation': 'h',
+                'yanchor': 'bottom',
+                'y': -0.3,
+                'xanchor': 'center',
+                'x': 0.5,
+                'traceorder': 'normal'  # Ensure total line appears at the end
+            },
+            margin=dict(b=150),
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            yaxis=dict(
+                gridcolor='lightgrey',
+                zeroline=True,
+                zerolinecolor='grey',
+                zerolinewidth=1,
+            ),
+            hovermode='x unified',  # Show all hover info for the same x-value
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=14,
+            ),
+            hoverdistance=100,  # Increase hover distance for better UX
+        )
+
+        fig.update_yaxes(separatethousands=True)
 
         # Create the full path for the output file
         output_path = os.path.join(SCRIPT_DIR, label['filename'])
