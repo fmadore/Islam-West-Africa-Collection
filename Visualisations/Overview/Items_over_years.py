@@ -249,27 +249,28 @@ class Visualizer:
     
     def create_visualization(self, items_by_year_type: DefaultDict[str, DefaultDict[str, int]], language: str = 'en'):
         """Create and save the visualization."""
-        # Create color mapping for current language
+        # Create color mapping using English names as keys
         color_map = {
-            self.config.COLOR_PALETTE[type_key][language]: self.config.COLOR_PALETTE[type_key]["color"]
-            for type_key in self.config.COLOR_PALETTE
+            type_info[language]: type_info["color"]  # Map translated name to color
+            for type_key, type_info in self.config.COLOR_PALETTE.items()
         }
 
-        # Prepare data with translated type names
+        # Prepare data with translated type names and maintain color consistency
         data = []
         for year, types in sorted(items_by_year_type.items()):
             for type_name, count in types.items():
-                # Find the translated name from the original English name
+                # Find the translated name and ensure color consistency
                 translated_type = type_name
                 for type_key, type_info in self.config.COLOR_PALETTE.items():
-                    if type_info['en'] == type_name:
+                    if type_info['en'] == type_name:  # Match using English name
                         translated_type = type_info[language]
                         break
                 
                 data.append({
                     'Year': year,
                     'Type': translated_type,
-                    'Number of Items': count
+                    'Number of Items': count,
+                    'Original_Type': type_name  # Keep original English name for color mapping
                 })
 
         data = sorted(data, key=lambda x: x['Type'])
