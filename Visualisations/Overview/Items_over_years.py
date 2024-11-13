@@ -55,6 +55,7 @@ class Config:
         'en': {
             'title': 'Number of items in the database by type over years',
             'number_of_items': 'items',
+            'axis_label': 'Number of items',
             'year': 'Year',
             'type': 'Item type',
             'filename': 'item_distribution_over_years_english.html',
@@ -63,6 +64,7 @@ class Config:
         'fr': {
             'title': 'Nombre d\'éléments de la base de données par type au fil des ans',
             'number_of_items': 'éléments',
+            'axis_label': 'Nombre d\'éléments',
             'year': 'Année',
             'type': 'Type d\'élément',
             'filename': 'item_distribution_over_years_french.html',
@@ -286,7 +288,7 @@ class Visualizer:
             color='Type',
             title=label['title'],
             labels={
-                'Number of Items': label['number_of_items'],
+                'Number of Items': label['axis_label'],
                 'Year': label['year'],
                 'Type': label['type']
             },
