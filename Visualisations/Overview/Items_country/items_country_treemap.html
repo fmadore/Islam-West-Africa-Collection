@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Items Distribution Treemap</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        #visualization {
+            width: 100%;
+            height: 800px;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .node {
+            stroke: #fff;
+            stroke-width: 1px;
+        }
+        .label {
+            font-size: 14px;
+            font-weight: bold;
+            pointer-events: none;
+        }
+        .tooltip {
+            position: absolute;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 14px;
+        }
+        #languageSelector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="languageSelector">
+        <button onclick="loadData('en')">English</button>
+        <button onclick="loadData('fr')">Français</button>
+    </div>
+    <h1 id="title" class="title"></h1>
+    <div id="visualization"></div>
+    <script>
+        const translations = {
+            'en': {
+                'title': 'Distribution of {} items by country and sub-collection',
+                'items': 'Items'
+            },
+            'fr': {
+                'title': 'Répartition des {} éléments par pays et sous-collection',
+                'items': 'Éléments'
+            }
+        };
+
+        async function loadData(language) {
+            try {
+                const response = await fetch(`treemap_data_${language}.json`);
+                const data = await response.json();
+                createVisualization(data, language);
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+
+        function createVisualization(data, language) {
+            // Clear previous visualization
+            d3.select("#visualization").html("");
+            
+            // Update title
+            const titleText = translations[language].title.replace('{}', data.total_items.toLocaleString());
+            d3.select("#title").text(titleText);
+
+            const width = document.getElementById('visualization').clientWidth;
+            const height = document.getElementById('visualization').clientHeight;
+
+            const treemap = d3.treemap()
+                .size([width, height])
+                .padding(1)
+                .round(true);
+
+            const root = d3.hierarchy(data.data)
+                .sum(d => d.value)
+                .sort((a, b) => b.value - a.value);
+
+            treemap(root);
+
+            const svg = d3.select("#visualization")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            const tooltip = d3.select("body")
+                .append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
+            const node = svg.selectAll("g")
+                .data(root.descendants())
+                .join("g")
+                .attr("transform", d => `translate(${d.x0},${d.y0})`);
+
+            node.append("rect")
+                .attr("class", "node")
+                .attr("width", d => d.x1 - d.x0)
+                .attr("height", d => d.y1 - d.y0)
+                .attr("fill", d => d.data.color)
+                .attr("opacity", 0.85)
+                .on("mouseover", function(event, d) {
+                    d3.select(this).attr("opacity", 1);
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    
+                    const percentage = (d.value / root.value * 100).toFixed(1);
+                    tooltip.html(`${d.data.name}<br/>${translations[language].items}: ${d.value.toLocaleString()}<br/>${percentage}%`)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                })
+                .on("mouseout", function() {
+                    d3.select(this).attr("opacity", 0.85);
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+
+            node.append("text")
+                .attr("class", "label")
+                .attr("x", 3)
+                .attr("y", 15)
+                .text(d => {
+                    const width = d.x1 - d.x0;
+                    const height = d.y1 - d.y0;
+                    if (width > 60 && height > 25) {
+                        return d.data.name;
+                    }
+                    return "";
+                })
+                .attr("fill", "white");
+        }
+
+        // Load English data by default
+        loadData('en');
+    </script>
+</body>
+</html> 
