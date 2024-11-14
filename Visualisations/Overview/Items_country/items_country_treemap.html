@@ -2,33 +2,48 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Items Distribution Treemap</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #fafafa;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
         #visualization {
             width: 100%;
-            height: 800px;
+            height: 80vh; /* Responsive height based on viewport */
+            min-height: 400px; /* Minimum height for very small screens */
         }
+
         .title {
             text-align: center;
-            font-size: 24px;
+            font-size: clamp(18px, 4vw, 24px); /* Responsive font size */
             margin-bottom: 20px;
+            padding: 0 10px;
+            word-wrap: break-word;
         }
+
         .node {
             stroke: #fff;
             stroke-width: 1px;
         }
+
         .label {
-            font-size: 14px;
+            font-size: clamp(12px, 2vw, 14px); /* Responsive font size */
             font-weight: bold;
             pointer-events: none;
         }
+
         .tooltip {
             position: absolute;
             padding: 10px;
@@ -36,21 +51,74 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             pointer-events: none;
-            font-size: 14px;
+            font-size: clamp(12px, 2vw, 14px); /* Responsive font size */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 80vw; /* Prevent tooltip from overflowing on mobile */
+            z-index: 1000;
         }
+
         #languageSelector {
             text-align: center;
             margin-bottom: 20px;
         }
+
+        #languageSelector button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            font-size: clamp(14px, 2vw, 16px);
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #languageSelector button:hover {
+            background-color: #45a049;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            .container {
+                padding: 5px;
+            }
+
+            #visualization {
+                height: 70vh;
+            }
+
+            .tooltip {
+                padding: 8px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #visualization {
+                height: 60vh;
+            }
+
+            #languageSelector button {
+                padding: 6px 12px;
+                margin: 0 3px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="languageSelector">
-        <button onclick="loadData('en')">English</button>
-        <button onclick="loadData('fr')">Français</button>
+    <div class="container">
+        <div id="languageSelector">
+            <button onclick="loadData('en')">English</button>
+            <button onclick="loadData('fr')">Français</button>
+        </div>
+        <h1 id="title" class="title"></h1>
+        <div id="visualization"></div>
     </div>
-    <h1 id="title" class="title"></h1>
-    <div id="visualization"></div>
     <script>
         const translations = {
             'en': {
@@ -81,8 +149,9 @@
             const titleText = translations[language].title.replace('{}', data.total_items.toLocaleString());
             d3.select("#title").text(titleText);
 
-            const width = document.getElementById('visualization').clientWidth;
-            const height = document.getElementById('visualization').clientHeight;
+            const container = document.getElementById('visualization');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
 
             const treemap = d3.treemap()
                 .size([width, height])
@@ -98,7 +167,9 @@
             const svg = d3.select("#visualization")
                 .append("svg")
                 .attr("width", width)
-                .attr("height", height);
+                .attr("height", height)
+                .attr("viewBox", `0 0 ${width} ${height}`)
+                .attr("preserveAspectRatio", "xMidYMid meet");
 
             const tooltip = d3.select("body")
                 .append("div")
@@ -112,8 +183,8 @@
 
             node.append("rect")
                 .attr("class", "node")
-                .attr("width", d => d.x1 - d.x0)
-                .attr("height", d => d.y1 - d.y0)
+                .attr("width", d => Math.max(0, d.x1 - d.x0))
+                .attr("height", d => Math.max(0, d.y1 - d.y0))
                 .attr("fill", d => d.data.color)
                 .attr("opacity", 0.85)
                 .on("mouseover", function(event, d) {
@@ -124,8 +195,8 @@
                     
                     const percentage = (d.value / root.value * 100).toFixed(1);
                     tooltip.html(`${d.data.name}<br/>${translations[language].items}: ${d.value.toLocaleString()}<br/>${percentage}%`)
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY - 28) + "px");
+                        .style("left", `${Math.min(event.pageX + 10, window.innerWidth - 200)}px`)
+                        .style("top", `${Math.min(event.pageY - 28, window.innerHeight - 100)}px`);
                 })
                 .on("mouseout", function() {
                     d3.select(this).attr("opacity", 0.85);
@@ -141,13 +212,25 @@
                 .text(d => {
                     const width = d.x1 - d.x0;
                     const height = d.y1 - d.y0;
-                    if (width > 60 && height > 25) {
+                    // Adjust text visibility threshold for mobile
+                    const threshold = window.innerWidth <= 768 ? 40 : 60;
+                    if (width > threshold && height > threshold) {
                         return d.data.name;
                     }
                     return "";
                 })
                 .attr("fill", "white");
         }
+
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                const currentLang = document.documentElement.lang || 'en';
+                loadData(currentLang);
+            }, 250);
+        });
 
         // Load English data by default
         loadData('en');
