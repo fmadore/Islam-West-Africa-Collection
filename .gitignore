@@ -17,3 +17,5 @@ Visualisations/Keywords/data_processing.log
 Visualisations/Overview/data_visualization.log
 /Metadata/cache
 /Visualisations/Overview/cache
+/Visualisations/Overview/Items_country/cache
+/Visualisations/Overview/__pycache__
