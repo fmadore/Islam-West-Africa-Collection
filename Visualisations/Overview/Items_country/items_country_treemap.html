@@ -266,7 +266,7 @@
                 const height = d.y1 - d.y0;
 
                 if (d.depth === 1) { // Country labels
-                    // Add country name
+                    // Add country name - always show for countries
                     el.append("text")
                         .attr("class", "country-label")
                         .attr("x", 4)
@@ -275,7 +275,7 @@
                         .attr("text-anchor", "start")
                         .text(d.data.name);
 
-                    // Add percentage for countries
+                    // Add percentage for countries - always show
                     const percentage = (d.value / root.value * 100).toFixed(1);
                     el.append("text")
                         .attr("class", "percentage-label")
@@ -284,32 +284,37 @@
                         .attr("alignment-baseline", "hanging")
                         .attr("text-anchor", "start")
                         .text(`${percentage}%`);
-                } else if (d.depth === 2 && width > 60 && height > 30) { // Item labels
+
+                } else if (d.depth === 2) { // Item labels
                     const name = d.data.name;
                     const percentage = (d.value / d.parent.value * 100).toFixed(1);
                     
-                    // Truncate text if needed
-                    const maxLength = Math.floor(width / 8);
-                    const displayName = name.length > maxLength ? 
-                        name.slice(0, maxLength - 3) + '...' : 
-                        name;
+                    // More lenient threshold for showing labels
+                    if (width > 40 && height > 25) {
+                        // Adjust maxLength based on available width
+                        const maxLength = Math.max(Math.floor(width / 6), 10);
+                        const displayName = name.length > maxLength ? 
+                            name.slice(0, maxLength - 3) + '...' : 
+                            name;
 
-                    el.append("text")
-                        .attr("class", "item-label")
-                        .attr("x", 4)
-                        .attr("y", 4)
-                        .attr("alignment-baseline", "hanging")
-                        .attr("text-anchor", "start")
-                        .text(displayName);
-
-                    if (height > 45) {
                         el.append("text")
-                            .attr("class", "percentage-label")
+                            .attr("class", "item-label")
                             .attr("x", 4)
-                            .attr("y", 22)
+                            .attr("y", 4)
                             .attr("alignment-baseline", "hanging")
                             .attr("text-anchor", "start")
-                            .text(`${percentage}%`);
+                            .text(displayName);
+
+                        // Show percentage if there's enough height
+                        if (height > 35) {
+                            el.append("text")
+                                .attr("class", "percentage-label")
+                                .attr("x", 4)
+                                .attr("y", 22)
+                                .attr("alignment-baseline", "hanging")
+                                .attr("text-anchor", "start")
+                                .text(`${percentage}%`);
+                        }
                     }
                 }
             });
