@@ -36,6 +36,7 @@
         .node {
             stroke: #fff;
             stroke-width: 1px;
+            cursor: pointer;
         }
 
         .label {
@@ -127,6 +128,25 @@
             fill: rgba(255, 255, 255, 0.9);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
+
+        #resetZoom {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(76, 175, 80, 0.8);
+            color: white;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s;
+        }
+
+        #resetZoom:hover {
+            background-color: rgba(76, 175, 80, 1);
+        }
     </style>
 </head>
 <body>
@@ -137,6 +157,7 @@
         </div>
         <h1 id="title" class="title"></h1>
         <div id="visualization"></div>
+        <button id="resetZoom">Reset View</button>
     </div>
     <script>
         const translations = {
@@ -210,6 +231,7 @@
                 .attr("height", d => Math.max(0, d.y1 - d.y0))
                 .attr("fill", d => d.data.color)
                 .attr("opacity", d => d.depth === 1 ? 0.85 : 0.75)
+                .style("cursor", "pointer")
                 .on("mouseover", function(event, d) {
                     d3.select(this).attr("opacity", 1);
                     tooltip.transition()
@@ -360,6 +382,85 @@
                         .style("left", `${Math.min(event.pageX + 10, window.innerWidth - 200)}px`)
                         .style("top", `${Math.min(event.pageY - 28, window.innerHeight - 100)}px`);
                 });
+
+            let currentZoom = null;
+            const resetZoomButton = document.getElementById('resetZoom');
+
+            function zoom(d) {
+                if (currentZoom === d) {
+                    // If clicking the same element, reset zoom
+                    currentZoom = null;
+                    resetZoomButton.style.display = 'none';
+                    
+                    // Transition all nodes back to their original position
+                    node.transition()
+                        .duration(750)
+                        .attr("transform", d => `translate(${d.x0},${d.y0})`);
+
+                    node.selectAll("rect")
+                        .transition()
+                        .duration(750)
+                        .attr("width", d => Math.max(0, d.x1 - d.x0))
+                        .attr("height", d => Math.max(0, d.y1 - d.y0));
+
+                } else {
+                    currentZoom = d;
+                    resetZoomButton.style.display = 'block';
+
+                    const x = d.x0;
+                    const y = d.y0;
+                    const w = d.x1 - d.x0;
+                    const h = d.y1 - d.y0;
+
+                    // Calculate scale factors
+                    const scaleX = width / w;
+                    const scaleY = height / h;
+                    const scale = Math.min(scaleX, scaleY) * 0.9; // 0.9 to add some padding
+
+                    // Calculate translation to center the zoomed element
+                    const translateX = (width - w * scale) / 2 - x * scale;
+                    const translateY = (height - h * scale) / 2 - y * scale;
+
+                    // Transition all nodes
+                    node.transition()
+                        .duration(750)
+                        .attr("transform", d => {
+                            const x = d.x0 * scale + translateX;
+                            const y = d.y0 * scale + translateY;
+                            return `translate(${x},${y})`;
+                        });
+
+                    node.selectAll("rect")
+                        .transition()
+                        .duration(750)
+                        .attr("width", d => Math.max(0, (d.x1 - d.x0) * scale))
+                        .attr("height", d => Math.max(0, (d.y1 - d.y0) * scale));
+
+                    // Update text sizes
+                    node.selectAll("text")
+                        .style("font-size", `${12 * scale}px`);
+                }
+            }
+
+            // Add click handlers to nodes
+            node.on("click", (event, d) => {
+                event.stopPropagation();
+                zoom(d);
+            });
+
+            // Add reset zoom button handler
+            resetZoomButton.onclick = () => {
+                if (currentZoom) {
+                    zoom(currentZoom);
+                }
+            };
+
+            // Add click handler to svg background to reset zoom
+            svg.on("click", (event) => {
+                if (event.target.tagName === "svg" && currentZoom) {
+                    zoom(currentZoom);
+                }
+            });
         }
 
         // Handle window resize
