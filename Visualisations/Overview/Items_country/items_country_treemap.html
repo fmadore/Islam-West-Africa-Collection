@@ -108,6 +108,25 @@
                 margin: 0 3px;
             }
         }
+
+        .country-label {
+            font-size: clamp(14px, 2.5vw, 20px);
+            font-weight: bold;
+            fill: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .item-label {
+            font-size: clamp(11px, 1.8vw, 14px);
+            fill: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .percentage-label {
+            font-size: clamp(11px, 1.8vw, 14px);
+            fill: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body>
@@ -155,7 +174,11 @@
 
             const treemap = d3.treemap()
                 .size([width, height])
-                .padding(1)
+                .paddingTop(20)
+                .paddingRight(2)
+                .paddingBottom(2)
+                .paddingLeft(2)
+                .paddingInner(3)
                 .round(true);
 
             const root = d3.hierarchy(data.data)
@@ -186,7 +209,7 @@
                 .attr("width", d => Math.max(0, d.x1 - d.x0))
                 .attr("height", d => Math.max(0, d.y1 - d.y0))
                 .attr("fill", d => d.data.color)
-                .attr("opacity", 0.85)
+                .attr("opacity", d => d.depth === 1 ? 0.85 : 0.75)
                 .on("mouseover", function(event, d) {
                     d3.select(this).attr("opacity", 1);
                     tooltip.transition()
@@ -205,21 +228,133 @@
                         .style("opacity", 0);
                 });
 
-            node.append("text")
-                .attr("class", "label")
-                .attr("x", 3)
-                .attr("y", 15)
-                .text(d => {
-                    const width = d.x1 - d.x0;
-                    const height = d.y1 - d.y0;
-                    // Adjust text visibility threshold for mobile
-                    const threshold = window.innerWidth <= 768 ? 40 : 60;
-                    if (width > threshold && height > threshold) {
-                        return d.data.name;
+            // Add label handling functions
+            function truncateText(text, maxLength = 30) {
+                return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+            }
+
+            function calculateFontSize(d) {
+                const area = (d.x1 - d.x0) * (d.y1 - d.y0);
+                // Adjust these values to fine-tune font sizing
+                return Math.min(Math.max(area / 8000, 10), 16);
+            }
+
+            function wrapText(text, width) {
+                const words = text.split(/\s+/).reverse();
+                const lineHeight = 1.1; // ems
+                const lines = [];
+                let line = [];
+                let word;
+
+                while (word = words.pop()) {
+                    line.push(word);
+                    const testLine = line.join(" ");
+                    if (testLine.length * 6 > width) { // Approximate character width
+                        line.pop();
+                        if (line.length) lines.push(line.join(" "));
+                        line = [word];
                     }
-                    return "";
+                }
+                if (line.length) lines.push(line.join(" "));
+                return lines;
+            }
+
+            // Create labels with better positioning and sizing
+            node.each(function(d) {
+                const el = d3.select(this);
+                const width = d.x1 - d.x0;
+                const height = d.y1 - d.y0;
+
+                if (d.depth === 1) { // Country labels
+                    // Add country name
+                    el.append("text")
+                        .attr("class", "country-label")
+                        .attr("x", 4)
+                        .attr("y", 2)
+                        .attr("alignment-baseline", "hanging")
+                        .attr("text-anchor", "start")
+                        .text(d.data.name);
+
+                    // Add percentage for countries
+                    const percentage = (d.value / root.value * 100).toFixed(1);
+                    el.append("text")
+                        .attr("class", "percentage-label")
+                        .attr("x", 4)
+                        .attr("y", 25)
+                        .attr("alignment-baseline", "hanging")
+                        .attr("text-anchor", "start")
+                        .text(`${percentage}%`);
+                } else if (d.depth === 2 && width > 60 && height > 30) { // Item labels
+                    const name = d.data.name;
+                    const percentage = (d.value / d.parent.value * 100).toFixed(1);
+                    
+                    // Truncate text if needed
+                    const maxLength = Math.floor(width / 8);
+                    const displayName = name.length > maxLength ? 
+                        name.slice(0, maxLength - 3) + '...' : 
+                        name;
+
+                    el.append("text")
+                        .attr("class", "item-label")
+                        .attr("x", 4)
+                        .attr("y", 4)
+                        .attr("alignment-baseline", "hanging")
+                        .attr("text-anchor", "start")
+                        .text(displayName);
+
+                    if (height > 45) {
+                        el.append("text")
+                            .attr("class", "percentage-label")
+                            .attr("x", 4)
+                            .attr("y", 22)
+                            .attr("alignment-baseline", "hanging")
+                            .attr("text-anchor", "start")
+                            .text(`${percentage}%`);
+                    }
+                }
+            });
+
+            // Add hover effect for labels
+            node.selectAll(".label-container")
+                .style("opacity", 0.9)
+                .on("mouseover", function() {
+                    d3.select(this).style("opacity", 1);
                 })
-                .attr("fill", "white");
+                .on("mouseout", function() {
+                    d3.select(this).style("opacity", 0.9);
+                });
+
+            // Update tooltip to show full information
+            node.selectAll("rect")
+                .on("mouseover", function(event, d) {
+                    d3.select(this).attr("opacity", 1);
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    
+                    const percentage = (d.value / root.value * 100).toFixed(1);
+                    const itemCount = d.value.toLocaleString();
+                    
+                    let tooltipContent = `
+                        <strong>${d.data.name}</strong><br/>
+                        ${translations[language].items}: ${itemCount}<br/>
+                        ${percentage}%
+                    `;
+                    
+                    // Add parent information for sub-items
+                    if (d.parent && d.parent.data.name !== "root") {
+                        tooltipContent = `
+                            <strong>${d.parent.data.name}</strong><br/>
+                            ${d.data.name}<br/>
+                            ${translations[language].items}: ${itemCount}<br/>
+                            ${percentage}%
+                        `;
+                    }
+
+                    tooltip.html(tooltipContent)
+                        .style("left", `${Math.min(event.pageX + 10, window.innerWidth - 200)}px`)
+                        .style("top", `${Math.min(event.pageY - 28, window.innerHeight - 100)}px`);
+                });
         }
 
         // Handle window resize
