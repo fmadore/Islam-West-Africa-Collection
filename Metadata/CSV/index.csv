@@ -444,6 +444,8 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 61328,https://islam.zmo.de/s/afrique_ouest/item/61328,iwac-index-0003335,fabio:AuthorityFile,https://islam.zmo.de/api/item_sets/1,,Santé,,,,,,,,,,,,,,,,
 63372,https://islam.zmo.de/s/afrique_ouest/item/63372,iwac-index-0003336,fabio:AuthorityFile,https://islam.zmo.de/api/item_sets/1,,Extrémisme,,,,,,,,,,,,,,,,
 63442,https://islam.zmo.de/s/afrique_ouest/item/63442,,fabio:AuthorityFile,https://islam.zmo.de/api/item_sets/267,,Département du Bénin,,,,,,,,,Alibori,Bénin,,,,,,
+63443,https://islam.zmo.de/s/afrique_ouest/item/63443,,fabio:AuthorityFile,https://islam.zmo.de/api/item_sets/267,,Ville,,,,,,,,,,,,,,,,
+63445,https://islam.zmo.de/s/afrique_ouest/item/63445,,fabio:AuthorityFile,https://islam.zmo.de/api/item_sets/1,,Obscurantisme,,,,,,,,,,,,,,,,
 117,https://islam.zmo.de/s/afrique_ouest/item/117,iwac-index-0000429,bibo:Event,https://islam.zmo.de/api/item_sets/2,,11 septembre 2001,,,2001-09-11,"Série d'attentats-suicides en avion perpétrés aux États-Unis, le 11 septembre 2001|2001 Islamist terrorist attacks in the U.S.",Terrorisme et radicalisation,,,,,États-Unis,,,,,,
 118,https://islam.zmo.de/s/afrique_ouest/item/118,iwac-index-0000430,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Élection présidentielle de 1991 au Burkina Faso,,,1991-12-01,,,,,Élections au Burkina Faso,,Burkina Faso,,,,,,
 119,https://islam.zmo.de/s/afrique_ouest/item/119,iwac-index-0000431,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Élection présidentielle de 1998 au Burkina Faso,,,1998-11-15,,,,,Élections au Burkina Faso,,Burkina Faso,,,,,,
@@ -666,7 +668,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 274,https://islam.zmo.de/s/afrique_ouest/item/274,iwac-index-0000612,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Allada,,,,,,,,Bénin,,,,,,,,"6.66547, 2.15138"
 275,https://islam.zmo.de/s/afrique_ouest/item/275,iwac-index-0000613,dcterms:Location,https://islam.zmo.de/api/item_sets/268,290,Allemagne,,,,,,,,Pays,,,,,,,,"51.5, 10.5"
 276,https://islam.zmo.de/s/afrique_ouest/item/276,iwac-index-0000614,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Aplahoué,,,,,,,,Bénin,,,,,,,,"6.93333, 1.68333"
-277,https://islam.zmo.de/s/afrique_ouest/item/277,iwac-index-0000615,dcterms:Location,https://islam.zmo.de/api/item_sets/268,291,Arabie saoudite,Arabie Séoudite,,,,,,,Pays,Djeddah|Médine|La Mecque|Mont Arafat,,,,,,,"25.0, 45.0"
+277,https://islam.zmo.de/s/afrique_ouest/item/277,iwac-index-0000615,dcterms:Location,https://islam.zmo.de/api/item_sets/268,291,Arabie saoudite,Arabie Séoudite,,,,,,,Pays,Djeddah|Médine|La Mecque|Mont Arafat|Médine,,,,,,,"25.0, 45.0"
 278,https://islam.zmo.de/s/afrique_ouest/item/278,iwac-index-0000616,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Athiémé,,,,,,,,Bénin,,,,,,,,"6.5808, 1.6696"
 279,https://islam.zmo.de/s/afrique_ouest/item/279,iwac-index-0000617,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Banfora,,,,,,,,Burkina Faso,,,,,,,,"10.63333, -4.76667"
 280,https://islam.zmo.de/s/afrique_ouest/item/280,iwac-index-0000618,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Banikoara,,,,,,,,Bénin,,,,,,,,"11.33966, 2.45915"
@@ -804,7 +806,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 440,https://islam.zmo.de/s/afrique_ouest/item/440,iwac-index-0000750,dcterms:Location,https://islam.zmo.de/api/item_sets/268,450,Belgique,,,,,,,,Pays,,,,,,,,"50.75, 4.5"
 441,https://islam.zmo.de/s/afrique_ouest/item/441,iwac-index-0000751,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Grand-Bassam,,,,,,,,Côte d'Ivoire,,,,,,,,"5.2118, -3.73884"
 442,https://islam.zmo.de/s/afrique_ouest/item/442,iwac-index-0000752,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Djeddah,Djedda,,,,,,,Arabie saoudite,,,,,,,,"21.49012, 39.18624"
-443,https://islam.zmo.de/s/afrique_ouest/item/443,iwac-index-0000753,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Médine,Madinah,,,Ville d'Arabie saoudite|Saudi Arabian city,,,,Arabie saoudite,,,,,,,,"24.46861, 39.61417"
+443,https://islam.zmo.de/s/afrique_ouest/item/443,iwac-index-0000753,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Médine,Madinah,,,Ville d'Arabie saoudite|Saudi Arabian city,,,,Arabie saoudite,,,Ville,,,,,"24.46861, 39.61417"
 444,https://islam.zmo.de/s/afrique_ouest/item/444,iwac-index-0000754,dcterms:Location,https://islam.zmo.de/api/item_sets/268,451,Université de Ouagadougou,Université Joseph Ki-Zerbo,,,,Ismaël Tiendrébéogo|Nouhoun Bagayoko|Tiégo Tiemtoré,,,Burkina Faso|Université,,,,,,,,"12.37735, -1.5009"
 452,https://islam.zmo.de/s/afrique_ouest/item/452,iwac-index-0000755,dcterms:Location,https://islam.zmo.de/api/item_sets/268,471,Université d'Abomey-Calavi,UAC|Université Nationale du Bénin|Université du Dahomey|UNB,,,Université du Bénin|University in Benin,"Communauté Islamique Universitaire du Bénin|Institut de la Langue Arabe et de la Culture Islamique|Laboratoire d'Analyse et de Recherche, Religions, Espaces et Développement|Maxime da Cruz",,,Bénin|Université,,,,,,,,"6.44105, 2.35238"
 453,https://islam.zmo.de/s/afrique_ouest/item/453,iwac-index-0000756,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Institut de la Langue Arabe et de la Culture Islamique,ILACI,,,,Libye|Mouammar Kadhafi,,,Bénin|Université d'Abomey-Calavi|Université,,,,,,,,"6.42047, 2.34345"
@@ -1745,7 +1747,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 1020,https://islam.zmo.de/s/afrique_ouest/item/1020,iwac-index-0001382,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Daouda Soura,,,,,,,,Coordination des Associations Islamiques de l'Ouest,,Burkina Faso,,Daouda,Soura,Homme,,
 1021,https://islam.zmo.de/s/afrique_ouest/item/1021,iwac-index-0001383,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Dieudonné Zoungrana,,,,,,,,Journaliste,,Burkina Faso,,Dieudonné,Zoungrana,Homme,,
 1022,https://islam.zmo.de/s/afrique_ouest/item/1022,iwac-index-0001384,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Djakaridia Siribie,,,,,,,,Journaliste,,Burkina Faso,,Djakaridia,Siribie,Homme,,
-1023,https://islam.zmo.de/s/afrique_ouest/item/1023,iwac-index-0001385,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Djiguiba Cissé,,,,Imam ivoirien,,,,"Conseil Supérieur des Imams, des Mosquées et des Affaires islamiques|Imam",,Côte d'Ivoire,,Djiguiba,Cissé,Homme,,
+1023,https://islam.zmo.de/s/afrique_ouest/item/1023,iwac-index-0001385,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Djiguiba Cissé,Djiguiba Abdallah Cissé,,,Imam ivoirien,,,,"Conseil Supérieur des Imams, des Mosquées et des Affaires islamiques|Imam",,Côte d'Ivoire,,Djiguiba,Cissé,Homme,,
 1024,https://islam.zmo.de/s/afrique_ouest/item/1024,iwac-index-0001386,foaf:Person,https://islam.zmo.de/api/item_sets/266,,El Hadj Mamadou Kabre,,,,,,,,Journaliste,,Burkina Faso,,Mamadou,Kabre,Homme,,
 1025,https://islam.zmo.de/s/afrique_ouest/item/1025,iwac-index-0001387,foaf:Person,https://islam.zmo.de/api/item_sets/266,,El Hadj Rasmané Zongo,,,,,,,,Journaliste,,Burkina Faso,,Rasmané,Zongo,Homme,,
 1026,https://islam.zmo.de/s/afrique_ouest/item/1026,iwac-index-0001388,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Elisabeth Sougue,,,,,,,,Journaliste,,Burkina Faso,,Elisabeth,Sougue,Femme,,
@@ -3122,7 +3124,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 23650,https://islam.zmo.de/s/afrique_ouest/item/23650,iwac-index-0002731,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Cheikh Malick Soufi Konaté,,,,,,,,,,Côte d'Ivoire,,,,,1962,
 23653,https://islam.zmo.de/s/afrique_ouest/item/23653,iwac-index-0002732,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Siaka Diomandé,,,,,,,,,,Côte d'Ivoire,,,,,,
 23656,https://islam.zmo.de/s/afrique_ouest/item/23656,iwac-index-0002733,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Amadou Gon Coulibaly,,,2020-07-08,,,,,Politicien.ne,,Côte d'Ivoire,,,,Homme,1959-02-10,
-23658,https://islam.zmo.de/s/afrique_ouest/item/23658,iwac-index-0002734,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Aboubacar Samassi,,,,,,,,,,Côte d'Ivoire,,,,,,
+23658,https://islam.zmo.de/s/afrique_ouest/item/23658,iwac-index-0002734,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Aboubacar Samassi,Aboubakar Samassi,,,,,,,,,Côte d'Ivoire,,,,,,
 23659,https://islam.zmo.de/s/afrique_ouest/item/23659,iwac-index-0002735,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Bakary Chérif,,,,,,,,,,Côte d'Ivoire,,,,,,
 23660,https://islam.zmo.de/s/afrique_ouest/item/23660,iwac-index-0002736,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Vazoumana Touré,,,,,,,,,,Côte d'Ivoire,,,,,,
 23661,https://islam.zmo.de/s/afrique_ouest/item/23661,iwac-index-0002737,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Hamed Tidjane Koné,,,,,,,,,,Côte d'Ivoire,,,,,,
@@ -3270,7 +3272,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 46265,https://islam.zmo.de/s/afrique_ouest/item/46265,iwac-index-0003158,foaf:Person,https://islam.zmo.de/api/item_sets/266,,M. B.,,,,,,,,,,Côte d'Ivoire,,,,,,
 46266,https://islam.zmo.de/s/afrique_ouest/item/46266,iwac-index-0003159,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Arouna Sylla,,,,,,,,,,Côte d'Ivoire,,,,,,
 46267,https://islam.zmo.de/s/afrique_ouest/item/46267,iwac-index-0003160,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Djè Abel,Djé Abel,,,,,,,,,Côte d'Ivoire,,,,,,
-46268,https://islam.zmo.de/s/afrique_ouest/item/46268,iwac-index-0003161,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Diaby Moustapha,,,,,,,,,,Côte d'Ivoire,,,,,,
+46268,https://islam.zmo.de/s/afrique_ouest/item/46268,iwac-index-0003161,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Diaby Moustapha,El Hadj Diaby Moustapha|Diaby Koweit,,,,,,,Conseil Supérieur Islamique|Imam|Politicien.ne,,Côte d'Ivoire,,,,Homme,,
 46270,https://islam.zmo.de/s/afrique_ouest/item/46270,iwac-index-0003162,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Guillaume T. Gbato,,,,,,,,,,Côte d'Ivoire,,,,,,
 46272,https://islam.zmo.de/s/afrique_ouest/item/46272,iwac-index-0003163,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Allan Aliali,,,,,,,,,,Côte d'Ivoire,,,,,,
 46275,https://islam.zmo.de/s/afrique_ouest/item/46275,iwac-index-0003164,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Siméon Gnako,,,,,,,,,,Côte d'Ivoire,,,,,,
