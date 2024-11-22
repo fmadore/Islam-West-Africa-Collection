@@ -77,56 +77,61 @@ class TreemapVisualization {
     }
 
     renderLabels(cell) {
-        cell.each((d) => {
+        const self = this;
+
+        cell.each(function(d) {
             const el = d3.select(this);
             const width = d.x1 - d.x0;
             const height = d.y1 - d.y0;
 
             if (d.depth === 1) {
-                this.renderCountryLabel(el, d, width);
+                el.append("text")
+                    .attr("class", "country-label")
+                    .attr("x", width / 2)
+                    .attr("y", height * 0.15)
+                    .attr("text-anchor", "middle")
+                    .text(d.data.name);
+
+                const percentage = (d.value / self.root.value * 100).toFixed(1);
+                el.append("text")
+                    .attr("class", "percentage-label")
+                    .attr("x", width / 2)
+                    .attr("y", height * 0.3)
+                    .attr("text-anchor", "middle")
+                    .text(`${percentage}%`);
+
             } else if (d.depth === 2) {
-                this.renderItemLabel(el, d, width, height);
+                if (width > 50 && height > 30) {
+                    const maxLength = Math.floor(width / 10);
+                    const displayName = self.truncateText(d.data.name, maxLength);
+                    const percentage = (d.value / d.parent.value * 100).toFixed(1);
+                    
+                    const fontSize = Math.min(
+                        Math.floor(width / 10),
+                        Math.floor(height / 4),
+                        14
+                    );
+
+                    if (fontSize >= 8) {
+                        el.append("text")
+                            .attr("class", "item-label")
+                            .attr("x", width / 2)
+                            .attr("y", height / 2 - fontSize/2)
+                            .attr("text-anchor", "middle")
+                            .style("font-size", `${fontSize}px`)
+                            .text(displayName);
+
+                        el.append("text")
+                            .attr("class", "percentage-label")
+                            .attr("x", width / 2)
+                            .attr("y", height / 2 + fontSize/2)
+                            .attr("text-anchor", "middle")
+                            .style("font-size", `${fontSize}px`)
+                            .text(`${percentage}%`);
+                    }
+                }
             }
         });
-    }
-
-    renderCountryLabel(el, d, width) {
-        el.append("text")
-            .attr("class", "country-label")
-            .attr("x", width / 2)
-            .attr("y", 10)
-            .attr("text-anchor", "middle")
-            .text(d.data.name);
-
-        const percentage = (d.value / this.root.value * 100).toFixed(1);
-        el.append("text")
-            .attr("class", "percentage-label")
-            .attr("x", width / 2)
-            .attr("y", 30)
-            .attr("text-anchor", "middle")
-            .text(`${percentage}%`);
-    }
-
-    renderItemLabel(el, d, width, height) {
-        if (width > 60 && height > 40) {
-            const maxLength = Math.floor(width / 8);
-            const displayName = this.truncateText(d.data.name, maxLength);
-            const percentage = (d.value / d.parent.value * 100).toFixed(1);
-
-            el.append("text")
-                .attr("class", "item-label")
-                .attr("x", width / 2)
-                .attr("y", height / 2 - 10)
-                .attr("text-anchor", "middle")
-                .text(displayName);
-
-            el.append("text")
-                .attr("class", "percentage-label")
-                .attr("x", width / 2)
-                .attr("y", height / 2 + 10)
-                .attr("text-anchor", "middle")
-                .text(`${percentage}%`);
-        }
     }
 
     setupInteractions(cell) {
@@ -173,10 +178,22 @@ class TreemapVisualization {
 
     updateTextSizes(k) {
         this.g.selectAll(".country-label")
-            .style("font-size", `${Math.min(26, Math.max(16, k / 15))}px`);
+            .style("font-size", d => {
+                const width = (d.x1 - d.x0) * k;
+                return `${Math.min(26, Math.max(16, width / 20))}px`;
+            });
         
         this.g.selectAll(".item-label, .percentage-label")
-            .style("font-size", `${Math.min(20, Math.max(14, k / 25))}px`);
+            .style("font-size", d => {
+                const width = (d.x1 - d.x0) * k;
+                const height = (d.y1 - d.y0) * k;
+                const fontSize = Math.min(
+                    Math.floor(width / 10),
+                    Math.floor(height / 4),
+                    14
+                );
+                return `${Math.max(8, fontSize)}px`;
+            });
     }
 
     showTooltip(event, d) {
@@ -217,8 +234,9 @@ class TreemapVisualization {
     }
 
     truncateText(text, maxLength) {
+        if (!text) return '';
         return text.length > maxLength ? 
-            text.slice(0, maxLength - 2) + '...' : 
+            text.slice(0, maxLength - 2) + '…' : 
             text;
     }
 
