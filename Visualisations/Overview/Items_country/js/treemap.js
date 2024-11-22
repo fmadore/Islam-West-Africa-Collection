@@ -91,6 +91,7 @@ class TreemapVisualization {
                     .attr("class", "country-label")
                     .attr("x", padding)
                     .attr("y", padding + 5)
+                    .attr("dominant-baseline", "hanging")
                     .text(d.data.name);
 
                 const percentage = (d.value / self.root.value * 100).toFixed(1);
@@ -98,56 +99,31 @@ class TreemapVisualization {
                     .attr("class", "percentage-label country-percentage")
                     .attr("x", padding)
                     .attr("y", padding + 22)
+                    .attr("dominant-baseline", "hanging")
                     .text(`${percentage}%`);
 
             } else if (d.depth === 2) {
-                // More permissive size threshold for item labels
-                if (width > 30 && height > 20) {
-                    const words = d.data.name.split(/\s+/);
-                    const percentage = (d.value / d.parent.value * 100).toFixed(1);
-                    let lineHeight = 10;
+                // Always create the text element, but with conditional visibility
+                const text = el.append("text")
+                    .attr("class", "item-label")
+                    .attr("x", padding)
+                    .attr("y", padding)
+                    .attr("dominant-baseline", "hanging")
+                    .style("opacity", width > 25 && height > 15 ? 1 : 0); // Hide if too small
 
-                    // More aggressive font size calculation
-                    const fontSize = Math.min(
-                        Math.floor(width / 7),
-                        Math.floor(height / (words.length + 1) / 1.2),
-                        11
-                    );
+                const percentage = (d.value / d.parent.value * 100).toFixed(1);
+                
+                // Add name
+                text.append("tspan")
+                    .attr("x", padding)
+                    .text(d.data.name);
 
-                    if (fontSize >= 7) {  // Lower minimum font size
-                        const text = el.append("text")
-                            .attr("class", "item-label")
-                            .attr("x", padding)
-                            .attr("y", padding)
-                            .style("font-size", `${fontSize}px`);
-
-                        // Limit number of words based on available height
-                        const maxLines = Math.floor((height - 2 * padding) / lineHeight);
-                        const displayWords = words.slice(0, maxLines);
-                        
-                        // Add ellipsis if text is truncated
-                        if (displayWords.length < words.length) {
-                            displayWords[displayWords.length - 1] += '…';
-                        }
-
-                        // Add each word as a tspan
-                        displayWords.forEach((word, i) => {
-                            text.append("tspan")
-                                .attr("x", padding)
-                                .attr("dy", i ? lineHeight : 0)
-                                .text(word);
-                        });
-
-                        // Only add percentage if there's room
-                        if (displayWords.length < maxLines) {
-                            text.append("tspan")
-                                .attr("x", padding)
-                                .attr("dy", lineHeight)
-                                .attr("class", "percentage-label")
-                                .text(`${percentage}%`);
-                        }
-                    }
-                }
+                // Add percentage on new line
+                text.append("tspan")
+                    .attr("x", padding)
+                    .attr("dy", "1.2em")
+                    .attr("class", "percentage-label")
+                    .text(`${percentage}%`);
             }
         });
     }
@@ -191,27 +167,40 @@ class TreemapVisualization {
             .attr("width", d => Math.max(0, (d.x1 - d.x0) * k))
             .attr("height", d => Math.max(0, (d.y1 - d.y0) * k));
 
-        this.updateTextSizes(k);
-    }
-
-    updateTextSizes(k) {
-        this.g.selectAll(".country-label")
-            .style("font-size", d => {
-                const width = (d.x1 - d.x0) * k;
-                return `${Math.min(26, Math.max(16, width / 20))}px`;
-            });
-        
-        this.g.selectAll(".item-label, .percentage-label")
-            .style("font-size", d => {
-                const width = (d.x1 - d.x0) * k;
-                const height = (d.y1 - d.y0) * k;
+        // Update text visibility and size based on zoomed dimensions
+        this.g.selectAll(".item-label").each(function(d) {
+            const width = (d.x1 - d.x0) * k;
+            const height = (d.y1 - d.y0) * k;
+            const shouldShow = width > 40 && height > 30;
+            
+            const el = d3.select(this);
+            el.style("opacity", shouldShow ? 1 : 0);
+            
+            if (shouldShow) {
                 const fontSize = Math.min(
                     Math.floor(width / 10),
-                    Math.floor(height / 4),
-                    14
+                    Math.floor(height / 5),
+                    12
                 );
-                return `${Math.max(8, fontSize)}px`;
-            });
+                el.style("font-size", `${Math.max(8, fontSize)}px`);
+                
+                // Adjust text content if needed
+                const fullText = d.data.name;
+                const maxChars = Math.floor(width / (fontSize * 0.6));
+                const displayText = fullText.length > maxChars ? 
+                    fullText.slice(0, maxChars - 1) + '…' : 
+                    fullText;
+                
+                el.select("tspan:first-child").text(displayText);
+            }
+        });
+
+        // Update country label sizes
+        this.g.selectAll(".country-label")
+            .style("font-size", `${Math.min(26, Math.max(16, k / 15))}px`);
+        
+        this.g.selectAll(".country-percentage")
+            .style("font-size", `${Math.min(20, Math.max(12, k / 20))}px`);
     }
 
     showTooltip(event, d) {
