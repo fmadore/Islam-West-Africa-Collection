@@ -193,6 +193,7 @@
             const width = container.clientWidth;
             const height = container.clientHeight;
 
+            // Create the treemap layout
             const treemap = d3.treemap()
                 .size([width, height])
                 .paddingTop(20)
@@ -202,10 +203,12 @@
                 .paddingInner(3)
                 .round(true);
 
+            // Create the root hierarchy
             const root = d3.hierarchy(data.data)
                 .sum(d => d.value)
                 .sort((a, b) => b.value - a.value);
 
+            // Initialize the treemap
             treemap(root);
 
             const svg = d3.select("#visualization")
@@ -215,80 +218,37 @@
                 .attr("viewBox", `0 0 ${width} ${height}`)
                 .attr("preserveAspectRatio", "xMidYMid meet");
 
+            const g = svg.append("g");
+
             const tooltip = d3.select("body")
                 .append("div")
                 .attr("class", "tooltip")
                 .style("opacity", 0);
 
-            const node = svg.selectAll("g")
+            let focus = root;
+            let view;
+
+            const cell = g.selectAll("g")
                 .data(root.descendants())
                 .join("g")
                 .attr("transform", d => `translate(${d.x0},${d.y0})`);
 
-            node.append("rect")
+            const rect = cell.append("rect")
                 .attr("class", "node")
-                .attr("width", d => Math.max(0, d.x1 - d.x0))
-                .attr("height", d => Math.max(0, d.y1 - d.y0))
+                .attr("width", d => d.x1 - d.x0)
+                .attr("height", d => d.y1 - d.y0)
                 .attr("fill", d => d.data.color)
                 .attr("opacity", d => d.depth === 1 ? 0.85 : 0.75)
-                .style("cursor", "pointer")
-                .on("mouseover", function(event, d) {
-                    d3.select(this).attr("opacity", 1);
-                    tooltip.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                    
-                    const percentage = (d.value / root.value * 100).toFixed(1);
-                    tooltip.html(`${d.data.name}<br/>${translations[language].items}: ${d.value.toLocaleString()}<br/>${percentage}%`)
-                        .style("left", `${Math.min(event.pageX + 10, window.innerWidth - 200)}px`)
-                        .style("top", `${Math.min(event.pageY - 28, window.innerHeight - 100)}px`);
-                })
-                .on("mouseout", function() {
-                    d3.select(this).attr("opacity", 0.85);
-                    tooltip.transition()
-                        .duration(500)
-                        .style("opacity", 0);
-                });
+                .style("cursor", "pointer");
 
-            // Add label handling functions
-            function truncateText(text, maxLength = 30) {
-                return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
-            }
-
-            function calculateFontSize(d) {
-                const area = (d.x1 - d.x0) * (d.y1 - d.y0);
-                // Adjust these values to fine-tune font sizing
-                return Math.min(Math.max(area / 8000, 10), 16);
-            }
-
-            function wrapText(text, width) {
-                const words = text.split(/\s+/).reverse();
-                const lineHeight = 1.1; // ems
-                const lines = [];
-                let line = [];
-                let word;
-
-                while (word = words.pop()) {
-                    line.push(word);
-                    const testLine = line.join(" ");
-                    if (testLine.length * 6 > width) { // Approximate character width
-                        line.pop();
-                        if (line.length) lines.push(line.join(" "));
-                        line = [word];
-                    }
-                }
-                if (line.length) lines.push(line.join(" "));
-                return lines;
-            }
-
-            // Create labels with better positioning and sizing
-            node.each(function(d) {
+            // Add labels
+            cell.each(function(d) {
                 const el = d3.select(this);
                 const width = d.x1 - d.x0;
                 const height = d.y1 - d.y0;
 
                 if (d.depth === 1) { // Country labels
-                    // Add country name - always show for countries
+                    // Add country name
                     el.append("text")
                         .attr("class", "country-label")
                         .attr("x", 4)
@@ -297,7 +257,7 @@
                         .attr("text-anchor", "start")
                         .text(d.data.name);
 
-                    // Add percentage for countries - always show
+                    // Add percentage for countries
                     const percentage = (d.value / root.value * 100).toFixed(1);
                     el.append("text")
                         .attr("class", "percentage-label")
@@ -311,7 +271,7 @@
                     const name = d.data.name;
                     const percentage = (d.value / d.parent.value * 100).toFixed(1);
                     
-                    // More lenient threshold for showing labels
+                    // Show labels if there's enough space
                     if (width > 40 && height > 25) {
                         // Adjust maxLength based on available width
                         const maxLength = Math.max(Math.floor(width / 6), 10);
@@ -341,126 +301,94 @@
                 }
             });
 
-            // Add hover effect for labels
-            node.selectAll(".label-container")
-                .style("opacity", 0.9)
-                .on("mouseover", function() {
-                    d3.select(this).style("opacity", 1);
-                })
-                .on("mouseout", function() {
-                    d3.select(this).style("opacity", 0.9);
-                });
+            function zoomTo(v) {
+                const k = width / v[2];
 
-            // Update tooltip to show full information
-            node.selectAll("rect")
-                .on("mouseover", function(event, d) {
-                    d3.select(this).attr("opacity", 1);
-                    tooltip.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                    
-                    const percentage = (d.value / root.value * 100).toFixed(1);
-                    const itemCount = d.value.toLocaleString();
-                    
-                    let tooltipContent = `
-                        <strong>${d.data.name}</strong><br/>
-                        ${translations[language].items}: ${itemCount}<br/>
-                        ${percentage}%
-                    `;
-                    
-                    // Add parent information for sub-items
-                    if (d.parent && d.parent.data.name !== "root") {
-                        tooltipContent = `
-                            <strong>${d.parent.data.name}</strong><br/>
-                            ${d.data.name}<br/>
-                            ${translations[language].items}: ${itemCount}<br/>
-                            ${percentage}%
-                        `;
-                    }
+                view = v;
 
-                    tooltip.html(tooltipContent)
-                        .style("left", `${Math.min(event.pageX + 10, window.innerWidth - 200)}px`)
-                        .style("top", `${Math.min(event.pageY - 28, window.innerHeight - 100)}px`);
-                });
+                cell.attr("transform", d => `translate(${(d.x0 - v[0]) * k},${(d.y0 - v[1]) * k})`);
+                rect.attr("width", d => Math.max(0, (d.x1 - d.x0) * k))
+                    .attr("height", d => Math.max(0, (d.y1 - d.y0) * k));
 
-            let currentZoom = null;
-            const resetZoomButton = document.getElementById('resetZoom');
+                // Scale the text based on zoom level
+                cell.selectAll("text")
+                    .style("font-size", d => `${Math.min(16, k / 20)}em`);
+            }
 
-            function zoom(d) {
-                if (currentZoom === d) {
-                    // If clicking the same element, reset zoom
-                    currentZoom = null;
-                    resetZoomButton.style.display = 'none';
-                    
-                    // Transition all nodes back to their original position
-                    node.transition()
+            function zoom(event, d) {
+                if (focus !== d) {
+                    // Zooming in
+                    focus = d;
+                    const transition = g.transition()
                         .duration(750)
-                        .attr("transform", d => `translate(${d.x0},${d.y0})`);
-
-                    node.selectAll("rect")
-                        .transition()
-                        .duration(750)
-                        .attr("width", d => Math.max(0, d.x1 - d.x0))
-                        .attr("height", d => Math.max(0, d.y1 - d.y0));
-
-                } else {
-                    currentZoom = d;
-                    resetZoomButton.style.display = 'block';
-
-                    const x = d.x0;
-                    const y = d.y0;
-                    const w = d.x1 - d.x0;
-                    const h = d.y1 - d.y0;
-
-                    // Calculate scale factors
-                    const scaleX = width / w;
-                    const scaleY = height / h;
-                    const scale = Math.min(scaleX, scaleY) * 0.9; // 0.9 to add some padding
-
-                    // Calculate translation to center the zoomed element
-                    const translateX = (width - w * scale) / 2 - x * scale;
-                    const translateY = (height - h * scale) / 2 - y * scale;
-
-                    // Transition all nodes
-                    node.transition()
-                        .duration(750)
-                        .attr("transform", d => {
-                            const x = d.x0 * scale + translateX;
-                            const y = d.y0 * scale + translateY;
-                            return `translate(${x},${y})`;
+                        .tween("zoom", () => {
+                            const i = d3.interpolateZoom(view, [d.x0, d.y0, d.x1 - d.x0]);
+                            return t => zoomTo(i(t));
                         });
 
-                    node.selectAll("rect")
-                        .transition()
+                    resetZoomButton.style.display = 'block';
+                } else {
+                    // Zooming out to root
+                    focus = root;
+                    const transition = g.transition()
                         .duration(750)
-                        .attr("width", d => Math.max(0, (d.x1 - d.x0) * scale))
-                        .attr("height", d => Math.max(0, (d.y1 - d.y0) * scale));
+                        .tween("zoom", () => {
+                            const i = d3.interpolateZoom(view, [root.x0, root.y0, root.x1 - root.x0]);
+                            return t => zoomTo(i(t));
+                        });
 
-                    // Update text sizes
-                    node.selectAll("text")
-                        .style("font-size", `${12 * scale}px`);
+                    resetZoomButton.style.display = 'none';
                 }
             }
 
-            // Add click handlers to nodes
-            node.on("click", (event, d) => {
-                event.stopPropagation();
-                zoom(d);
+            // Initialize the view
+            zoomTo([root.x0, root.y0, root.x1 - root.x0]);
+
+            // Add click handlers
+            cell.on("click", zoom);
+
+            // Update tooltip handlers
+            rect.on("mouseover", function(event, d) {
+                d3.select(this).attr("opacity", 1);
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                
+                const percentage = (d.value / root.value * 100).toFixed(1);
+                const itemCount = d.value.toLocaleString();
+                
+                let tooltipContent = `
+                    <strong>${d.data.name}</strong><br/>
+                    ${translations[language].items}: ${itemCount}<br/>
+                    ${percentage}%
+                `;
+                
+                if (d.parent && d.parent.data.name !== "root") {
+                    tooltipContent = `
+                        <strong>${d.parent.data.name}</strong><br/>
+                        ${d.data.name}<br/>
+                        ${translations[language].items}: ${itemCount}<br/>
+                        ${percentage}%
+                    `;
+                }
+
+                tooltip.html(tooltipContent)
+                    .style("left", `${Math.min(event.pageX + 10, window.innerWidth - 200)}px`)
+                    .style("top", `${Math.min(event.pageY - 28, window.innerHeight - 100)}px`);
+            })
+            .on("mouseout", function() {
+                d3.select(this).attr("opacity", d => d.depth === 1 ? 0.85 : 0.75);
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
             });
 
-            // Add reset zoom button handler
+            // Update reset zoom button handler
             resetZoomButton.onclick = () => {
-                if (currentZoom) {
-                    zoom(currentZoom);
+                if (focus !== root) {
+                    zoom(null, focus);
                 }
             };
-
-            // Add click handler to svg background to reset zoom
-            svg.on("click", (event) => {
-                if (event.target.tagName === "svg" && currentZoom) {
-                    zoom(currentZoom);
-                }
-            });
         }
 
         // Handle window resize
