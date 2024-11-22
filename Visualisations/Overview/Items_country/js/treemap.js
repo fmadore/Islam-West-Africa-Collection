@@ -83,50 +83,57 @@ class TreemapVisualization {
             const el = d3.select(this);
             const width = d.x1 - d.x0;
             const height = d.y1 - d.y0;
+            const padding = 4;
 
             if (d.depth === 1) {
-                el.append("text")
+                // Country labels - top aligned
+                const countryText = el.append("text")
                     .attr("class", "country-label")
-                    .attr("x", width / 2)
-                    .attr("y", height * 0.15)
-                    .attr("text-anchor", "middle")
+                    .attr("x", padding)
+                    .attr("y", padding + 5)
                     .text(d.data.name);
 
                 const percentage = (d.value / self.root.value * 100).toFixed(1);
                 el.append("text")
                     .attr("class", "percentage-label")
-                    .attr("x", width / 2)
-                    .attr("y", height * 0.3)
-                    .attr("text-anchor", "middle")
+                    .attr("x", padding)
+                    .attr("y", padding + 25)
                     .text(`${percentage}%`);
 
             } else if (d.depth === 2) {
-                if (width > 50 && height > 30) {
-                    const maxLength = Math.floor(width / 10);
-                    const displayName = self.truncateText(d.data.name, maxLength);
+                // Only add labels if there's enough space
+                if (width > 40 && height > 25) {
+                    const words = d.data.name.split(/\s+/);
                     const percentage = (d.value / d.parent.value * 100).toFixed(1);
-                    
+                    let lineHeight = 12;
+
+                    // Calculate font size based on area
                     const fontSize = Math.min(
-                        Math.floor(width / 10),
-                        Math.floor(height / 4),
-                        14
+                        Math.floor(width / 8),
+                        Math.floor(height / (words.length + 1) / 1.5),
+                        12
                     );
 
                     if (fontSize >= 8) {
-                        el.append("text")
+                        const text = el.append("text")
                             .attr("class", "item-label")
-                            .attr("x", width / 2)
-                            .attr("y", height / 2 - fontSize/2)
-                            .attr("text-anchor", "middle")
-                            .style("font-size", `${fontSize}px`)
-                            .text(displayName);
+                            .attr("x", padding)
+                            .attr("y", padding)
+                            .style("font-size", `${fontSize}px`);
 
-                        el.append("text")
+                        // Add each word as a tspan
+                        words.forEach((word, i) => {
+                            text.append("tspan")
+                                .attr("x", padding)
+                                .attr("dy", i ? lineHeight : 0)
+                                .text(word);
+                        });
+
+                        // Add percentage on new line
+                        text.append("tspan")
+                            .attr("x", padding)
+                            .attr("dy", lineHeight)
                             .attr("class", "percentage-label")
-                            .attr("x", width / 2)
-                            .attr("y", height / 2 + fontSize/2)
-                            .attr("text-anchor", "middle")
-                            .style("font-size", `${fontSize}px`)
                             .text(`${percentage}%`);
                     }
                 }
