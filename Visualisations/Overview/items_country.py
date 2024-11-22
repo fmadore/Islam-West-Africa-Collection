@@ -199,16 +199,16 @@ class DataVisualizer:
             }
         }
         
-        # Updated colors with more distinct base colors for each country
+        # Updated colors with more visually pleasing colors
         self.country_colors = {
-            'Burkina Faso': '#1E4D8C',  # Deep navy blue
-            'Côte d\'Ivoire': '#B22222',  # Deep red
-            'Bénin': '#006400',  # Dark green
-            'Benin': '#006400',  # Same dark green
-            'Togo': '#4B0082',  # Indigo
-            'Niger': '#8B4513',  # Saddle brown
-            'Nigeria': '#008080',  # Teal
-            'Nigéria': '#008080',  # Same teal
+            'Burkina Faso': '#2E86C1',    # Bright blue
+            'Côte d\'Ivoire': '#E74C3C',  # Bright red
+            'Bénin': '#27AE60',           # Emerald green
+            'Benin': '#27AE60',           # Same emerald green
+            'Togo': '#8E44AD',            # Purple
+            'Niger': '#F39C12',           # Orange
+            'Nigeria': '#16A085',         # Turquoise
+            'Nigéria': '#16A085',         # Same turquoise
         }
 
     def create_visualization(self, items_by_country_and_set: Dict, language: str = 'en'):
@@ -219,11 +219,13 @@ class DataVisualizer:
         text_map = {
             'en': {
                 'total': 'Total',
-                'items': 'items'
+                'items': 'items',
+                'root_label': 'Islam West Africa Collection'
             },
             'fr': {
                 'total': 'Total',
-                'items': 'éléments'
+                'items': 'éléments',
+                'root_label': 'Collection Islam Afrique de l\'Ouest'
             }
         }
         text = text_map.get(language, text_map['en'])
@@ -242,57 +244,99 @@ class DataVisualizer:
 
         # Create flattened data structure with translated country names
         data = []
+        
+        # First, calculate country totals
+        country_totals = {}
+        for country, sets in items_by_country_and_set.items():
+            country_totals[country] = sum(sets.values())
+
         for country, sets in items_by_country_and_set.items():
             translated_country = self.country_names[language][country]
-            country_total = sum(sets.values())
+            country_total = country_totals[country]
             sorted_sets = dict(sorted(sets.items(), key=lambda x: x[1], reverse=True))
             
+            # Calculate country percentage of total
+            country_percentage = (country_total / total_items) * 100
+            
+            # Country hover text includes percentage, but label doesn't
+            country_hover_text = (
+                f"<b>{translated_country}</b><br>"
+                f"{text['total']}: {format_number(country_total)} {text['items']}<br>"
+                f"{country_percentage:.1f}%"
+            )
+            
             for set_title, count in sorted_sets.items():
-                set_percentage = (count / country_total) * 100
+                set_percentage = (count / total_items) * 100
                 data.append({
-                    'Country': f"<b style='font-size: 16px'>{translated_country}</b>",
-                    'Item Set Title': f"<b>{set_title}</b>",
+                    'Collection': text['root_label'],
+                    'Country': f"<b>{translated_country}</b>",  # Removed percentage from label
+                    'Item Set Title': f"<b>{set_title}</b>",   # Removed percentage from label
                     'Number of Items': count,
                     'text': f"<b>{set_title}</b><br>{text['total']}: {format_number(count)} {text['items']}<br>{set_percentage:.1f}%",
-                    'color': self.country_colors[country]  # Assign color directly here
+                    'color': self.country_colors[country],
+                    'country_hover': country_hover_text  # Add country hover text separately
                 })
 
         fig = px.treemap(
             data,
-            path=['Country', 'Item Set Title'],
+            path=['Collection', 'Country', 'Item Set Title'],
             values='Number of Items',
             title=title,
-            custom_data=['text'],
-            color='color'  # Use the color field for coloring
+            custom_data=['text', 'country_hover'],  # Include country hover text
+            color='color'
         )
 
         # Update traces
         fig.update_traces(
-            textinfo="label+value+percent parent",
-            hovertemplate="%{customdata[0]}<extra></extra>",
-            textfont={"size": 14},
-            marker_line=dict(width=1, color='white'),
-            opacity=0.85,
-            root_color="lightgrey"
+            textinfo="label+value",  # Show label and value
+            hovertemplate="%{customdata[1]}<extra></extra>",  # Use country_hover for countries
+            textfont={
+                "size": 14,
+                "family": "Arial",
+                "color": "white"
+            },
+            marker_line=dict(width=2, color='white'),
+            opacity=0.95,
+            root_color="rgb(250,250,250)"
         )
 
-        # Remove hover for root node
-        fig.data[0].texttemplate = ""
-        fig.data[0].hovertemplate = None
-
+        # Update layout with enhanced styling
         fig.update_layout(
             font_family="Arial",
             title={
-                'font_size': 24,
+                'font_size': 28,          # Larger title
+                'font_family': "Arial",
                 'x': 0.5,
                 'xanchor': 'center',
-                'y': 0.95,
-                'yanchor': 'top'
+                'y': 0.98,                # Moved slightly higher
+                'yanchor': 'top',
+                'font_weight': 'bold'     # Bold title
             },
-            margin=dict(t=100, l=25, r=25, b=25),
+            margin=dict(t=120, l=25, r=25, b=25),  # More top margin for title
             paper_bgcolor='rgba(250,250,250,1)',
+            showlegend=False,             # Hide legend if not needed
+            # Add a subtle border around the entire plot
+            shapes=[{
+                'type': 'rect',
+                'xref': 'paper',
+                'yref': 'paper',
+                'x0': 0,
+                'y0': 0,
+                'x1': 1,
+                'y1': 1,
+                'line': {'color': 'rgb(220,220,220)', 'width': 2},
+            }]
         )
         
+        # Add hover effect
+        fig.update_traces(
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=14,
+                font_family="Arial"
+            )
+        )
+
         output_file = os.path.join(self.output_dir, f'item_distribution_by_country_and_set_{language}.html')
         fig.write_html(output_file)
         logger.info(f"Visualization saved to {output_file}")
