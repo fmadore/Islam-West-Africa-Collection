@@ -5,177 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Items Distribution Treemap</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 10px;
-            background-color: #fafafa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px;
-        }
-
-        #visualization {
-            width: 100%;
-            height: 80vh; /* Responsive height based on viewport */
-            min-height: 400px; /* Minimum height for very small screens */
-        }
-
-        .title {
-            text-align: center;
-            font-size: clamp(18px, 4vw, 24px); /* Responsive font size */
-            margin-bottom: 20px;
-            padding: 0 10px;
-            word-wrap: break-word;
-        }
-
-        .node {
-            stroke: #fff;
-            stroke-width: 1px;
-            cursor: pointer;
-        }
-
-        .label {
-            font-size: clamp(12px, 2vw, 14px); /* Responsive font size */
-            font-weight: bold;
-            pointer-events: none;
-        }
-
-        .tooltip {
-            position: absolute;
-            padding: 10px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            pointer-events: none;
-            font-size: clamp(12px, 2vw, 14px); /* Responsive font size */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-width: 80vw; /* Prevent tooltip from overflowing on mobile */
-            z-index: 1000;
-        }
-
-        #languageSelector {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        #languageSelector button {
-            padding: 8px 16px;
-            margin: 0 5px;
-            font-size: clamp(14px, 2vw, 16px);
-            border: none;
-            border-radius: 4px;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #languageSelector button:hover {
-            background-color: #45a049;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            body {
-                padding: 5px;
-            }
-
-            .container {
-                padding: 5px;
-            }
-
-            #visualization {
-                height: 70vh;
-            }
-
-            .tooltip {
-                padding: 8px;
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #visualization {
-                height: 60vh;
-            }
-
-            #languageSelector button {
-                padding: 6px 12px;
-                margin: 0 3px;
-            }
-        }
-
-        .country-label {
-            font-size: clamp(12px, 2.5vw, 20px);
-            fill: white;
-            text-shadow: 
-                -1px -1px 3px rgba(0,0,0,0.7),
-                1px -1px 3px rgba(0,0,0,0.7),
-                -1px 1px 3px rgba(0,0,0,0.7),
-                1px 1px 3px rgba(0,0,0,0.7);
-            dominant-baseline: hanging;
-            pointer-events: none;
-        }
-
-        .item-label {
-            font-size: clamp(10px, 2vw, 16px);
-            fill: white;
-            text-shadow: 
-                -1px -1px 3px rgba(0,0,0,0.7),
-                1px -1px 3px rgba(0,0,0,0.7),
-                -1px 1px 3px rgba(0,0,0,0.7),
-                1px 1px 3px rgba(0,0,0,0.7);
-            dominant-baseline: hanging;
-            pointer-events: none;
-        }
-
-        .percentage-label {
-            font-size: clamp(10px, 2vw, 16px);
-            fill: rgba(255, 255, 255, 0.95);
-            text-shadow: 
-                -1px -1px 3px rgba(0,0,0,0.7),
-                1px -1px 3px rgba(0,0,0,0.7),
-                -1px 1px 3px rgba(0,0,0,0.7),
-                1px 1px 3px rgba(0,0,0,0.7);
-            dominant-baseline: hanging;
-            pointer-events: none;
-        }
-
-        #resetZoom {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 8px 16px;
-            font-size: 14px;
-            border: none;
-            border-radius: 4px;
-            background-color: rgba(76, 175, 80, 0.8);
-            color: white;
-            cursor: pointer;
-            display: none;
-            transition: background-color 0.3s;
-        }
-
-        #resetZoom:hover {
-            background-color: rgba(76, 175, 80, 1);
-        }
-    </style>
+    <link rel="stylesheet" href="css/treemap.css">
 </head>
 <body>
     <div class="container">
         <div id="languageSelector">
-            <button onclick="loadData('en')">English</button>
-            <button onclick="loadData('fr')">Français</button>
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('fr')">Français</button>
         </div>
         <h1 id="title" class="title"></h1>
         <div id="visualization"></div>
         <button id="resetZoom">Reset View</button>
     </div>
+
+    <script src="js/treemap.js"></script>
     <script>
         const translations = {
             'en': {
@@ -188,233 +31,49 @@
             }
         };
 
+        let treemap;
+        const resetZoomButton = document.getElementById('resetZoom');
+
         async function loadData(language) {
             try {
                 const response = await fetch(`treemap_data_${language}.json`);
                 const data = await response.json();
-                createVisualization(data, language);
+                
+                // Update title
+                const titleText = translations[language].title.replace('{}', data.total_items.toLocaleString());
+                document.getElementById('title').textContent = titleText;
+
+                // Initialize or update visualization
+                if (!treemap) {
+                    treemap = new TreemapVisualization({
+                        container: document.getElementById('visualization'),
+                        language: language,
+                        translations: translations,
+                        onZoomChange: (isZoomed) => {
+                            resetZoomButton.style.display = isZoomed ? 'block' : 'none';
+                        }
+                    });
+                }
+                
+                treemap.createTreemap(data.data);
             } catch (error) {
                 console.error('Error loading data:', error);
             }
         }
 
-        function createVisualization(data, language) {
-            // Clear previous visualization
-            d3.select("#visualization").html("");
-            
-            // Update title
-            const titleText = translations[language].title.replace('{}', data.total_items.toLocaleString());
-            d3.select("#title").text(titleText);
-
-            const container = document.getElementById('visualization');
-            const width = container.clientWidth;
-            const height = container.clientHeight;
-
-            // Create the treemap layout
-            const treemap = d3.treemap()
-                .size([width, height])
-                .paddingTop(20)
-                .paddingRight(2)
-                .paddingBottom(2)
-                .paddingLeft(2)
-                .paddingInner(3)
-                .round(true);
-
-            // Create the root hierarchy
-            const root = d3.hierarchy(data.data)
-                .sum(d => d.value)
-                .sort((a, b) => b.value - a.value);
-
-            // Initialize the treemap
-            treemap(root);
-
-            const svg = d3.select("#visualization")
-                .append("svg")
-                .attr("width", width)
-                .attr("height", height)
-                .attr("viewBox", `0 0 ${width} ${height}`)
-                .attr("preserveAspectRatio", "xMidYMid meet");
-
-            const g = svg.append("g");
-
-            const tooltip = d3.select("body")
-                .append("div")
-                .attr("class", "tooltip")
-                .style("opacity", 0);
-
-            let focus = root;
-            let view;
-
-            const cell = g.selectAll("g")
-                .data(root.descendants())
-                .join("g")
-                .attr("transform", d => `translate(${d.x0},${d.y0})`);
-
-            const rect = cell.append("rect")
-                .attr("class", "node")
-                .attr("width", d => d.x1 - d.x0)
-                .attr("height", d => d.y1 - d.y0)
-                .attr("fill", d => d.data.color)
-                .attr("opacity", d => d.depth === 1 ? 0.85 : 0.75)
-                .style("cursor", "pointer");
-
-            // Add labels
-            cell.each(function(d) {
-                const el = d3.select(this);
-                const width = d.x1 - d.x0;
-                const height = d.y1 - d.y0;
-
-                if (d.depth === 1) { // Country labels
-                    // Add country name
-                    el.append("text")
-                        .attr("class", "country-label")
-                        .attr("x", width / 2)
-                        .attr("y", 10)
-                        .attr("text-anchor", "middle")
-                        .text(d.data.name);
-
-                    // Add percentage for countries
-                    const percentage = (d.value / root.value * 100).toFixed(1);
-                    el.append("text")
-                        .attr("class", "percentage-label")
-                        .attr("x", width / 2)
-                        .attr("y", 30)
-                        .attr("text-anchor", "middle")
-                        .text(`${percentage}%`);
-
-                } else if (d.depth === 2) { // Item labels
-                    const name = d.data.name;
-                    const percentage = (d.value / d.parent.value * 100).toFixed(1);
-                    
-                    // Only show labels if there's enough space
-                    if (width > 60 && height > 40) {
-                        // Calculate maximum text length based on width
-                        const maxLength = Math.floor(width / 8);
-                        const displayName = name.length > maxLength ? 
-                            name.slice(0, maxLength - 2) + '...' : 
-                            name;
-
-                        // Center the text
-                        el.append("text")
-                            .attr("class", "item-label")
-                            .attr("x", width / 2)
-                            .attr("y", height / 2 - 10)
-                            .attr("text-anchor", "middle")
-                            .text(displayName);
-
-                        el.append("text")
-                            .attr("class", "percentage-label")
-                            .attr("x", width / 2)
-                            .attr("y", height / 2 + 10)
-                            .attr("text-anchor", "middle")
-                            .text(`${percentage}%`);
-                    }
-                }
-            });
-
-            function zoomTo(v) {
-                const k = width / v[2];
-
-                view = v;
-
-                cell.attr("transform", d => `translate(${(d.x0 - v[0]) * k},${(d.y0 - v[1]) * k})`);
-                rect.attr("width", d => Math.max(0, (d.x1 - d.x0) * k))
-                    .attr("height", d => Math.max(0, (d.y1 - d.y0) * k));
-
-                // Scale text sizes based on zoom level
-                cell.selectAll(".country-label")
-                    .style("font-size", `${Math.min(24, Math.max(12, k / 30))}px`);
-                
-                cell.selectAll(".item-label")
-                    .style("font-size", `${Math.min(16, Math.max(10, k / 40))}px`);
-                
-                cell.selectAll(".percentage-label")
-                    .style("font-size", `${Math.min(16, Math.max(10, k / 40))}px`);
-            }
-
-            function zoom(event, d) {
-                if (focus !== d) {
-                    // Zooming in
-                    focus = d;
-                    const transition = g.transition()
-                        .duration(750)
-                        .tween("zoom", () => {
-                            const i = d3.interpolateZoom(view, [d.x0, d.y0, d.x1 - d.x0]);
-                            return t => zoomTo(i(t));
-                        });
-
-                    resetZoomButton.style.display = 'block';
-                } else {
-                    // Zooming out to root
-                    focus = root;
-                    const transition = g.transition()
-                        .duration(750)
-                        .tween("zoom", () => {
-                            const i = d3.interpolateZoom(view, [root.x0, root.y0, root.x1 - root.x0]);
-                            return t => zoomTo(i(t));
-                        });
-
-                    resetZoomButton.style.display = 'none';
-                }
-            }
-
-            // Initialize the view
-            zoomTo([root.x0, root.y0, root.x1 - root.x0]);
-
-            // Add click handlers
-            cell.on("click", zoom);
-
-            // Update tooltip handlers
-            rect.on("mouseover", function(event, d) {
-                d3.select(this).attr("opacity", 1);
-                tooltip.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                
-                const percentage = (d.value / root.value * 100).toFixed(1);
-                const itemCount = d.value.toLocaleString();
-                
-                let tooltipContent = `
-                    <strong>${d.data.name}</strong><br/>
-                    ${translations[language].items}: ${itemCount}<br/>
-                    ${percentage}%
-                `;
-                
-                if (d.parent && d.parent.data.name !== "root") {
-                    tooltipContent = `
-                        <strong>${d.parent.data.name}</strong><br/>
-                        ${d.data.name}<br/>
-                        ${translations[language].items}: ${itemCount}<br/>
-                        ${percentage}%
-                    `;
-                }
-
-                tooltip.html(tooltipContent)
-                    .style("left", `${Math.min(event.pageX + 10, window.innerWidth - 200)}px`)
-                    .style("top", `${Math.min(event.pageY - 28, window.innerHeight - 100)}px`);
-            })
-            .on("mouseout", function() {
-                d3.select(this).attr("opacity", d => d.depth === 1 ? 0.85 : 0.75);
-                tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
-
-            // Update reset zoom button handler
-            resetZoomButton.onclick = () => {
-                if (focus !== root) {
-                    zoom(null, focus);
-                }
-            };
+        function changeLanguage(language) {
+            document.documentElement.lang = language;
+            loadData(language);
         }
 
         // Handle window resize
         let resizeTimeout;
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(function() {
-                const currentLang = document.documentElement.lang || 'en';
-                loadData(currentLang);
+            resizeTimeout = setTimeout(() => {
+                if (treemap) {
+                    treemap.resize();
+                }
             }, 250);
         });
 
