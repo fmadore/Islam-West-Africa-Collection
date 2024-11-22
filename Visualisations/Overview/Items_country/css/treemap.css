@@ -80,26 +80,32 @@ body {
     fill: white;
     pointer-events: none;
     text-shadow: 
-        0 0 2px rgba(0,0,0,0.8),
-        0 0 3px rgba(0,0,0,0.7);
+        0 1px 0 #000,
+        1px 0 0 #000,
+        -1px 0 0 #000,
+        0 -1px 0 #000;
     font-weight: 400;
+    dominant-baseline: hanging;
 }
 
 .country-label {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    dominant-baseline: hanging;
+}
+
+.country-percentage {
+    font-size: 12px;
+    opacity: 0.9;
 }
 
 .item-label {
-    font-size: 11px;
-    dominant-baseline: hanging;
+    font-size: 9px;
+    font-weight: 400;
 }
 
 .percentage-label {
-    font-size: 10px;
-    opacity: 0.9;
-    fill: rgba(255, 255, 255, 0.8);
+    font-size: 8px;
+    opacity: 0.8;
 }
 
 #resetZoom {
