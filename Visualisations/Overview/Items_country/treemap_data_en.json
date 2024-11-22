@@ -244,6 +244,11 @@
             "color": "#B22222"
           },
           {
+            "name": "Fraternité Matin",
+            "value": 623,
+            "color": "#B22222"
+          },
+          {
             "name": "Notre Voie",
             "value": 450,
             "color": "#B22222"
@@ -264,11 +269,6 @@
             "color": "#B22222"
           },
           {
-            "name": "Fraternité Matin",
-            "value": 169,
-            "color": "#B22222"
-          },
-          {
             "name": "Fraternité Hebdo",
             "value": 74,
             "color": "#B22222"
@@ -280,7 +280,12 @@
           },
           {
             "name": "Alif",
-            "value": 32,
+            "value": 37,
+            "color": "#B22222"
+          },
+          {
+            "name": "Le Jour",
+            "value": 16,
             "color": "#B22222"
           },
           {
@@ -291,11 +296,6 @@
           {
             "name": "Al Minbar",
             "value": 12,
-            "color": "#B22222"
-          },
-          {
-            "name": "Le Jour",
-            "value": 8,
             "color": "#B22222"
           },
           {
@@ -465,5 +465,5 @@
       }
     ]
   },
-  "total_items": 10453
+  "total_items": 10920
 }
