@@ -111,22 +111,39 @@
         }
 
         .country-label {
-            font-size: clamp(14px, 2.5vw, 20px);
-            font-weight: bold;
+            font-size: clamp(12px, 2.5vw, 20px);
             fill: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 
+                -1px -1px 3px rgba(0,0,0,0.7),
+                1px -1px 3px rgba(0,0,0,0.7),
+                -1px 1px 3px rgba(0,0,0,0.7),
+                1px 1px 3px rgba(0,0,0,0.7);
+            dominant-baseline: hanging;
+            pointer-events: none;
         }
 
         .item-label {
-            font-size: clamp(11px, 1.8vw, 14px);
+            font-size: clamp(10px, 2vw, 16px);
             fill: white;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 
+                -1px -1px 3px rgba(0,0,0,0.7),
+                1px -1px 3px rgba(0,0,0,0.7),
+                -1px 1px 3px rgba(0,0,0,0.7),
+                1px 1px 3px rgba(0,0,0,0.7);
+            dominant-baseline: hanging;
+            pointer-events: none;
         }
 
         .percentage-label {
-            font-size: clamp(11px, 1.8vw, 14px);
-            fill: rgba(255, 255, 255, 0.9);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: clamp(10px, 2vw, 16px);
+            fill: rgba(255, 255, 255, 0.95);
+            text-shadow: 
+                -1px -1px 3px rgba(0,0,0,0.7),
+                1px -1px 3px rgba(0,0,0,0.7),
+                -1px 1px 3px rgba(0,0,0,0.7),
+                1px 1px 3px rgba(0,0,0,0.7);
+            dominant-baseline: hanging;
+            pointer-events: none;
         }
 
         #resetZoom {
@@ -251,52 +268,46 @@
                     // Add country name
                     el.append("text")
                         .attr("class", "country-label")
-                        .attr("x", 4)
-                        .attr("y", 2)
-                        .attr("alignment-baseline", "hanging")
-                        .attr("text-anchor", "start")
+                        .attr("x", width / 2)
+                        .attr("y", 10)
+                        .attr("text-anchor", "middle")
                         .text(d.data.name);
 
                     // Add percentage for countries
                     const percentage = (d.value / root.value * 100).toFixed(1);
                     el.append("text")
                         .attr("class", "percentage-label")
-                        .attr("x", 4)
-                        .attr("y", 25)
-                        .attr("alignment-baseline", "hanging")
-                        .attr("text-anchor", "start")
+                        .attr("x", width / 2)
+                        .attr("y", 30)
+                        .attr("text-anchor", "middle")
                         .text(`${percentage}%`);
 
                 } else if (d.depth === 2) { // Item labels
                     const name = d.data.name;
                     const percentage = (d.value / d.parent.value * 100).toFixed(1);
                     
-                    // Show labels if there's enough space
-                    if (width > 40 && height > 25) {
-                        // Adjust maxLength based on available width
-                        const maxLength = Math.max(Math.floor(width / 6), 10);
+                    // Only show labels if there's enough space
+                    if (width > 60 && height > 40) {
+                        // Calculate maximum text length based on width
+                        const maxLength = Math.floor(width / 8);
                         const displayName = name.length > maxLength ? 
-                            name.slice(0, maxLength - 3) + '...' : 
+                            name.slice(0, maxLength - 2) + '...' : 
                             name;
 
+                        // Center the text
                         el.append("text")
                             .attr("class", "item-label")
-                            .attr("x", 4)
-                            .attr("y", 4)
-                            .attr("alignment-baseline", "hanging")
-                            .attr("text-anchor", "start")
+                            .attr("x", width / 2)
+                            .attr("y", height / 2 - 10)
+                            .attr("text-anchor", "middle")
                             .text(displayName);
 
-                        // Show percentage if there's enough height
-                        if (height > 35) {
-                            el.append("text")
-                                .attr("class", "percentage-label")
-                                .attr("x", 4)
-                                .attr("y", 22)
-                                .attr("alignment-baseline", "hanging")
-                                .attr("text-anchor", "start")
-                                .text(`${percentage}%`);
-                        }
+                        el.append("text")
+                            .attr("class", "percentage-label")
+                            .attr("x", width / 2)
+                            .attr("y", height / 2 + 10)
+                            .attr("text-anchor", "middle")
+                            .text(`${percentage}%`);
                     }
                 }
             });
@@ -310,9 +321,15 @@
                 rect.attr("width", d => Math.max(0, (d.x1 - d.x0) * k))
                     .attr("height", d => Math.max(0, (d.y1 - d.y0) * k));
 
-                // Scale the text based on zoom level
-                cell.selectAll("text")
-                    .style("font-size", d => `${Math.min(16, k / 20)}em`);
+                // Scale text sizes based on zoom level
+                cell.selectAll(".country-label")
+                    .style("font-size", `${Math.min(24, Math.max(12, k / 30))}px`);
+                
+                cell.selectAll(".item-label")
+                    .style("font-size", `${Math.min(16, Math.max(10, k / 40))}px`);
+                
+                cell.selectAll(".percentage-label")
+                    .style("font-size", `${Math.min(16, Math.max(10, k / 40))}px`);
             }
 
             function zoom(event, d) {
