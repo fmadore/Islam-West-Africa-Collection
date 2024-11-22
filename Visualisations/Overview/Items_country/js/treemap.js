@@ -83,11 +83,11 @@ class TreemapVisualization {
             const el = d3.select(this);
             const width = d.x1 - d.x0;
             const height = d.y1 - d.y0;
-            const padding = 4;
+            const padding = 3;
 
             if (d.depth === 1) {
                 // Country labels - top aligned
-                const countryText = el.append("text")
+                el.append("text")
                     .attr("class", "country-label")
                     .attr("x", padding)
                     .attr("y", padding + 5)
@@ -95,46 +95,57 @@ class TreemapVisualization {
 
                 const percentage = (d.value / self.root.value * 100).toFixed(1);
                 el.append("text")
-                    .attr("class", "percentage-label")
+                    .attr("class", "percentage-label country-percentage")
                     .attr("x", padding)
-                    .attr("y", padding + 25)
+                    .attr("y", padding + 22)
                     .text(`${percentage}%`);
 
             } else if (d.depth === 2) {
-                // Only add labels if there's enough space
-                if (width > 40 && height > 25) {
+                // More permissive size threshold for item labels
+                if (width > 30 && height > 20) {
                     const words = d.data.name.split(/\s+/);
                     const percentage = (d.value / d.parent.value * 100).toFixed(1);
-                    let lineHeight = 12;
+                    let lineHeight = 10;
 
-                    // Calculate font size based on area
+                    // More aggressive font size calculation
                     const fontSize = Math.min(
-                        Math.floor(width / 8),
-                        Math.floor(height / (words.length + 1) / 1.5),
-                        12
+                        Math.floor(width / 7),
+                        Math.floor(height / (words.length + 1) / 1.2),
+                        11
                     );
 
-                    if (fontSize >= 8) {
+                    if (fontSize >= 7) {  // Lower minimum font size
                         const text = el.append("text")
                             .attr("class", "item-label")
                             .attr("x", padding)
                             .attr("y", padding)
                             .style("font-size", `${fontSize}px`);
 
+                        // Limit number of words based on available height
+                        const maxLines = Math.floor((height - 2 * padding) / lineHeight);
+                        const displayWords = words.slice(0, maxLines);
+                        
+                        // Add ellipsis if text is truncated
+                        if (displayWords.length < words.length) {
+                            displayWords[displayWords.length - 1] += '…';
+                        }
+
                         // Add each word as a tspan
-                        words.forEach((word, i) => {
+                        displayWords.forEach((word, i) => {
                             text.append("tspan")
                                 .attr("x", padding)
                                 .attr("dy", i ? lineHeight : 0)
                                 .text(word);
                         });
 
-                        // Add percentage on new line
-                        text.append("tspan")
-                            .attr("x", padding)
-                            .attr("dy", lineHeight)
-                            .attr("class", "percentage-label")
-                            .text(`${percentage}%`);
+                        // Only add percentage if there's room
+                        if (displayWords.length < maxLines) {
+                            text.append("tspan")
+                                .attr("x", padding)
+                                .attr("dy", lineHeight)
+                                .attr("class", "percentage-label")
+                                .text(`${percentage}%`);
+                        }
                     }
                 }
             }
