@@ -323,7 +323,7 @@ class Visualizer:
                          "<extra></extra>"
         )
         
-        # Update layout with secondary y-axis settings
+        # Update layout with mobile-friendly settings
         fig.update_layout(
             barmode='stack',
             xaxis={
@@ -341,7 +341,7 @@ class Visualizer:
                 'y': -0.3,
                 'xanchor': 'center',
                 'x': 0.5,
-                'traceorder': 'normal'  # Ensure total line appears at the end
+                'traceorder': 'normal'
             },
             margin=dict(b=150),
             plot_bgcolor='white',
@@ -352,7 +352,15 @@ class Visualizer:
                 zerolinecolor='grey',
                 zerolinewidth=1,
             ),
-            hovermode='x unified'  # Show all hover info for the same x-value
+            hovermode='x unified',
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=14,
+            ),
+            hoverdistance=100,
+            autosize=True,  # Enable autosizing for responsiveness
+            width=None,  # Remove fixed width
+            height=None  # Remove fixed height
         )
 
         fig.update_yaxes(separatethousands=True)
@@ -360,13 +368,13 @@ class Visualizer:
         # Update hover template for the bars
         if language == 'fr':
             hover_template = (
-                "<b>%{data.name}</b><br>" +  # Type
-                "%{y:,.0f} " + label['number_of_items'] + "<extra></extra>"  # "X éléments"
+                "<b>%{data.name}</b><br>" +
+                "%{y:,.0f} " + label['number_of_items'] + "<extra></extra>"
             )
         else:
             hover_template = (
-                "<b>%{data.name}</b><br>" +  # Type
-                "%{y:,.0f} " + label['number_of_items'] + "<extra></extra>"  # "X items"
+                "<b>%{data.name}</b><br>" +
+                "%{y:,.0f} " + label['number_of_items'] + "<extra></extra>"
             )
 
         fig.update_traces(hovertemplate=hover_template)
@@ -380,50 +388,11 @@ class Visualizer:
         # Update the total line trace
         fig.data[-1].update(hovertemplate=total_hover_template)
 
-        # Update layout to show year in hover title
-        fig.update_layout(
-            barmode='stack',
-            xaxis={
-                'type': 'category',
-                'categoryorder': 'category ascending',
-                'tickangle': 45,
-                'tickmode': 'linear',
-                'dtick': 5,
-            },
-            showlegend=True,
-            legend={
-                'title': label['type'],
-                'orientation': 'h',
-                'yanchor': 'bottom',
-                'y': -0.3,
-                'xanchor': 'center',
-                'x': 0.5,
-                'traceorder': 'normal'  # Ensure total line appears at the end
-            },
-            margin=dict(b=150),
-            plot_bgcolor='white',
-            paper_bgcolor='white',
-            yaxis=dict(
-                gridcolor='lightgrey',
-                zeroline=True,
-                zerolinecolor='grey',
-                zerolinewidth=1,
-            ),
-            hovermode='x unified',  # Show all hover info for the same x-value
-            hoverlabel=dict(
-                bgcolor="white",
-                font_size=14,
-            ),
-            hoverdistance=100,  # Increase hover distance for better UX
-        )
-
-        fig.update_yaxes(separatethousands=True)
-
         # Create the full path for the output file
-        output_path = os.path.join(SCRIPT_DIR, label['filename'])
+        output_path = os.path.join(SCRIPT_DIR, f"mobile_{label['filename']}")
         
         fig.write_html(output_path)
-        logger.info(f"Visualization saved to: {output_path}")
+        logger.info(f"Mobile visualization saved to: {output_path}")
         fig.show()
 
 def main():
