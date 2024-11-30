@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Items Distribution Over Years</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .chart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+        
+        .area {
+            opacity: 0.8;
+        }
+        
+        .area:hover {
+            opacity: 1;
+        }
+        
+        .total-line {
+            fill: none;
+            stroke: #000;
+            stroke-width: 1.5;
+            stroke-dasharray: 4,4;
+        }
+        
+        .legend {
+            font-size: 12px;
+        }
+        
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .axis-label {
+            font-size: 12px;
+        }
+        
+        .bar {
+            transition: opacity 0.2s;
+        }
+        
+        .bar:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div id="chart"></div>
+    </div>
+
+<script>
+// Set the dimensions and margins of the graph
+const margin = {top: 50, right: 180, bottom: 50, left: 60};
+const width = 1000 - margin.left - margin.right;
+const height = 600 - margin.top - margin.bottom;
+
+// Create the SVG container
+const svg = d3.select("#chart")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+// Add title
+svg.append("text")
+    .attr("class", "title")
+    .attr("x", width / 2)
+    .attr("y", -margin.top / 2)
+    .attr("text-anchor", "middle")
+    .text("Number of items in the database by type over years");
+
+// Load and process the data
+d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/main/Visualisations/Overview/items_type_over_years/data/visualization_data.json")
+    .then(function(data) {
+        // Process the data
+        const years = data.yearlyData.map(d => d.year);
+        const types = data.types;
+        
+        // Create color scale
+        const color = d3.scaleOrdinal()
+            .domain(types)
+            .range([
+                "#20B2AA", // Press article
+                "#CD5C5C", // Islamic newspaper
+                "#4682B4", // Journal article
+                "#F4A460", // Chapter
+                "#98FB98", // Thesis
+                "#DDA0DD", // Book
+                "#4169E1", // Report
+                "#FFB6C1", // Edited volume
+                "#FFA07A", // Blog article
+                "#87CEEB", // Image
+                "#F0E68C", // Book review
+                "#E6E6FA", // Other document
+                "#90EE90", // Audiovisual document
+                "#D3D3D3"  // Communication
+            ]);
+
+        // Create scales
+        const x = d3.scaleLinear()
+            .domain(d3.extent(years))
+            .range([0, width]);
+
+        const y = d3.scaleLinear()
+            .domain([0, d3.max(data.yearlyData, d => d.total)])
+            .range([height, 0]);
+
+        // Create the stack for bars
+        const stack = d3.stack()
+            .keys(types)
+            .value((d, key) => d.values[key] || 0);
+
+        const stackedData = stack(data.yearlyData);
+
+        // Calculate bar width based on data
+        const barWidth = width / data.yearlyData.length * 0.8;
+
+        // Add the bars
+        const layers = svg.selectAll("g.layer")
+            .data(stackedData)
+            .join("g")
+            .attr("class", "layer")
+            .attr("fill", d => color(d.key));
+
+        layers.selectAll("rect")
+            .data(d => d)
+            .join("rect")
+            .attr("x", d => x(d.data.year) - barWidth/2)
+            .attr("y", d => y(d[1]))
+            .attr("height", d => y(d[0]) - y(d[1]))
+            .attr("width", barWidth)
+            .attr("class", "bar")
+            .style("opacity", 0.8)
+            .on("mouseover", function() {
+                d3.select(this)
+                    .style("opacity", 1);
+            })
+            .on("mouseout", function() {
+                d3.select(this)
+                    .style("opacity", 0.8);
+            });
+
+        // Add the total line
+        const totalLine = d3.line()
+            .x(d => x(d.year))
+            .y(d => y(d.total))
+            .curve(d3.curveMonotoneX);
+
+        svg.append("path")
+            .datum(data.yearlyData)
+            .attr("class", "total-line")
+            .attr("d", totalLine);
+
+        // Update the x-axis to show more ticks
+        const xAxis = d3.axisBottom(x)
+            .tickFormat(d3.format("d"))
+            .ticks(Math.min(data.yearlyData.length, 20));
+
+        // Add axes
+        svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(xAxis);
+
+        const yAxis = d3.axisLeft(y);
+
+        svg.append("g")
+            .call(yAxis);
+
+        // Add axis labels
+        svg.append("text")
+            .attr("class", "axis-label")
+            .attr("x", width / 2)
+            .attr("y", height + 40)
+            .attr("text-anchor", "middle")
+            .text("Year");
+
+        svg.append("text")
+            .attr("class", "axis-label")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", -40)
+            .attr("text-anchor", "middle")
+            .text("Number of items");
+
+        // Add legend
+        const legend = svg.append("g")
+            .attr("class", "legend")
+            .attr("transform", `translate(${width + 10}, 0)`);
+
+        const legendItems = legend.selectAll("g")
+            .data(types)
+            .join("g")
+            .attr("transform", (d, i) => `translate(0,${i * 20})`);
+
+        legendItems.append("rect")
+            .attr("width", 15)
+            .attr("height", 15)
+            .attr("fill", d => color(d));
+
+        legendItems.append("text")
+            .attr("x", 20)
+            .attr("y", 12)
+            .text(d => d);
+
+        // Add total to legend
+        legend.append("g")
+            .attr("transform", `translate(0,${types.length * 20 + 10})`)
+            .call(g => {
+                g.append("line")
+                    .attr("x1", 0)
+                    .attr("x2", 15)
+                    .attr("y1", 7.5)
+                    .attr("y2", 7.5)
+                    .attr("class", "total-line");
+                
+                g.append("text")
+                    .attr("x", 20)
+                    .attr("y", 12)
+                    .text("Total");
+            });
+    });
+</script>
+</body>
+</html> 
