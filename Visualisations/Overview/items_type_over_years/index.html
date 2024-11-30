@@ -90,7 +90,7 @@
         }
         
         .slider-container {
-            margin-top: 20px;
+            margin-top: 40px;
             padding: 20px;
             text-align: center;
             position: relative;
@@ -109,6 +109,7 @@
         
         .slider-track-filled {
             position: absolute;
+            top: 0;
             height: 100%;
             background: #666;
             border-radius: 2px;
@@ -124,18 +125,7 @@
             transform: translate(-50%, -50%);
             cursor: pointer;
             z-index: 2;
-        }
-        
-        .slider-handle:hover {
-            background: #2E5C8A;
-        }
-        
-        .slider-label {
-            font-size: 12px;
-            margin: 10px 0;
-            position: absolute;
-            width: 100%;
-            top: -5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -248,7 +238,8 @@ class StackedBarChart {
             .tickFormat(d3.format("d"))
             .ticks(Math.min(this.data.yearlyData.length, 20));
 
-        this.svg.append("g")
+        this.xAxisGroup = this.svg.append("g")
+            .attr("class", "x-axis")
             .attr("transform", `translate(0,${this.height})`)
             .call(xAxis);
 
@@ -410,20 +401,16 @@ class StackedBarChart {
             .append("div")
             .attr("class", "slider-container");
 
-        // Add label
         sliderContainer.append("div")
             .attr("class", "slider-label")
             .text(`Year Range: ${minYear} - ${maxYear}`);
 
-        // Add track
         const track = sliderContainer.append("div")
             .attr("class", "slider-track");
 
-        // Add filled track
         const filledTrack = track.append("div")
             .attr("class", "slider-track-filled");
 
-        // Add handles
         const leftHandle = sliderContainer.append("div")
             .attr("class", "slider-handle")
             .attr("id", "left-handle");
@@ -432,68 +419,66 @@ class StackedBarChart {
             .attr("class", "slider-handle")
             .attr("id", "right-handle");
 
-        // Create scale for converting between pixels and years
         const containerWidth = sliderContainer.node().getBoundingClientRect().width;
-        const margin = containerWidth * 0.1; // 10% margin on each side
+        const margin = containerWidth * 0.1;
         const xScale = d3.scaleLinear()
             .domain([minYear, maxYear])
             .range([margin, containerWidth - margin]);
 
-        // Update handle positions
-        const updateHandles = () => {
-            leftHandle.style("left", xScale(this.yearRange[0]) + "px");
-            rightHandle.style("left", xScale(this.yearRange[1]) + "px");
-            filledTrack.style("left", (xScale(this.yearRange[0]) - margin) + "px")
-                .style("width", (xScale(this.yearRange[1]) - xScale(this.yearRange[0])) + "px");
+        const updateSlider = () => {
+            const leftPos = xScale(this.yearRange[0]);
+            const rightPos = xScale(this.yearRange[1]);
+            
+            leftHandle.style("left", `${leftPos}px`);
+            rightHandle.style("left", `${rightPos}px`);
+            
+            filledTrack
+                .style("left", `${leftPos}px`)
+                .style("width", `${rightPos - leftPos}px`);
+
+            sliderContainer.select(".slider-label")
+                .text(`Year Range: ${this.yearRange[0]} - ${this.yearRange[1]}`);
         };
 
-        // Initialize handle positions
-        updateHandles();
-
-        // Add drag behavior
-        const drag = d3.drag()
-            .on("drag", (event, d) => {
-                const handle = d3.select(event.sourceEvent.target);
-                const isLeftHandle = handle.attr("id") === "left-handle";
-                
-                // Calculate new position
-                const x = Math.max(margin, Math.min(containerWidth - margin, event.x));
+        const dragLeft = d3.drag()
+            .on("drag", (event) => {
+                const x = Math.max(margin, Math.min(xScale(this.yearRange[1] - this.minYearSpan), event.x));
                 const newYear = Math.round(xScale.invert(x));
                 
-                // Update year range based on which handle is being dragged
-                if (isLeftHandle) {
-                    if (this.yearRange[1] - newYear >= this.minYearSpan && newYear >= minYear) {
-                        this.yearRange[0] = newYear;
-                    }
-                } else {
-                    if (newYear - this.yearRange[0] >= this.minYearSpan && newYear <= maxYear) {
-                        this.yearRange[1] = newYear;
-                    }
+                if (newYear >= minYear && newYear <= this.yearRange[1] - this.minYearSpan) {
+                    this.yearRange[0] = newYear;
+                    updateSlider();
+                    this.updateFilteredData();
+                    this.update();
                 }
-                
-                // Update UI
-                updateHandles();
-                sliderContainer.select(".slider-label")
-                    .text(`Year Range: ${this.yearRange[0]} - ${this.yearRange[1]}`);
-                
-                // Update visualization
-                this.updateFilteredData();
-                this.update();
             });
 
-        // Apply drag behavior to handles
-        leftHandle.call(drag);
-        rightHandle.call(drag);
+        const dragRight = d3.drag()
+            .on("drag", (event) => {
+                const x = Math.max(xScale(this.yearRange[0] + this.minYearSpan), Math.min(containerWidth - margin, event.x));
+                const newYear = Math.round(xScale.invert(x));
+                
+                if (newYear <= maxYear && newYear >= this.yearRange[0] + this.minYearSpan) {
+                    this.yearRange[1] = newYear;
+                    updateSlider();
+                    this.updateFilteredData();
+                    this.update();
+                }
+            });
+
+        leftHandle.call(dragLeft);
+        rightHandle.call(dragRight);
 
         // Handle window resize
         const resizeObserver = new ResizeObserver(() => {
             const newWidth = sliderContainer.node().getBoundingClientRect().width;
             const newMargin = newWidth * 0.1;
             xScale.range([newMargin, newWidth - newMargin]);
-            updateHandles();
+            updateSlider();
         });
 
         resizeObserver.observe(sliderContainer.node());
+        updateSlider();
     }
 
     updateFilteredData() {
@@ -501,16 +486,24 @@ class StackedBarChart {
             ...this.data,
             yearlyData: this.data.yearlyData.filter(d => 
                 d.year >= this.yearRange[0] && d.year <= this.yearRange[1]
-            )
+            ).sort((a, b) => a.year - b.year)  // Ensure data is sorted by year
         };
     }
 
     update() {
-        // Update x scale domain
-        this.x.domain(d3.extent(this.filteredData.yearlyData.map(d => d.year)));
+        // Update x scale domain to match exactly the filtered year range
+        this.x.domain([this.yearRange[0], this.yearRange[1]]);
         
         // Update y scale domain
         this.y.domain([0, this.calculateMaxY()]);
+
+        // Update x axis with transition
+        this.svg.select(".x-axis")
+            .transition()
+            .duration(750)
+            .call(d3.axisBottom(this.x)
+                .tickFormat(d3.format("d"))
+                .ticks(Math.min(this.filteredData.yearlyData.length, 20)));
 
         // Update y axis with transition
         this.svg.select(".y-axis")
