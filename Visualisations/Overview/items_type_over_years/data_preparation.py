@@ -13,6 +13,10 @@ import json
 # Get the directory of the current script
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# Add after SCRIPT_DIR definition
+DATA_DIR = os.path.join(SCRIPT_DIR, "data")
+os.makedirs(DATA_DIR, exist_ok=True)  # Create data directory if it doesn't exist
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -29,8 +33,8 @@ class Config:
     ITEMS_PER_PAGE: int = 50
     MAX_WORKERS: int = 5
     CACHE_DURATION_HOURS: int = 24
-    CACHE_FILE: Path = field(default_factory=lambda: Path(SCRIPT_DIR) / "data_cache.json")
-    OUTPUT_FILE: Path = field(default_factory=lambda: Path(SCRIPT_DIR) / "visualization_data.json")
+    CACHE_FILE: Path = field(default_factory=lambda: Path(DATA_DIR) / "data_cache.json")
+    OUTPUT_FILE: Path = field(default_factory=lambda: Path(DATA_DIR) / "visualization_data.json")
     
     # Resource class IDs and their translations
     ACCEPTABLE_IDS: Dict[int, Dict[str, str]] = field(default_factory=lambda: {
@@ -48,80 +52,6 @@ class Config:
         52: {"en": "Edited volume", "fr": "Ouvrage collectif"},
         77: {"en": "Communication", "fr": "Communication"},
         305: {"en": "Blog article", "fr": "Article de blog"}
-    })
-
-    # Color palette with bilingual labels
-    COLOR_PALETTE: Dict[str, Dict[str, str]] = field(default_factory=lambda: {
-        "Blog article": {
-            "en": "Blog article",
-            "fr": "Article de blog",
-            "color": "#FF6B6B"
-        },
-        "Press article": {
-            "en": "Press article",
-            "fr": "Article de presse",
-            "color": "#4ECDC4"
-        },
-        "Journal article": {
-            "en": "Journal article",
-            "fr": "Article de revue",
-            "color": "#45B7D1"
-        },
-        "Book": {
-            "en": "Book",
-            "fr": "Livre",
-            "color": "#96CEB4"
-        },
-        "Book review": {
-            "en": "Book review",
-            "fr": "Compte rendu de livre",
-            "color": "#FFEEAD"
-        },
-        "Chapter": {
-            "en": "Chapter",
-            "fr": "Chapitre",
-            "color": "#D4A5A5"
-        },
-        "Communication": {
-            "en": "Communication",
-            "fr": "Communication",
-            "color": "#9B9B9B"
-        },
-        "Edited volume": {
-            "en": "Edited volume",
-            "fr": "Ouvrage collectif",
-            "color": "#FFD93D"
-        },
-        "Image": {
-            "en": "Image",
-            "fr": "Image",
-            "color": "#6C5B7B"
-        },
-        "Islamic newspaper": {
-            "en": "Islamic newspaper",
-            "fr": "Journal islamique",
-            "color": "#C06C84"
-        },
-        "Other document": {
-            "en": "Other document",
-            "fr": "Document divers",
-            "color": "#F8B195"
-        },
-        "Report": {
-            "en": "Report",
-            "fr": "Rapport",
-            "color": "#355C7D"
-        },
-        "Thesis": {
-            "en": "Thesis",
-            "fr": "Thèse",
-            "color": "#99B898"
-        },
-        "Audiovisual document": {
-            "en": "Audiovisual document",
-            "fr": "Document audiovisuel",
-            "color": "#2A363B"
-        }
     })
 
 class DataFetcher:
@@ -236,7 +166,6 @@ def prepare_visualization_data(items_by_year_type: DefaultDict[str, DefaultDict[
     visualization_data = {
         "yearlyData": [],
         "types": [],
-        "colors": {},
         "translations": {
             "types": {},
             "total": {"en": "Total", "fr": "Total"}
@@ -244,13 +173,14 @@ def prepare_visualization_data(items_by_year_type: DefaultDict[str, DefaultDict[
     }
 
     # Add type information
-    for type_key, type_info in config.COLOR_PALETTE.items():
-        visualization_data["types"].append(type_info["en"])
-        visualization_data["colors"][type_info["en"]] = type_info["color"]
-        visualization_data["translations"]["types"][type_info["en"]] = {
-            "en": type_info["en"],
-            "fr": type_info["fr"]
-        }
+    for type_id, translations in config.ACCEPTABLE_IDS.items():
+        en_name = translations["en"]
+        if en_name not in visualization_data["types"]:
+            visualization_data["types"].append(en_name)
+            visualization_data["translations"]["types"][en_name] = {
+                "en": translations["en"],
+                "fr": translations["fr"]
+            }
 
     # Add yearly data
     for year in sorted(items_by_year_type.keys()):
