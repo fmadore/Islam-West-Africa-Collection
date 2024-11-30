@@ -2,1542 +2,2437 @@
   "yearlyData": [
     {
       "year": "1912",
-      "total": 3,
+      "total": 6,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 3,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 3
+      },
+      "country_counts": {
+        "Book": {
+          "Niger": 3
+        }
       }
     },
     {
       "year": "1914",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1922",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 1
+      },
+      "country_counts": {
+        "Book": {
+          "Côte d'Ivoire": 1
+        }
       }
     },
     {
       "year": "1924",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 1
+      },
+      "country_counts": {
+        "Book": {
+          "Bénin": 1
+        }
       }
     },
     {
       "year": "1926",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 1
+      },
+      "country_counts": {
+        "Book": {
+          "Bénin": 1
+        }
       }
     },
     {
       "year": "1941",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1943",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Bénin": 1
+        }
       }
     },
     {
       "year": "1948",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Bénin": 1
+        }
       }
     },
     {
       "year": "1952",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 1
+      },
+      "country_counts": {
+        "Book": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "1953",
-      "total": 2,
+      "total": 4,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
         "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Book": {
+          "Bénin": 1
+        },
+        "Journal article": {
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1954",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 1,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Book review": 1
+      },
+      "country_counts": {
+        "Book review": {
+          "Bénin": 1
+        }
       }
     },
     {
       "year": "1956",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "1958",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "1959",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 0,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Niger": 1
+        }
       }
     },
     {
       "year": "1962",
-      "total": 5,
+      "total": 10,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 3,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 1,
         "Chapter": 1,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 3
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 1
+        },
+        "Chapter": {
+          "Burkina Faso": 1
+        },
+        "Press article": {
+          "Burkina Faso": 3
+        }
       }
     },
     {
       "year": "1963",
-      "total": 3,
+      "total": 6,
       "values": {
-        "Image": 0,
-        "Other document": 1,
         "Press article": 2,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Other document": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 1,
+          "Togo": 1
+        },
+        "Other document": {
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1964",
-      "total": 5,
+      "total": 10,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 3,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 2,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 3
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 1,
+          "Togo": 1
+        },
+        "Press article": {
+          "Burkina Faso": 3
+        }
       }
     },
     {
       "year": "1965",
-      "total": 1,
+      "total": 2,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 1,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "1966",
-      "total": 5,
+      "total": 10,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 3,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
         "Chapter": 2,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 3
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 1,
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 3
+        }
       }
     },
     {
       "year": "1967",
-      "total": 3,
+      "total": 6,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 3,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 3
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 3
+        }
       }
     },
     {
       "year": "1968",
-      "total": 6,
+      "total": 12,
       "values": {
-        "Image": 0,
-        "Other document": 2,
-        "Press article": 2,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
         "Chapter": 1,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 2,
+        "Journal article": 1,
+        "Other document": 2
+      },
+      "country_counts": {
+        "Chapter": {
+          "Côte d'Ivoire": 1
+        },
+        "Press article": {
+          "Burkina Faso": 2
+        },
+        "Journal article": {
+          "Niger": 1
+        },
+        "Other document": {
+          "Togo": 2
+        }
       }
     },
     {
       "year": "1969",
-      "total": 4,
+      "total": 8,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 2,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
         "Chapter": 1,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 2,
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Chapter": {
+          "Togo": 1
+        },
+        "Press article": {
+          "Burkina Faso": 1,
+          "Togo": 1
+        },
+        "Journal article": {
+          "Niger": 1
+        }
       }
     },
     {
       "year": "1970",
-      "total": 41,
+      "total": 82,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 39,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
         "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1,
+        "Press article": 39
+      },
+      "country_counts": {
+        "Book": {
+          "Burkina Faso": 1
+        },
+        "Journal article": {
+          "Burkina Faso": 1
+        },
+        "Press article": {
+          "Bénin": 9,
+          "Burkina Faso": 1,
+          "Togo": 4,
+          "Côte d'Ivoire": 25
+        }
       }
     },
     {
       "year": "1971",
-      "total": 36,
+      "total": 72,
       "values": {
-        "Image": 0,
-        "Other document": 1,
-        "Press article": 34,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
         "Thesis": 1,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 34,
+        "Other document": 1
+      },
+      "country_counts": {
+        "Thesis": {
+          "Côte d'Ivoire": 1
+        },
+        "Press article": {
+          "Bénin": 6,
+          "Burkina Faso": 2,
+          "Togo": 14,
+          "Côte d'Ivoire": 12
+        },
+        "Other document": {
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1972",
-      "total": 45,
+      "total": 90,
       "values": {
-        "Image": 0,
-        "Other document": 1,
         "Press article": 44,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Other document": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Bénin": 12,
+          "Burkina Faso": 2,
+          "Togo": 17,
+          "Côte d'Ivoire": 13
+        },
+        "Other document": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "1973",
-      "total": 78,
+      "total": 156,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 77,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 77
+      },
+      "country_counts": {
+        "Journal article": {
+          "Niger": 1
+        },
+        "Press article": {
+          "Bénin": 15,
+          "Burkina Faso": 1,
+          "Togo": 32,
+          "Côte d'Ivoire": 29
+        }
       }
     },
     {
       "year": "1974",
-      "total": 51,
+      "total": 102,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 46,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 4,
         "Chapter": 1,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 4,
+        "Press article": 46
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 1
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 3,
+          "Togo": 1
+        },
+        "Press article": {
+          "Bénin": 8,
+          "Togo": 21,
+          "Côte d'Ivoire": 17
+        }
       }
     },
     {
       "year": "1975",
-      "total": 57,
+      "total": 114,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 55,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
-        "Thesis": 0,
         "Book": 2,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 55
+      },
+      "country_counts": {
+        "Book": {
+          "Côte d'Ivoire": 1,
+          "Niger": 1
+        },
+        "Press article": {
+          "Bénin": 4,
+          "Togo": 19,
+          "Côte d'Ivoire": 32
+        }
       }
     },
     {
       "year": "1976",
-      "total": 67,
+      "total": 134,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 65,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 2,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 65
+      },
+      "country_counts": {
+        "Journal article": {
+          "Côte d'Ivoire": 1,
+          "Niger": 1
+        },
+        "Press article": {
+          "Bénin": 9,
+          "Togo": 31,
+          "Côte d'Ivoire": 25
+        }
       }
     },
     {
       "year": "1977",
-      "total": 29,
+      "total": 58,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 28,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Bénin": 9,
+          "Burkina Faso": 1,
+          "Togo": 13,
+          "Côte d'Ivoire": 5
+        },
+        "Journal article": {
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1978",
-      "total": 61,
+      "total": 122,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 57,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 1,
         "Book": 2,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Thesis": 1,
+        "Press article": 57,
+        "Journal article": 1
+      },
+      "country_counts": {
+        "Book": {
+          "Niger": 1,
+          "Burkina Faso": 1
+        },
+        "Thesis": {
+          "Niger": 1
+        },
+        "Press article": {
+          "Bénin": 6,
+          "Burkina Faso": 1,
+          "Togo": 16,
+          "Côte d'Ivoire": 34
+        },
+        "Journal article": {
+          "Niger": 1
+        }
       }
     },
     {
       "year": "1979",
-      "total": 65,
+      "total": 130,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 63,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
         "Chapter": 1,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1,
+        "Press article": 63
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 1
+        },
+        "Journal article": {
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 21,
+          "Bénin": 19,
+          "Togo": 19,
+          "Côte d'Ivoire": 4
+        }
       }
     },
     {
       "year": "1980",
-      "total": 55,
+      "total": 110,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 51,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
         "Thesis": 1,
-        "Book": 2,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 1,
+        "Press article": 51,
+        "Book": 2
+      },
+      "country_counts": {
+        "Thesis": {
+          "Niger": 1
+        },
+        "Journal article": {
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 12,
+          "Bénin": 15,
+          "Togo": 10,
+          "Côte d'Ivoire": 14
+        },
+        "Book": {
+          "Côte d'Ivoire": 1,
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1981",
-      "total": 38,
+      "total": 76,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 32,
-        "Islamic newspaper": 1,
-        "Audiovisual document": 0,
         "Journal article": 3,
+        "Press article": 32,
         "Chapter": 1,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
         "Book review": 1,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Islamic newspaper": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Niger": 1,
+          "Burkina Faso": 1,
+          "Togo": 1
+        },
+        "Press article": {
+          "Burkina Faso": 7,
+          "Bénin": 7,
+          "Togo": 15,
+          "Côte d'Ivoire": 3
+        },
+        "Chapter": {
+          "Côte d'Ivoire": 1
+        },
+        "Book review": {
+          "Côte d'Ivoire": 1
+        },
+        "Islamic newspaper": {
+          "Côte d'Ivoire": 1
+        }
       }
     },
     {
       "year": "1982",
-      "total": 56,
+      "total": 112,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 51,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
+        "Thesis": 1,
         "Journal article": 2,
         "Chapter": 1,
-        "Thesis": 1,
-        "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 51,
+        "Book": 1
+      },
+      "country_counts": {
+        "Thesis": {
+          "Burkina Faso": 1
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 1,
+          "Togo": 1
+        },
+        "Chapter": {
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 18,
+          "Bénin": 5,
+          "Togo": 25,
+          "Côte d'Ivoire": 3
+        },
+        "Book": {
+          "Côte d'Ivoire": 1
+        }
       }
     },
     {
       "year": "1983",
-      "total": 51,
+      "total": 102,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 49,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 2,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 49
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 1,
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 4,
+          "Bénin": 33,
+          "Togo": 11,
+          "Côte d'Ivoire": 1
+        }
       }
     },
     {
       "year": "1984",
-      "total": 34,
+      "total": 68,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 29,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 2,
-        "Chapter": 0,
         "Thesis": 3,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 29
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 2
+        },
+        "Thesis": {
+          "Burkina Faso": 3
+        },
+        "Press article": {
+          "Burkina Faso": 4,
+          "Bénin": 12,
+          "Togo": 7,
+          "Côte d'Ivoire": 6
+        }
       }
     },
     {
       "year": "1985",
-      "total": 51,
+      "total": 102,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 47,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 1,
-        "Chapter": 1,
         "Thesis": 2,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 47,
+        "Chapter": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 1
+        },
+        "Thesis": {
+          "Niger": 1,
+          "Burkina Faso": 1
+        },
+        "Press article": {
+          "Burkina Faso": 11,
+          "Bénin": 9,
+          "Togo": 10,
+          "Côte d'Ivoire": 17
+        },
+        "Chapter": {
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1986",
-      "total": 47,
+      "total": 94,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 39,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 3,
-        "Chapter": 0,
         "Thesis": 2,
+        "Press article": 39,
         "Book": 2,
-        "Report": 1,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Report": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Côte d'Ivoire": 2,
+          "Togo": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Togo": 1
+        },
+        "Press article": {
+          "Burkina Faso": 13,
+          "Bénin": 13,
+          "Togo": 9,
+          "Côte d'Ivoire": 4
+        },
+        "Book": {
+          "Côte d'Ivoire": 1,
+          "Niger": 1
+        },
+        "Report": {
+          "Togo": 1
+        }
       }
     },
     {
       "year": "1987",
-      "total": 49,
+      "total": 98,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 45,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
+        "Thesis": 1,
         "Journal article": 1,
         "Chapter": 2,
-        "Thesis": 1,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 45
+      },
+      "country_counts": {
+        "Thesis": {
+          "Togo": 1
+        },
+        "Journal article": {
+          "Niger": 1
+        },
+        "Chapter": {
+          "Côte d'Ivoire": 2
+        },
+        "Press article": {
+          "Burkina Faso": 12,
+          "Bénin": 9,
+          "Togo": 13,
+          "Côte d'Ivoire": 11
+        }
       }
     },
     {
       "year": "1988",
-      "total": 43,
+      "total": 86,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 35,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 3,
         "Chapter": 2,
         "Thesis": 3,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 35
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 1,
+          "Niger": 2
+        },
+        "Chapter": {
+          "Burkina Faso": 1,
+          "Niger": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 1
+        },
+        "Press article": {
+          "Burkina Faso": 9,
+          "Bénin": 12,
+          "Togo": 13,
+          "Côte d'Ivoire": 1
+        }
       }
     },
     {
       "year": "1989",
-      "total": 29,
+      "total": 58,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 18,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 4,
-        "Chapter": 0,
         "Thesis": 5,
         "Book": 2,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 18
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 1,
+          "Togo": 2,
+          "Niger": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 4,
+          "Niger": 1
+        },
+        "Book": {
+          "Niger": 2
+        },
+        "Press article": {
+          "Burkina Faso": 2,
+          "Bénin": 5,
+          "Togo": 11
+        }
       }
     },
     {
       "year": "1990",
-      "total": 64,
+      "total": 128,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 55,
-        "Islamic newspaper": 0,
-        "Audiovisual document": 0,
         "Journal article": 5,
-        "Chapter": 1,
         "Thesis": 2,
-        "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Chapter": 1,
+        "Press article": 55,
+        "Book": 1
+      },
+      "country_counts": {
+        "Journal article": {
+          "Burkina Faso": 2,
+          "Niger": 3
+        },
+        "Thesis": {
+          "Burkina Faso": 2
+        },
+        "Chapter": {
+          "Côte d'Ivoire": 1
+        },
+        "Press article": {
+          "Burkina Faso": 2,
+          "Bénin": 2,
+          "Togo": 16,
+          "Côte d'Ivoire": 35
+        },
+        "Book": {
+          "Niger": 1
+        }
       }
     },
     {
       "year": "1991",
-      "total": 78,
+      "total": 156,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 65,
-        "Islamic newspaper": 3,
-        "Audiovisual document": 0,
         "Journal article": 4,
-        "Chapter": 1,
         "Thesis": 4,
+        "Chapter": 1,
+        "Press article": 65,
         "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Islamic newspaper": 3
+      },
+      "country_counts": {
+        "Journal article": {
+          "Côte d'Ivoire": 1,
+          "Burkina Faso": 1,
+          "Niger": 1,
+          "Togo": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 4
+        },
+        "Chapter": {
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 17,
+          "Bénin": 9,
+          "Togo": 15,
+          "Côte d'Ivoire": 24
+        },
+        "Book": {
+          "Niger": 1
+        },
+        "Islamic newspaper": {
+          "Côte d'Ivoire": 3
+        }
       }
     },
     {
       "year": "1992",
-      "total": 147,
+      "total": 294,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 127,
-        "Islamic newspaper": 13,
-        "Audiovisual document": 0,
-        "Journal article": 0,
-        "Chapter": 0,
         "Thesis": 4,
         "Book": 3,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 127,
+        "Islamic newspaper": 13
+      },
+      "country_counts": {
+        "Thesis": {
+          "Burkina Faso": 2,
+          "Niger": 2
+        },
+        "Book": {
+          "Niger": 1,
+          "Côte d'Ivoire": 2
+        },
+        "Press article": {
+          "Burkina Faso": 30,
+          "Bénin": 6,
+          "Togo": 12,
+          "Côte d'Ivoire": 79
+        },
+        "Islamic newspaper": {
+          "Côte d'Ivoire": 13
+        }
       }
     },
     {
       "year": "1993",
-      "total": 199,
+      "total": 398,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 165,
-        "Islamic newspaper": 21,
-        "Audiovisual document": 0,
-        "Journal article": 3,
         "Chapter": 8,
         "Thesis": 2,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 3,
+        "Press article": 165,
+        "Islamic newspaper": 21
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 4,
+          "Niger": 4
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Niger": 1
+        },
+        "Journal article": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 1
+        },
+        "Press article": {
+          "Burkina Faso": 52,
+          "Bénin": 15,
+          "Togo": 11,
+          "Côte d'Ivoire": 87
+        },
+        "Islamic newspaper": {
+          "Côte d'Ivoire": 21
+        }
       }
     },
     {
       "year": "1994",
-      "total": 288,
+      "total": 576,
       "values": {
-        "Image": 0,
-        "Other document": 0,
+        "Thesis": 3,
         "Press article": 258,
         "Islamic newspaper": 24,
-        "Audiovisual document": 0,
-        "Journal article": 2,
         "Chapter": 1,
-        "Thesis": 3,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 2
+      },
+      "country_counts": {
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Bénin": 1,
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 70,
+          "Bénin": 8,
+          "Togo": 24,
+          "Côte d'Ivoire": 156
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 23
+        },
+        "Chapter": {
+          "Bénin": 1
+        },
+        "Journal article": {
+          "Niger": 2
+        }
       }
     },
     {
       "year": "1995",
-      "total": 294,
+      "total": 588,
       "values": {
-        "Image": 0,
-        "Other document": 0,
+        "Chapter": 4,
         "Press article": 265,
         "Islamic newspaper": 22,
-        "Audiovisual document": 0,
-        "Journal article": 2,
-        "Chapter": 4,
-        "Thesis": 0,
         "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Journal article": 2
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 1,
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 86,
+          "Bénin": 18,
+          "Togo": 32,
+          "Côte d'Ivoire": 129
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 6,
+          "Côte d'Ivoire": 16
+        },
+        "Book": {
+          "Togo": 1
+        },
+        "Journal article": {
+          "Niger": 2
+        }
       }
     },
     {
       "year": "1996",
-      "total": 198,
+      "total": 396,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 174,
-        "Islamic newspaper": 6,
-        "Audiovisual document": 0,
-        "Journal article": 8,
         "Chapter": 7,
+        "Journal article": 8,
         "Thesis": 3,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 174,
+        "Islamic newspaper": 6
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 2,
+          "Niger": 5
+        },
+        "Journal article": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 2,
+          "Niger": 4
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Niger": 1,
+          "Togo": 1
+        },
+        "Press article": {
+          "Burkina Faso": 96,
+          "Bénin": 11,
+          "Togo": 23,
+          "Côte d'Ivoire": 44
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 6
+        }
       }
     },
     {
       "year": "1997",
-      "total": 206,
+      "total": 412,
       "values": {
-        "Image": 0,
-        "Other document": 0,
+        "Chapter": 3,
+        "Journal article": 3,
+        "Thesis": 3,
         "Press article": 189,
         "Islamic newspaper": 6,
-        "Audiovisual document": 0,
-        "Journal article": 3,
-        "Chapter": 3,
-        "Thesis": 3,
-        "Book": 2,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 2
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 1
+        },
+        "Journal article": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 1,
+          "Bénin": 1
+        },
+        "Thesis": {
+          "Bénin": 2,
+          "Niger": 1
+        },
+        "Press article": {
+          "Burkina Faso": 57,
+          "Bénin": 27,
+          "Togo": 52,
+          "Côte d'Ivoire": 53
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 6
+        },
+        "Book": {
+          "Niger": 2
+        }
       }
     },
     {
       "year": "1998",
-      "total": 191,
+      "total": 382,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 172,
-        "Islamic newspaper": 6,
-        "Audiovisual document": 0,
-        "Journal article": 5,
         "Chapter": 4,
         "Thesis": 1,
+        "Journal article": 5,
         "Book": 3,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Press article": 172,
+        "Islamic newspaper": 6
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 2,
+          "Niger": 1,
+          "Togo": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 1
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 1,
+          "Burkina Faso": 1,
+          "Niger": 2,
+          "Togo": 1
+        },
+        "Book": {
+          "Niger": 2,
+          "Bénin": 1
+        },
+        "Press article": {
+          "Burkina Faso": 74,
+          "Bénin": 26,
+          "Togo": 30,
+          "Côte d'Ivoire": 42
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 6
+        }
       }
     },
     {
       "year": "1999",
-      "total": 305,
+      "total": 610,
       "values": {
-        "Image": 0,
-        "Other document": 0,
+        "Chapter": 4,
+        "Journal article": 4,
+        "Book": 1,
         "Press article": 282,
         "Islamic newspaper": 11,
-        "Audiovisual document": 1,
-        "Journal article": 4,
-        "Chapter": 4,
-        "Thesis": 0,
-        "Book": 1,
-        "Report": 0,
         "Book review": 2,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Audiovisual document": 1
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 1,
+          "Niger": 1,
+          "Togo": 1
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 1,
+          "Bénin": 1,
+          "Niger": 2
+        },
+        "Book": {
+          "Bénin": 1
+        },
+        "Press article": {
+          "Burkina Faso": 97,
+          "Bénin": 11,
+          "Togo": 56,
+          "Côte d'Ivoire": 118
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 11
+        },
+        "Book review": {
+          "Bénin": 2
+        },
+        "Audiovisual document": {
+          "Nigeria": 1
+        }
       }
     },
     {
       "year": "2000",
-      "total": 206,
+      "total": 412,
       "values": {
-        "Image": 0,
-        "Other document": 0,
-        "Press article": 177,
-        "Islamic newspaper": 14,
-        "Audiovisual document": 0,
-        "Journal article": 8,
         "Chapter": 3,
         "Thesis": 1,
+        "Journal article": 8,
+        "Press article": 177,
+        "Islamic newspaper": 14,
         "Book": 1,
-        "Report": 0,
         "Book review": 1,
-        "Edited volume": 1,
-        "Communication": 0,
-        "Blog article": 0
+        "Edited volume": 1
+      },
+      "country_counts": {
+        "Chapter": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 2
+        },
+        "Thesis": {
+          "Burkina Faso": 1
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 4,
+          "Niger": 3,
+          "Togo": 1
+        },
+        "Press article": {
+          "Burkina Faso": 90,
+          "Bénin": 22,
+          "Togo": 25,
+          "Côte d'Ivoire": 40
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 13,
+          "Côte d'Ivoire": 1
+        },
+        "Book": {
+          "Côte d'Ivoire": 1
+        },
+        "Book review": {
+          "Bénin": 1
+        },
+        "Edited volume": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "2001",
-      "total": 230,
+      "total": 460,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 215,
-        "Islamic newspaper": 6,
-        "Audiovisual document": 3,
         "Journal article": 2,
-        "Chapter": 0,
         "Thesis": 2,
+        "Islamic newspaper": 6,
         "Book": 2,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Audiovisual document": 3
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 115,
+          "Bénin": 7,
+          "Togo": 21,
+          "Côte d'Ivoire": 72
+        },
+        "Journal article": {
+          "Niger": 2
+        },
+        "Thesis": {
+          "Côte d'Ivoire": 2
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 4
+        },
+        "Book": {
+          "Togo": 1,
+          "Niger": 1
+        },
+        "Audiovisual document": {
+          "Nigeria": 3
+        }
       }
     },
     {
       "year": "2002",
-      "total": 170,
+      "total": 340,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 155,
-        "Islamic newspaper": 3,
-        "Audiovisual document": 0,
-        "Journal article": 5,
         "Chapter": 2,
-        "Thesis": 3,
         "Book": 2,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Thesis": 3,
+        "Journal article": 5,
+        "Islamic newspaper": 3
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 50,
+          "Bénin": 22,
+          "Togo": 48,
+          "Côte d'Ivoire": 35
+        },
+        "Chapter": {
+          "Niger": 1,
+          "Bénin": 1
+        },
+        "Book": {
+          "Niger": 1,
+          "Côte d'Ivoire": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 2
+        },
+        "Journal article": {
+          "Niger": 4,
+          "Bénin": 1
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 2,
+          "Bénin": 1
+        }
       }
     },
     {
       "year": "2003",
-      "total": 158,
+      "total": 316,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 136,
-        "Islamic newspaper": 2,
-        "Audiovisual document": 0,
-        "Journal article": 6,
         "Chapter": 6,
+        "Journal article": 6,
         "Thesis": 5,
         "Book": 2,
         "Report": 1,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Islamic newspaper": 2
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 52,
+          "Bénin": 14,
+          "Togo": 34,
+          "Côte d'Ivoire": 36
+        },
+        "Chapter": {
+          "Burkina Faso": 4,
+          "Côte d'Ivoire": 2
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 4,
+          "Burkina Faso": 1,
+          "Niger": 1
+        },
+        "Thesis": {
+          "Bénin": 1,
+          "Niger": 1,
+          "Côte d'Ivoire": 3
+        },
+        "Book": {
+          "Burkina Faso": 2
+        },
+        "Report": {
+          "Bénin": 1
+        },
+        "Islamic newspaper": {
+          "Côte d'Ivoire": 2
+        }
       }
     },
     {
       "year": "2004",
-      "total": 243,
+      "total": 486,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 174,
-        "Islamic newspaper": 56,
-        "Audiovisual document": 3,
         "Journal article": 4,
-        "Chapter": 2,
         "Thesis": 4,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Chapter": 2,
+        "Islamic newspaper": 56,
+        "Audiovisual document": 3
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 52,
+          "Bénin": 20,
+          "Togo": 64,
+          "Côte d'Ivoire": 38
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 1,
+          "Burkina Faso": 1,
+          "Niger": 2
+        },
+        "Thesis": {
+          "Bénin": 1,
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 2
+        },
+        "Chapter": {
+          "Niger": 2
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 54,
+          "Togo": 1,
+          "Côte d'Ivoire": 1
+        },
+        "Audiovisual document": {
+          "Nigeria": 3
+        }
       }
     },
     {
       "year": "2005",
-      "total": 177,
+      "total": 354,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 132,
-        "Islamic newspaper": 18,
-        "Audiovisual document": 0,
-        "Journal article": 6,
         "Chapter": 11,
         "Thesis": 6,
-        "Book": 2,
+        "Journal article": 6,
+        "Islamic newspaper": 18,
         "Report": 1,
-        "Book review": 0,
-        "Edited volume": 1,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 2,
+        "Edited volume": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 48,
+          "Bénin": 25,
+          "Togo": 41,
+          "Côte d'Ivoire": 18
+        },
+        "Chapter": {
+          "Burkina Faso": 3,
+          "Côte d'Ivoire": 3,
+          "Niger": 3,
+          "Bénin": 1,
+          "Togo": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Niger": 1,
+          "Côte d'Ivoire": 4
+        },
+        "Journal article": {
+          "Burkina Faso": 2,
+          "Niger": 3,
+          "Togo": 1
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 5,
+          "Côte d'Ivoire": 10,
+          "Togo": 3
+        },
+        "Report": {
+          "Bénin": 1
+        },
+        "Book": {
+          "Bénin": 1,
+          "Niger": 1
+        },
+        "Edited volume": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "2006",
-      "total": 249,
+      "total": 498,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 131,
-        "Islamic newspaper": 105,
-        "Audiovisual document": 0,
         "Journal article": 5,
-        "Chapter": 3,
         "Thesis": 2,
-        "Book": 2,
-        "Report": 0,
+        "Chapter": 3,
         "Book review": 1,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Islamic newspaper": 105,
+        "Book": 2
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 46,
+          "Bénin": 17,
+          "Togo": 42,
+          "Côte d'Ivoire": 26
+        },
+        "Journal article": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 2,
+          "Bénin": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 1
+        },
+        "Chapter": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 2
+        },
+        "Book review": {
+          "Burkina Faso": 1
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 56,
+          "Niger": 1,
+          "Côte d'Ivoire": 42,
+          "Togo": 6
+        },
+        "Book": {
+          "Côte d'Ivoire": 1,
+          "Niger": 1
+        }
       }
     },
     {
       "year": "2007",
-      "total": 245,
+      "total": 490,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 120,
-        "Islamic newspaper": 106,
-        "Audiovisual document": 0,
         "Journal article": 8,
         "Chapter": 4,
         "Thesis": 2,
+        "Islamic newspaper": 106,
         "Book": 4,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 1,
-        "Communication": 0,
-        "Blog article": 0
+        "Edited volume": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 52,
+          "Bénin": 18,
+          "Togo": 30,
+          "Côte d'Ivoire": 20
+        },
+        "Journal article": {
+          "Burkina Faso": 5,
+          "Côte d'Ivoire": 2,
+          "Niger": 1
+        },
+        "Chapter": {
+          "Niger": 3,
+          "Bénin": 1
+        },
+        "Thesis": {
+          "Togo": 2
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 54,
+          "Niger": 3,
+          "Côte d'Ivoire": 37,
+          "Togo": 12
+        },
+        "Book": {
+          "Côte d'Ivoire": 1,
+          "Bénin": 1,
+          "Niger": 2
+        },
+        "Edited volume": {
+          "Niger": 1
+        }
       }
     },
     {
       "year": "2008",
-      "total": 301,
+      "total": 602,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 176,
-        "Islamic newspaper": 104,
-        "Audiovisual document": 3,
-        "Journal article": 7,
-        "Chapter": 1,
         "Thesis": 7,
+        "Chapter": 1,
+        "Journal article": 7,
+        "Islamic newspaper": 104,
         "Book": 3,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Audiovisual document": 3
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 80,
+          "Bénin": 23,
+          "Togo": 31,
+          "Côte d'Ivoire": 42
+        },
+        "Thesis": {
+          "Burkina Faso": 2,
+          "Togo": 2,
+          "Côte d'Ivoire": 3
+        },
+        "Chapter": {
+          "Burkina Faso": 1
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 2,
+          "Burkina Faso": 2,
+          "Niger": 3
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 66,
+          "Niger": 6,
+          "Côte d'Ivoire": 30,
+          "Togo": 2
+        },
+        "Book": {
+          "Côte d'Ivoire": 2,
+          "Bénin": 1
+        },
+        "Audiovisual document": {
+          "Nigeria": 3
+        }
       }
     },
     {
       "year": "2009",
-      "total": 288,
+      "total": 576,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 135,
-        "Islamic newspaper": 119,
-        "Audiovisual document": 1,
         "Journal article": 11,
         "Chapter": 13,
         "Thesis": 4,
+        "Islamic newspaper": 119,
         "Book": 5,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Audiovisual document": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 54,
+          "Bénin": 32,
+          "Togo": 6,
+          "Côte d'Ivoire": 43
+        },
+        "Journal article": {
+          "Burkina Faso": 6,
+          "Bénin": 2,
+          "Niger": 3
+        },
+        "Chapter": {
+          "Burkina Faso": 3,
+          "Côte d'Ivoire": 4,
+          "Niger": 5,
+          "Bénin": 1
+        },
+        "Thesis": {
+          "Niger": 1,
+          "Burkina Faso": 1,
+          "Togo": 1,
+          "Côte d'Ivoire": 1
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 64,
+          "Niger": 2,
+          "Côte d'Ivoire": 45,
+          "Togo": 8
+        },
+        "Book": {
+          "Burkina Faso": 1,
+          "Niger": 3,
+          "Côte d'Ivoire": 1
+        },
+        "Audiovisual document": {
+          "Nigeria": 1
+        }
       }
     },
     {
       "year": "2010",
-      "total": 325,
+      "total": 650,
       "values": {
-        "Image": 0,
-        "Other document": 1,
         "Press article": 179,
-        "Islamic newspaper": 125,
-        "Audiovisual document": 0,
         "Journal article": 7,
         "Chapter": 8,
         "Thesis": 2,
         "Book": 3,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Islamic newspaper": 125,
+        "Other document": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 93,
+          "Bénin": 47,
+          "Côte d'Ivoire": 39
+        },
+        "Journal article": {
+          "Burkina Faso": 3,
+          "Côte d'Ivoire": 1,
+          "Niger": 2,
+          "Bénin": 1
+        },
+        "Chapter": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 1,
+          "Togo": 2,
+          "Niger": 3,
+          "Bénin": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 2
+        },
+        "Book": {
+          "Burkina Faso": 1,
+          "Niger": 2
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 68,
+          "Niger": 2,
+          "Bénin": 1,
+          "Côte d'Ivoire": 50,
+          "Togo": 4
+        },
+        "Other document": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "2011",
-      "total": 250,
+      "total": 500,
       "values": {
-        "Image": 4,
-        "Other document": 1,
         "Press article": 167,
-        "Islamic newspaper": 55,
-        "Audiovisual document": 1,
         "Journal article": 13,
         "Chapter": 6,
         "Thesis": 2,
+        "Islamic newspaper": 55,
+        "Other document": 1,
+        "Image": 4,
         "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Audiovisual document": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 108,
+          "Bénin": 37,
+          "Togo": 7,
+          "Côte d'Ivoire": 15
+        },
+        "Journal article": {
+          "Burkina Faso": 6,
+          "Côte d'Ivoire": 3,
+          "Niger": 4
+        },
+        "Chapter": {
+          "Burkina Faso": 1,
+          "Togo": 3,
+          "Niger": 2
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Bénin": 1
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 6,
+          "Bénin": 2,
+          "Côte d'Ivoire": 47
+        },
+        "Other document": {
+          "Burkina Faso": 1
+        },
+        "Image": {
+          "Burkina Faso": 4
+        },
+        "Book": {
+          "Côte d'Ivoire": 1
+        },
+        "Audiovisual document": {
+          "Nigeria": 1
+        }
       }
     },
     {
       "year": "2012",
-      "total": 309,
+      "total": 618,
       "values": {
-        "Image": 0,
-        "Other document": 1,
         "Press article": 217,
-        "Islamic newspaper": 55,
-        "Audiovisual document": 0,
-        "Journal article": 15,
         "Chapter": 13,
+        "Journal article": 15,
         "Thesis": 3,
-        "Book": 3,
+        "Other document": 1,
+        "Islamic newspaper": 55,
         "Report": 1,
-        "Book review": 0,
-        "Edited volume": 1,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 3,
+        "Edited volume": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 174,
+          "Bénin": 24,
+          "Côte d'Ivoire": 19
+        },
+        "Chapter": {
+          "Burkina Faso": 5,
+          "Côte d'Ivoire": 1,
+          "Togo": 4,
+          "Niger": 2,
+          "Bénin": 1
+        },
+        "Journal article": {
+          "Burkina Faso": 6,
+          "Côte d'Ivoire": 7,
+          "Bénin": 1,
+          "Niger": 1
+        },
+        "Thesis": {
+          "Togo": 2,
+          "Côte d'Ivoire": 1
+        },
+        "Other document": {
+          "Burkina Faso": 1
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 2,
+          "Bénin": 2,
+          "Côte d'Ivoire": 51
+        },
+        "Report": {
+          "Niger": 1
+        },
+        "Book": {
+          "Burkina Faso": 3
+        },
+        "Edited volume": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "2013",
-      "total": 410,
+      "total": 820,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 320,
-        "Islamic newspaper": 71,
-        "Audiovisual document": 2,
-        "Journal article": 5,
         "Chapter": 6,
+        "Journal article": 5,
         "Thesis": 5,
+        "Islamic newspaper": 71,
         "Book": 1,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Audiovisual document": 2
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 246,
+          "Bénin": 62,
+          "Côte d'Ivoire": 12
+        },
+        "Chapter": {
+          "Burkina Faso": 3,
+          "Côte d'Ivoire": 2,
+          "Niger": 1
+        },
+        "Journal article": {
+          "Burkina Faso": 3,
+          "Niger": 2
+        },
+        "Thesis": {
+          "Burkina Faso": 3,
+          "Côte d'Ivoire": 2
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 6,
+          "Côte d'Ivoire": 50,
+          "Togo": 15
+        },
+        "Book": {
+          "Côte d'Ivoire": 1
+        },
+        "Audiovisual document": {
+          "Nigeria": 2
+        }
       }
     },
     {
       "year": "2014",
-      "total": 346,
+      "total": 692,
       "values": {
-        "Image": 2,
-        "Other document": 4,
         "Press article": 227,
-        "Islamic newspaper": 80,
-        "Audiovisual document": 1,
-        "Journal article": 8,
         "Chapter": 15,
-        "Thesis": 3,
-        "Book": 1,
-        "Report": 2,
+        "Journal article": 8,
         "Book review": 2,
+        "Report": 2,
+        "Other document": 4,
+        "Islamic newspaper": 80,
+        "Image": 2,
+        "Thesis": 3,
         "Edited volume": 1,
-        "Communication": 0,
-        "Blog article": 0
+        "Book": 1,
+        "Audiovisual document": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 169,
+          "Bénin": 42,
+          "Côte d'Ivoire": 16
+        },
+        "Chapter": {
+          "Burkina Faso": 6,
+          "Côte d'Ivoire": 6,
+          "Bénin": 2,
+          "Togo": 1
+        },
+        "Journal article": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 4,
+          "Bénin": 1,
+          "Niger": 1
+        },
+        "Book review": {
+          "Burkina Faso": 2
+        },
+        "Report": {
+          "Burkina Faso": 1,
+          "Bénin": 1
+        },
+        "Other document": {
+          "Burkina Faso": 3,
+          "Bénin": 1
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 11,
+          "Côte d'Ivoire": 58,
+          "Togo": 11
+        },
+        "Image": {
+          "Côte d'Ivoire": 2
+        },
+        "Thesis": {
+          "Bénin": 2,
+          "Togo": 1
+        },
+        "Edited volume": {
+          "Burkina Faso": 1
+        },
+        "Book": {
+          "Niger": 1
+        },
+        "Audiovisual document": {
+          "Nigeria": 1
+        }
       }
     },
     {
       "year": "2015",
-      "total": 457,
+      "total": 914,
       "values": {
-        "Image": 7,
-        "Other document": 3,
         "Press article": 357,
-        "Islamic newspaper": 63,
-        "Audiovisual document": 0,
         "Journal article": 11,
         "Chapter": 6,
         "Thesis": 3,
-        "Book": 4,
-        "Report": 1,
         "Book review": 2,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Other document": 3,
+        "Islamic newspaper": 63,
+        "Image": 7,
+        "Book": 4,
+        "Report": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 226,
+          "Bénin": 101,
+          "Togo": 6,
+          "Côte d'Ivoire": 24
+        },
+        "Journal article": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 5,
+          "Niger": 4
+        },
+        "Chapter": {
+          "Burkina Faso": 3,
+          "Côte d'Ivoire": 1,
+          "Niger": 2
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 2
+        },
+        "Book review": {
+          "Burkina Faso": 2
+        },
+        "Other document": {
+          "Burkina Faso": 3
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 8,
+          "Togo": 2,
+          "Côte d'Ivoire": 53
+        },
+        "Image": {
+          "Burkina Faso": 5,
+          "Côte d'Ivoire": 2
+        },
+        "Book": {
+          "Côte d'Ivoire": 1,
+          "Burkina Faso": 3
+        },
+        "Report": {
+          "Côte d'Ivoire": 1
+        }
       }
     },
     {
       "year": "2016",
-      "total": 424,
+      "total": 848,
       "values": {
-        "Image": 0,
-        "Other document": 1,
         "Press article": 328,
-        "Islamic newspaper": 54,
-        "Audiovisual document": 0,
-        "Journal article": 17,
         "Chapter": 10,
+        "Journal article": 17,
         "Thesis": 2,
-        "Book": 8,
         "Report": 2,
-        "Book review": 1,
+        "Other document": 1,
+        "Islamic newspaper": 54,
+        "Book": 8,
         "Edited volume": 1,
-        "Communication": 0,
-        "Blog article": 0
+        "Book review": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 208,
+          "Bénin": 100,
+          "Togo": 16,
+          "Côte d'Ivoire": 4
+        },
+        "Chapter": {
+          "Burkina Faso": 3,
+          "Côte d'Ivoire": 4,
+          "Niger": 3
+        },
+        "Journal article": {
+          "Burkina Faso": 10,
+          "Côte d'Ivoire": 5,
+          "Niger": 2
+        },
+        "Thesis": {
+          "Burkina Faso": 2
+        },
+        "Report": {
+          "Burkina Faso": 1,
+          "Bénin": 1
+        },
+        "Other document": {
+          "Burkina Faso": 1
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 3,
+          "Togo": 5,
+          "Côte d'Ivoire": 46
+        },
+        "Book": {
+          "Côte d'Ivoire": 1,
+          "Niger": 5,
+          "Burkina Faso": 2
+        },
+        "Edited volume": {
+          "Burkina Faso": 1
+        },
+        "Book review": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "2017",
-      "total": 660,
+      "total": 1320,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 589,
-        "Islamic newspaper": 47,
-        "Audiovisual document": 0,
         "Journal article": 16,
         "Chapter": 3,
-        "Thesis": 0,
-        "Book": 2,
-        "Report": 2,
         "Book review": 1,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Report": 2,
+        "Islamic newspaper": 47,
+        "Book": 2
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 274,
+          "Bénin": 144,
+          "Togo": 9,
+          "Côte d'Ivoire": 162
+        },
+        "Journal article": {
+          "Burkina Faso": 6,
+          "Côte d'Ivoire": 6,
+          "Togo": 1,
+          "Niger": 3
+        },
+        "Chapter": {
+          "Burkina Faso": 2,
+          "Côte d'Ivoire": 1
+        },
+        "Book review": {
+          "Burkina Faso": 1
+        },
+        "Report": {
+          "Burkina Faso": 2
+        },
+        "Islamic newspaper": {
+          "Burkina Faso": 3,
+          "Bénin": 1,
+          "Côte d'Ivoire": 38,
+          "Togo": 5
+        },
+        "Book": {
+          "Côte d'Ivoire": 1,
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "2018",
-      "total": 425,
+      "total": 850,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 353,
-        "Islamic newspaper": 44,
-        "Audiovisual document": 0,
-        "Journal article": 10,
         "Chapter": 9,
+        "Journal article": 10,
         "Thesis": 4,
-        "Book": 1,
         "Report": 3,
-        "Book review": 0,
-        "Edited volume": 1,
-        "Communication": 0,
-        "Blog article": 0
+        "Islamic newspaper": 44,
+        "Book": 1,
+        "Edited volume": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 220,
+          "Bénin": 125,
+          "Togo": 8
+        },
+        "Chapter": {
+          "Burkina Faso": 4,
+          "Côte d'Ivoire": 2,
+          "Niger": 3
+        },
+        "Journal article": {
+          "Burkina Faso": 3,
+          "Côte d'Ivoire": 3,
+          "Togo": 2,
+          "Niger": 2
+        },
+        "Thesis": {
+          "Burkina Faso": 1,
+          "Niger": 1,
+          "Togo": 2
+        },
+        "Report": {
+          "Burkina Faso": 2,
+          "Niger": 1
+        },
+        "Islamic newspaper": {
+          "Togo": 5,
+          "Bénin": 2,
+          "Côte d'Ivoire": 37
+        },
+        "Book": {
+          "Côte d'Ivoire": 1
+        },
+        "Edited volume": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "2019",
-      "total": 530,
+      "total": 1060,
       "values": {
-        "Image": 14,
-        "Other document": 0,
         "Press article": 416,
-        "Islamic newspaper": 42,
-        "Audiovisual document": 0,
-        "Journal article": 9,
         "Chapter": 35,
-        "Thesis": 0,
-        "Book": 3,
-        "Report": 6,
+        "Journal article": 9,
         "Book review": 2,
+        "Image": 14,
+        "Islamic newspaper": 42,
+        "Report": 6,
+        "Book": 3,
         "Edited volume": 2,
-        "Communication": 0,
         "Blog article": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 206,
+          "Bénin": 190,
+          "Togo": 5,
+          "Côte d'Ivoire": 15
+        },
+        "Chapter": {
+          "Burkina Faso": 12,
+          "Côte d'Ivoire": 18,
+          "Togo": 2,
+          "Niger": 2,
+          "Bénin": 1
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 6,
+          "Burkina Faso": 1,
+          "Niger": 2
+        },
+        "Book review": {
+          "Burkina Faso": 2
+        },
+        "Image": {
+          "Bénin": 11,
+          "Togo": 3
+        },
+        "Islamic newspaper": {
+          "Bénin": 2,
+          "Côte d'Ivoire": 37,
+          "Togo": 3
+        },
+        "Report": {
+          "Togo": 1,
+          "Bénin": 3,
+          "Burkina Faso": 2
+        },
+        "Book": {
+          "Niger": 2,
+          "Burkina Faso": 1
+        },
+        "Edited volume": {
+          "Burkina Faso": 2
+        },
+        "Blog article": {
+          "Niger": 1
+        }
       }
     },
     {
       "year": "2020",
-      "total": 456,
+      "total": 912,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 399,
-        "Islamic newspaper": 38,
-        "Audiovisual document": 0,
-        "Journal article": 5,
         "Chapter": 8,
         "Thesis": 2,
-        "Book": 3,
-        "Report": 0,
+        "Journal article": 5,
         "Book review": 1,
-        "Edited volume": 0,
-        "Communication": 0,
-        "Blog article": 0
+        "Islamic newspaper": 38,
+        "Book": 3
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 239,
+          "Bénin": 134,
+          "Togo": 21,
+          "Côte d'Ivoire": 5
+        },
+        "Chapter": {
+          "Burkina Faso": 5,
+          "Côte d'Ivoire": 1,
+          "Niger": 2
+        },
+        "Thesis": {
+          "Burkina Faso": 2
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 3,
+          "Burkina Faso": 1,
+          "Niger": 1
+        },
+        "Book review": {
+          "Burkina Faso": 1
+        },
+        "Islamic newspaper": {
+          "Bénin": 10,
+          "Burkina Faso": 1,
+          "Côte d'Ivoire": 27
+        },
+        "Book": {
+          "Burkina Faso": 2,
+          "Togo": 1
+        }
       }
     },
     {
       "year": "2021",
-      "total": 253,
+      "total": 504,
       "values": {
-        "Image": 1,
-        "Other document": 0,
         "Press article": 171,
-        "Islamic newspaper": 39,
-        "Audiovisual document": 0,
-        "Journal article": 15,
+        "Journal article": 14,
         "Chapter": 16,
-        "Thesis": 1,
-        "Book": 1,
-        "Report": 5,
         "Book review": 2,
-        "Edited volume": 1,
+        "Thesis": 1,
+        "Report": 5,
+        "Islamic newspaper": 39,
+        "Image": 1,
+        "Book": 1,
         "Communication": 1,
-        "Blog article": 0
+        "Edited volume": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Burkina Faso": 63,
+          "Bénin": 88,
+          "Togo": 20
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 6,
+          "Burkina Faso": 5,
+          "Bénin": 2,
+          "Togo": 1
+        },
+        "Chapter": {
+          "Burkina Faso": 3,
+          "Niger": 12,
+          "Nigeria": 1
+        },
+        "Book review": {
+          "Burkina Faso": 2
+        },
+        "Thesis": {
+          "Bénin": 1
+        },
+        "Report": {
+          "Bénin": 3,
+          "Côte d'Ivoire": 1,
+          "Burkina Faso": 1
+        },
+        "Islamic newspaper": {
+          "Bénin": 38,
+          "Togo": 1
+        },
+        "Image": {
+          "Togo": 1
+        },
+        "Book": {
+          "Bénin": 1
+        },
+        "Communication": {
+          "Niger": 1
+        },
+        "Edited volume": {
+          "Niger": 1
+        }
       }
     },
     {
       "year": "2022",
-      "total": 286,
+      "total": 572,
       "values": {
-        "Image": 2,
-        "Other document": 0,
         "Press article": 159,
-        "Islamic newspaper": 78,
-        "Audiovisual document": 0,
-        "Journal article": 13,
         "Chapter": 13,
-        "Thesis": 1,
-        "Book": 0,
         "Report": 13,
-        "Book review": 0,
-        "Edited volume": 0,
+        "Journal article": 13,
+        "Thesis": 1,
+        "Islamic newspaper": 78,
+        "Image": 2,
         "Communication": 6,
         "Blog article": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Bénin": 95,
+          "Togo": 64
+        },
+        "Chapter": {
+          "Burkina Faso": 7,
+          "Bénin": 1,
+          "Côte d'Ivoire": 3,
+          "Niger": 1,
+          "Nigeria": 1
+        },
+        "Report": {
+          "Burkina Faso": 2,
+          "Bénin": 9,
+          "Nigeria": 1,
+          "Togo": 1
+        },
+        "Journal article": {
+          "Burkina Faso": 3,
+          "Bénin": 2,
+          "Côte d'Ivoire": 4,
+          "Togo": 1,
+          "Niger": 3
+        },
+        "Thesis": {
+          "Bénin": 1
+        },
+        "Islamic newspaper": {
+          "Bénin": 44,
+          "Côte d'Ivoire": 34
+        },
+        "Image": {
+          "Bénin": 1,
+          "Niger": 1
+        },
+        "Communication": {
+          "Burkina Faso": 5,
+          "Togo": 1
+        },
+        "Blog article": {
+          "Burkina Faso": 1
+        }
       }
     },
     {
       "year": "2023",
-      "total": 334,
+      "total": 660,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 222,
-        "Islamic newspaper": 57,
-        "Audiovisual document": 0,
         "Journal article": 10,
-        "Chapter": 19,
         "Thesis": 1,
-        "Book": 3,
+        "Chapter": 19,
         "Report": 14,
-        "Book review": 0,
-        "Edited volume": 1,
-        "Communication": 6,
-        "Blog article": 1
+        "Islamic newspaper": 57,
+        "Blog article": 1,
+        "Book": 3,
+        "Communication": 2,
+        "Edited volume": 1
+      },
+      "country_counts": {
+        "Press article": {
+          "Bénin": 118,
+          "Togo": 104
+        },
+        "Journal article": {
+          "Côte d'Ivoire": 4,
+          "Burkina Faso": 3,
+          "Bénin": 2,
+          "Togo": 1
+        },
+        "Thesis": {
+          "Burkina Faso": 1
+        },
+        "Chapter": {
+          "Niger": 3,
+          "Côte d'Ivoire": 4,
+          "Nigeria": 1,
+          "Bénin": 10,
+          "Togo": 1
+        },
+        "Report": {
+          "Burkina Faso": 2,
+          "Bénin": 8,
+          "Côte d'Ivoire": 3,
+          "Niger": 1
+        },
+        "Islamic newspaper": {
+          "Bénin": 30,
+          "Côte d'Ivoire": 26,
+          "Togo": 1
+        },
+        "Blog article": {
+          "Bénin": 1
+        },
+        "Book": {
+          "Bénin": 1,
+          "Côte d'Ivoire": 1,
+          "Burkina Faso": 1
+        },
+        "Communication": {
+          "Côte d'Ivoire": 1,
+          "Burkina Faso": 1
+        },
+        "Edited volume": {
+          "Côte d'Ivoire": 1
+        }
       }
     },
     {
       "year": "2024",
-      "total": 100,
+      "total": 194,
       "values": {
-        "Image": 0,
-        "Other document": 0,
         "Press article": 89,
-        "Islamic newspaper": 7,
-        "Audiovisual document": 0,
-        "Journal article": 1,
-        "Chapter": 0,
-        "Thesis": 0,
-        "Book": 0,
-        "Report": 0,
-        "Book review": 0,
-        "Edited volume": 0,
-        "Communication": 2,
-        "Blog article": 1
+        "Blog article": 1,
+        "Islamic newspaper": 7
+      },
+      "country_counts": {
+        "Press article": {
+          "Bénin": 23,
+          "Togo": 66
+        },
+        "Blog article": {
+          "Bénin": 1
+        },
+        "Islamic newspaper": {
+          "Côte d'Ivoire": 7
+        }
       }
     }
   ],
