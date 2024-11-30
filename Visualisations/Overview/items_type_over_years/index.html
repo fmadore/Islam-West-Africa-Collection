@@ -57,7 +57,7 @@
 
 <script>
 // Set the dimensions and margins of the graph
-const margin = {top: 50, right: 180, bottom: 50, left: 60};
+const margin = {top: 50, right: 60, bottom: 150, left: 60};
 const width = 1000 - margin.left - margin.right;
 const height = 600 - margin.top - margin.bottom;
 
@@ -193,12 +193,21 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
         // Add legend
         const legend = svg.append("g")
             .attr("class", "legend")
-            .attr("transform", `translate(${width + 10}, 0)`);
+            .attr("transform", `translate(0, ${height + 60})`);
+
+        // Calculate number of columns for legend (e.g., 4 columns)
+        const legendColumns = 4;
+        const legendItemWidth = width / legendColumns;
+        const legendItemHeight = 20;
 
         const legendItems = legend.selectAll("g")
             .data(types)
             .join("g")
-            .attr("transform", (d, i) => `translate(0,${i * 20})`);
+            .attr("transform", (d, i) => {
+                const row = Math.floor(i / legendColumns);
+                const col = i % legendColumns;
+                return `translate(${col * legendItemWidth},${row * legendItemHeight})`;
+            });
 
         legendItems.append("rect")
             .attr("width", 15)
@@ -208,11 +217,12 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
         legendItems.append("text")
             .attr("x", 20)
             .attr("y", 12)
+            .attr("font-size", "12px")
             .text(d => d);
 
         // Add total to legend
         legend.append("g")
-            .attr("transform", `translate(0,${types.length * 20 + 10})`)
+            .attr("transform", `translate(0,${Math.ceil(types.length / legendColumns) * legendItemHeight + 10})`)
             .call(g => {
                 g.append("line")
                     .attr("x1", 0)
@@ -224,6 +234,7 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
                 g.append("text")
                     .attr("x", 20)
                     .attr("y", 12)
+                    .attr("font-size", "12px")
                     .text("Total");
             });
     });
