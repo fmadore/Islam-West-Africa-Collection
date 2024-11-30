@@ -48,6 +48,18 @@
         .bar:hover {
             opacity: 1;
         }
+        
+        .legend-item {
+            cursor: pointer;
+        }
+        
+        .legend-item.disabled {
+            opacity: 0.3;
+        }
+        
+        .legend-item:hover {
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -128,6 +140,75 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
         // Calculate bar width based on data
         const barWidth = width / data.yearlyData.length * 0.8;
 
+        // Keep track of enabled types
+        let enabledTypes = new Set(types);
+
+        // Function to update the visualization
+        function updateVisualization() {
+            // Filter stack data to only include enabled types
+            const filteredStack = d3.stack()
+                .keys([...enabledTypes])
+                .value((d, key) => d.values[key] || 0);
+
+            const filteredData = filteredStack(data.yearlyData);
+
+            // Recalculate totals based on enabled types
+            data.yearlyData.forEach(d => {
+                d.total = Object.entries(d.values)
+                    .filter(([key]) => enabledTypes.has(key))
+                    .reduce((sum, [_, val]) => sum + (val || 0), 0);
+            });
+
+            // Update y scale domain
+            y.domain([0, d3.max(data.yearlyData, d => d.total)]);
+
+            // Update y axis with transition
+            svg.select(".y-axis")
+                .transition()
+                .duration(750)
+                .call(yAxis);
+
+            // First, remove all existing layers
+            svg.selectAll("g.layer").remove();
+
+            // Then create new layers with filtered data
+            const layers = svg.selectAll("g.layer")
+                .data(filteredData)
+                .join("g")
+                .attr("class", "layer")
+                .attr("fill", d => color(d.key));
+
+            // Add rectangles to layers
+            layers.selectAll("rect")
+                .data(d => d)
+                .join("rect")
+                .attr("class", "bar")
+                .attr("x", d => x(d.data.year) - barWidth/2)
+                .attr("width", barWidth)
+                .style("opacity", 0.8)
+                // Set initial position for smooth transition
+                .attr("y", height)
+                .attr("height", 0)
+                // Then transition to actual position
+                .transition()
+                .duration(750)
+                .attr("x", d => x(d.data.year) - barWidth/2)
+                .attr("y", d => y(d[1]))
+                .attr("height", d => y(d[0]) - y(d[1]))
+                .attr("width", barWidth);
+
+            // Update total line
+            const totalLine = d3.line()
+                .x(d => x(d.year))
+                .y(d => y(d.total))
+                .curve(d3.curveMonotoneX);
+
+            svg.select(".total-line")
+                .transition()
+                .duration(750)
+                .attr("d", totalLine);
+        }
+
         // Add the bars
         const layers = svg.selectAll("g.layer")
             .data(stackedData)
@@ -177,6 +258,7 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
         const yAxis = d3.axisLeft(y);
 
         svg.append("g")
+            .attr("class", "y-axis")
             .call(yAxis);
 
         // Add axis labels
@@ -208,10 +290,24 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
         const legendItems = legend.selectAll("g")
             .data(types)
             .join("g")
+            .attr("class", "legend-item")
             .attr("transform", (d, i) => {
                 const row = Math.floor(i / legendColumns);
                 const col = i % legendColumns;
                 return `translate(${col * legendItemWidth},${row * legendItemHeight})`;
+            })
+            .style("cursor", "pointer")
+            .on("click", function(event, d) {
+                if (enabledTypes.has(d)) {
+                    if (enabledTypes.size > 1) { // Prevent deselecting all types
+                        enabledTypes.delete(d);
+                        d3.select(this).classed("disabled", true);
+                    }
+                } else {
+                    enabledTypes.add(d);
+                    d3.select(this).classed("disabled", false);
+                }
+                updateVisualization();
             });
 
         legendItems.append("rect")
