@@ -158,7 +158,7 @@ class StackedBarChart {
         this.minYearSpan = 3;
         
         // Set the dimensions and margins
-        this.margin = {top: 50, right: 60, bottom: 150, left: 60};
+        this.margin = {top: 50, right: 60, bottom: 200, left: 60};
         this.width = 1000 - this.margin.left - this.margin.right;
         this.height = 600 - this.margin.top - this.margin.bottom;
         
@@ -286,7 +286,7 @@ class StackedBarChart {
 
         const legend = this.svg.append("g")
             .attr("class", "legend")
-            .attr("transform", `translate(0, ${this.height + 60})`);
+            .attr("transform", `translate(0, ${this.height + 40})`);
 
         // Sort types by their total values
         const sortedTypes = [...this.types].sort((a, b) => 
