@@ -153,6 +153,7 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
 
         // Keep track of enabled types
         let enabledTypes = new Set(types);
+        let showTotal = true;  // Track if total line should be shown
 
         // Initial render of the visualization
         const initialStack = d3.stack()
@@ -214,15 +215,32 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
                 });
 
             // Update total line
-            const totalLine = d3.line()
-                .x(d => x(d.year))
-                .y(d => y(d.total))
-                .curve(d3.curveMonotoneX);
+            if (showTotal) {
+                // Create new line generator with updated scale
+                const totalLine = d3.line()
+                    .x(d => x(d.year))
+                    .y(d => y(d.total))
+                    .curve(d3.curveMonotoneX);
 
-            svg.select(".total-line")
-                .transition()
-                .duration(750)
-                .attr("d", totalLine);
+                // Update or create total line
+                const totalPath = svg.selectAll(".total-line")
+                    .data([data.yearlyData]);
+
+                // Enter + Update
+                totalPath.enter()
+                    .append("path")
+                    .attr("class", "total-line")
+                    .merge(totalPath)
+                    .transition()
+                    .duration(750)
+                    .attr("d", totalLine);
+
+                // Ensure total line is on top
+                svg.select(".total-line").raise();
+            } else {
+                // Remove total line if it should be hidden
+                svg.selectAll(".total-line").remove();
+            }
         }
 
         // Calculate initial totals
@@ -262,10 +280,12 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
             .y(d => y(d.total))
             .curve(d3.curveMonotoneX);
 
-        svg.append("path")
-            .datum(data.yearlyData)
-            .attr("class", "total-line")
-            .attr("d", initialTotalLine);
+        if (showTotal) {
+            svg.append("path")
+                .datum(data.yearlyData)
+                .attr("class", "total-line")
+                .attr("d", initialTotalLine);
+        }
 
         // Update the x-axis to show more ticks
         const xAxis = d3.axisBottom(x)
@@ -345,7 +365,14 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
 
         // Add total to legend
         legend.append("g")
-            .attr("transform", `translate(0,${Math.ceil(types.length / legendColumns) * legendItemHeight + 10})`)
+            .attr("class", "legend-item")
+            .attr("transform", `translate(${0 * legendItemWidth},${Math.ceil(types.length / legendColumns) * legendItemHeight})`)
+            .style("cursor", "pointer")
+            .on("click", function() {
+                showTotal = !showTotal;
+                d3.select(this).classed("disabled", !showTotal);
+                updateVisualization();
+            })
             .call(g => {
                 g.append("line")
                     .attr("x1", 0)
@@ -360,6 +387,9 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
                     .attr("font-size", "12px")
                     .text("Total");
             });
+
+        // Ensure total line is always drawn last
+        svg.selectAll(".total-line").raise();
     });
 </script>
 </body>
