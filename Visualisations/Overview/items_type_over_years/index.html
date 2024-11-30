@@ -96,163 +96,148 @@
     </div>
 
 <script>
-// Define variables in global scope
-let enabledTypes;
-let tooltip;
-
-// Set the dimensions and margins of the graph
-const margin = {top: 50, right: 60, bottom: 150, left: 60};
-const width = 1000 - margin.left - margin.right;
-const height = 600 - margin.top - margin.bottom;
-
-// Create the SVG container
-const svg = d3.select("#chart")
-    .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
-
-// Add title
-svg.append("text")
-    .attr("class", "title")
-    .attr("x", width / 2)
-    .attr("y", -margin.top / 2)
-    .attr("text-anchor", "middle")
-    .text("Number of items in the database by type over years");
-
-// Create tooltip div
-tooltip = d3.select(".chart-container")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0)
-    .style("position", "absolute");
-
-// Load and process the data
-d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/main/Visualisations/Overview/items_type_over_years/data/visualization_data.json")
-    .then(function(data) {
-        // Process the data
-        const years = data.yearlyData.map(d => d.year);
-        const types = data.types;
+class StackedBarChart {
+    constructor(container) {
+        this.container = container;
+        this.enabledTypes = null;
+        this.showTotal = true;
         
-        // Create color scale
-        const color = d3.scaleOrdinal()
-            .domain(types)
+        // Set the dimensions and margins
+        this.margin = {top: 50, right: 60, bottom: 150, left: 60};
+        this.width = 1000 - this.margin.left - this.margin.right;
+        this.height = 600 - this.margin.top - this.margin.bottom;
+        
+        // Initialize scales
+        this.x = d3.scaleLinear();
+        this.y = d3.scaleLinear();
+        this.color = d3.scaleOrdinal();
+        
+        this.initializeChart();
+    }
+
+    initializeChart() {
+        // Create SVG
+        this.svg = d3.select(this.container)
+            .append("svg")
+            .attr("width", this.width + this.margin.left + this.margin.right)
+            .attr("height", this.height + this.margin.top + this.margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${this.margin.left},${this.margin.top})`);
+
+        // Add title
+        this.svg.append("text")
+            .attr("class", "title")
+            .attr("x", this.width / 2)
+            .attr("y", -this.margin.top / 2)
+            .attr("text-anchor", "middle")
+            .text("Number of items in the database by type over years");
+
+        // Create tooltip
+        this.tooltip = d3.select(this.container)
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0)
+            .style("position", "absolute");
+    }
+
+    setData(data) {
+        this.data = data;
+        this.years = data.yearlyData.map(d => d.year);
+        this.types = data.types;
+        this.enabledTypes = new Set(this.types);
+        this.setupScales();
+        return this;
+    }
+
+    setupScales() {
+        // Set up color scale
+        this.color.domain(this.types)
             .range([
-                "#20B2AA", // Press article
-                "#CD5C5C", // Islamic newspaper
-                "#4682B4", // Journal article
-                "#F4A460", // Chapter
-                "#98FB98", // Thesis
-                "#DDA0DD", // Book
-                "#4169E1", // Report
-                "#FFB6C1", // Edited volume
-                "#FFA07A", // Blog article
-                "#87CEEB", // Image
-                "#F0E68C", // Book review
-                "#E6E6FA", // Other document
-                "#90EE90", // Audiovisual document
-                "#D3D3D3"  // Communication
+                "#20B2AA", "#CD5C5C", "#4682B4", "#F4A460",
+                "#98FB98", "#DDA0DD", "#4169E1", "#FFB6C1",
+                "#FFA07A", "#87CEEB", "#F0E68C", "#E6E6FA",
+                "#90EE90", "#D3D3D3"
             ]);
 
-        // Create scales
-        const x = d3.scaleLinear()
-            .domain(d3.extent(years))
-            .range([0, width]);
+        // Set up x and y scales
+        this.x.domain(d3.extent(this.years))
+            .range([0, this.width]);
 
-        // Calculate the correct maximum value for y-axis
-        const calculateMaxY = (data, enabledTypes) => {
-            return d3.max(data.yearlyData, d => {
-                return Object.entries(d.values)
-                    .filter(([key]) => enabledTypes.has(key))
-                    .reduce((sum, [_, val]) => sum + (val || 0), 0);
-            });
-        };
+        this.y.domain([0, this.calculateMaxY()])
+            .range([this.height, 0]);
+    }
 
-        // Calculate total for a given year's data
-        const calculateTotal = (yearData, enabledTypes) => {
-            return Object.entries(yearData.values)
-                .filter(([key]) => enabledTypes.has(key))
+    calculateMaxY() {
+        return d3.max(this.data.yearlyData, d => {
+            return Object.entries(d.values)
+                .filter(([key]) => this.enabledTypes.has(key))
                 .reduce((sum, [_, val]) => sum + (val || 0), 0);
-        };
+        });
+    }
 
-        const y = d3.scaleLinear()
-            .domain([0, calculateMaxY(data, new Set(types))])
-            .range([height, 0]);
+    calculateTypeTotal(type) {
+        return this.data.yearlyData.reduce((sum, d) => 
+            sum + (d.values[type] || 0), 0);
+    }
 
-        // Calculate total values for each type
-        const calculateTypeTotal = (type) => {
-            return data.yearlyData.reduce((sum, d) => sum + (d.values[type] || 0), 0);
-        };
+    calculateYearTotal(yearData) {
+        return Object.entries(yearData.values)
+            .filter(([key]) => this.enabledTypes.has(key))
+            .reduce((sum, [_, val]) => sum + (val || 0), 0);
+    }
 
-        // Sort types by their total values (descending)
-        const sortedTypes = [...types].sort((a, b) => 
-            calculateTypeTotal(b) - calculateTypeTotal(a)
-        );
-
-        // Create the stack for bars
-        const stack = d3.stack()
-            .keys(sortedTypes)
-            .value((d, key) => d.values[key] || 0);
-
-        const stackedData = stack(data.yearlyData);
-
-        // Calculate bar width based on data
-        const barWidth = width / data.yearlyData.length * 0.8;
-
-        // Keep track of enabled types
-        enabledTypes = new Set(sortedTypes);
-        let showTotal = true;  // Track if total line should be shown
-
-        // Initial render of the visualization
-        const initialStack = d3.stack()
-            .keys(sortedTypes)
-            .value((d, key) => d.values[key] || 0);
-
-        const initialData = initialStack(data.yearlyData);
-
-        // Update the x-axis to show more ticks
-        const xAxis = d3.axisBottom(x)
+    addAxes() {
+        // Add X axis
+        const xAxis = d3.axisBottom(this.x)
             .tickFormat(d3.format("d"))
-            .ticks(Math.min(data.yearlyData.length, 20));
+            .ticks(Math.min(this.data.yearlyData.length, 20));
 
-        // Add axes
-        svg.append("g")
-            .attr("transform", `translate(0,${height})`)
+        this.svg.append("g")
+            .attr("transform", `translate(0,${this.height})`)
             .call(xAxis);
 
-        const yAxis = d3.axisLeft(y);
-
-        svg.append("g")
+        // Add Y axis
+        const yAxis = d3.axisLeft(this.y);
+        this.svg.append("g")
             .attr("class", "y-axis")
             .call(yAxis);
 
         // Add axis labels
-        svg.append("text")
+        this.addAxisLabels();
+    }
+
+    addAxisLabels() {
+        this.svg.append("text")
             .attr("class", "axis-label")
-            .attr("x", width / 2)
-            .attr("y", height + 40)
+            .attr("x", this.width / 2)
+            .attr("y", this.height + 40)
             .attr("text-anchor", "middle")
             .text("Year");
 
-        svg.append("text")
+        this.svg.append("text")
             .attr("class", "axis-label")
             .attr("transform", "rotate(-90)")
-            .attr("x", -height / 2)
+            .attr("x", -this.height / 2)
             .attr("y", -40)
             .attr("text-anchor", "middle")
             .text("Number of items");
+    }
 
-        // Add legend
-        const legend = svg.append("g")
-            .attr("class", "legend")
-            .attr("transform", `translate(0, ${height + 60})`);
-
-        // Calculate number of columns for legend (e.g., 4 columns)
+    addLegend() {
         const legendColumns = 4;
-        const legendItemWidth = width / legendColumns;
+        const legendItemWidth = this.width / legendColumns;
         const legendItemHeight = 20;
 
+        const legend = this.svg.append("g")
+            .attr("class", "legend")
+            .attr("transform", `translate(0, ${this.height + 60})`);
+
+        // Sort types by their total values
+        const sortedTypes = [...this.types].sort((a, b) => 
+            this.calculateTypeTotal(b) - this.calculateTypeTotal(a)
+        );
+
+        // Add legend items
         const legendItems = legend.selectAll("g")
             .data(sortedTypes)
             .join("g")
@@ -263,213 +248,190 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
                 return `translate(${col * legendItemWidth},${row * legendItemHeight})`;
             })
             .style("cursor", "pointer")
-            .on("click", function(event, d) {
-                if (enabledTypes.has(d)) {
-                    if (enabledTypes.size > 1) { // Prevent deselecting all types
-                        enabledTypes.delete(d);
-                        d3.select(this).classed("disabled", true);
-                    }
-                } else {
-                    enabledTypes.add(d);
-                    d3.select(this).classed("disabled", false);
-                }
-                updateVisualization();
-            });
+            .on("click", (event, d) => this.toggleType(event, d));
 
+        // Add colored rectangles
         legendItems.append("rect")
             .attr("width", 15)
             .attr("height", 15)
-            .attr("fill", d => color(d));
+            .attr("fill", d => this.color(d));
 
+        // Add text labels
         legendItems.append("text")
             .attr("x", 20)
             .attr("y", 12)
             .attr("font-size", "12px")
             .text(d => d);
 
-        // Add total to legend
-        legend.append("g")
+        // Add total line to legend
+        const totalLegend = legend.append("g")
             .attr("class", "legend-item")
-            .attr("transform", `translate(${0 * legendItemWidth},${Math.ceil(types.length / legendColumns) * legendItemHeight})`)
+            .attr("transform", `translate(0,${Math.ceil(sortedTypes.length / legendColumns) * legendItemHeight})`)
             .style("cursor", "pointer")
-            .on("click", function() {
-                showTotal = !showTotal;
-                d3.select(this).classed("disabled", !showTotal);
-                updateVisualization();
-            })
-            .call(g => {
-                g.append("line")
-                    .attr("x1", 0)
-                    .attr("x2", 15)
-                    .attr("y1", 7.5)
-                    .attr("y2", 7.5)
-                    .attr("class", "total-line");
-                
-                g.append("text")
-                    .attr("x", 20)
-                    .attr("y", 12)
-                    .attr("font-size", "12px")
-                    .text("Total");
-            });
+            .on("click", () => this.toggleTotal());
 
-        // Ensure total line is always drawn last
-        svg.selectAll(".total-line").raise();
+        totalLegend.append("line")
+            .attr("x1", 0)
+            .attr("x2", 15)
+            .attr("y1", 7.5)
+            .attr("y2", 7.5)
+            .attr("class", "total-line");
 
-        // Function to update the visualization
-        function updateVisualization() {
-            // Filter stack data to only include enabled types
-            const filteredStack = d3.stack()
-                .keys([...enabledTypes])
-                // Sort the enabled types by their total values
-                .keys([...enabledTypes].sort((a, b) => 
-                    calculateTypeTotal(b) - calculateTypeTotal(a)
-                ))
-                .value((d, key) => d.values[key] || 0);
+        totalLegend.append("text")
+            .attr("x", 20)
+            .attr("y", 12)
+            .attr("font-size", "12px")
+            .text("Total");
+    }
 
-            const filteredData = filteredStack(data.yearlyData);
+    addBarInteractions(selection) {
+        selection
+            .on("mouseover", (event, d) => this.handleMouseOver(event, d))
+            .on("mousemove", (event) => this.handleMouseMove(event))
+            .on("mouseout", (event, d) => this.handleMouseOut(event, d));
+    }
 
-            // Recalculate totals based on enabled types
-            data.yearlyData.forEach(d => {
-                d.total = calculateTotal(d, enabledTypes);
-            });
+    handleMouseOver(event, d) {
+        const bar = d3.select(event.currentTarget);
+        bar.style("opacity", 1);
 
-            // Update y scale domain
-            y.domain([0, calculateMaxY(data, enabledTypes)]);
+        const type = d3.select(event.currentTarget.parentNode).datum().key;
+        const value = d.data.values[type];
+        const total = this.calculateYearTotal(d.data);
 
-            // Update y axis with transition
-            svg.select(".y-axis")
-                .transition()
-                .duration(750)
-                .call(yAxis);
+        this.tooltip
+            .style("opacity", 1)
+            .html(this.formatTooltip(d.data.year, type, value, total))
+            .style("left", (event.pageX + 15) + "px")
+            .style("top", (event.pageY - 28) + "px");
+    }
 
-            // First, remove all existing layers
-            svg.selectAll("g.layer").remove();
+    handleMouseMove(event) {
+        this.tooltip
+            .style("left", (event.pageX + 15) + "px")
+            .style("top", (event.pageY - 28) + "px");
+    }
 
-            // Then create new layers with filtered data
-            const layers = svg.selectAll("g.layer")
-                .data(filteredData)
-                .join("g")
-                .attr("class", "layer")
-                .attr("fill", d => color(d.key));
+    handleMouseOut(event) {
+        d3.select(event.currentTarget).style("opacity", 0.8);
+        this.tooltip.style("opacity", 0);
+    }
 
-            // Add rectangles to layers
-            layers.selectAll("rect")
-                .data(d => d)
-                .join("rect")
-                .attr("class", "bar")
-                .attr("x", d => x(d.data.year) - barWidth/2)
-                .attr("width", barWidth)
-                .style("opacity", 0.8)
-                .attr("y", d => y(d[1]))
-                .attr("height", d => y(d[0]) - y(d[1]))
-                .call(addBarInteractions);
+    formatTooltip(year, type, value, total) {
+        return `
+            <div class="tooltip-title">${year}</div>
+            <div class="tooltip-value"><strong>${type}</strong>: ${value} items</div>
+            <div class="tooltip-value"><strong>Total</strong>: ${total} items</div>
+        `;
+    }
 
-            // Update total line
-            if (showTotal) {
-                // Create new line generator with updated scale
-                const totalLine = d3.line()
-                    .x(d => x(d.year))
-                    .y(d => y(d.total))
-                    .curve(d3.curveMonotoneX);
-
-                // Update or create total line
-                const totalPath = svg.selectAll(".total-line")
-                    .data([data.yearlyData]);
-
-                // Enter + Update
-                totalPath.enter()
-                    .append("path")
-                    .attr("class", "total-line")
-                    .merge(totalPath)
-                    .transition()
-                    .duration(750)
-                    .attr("d", totalLine);
-
-                // Ensure total line is on top
-                svg.select(".total-line").raise();
-            } else {
-                // Remove total line if it should be hidden
-                svg.selectAll(".total-line").remove();
+    toggleType(event, type) {
+        if (this.enabledTypes.has(type)) {
+            if (this.enabledTypes.size > 1) {
+                this.enabledTypes.delete(type);
+                d3.select(event.currentTarget).classed("disabled", true);
             }
+        } else {
+            this.enabledTypes.add(type);
+            d3.select(event.currentTarget).classed("disabled", false);
         }
+        this.update();
+    }
 
-        // Calculate initial totals
-        data.yearlyData.forEach(d => {
-            d.total = calculateTotal(d, enabledTypes);
-        });
+    toggleTotal() {
+        this.showTotal = !this.showTotal;
+        d3.select(event.currentTarget).classed("disabled", !this.showTotal);
+        this.update();
+    }
 
-        // Add initial layers
-        const initialLayers = svg.selectAll("g.layer")
-            .data(initialData)
+    update() {
+        // Update y scale domain
+        this.y.domain([0, this.calculateMaxY()]);
+
+        // Update y axis with transition
+        this.svg.select(".y-axis")
+            .transition()
+            .duration(750)
+            .call(d3.axisLeft(this.y));
+
+        // Sort types by their total values
+        const sortedTypes = [...this.enabledTypes].sort((a, b) => 
+            this.calculateTypeTotal(b) - this.calculateTypeTotal(a)
+        );
+
+        // Create new stack
+        const stack = d3.stack()
+            .keys(sortedTypes)
+            .value((d, key) => d.values[key] || 0);
+
+        const stackedData = stack(this.data.yearlyData);
+
+        // Calculate bar width
+        const barWidth = this.width / this.data.yearlyData.length * 0.8;
+
+        // Remove existing layers
+        this.svg.selectAll("g.layer").remove();
+
+        // Add new layers
+        const layers = this.svg.selectAll("g.layer")
+            .data(stackedData)
             .join("g")
             .attr("class", "layer")
-            .attr("fill", d => color(d.key));
+            .attr("fill", d => this.color(d.key));
 
-        // Add initial rectangles
-        initialLayers.selectAll("rect")
+        // Add rectangles to layers
+        layers.selectAll("rect")
             .data(d => d)
             .join("rect")
             .attr("class", "bar")
-            .attr("x", d => x(d.data.year) - barWidth/2)
+            .attr("x", d => this.x(d.data.year) - barWidth/2)
             .attr("width", barWidth)
             .style("opacity", 0.8)
-            .attr("y", d => y(d[1]))
-            .attr("height", d => y(d[0]) - y(d[1]))
-            .call(addBarInteractions);
+            .attr("y", d => this.y(d[1]))
+            .attr("height", d => this.y(d[0]) - this.y(d[1]))
+            .call(selection => this.addBarInteractions(selection));
 
-        // Add initial total line
-        const initialTotalLine = d3.line()
-            .x(d => x(d.year))
-            .y(d => y(d.total))
-            .curve(d3.curveMonotoneX);
+        // Update total line
+        if (this.showTotal) {
+            const totalLine = d3.line()
+                .x(d => this.x(d.year))
+                .y(d => this.y(this.calculateYearTotal(d)))
+                .curve(d3.curveMonotoneX);
 
-        if (showTotal) {
-            svg.append("path")
-                .datum(data.yearlyData)
+            const totalPath = this.svg.selectAll(".total-line")
+                .data([this.data.yearlyData]);
+
+            totalPath.enter()
+                .append("path")
                 .attr("class", "total-line")
-                .attr("d", initialTotalLine);
+                .merge(totalPath)
+                .transition()
+                .duration(750)
+                .attr("d", totalLine);
+
+            this.svg.select(".total-line").raise();
+        } else {
+            this.svg.selectAll(".total-line").remove();
         }
-    });
-
-    // Update the rect creation in both initial render and updateVisualization
-    function addBarInteractions(selection) {
-        selection
-            .on("mouseover", function(event, d) {
-                console.log('Mouseover event triggered');
-                console.log('Data:', d);
-                console.log('Parent data:', d3.select(this.parentNode).datum());
-
-                const bar = d3.select(this);
-                bar.style("opacity", 1);
-
-                // Get data for tooltip
-                const type = d3.select(this.parentNode).datum().key;
-                const value = d.data.values[type];
-                const total = Object.entries(d.data.values)
-                    .filter(([key]) => enabledTypes.has(key))
-                    .reduce((sum, [_, val]) => sum + (val || 0), 0);
-
-                // Format the tooltip content
-                tooltip
-                    .style("opacity", 1)
-                    .html(`
-                        <div class="tooltip-title">${d.data.year}</div>
-                        <div class="tooltip-value"><strong>${type}</strong>: ${value} items</div>
-                        <div class="tooltip-value"><strong>Total</strong>: ${total} items</div>
-                    `)
-                    .style("left", (event.pageX + 15) + "px")
-                    .style("top", (event.pageY - 28) + "px");
-            })
-            .on("mousemove", function(event) {
-                tooltip
-                    .style("left", (event.pageX + 15) + "px")
-                    .style("top", (event.pageY - 28) + "px");
-            })
-            .on("mouseout", function() {
-                d3.select(this).style("opacity", 0.8);
-                tooltip.style("opacity", 0);
-            });
     }
+
+    render() {
+        this.addAxes();
+        this.addLegend();
+        this.update();
+        return this;
+    }
+}
+
+// Initialize and render the chart
+const chart = new StackedBarChart("#chart");
+
+// Load and process the data
+d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/main/Visualisations/Overview/items_type_over_years/data/visualization_data.json")
+    .then(data => {
+        chart.setData(data)
+            .render();
+    });
 </script>
 </body>
 </html> 
