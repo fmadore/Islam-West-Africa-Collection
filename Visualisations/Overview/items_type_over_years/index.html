@@ -121,8 +121,24 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
             .domain(d3.extent(years))
             .range([0, width]);
 
+        // Calculate the correct maximum value for y-axis
+        const calculateMaxY = (data, enabledTypes) => {
+            return d3.max(data.yearlyData, d => {
+                return Object.entries(d.values)
+                    .filter(([key]) => enabledTypes.has(key))
+                    .reduce((sum, [_, val]) => sum + (val || 0), 0);
+            });
+        };
+
+        // Calculate total for a given year's data
+        const calculateTotal = (yearData, enabledTypes) => {
+            return Object.entries(yearData.values)
+                .filter(([key]) => enabledTypes.has(key))
+                .reduce((sum, [_, val]) => sum + (val || 0), 0);
+        };
+
         const y = d3.scaleLinear()
-            .domain([0, d3.max(data.yearlyData, d => d.total)])
+            .domain([0, calculateMaxY(data, new Set(types))])
             .range([height, 0]);
 
         // Create the stack for bars
@@ -132,16 +148,18 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
 
         const stackedData = stack(data.yearlyData);
 
-        // Recalculate totals based only on type values
-        data.yearlyData.forEach(d => {
-            d.total = Object.values(d.values).reduce((sum, val) => sum + (val || 0), 0);
-        });
-
         // Calculate bar width based on data
         const barWidth = width / data.yearlyData.length * 0.8;
 
         // Keep track of enabled types
         let enabledTypes = new Set(types);
+
+        // Initial render of the visualization
+        const initialStack = d3.stack()
+            .keys(types)
+            .value((d, key) => d.values[key] || 0);
+
+        const initialData = initialStack(data.yearlyData);
 
         // Function to update the visualization
         function updateVisualization() {
@@ -154,13 +172,11 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
 
             // Recalculate totals based on enabled types
             data.yearlyData.forEach(d => {
-                d.total = Object.entries(d.values)
-                    .filter(([key]) => enabledTypes.has(key))
-                    .reduce((sum, [_, val]) => sum + (val || 0), 0);
+                d.total = calculateTotal(d, enabledTypes);
             });
 
             // Update y scale domain
-            y.domain([0, d3.max(data.yearlyData, d => d.total)]);
+            y.domain([0, calculateMaxY(data, enabledTypes)]);
 
             // Update y axis with transition
             svg.select(".y-axis")
@@ -186,16 +202,16 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
                 .attr("x", d => x(d.data.year) - barWidth/2)
                 .attr("width", barWidth)
                 .style("opacity", 0.8)
-                // Set initial position for smooth transition
-                .attr("y", height)
-                .attr("height", 0)
-                // Then transition to actual position
-                .transition()
-                .duration(750)
-                .attr("x", d => x(d.data.year) - barWidth/2)
                 .attr("y", d => y(d[1]))
                 .attr("height", d => y(d[0]) - y(d[1]))
-                .attr("width", barWidth);
+                .on("mouseover", function() {
+                    d3.select(this)
+                        .style("opacity", 1);
+                })
+                .on("mouseout", function() {
+                    d3.select(this)
+                        .style("opacity", 0.8);
+                });
 
             // Update total line
             const totalLine = d3.line()
@@ -209,22 +225,28 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
                 .attr("d", totalLine);
         }
 
-        // Add the bars
-        const layers = svg.selectAll("g.layer")
-            .data(stackedData)
+        // Calculate initial totals
+        data.yearlyData.forEach(d => {
+            d.total = calculateTotal(d, enabledTypes);
+        });
+
+        // Add initial layers
+        const initialLayers = svg.selectAll("g.layer")
+            .data(initialData)
             .join("g")
             .attr("class", "layer")
             .attr("fill", d => color(d.key));
 
-        layers.selectAll("rect")
+        // Add initial rectangles
+        initialLayers.selectAll("rect")
             .data(d => d)
             .join("rect")
+            .attr("class", "bar")
             .attr("x", d => x(d.data.year) - barWidth/2)
+            .attr("width", barWidth)
+            .style("opacity", 0.8)
             .attr("y", d => y(d[1]))
             .attr("height", d => y(d[0]) - y(d[1]))
-            .attr("width", barWidth)
-            .attr("class", "bar")
-            .style("opacity", 0.8)
             .on("mouseover", function() {
                 d3.select(this)
                     .style("opacity", 1);
@@ -234,8 +256,8 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
                     .style("opacity", 0.8);
             });
 
-        // Add the total line
-        const totalLine = d3.line()
+        // Add initial total line
+        const initialTotalLine = d3.line()
             .x(d => x(d.year))
             .y(d => y(d.total))
             .curve(d3.curveMonotoneX);
@@ -243,7 +265,7 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
         svg.append("path")
             .datum(data.yearlyData)
             .attr("class", "total-line")
-            .attr("d", totalLine);
+            .attr("d", initialTotalLine);
 
         // Update the x-axis to show more ticks
         const xAxis = d3.axisBottom(x)
