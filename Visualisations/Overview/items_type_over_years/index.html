@@ -141,9 +141,19 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
             .domain([0, calculateMaxY(data, new Set(types))])
             .range([height, 0]);
 
+        // Calculate total values for each type
+        const calculateTypeTotal = (type) => {
+            return data.yearlyData.reduce((sum, d) => sum + (d.values[type] || 0), 0);
+        };
+
+        // Sort types by their total values (descending)
+        const sortedTypes = [...types].sort((a, b) => 
+            calculateTypeTotal(b) - calculateTypeTotal(a)
+        );
+
         // Create the stack for bars
         const stack = d3.stack()
-            .keys(types)
+            .keys(sortedTypes)
             .value((d, key) => d.values[key] || 0);
 
         const stackedData = stack(data.yearlyData);
@@ -152,12 +162,12 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
         const barWidth = width / data.yearlyData.length * 0.8;
 
         // Keep track of enabled types
-        let enabledTypes = new Set(types);
+        let enabledTypes = new Set(sortedTypes);
         let showTotal = true;  // Track if total line should be shown
 
         // Initial render of the visualization
         const initialStack = d3.stack()
-            .keys(types)
+            .keys(sortedTypes)
             .value((d, key) => d.values[key] || 0);
 
         const initialData = initialStack(data.yearlyData);
@@ -167,6 +177,10 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
             // Filter stack data to only include enabled types
             const filteredStack = d3.stack()
                 .keys([...enabledTypes])
+                // Sort the enabled types by their total values
+                .keys([...enabledTypes].sort((a, b) => 
+                    calculateTypeTotal(b) - calculateTypeTotal(a)
+                ))
                 .value((d, key) => d.values[key] || 0);
 
             const filteredData = filteredStack(data.yearlyData);
@@ -330,7 +344,7 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
         const legendItemHeight = 20;
 
         const legendItems = legend.selectAll("g")
-            .data(types)
+            .data(sortedTypes)
             .join("g")
             .attr("class", "legend-item")
             .attr("transform", (d, i) => {
