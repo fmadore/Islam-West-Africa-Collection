@@ -88,6 +88,21 @@
             margin: 3px 0;
             line-height: 1.4;
         }
+        
+        .slider-container {
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .year-slider {
+            width: 80%;
+        }
+        
+        .slider-label {
+            font-size: 12px;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -101,6 +116,8 @@ class StackedBarChart {
         this.container = container;
         this.enabledTypes = null;
         this.showTotal = true;
+        this.yearRange = null;
+        this.filteredData = null;
         
         // Set the dimensions and margins
         this.margin = {top: 50, right: 60, bottom: 150, left: 60};
@@ -142,6 +159,7 @@ class StackedBarChart {
 
     setData(data) {
         this.data = data;
+        this.filteredData = data;
         this.years = data.yearlyData.map(d => d.year);
         this.types = data.types;
         this.enabledTypes = new Set(this.types);
@@ -168,7 +186,7 @@ class StackedBarChart {
     }
 
     calculateMaxY() {
-        return d3.max(this.data.yearlyData, d => {
+        return d3.max(this.filteredData.yearlyData, d => {
             return Object.entries(d.values)
                 .filter(([key]) => this.enabledTypes.has(key))
                 .reduce((sum, [_, val]) => sum + (val || 0), 0);
@@ -344,7 +362,78 @@ class StackedBarChart {
         this.update();
     }
 
+    addYearSlider() {
+        const years = this.data.yearlyData.map(d => d.year);
+        const minYear = d3.min(years);
+        const maxYear = d3.max(years);
+        this.yearRange = [minYear, maxYear];
+
+        const sliderContainer = d3.select(this.container)
+            .append("div")
+            .attr("class", "slider-container");
+
+        sliderContainer.append("div")
+            .attr("class", "slider-label")
+            .text(`Year Range: ${minYear} - ${maxYear}`);
+
+        const sliderMin = sliderContainer.append("input")
+            .attr("type", "range")
+            .attr("class", "year-slider")
+            .attr("min", minYear)
+            .attr("max", maxYear)
+            .attr("value", minYear)
+            .attr("step", 1);
+
+        const sliderMax = sliderContainer.append("input")
+            .attr("type", "range")
+            .attr("class", "year-slider")
+            .attr("min", minYear)
+            .attr("max", maxYear)
+            .attr("value", maxYear)
+            .attr("step", 1);
+
+        const updateYearRange = () => {
+            const minVal = +sliderMin.node().value;
+            const maxVal = +sliderMax.node().value;
+            
+            // Ensure min doesn't exceed max
+            if (minVal > maxVal) {
+                if (d3.select(d3.event.target).node() === sliderMin.node()) {
+                    sliderMin.node().value = maxVal;
+                } else {
+                    sliderMax.node().value = minVal;
+                }
+            }
+            
+            this.yearRange = [
+                Math.min(+sliderMin.node().value, +sliderMax.node().value),
+                Math.max(+sliderMin.node().value, +sliderMax.node().value)
+            ];
+            
+            sliderContainer.select(".slider-label")
+                .text(`Year Range: ${this.yearRange[0]} - ${this.yearRange[1]}`);
+                
+            this.updateFilteredData();
+            this.update();
+        };
+
+        sliderMin.on("input", updateYearRange);
+        sliderMax.on("input", updateYearRange);
+    }
+
+    updateFilteredData() {
+        this.filteredData = {
+            ...this.data,
+            yearlyData: this.data.yearlyData.filter(d => 
+                d.year >= this.yearRange[0] && d.year <= this.yearRange[1]
+            )
+        };
+    }
+
     update() {
+        // Update x scale domain
+        this.x.domain(d3.extent(this.filteredData.yearlyData.map(d => d.year)));
+        
         // Update y scale domain
         this.y.domain([0, this.calculateMaxY()]);
 
@@ -364,10 +453,10 @@ class StackedBarChart {
             .keys(sortedTypes)
             .value((d, key) => d.values[key] || 0);
 
-        const stackedData = stack(this.data.yearlyData);
+        const stackedData = stack(this.filteredData.yearlyData);
 
         // Calculate bar width
-        const barWidth = this.width / this.data.yearlyData.length * 0.8;
+        const barWidth = this.width / this.filteredData.yearlyData.length * 0.8;
 
         // Remove existing layers
         this.svg.selectAll("g.layer").remove();
@@ -399,7 +488,7 @@ class StackedBarChart {
                 .curve(d3.curveMonotoneX);
 
             const totalPath = this.svg.selectAll(".total-line")
-                .data([this.data.yearlyData]);
+                .data([this.filteredData.yearlyData]);
 
             totalPath.enter()
                 .append("path")
@@ -418,6 +507,7 @@ class StackedBarChart {
     render() {
         this.addAxes();
         this.addLegend();
+        this.addYearSlider();
         this.update();
         return this;
     }
