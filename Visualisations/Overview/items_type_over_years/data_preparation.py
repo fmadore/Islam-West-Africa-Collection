@@ -197,8 +197,6 @@ class DataFetcher:
                 for id in item_classes:
                     type_name = self.config.ACCEPTABLE_IDS[id][language]
                     items_by_year_type[year][type_name] += 1
-                    country_key = f"{type_name}___{item_country}"
-                    items_by_year_type[year][country_key] += 1
             except (IndexError, ValueError) as e:
                 logger.warning(f"Error processing date {date_value}: {str(e)}")
 
