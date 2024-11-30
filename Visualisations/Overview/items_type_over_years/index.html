@@ -120,6 +120,11 @@ d3.json("https://raw.githubusercontent.com/fmadore/Islam-West-Africa-Collection/
 
         const stackedData = stack(data.yearlyData);
 
+        // Recalculate totals based only on type values
+        data.yearlyData.forEach(d => {
+            d.total = Object.values(d.values).reduce((sum, val) => sum + (val || 0), 0);
+        });
+
         // Calculate bar width based on data
         const barWidth = width / data.yearlyData.length * 0.8;
 
