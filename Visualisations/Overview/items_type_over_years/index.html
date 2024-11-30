@@ -93,15 +93,49 @@
             margin-top: 20px;
             padding: 20px;
             text-align: center;
+            position: relative;
+            height: 50px;
         }
         
-        .year-slider {
-            width: 80%;
+        .slider-track {
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            top: 50%;
+            height: 4px;
+            background: #ddd;
+            border-radius: 2px;
+        }
+        
+        .slider-track-filled {
+            position: absolute;
+            height: 100%;
+            background: #666;
+            border-radius: 2px;
+        }
+        
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            width: 16px;
+            height: 16px;
+            background: #4682B4;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        .slider-handle:hover {
+            background: #2E5C8A;
         }
         
         .slider-label {
             font-size: 12px;
             margin: 10px 0;
+            position: absolute;
+            width: 100%;
+            top: -5px;
         }
     </style>
 </head>
@@ -118,6 +152,10 @@ class StackedBarChart {
         this.showTotal = true;
         this.yearRange = null;
         this.filteredData = null;
+        this.isDragging = false;
+        this.dragStartX = 0;
+        this.dragStartYearRange = null;
+        this.minYearSpan = 3;
         
         // Set the dimensions and margins
         this.margin = {top: 50, right: 60, bottom: 150, left: 60};
@@ -372,53 +410,90 @@ class StackedBarChart {
             .append("div")
             .attr("class", "slider-container");
 
+        // Add label
         sliderContainer.append("div")
             .attr("class", "slider-label")
             .text(`Year Range: ${minYear} - ${maxYear}`);
 
-        const sliderMin = sliderContainer.append("input")
-            .attr("type", "range")
-            .attr("class", "year-slider")
-            .attr("min", minYear)
-            .attr("max", maxYear)
-            .attr("value", minYear)
-            .attr("step", 1);
+        // Add track
+        const track = sliderContainer.append("div")
+            .attr("class", "slider-track");
 
-        const sliderMax = sliderContainer.append("input")
-            .attr("type", "range")
-            .attr("class", "year-slider")
-            .attr("min", minYear)
-            .attr("max", maxYear)
-            .attr("value", maxYear)
-            .attr("step", 1);
+        // Add filled track
+        const filledTrack = track.append("div")
+            .attr("class", "slider-track-filled");
 
-        const updateYearRange = () => {
-            const minVal = +sliderMin.node().value;
-            const maxVal = +sliderMax.node().value;
-            
-            // Ensure min doesn't exceed max
-            if (minVal > maxVal) {
-                if (d3.select(d3.event.target).node() === sliderMin.node()) {
-                    sliderMin.node().value = maxVal;
-                } else {
-                    sliderMax.node().value = minVal;
-                }
-            }
-            
-            this.yearRange = [
-                Math.min(+sliderMin.node().value, +sliderMax.node().value),
-                Math.max(+sliderMin.node().value, +sliderMax.node().value)
-            ];
-            
-            sliderContainer.select(".slider-label")
-                .text(`Year Range: ${this.yearRange[0]} - ${this.yearRange[1]}`);
-                
-            this.updateFilteredData();
-            this.update();
+        // Add handles
+        const leftHandle = sliderContainer.append("div")
+            .attr("class", "slider-handle")
+            .attr("id", "left-handle");
+
+        const rightHandle = sliderContainer.append("div")
+            .attr("class", "slider-handle")
+            .attr("id", "right-handle");
+
+        // Create scale for converting between pixels and years
+        const containerWidth = sliderContainer.node().getBoundingClientRect().width;
+        const margin = containerWidth * 0.1; // 10% margin on each side
+        const xScale = d3.scaleLinear()
+            .domain([minYear, maxYear])
+            .range([margin, containerWidth - margin]);
+
+        // Update handle positions
+        const updateHandles = () => {
+            leftHandle.style("left", xScale(this.yearRange[0]) + "px");
+            rightHandle.style("left", xScale(this.yearRange[1]) + "px");
+            filledTrack.style("left", (xScale(this.yearRange[0]) - margin) + "px")
+                .style("width", (xScale(this.yearRange[1]) - xScale(this.yearRange[0])) + "px");
         };
 
-        sliderMin.on("input", updateYearRange);
-        sliderMax.on("input", updateYearRange);
+        // Initialize handle positions
+        updateHandles();
+
+        // Add drag behavior
+        const drag = d3.drag()
+            .on("drag", (event, d) => {
+                const handle = d3.select(event.sourceEvent.target);
+                const isLeftHandle = handle.attr("id") === "left-handle";
+                
+                // Calculate new position
+                const x = Math.max(margin, Math.min(containerWidth - margin, event.x));
+                const newYear = Math.round(xScale.invert(x));
+                
+                // Update year range based on which handle is being dragged
+                if (isLeftHandle) {
+                    if (this.yearRange[1] - newYear >= this.minYearSpan && newYear >= minYear) {
+                        this.yearRange[0] = newYear;
+                    }
+                } else {
+                    if (newYear - this.yearRange[0] >= this.minYearSpan && newYear <= maxYear) {
+                        this.yearRange[1] = newYear;
+                    }
+                }
+                
+                // Update UI
+                updateHandles();
+                sliderContainer.select(".slider-label")
+                    .text(`Year Range: ${this.yearRange[0]} - ${this.yearRange[1]}`);
+                
+                // Update visualization
+                this.updateFilteredData();
+                this.update();
+            });
+
+        // Apply drag behavior to handles
+        leftHandle.call(drag);
+        rightHandle.call(drag);
+
+        // Handle window resize
+        const resizeObserver = new ResizeObserver(() => {
+            const newWidth = sliderContainer.node().getBoundingClientRect().width;
+            const newMargin = newWidth * 0.1;
+            xScale.range([newMargin, newWidth - newMargin]);
+            updateHandles();
+        });
+
+        resizeObserver.observe(sliderContainer.node());
     }
 
     updateFilteredData() {
@@ -504,10 +579,93 @@ class StackedBarChart {
         }
     }
 
+    addDragBehavior() {
+        // Create an invisible overlay for drag detection
+        const overlay = this.svg.append("rect")
+            .attr("class", "drag-overlay")
+            .attr("width", this.width)
+            .attr("height", this.height)
+            .attr("fill", "none")
+            .style("pointer-events", "all");
+
+        // Add drag handlers
+        overlay
+            .on("mousedown touchstart", (event) => {
+                this.isDragging = true;
+                this.dragStartX = this.getEventX(event);
+                this.dragStartYearRange = [...this.yearRange];
+                d3.select("body").style("cursor", "grabbing");
+            })
+            .on("mousemove touchmove", (event) => {
+                if (!this.isDragging) return;
+                
+                event.preventDefault();
+                const currentX = this.getEventX(event);
+                const dx = currentX - this.dragStartX;
+                
+                // Calculate year shift based on drag distance
+                const yearSpan = this.yearRange[1] - this.yearRange[0];
+                const pixelsPerYear = this.width / yearSpan;
+                const yearShift = Math.round(dx / pixelsPerYear);
+                
+                // Calculate new year range
+                const allYears = this.data.yearlyData.map(d => d.year);
+                const minPossibleYear = d3.min(allYears);
+                const maxPossibleYear = d3.max(allYears);
+                
+                let newMinYear = this.dragStartYearRange[0] - yearShift;
+                let newMaxYear = this.dragStartYearRange[1] - yearShift;
+                
+                // Ensure we maintain minimum span and don't go beyond data bounds
+                if (newMinYear < minPossibleYear) {
+                    newMinYear = minPossibleYear;
+                    newMaxYear = newMinYear + yearSpan;
+                }
+                if (newMaxYear > maxPossibleYear) {
+                    newMaxYear = maxPossibleYear;
+                    newMinYear = newMaxYear - yearSpan;
+                }
+                
+                // Ensure minimum year span is maintained
+                if (newMaxYear - newMinYear >= this.minYearSpan) {
+                    this.yearRange = [newMinYear, newMaxYear];
+                    this.updateSliderValues();
+                    this.updateFilteredData();
+                    this.update();
+                }
+            })
+            .on("mouseup touchend mouseleave", () => {
+                this.isDragging = false;
+                d3.select("body").style("cursor", "default");
+            });
+    }
+
+    getEventX(event) {
+        // Handle both mouse and touch events
+        const touchEvent = event.sourceEvent?.touches?.[0] || event.sourceEvent?.changedTouches?.[0];
+        if (touchEvent) {
+            return touchEvent.clientX - this.svg.node().getBoundingClientRect().left;
+        }
+        return d3.pointer(event, this.svg.node())[0];
+    }
+
+    updateSliderValues() {
+        const sliderContainer = d3.select(this.container).select(".slider-container");
+        const sliderMin = sliderContainer.select("input:nth-of-type(1)");
+        const sliderMax = sliderContainer.select("input:nth-of-type(2)");
+        
+        sliderMin.node().value = this.yearRange[0];
+        sliderMax.node().value = this.yearRange[1];
+        
+        sliderContainer.select(".slider-label")
+            .text(`Year Range: ${this.yearRange[0]} - ${this.yearRange[1]}`);
+    }
+
     render() {
         this.addAxes();
         this.addLegend();
         this.addYearSlider();
+        this.addDragBehavior();
         this.update();
         return this;
     }
