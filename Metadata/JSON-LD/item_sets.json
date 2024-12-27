@@ -3173,10 +3173,6 @@
           "o:title": "Faroq, Ahmad, président de la Jama’at islamique Ahmadiyya du Bénin : « Ceux qui comprennent ce qu’est la religion servent l’humanité »"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/4557",
-          "o:title": "Promotion du dialogue interreligieux : le cheval de bataille de la Jama'at islamique Ahmadiyya"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/4558",
           "o:title": "Voyage aux Emirats arabes unis : Aurélien Agbénonci réchauffe l’axe Abu Dhabi-Cotonou"
         },
@@ -4055,10 +4051,6 @@
         {
           "@id": "https://islam.zmo.de/api/resources/7035",
           "o:title": "Affrontement entre \"Zangbéto\" et musulmans à Porto-Novo : le ministre de l'Intérieur prône la coexistence pacifique"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/7036",
-          "o:title": "Les communautés religieuses doivent jouer leur rôle de garant de la concorde et de la paix"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/7037",
@@ -6793,6 +6785,10 @@
           "o:title": "Retrait du Prd du Bloc républicain : les imams de Porto-Novo chez le président du Prd"
         },
         {
+          "@id": "https://islam.zmo.de/api/resources/4557",
+          "o:title": "Promotion du dialogue interreligieux : le cheval de bataille de la Jama'at islamique Ahmadiyya"
+        },
+        {
           "@id": "https://islam.zmo.de/api/resources/4603",
           "o:title": "Promotion de la santé sexuelle et reproductive : l’Ucoz, leader de la planification familiale au Bénin"
         },
@@ -6849,12 +6845,12 @@
           "o:title": "Bantè : la communauté musulmane en ébullition"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/7052",
-          "o:title": "Visite officielle du président Soglo aux Émirats Arabes Unis : un grand pas pour la coopération entre les deux États"
+          "@id": "https://islam.zmo.de/api/resources/7036",
+          "o:title": "Les communautés religieuses doivent jouer leur rôle de garant de la concorde et de la paix"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/7083",
-          "o:title": "Les relations bénino-égyptiennes, l'intégrisme et la coopération arabo-africaine vus par l'ambassadeur d'Egypte au Bénin"
+          "@id": "https://islam.zmo.de/api/resources/7052",
+          "o:title": "Visite officielle du président Soglo aux Émirats Arabes Unis : un grand pas pour la coopération entre les deux États"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/7110",
@@ -7055,6 +7051,10 @@
         {
           "@id": "https://islam.zmo.de/api/resources/46033",
           "o:title": "Fête de la Tabaski : une célébration sous le signe du partage et de la paix à Akpakpa"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/7083",
+          "o:title": "Les relations bénino-égyptiennes, l'intégrisme et la coopération arabo-africaine vus par l'ambassadeur d'Egypte au Bénin"
         }
       ],
       "dcterms:publisher": [
@@ -10481,10 +10481,6 @@
           "o:title": "Faroq, Ahmad, président de la Jama’at islamique Ahmadiyya du Bénin : « Ceux qui comprennent ce qu’est la religion servent l’humanité »"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/4557",
-          "o:title": "Promotion du dialogue interreligieux : le cheval de bataille de la Jama'at islamique Ahmadiyya"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/4558",
           "o:title": "Voyage aux Emirats arabes unis : Aurélien Agbénonci réchauffe l’axe Abu Dhabi-Cotonou"
         },
@@ -11825,10 +11821,6 @@
           "o:title": "Installation et exploitation de radiodiffusions sonores et de télévisions privées au Bénin : la balle est maintenant dans le camp des promoteurs agréés"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/7853",
-          "o:title": "Audiences au palais de la République : rencontre hier entre le chef de l'Etat et le \"Petit saint Homme\""
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/7854",
           "o:title": "Signature de conventions à la HAAC : le satisfecit du président René M. Dossa"
         },
@@ -12397,10 +12389,6 @@
           "o:title": "Célébration de la Toussaint et de la fête des défunts. Rachidi Roufaï, islamologue : \"L'islam n'a pas retenu un jour pour célébrer les morts\""
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/9122",
-          "o:title": "Religion, tolérance et laïcité : une conférence interreligieuse pour prôner la tolérance mutuelle"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/9123",
           "o:title": "Don de vivres aux personnes défavorisées : la Jama'at Islamique Ahmadiyya fait œuvre utile"
         },
@@ -12439,6 +12427,10 @@
         {
           "@id": "https://islam.zmo.de/api/resources/4555",
           "o:title": "Zul-Kifl Salami, chargé de mission du président de la République : « Le Bénin a le vent en poupe vis-à-vis des Fonds arabes »"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/4557",
+          "o:title": "Promotion du dialogue interreligieux : le cheval de bataille de la Jama'at islamique Ahmadiyya"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/4566",
@@ -12721,6 +12713,10 @@
           "o:title": "Islam béninois : extrémisme ou respect des lois coraniques ?"
         },
         {
+          "@id": "https://islam.zmo.de/api/resources/7853",
+          "o:title": "Audiences au palais de la République : rencontre hier entre le chef de l'Etat et le \"Petit saint Homme\""
+        },
+        {
           "@id": "https://islam.zmo.de/api/resources/7856",
           "o:title": "Visite au Bénin de Sa Majesté le roi Mohammed VI"
         },
@@ -12903,6 +12899,10 @@
         {
           "@id": "https://islam.zmo.de/api/resources/9106",
           "o:title": "Trois ans de gestion du Hadj : la recette du président Talon porte ses fruits"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/9122",
+          "o:title": "Religion, tolérance et laïcité : une conférence interreligieuse pour prôner la tolérance mutuelle"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/8731",
@@ -22756,10 +22756,6 @@
           "o:title": "Religion : El Hadj Mahmoudou Tiemtoré au président de la Communauté"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/6664",
-          "o:title": "\"Radicalismes islamiques\" existe-t-il une international islamique ?"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/6665",
           "o:title": "Audience présidentielle. Le Secrétaire général de l'Organisation de la conférence islamique chez le président Compaoré : 50 millions de francs CFA pour les réfugiés islamistes"
         },
@@ -23474,6 +23470,10 @@
         {
           "@id": "https://islam.zmo.de/api/resources/20425",
           "o:title": "Réduction du coût du Hadj 2015"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/6664",
+          "o:title": "\"Radicalismes islamiques\" existe-t-il une international islamique ?"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/61031",
@@ -27861,10 +27861,6 @@
           "o:title": "Communauté musulmane : une prière pour la paix"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/6087",
-          "o:title": "Entre caricature et intégrisme : l'islam, le vrai…"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/6102",
           "o:title": "\"Où est passé l'argent de Kanazoé\" : un démenti de Gaoua"
         },
@@ -28539,6 +28535,10 @@
         {
           "@id": "https://islam.zmo.de/api/resources/10213",
           "o:title": "Commémoration de l'Aïd-el-Kébir : les Burkinabè n'ont pas l'esprit à la fête"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/6087",
+          "o:title": "Entre caricature et intégrisme : l'islam, le vrai…"
         }
       ],
       "dcterms:source": [
@@ -28803,20 +28803,8 @@
           "o:title": "Sortie du procureur du Faso sur l'affaire Inoussa Kanazoé : les avocats de la défense contre-attaquent"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/2523",
-          "o:title": "Situation socio-politique du Burkina : les défis présentés par le Cardinal Philippe Ouédraogo et Monseigneur Justin Kientega"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/2524",
-          "o:title": "Rôle des médias dans le dialogue des cultures et des religions : le décryptage de Boureima Jérémie Sigué"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/2525",
           "o:title": "Province du Bam : des enseignants menacés par des individus armés non identifiés"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/2526",
-          "o:title": "Projet de loi sur les libertés religieuses : le consensus avant tout !"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/2536",
@@ -28903,10 +28891,6 @@
           "o:title": "Assassinat de religieux au Burkina : le tournant !"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/2608",
-          "o:title": "Lutte contre l'intégrisme religieux : le beau geste de l'AID/REG"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/2609",
           "o:title": "Opérations antiterroristes à l'Est et au Centre-Est : la peur est-elle en train de changer de camp ?"
         },
@@ -28949,10 +28933,6 @@
         {
           "@id": "https://islam.zmo.de/api/resources/2635",
           "o:title": "Centre diocésain de communication de Ouahigouya : un projet pour renforcer le dialogue interreligieux officiellement lancé"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/2636",
-          "o:title": "Bissiri Joseph Sirima, député « En politique, soit on travaille pour le peuple, soit on travaille contre le peuple »"
         },
         {
           "@id": "https://islam.zmo.de/api/resources/2637",
@@ -29119,10 +29099,6 @@
           "o:title": "Ramadan 2018 : les fidèles musulmans ont prié pour la paix et la concorde nationale"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/5679",
-          "o:title": "Abdoul Rachiid Anwar, théologien du mouvement Ahmadiyya : « Nous sommes le seul groupe religieux au monde, qui progresse »"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/5978",
           "o:title": "Hadj 1996 : la Commission nationale fait le point"
         },
@@ -29217,10 +29193,6 @@
         {
           "@id": "https://islam.zmo.de/api/resources/6060",
           "o:title": "Mouvement sunnite : bras de fer chez les wahhâbites de Ouaga"
-        },
-        {
-          "@id": "https://islam.zmo.de/api/resources/6061",
-          "o:title": "El Hadj Boubacar Fofana : \"L'Islam ignore le mot intégrisme\""
         },
         {
           "@id": "https://islam.zmo.de/api/resources/6081",
@@ -29419,10 +29391,6 @@
           "o:title": "8è congrès de la Communauté musulmane : sortir du cadre de la phraséologie et du folklore"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/7992",
-          "o:title": "L'intégrisme musulman en question"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/8062",
           "o:title": "Le CFOP à la LIPF : « Nous ne sommes pas une rébellion»"
         },
@@ -29585,6 +29553,38 @@
         {
           "@id": "https://islam.zmo.de/api/resources/8278",
           "o:title": "Îde al Fitr : la signification de la fête du Ramadhân"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/2526",
+          "o:title": "Projet de loi sur les libertés religieuses : le consensus avant tout !"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/2608",
+          "o:title": "Lutte contre l'intégrisme religieux : le beau geste de l'AID/REG"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/2524",
+          "o:title": "Rôle des médias dans le dialogue des cultures et des religions : le décryptage de Boureima Jérémie Sigué"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/6061",
+          "o:title": "El Hadj Boubacar Fofana : \"L'Islam ignore le mot intégrisme\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/2523",
+          "o:title": "Situation socio-politique du Burkina : les défis présentés par le Cardinal Philippe Ouédraogo et Monseigneur Justin Kientega"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/2636",
+          "o:title": "Bissiri Joseph Sirima, député « En politique, soit on travaille pour le peuple, soit on travaille contre le peuple »"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/5679",
+          "o:title": "Abdoul Rachiid Anwar, théologien du mouvement Ahmadiyya : « Nous sommes le seul groupe religieux au monde, qui progresse »"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/7992",
+          "o:title": "L'intégrisme musulman en question"
         }
       ],
       "dcterms:isPartOf": [
@@ -38066,7 +38066,7 @@
       "o:id": 4
     },
     "o:thumbnail": null,
-    "o:title": "CSV Import",
+    "o:title": "0. CSV Import",
     "thumbnail_display_urls": {
       "large": null,
       "medium": null,
@@ -38077,7 +38077,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-03-14T14:44:48+00:00",
+      "@value": "2024-11-22T06:42:24+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -38090,7 +38090,7 @@
         "property_id": 1,
         "property_label": "Title",
         "is_public": true,
-        "@value": "CSV Import"
+        "@value": "0. CSV Import"
       }
     ]
   },
@@ -42576,10 +42576,6 @@
           "o:title": "Un émissaire libyen et le Premier ministre Kodjo hier à Lomé II"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/29480",
-          "o:title": "Religion : l'islam ou la voie de l'amour et de la convivialité"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/29481",
           "o:title": "Tchaoudjo : l'APACIT en assemblée générale à Sokodé"
         },
@@ -43098,6 +43094,10 @@
         {
           "@id": "https://islam.zmo.de/api/resources/31899",
           "o:title": "Ils vont prendre contact avec les Musulmans de l'U.R.S.S."
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/29480",
+          "o:title": "Religion : l'islam ou la voie de l'amour et de la convivialité"
         }
       ]
     }
@@ -51033,7 +51033,7 @@
       "dctype:Collection"
     ],
     "o:id": 23448,
-    "o:is_public": false,
+    "o:is_public": true,
     "o:owner": {
       "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
@@ -51061,7 +51061,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-04-13T20:14:19+00:00",
+      "@value": "2024-11-11T11:05:04+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -51178,7 +51178,7 @@
       "dctype:Collection"
     ],
     "o:id": 23449,
-    "o:is_public": false,
+    "o:is_public": true,
     "o:owner": {
       "@id": "https://islam.zmo.de/api/users/1",
       "o:id": 1
@@ -51206,7 +51206,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-04-14T16:34:39+00:00",
+      "@value": "2024-11-11T11:05:14+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:is_open": false,
@@ -54223,10 +54223,6 @@
           "o:title": "L'imam Koudouss Drissa Koné (Conseil national islamique) : \"Le CNI n'a jamais préconisé la suppression du CSI\""
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/62659",
-          "o:title": "Conseil National Islamique : El Hadj Drissa Koné, nouveau président"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/62660",
           "o:title": "Presse écrite, radio-télé, cinéma : seulement des moyens d'information"
         },
@@ -54317,12 +54313,1836 @@
         {
           "@id": "https://islam.zmo.de/api/resources/62761",
           "o:title": "La Tabaski célébrée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/62659",
+          "o:title": "Conseil National Islamique : El Hadj Drissa Koné, nouveau président"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63539",
+          "o:title": "Dans la tradition musulmane : la femme est un champ qu'il faut cultiver"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63540",
+          "o:title": "Aboisso. Union culturelle musulmane : des comités installés à N'Zikro et Koffikro"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63541",
+          "o:title": "Aboisso. Union culturelle musulmane : deux sous-sections ont été formées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63542",
+          "o:title": "Bassam : la nuit de la jeunesse musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63543",
+          "o:title": "Agboville : une mosquée de 1200 places en construction"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63544",
+          "o:title": "Mecque : nos pèlerins sont de retour / Les Ivoiriens de retour de la Mecque: \"L'incendie n'a pas fait de victime de notre côté\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63545",
+          "o:title": "Tabaski : liesse et ferveur populaire dans les différents quartiers"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63546",
+          "o:title": "Tabaski : demain la fête"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63547",
+          "o:title": "Tabaski : samedi 13 décembre férié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63548",
+          "o:title": "Rencontre islamo-chrétienne. El Hadj Boubakar Gamby Sackho : \"Il nous faut vivre ensemble\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63549",
+          "o:title": "Le chef de l'État à des pèlerins de Yamoussoukro : que Dieu vous garde"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63550",
+          "o:title": "Adzopé : un geste louable de la communauté musulmane..."
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63551",
+          "o:title": "À l'intention des pèlerins à la Mecque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63552",
+          "o:title": "Pour les 70 ans du chef de l'État : plusieurs cérémonies religieuses ont eu lieu à Abidjan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63553",
+          "o:title": "Divo : joie et allégresse populaires"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63573",
+          "o:title": "Échos du Ramadan. Bondoukou : la fête célébrée dans la ferveur"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63574",
+          "o:title": "Korhogo : toute la communauté musulmane a prié pour feu Dramane Coulibaly"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63575",
+          "o:title": "Adzopé : les musulmans ont fêté la fin du jeûne en présence du préfet Jean-Baptiste Ello"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63576",
+          "o:title": "Le \"Ramadan\" dans notre capitale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63577",
+          "o:title": "Demain la fête du Ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63578",
+          "o:title": "Les musulmans et le ramadan : les travailleurs opteraient pour la journée continue"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63579",
+          "o:title": "Ramadan : mois de pénitence pour les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63580",
+          "o:title": "Bouaflé : pose de la 1ère pierre de la mosquée par le préfet"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63581",
+          "o:title": "L'attitude des jeunes face à la religion : la foi est-elle en voie de disparition?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63582",
+          "o:title": "Adzopé : les musulmans auront bientôt une nouvelle mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63583",
+          "o:title": "Sinfra : El Hadj Ba Diabaté n'est plus"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63584",
+          "o:title": "Odienné : un peuple, une foi, une mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63585",
+          "o:title": "Odienné : prière dans la nouvelle mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63586",
+          "o:title": "Odienné : accueil très chaleureux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63587",
+          "o:title": "Korhogo : une nouvelle mosquée pour les fidèles de Bananforo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63588",
+          "o:title": "Adzopé : M. Jean Baptiste Ello a posé la 1ère pierre de la nouvelle mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63589",
+          "o:title": "Bouaké : la Tabaski et la Noël célébrées dans la ferveur et le recueillement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63590",
+          "o:title": "Bondoukou : accueil des pèlerins de retour de La Mecque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63591",
+          "o:title": "Noël-Tabaski : chrétiens et musulmans fêtent ensemble"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63592",
+          "o:title": "Tabaski : le 24 sera férié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63613",
+          "o:title": "1 500 pèlerins ivoiriens cette année à La Mecque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63614",
+          "o:title": "Ramadan : une belle fin de pénitence"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63615",
+          "o:title": "Ramadan : \"Les premiers jours sont les plus pénibles\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63616",
+          "o:title": "Ramadan : le mois de pénitence débute aujourd'hui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63617",
+          "o:title": "Agboville : le comité musulman participe au développement de la région"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63618",
+          "o:title": "Ono : une nouvelle mosquée pour les fidèles"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63619",
+          "o:title": "M. Losséni Zoromé, président de la Jeunesse Estudiantine Musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63620",
+          "o:title": "Korhogo : la mosquée de Naborba-Dougou a été inaugurée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63621",
+          "o:title": "Agboville : toute la population a participé aux journées culturelles musulmanes"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63622",
+          "o:title": "Agboville : semaine culturelle (du 12 au 15 avril) de la jeunesse musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63623",
+          "o:title": "Le chef de l'État et une foule émue aux obsèques de El Hadj Amoakon Dihyé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63624",
+          "o:title": "La Tabaski fêtée dans la ferveur : les Musulmans ont prié pour le Chef de l'Etat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63625",
+          "o:title": "Tabaski : les musulmans en fête demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63626",
+          "o:title": "Tabaski et fête nationale : jours fériés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63627",
+          "o:title": "Les 71 ans du chef de l'État : messes et cultes sur tout le territoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63628",
+          "o:title": "L'anniversaire du président : messes et cultes demain dimanche"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63629",
+          "o:title": "Pèlerinage à la Mecque : les lieux saints n'acceptent pas les choses interdites"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63630",
+          "o:title": "Les musulmans célèbrent demain la fin du Ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63631",
+          "o:title": "Man. \"Journées de dialogue\" : plusieurs problèmes à l'ordre du jour"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63632",
+          "o:title": "Ramadan : le jeûne commence aujourd'hui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63653",
+          "o:title": "Pèlerinage à la Mecque : les préparatifs commencent"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63654",
+          "o:title": "Korhogo : M. Sayed Ghazi Befagih (ami de feu le député Dramane Coulibaly) offre 5 millions pour achever la mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63655",
+          "o:title": "Marcory : enfin une mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63656",
+          "o:title": "Daloa : pose de la 1re pierre de la nouvelle mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63657",
+          "o:title": "Bassam : nuit de réflexion sur la religion musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63658",
+          "o:title": "Le mot du jeudi : l'islam en question"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63659",
+          "o:title": "Les grandes rencontres : à la croisée de l'islam avec M. Alpha Cissé directeur de l'Institut géographique"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63660",
+          "o:title": "Les musulmans et la nouvelle lune"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63661",
+          "o:title": "La foi en Dieu chez les adolescents : renforcement ou dégradation?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63662",
+          "o:title": "Touba : la population a prié pour le père de la nation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63663",
+          "o:title": "Gagnoa. Ramadan : près de 10.000 fidèles ont prié sur la place du petit marché"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63664",
+          "o:title": "237 pèlerins sont partis hier matin pour La Mecque. Prochains départs : aujourd'hui, samedi et lundi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63665",
+          "o:title": "Tout Abidjan en liesse a fêté hier la fin du Ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63666",
+          "o:title": "Dimanche : fin du Ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63667",
+          "o:title": "Pour la célébration du 68e anniversaire du présient Houphouët : ferveur et prières dans tout le pays"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63668",
+          "o:title": "Les autorités et les musulmans ont reçu le Cheik Syed"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63669",
+          "o:title": "Le gardien du mausolée de Mahomet à Médine : \"Les pèlerins ivoiriens ne vont plus être livrés à eux-mêmes\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63670",
+          "o:title": "Gagnoa : le cheik Moallim Syed rencontre les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63671",
+          "o:title": "Mosquée de Treichville : la coupole centrale foudroyée! L'imam El hadj Diakité donne des explications"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63672",
+          "o:title": "Agboville : l'amicale musulmane prépare sa première \"Semaine Culturelle\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63693",
+          "o:title": "Bondoukou : la population accueille chaleureusement ses pèlerins"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63694",
+          "o:title": "Katiola : la ville accueille sa doyenne de retour de la Mecque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63695",
+          "o:title": "Korhogo : le Cheickh Badji aujourd'hui sur la tombe de Gbon Coulibaly"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63696",
+          "o:title": "Le président El Hadj Mamadou Coulibaly de retour de la Mecque : \"Nous ferons des propositions pour aider nos pèlerins\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63697",
+          "o:title": "Venant de la Mecque : le président Coulibaly de retour ce matin (7H)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63698",
+          "o:title": "Tabaski : les fidèles se sont recueillis à l'occasion de la fête"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63699",
+          "o:title": "Tabaski : la fête du mouton"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63700",
+          "o:title": "Pèlerinage 80 : bientôt les premiers vols Air Afrique en direction de Djédda"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63701",
+          "o:title": "Bouaké. Fête du Ramadan : le préfet prône l'entente entre les musulmans et les membres des autres confessions"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63702",
+          "o:title": "Décédé le 15 août dernier : l'imam de la mosquée de Koumassi inhumé lundi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63703",
+          "o:title": "Ramadan : la paix en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63704",
+          "o:title": "Demain sur tout le territoire : la fin du Ramadan?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63705",
+          "o:title": "Pour la Nuit du Destin : grande affluence dans les mosquées d'Abidjan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63706",
+          "o:title": "Ramadan : la fête mercredi prochain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63707",
+          "o:title": "Religion : réflexion sur le Ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63708",
+          "o:title": "Ramadan : le mois de purification commence aujourd'hui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63709",
+          "o:title": "Yamoussoukro. Le Khalife général des Tidianes au Chef de l'État : \"Vous êtes l'un des grands hommes de notre temps\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63710",
+          "o:title": "Hôte des pèlerins ivoiriens à la Mecque : Brouhan Saïf El Dine, reçu vendredi par le président Denise"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63711",
+          "o:title": "Une délégation de la ligue arabe chez le président"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63712",
+          "o:title": "Enquête-express : après la Tabaski, le prix du mouton baisse de 50%"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63733",
+          "o:title": "Conférence jeudi de l'Association des Élèves et Étudiants musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63734",
+          "o:title": "Les musulmans commémorent l'\"Achoura\" demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63735",
+          "o:title": "Les ambassadeurs d'Iran et d'Égypte rendent visite au président Coulibaly"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63736",
+          "o:title": "Tabaski : la fête de la soumission célébrée avec ferveur en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63737",
+          "o:title": "Tabaski : demain sur toute l'étendue du territoire, les musulmans célèbreront le sacrifice d'Abraham"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63738",
+          "o:title": "Tabaski : la fête sera placée sous le signe de l'unité de tous les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63739",
+          "o:title": "2.500 pèlerins de Côte d'Ivoire à la Mecque : le dernier convoi est parti lundi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63740",
+          "o:title": "Pèlerinage à la Mecque : réunion des membres du bureau de l'association musulmane (annonce)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63741",
+          "o:title": "Pèlerinage à la Mecque. La fin du rituel : un grand moment de bonheur"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63742",
+          "o:title": "Pèlerinage à la Mecque. Le Tawaf : de l'endurance"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63743",
+          "o:title": "Pèlerinage à la Mecque. Djeddah : porte d'accès aux lieux saints"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63744",
+          "o:title": "Pèlerinage à la Mecque : une aventure exaltante"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63745",
+          "o:title": "Pèlerinage à la Mecque : le premier vol pour Djeddah est fixé au 15 octobre prochain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63746",
+          "o:title": "Ramadan : tous nos musulmans ont fêté l'Aïd El Fitr"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63747",
+          "o:title": "Ramadan : les musulmans ont célébré dans la ferveur la \"nuit du destin\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63748",
+          "o:title": "Ramadan : nuitée religieuse à Treichville"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63749",
+          "o:title": "Au Centre Culturel Musulman : série de conférences-débats pour marquer le début du jeûne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63750",
+          "o:title": "Ramadan : le jeûne commence demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63751",
+          "o:title": "Akoupé : le nouvel imam officiellement installé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63752",
+          "o:title": "M. Siaka Kanté (président de l'AEMCI) : la jeunesse actuelle doit avoir une bonne moralité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63773",
+          "o:title": "Séminaire de l'AEMCI à Williamsville"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63774",
+          "o:title": "Séminaire de l'AEEMCI à Williamsville"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63775",
+          "o:title": "Bondoukou. Association des Élèves et Étudiants Musulmans (AEEM) : journée culturelle réussie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63776",
+          "o:title": "Daloa. Islam et modernisme : une conférence-débat de M. Mohamed Lamine"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63777",
+          "o:title": "Jeunes. Diner-débat : la foi à l'épreuve des besoins matériels"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63778",
+          "o:title": "Bouaké. Conférence-débat sur la religion : l'islam face au modernisme animée par M. Bakary Fofana"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63779",
+          "o:title": "Gagnoa : M. Yacouba Sylla a donné des conseils de piété aux jeunes musulmans de CAJEM"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63780",
+          "o:title": "L'imam Moussa Sadr (président du Conseil suprême musulman chiite du Liban) : \"J'ai été émerveillé par l'hospitalité ivoirienne\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63781",
+          "o:title": "Daloa : une association musulmane pour susciter la ferveur religieuse"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63782",
+          "o:title": "À l'inauguration hier de la mosquée d'Akouédo : Bédié pour l'unité des musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63783",
+          "o:title": "Une mosquée de 200 millions pour le Plateau : un terrain attribué par le Président"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63784",
+          "o:title": "Odienné : dix mille personnes acclament le président El hadj Mamadou Coulibaly"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63785",
+          "o:title": "Une association des musulmans orthodoxes a été créée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63786",
+          "o:title": "La jeune fille musulmane face à la vie moderne : \"Obéissance, pudeur, respect\" déclare El Hadj Souleymane Doumbia au cours d'un dîner-débat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63790",
+          "o:title": "Ramadan : pour éviter la baisse de rendement dans certaines entreprises, les horaires aménagés pour les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63791",
+          "o:title": "Ferveur et union ont caractérisé la fête hier : El Hadj Mamadou Coulibaly en a appelé à l'harmonie des cultes"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63792",
+          "o:title": "La jeune fille musulmane face à la vie moderne. Souleymane Doumbia à G.Y. Obin : \"Je n'ai pas placé l'islam sur le plan tribal\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63810",
+          "o:title": "Retour du président de la République : prières de soutien au Chef de l'État"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63811",
+          "o:title": "Islam : \"Nour es Islam\" intercède pour les travailleurs musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63812",
+          "o:title": "88ème anniversaire du président Houphouët-Boigny : prompt rétablissement, Président!"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63813",
+          "o:title": "Presse : le pari de \"Plume libre\" pour un nouveau départ"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63814",
+          "o:title": "Généreux donateur. Conseil islamique : Diaby Moustapha offre deux véhicules"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63815",
+          "o:title": "Conseil National Islamique : Touré Abou, coordinateur à Adjamé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63816",
+          "o:title": "Éducation : les recettes de l'Islam"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63817",
+          "o:title": "Maouloud (anniversaire de la naissance du prophète) : les musulmans ont prié pour Mahomet"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63818",
+          "o:title": "Anniversaire de la naissance de Mahomet : Maouloud, le Prophète est né"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63819",
+          "o:title": "Islam : fuir la pensée musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63820",
+          "o:title": "Religion : S.O.S. pour la finition d'une mosquée au CHU de Treichville"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63821",
+          "o:title": "Assemblée nationale : El Hadj Lanciné Cissé (doyen du Parlement) n'est plus"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63822",
+          "o:title": "Seydou Coulibaly (S.G. de la section Korhogo S/P) inhumé vendredi : \"Il a su comprendre son peuple et le servir\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63823",
+          "o:title": "Décédé le vendredi 23 juillet : El Hadj Seydou Coulibaly inhumé demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63824",
+          "o:title": "Cheick Tall, théologien : \"Ne pas confondre Islam et traditions ancestrales\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63825",
+          "o:title": "Bamba Vamoussa décoré à titre posthume et inhumé hier : avec la plus grande sincérité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63826",
+          "o:title": "Pèlerinage 93 : l'heure du bilan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63827",
+          "o:title": "Hier la Tabaski : le mouton de la solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63828",
+          "o:title": "Pèlerinage à la Mecque : engouement des jeunes"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63829",
+          "o:title": "Pèlerinage à la Mecque : la gestion change de main"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63850",
+          "o:title": "Journées du militant à Azaguié : les musulmans rendent hommage à Houphouët"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63851",
+          "o:title": "El Hadj Lanciné Koné inhumé hier à Touba"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63852",
+          "o:title": "Ramadan : paix, unité, solidarité pour la Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63853",
+          "o:title": "Les obsèques de El Hadj Vassiriki Diaby. Le Président Bédié hier à la levée du corps : l'Imam d'Adjamé était au service des pauvres"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63854",
+          "o:title": "Le Conseil supérieur islamique hier chez le chef de l'État : condoléances au Président Henri Konan Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63855",
+          "o:title": "Adjamé : l'imam El Hadj Vassiriki Diaby n'est plus"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63856",
+          "o:title": "Le Président Bédié aux représentants des cultes : \"Neutralisons partout les fauteurs de troubles\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63857",
+          "o:title": "Nuit du Destin : une chance renouvelée pour les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63858",
+          "o:title": "Ramadan. Nuit du Destin : quête de lumière"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63859",
+          "o:title": "El Hadj Tidiane Kamagaté (imam depuis 1938) : \"Parlons toujours d'une seule voix\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63860",
+          "o:title": "Hamed Bakayoko à la MACA : dans l'indifférence"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63861",
+          "o:title": "Anyama : une tonne de sucre à la communauté musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63862",
+          "o:title": "Pour offense au chef de l'État : 12 mois de prison pour Hamed Bakayoko"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63863",
+          "o:title": "Justice : Hamed Bakayoko au tribunal ce matin"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63864",
+          "o:title": "Conseil supérieur islamique : prières, pour la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63865",
+          "o:title": "Religion : les musulmans à l'épreuve du Ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63866",
+          "o:title": "Les imams rendent hommage à Houphouët"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63867",
+          "o:title": "Les obsèques d'El Hadj Vassiriki Diaby à Samatiguila : l'imam d'Adjamé fait commandeur de l'Ordre national à titre posthume"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63868",
+          "o:title": "Conférence de presse du CSI : Diaby \"Koweit\" fait le bilan du pèlerinage 1995"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63869",
+          "o:title": "Des pèlerins chez Bédié : merci pour tout"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63890",
+          "o:title": "Les imams prient chez Bédié : merci Bédié pour hier, aujourd'hui et demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63891",
+          "o:title": "Après le Maroc, la France et le Nigeria, le Président Bédié aux Ivoiriens : vivons une démocratie apaisée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63892",
+          "o:title": "Les pèlerins ivoiriens sains et saufs"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63893",
+          "o:title": "Tabaski : pourquoi le mouton a manqué"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63894",
+          "o:title": "Tabaski : l'appel des imams"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63895",
+          "o:title": "Demain la Tabaski"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63896",
+          "o:title": "Tabaski : le sacrifice d'Abraham commémoré mercredi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63897",
+          "o:title": "Le Président Bédié au Maroc : visite de la 8ème merveille du monde"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63898",
+          "o:title": "Communauté islamique : naissance d'une 3ème force"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63899",
+          "o:title": "AEEMCI : la musulmane ne doit pas \"diviniser\" son époux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63900",
+          "o:title": "Fraternité-Matin : les musulmans ont leur mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63901",
+          "o:title": "Pouvoir-opposition : laissons de côté le problème religieux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63902",
+          "o:title": "Pèlerinage à la mecque 95 : 250 fidèles à la recherche de la piété"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63903",
+          "o:title": "Pèlerinage à La Mecque 95 : départ de 250 pèlerins ce matin"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63904",
+          "o:title": "Secours médical islamique : soigner selon les principes de Dieu"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63905",
+          "o:title": "Prise en charge des pèlerins du Hadj 95 : les musulmans satisfaits"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63906",
+          "o:title": "Semaine du \"secours médical islamique\" : soins gratuits pour tous"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63907",
+          "o:title": "Relations religieuses entre le Maroc et la Côte d'Ivoire : \"l'islam modéré est pratique\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63908",
+          "o:title": "Hier le Ramadan : ferveur religieuse partout"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63909",
+          "o:title": "Procès des journalistes de Plume Libre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63930",
+          "o:title": "Ramadan : la fin du jeûne célébrée demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63931",
+          "o:title": "Pèlerinage à la Mecque : les dispositions du CSI"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63932",
+          "o:title": "La Nuit du destin célébrée demain : prier jusqu'à l'aube / Retraite spirituelle dans les mosquées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63933",
+          "o:title": "Conseil supérieur islamique : une section installée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63934",
+          "o:title": "Qui n'aime pas les musulmans?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63935",
+          "o:title": "Ramadan : cinq tonnes de sucre aux musulmans de Yopougon"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63936",
+          "o:title": "Ramadan. Entre deux voies prenez celle de la paix : Cheikh Mourad (Maroc) va prêcheur ce soir à la mosquée de la Riviera"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63937",
+          "o:title": "Ramadan : aujourd'hui le 1er vendredi du jeûne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63938",
+          "o:title": "Crise entre le CNI et le pouvoir : qui attise le feu?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63939",
+          "o:title": "Ramadan. Abstinence, spiritualité et solidarité : le jeûne musulman a commencé hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63940",
+          "o:title": "Rapprochement CSI-CNI : Diaby Moustapha interpelle la presse"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63941",
+          "o:title": "8ème congrès de l'AEEMCI : une nécesaire remise en question"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63942",
+          "o:title": "8e congrès de l'AEEMCI : quel avenir pour l'association?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63943",
+          "o:title": "Hier en présence du Chef de l'État : levée du corps de El Hadj Cissé Mamadou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63944",
+          "o:title": "Complot à trois têtes : la désinformation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63945",
+          "o:title": "Droit de réponse : le CNI désaprouvé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63946",
+          "o:title": "Réconciliation CNI-CSI : un autre rendez-vous manqué"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63947",
+          "o:title": "Sandégué : El-hadj Tidiane n'est plus"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63948",
+          "o:title": "Affaire C.S.I. contre C.N.I. : le Conseil Supérieur Islamique se désiste..."
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63949",
+          "o:title": "Abidjan-Plateau : la mosquée de l'unité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63970",
+          "o:title": "Plateau : la mosquée du bonheur"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63971",
+          "o:title": "Mosquée de l'Avenue 8 : le procès des \"gazeurs\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63972",
+          "o:title": "PDCI, RDR, vote des étrangers, questions religieuses : Mathieu Ekar sans détour"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63973",
+          "o:title": "Construction de la mosquée du Plateau : le terrain déblayé hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63974",
+          "o:title": "Tiébissou : musulmans et catholiques pour Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63975",
+          "o:title": "Cohabitation chapelle-mosquée, unité de Worodougou, réconciliation Guébié : la longue habitude de la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63976",
+          "o:title": "Sifram 94 : appel à l'unité des musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63977",
+          "o:title": "Mosquée \"Dioula\" (Avenue 8) de Treichville. Une réunion de fidèles tourné au drame : plusieurs blessés, la police a ouvert une enquête"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63978",
+          "o:title": "Sifram 94 : pour plus de cohésion entre les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63979",
+          "o:title": "L'AEEMCI dans la ligne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63980",
+          "o:title": "Les musulmans et la construction nationale : 700 jeunes au séminaire de San Pedro"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63981",
+          "o:title": "Événements à la mosquée de Banco II (Abobo) : les résultats de la commission d'enquête"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63982",
+          "o:title": "Les musulmans célèbrent le Maouloud"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63983",
+          "o:title": "Religion : le Mahouloud cette nuit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63984",
+          "o:title": "Conseil National Islamique : El Hadj Mammoud Sylla président régional"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63985",
+          "o:title": "Hier en présence du Chef de l'État : prières pour le repos de l'âme de El Hadj Lanciné Cissé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63986",
+          "o:title": "Le 1er vendredi de la mosquée de Djékanou : 40 imams pour un culte historique"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63987",
+          "o:title": "Conseil supérieur islamique contre Conseil national islamique : l'affaire renvoyée au 26 octobre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63988",
+          "o:title": "Association des femmes musulmanes : Mme Kadiatou Touré Konaté à la barre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63989",
+          "o:title": "Les femmes et la religion"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64010",
+          "o:title": "Éducation : l'Association des étudiants musulmans veut lutter contre la fraude"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64011",
+          "o:title": "Contrôle de cartes de séjour dans la mosquée de Banco"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64012",
+          "o:title": "Environ 1.000 pèlerins morts à la Mecque : comment Dieu a épargné les Ivoiriens"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64013",
+          "o:title": "Pèlerinage à la Mecque : plus de 800 morts dans des bousculades"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64014",
+          "o:title": "Tabaski : la fête du mouton a réuni les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64015",
+          "o:title": "Samedi fête de la Tabaski : jour férié, chômé et payé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64016",
+          "o:title": "Tabaski et Pentecôte : célébrer la dévotion d'Abraham"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64017",
+          "o:title": "Bras de fer autour d'un espace vert à Cocody Val Doyen : une bombe à retardement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64018",
+          "o:title": "Tiémélékro : prières pour Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64019",
+          "o:title": "Pèlerinage à la Mecque 1994. El Hadj Diaby Moustapha (CSI) : prise en charge des frais médicaux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64020",
+          "o:title": "Pèlerinage à la Mecque 1994 : les pèlerins très réconfortés par l'attention du Président Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64021",
+          "o:title": "Pèlerinage à la Mecque : plus de 1.000 candidats au \"Hadj\" cette année"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64022",
+          "o:title": "La mosquée du Plateau : pas moins d'un milliard CFA"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64023",
+          "o:title": "Le président Konan Bédié aux Imams d'Abidjan : \"À l'exclusion, opposons l'esprit de tolérance\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64024",
+          "o:title": "Fin du Ramadan : plaidoyer pour l'unité nationale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64025",
+          "o:title": "Islam : le jeûne prend fin ce week-end"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64026",
+          "o:title": "Les 37 ans du prince Aga Khan célébrés chez nous"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64027",
+          "o:title": "Commentaire : l'art de la patience"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64028",
+          "o:title": "Édito : continuons de croire en Lui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64670",
+          "o:title": "Ramadan : le jeûne pourrait commencer samedi ou dimanche"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64671",
+          "o:title": "Ramadan : le jeûne a commencé hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64672",
+          "o:title": "Ramadan : partage et solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64673",
+          "o:title": "Ramadan : conditions d'un jeûne agréé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64674",
+          "o:title": "Ramadan : le jeûne, une école d'endurance"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64675",
+          "o:title": "La communauté musulmane soutient Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64676",
+          "o:title": "Marche de soutien des musulmans de Daoukro au chef de l'État : non à la dérive tribale d'Alassane Ouattara"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64677",
+          "o:title": "M. Salem Obaid Salem Al Dhaheri (Émirats Arabes Unis) : \"Après la mosquée du Plateau, d'autres projets en vue"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64678",
+          "o:title": "Audience du chef de l'État : un émissaire saoudien et le nonce apostolique reçus hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64679",
+          "o:title": "Changement de régime politique en Côte d'Ivoire : les religieux invités à éteindre les passions"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64680",
+          "o:title": "Changement de régime politique en Côte d'Ivoire : chapelles et mosquées au village"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64681",
+          "o:title": "Le CSI dissous : Diaby Moustapha prend acte"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64682",
+          "o:title": "Ramadan : le jeûne, une école de patience et de solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64683",
+          "o:title": "Ramadan : un mois de prière et de solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64684",
+          "o:title": "Ramadan : le jeûne commence"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64685",
+          "o:title": "L'enseignement confessionnel islamique en Côte d'Ivoire : de quoi souffrent ces écoles?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64686",
+          "o:title": "Mosquée du Plateau : les travaux bientôt achevés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64687",
+          "o:title": "A.G. du C.N.I. : dépolitiser la religion"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64688",
+          "o:title": "Sida-religion : il n'y a pas de maladie sans remède"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64689",
+          "o:title": "Les religieux face à la pandémie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64710",
+          "o:title": "Zuénoula. Pèlerinage à la Mecque : les musulmans reconnaissants à Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64711",
+          "o:title": "Islam et éducation : la crainte de Dieu est le privilège des savants"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64712",
+          "o:title": "Conseil supérieur islamique : Diaby Moustapha prêche pour son congrès"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64713",
+          "o:title": "La descendance du prophète Mohammed"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64714",
+          "o:title": "Le Coran : accès facilité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64715",
+          "o:title": "Forum des confessions religieuses : l'absence des catholiques"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64716",
+          "o:title": "Liberté religieuse et paix sociale : les confessions religieuses créent un forum"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64717",
+          "o:title": "Congrès mondial islamique : l'Arabie Saoudite assure le financement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64718",
+          "o:title": "Promotion de l'Islam : la gestion humaine et économique en question"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64719",
+          "o:title": "Tiassalé. Religion : une mosquée dans 4 ans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64720",
+          "o:title": "1er Congrès ordinaire de l'Afmci : l'œuvre sociale de Mme Bédié saluée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64721",
+          "o:title": "Prières dans les mosquées : le Maouloud célébré cette nuit... demain jour férié et chômé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64722",
+          "o:title": "Congrès mondiale islamique : le feu vert du gouvernement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64723",
+          "o:title": "Le retour des pèlerins et le nouvel an musulman célébrés : il y a 1418 ans, l'Hégire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64724",
+          "o:title": "Nuit du Destin : grand rassemblement au Palais des Sports"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64725",
+          "o:title": "Islam, Nuit du Destin : une nuit qui en vaut mille"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64726",
+          "o:title": "Le vœux de nouvel an des leaders à la nation. El Hadj Idriss Koné Koudouss, président du CNI : \"Que Dieu inspire nos dirigeants\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64727",
+          "o:title": "La nouvelle mosquée d'Adjamé : un chef-d'œuvre de 50 millions"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64728",
+          "o:title": "La Communauté Musulmane de la Riviera (annonce)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64729",
+          "o:title": "En présence du Chef de l'État : levée du corps d'El Hadj Bakayoko Vassiafa, imam de Séguéla"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64750",
+          "o:title": "Pèlerinage à La Mecque. El Hadj Idriss Koudouss Koné, président du comité d'organisation : \"Nous avons besoin d'une ambulance à la Mecque\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64751",
+          "o:title": "Pèlerinage à la Mecque : les Saoudiens face aux défis du hadj"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64752",
+          "o:title": "Pèlerinage à La Mecque : Treichville prie pour la paix et l'unité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64753",
+          "o:title": "Pèlerinage à La Mecque : à l'assaut d'Arafat"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64754",
+          "o:title": "Pèlerinage à La Mecque : le hadj gagne du terrain en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64755",
+          "o:title": "De retour de la Mecque : 88 pèlerins ivoiriens bloqués à Addis-Abéba"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64756",
+          "o:title": "Arrivée des pèlerins à l'aéroport : joie et confusion"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64757",
+          "o:title": "La célébration de l'Aïd-El-Kébir : paix et solidarité en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64758",
+          "o:title": "El Hadj Diaby Moustapha, président du CSI : la Tabaski, fête du pardon et de l'entente"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64759",
+          "o:title": "Le Chef de l'État à la levée du corps de l'imam de Treichville : le réconfort à la communauté musulmane"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64760",
+          "o:title": "Pèlerinage 97 : 143 Ivoiriens privés du hadj"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64761",
+          "o:title": "Boikary Fofana et Abékan unanimes : la religion, facteur d'unité si..."
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64762",
+          "o:title": "Pèlerinage à La Mecque 97 : les derniers pèlerins ivoiriens sur le départ"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64763",
+          "o:title": "Pèlerinage à la Mecque : Médine fait sa toilette"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64764",
+          "o:title": "Pèlerinage : premier départ hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64765",
+          "o:title": "Imam Djiguiba Cissé : l'islam contre le mariage forcé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64766",
+          "o:title": "Religion : Diaby Moustapaha, 1er président de la conférence africaine"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64767",
+          "o:title": "C.S.I. : le séminaire régional s'est achevé hier"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64768",
+          "o:title": "Séminaire sur la Zakat : une autre source de financement"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64769",
+          "o:title": "Préparatifs du pèlerinage 97 : le C.S.I. et le C.N.I., main dans la main"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64790",
+          "o:title": "Fête de la rupture du jeûne du Ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64791",
+          "o:title": "Congrès mondial du CSI : les préparatifs ont commencé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64792",
+          "o:title": "Ramadan : demain le jeûne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64793",
+          "o:title": "Ramadan : mois de pénitence et de pardon"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64794",
+          "o:title": "Congrès islamique mondial à Abidjan : les raisons d'un report"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64795",
+          "o:title": "La mosquée détruite d'Adjamé : le maire prône le dialogue"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64796",
+          "o:title": "Conseil supérieur islamique : un congrès mondial en mars"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64797",
+          "o:title": "Communauté musulmane : naissance de l'UPISCI"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64798",
+          "o:title": "Cheick Affou Sanogo (Chef suprême des musulmans de Côte d'Ivoire) : \"Contribuer à raffermir l'unité nationale\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64799",
+          "o:title": "1ère conférence des Imams de Côte d'Ivoire : Affou Sanogo, 1er cheick ivoirien"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64800",
+          "o:title": "1ère conférence des Imams de Côte d'Ivoire. Bédié aux imams : \"Donnez une dimension sociale à la spiritualité\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64801",
+          "o:title": "Islam : quel statut pour l'imam?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64802",
+          "o:title": "Conseil supérieur des imams (COSIM) : \"L'imamat sera régi par une charte\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64803",
+          "o:title": "Islam : place et rôle des imams"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64804",
+          "o:title": "Décès de l'imam Jaafar Sayegh du centre islamique arabo-africain : les bandits ont emporté le testament du chef religieux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64805",
+          "o:title": "2ème congrès des jeunes musulmans : à l'heure du bilan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64806",
+          "o:title": "Centre islamique libanais : l'imam décédé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64807",
+          "o:title": "2ème congrès ordinaire de la jeunesse musulmane : débats sur l'insertion socio-économique"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64808",
+          "o:title": "El Hadj Diaby Moustapha (C.S.I.) à son retour du Caire : \"Développons l'enseignement confessionnel\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64809",
+          "o:title": "Maouloud. L'iman Koné Idriss (CNI) : préoccupons-nous de l'avenir de nos enfants"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64830",
+          "o:title": "Maouloud : la naissance du prophète Mohamed célébrée cette nuit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64831",
+          "o:title": "Mosquée des woro-woro à Marcory : bras de fer entre la mairie et les chaffeurs"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64832",
+          "o:title": "Mosquée de Vavoua : le muezzin assassiné"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64833",
+          "o:title": "Hadj 96 : les pèlerins arrivent"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64834",
+          "o:title": "Tabaski : prière pour la fraternité et la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64835",
+          "o:title": "La Tabaski célébrée lundi : quel mouton pour le sacrifice?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64836",
+          "o:title": "Hadj 96 : 2.572 pèlerins au départ d'Abidjan et Yamoussoukro"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64837",
+          "o:title": "Pèlerinage à La Mecque : les départs ont commencé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64838",
+          "o:title": "Hadj 96 : 2000 pèlerins ivoiriens à la Mecque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64839",
+          "o:title": "Pèlerinage à la Mecque : le président Bédié prend les imams en charge"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64840",
+          "o:title": "Premier congrès ordinaire du Conseil national islamique : devoir de solidarité et de tolérance"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64841",
+          "o:title": "Conseil national islamique : le 1er congrès ordinaire ce matin"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64842",
+          "o:title": "Bouaké au quotidien : la grande mosquée sera rénovée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64843",
+          "o:title": "En présence du ministre d'État chargé des cultes et du dialogue avec l'opposition : l'imam de la Riviera plaide pour l'unité de la communauté"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64844",
+          "o:title": "Nuit du Ramadan : Amy Koïta, Aïcha Koné au Palais des Congrès"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64845",
+          "o:title": "Nuit du destin à Abidjan et banlieues : retraite spirituelle dans les mosquées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64846",
+          "o:title": "Nuit du destin au palais des sports : les musulmans exhortés au devoir de solidarité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64847",
+          "o:title": "Ramadan : la \"descente\" du Coran célébrée cette nuit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64848",
+          "o:title": "Mosquée du Plateau : un joyau"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64849",
+          "o:title": "Ramadan : une énergie spirituelle qui accroît la force de travail"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64870",
+          "o:title": "Ramadan : le jeûne commence chez nous aujourd'hui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64871",
+          "o:title": "Ramadan. Jeûne et prière : les musulmans entrent ce dimanche ou lundi dans la période sacrée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64872",
+          "o:title": "Après son élection à Samatiguila, El Hadj Diaby Moustapha promet : \"Odienné redeviendra PDCI!\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64873",
+          "o:title": "Législatives 95. Odienné : Diaby Moustapha sauve le PDCI"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64874",
+          "o:title": "Confrérie des Mourides : des prières pour la paix en Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64875",
+          "o:title": "In mémoriam. Mamadou Coulibaly : 10 ans après, Frat-Mat s'en souvient"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64876",
+          "o:title": "Commentaire : religion et politique"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64877",
+          "o:title": "Islam : le COSIM recycle les imams"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64878",
+          "o:title": "Conseil supérieur islamique : améliorer le statut des imams"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64879",
+          "o:title": "Ville d'Abidjan : une mosquée dans 2 ans et 4000 voies bientôt baptisées"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64880",
+          "o:title": "Après sa visite à Bouaké : Bédié prend en charge la mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64881",
+          "o:title": "Le présient Henri Konan Bédié à Séguéla et Mankono : bénédictions dans la mosquée tricentenaire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64882",
+          "o:title": "Après la déclaration conjointe des présidents du Cosim et du Cni : indignation des cadres musulmans de Côte d'Ivoire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64883",
+          "o:title": "Mme Bédié chez Yacouba Sylla à Gagnoa : hommage à un homme de bien"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64884",
+          "o:title": "Maouloud : le président Bédié offre 300 Corans aux imams"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64885",
+          "o:title": "Maouloud. Face à la situation : les imams prônent la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64886",
+          "o:title": "Mardi 8 août : Maouloud jour férié et chômé / Mawlid : les voeux du Cosim"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64887",
+          "o:title": "Le chef de l'État aux représentants des cultes : \"Nous vous devons la paix\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64888",
+          "o:title": "Idriss Koné Koudouss : \"des imams salariés, pourquoi pas?\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64889",
+          "o:title": "Pèlerinage 98 à la Mecque : des défaillances dans l'organisation"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64910",
+          "o:title": "Islam : hommage des pèlerins au Président Bédié"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64911",
+          "o:title": "La paix selon l'Islam : comment promouvoir l'harmonie entre les religions?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64912",
+          "o:title": "Après le \"Hadj\" 98 : les premiers pèlerins de retour de la Mecque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64913",
+          "o:title": "Le Cnopm : \"Nos pèlerins sont sains et saufs\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64914",
+          "o:title": "Adzopé. Fête de la Tabaski : l'administration prône l'unité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64915",
+          "o:title": "Pèlerinage 98 : une bousculade aurait fait 100 morts hier à Mina"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64916",
+          "o:title": "Abengourou. Tabaski : paix et entente entre les communautés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64917",
+          "o:title": "Les musulmans à l'occasion de la Tabaski : paix et unité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64918",
+          "o:title": "Tabaski. L'acte d'Abraham célébré demain : l'Aid el kebir marque la fin du pèlerinage"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64919",
+          "o:title": "Pèlerinage à La Mecque : Arafat c'est lundi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64920",
+          "o:title": "Pèlerinage à La Mecque 1998 : la Oumma à la source de la foi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64921",
+          "o:title": "Tabaski : la fête le mardi 7 avril"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64922",
+          "o:title": "El hadj Diaby Moustapha (CSI) : \"Nos trois vols spéciaux sont partis\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64923",
+          "o:title": "Pèlerinage : tout savoir sur Médine"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64924",
+          "o:title": "La Mecque 1998. El hadj Djiguiba Cissé (Cnopm) : \"les conditions d'hébergement améliorées\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64925",
+          "o:title": "Islam et éducation : quel avenir pour les écoles coraniques?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64926",
+          "o:title": "Pèlerinage à La Mecque 1998 : l'accent sera mis sur l'hygiène"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64927",
+          "o:title": "L'islam n'a pas recours à la mésentente"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64928",
+          "o:title": "El Hadj Babily Dembélé, président du COSI : \"Nous devons pouvoir verser un salaire aux imams\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64929",
+          "o:title": "La délégation saoudienne reçue par le Chef de l'Etat au terme du congrès : \"Le C.S.I. a été à la hauteur de notre confiance\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64950",
+          "o:title": "Professeur Kamil Ismael As Sharif (ancien ministre jordanien des Affaires islamiques) : \"La Côte d'Ivoire jouit d'une bonne image dans le monde arabe\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64951",
+          "o:title": "Les doléances du Congrès islamique : une université islamique et un hôpital à Abidjan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64952",
+          "o:title": "Fin aujourd'hui du Congrès mondial islamique : des congressistes hier chez le président"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64953",
+          "o:title": "Le président Bédié hier au Congrès mondial islamique : Dieu seul est unicité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64954",
+          "o:title": "Congrès mondial islamique du 18 au 20 février : la Côte d'Ivoire accueille la \"Oumma\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64955",
+          "o:title": "Cosim-cni : un comité d'observation de la lune créé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64956",
+          "o:title": "Congrès mondial islamique : un budget de quatorze millions"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64957",
+          "o:title": "Ramadan : fête de la rupture du jeûne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64958",
+          "o:title": "Ramadan : fête de la rupture du jeûne"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64959",
+          "o:title": "Nuit du Destin : prières et dévotion à Allah"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64960",
+          "o:title": "Demain la fête du Ramadan"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64961",
+          "o:title": "Nuit du Destin au Palais des sports : promouvoir la tolérance c'est combattre l'injustice"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64962",
+          "o:title": "Idriss Koudouss (CNI) : \"Œuvrons pour l'unité du pays\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64963",
+          "o:title": "Associations musulmanes : 45 présidents formés"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64964",
+          "o:title": "Diaby Moustapha après sa tournée à Samatiguila : \"Les électeurs m'ont dit qu'un chef doit être proche du peuple\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64965",
+          "o:title": "Ramadan : le jeûne commence aujourd'hui"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64966",
+          "o:title": "Ramadan : le jeûne commence jeudi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64967",
+          "o:title": "Ramadan : le jeûne commence mercredi ou jeudi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64968",
+          "o:title": "Le chef de l'État rentré samedi d'un séjour d'un mois en Europe : un accueil éclatant"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64969",
+          "o:title": "Dérive ethno-religieuse d'Alassane Ouattara : les cadres du Nord disent non"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64990",
+          "o:title": "El Hadj Diaby Moustapha, président du Conseil supérieur islamique : \"L'Islam renforce la cohésion nationale\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64991",
+          "o:title": "Bombet aux chefs réligieux : \"Informez-vous pour dire vrai\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64992",
+          "o:title": "Réunion du COSIM à propos de la situation politique : construire le pays dans le respect des différences\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64993",
+          "o:title": "Concours d'entrée l'Université islamique de Niamey : 82 candidats composent à Anyama"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64994",
+          "o:title": "Gagnoa : hommage à Yacouba Sylla"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64995",
+          "o:title": "Nouvelle mosquée de Port-Bouet II : reconnaissance à el Hadj Karamoko"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64996",
+          "o:title": "Éducation : EPP mosquée d'Odiené réhabilité"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64997",
+          "o:title": "Attécoubé : hommage de la Oumma islamique à Hassan II"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64998",
+          "o:title": "El hadj Babily Dembélé, président de la CID-CI : \"Dépenser pour Dieu n'est pas une perte\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64999",
+          "o:title": "Yopougon-GFCI : une nouvelle mosquée"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65000",
+          "o:title": "Radios confessionnelles : signature de la convention"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65001",
+          "o:title": "Émirats Arabes Unis : près de 4 milliards de francs pour la mosquée du Plateau"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65002",
+          "o:title": "L'iman Cissé Djiguiba, à propos du prédicateur de 4 ans : \"Il n'y a qu'un seul Sharifu\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65003",
+          "o:title": "Maouloud : Koudouss salue la fin de la grève de la Fesci"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65004",
+          "o:title": "Une mosquée pour Bouna : Essy Amara va poser la première pierre demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65005",
+          "o:title": "Islam : le maouloud célébré cette nuit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65006",
+          "o:title": "Maouloud : l'anniversaire du prophète vendredi prochain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65007",
+          "o:title": "À propos de la radio musulmane : El Hadj Bakary Chérif accuse..."
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65008",
+          "o:title": "\"Al Bayane, la voix de l'Islam\" : qui en sera le directeur?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65009",
+          "o:title": "Cheick Sharifu reçu par M. Léon Konan Koffi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65030",
+          "o:title": "Cheick Sharifu, l'enfant prédicateur en Côte d'Ivoire : \"La puissance de Dieu s'exprime en moi\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65031",
+          "o:title": "Prière du vendredi au Plateau : l'enfant prédicateur subjugue la foule"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65032",
+          "o:title": "Tabaski : l'acte d'Abraham célébré demain"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65033",
+          "o:title": "Hadj 99 : Arafat célébré vendredi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65034",
+          "o:title": "Hadj 99 : les premiers pèlerins sont partis jeudi nuit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65035",
+          "o:title": "Visas pour le Hadj 99 : les Saoudiens arrivent cette nuit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65036",
+          "o:title": "Pèlerinage 99 : un problème de visa bloque les départs"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65037",
+          "o:title": "Pèlerinage 99 : le crépuscule des démarcheurs"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65038",
+          "o:title": "Pèlerinage à la Mecque 1999 : quelles dispositions pour faciliter le hadj?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65039",
+          "o:title": "Pèlerinage à la Mecque : Bombet met de l'ordre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65040",
+          "o:title": "Secours médical islamique : le 2e congrès ce matin"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65041",
+          "o:title": "Mosquée du Plateau, radio islamique, pèlerinage à la Mecque : El Hadj Diaby Moustapha (CSI) se prononce"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65042",
+          "o:title": "Mosquée du Plateau. El Hadj Idriss Koudouss, président du C.N.I. : \"Djiguiba Cissé est notre recteur\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65043",
+          "o:title": "Ramadan : le COSIM salue le dialogue entre le président et l'opposition"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65044",
+          "o:title": "Islam : la descente du Coran célébrée cette nuit"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65045",
+          "o:title": "Nuit du destin : comment Dieu révéla le Coran à un berger analphabète?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65046",
+          "o:title": "Fête du nouvel an : vœux des chefs religieux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65047",
+          "o:title": "El Hadj Babily Dembélé (président Cid-Ci) à propos de la mosquée du Plateau: \"Nous devons choisir ensemble le recteur\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65048",
+          "o:title": "Fête du nouvel an : vœux des chefs religieux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65049",
+          "o:title": "Dr Abdessalam Rhermini (Maroc) à propos du Ramadan : le jeûne inclut la maitrise de la colère"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65070",
+          "o:title": "Pas de pénurie de sucre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65071",
+          "o:title": "Changement de dénomination : le COSI devient CID-CI"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65072",
+          "o:title": "À propos de la Tabaski"
         }
       ],
       "dcterms:isPartOf": [
         {
           "@id": "https://islam.zmo.de/api/resources/62131",
           "o:title": "Lath Met Sablatou"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63533",
+          "o:title": "Honorine Yaoua Kouman"
         }
       ]
     }
@@ -54680,6 +56500,138 @@
         {
           "@id": "https://islam.zmo.de/api/resources/44848",
           "o:title": "Plume Libre hors-série #2"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65619",
+          "o:title": "Les musulmans au Plateau : la grogne !"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65620",
+          "o:title": "Revue de presse : Frat-Mat se dévoile, la Voie se fourvoie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65622",
+          "o:title": "Le Conseil National Islamique est né : musulmans, la Nation nous regarde !"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65624",
+          "o:title": "États-Unis : Reagan et la Bible"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65626",
+          "o:title": "Tolérance !"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65628",
+          "o:title": "Drôle de démocrates"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65630",
+          "o:title": "Dossier : crise algérienne. À quand la fin de l'Islamophobie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65631",
+          "o:title": "Dossier : crise algérienne. L'Occident face à l'islam : le point de vue d'un non Musulman"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65632",
+          "o:title": "Dossier : crise algérienne. Le point de vue des Ivoiriens"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65634",
+          "o:title": "Courrier des lecteurs : la situation en Algérie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65636",
+          "o:title": "À propos d'intégrisme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65638",
+          "o:title": "La Charia entre caricatures et réalités (suite et fin)"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65639",
+          "o:title": "Non aux \"gendarmes\"!"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65641",
+          "o:title": "Dr Lharbi Kechat : \"L'islam ne fait aucune distinction entre la foi et la politique\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65642",
+          "o:title": "Chapelet : \"Je suis moi-même musulman\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65644",
+          "o:title": "Israël : les rabbins et la femme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65646",
+          "o:title": "\"Allahou Akbar\" à la Télévision Burkinabè"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65648",
+          "o:title": "J'ai fait partir quelqu'un à la MECQUE : je dois penser y aller moi-même!"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65650",
+          "o:title": "Tunisie : appel du ministre des Affaires Etrangères aux pays sud sahariens contre \"l'intégrisme islamique\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65657",
+          "o:title": "Somalie. Restore Hope : les dessous d'une opération militaro-humanitaire"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65659",
+          "o:title": "415 martyrs en devenir"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65661",
+          "o:title": "Avouez, intégriste!"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65663",
+          "o:title": "Algérie"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65665",
+          "o:title": "Édito-Plume : l'intégrisme laïc"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65667",
+          "o:title": "Séminaire AEEMCI : Gagnoa 93. La fièvre gagne la ville du fromager"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65669",
+          "o:title": "Sommet de l'O.U.A. : Moubarak mobilise contre l'Islam"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65671",
+          "o:title": "Séminaire AEEMCI Gagnoa'93. L'Islam aujourd'hui : renaissance ou intégrisme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65673",
+          "o:title": "Islam : renaissance ou intégrisme?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65675",
+          "o:title": "Algérie : terrorisme ou croisade contre l'injustice?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65677",
+          "o:title": "Édito-Plume : à mon ami journaliste"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65679",
+          "o:title": "Diaby Koweit : peut-il arrêter la marche de l'histoire?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65681",
+          "o:title": "Théo-politique : voici ce qui attend les musulmans"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65683",
+          "o:title": "La Côte d'Ivoire et les droits de l'homme"
         }
       ],
       "dcterms:subject": [
@@ -54698,6 +56650,14 @@
         {
           "@id": "https://islam.zmo.de/api/resources/62732",
           "o:title": "Manifestation du comité de soutien aux journalistes de \"Plume Libre\" incarcérés : une nuit de prière à la mosquée d'Adjamé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63813",
+          "o:title": "Presse : le pari de \"Plume libre\" pour un nouveau départ"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63930",
+          "o:title": "Ramadan : la fin du jeûne célébrée demain"
         }
       ]
     }
@@ -54850,6 +56810,14 @@
         {
           "@id": "https://islam.zmo.de/api/resources/61421",
           "o:title": "Fête de la Tabaski : les prix des moutons hors des bourses"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63751",
+          "o:title": "Akoupé : le nouvel imam officiellement installé"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/64832",
+          "o:title": "Mosquée de Vavoua : le muezzin assassiné"
         }
       ]
     }
@@ -55139,6 +57107,154 @@
         {
           "@id": "https://islam.zmo.de/api/resources/45377",
           "o:title": "Alif #32"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63446",
+          "o:title": "Conseil National Islamique (C. N. I.) : fédération du consensus?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63447",
+          "o:title": "Attaques injustifiées : les pays arabo musulmans font le lit des occidentaux"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65546",
+          "o:title": "Attaques gratuites. Islam et intégrisme. L'intégrisme : est-il l'apanage des seuls musulmans ?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65548",
+          "o:title": "Cause perdue ! Après la Guerre du Golfe : nouvelle croisade contre l'islam"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65552",
+          "o:title": "Progrès : la Côte d'Ivoire est en train de devenir laïque"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65554",
+          "o:title": "Bosnie-Herzégovine : l'épuration ethnique continue"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65556",
+          "o:title": "Vous êtes le peuple le plus excellent"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65558",
+          "o:title": "Égypte"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65560",
+          "o:title": "Conférence du Cheickh Amadou Tall"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65562",
+          "o:title": "Homme qui es-tu?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65564",
+          "o:title": "Actuel"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65566",
+          "o:title": "Danger : désinformation, intoxication plus dangereuses que le SIDA"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65568",
+          "o:title": "Présentation des condoléances du Conseil National Islamique au Président de la République, son Excellence Henri Konan Bédié à l'occasion du décès du président Houphouët-Boigny"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65570",
+          "o:title": "Mauvaise foi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65572",
+          "o:title": "L'injustice est source de désintégration sociale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65574",
+          "o:title": "Discours du président du C.N.I. lors de l'Assemblée générale"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65576",
+          "o:title": "Haro sur la nouvelle croisade"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65578",
+          "o:title": "Interview"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65580",
+          "o:title": "Alif-courrier. Musulmans et démocrates : quel combat ?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65582",
+          "o:title": "Tout de même un peu d'honnêteté"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65584",
+          "o:title": "Interview : Lassina Tiehi Joël"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65586",
+          "o:title": "C.N.I. : campagne contre la drogue"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65588",
+          "o:title": "Djeni Kobinan définit l'intégrisme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65590",
+          "o:title": "Alif-courrier : à la rédaction du mensuel \"ALIF\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65592",
+          "o:title": "Interview de Mr Gbagbo : \"Il ne suffit pas de bien conduire pour éviter un accident de voiture\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65594",
+          "o:title": "Les musulmans de Côte d'Ivoire mettent-ils en danger la république ?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65596",
+          "o:title": "Comprendre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65598",
+          "o:title": "Reportage"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65600",
+          "o:title": "L'intégrisme"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65602",
+          "o:title": "Exclusion : \"Côte d'Ivoire une laïcité de façade\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65604",
+          "o:title": "\"L'intégrisme\" tribal et régional"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65606",
+          "o:title": "Alif-courrier : le pouvoir BEDIE cherche des intégristes musulmans ivoiriens"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65608",
+          "o:title": "Éditorial"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65610",
+          "o:title": "Intégrisme tribal et régional ?"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65612",
+          "o:title": "Nuit de prière pour les journalistes"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65614",
+          "o:title": "Points de vue : parlons-en"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/65616",
+          "o:title": "Gestion de l'islam en CI : un lit pour deux rêves"
         }
       ]
     }
@@ -57165,10 +59281,6 @@
           "o:title": "Korhogo. Séminaire de formation islamique : l'authenticité de la Biblie et du Coran au centre des débats"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/48383",
-          "o:title": "Korhogo. Séminaire de formation islamique. L'imam Aboubacar Fofana (Porte-parole du COSIM) : \"Notre communauté est marginalisée\""
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/48384",
           "o:title": "Front de la Oummat Islamique : les lois conçues par les hommes sont modifiables"
         },
@@ -58530,6 +60642,38 @@
         {
           "@id": "https://islam.zmo.de/api/resources/62736",
           "o:title": "Nuit du Destin : \"Nous ne sommes pas des intégristes\" déclare l'imam Aboubakar Samassi"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63534",
+          "o:title": "Les musulmans étalent leurs dissensions devant Gbagbo"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63535",
+          "o:title": "Audiovisuel : les musulmans ont enfin leur radio"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63536",
+          "o:title": "Excision : les chefs religieux dans la bagarre"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63537",
+          "o:title": "Islam : les femmes renforcent leur position"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63538",
+          "o:title": "Mme Cissé Maconi, vice-présidente du Conseil national islamique (CNI) : \"La musulmane est soumise, mais…\""
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63787",
+          "o:title": "Jeune du Ramadan : top départ pour un mois d'adoration intense"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63788",
+          "o:title": "Le FOI dénonce la partialité de la RTI"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/63789",
+          "o:title": "Deux mosquées pour Niakara et Bouna"
         }
       ]
     }
@@ -61996,10 +64140,6 @@
           "o:title": "Les chairs licites et illicites dans l'Islam"
         },
         {
-          "@id": "https://islam.zmo.de/api/resources/62573",
-          "o:title": "Islam : pour 800 millions de fidèles, le jeûne du Ramadan a commencé"
-        },
-        {
           "@id": "https://islam.zmo.de/api/resources/62574",
           "o:title": "Tabaski : les musulmans ont célébré samedi dernier l'acte de soumission sublime à Dieu"
         },
@@ -62078,8 +64218,313 @@
         {
           "@id": "https://islam.zmo.de/api/resources/62693",
           "o:title": "Tabaski : les musulmans ont prié pour la paix"
+        },
+        {
+          "@id": "https://islam.zmo.de/api/resources/62573",
+          "o:title": "Islam : pour 800 millions de fidèles, le jeûne du Ramadan a commencé"
         }
       ]
     }
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/63373",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 63373,
+    "o:is_public": false,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": null,
+    "o:title": "0. Intégrisme",
+    "thumbnail_display_urls": {
+      "large": null,
+      "medium": null,
+      "square": null
+    },
+    "o:created": {
+      "@value": "2024-11-11T13:51:34+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-11-11T13:51:34+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=63373"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "0. Intégrisme"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/63444",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 63444,
+    "o:is_public": true,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": {
+      "@id": "https://islam.zmo.de/api/assets/99",
+      "o:id": 99
+    },
+    "o:title": "L'Alternative",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/asset/f95bd5e2c28d80db06217b0775d4b8e72ccdcb99.png",
+      "medium": "https://islam.zmo.de/files/asset/f95bd5e2c28d80db06217b0775d4b8e72ccdcb99.png",
+      "square": "https://islam.zmo.de/files/asset/f95bd5e2c28d80db06217b0775d4b8e72ccdcb99.png"
+    },
+    "o:created": {
+      "@value": "2024-11-12T11:07:19+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-11-12T11:10:34+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=63444"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "L'Alternative"
+      }
+    ],
+    "dcterms:description": [
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Métadonnées d'articles provenant de L'Alternative (1996)",
+        "@language": "fr"
+      },
+      {
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Metadata of articles from L'Alternative (1996)",
+        "@language": "en"
+      }
+    ],
+    "dcterms:date": [
+      {
+        "type": "numeric:interval",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "1996-01/1996-03"
+      }
+    ],
+    "dcterms:spatial": [
+      {
+        "type": "customvocab:4",
+        "property_id": 40,
+        "property_label": "Spatial Coverage",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/298",
+        "value_resource_id": 298,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Côte d'Ivoire",
+        "thumbnail_url": "https://islam.zmo.de/files/square/e76603c6a90bc729b2356f4f17b9ba162a0e88c0.jpg",
+        "thumbnail_title": "IvoryCoast_1.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:language": [
+      {
+        "type": "customvocab:6",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/8355",
+        "value_resource_id": 8355,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Français"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC/1.0/",
+        "o:label": "In Copyright"
+      }
+    ],
+    "dcterms:source": [
+      {
+        "type": "customvocab:5",
+        "property_id": 11,
+        "property_label": "Source",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/821",
+        "value_resource_id": 821,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Centre de Recherche et d'Action pour la Paix",
+        "thumbnail_url": "https://islam.zmo.de/files/square/60b6b856b5c40dbdce003715f3b36575a399b0ae.jpg",
+        "thumbnail_title": "Centre de Recherche et d'Action pour la Paix.png",
+        "thumbnail_type": "image/png"
+      }
+    ],
+    "dcterms:contributor": [
+      {
+        "type": "customvocab:3",
+        "property_id": 6,
+        "property_label": "Contributor",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/858",
+        "value_resource_id": 858,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Frédérick Madore",
+        "thumbnail_url": "https://islam.zmo.de/files/square/a65b3f7bdebe0e7d9cc9c015b31a9b766d8ecb78.jpg",
+        "thumbnail_title": "FrédérickMadore_1.jpg",
+        "thumbnail_type": "image/jpeg"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/65618",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 65618,
+    "o:is_public": false,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": null,
+    "o:title": "0. Intégrisme (ALIF)",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/large/9e913464767ec86fb0a8aa679e10caed66f70332.jpg",
+      "medium": "https://islam.zmo.de/files/medium/9e913464767ec86fb0a8aa679e10caed66f70332.jpg",
+      "square": "https://islam.zmo.de/files/square/9e913464767ec86fb0a8aa679e10caed66f70332.jpg"
+    },
+    "o:created": {
+      "@value": "2024-11-26T10:43:30+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-11-26T12:34:09+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=65618"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "0. Intégrisme (ALIF)"
+      }
+    ]
+  },
+  {
+    "@context": "https://islam.zmo.de/api-context",
+    "@id": "https://islam.zmo.de/api/item_sets/65685",
+    "@type": [
+      "o:ItemSet",
+      "dctype:Collection"
+    ],
+    "o:id": 65685,
+    "o:is_public": false,
+    "o:owner": {
+      "@id": "https://islam.zmo.de/api/users/1",
+      "o:id": 1
+    },
+    "o:resource_class": {
+      "@id": "https://islam.zmo.de/api/resource_classes/23",
+      "o:id": 23
+    },
+    "o:resource_template": {
+      "@id": "https://islam.zmo.de/api/resource_templates/4",
+      "o:id": 4
+    },
+    "o:thumbnail": null,
+    "o:title": "0. Intégrisme Plume Libre",
+    "thumbnail_display_urls": {
+      "large": "https://islam.zmo.de/files/large/bab5ac13bbc9a16329274ca4e35dc5e95733c6e5.jpg",
+      "medium": "https://islam.zmo.de/files/medium/bab5ac13bbc9a16329274ca4e35dc5e95733c6e5.jpg",
+      "square": "https://islam.zmo.de/files/square/bab5ac13bbc9a16329274ca4e35dc5e95733c6e5.jpg"
+    },
+    "o:created": {
+      "@value": "2024-11-30T15:03:48+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+      "@value": "2024-11-30T15:03:48+00:00",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:is_open": false,
+    "o:items": {
+      "@id": "https://islam.zmo.de/api/items?item_set_id=65685"
+    },
+    "dcterms:title": [
+      {
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "0. Intégrisme Plume Libre"
+      }
+    ]
   }
 ]
