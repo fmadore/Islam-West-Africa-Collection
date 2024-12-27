@@ -65,7 +65,8 @@
       "o:alternate_label": null,
       "o:alternate_comment": null,
       "o:data_type": [
-        "resource:item"
+        "resource:item",
+        "customvocab:1"
       ],
       "o:is_required": false,
       "o:is_private": false,
@@ -94,7 +95,8 @@
       "o:alternate_label": null,
       "o:alternate_comment": null,
       "o:data_type": [
-        "resource:item"
+        "resource:item",
+        "customvocab:4"
       ],
       "o:is_required": false,
       "o:is_private": false,
@@ -108,7 +110,6 @@
       "o:alternate_label": null,
       "o:alternate_comment": null,
       "o:data_type": [
-        "resource:item",
         "customvocab:4"
       ],
       "o:is_required": false,
