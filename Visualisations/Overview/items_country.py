@@ -315,19 +315,21 @@ class DataVisualizer:
             margin=dict(t=120, l=25, r=25, b=25),  # More top margin for title
             paper_bgcolor='rgba(250,250,250,1)',
             showlegend=False,             # Hide legend if not needed
-            # Add a subtle border around the entire plot
-            shapes=[{
-                'type': 'rect',
-                'xref': 'paper',
-                'yref': 'paper',
-                'x0': 0,
-                'y0': 0,
-                'x1': 1,
-                'y1': 1,
-                'line': {'color': 'rgb(220,220,220)', 'width': 2},
-            }]
+            modebar=dict(
+                remove=[
+                    'toImage', 'sendDataToCloud', 'toggleHover', 
+                    'hoverClosestCartesian', 'hoverCompareCartesian', 
+                    'toggleSpikelines', 'editInChartStudio', 'zoom', 
+                    'pan', 'select', 'zoomIn', 'zoomOut', 'autoScale',
+                    'resetScale'
+                ],
+                bgcolor='rgba(0,0,0,0)',
+                color='rgba(0,0,0,0.3)',
+                activecolor='rgba(0,0,0,0.6)',
+                orientation='v'
+            )
         )
-        
+
         # Add hover effect
         fig.update_traces(
             hoverlabel=dict(
@@ -337,8 +339,19 @@ class DataVisualizer:
             )
         )
 
+        # Write the HTML with custom config to hide the logo
         output_file = os.path.join(self.output_dir, f'item_distribution_by_country_and_set_{language}.html')
-        fig.write_html(output_file)
+        fig.write_html(
+            output_file,
+            config={
+                'displaylogo': False,
+                'modeBarButtonsToRemove': [
+                    'toImage', 'sendDataToCloud', 'editInChartStudio',
+                    'zoom', 'pan', 'select', 'lasso2d', 'zoomIn', 'zoomOut',
+                    'autoScale', 'resetScale'
+                ]
+            }
+        )
         logger.info(f"Visualization saved to {output_file}")
         return fig
 
