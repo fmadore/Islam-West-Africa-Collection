@@ -319,7 +319,7 @@ class DataVisualizer:
                 'yanchor': 'top',
                 'font_weight': 'bold'     # Bold title
             },
-            margin=dict(t=80, l=25, r=25, b=25),  # Reduced top margin from 120 to 80
+            margin=dict(t=95, l=25, r=25, b=25),
             paper_bgcolor='rgba(250,250,250,1)',
             showlegend=False,             # Hide legend if not needed
             treemapcolorway=[
