@@ -1,3 +1,21 @@
+"""
+This script creates an interactive treemap visualization showing the distribution of items
+across different countries and their sub-collections in the Islam West Africa Collection.
+It supports multiple languages (English and French) and includes caching for improved performance.
+
+The visualization is hierarchical:
+- Root: Entire collection
+- Level 1: Countries
+- Level 2: Sub-collections within each country
+
+Features:
+- Multi-language support (EN/FR)
+- Interactive treemap with hover information
+- Caching system for API responses
+- Concurrent processing of API requests
+- Error handling and logging
+"""
+
 import requests
 from collections import defaultdict
 import plotly.express as px
@@ -15,7 +33,7 @@ import json
 from pathlib import Path
 import hashlib
 
-# Configure logging
+# Configure logging with timestamp and level information
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -24,6 +42,17 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class APIConfig:
+    """Configuration settings for the API client.
+    
+    Attributes:
+        base_url: Base URL for the API endpoints
+        timeout: Request timeout in seconds
+        max_retries: Maximum number of retry attempts for failed requests
+        backoff_factor: Exponential backoff factor between retries
+        max_workers: Maximum number of concurrent threads
+        items_per_page: Number of items to retrieve per API request
+        cache_dir: Directory for storing cached API responses
+    """
     base_url: str = "https://islam.zmo.de/api"
     timeout: int = 15
     max_retries: int = 5
@@ -34,23 +63,42 @@ class APIConfig:
 
 @dataclass
 class ItemSetResult:
+    """Container for processed item set data.
+    
+    Attributes:
+        country: Country associated with the item set
+        set_titles: Dictionary of set titles in different languages
+        item_count: Number of items in the set
+    """
     country: str
     set_titles: Dict[str, str]
     item_count: int
 
 class APIClient:
+    """Client for handling API requests with caching and retry capabilities."""
+    
     def __init__(self, config: APIConfig):
+        """Initialize the API client with configuration settings.
+        
+        Args:
+            config: APIConfig instance containing client settings
+        """
         self.config = config
         self.session = self._create_session()
         self.config.cache_dir.mkdir(exist_ok=True)
         self.use_cache = True
 
     def _create_session(self) -> requests.Session:
+        """Create and configure a requests session with retry strategy.
+        
+        Returns:
+            Configured requests.Session instance with retry capabilities
+        """
         session = requests.Session()
         retry_strategy = Retry(
             total=self.config.max_retries,
             backoff_factor=self.config.backoff_factor,
-            status_forcelist=[429, 500, 502, 503, 504]
+            status_forcelist=[429, 500, 502, 503, 504]  # HTTP status codes to retry on
         )
         adapter = HTTPAdapter(
             max_retries=retry_strategy,
@@ -64,7 +112,15 @@ class APIClient:
 
     @functools.lru_cache(maxsize=128)
     def _get_cache_path(self, endpoint: str, params: str) -> Path:
-        # Create a unique cache file name based on the endpoint and parameters
+        """Generate a unique cache file path based on endpoint and parameters.
+        
+        Args:
+            endpoint: API endpoint
+            params: String representation of request parameters
+            
+        Returns:
+            Path object for the cache file
+        """
         params_hash = hashlib.md5(params.encode()).hexdigest()
         return self.config.cache_dir / f"{endpoint}_{params_hash}.json"
 
@@ -143,9 +199,19 @@ class APIClient:
             return None
 
 class DataProcessor:
+    """Processes raw API data into visualization-ready format."""
+    
     @staticmethod
     def get_title_by_language(titles: List[dict], language: str) -> str:
-        """Get title in specified language, or fallback to first available."""
+        """Extract title in specified language with fallback to first available.
+        
+        Args:
+            titles: List of title objects with language codes
+            language: Preferred language code (e.g., 'en', 'fr')
+            
+        Returns:
+            Title string in requested language or fallback
+        """
         for title in titles:
             if title.get('@language', '') == language:
                 return title['@value']
@@ -173,11 +239,18 @@ class DataProcessor:
             return None, (item_set_id, str(e))
 
 class DataVisualizer:
+    """Handles creation and styling of treemap visualizations."""
+    
     def __init__(self, output_dir: str):
+        """Initialize visualizer with output directory and styling configurations.
+        
+        Args:
+            output_dir: Directory where visualization files will be saved
+        """
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Define country names in both languages
+        # Define country names mapping for internationalization
         self.country_names = {
             'en': {
                 'Bénin': 'Benin',
@@ -199,7 +272,7 @@ class DataVisualizer:
             }
         }
         
-        # Updated colors with more visually pleasing colors
+        # Color scheme for consistent country representation
         self.country_colors = {
             'Burkina Faso': '#2E86C1',    # Bright blue
             'Côte d\'Ivoire': '#E74C3C',  # Bright red
@@ -212,10 +285,20 @@ class DataVisualizer:
         }
 
     def create_visualization(self, items_by_country_and_set: Dict, language: str = 'en'):
+        """Create an interactive treemap visualization of the item distribution.
+        
+        Args:
+            items_by_country_and_set: Nested dictionary of items organized by country and set
+            language: Language code for labels and text ('en' or 'fr')
+            
+        Returns:
+            plotly.graph_objects.Figure: The created treemap visualization
+        """
         def format_number(n: int) -> str:
+            """Format number with space as thousand separator."""
             return f"{n:,}".replace(',', ' ')
 
-        # Add language-specific text
+        # Define language-specific text for labels and tooltips
         text_map = {
             'en': {
                 'total': 'Total',
@@ -234,44 +317,46 @@ class DataVisualizer:
         }
         text = text_map.get(language, text_map['en'])
 
-        # Calculate total items first
+        # Calculate total items for the entire collection
         total_items = sum(
             count for country_data in items_by_country_and_set.values() 
             for count in country_data.values()
         )
 
+        # Set visualization title based on language
         title_map = {
             'en': f'Distribution of {format_number(total_items)} items by country and sub-collection',
             'fr': f'Répartition des {format_number(total_items)} éléments par pays et sous-collection'
         }
         title = title_map.get(language, title_map['en'])
 
-        # Create flattened data structure with translated country names
+        # Prepare data structure for treemap visualization
         data = []
         
-        # First, calculate country totals
+        # Calculate country totals for percentage calculations
         country_totals = {}
         for country, sets in items_by_country_and_set.items():
             country_totals[country] = sum(sets.values())
 
+        # Build hierarchical data structure for treemap
         for country, sets in items_by_country_and_set.items():
             translated_country = self.country_names[language][country]
             country_total = country_totals[country]
             sorted_sets = dict(sorted(sets.items(), key=lambda x: x[1], reverse=True))
             
-            # Calculate country percentage of total
+            # Calculate country's percentage of total collection
             country_percentage = (country_total / total_items) * 100
             
-            # Country hover text includes percentage, but label doesn't
+            # Create hover text for country level
             country_hover_text = (
                 f"<b>{translated_country}</b><br>"
                 f"{text['total']}: {format_number(country_total)} {text['items']}<br>"
                 f"{country_percentage:.1f}%"
             )
             
+            # Add data points for each set within the country
             for set_title, count in sorted_sets.items():
                 set_percentage = (count / total_items) * 100
-                # Calculate percentage within country
                 country_set_percentage = (count / country_total) * 100
                 data.append({
                     'Collection': text['root_label'],
@@ -286,18 +371,19 @@ class DataVisualizer:
                     'country_hover': country_hover_text
                 })
 
+        # Create treemap visualization
         fig = px.treemap(
             data,
             path=['Collection', 'Country', 'Item Set Title'],
             values='Number of Items',
             title=title,
-            custom_data=['text', 'country_hover']  # Include country hover text
+            custom_data=['text', 'country_hover']
         )
 
-        # Update traces
+        # Configure trace properties for better visualization
         fig.update_traces(
-            textinfo="label+value",  # Show label and value
-            hovertemplate="%{customdata[0]}<extra></extra>",  # Use custom hover text
+            textinfo="label+value",
+            hovertemplate="%{customdata[0]}<extra></extra>",
             textfont={
                 "size": 14,
                 "family": "Arial",
@@ -307,23 +393,23 @@ class DataVisualizer:
             opacity=0.95
         )
 
-        # Update layout with enhanced styling
+        # Apply layout styling for better presentation
         fig.update_layout(
             font_family="Arial",
             title={
-                'font_size': 28,          # Larger title
+                'font_size': 28,
                 'font_family': "Arial",
                 'x': 0.5,
                 'xanchor': 'center',
-                'y': 0.95,                # Slightly lower position
-                'yanchor': 'top',
-                'font_weight': 'bold'     # Bold title
+                'y': 0.95,
+                'font_weight': 'bold'
             },
             margin=dict(t=95, l=25, r=25, b=25),
             paper_bgcolor='rgba(250,250,250,1)',
-            showlegend=False,             # Hide legend if not needed
+            showlegend=False,
+            # Define color scheme for hierarchy levels
             treemapcolorway=[
-                "rgb(211,211,211)",  # Root color (light grey)
+                "rgb(211,211,211)",  # Root level (light grey)
                 "#2E86C1",    # Burkina Faso
                 "#E74C3C",    # Côte d'Ivoire
                 "#27AE60",    # Benin
@@ -331,6 +417,7 @@ class DataVisualizer:
                 "#F39C12",    # Niger
                 "#16A085"     # Nigeria
             ],
+            # Configure mode bar for better user interaction
             modebar=dict(
                 remove=[
                     'toImage', 'sendDataToCloud', 'toggleHover', 
@@ -346,7 +433,7 @@ class DataVisualizer:
             )
         )
 
-        # Add hover effect
+        # Configure hover label styling
         fig.update_traces(
             hoverlabel=dict(
                 bgcolor="white",
@@ -355,7 +442,7 @@ class DataVisualizer:
             )
         )
 
-        # Write the HTML with custom config to hide the logo
+        # Save visualization to HTML file
         output_file = os.path.join(self.output_dir, f'item_distribution_by_country_and_set_{language}.html')
         fig.write_html(
             output_file,
@@ -372,14 +459,23 @@ class DataVisualizer:
         return fig
 
 def clear_cache(cache_dir: Path, max_age_days: int = 7) -> None:
-    """Clear cache files older than max_age_days."""
+    """Remove cached files older than specified age.
+    
+    Args:
+        cache_dir: Directory containing cache files
+        max_age_days: Maximum age of cache files in days
+    """
     current_time = time.time()
     for cache_file in cache_dir.glob("*.json"):
         if (current_time - cache_file.stat().st_mtime) > (max_age_days * 86400):
             cache_file.unlink()
 
 def prompt_cache_usage() -> bool:
-    """Prompt user for cache usage preference."""
+    """Prompt user for cache usage preference.
+    
+    Returns:
+        Boolean indicating whether to use cache
+    """
     while True:
         response = input("Would you like to use cached data? (y/n): ").lower()
         if response in ['y', 'n']:
@@ -387,7 +483,13 @@ def prompt_cache_usage() -> bool:
         print("Please enter 'y' for yes or 'n' for no.")
 
 def main(languages: List[str]):
+    """Main execution function for creating visualizations.
+    
+    Args:
+        languages: List of language codes to generate visualizations for
+    """
     # Define item sets organized by country
+    # Each list contains the item set IDs for that country's collections
     country_item_sets = {
         'Bénin': [2185, 2186, 2187, 2188, 2189, 2190, 2191, 4922, 5500, 5501, 5502, 2195, 10223, 61062, 60638, 61063, 23452, 2192, 2193, 2194],
         'Burkina Faso': [2199, 2200, 2201, 2207, 2209, 2210, 2213, 2214, 2215, 5503, 23273, 2197, 2196, 2206, 2198, 2203, 2205, 2204, 2202, 23453, 23448, 23449, 2211, 2212],
@@ -448,6 +550,9 @@ def main(languages: List[str]):
             logger.warning(f"Item set {item_set_id}: {error}")
 
 if __name__ == "__main__":
+    # Initialize configuration and clear old cache
     config = APIConfig()
-    clear_cache(config.cache_dir)  # Optional: clear old cache files
+    clear_cache(config.cache_dir)
+    
+    # Generate visualizations for both English and French
     main(['en', 'fr'])
