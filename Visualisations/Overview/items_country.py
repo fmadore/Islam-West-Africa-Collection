@@ -267,14 +267,19 @@ class DataVisualizer:
             
             for set_title, count in sorted_sets.items():
                 set_percentage = (count / total_items) * 100
+                # Calculate percentage within country
+                country_set_percentage = (count / country_total) * 100
                 data.append({
                     'Collection': text['root_label'],
-                    'Country': f"<b>{translated_country}</b>",  # Removed percentage from label
-                    'Item Set Title': f"<b>{set_title}</b>",   # Removed percentage from label
+                    'Country': f"<b>{translated_country}</b>",
+                    'Item Set Title': f"<b>{set_title}</b>",
                     'Number of Items': count,
-                    'text': f"<b>{set_title}</b><br>{text['total']}: {format_number(count)} {text['items']}<br>{set_percentage:.1f}%",
+                    'text': (f"<b>{set_title}</b><br>"
+                            f"{text['total']}: {format_number(count)} {text['items']}<br>"
+                            f"{set_percentage:.1f}% of total collection<br>"
+                            f"{country_set_percentage:.1f}% of {translated_country}"),
                     'color': self.country_colors[country],
-                    'country_hover': country_hover_text  # Add country hover text separately
+                    'country_hover': country_hover_text
                 })
 
         fig = px.treemap(
@@ -288,7 +293,7 @@ class DataVisualizer:
         # Update traces
         fig.update_traces(
             textinfo="label+value",  # Show label and value
-            hovertemplate="%{label}<extra></extra>",  # Use label for hover text
+            hovertemplate="%{customdata[0]}<extra></extra>",  # Use custom hover text
             textfont={
                 "size": 14,
                 "family": "Arial",
