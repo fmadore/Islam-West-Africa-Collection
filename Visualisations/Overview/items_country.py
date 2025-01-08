@@ -220,12 +220,16 @@ class DataVisualizer:
             'en': {
                 'total': 'Total',
                 'items': 'items',
-                'root_label': 'Islam West Africa Collection'
+                'root_label': 'Islam West Africa Collection',
+                'of_total': 'of total collection',
+                'of_country': 'of'
             },
             'fr': {
                 'total': 'Total',
                 'items': 'éléments',
-                'root_label': 'Collection Islam Afrique de l\'Ouest'
+                'root_label': 'Collection Islam Afrique de l\'Ouest',
+                'of_total': 'de l\'ensemble de la collection',
+                'of_country': 'de'
             }
         }
         text = text_map.get(language, text_map['en'])
@@ -276,8 +280,8 @@ class DataVisualizer:
                     'Number of Items': count,
                     'text': (f"<b>{set_title}</b><br>"
                             f"{text['total']}: {format_number(count)} {text['items']}<br>"
-                            f"{set_percentage:.1f}% of total collection<br>"
-                            f"{country_set_percentage:.1f}% of {translated_country}"),
+                            f"{set_percentage:.1f}% {text['of_total']}<br>"
+                            f"{country_set_percentage:.1f}% {text['of_country']} {translated_country}"),
                     'color': self.country_colors[country],
                     'country_hover': country_hover_text
                 })
