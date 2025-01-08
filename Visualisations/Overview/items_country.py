@@ -282,22 +282,20 @@ class DataVisualizer:
             path=['Collection', 'Country', 'Item Set Title'],
             values='Number of Items',
             title=title,
-            custom_data=['text', 'country_hover'],  # Include country hover text
-            color='color'
+            custom_data=['text', 'country_hover']  # Include country hover text
         )
 
         # Update traces
         fig.update_traces(
             textinfo="label+value",  # Show label and value
-            hovertemplate="%{customdata[1]}<extra></extra>",  # Use country_hover for countries
+            hovertemplate="%{label}<extra></extra>",  # Use label for hover text
             textfont={
                 "size": 14,
                 "family": "Arial",
                 "color": "white"
             },
             marker_line=dict(width=2, color='white'),
-            opacity=0.95,
-            root_color="rgb(211,211,211)"  # Light grey
+            opacity=0.95
         )
 
         # Update layout with enhanced styling
@@ -315,6 +313,15 @@ class DataVisualizer:
             margin=dict(t=120, l=25, r=25, b=25),  # More top margin for title
             paper_bgcolor='rgba(250,250,250,1)',
             showlegend=False,             # Hide legend if not needed
+            treemapcolorway=[
+                "rgb(211,211,211)",  # Root color (light grey)
+                "#2E86C1",    # Burkina Faso
+                "#E74C3C",    # Côte d'Ivoire
+                "#27AE60",    # Benin
+                "#8E44AD",    # Togo
+                "#F39C12",    # Niger
+                "#16A085"     # Nigeria
+            ],
             modebar=dict(
                 remove=[
                     'toImage', 'sendDataToCloud', 'toggleHover', 
