@@ -247,14 +247,17 @@ class DataVisualizer:
         fig.write_html(str(output_file))
         logger.info(f"Saved treemap visualization to {output_file}")
 
-def main() -> None:
-    """Main execution function."""
-    # Load environment variables
+def load_config() -> OmekaConfig:
+    """
+    Load environment variables and create OmekaConfig instance.
+    
+    Returns:
+        OmekaConfig: Configuration object with API settings and item sets
+    """
     env_path = SCRIPT_DIR.parent / '.env'
     load_dotenv(dotenv_path=env_path)
 
-    # Initialize configuration
-    config = OmekaConfig(
+    return OmekaConfig(
         base_url=os.getenv("OMEKA_BASE_URL"),
         key_identity=os.getenv("OMEKA_KEY_IDENTITY"),
         key_credential=os.getenv("OMEKA_KEY_CREDENTIAL"),
@@ -267,45 +270,110 @@ def main() -> None:
         }
     )
 
-    # Initialize clients and processors
-    api_client = OmekaAPIClient(config)
-    content_processor = ContentProcessor()
-    visualizer = DataVisualizer(SCRIPT_DIR)
+def create_futures_map(executor: ThreadPoolExecutor, api_client: OmekaAPIClient, config: OmekaConfig) -> Dict[Future[str], Tuple[str, int]]:
+    """
+    Create a mapping of futures to their corresponding country and set ID.
+    
+    Args:
+        executor: ThreadPoolExecutor instance
+        api_client: OmekaAPIClient instance
+        config: OmekaConfig instance
+        
+    Returns:
+        Dict[Future[str], Tuple[str, int]]: Mapping of futures to (country, set_id) pairs
+    """
+    return {
+        executor.submit(api_client.get_item_set_name, set_id): (country, set_id)
+        for country, sets in config.item_sets.items()
+        for set_id in sets
+    }
 
-    # Collect data
+def process_newspaper_data(
+    future: Future[str],
+    future_to_set: Dict[Future[str], Tuple[str, int]],
+    api_client: OmekaAPIClient,
+    content_processor: ContentProcessor
+) -> List[Dict[str, Any]]:
+    """
+    Process data for a single newspaper.
+    
+    Args:
+        future: Future object containing the newspaper name
+        future_to_set: Mapping of futures to (country, set_id) pairs
+        api_client: OmekaAPIClient instance
+        content_processor: ContentProcessor instance
+        
+    Returns:
+        List[Dict[str, Any]]: Processed content data for the newspaper
+    """
+    country, set_id = future_to_set[future]
+    try:
+        newspaper = future.result()
+        items = api_client.get_items_by_set(set_id)
+        return content_processor.extract_content(items, country, newspaper)
+    except Exception as e:
+        logger.error(f"Error processing {country} - {set_id}: {e}")
+        return []
+
+def collect_newspaper_data(config: OmekaConfig, api_client: OmekaAPIClient, content_processor: ContentProcessor) -> List[Dict[str, Any]]:
+    """
+    Collect data from all newspapers using parallel processing.
+    
+    Args:
+        config: OmekaConfig instance
+        api_client: OmekaAPIClient instance
+        content_processor: ContentProcessor instance
+        
+    Returns:
+        List[Dict[str, Any]]: Combined content data from all newspapers
+    """
     all_data = []
     with ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_set: Dict[Future[str], Tuple[str, int]] = {
-            executor.submit(api_client.get_item_set_name, set_id): (country, set_id)
-            for country, sets in config.item_sets.items()
-            for set_id in sets
-        }
-
+        future_to_set = create_futures_map(executor, api_client, config)
         total_sets: int = len(future_to_set)
         completed: int = 0
         
         for future in as_completed(future_to_set):
+            content_data = process_newspaper_data(future, future_to_set, api_client, content_processor)
+            all_data.extend(content_data)
+            completed += 1
             country, set_id = future_to_set[future]
-            try:
-                newspaper = future.result()
-                items = api_client.get_items_by_set(set_id)
-                content_data = content_processor.extract_content(items, country, newspaper)
-                all_data.extend(content_data)
-                completed += 1
-                logger.info(f"Processed {completed}/{total_sets}: {newspaper} ({country}) - {len(items)} items")
-            except Exception as e:
-                logger.error(f"Error processing {country} - {set_id}: {e}")
+            logger.info(f"Processed {completed}/{total_sets}: {future.result()} ({country}) - {len(content_data)} items")
+    
+    return all_data
 
-    # Create DataFrame and generate visualizations
-    df = pd.DataFrame(all_data)
+def create_visualizations(data: List[Dict[str, Any]], visualizer: DataVisualizer) -> None:
+    """
+    Create and save visualizations from the collected data.
+    
+    Args:
+        data: List of processed content data
+        visualizer: DataVisualizer instance
+    """
+    df = pd.DataFrame(data)
     aggregated_data = df.groupby(['country', 'newspaper'])['word_count'].sum().reset_index()
-
+    
     # Generate visualizations in both languages
     for lang in ['en', 'fr']:
         visualizer.create_treemap(aggregated_data, lang)
 
-if __name__ == "__main__":
+def main() -> None:
+    """Main execution function coordinating the word count analysis and visualization."""
     try:
-        main()
+        # Initialize configuration and components
+        config = load_config()
+        api_client = OmekaAPIClient(config)
+        content_processor = ContentProcessor()
+        visualizer = DataVisualizer(SCRIPT_DIR)
+
+        # Collect and process data
+        all_data = collect_newspaper_data(config, api_client, content_processor)
+
+        # Create visualizations
+        create_visualizations(all_data, visualizer)
+
     except Exception as e:
         logger.error(f"Script failed: {e}", exc_info=True)
+
+if __name__ == "__main__":
+    main()
