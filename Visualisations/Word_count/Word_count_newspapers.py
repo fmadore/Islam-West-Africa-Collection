@@ -214,7 +214,7 @@ class DataVisualizer:
 
     def create_treemap(self, df: pd.DataFrame, language: str = 'en') -> None:
         """
-        Create and save treemap visualization.
+        Create and save treemap visualization with enhanced hover information.
         
         Args:
             df: DataFrame containing the data to visualize
@@ -227,6 +227,22 @@ class DataVisualizer:
             'fr': f'Nombre total de mots: {total_words} - répartition par pays et journal'
         }[language]
 
+        # Create hover text with formatted information
+        hover_text = {
+            'en': df.apply(
+                lambda x: f"<b>Newspaper:</b> {x['newspaper']}<br>" +
+                         f"<b>Word count:</b> {ContentProcessor.format_number(x['word_count'])}<br>" +
+                         f"<b>Country:</b> {x['country']}",
+                axis=1
+            ),
+            'fr': df.apply(
+                lambda x: f"<b>Journal:</b> {x['newspaper']}<br>" +
+                         f"<b>Nombre de mots:</b> {ContentProcessor.format_number(x['word_count'])}<br>" +
+                         f"<b>Pays:</b> {x['country']}",
+                axis=1
+            )
+        }[language]
+
         df['label'] = df.apply(
             lambda x: ContentProcessor.create_label(x['newspaper'], x['word_count'], language),
             axis=1
@@ -236,7 +252,44 @@ class DataVisualizer:
             df,
             path=['country', 'label'],
             values='word_count',
-            title=title
+            title=title,
+            custom_data=['newspaper', 'word_count', 'country']  # Data available for hover template
+        )
+
+        # Customize hover template
+        hover_template = {
+            'en': "<b>%{customdata[0]}</b><br>" +
+                  "Word count: %{customdata[1]:,.0f}<br>" +
+                  "Country: %{customdata[2]}<br>" +
+                  "<extra></extra>",  # Removes secondary box
+            'fr': "<b>%{customdata[0]}</b><br>" +
+                  "Nombre de mots: %{customdata[1]:,.0f}<br>" +
+                  "Pays: %{customdata[2]}<br>" +
+                  "<extra></extra>"
+        }[language]
+
+        # Update layout and hover info
+        fig.update_traces(
+            hovertemplate=hover_template,
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial"
+            )
+        )
+
+        # Update layout
+        fig.update_layout(
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial",
+                bordercolor="gray"
+            ),
+            font=dict(
+                family="Arial",
+                size=12
+            )
         )
 
         # Show the figure
