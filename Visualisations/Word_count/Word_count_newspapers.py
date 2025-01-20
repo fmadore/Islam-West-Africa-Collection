@@ -4,14 +4,15 @@ import pandas as pd
 import os
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any, Tuple
 import logging
 from dataclasses import dataclass
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed, Future
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from dotenv import load_dotenv
 import time
+import plotly.graph_objects as go
 
 # Get the directory where the script is located
 SCRIPT_DIR = Path(__file__).parent
@@ -38,11 +39,11 @@ class OmekaConfig:
 class OmekaAPIClient:
     """Client for interacting with Omeka API."""
     
-    def __init__(self, config: OmekaConfig):
+    def __init__(self, config: OmekaConfig) -> None:
         self.config = config
         self.session = self._setup_session()
-        self.last_request_time = 0
-        self.min_request_interval = 0.1  # Minimum time between requests in seconds
+        self.last_request_time: float = 0
+        self.min_request_interval: float = 0.1  # Minimum time between requests in seconds
 
     @staticmethod
     def _setup_session() -> requests.Session:
@@ -66,7 +67,7 @@ class OmekaAPIClient:
         session.mount("http://", adapter)
         return session
 
-    def _rate_limit(self):
+    def _rate_limit(self) -> None:
         """Implement rate limiting between requests."""
         current_time = time.time()
         time_since_last_request = current_time - self.last_request_time
@@ -75,7 +76,15 @@ class OmekaAPIClient:
         self.last_request_time = time.time()
 
     def get_item_set_name(self, item_set_id: int) -> str:
-        """Fetch item set name using its ID."""
+        """
+        Fetch item set name using its ID.
+        
+        Args:
+            item_set_id: The ID of the item set to fetch
+            
+        Returns:
+            str: The name of the item set or a default name if not found
+        """
         self._rate_limit()
         url = f"{self.config.base_url}/item_sets/{item_set_id}"
         params = {
@@ -91,8 +100,17 @@ class OmekaAPIClient:
             logger.error(f"Failed to fetch item set name for ID {item_set_id}: {e}")
             return f"Newspaper {item_set_id}"
 
-    def fetch_items_page(self, item_set_id: int, page: int) -> List[dict]:
-        """Fetch items for a specific page of an item set."""
+    def fetch_items_page(self, item_set_id: int, page: int) -> List[Dict[str, Any]]:
+        """
+        Fetch items for a specific page of an item set.
+        
+        Args:
+            item_set_id: The ID of the item set to fetch
+            page: The page number to fetch
+            
+        Returns:
+            List[Dict[str, Any]]: List of items from the API response
+        """
         self._rate_limit()
         url = f"{self.config.base_url}/items"
         params = {
@@ -110,8 +128,16 @@ class OmekaAPIClient:
             logger.error(f"Failed to fetch page {page} for set {item_set_id}: {e}")
             return []
 
-    def get_items_by_set(self, item_set_id: int) -> List[dict]:
-        """Retrieve all items for a specific item set ID using pagination."""
+    def get_items_by_set(self, item_set_id: int) -> List[Dict[str, Any]]:
+        """
+        Retrieve all items for a specific item set ID using pagination.
+        
+        Args:
+            item_set_id: The ID of the item set to fetch
+            
+        Returns:
+            List[Dict[str, Any]]: Complete list of items from all pages
+        """
         items = []
         page = 1
         while True:
@@ -127,8 +153,18 @@ class ContentProcessor:
     """Process and analyze content from Omeka items."""
     
     @staticmethod
-    def extract_content(items: List[dict], country: str, newspaper: str) -> List[dict]:
-        """Extract content and compute word counts."""
+    def extract_content(items: List[Dict[str, Any]], country: str, newspaper: str) -> List[Dict[str, Any]]:
+        """
+        Extract content and compute word counts.
+        
+        Args:
+            items: List of items from the API
+            country: Country name for the items
+            newspaper: Newspaper name for the items
+            
+        Returns:
+            List[Dict[str, Any]]: Processed content data with word counts
+        """
         content_data = []
         for item in items:
             for value in item.get('bibo:content', []):
@@ -143,23 +179,47 @@ class ContentProcessor:
 
     @staticmethod
     def format_number(number: int) -> str:
-        """Format number with spaces as thousand separators."""
+        """
+        Format number with spaces as thousand separators.
+        
+        Args:
+            number: The number to format
+            
+        Returns:
+            str: Formatted number string with space separators
+        """
         return f"{number:,}".replace(",", " ")
 
     @staticmethod
     def create_label(newspaper: str, word_count: int, language: str = 'en') -> str:
-        """Create a formatted label for visualizations."""
+        """
+        Create a formatted label for visualizations.
+        
+        Args:
+            newspaper: Name of the newspaper
+            word_count: Number of words to display
+            language: Language code for the label ('en' or 'fr')
+            
+        Returns:
+            str: Formatted label string
+        """
         formatted_count = ContentProcessor.format_number(word_count)
         return f"{newspaper}<br>{formatted_count} {'mots' if language == 'fr' else 'words'}"
 
 class DataVisualizer:
     """Generate and save visualizations."""
     
-    def __init__(self, output_dir: Path):
+    def __init__(self, output_dir: Path) -> None:
         self.output_dir = output_dir
 
     def create_treemap(self, df: pd.DataFrame, language: str = 'en') -> None:
-        """Create and save treemap visualization."""
+        """
+        Create and save treemap visualization.
+        
+        Args:
+            df: DataFrame containing the data to visualize
+            language: Language code for the visualization ('en' or 'fr')
+        """
         total_words = ContentProcessor.format_number(df['word_count'].sum())
         
         title = {
@@ -187,7 +247,8 @@ class DataVisualizer:
         fig.write_html(str(output_file))
         logger.info(f"Saved treemap visualization to {output_file}")
 
-def main():
+def main() -> None:
+    """Main execution function."""
     # Load environment variables
     env_path = SCRIPT_DIR.parent / '.env'
     load_dotenv(dotenv_path=env_path)
@@ -214,14 +275,14 @@ def main():
     # Collect data
     all_data = []
     with ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_set = {
+        future_to_set: Dict[Future[str], Tuple[str, int]] = {
             executor.submit(api_client.get_item_set_name, set_id): (country, set_id)
             for country, sets in config.item_sets.items()
             for set_id in sets
         }
 
-        total_sets = len(future_to_set)
-        completed = 0
+        total_sets: int = len(future_to_set)
+        completed: int = 0
         
         for future in as_completed(future_to_set):
             country, set_id = future_to_set[future]
