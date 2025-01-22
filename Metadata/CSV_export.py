@@ -984,11 +984,12 @@ async def map_newspaper_article(item: Dict[str, Any], api_client: OmekaApiClient
         'o:resource_class': 'bibo:Article',
         'o:item_set': join_values(item, 'o:item_set', ''),
         'o:media/file': get_media_ids(item),
-        'o:primary_media': primary_media_url,  # New column
+        'o:primary_media': primary_media_url,
         'dcterms:title': get_value(item, 'dcterms:title'),
         'dcterms:creator': join_values(item, 'dcterms:creator', ''),
         'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
         'dcterms:date': get_value(item, 'dcterms:date'),
+        'dcterms:type': get_value(item, 'dcterms:type'),
         'dcterms:abstract': get_value(item, 'dcterms:abstract'),
         'bibo:pages': get_value(item, 'bibo:pages'),
         'bibo:numPages': get_value(item, 'bibo:numPages'),
