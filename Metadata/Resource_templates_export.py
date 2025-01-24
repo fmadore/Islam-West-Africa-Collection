@@ -1,3 +1,23 @@
+"""Script to export resource templates from an Omeka-S instance.
+
+This script connects to an Omeka-S API and exports all resource templates to individual
+JSON files. Resource templates define the metadata structure for different types of items
+in the Omeka-S database. The script includes features for robust error handling,
+pagination support, and safe file naming.
+
+Environment Variables Required:
+    OMEKA_BASE_URL: Base URL of the Omeka-S instance
+    OMEKA_KEY_IDENTITY: API key identity
+    OMEKA_KEY_CREDENTIAL: API key credential
+
+Output:
+    Creates individual JSON files for each resource template in the
+    'Resource_templates' directory, with filenames based on template labels.
+
+Usage:
+    python Resource_templates_export.py
+"""
+
 import os
 import json
 import logging
@@ -12,7 +32,22 @@ from urllib.parse import urljoin
 from requests.exceptions import RequestException, HTTPError
 
 def setup_logging(script_dir: Path) -> logging.Logger:
-    """Set up logging configuration with files stored in script directory."""
+    """Set up logging configuration for the script.
+
+    Configures both file and console logging with appropriate formatting
+    and log levels. Log files are stored in the script directory.
+
+    Args:
+        script_dir (Path): Directory where the script is located and where
+                          log files will be stored
+
+    Returns:
+        logging.Logger: Configured logger instance
+
+    Note:
+        Creates a log file named 'omeka_export.log' in the script directory
+        Console output and file logging are both set to INFO level
+    """
     log_file = script_dir / 'omeka_export.log'
     
     # Create formatter
@@ -43,7 +78,21 @@ def setup_logging(script_dir: Path) -> logging.Logger:
 
 @dataclass
 class Config:
-    """Configuration for the Omeka API client."""
+    """Configuration settings for the Omeka-S API connection.
+    
+    This class manages the configuration settings needed to connect to and interact with
+    the Omeka-S API. It includes validation of required environment variables and
+    handles path configuration for output files.
+
+    Attributes:
+        API_URL (str): Base URL of the Omeka-S API endpoint
+        API_KEY_IDENTITY (str): API key identity for authentication
+        API_KEY_CREDENTIAL (str): API key credential for authentication
+        OUTPUT_DIR (Path): Directory where resource template files will be saved
+
+    Note:
+        The API_URL will be automatically adjusted to ensure it ends with '/api'
+    """
     API_URL: str = field(default_factory=str)
     API_KEY_IDENTITY: str = field(default_factory=str)
     API_KEY_CREDENTIAL: str = field(default_factory=str)
@@ -51,7 +100,21 @@ class Config:
     
     @classmethod
     def from_env(cls, script_dir: Path) -> 'Config':
-        """Create a Config instance from environment variables."""
+        """Create a Config instance from environment variables.
+
+        Loads configuration from a .env file in the parent directory and validates
+        all required variables are present.
+
+        Args:
+            script_dir (Path): Directory where the script is located, used to
+                             locate the .env file and set output directory
+
+        Returns:
+            Config: Initialized configuration object
+
+        Raises:
+            ValueError: If any required environment variables are missing
+        """
         # Look for .env file in parent directories
         env_path = script_dir.parent.parent / '.env'
         load_dotenv(env_path)
@@ -76,13 +139,36 @@ class Config:
         )
 
 class OmekaApiError(Exception):
-    """Custom exception for Omeka API-related errors."""
+    """Custom exception for Omeka-S API-related errors.
+    
+    This exception is raised for any API-related issues including:
+    - HTTP errors (non-200 responses)
+    - Network connectivity issues
+    - Invalid JSON responses
+    - Authentication failures
+    """
     pass
 
 class OmekaApiClient:
-    """Client for interacting with the Omeka API."""
+    """Client for interacting with the Omeka-S API.
+    
+    This class handles all direct interactions with the Omeka-S API, including
+    authentication, request management, pagination, and error handling. It provides
+    methods to fetch resource templates and handles API-specific error cases.
+
+    Attributes:
+        config (Config): Configuration settings for API connection
+        logger (logging.Logger): Logger instance for recording operations
+        session (requests.Session): Persistent session for making API requests
+    """
     
     def __init__(self, config: Config, logger: logging.Logger):
+        """Initialize the API client.
+
+        Args:
+            config (Config): Configuration object containing API credentials and settings
+            logger (logging.Logger): Logger instance for recording operations
+        """
         self.config = config
         self.logger = logger
         self.session = requests.Session()
@@ -96,7 +182,21 @@ class OmekaApiClient:
         endpoint: str,
         params: Optional[Dict[str, Any]] = None
     ) -> List[Dict[str, Any]]:
-        """Make a GET request to the Omeka API."""
+        """Make a GET request to the Omeka-S API.
+
+        Handles the actual HTTP request to the API, including error handling
+        and response processing.
+
+        Args:
+            endpoint (str): API endpoint to request
+            params (Optional[Dict[str, Any]]): Query parameters for the request
+
+        Returns:
+            List[Dict[str, Any]]: JSON response from the API
+
+        Raises:
+            OmekaApiError: For any API-related errors (HTTP errors, network issues, etc.)
+        """
         endpoint = endpoint.lstrip('/')
         url = urljoin(self.config.API_URL + '/', endpoint)
         
@@ -118,7 +218,21 @@ class OmekaApiClient:
             raise OmekaApiError(f"Failed to parse JSON response: {str(e)}") from e
 
     def fetch_resource_templates(self, batch_size: int = 100) -> Iterator[Dict[str, Any]]:
-        """Fetch all resource templates from the API."""
+        """Fetch all resource templates from the API.
+
+        Retrieves resource templates in batches using pagination. Uses a progress
+        bar to show fetch progress.
+
+        Args:
+            batch_size (int, optional): Number of templates to fetch per request.
+                                      Defaults to 100.
+
+        Yields:
+            Dict[str, Any]: Individual resource template data
+
+        Note:
+            Uses tqdm to display a progress bar during fetching
+        """
         page = 1
         total_fetched = 0
         
@@ -142,21 +256,57 @@ class OmekaApiClient:
         self.logger.info(f"Fetched {total_fetched} resource templates")
 
 class JsonFileGenerator:
-    """Generator for creating JSON files from templates."""
+    """Generator for creating JSON files from resource templates.
+    
+    This class handles the process of writing resource templates to individual
+    JSON files, including filename sanitization and error handling.
+
+    Attributes:
+        output_dir (Path): Directory where JSON files will be written
+        logger (logging.Logger): Logger instance for recording operations
+    """
     
     def __init__(self, output_dir: Path, logger: logging.Logger):
+        """Initialize the JSON file generator.
+
+        Args:
+            output_dir (Path): Directory where JSON files will be written
+            logger (logging.Logger): Logger instance for recording operations
+        """
         self.output_dir = output_dir
         self.logger = logger
 
     @staticmethod
     def sanitize_filename(filename: str) -> str:
-        """Create a safe filename from a template label."""
+        """Create a safe filename from a template label.
+
+        Converts a template label into a valid filename by:
+        - Replacing invalid characters with underscores
+        - Collapsing multiple underscores
+        - Removing leading/trailing underscores
+
+        Args:
+            filename (str): Original filename to sanitize
+
+        Returns:
+            str: Sanitized filename safe for use in the filesystem
+        """
         clean_name = re.sub(r'[^\w\-_\. ]', '_', filename)
         clean_name = re.sub(r'_+', '_', clean_name.replace(' ', '_'))
         return clean_name.strip('_')
 
     def generate_json_file(self, template: Dict[str, Any]) -> None:
-        """Generate a single JSON file from a template."""
+        """Generate a single JSON file from a template.
+
+        Creates a JSON file for a single resource template, using the template's
+        label as the filename (after sanitization).
+
+        Args:
+            template (Dict[str, Any]): Resource template data to write
+
+        Raises:
+            OSError: If there are issues creating the directory or writing the file
+        """
         template_id = template.get('o:id', 'unknown')
         template_label = template.get('o:label', f'Unknown_{template_id}')
         
@@ -175,7 +325,17 @@ class JsonFileGenerator:
             raise
 
     def generate_json_files(self, templates: Iterator[Dict[str, Any]]) -> None:
-        """Generate JSON files for all templates."""
+        """Generate JSON files for all templates.
+
+        Creates the output directory if it doesn't exist and processes all templates,
+        creating individual JSON files for each. Uses a progress bar to show progress.
+
+        Args:
+            templates (Iterator[Dict[str, Any]]): Iterator of resource templates to process
+
+        Note:
+            Continues processing remaining templates even if one fails
+        """
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
         for template in tqdm(templates, desc="Generating JSON files"):
@@ -185,7 +345,21 @@ class JsonFileGenerator:
                 self.logger.error(f"Failed to process template {template.get('o:id', 'unknown')}: {str(e)}")
 
 def main() -> None:
-    """Main execution function."""
+    """Main execution function for the resource template export script.
+
+    This function orchestrates the entire export process:
+    1. Sets up logging
+    2. Loads configuration from environment
+    3. Initializes API client
+    4. Fetches resource templates
+    5. Generates JSON files
+
+    The function handles all high-level errors and ensures proper error reporting
+    before exiting.
+
+    Raises:
+        SystemExit: With exit code 1 if any critical errors occur
+    """
     # Get script directory
     script_dir = Path(__file__).parent.absolute()
     
