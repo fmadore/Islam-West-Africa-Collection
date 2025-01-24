@@ -147,16 +147,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -203,6 +193,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000001"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -455,16 +455,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -501,6 +491,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000002"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -651,16 +651,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -707,6 +697,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000003"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -915,16 +915,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -961,6 +951,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000004"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -1102,16 +1102,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -1148,6 +1138,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000005"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -1340,16 +1340,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -1386,6 +1376,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000006"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -1518,16 +1518,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -1564,6 +1554,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000007"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -1720,16 +1720,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -1766,6 +1756,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000008"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -2520,16 +2520,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -2566,6 +2556,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000009"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -2726,16 +2726,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -2772,6 +2762,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000010"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -3152,16 +3152,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -3198,6 +3188,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000011"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -3391,16 +3391,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -3437,6 +3427,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000012"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -3594,16 +3594,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -3640,6 +3630,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000013"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -3843,16 +3843,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -3889,6 +3879,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000014"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -4079,16 +4079,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -4125,6 +4115,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000015"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -4481,16 +4481,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -4543,6 +4533,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000016"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -4833,16 +4833,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "resource:item",
@@ -4879,6 +4869,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000017"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -5012,16 +5012,6 @@
         "display_title": "Lomé"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "customvocab:6",
@@ -5071,6 +5061,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000018"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -5229,16 +5229,6 @@
         "thumbnail_type": "image/png"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "customvocab:6",
@@ -5288,6 +5278,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000019"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -5471,16 +5471,6 @@
         "display_title": "Université al-Azhar"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "customvocab:6",
@@ -5530,6 +5520,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000020"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -5729,16 +5729,6 @@
         "display_title": "Lomé"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "customvocab:6",
@@ -5788,6 +5778,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000021"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
@@ -6009,16 +6009,6 @@
         "display_title": "Cotonou"
       }
     ],
-    "dcterms:rights": [
-      {
-        "type": "rights_statement",
-        "property_id": 15,
-        "property_label": "Rights",
-        "is_public": true,
-        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
-        "o:label": "In Copyright - Educational Use Permitted"
-      }
-    ],
     "dcterms:language": [
       {
         "type": "customvocab:6",
@@ -6068,6 +6058,16 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-document-0000022"
+      }
+    ],
+    "dcterms:rights": [
+      {
+        "type": "rights_statement",
+        "property_id": 15,
+        "property_label": "Rights",
+        "is_public": true,
+        "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+        "o:label": "In Copyright - Educational Use Permitted"
       }
     ],
     "bibo:content": [
