@@ -674,6 +674,8 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 64633,https://islam.zmo.de/s/afrique_ouest/item/64633,,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Congrès AJMCI (1996),,,1995,,,,,Association des Jeunes Musulmans de Côte d'Ivoire,,Côte d'Ivoire,,,,,,
 64634,https://islam.zmo.de/s/afrique_ouest/item/64634,,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Congrès CNI (1996),,,1994,,Conseil National Islamique,,,,,Côte d'Ivoire,,,,,,
 65686,https://islam.zmo.de/s/afrique_ouest/item/65686,,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Congrès UMT (1970),,,1970,,,,,Union Musulmane du Togo,,Togo,,,,,,
+67433,https://islam.zmo.de/s/afrique_ouest/item/67433,,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Élections au Togo,,,,,,,,,Élection présidentielle togolaise de 1993,Togo,,,,,,
+67434,https://islam.zmo.de/s/afrique_ouest/item/67434,,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Élection présidentielle togolaise de 1993,,,1993-08-25,,,,,Élections au Togo,,Togo,,,,,,
 269,https://islam.zmo.de/s/afrique_ouest/item/269,iwac-index-0000607,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Abidjan,,,,,,,,Côte d'Ivoire,,,,,,,,"5.35444, -4.00167"
 270,https://islam.zmo.de/s/afrique_ouest/item/270,iwac-index-0000608,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Abomey,,,,,,,,Bénin,,,,,,,,"7.18286, 1.99119"
 271,https://islam.zmo.de/s/afrique_ouest/item/271,iwac-index-0000609,dcterms:Location,https://islam.zmo.de/api/item_sets/268,,Abomey-Calavi,,,,,,,,Bénin,,,,,,,,"6.44852, 2.35566"
@@ -1559,6 +1561,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 26333,https://islam.zmo.de/s/afrique_ouest/item/26333,iwac-index-0001213,foaf:Organization,https://islam.zmo.de/api/item_sets/854,,Association de la Jeunesse Musulmane du Togo,AJMT,1963,,,,,,Organisation islamique,,Togo,,,,,,
 26344,https://islam.zmo.de/s/afrique_ouest/item/26344,iwac-index-0001214,foaf:Organization,https://islam.zmo.de/api/item_sets/854,,Dossier de l'Islam,Malafou Islam,,,,Kassim Mensah,,,Organisation islamique,,Togo,,,,,,
 26349,https://islam.zmo.de/s/afrique_ouest/item/26349,iwac-index-0001215,foaf:Organization,https://islam.zmo.de/api/item_sets/854,,Commission Nationale du Hadj,CNH,,,,Hadj,,,Organisation islamique,,Togo,,,,,,
+27661,https://islam.zmo.de/s/afrique_ouest/item/27661,,foaf:Organization,https://islam.zmo.de/api/item_sets/854,,Confédération Nationale des Travailleurs du Togo,CNTT,,,,,,,,,Togo,,,,,,
 27737,https://islam.zmo.de/s/afrique_ouest/item/27737,iwac-index-0001216,foaf:Organization,https://islam.zmo.de/api/item_sets/854,,"Organisation pour le Développement, l'Éducation et le Suivi des Convertis en Islam",ODESCI,,,,,,,Organisation islamique,,Togo,,,,,,
 27741,https://islam.zmo.de/s/afrique_ouest/item/27741,iwac-index-0002990,foaf:Organization,https://islam.zmo.de/api/item_sets/854,,Parti National Panafricain,PNP,,,,,,,Parti politique,,Togo,,,,,,
 27786,https://islam.zmo.de/s/afrique_ouest/item/27786,iwac-index-0001217,foaf:Organization,https://islam.zmo.de/api/item_sets/854,,"Commission Nationale de Lutte contre la Prolifération, la Circulation et le Trafic Illicite des Armes Légères et de Petits Calibres",CNLPAL,,,,,,,,,Togo,,,,,,
@@ -3184,6 +3187,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 26359,https://islam.zmo.de/s/afrique_ouest/item/26359,iwac-index-0002766,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Abi-Alfa Izotou,,,,,,,,Le Rendez-Vous,,Togo,,Abi-Alfa,Izotou,Homme,,
 27735,https://islam.zmo.de/s/afrique_ouest/item/27735,iwac-index-0003053,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Ibrahima Ouro-Gouni,,,,,,,,Association des Élèves et Étudiants Musulmans au Togo,,Togo,,Ibrahima,Ouro-Gouni,,,
 27752,https://islam.zmo.de/s/afrique_ouest/item/27752,iwac-index-0003054,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Agbéyomé Kodjo,Kodjo Agbéyomé|Messan Agbéyomé Kodjo,,2024-03-03,,,,,Politicien.ne,,Togo,,Agbéyomé,Kodjo,Homme,1954-10-12,
+27794,https://islam.zmo.de/s/afrique_ouest/item/27794,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Boukari Djobo,,,1996,,,,,,,Togo,,Boukari,Djobo,,1936,
 27911,https://islam.zmo.de/s/afrique_ouest/item/27911,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Edem Kodjo,Edem Kodjovi Kodjo,,2020-04-11,,,,,Politicien.ne,,Togo,,Edem,Kodjo,Homme,1938-05,
 27969,https://islam.zmo.de/s/afrique_ouest/item/27969,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Séyi Mèmène,,,,,,,,,,Togo,,Séyi,Mèmène,,1939,
 31349,https://islam.zmo.de/s/afrique_ouest/item/31349,iwac-index-0002767,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Kpatcha Gnassingbé,,,,,,,,Politicien.ne,,Togo,,Kpatcha,Gnassingbé,Homme,1970-09-06,
@@ -3812,3 +3816,6 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 67413,https://islam.zmo.de/s/afrique_ouest/item/67413,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Julienne Tapsoba,,,,,,,,Forum Hebdo,,Togo,,Julienne,Tapsoba,,,
 67414,https://islam.zmo.de/s/afrique_ouest/item/67414,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,K. A. B.,,,,,,,,Forum Hebdo,,Togo,,,,,,
 67415,https://islam.zmo.de/s/afrique_ouest/item/67415,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,L'Ebène Noir,,,,,,,,Forum Hebdo,,Togo,,,,,,
+67431,https://islam.zmo.de/s/afrique_ouest/item/67431,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,L. T.,,,,,,,,Journaliste|La Lettre de Tchaoudjo,,Togo,,,,,,
+67432,https://islam.zmo.de/s/afrique_ouest/item/67432,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Adjayo,,,,,,,,La Lettre de Tchaoudjo,,Togo,,,,,,
+67435,https://islam.zmo.de/s/afrique_ouest/item/67435,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Imam Souleymane,,,,,,,,,,Togo,,,,,,
