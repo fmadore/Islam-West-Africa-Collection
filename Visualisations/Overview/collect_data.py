@@ -54,13 +54,11 @@ def main():
     try:
         logger.info("Starting data collection process")
         
-        # Setup paths - using current directory instead of /app
-        current_dir = Path.cwd()
-        cache_dir = current_dir / 'data' / 'cache'
-        cache_dir.mkdir(parents=True, exist_ok=True)
-        metadata_file = cache_dir / 'metadata.json'
+        # Setup paths - using script directory
+        script_dir = Path(__file__).resolve().parent
+        metadata_file = script_dir / 'metadata.json'
         
-        logger.info(f"Cache directory: {cache_dir}")
+        logger.info(f"Script directory: {script_dir}")
         logger.info(f"Metadata file: {metadata_file}")
         
         # Verify environment variables
@@ -76,8 +74,8 @@ def main():
             
         logger.info("Starting data collection from Omeka S")
         
-        # Initialize client
-        client = OmekaClient(OmekaConfig(cache_dir=cache_dir))
+        # Initialize client with script directory as cache dir
+        client = OmekaClient(OmekaConfig(cache_dir=script_dir))
         
         # Fetch all items (force cache update)
         items = client.fetch_all_data(use_cache=False)
