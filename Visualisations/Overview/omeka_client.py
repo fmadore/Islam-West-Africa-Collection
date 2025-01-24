@@ -179,7 +179,7 @@ class ResourceType(Enum):
 @dataclass
 class OmekaConfig:
     """Configuration class with validation and default values"""
-    base_url: str = field(default_factory=lambda: os.getenv('IWAC_BASE_URL', ''))
+    base_url: str = field(default_factory=lambda: os.getenv('OMEKA_BASE_URL', ''))
     key_identity: str = field(default_factory=lambda: os.getenv('IWAC_KEY_IDENTITY', ''))
     key_credential: str = field(default_factory=lambda: os.getenv('IWAC_KEY_CREDENTIAL', ''))
     cache_dir: Path = field(default_factory=lambda: Path('/app/data/cache'))
