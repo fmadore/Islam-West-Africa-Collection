@@ -182,7 +182,7 @@ class OmekaConfig:
     base_url: str = field(default_factory=lambda: os.getenv('OMEKA_BASE_URL', ''))
     key_identity: str = field(default_factory=lambda: os.getenv('IWAC_KEY_IDENTITY', ''))
     key_credential: str = field(default_factory=lambda: os.getenv('IWAC_KEY_CREDENTIAL', ''))
-    cache_dir: Path = field(default_factory=lambda: Path('/app/data/cache'))
+    cache_dir: Path = field(default_factory=lambda: Path(__file__).resolve().parent)
 
     def __post_init__(self):
         """Validate configuration after initialization"""
