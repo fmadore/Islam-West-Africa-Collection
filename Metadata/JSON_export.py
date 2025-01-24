@@ -1,3 +1,18 @@
+"""Script to export data from an Omeka-S instance to JSON-LD files.
+
+This script connects to an Omeka-S API, fetches items of various types (documents, images,
+references, etc.), processes them, and exports them as JSON-LD files. It includes robust
+error handling, pagination support, and type safety features.
+
+Environment Variables Required:
+    OMEKA_BASE_URL: Base URL of the Omeka-S instance
+    OMEKA_KEY_IDENTITY: API key identity
+    OMEKA_KEY_CREDENTIAL: API key credential
+
+Usage:
+    python JSON_export.py
+"""
+
 import os
 import json
 import logging
@@ -14,7 +29,17 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 class ResourceClassId(Enum):
-    """Enum for resource class IDs to improve maintainability and type safety"""
+    """Enumeration of Omeka-S resource class IDs.
+    
+    This enum provides type-safe access to resource class IDs used in the Omeka-S instance.
+    Each enum value corresponds to a specific type of resource in the database.
+    
+    Attributes:
+        DOCUMENTS (int): Class ID for general documents
+        AUDIO_VISUAL (int): Class ID for audio/visual materials
+        IMAGES (int): Class ID for image resources
+        And so on...
+    """
     DOCUMENTS = 49
     AUDIO_VISUAL = 38
     IMAGES = 58
@@ -37,7 +62,18 @@ class ResourceClassId(Enum):
 
 @dataclass
 class Config:
-    """Configuration class with validation and default values"""
+    """Configuration settings for the Omeka-S API connection.
+    
+    This class manages the configuration settings needed to connect to and interact with
+    the Omeka-S API. It includes validation of required environment variables and
+    handles path configuration for output files.
+
+    Attributes:
+        API_URL (str): Base URL of the Omeka-S instance
+        API_KEY_IDENTITY (str): API key identity for authentication
+        API_KEY_CREDENTIAL (str): API key credential for authentication
+        OUTPUT_DIR (Path): Directory where JSON-LD files will be saved
+    """
     API_URL: str = field(default_factory=lambda: os.getenv('OMEKA_BASE_URL', ''))
     API_KEY_IDENTITY: str = field(default_factory=lambda: os.getenv('OMEKA_KEY_IDENTITY', ''))
     API_KEY_CREDENTIAL: str = field(default_factory=lambda: os.getenv('OMEKA_KEY_CREDENTIAL', ''))
@@ -51,11 +87,30 @@ class Config:
         self.API_URL = self.API_URL.rstrip('/')
 
 class ApiError(Exception):
-    """Custom exception for API-related errors"""
+    """Custom exception for handling API-related errors.
+    
+    This exception is raised when there are issues with API requests, including
+    connection failures, authentication errors, or invalid responses.
+    """
     pass
 
 class OmekaApiClient:
+    """Client for interacting with the Omeka-S API.
+    
+    This class handles all direct interactions with the Omeka-S API, including
+    authentication, request management, pagination, and error handling.
+
+    Attributes:
+        config (Config): Configuration settings for API connection
+        session (requests.Session): Persistent session for making API requests
+    """
+
     def __init__(self, config: Config):
+        """Initialize the API client with configuration settings.
+
+        Args:
+            config (Config): Configuration object containing API credentials and settings
+        """
         self.config = config
         self.session = requests.Session()
         self.session.params.update({
@@ -64,7 +119,18 @@ class OmekaApiClient:
         })
 
     def _make_request(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
-        """Make API request with improved error handling and retry logic"""
+        """Make an HTTP request to the Omeka-S API with retry logic.
+
+        Args:
+            endpoint (str): API endpoint to request
+            params (Optional[Dict[str, Any]]): Query parameters for the request
+
+        Returns:
+            List[Dict[str, Any]]: JSON response from the API
+
+        Raises:
+            ApiError: If the request fails after all retry attempts
+        """
         url = f"{self.config.API_URL}/{endpoint}"
         params = params or {}
         
@@ -82,7 +148,17 @@ class OmekaApiClient:
         return []
 
     def _paginated_fetch(self, endpoint: str, params: Dict[str, Any] = None) -> Iterator[Dict[str, Any]]:
-        """Generic paginated fetch method"""
+        """Fetch all pages of results from a paginated API endpoint.
+
+        Handles pagination automatically, yielding items from each page of results.
+
+        Args:
+            endpoint (str): API endpoint to fetch from
+            params (Dict[str, Any], optional): Additional query parameters
+
+        Yields:
+            Dict[str, Any]: Individual items from the paginated response
+        """
         params = params or {}
         page = 1
         per_page = 100
@@ -96,7 +172,17 @@ class OmekaApiClient:
             page += 1
 
     def fetch_items(self, resource_class_id: ResourceClassId) -> List[Dict[str, Any]]:
-        """Fetch items with improved type safety"""
+        """Fetch items of a specific resource class from the Omeka-S API.
+
+        Args:
+            resource_class_id (ResourceClassId): The resource class ID to fetch items for
+
+        Returns:
+            List[Dict[str, Any]]: List of items matching the resource class ID
+
+        Note:
+            Uses tqdm to display a progress bar during fetching
+        """
         items = []
         item_type = self.get_item_type_name(resource_class_id)
         logger.info(f"Fetching {item_type}...")
@@ -111,7 +197,14 @@ class OmekaApiClient:
 
     @staticmethod
     def get_item_type_name(resource_class_id: ResourceClassId) -> str:
-        """Get item type name with type safety"""
+        """Convert a resource class ID to a human-readable type name.
+
+        Args:
+            resource_class_id (ResourceClassId): The resource class ID to get the name for
+
+        Returns:
+            str: Human-readable name for the resource class
+        """
         item_type_map = {
             ResourceClassId.DOCUMENTS: "documents",
             ResourceClassId.AUDIO_VISUAL: "audio/visual documents",
@@ -136,7 +229,22 @@ class OmekaApiClient:
         return item_type_map.get(resource_class_id, f"items (class {resource_class_id.value})")
 
     def fetch_all_items(self) -> tuple[List[Dict[str, Any]], ...]:
-        """Fetch all items with improved organization"""
+        """Fetch all items from the Omeka-S API across all resource types.
+
+        This method fetches items across multiple categories:
+        - Main items (documents, audio/visual, images)
+        - Index items (authorities, events, locations, organizations, persons)
+        - Issues and newspaper articles
+        - References (articles, chapters, theses, etc.)
+        - Item sets and media
+
+        Returns:
+            tuple: A tuple containing:
+                - List of main and index items
+                - List of item sets
+                - List of media items
+                - List of reference items
+        """
         logger.info("Starting comprehensive data fetch...")
         
         # Fetch main items
@@ -190,7 +298,17 @@ class OmekaApiClient:
 
 @dataclass
 class ProcessedData:
-    """Data class for processed items"""
+    """Container for processed Omeka-S items organized by type.
+    
+    This class stores items fetched from the API, organized into categories based on
+    their resource type. Each attribute is a list of items of a specific type.
+
+    Attributes:
+        audio_visual_documents (List[Dict[str, Any]]): Audio/visual materials
+        documents (List[Dict[str, Any]]): General documents
+        images (List[Dict[str, Any]]): Image resources
+        And so on...
+    """
     audio_visual_documents: List[Dict[str, Any]] = field(default_factory=list)
     documents: List[Dict[str, Any]] = field(default_factory=list)
     images: List[Dict[str, Any]] = field(default_factory=list)
@@ -202,6 +320,18 @@ class ProcessedData:
     references: List[Dict[str, Any]] = field(default_factory=list)
 
 class JsonLdProcessor:
+    """Processes raw API data into organized JSON-LD format.
+    
+    This class handles the transformation of raw API responses into properly
+    structured JSON-LD data, organizing items by type and ensuring proper
+    formatting.
+
+    Attributes:
+        raw_data (List[Dict[str, Any]]): Unprocessed items from the API
+        item_sets (List[Dict[str, Any]]): Item set data
+        media (List[Dict[str, Any]]): Media item data
+        references (List[Dict[str, Any]]): Reference item data
+    """
     def __init__(self, raw_data: List[Dict[str, Any]], item_sets: List[Dict[str, Any]], 
                  media: List[Dict[str, Any]], references: List[Dict[str, Any]]):
         self.raw_data = raw_data
@@ -210,7 +340,15 @@ class JsonLdProcessor:
         self.references = references
 
     def process(self) -> ProcessedData:
-        """Process data with improved type safety"""
+        """Process raw API data into organized categories.
+
+        This method takes the raw data from the API and organizes it into
+        appropriate categories based on item types. It handles the classification
+        and sorting of items into their respective collections.
+
+        Returns:
+            ProcessedData: Processed and categorized items
+        """
         processed_data = ProcessedData()
         processed_data.item_sets = self.item_sets
         processed_data.media = self.media
@@ -226,7 +364,17 @@ class JsonLdProcessor:
 
     @staticmethod
     def determine_item_type(item: Dict[str, Any]) -> str:
-        """Determine item type with improved logic"""
+        """Determine the type of an item based on its metadata.
+
+        This method analyzes an item's metadata to determine its type category
+        based on both the '@type' field and resource class ID.
+
+        Args:
+            item (Dict[str, Any]): The item to analyze
+
+        Returns:
+            str: The determined item type category name
+        """
         item_types = item.get('@type', [])
         resource_class_id = item.get('o:resource_class', {}).get('o:id')
         
@@ -256,12 +404,28 @@ class JsonLdProcessor:
         return resource_class_mapping.get(resource_class_id, 'other')
 
 class JsonLdFileGenerator:
+    """Generates JSON-LD files from processed data.
+    
+    This class handles the final step of writing processed data to disk as
+    JSON-LD files, with one file per item type.
+
+    Attributes:
+        processed_data (ProcessedData): Organized data ready for export
+        output_dir (Path): Directory where files will be written
+    """
     def __init__(self, processed_data: ProcessedData, output_dir: Path):
         self.processed_data = processed_data
         self.output_dir = output_dir
 
     def generate_all_files(self):
-        """Generate JSON-LD files with improved error handling"""
+        """Generate JSON-LD files for all processed data categories.
+
+        Creates the output directory if it doesn't exist and generates
+        a separate JSON-LD file for each non-empty category of items.
+
+        Raises:
+            IOError: If there are issues creating the output directory or writing files
+        """
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
         for field_name in self.processed_data.__dataclass_fields__:
@@ -270,7 +434,15 @@ class JsonLdFileGenerator:
                 self.generate_json_file(field_name, items)
 
     def generate_json_file(self, item_type: str, items: List[Dict[str, Any]]):
-        """Generate individual JSON-LD file with improved error handling"""
+        """Generate a JSON-LD file for a specific item type.
+
+        Args:
+            item_type (str): The type of items being written
+            items (List[Dict[str, Any]]): The items to write to the file
+
+        Raises:
+            IOError: If there are issues writing the file
+        """
         filepath = self.output_dir / f"{item_type}.json"
         
         try:
@@ -282,7 +454,20 @@ class JsonLdFileGenerator:
             raise
 
 def main():
-    """Main function with improved error handling and organization"""
+    """Main entry point for the Omeka-S data export script.
+
+    This function orchestrates the entire export process:
+    1. Loads environment variables
+    2. Initializes API client
+    3. Fetches data from the API
+    4. Processes the fetched data
+    5. Generates JSON-LD output files
+
+    Raises:
+        ValueError: If configuration is invalid
+        ApiError: If API requests fail
+        Exception: For unexpected errors
+    """
     try:
         logger.info("Starting the Omeka data export process...")
         
