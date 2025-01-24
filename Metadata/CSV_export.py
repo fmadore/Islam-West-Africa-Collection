@@ -937,7 +937,29 @@ def map_index(item: Dict[str, Any]) -> Dict[str, Any]:
         'coordinates': get_value(item, 'curation:coordinates'),
     }
 
+"""Maps an Omeka-S issue item to a standardized dictionary format.
+
+This function takes an Omeka-S issue item and transforms it into a structured dictionary
+with standardized field names and values. It handles the extraction and formatting of
+various metadata fields including identifiers, titles, creators, and media references.
+
+Args:
+    item (Dict[str, Any]): The raw issue item data from Omeka-S API
+    api_client (OmekaApiClient): Client instance for making additional API requests
+
+Returns:
+    Dict[str, Any]: A dictionary containing the mapped issue data with the following key fields:
+        - Basic identifiers (o:id, url, dcterms:identifier)
+        - Resource and set information (o:resource_class, o:item_set)
+        - Media references (o:media/file, o:primary_media)
+        - Bibliographic metadata (title, creator, publisher, date, type)
+        - Issue-specific fields (issue number, abstract, page count)
+        - Subject and spatial metadata
+        - Rights and source information
+        - Content and URL references
+"""
 async def map_issue(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
+    # Fetch the primary media URL if available
     primary_media_url = ''
     if 'o:primary_media' in item and item['o:primary_media']:
         media_id = item['o:primary_media']['@id'].split('/')[-1]
@@ -945,29 +967,45 @@ async def map_issue(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[st
         primary_media_url = media_data.get('o:original_url', '')
 
     return {
+        # Basic identification fields
         'o:id': get_value(item, 'o:id'),
         'url': f"https://islam.zmo.de/s/afrique_ouest/item/{get_value(item, 'o:id')}",
         'dcterms:identifier': get_value(item, 'dcterms:identifier'),
-        'o:resource_class': 'bibo:Issue',
-        'o:item_set': join_values(item, 'o:item_set', ''),
-        'o:media/file': get_media_ids(item),
-        'o:primary_media': primary_media_url,  # New column
-        'dcterms:title': get_value(item, 'dcterms:title'),
-        'dcterms:creator': join_values(item, 'dcterms:creator', ''),
-        'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),
-        'dcterms:date': get_value(item, 'dcterms:date'),
-        'bibo:issue': get_value(item, 'bibo:issue'),
-        'dcterms:abstract': get_value(item, 'dcterms:abstract'),
-        'bibo:numPages': get_value(item, 'bibo:numPages'),
-        'dcterms:subject': join_values(item, 'dcterms:subject', ''),
-        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),
-        'dcterms:rights': get_value(item, 'dcterms:rights'),
-        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder'),
-        'dcterms:language': get_value(item, 'dcterms:language'),
-        'dcterms:source': get_value(item, 'dcterms:source'),
-        'dcterms:contributor': join_values(item, 'dcterms:contributor', ''),
-        'fabio:hasURL': get_value(item, 'fabio:hasURL'),
-        'bibo:content': get_value(item, 'bibo:content'),
+        'o:resource_class': 'bibo:Issue',  # Fixed value for issues
+        
+        # Collection and media information
+        'o:item_set': join_values(item, 'o:item_set', ''),  # Collection memberships
+        'o:media/file': get_media_ids(item),  # Associated media files
+        'o:primary_media': primary_media_url,  # URL of the primary media
+        
+        # Core bibliographic metadata
+        'dcterms:title': get_value(item, 'dcterms:title'),  # Issue title
+        'dcterms:creator': join_values(item, 'dcterms:creator', ''),  # Authors/creators
+        'dcterms:publisher': join_values(item, 'dcterms:publisher', ''),  # Publishers
+        'dcterms:date': get_value(item, 'dcterms:date'),  # Publication date
+        'dcterms:type': get_value(item, 'dcterms:type'),  # Resource type
+        
+        # Issue-specific metadata
+        'bibo:issue': get_value(item, 'bibo:issue'),  # Issue number
+        'dcterms:abstract': get_value(item, 'dcterms:abstract'),  # Abstract/summary
+        'bibo:numPages': get_value(item, 'bibo:numPages'),  # Number of pages
+        
+        # Subject and geographic metadata
+        'dcterms:subject': join_values(item, 'dcterms:subject', ''),  # Subject terms
+        'dcterms:spatial': join_values(item, 'dcterms:spatial', ''),  # Geographic coverage
+        
+        # Rights and attribution
+        'dcterms:rights': get_value(item, 'dcterms:rights'),  # Rights statement
+        'dcterms:rightsHolder': get_value(item, 'dcterms:rightsHolder'),  # Rights holder
+        
+        # Additional metadata
+        'dcterms:language': get_value(item, 'dcterms:language'),  # Language
+        'dcterms:source': get_value(item, 'dcterms:source'),  # Original source
+        'dcterms:contributor': join_values(item, 'dcterms:contributor', ''),  # Contributors
+        
+        # External references
+        'fabio:hasURL': get_value(item, 'fabio:hasURL'),  # External URL
+        'bibo:content': get_value(item, 'bibo:content'),  # Full text content
     }
 
 async def map_newspaper_article(item: Dict[str, Any], api_client: OmekaApiClient) -> Dict[str, Any]:
