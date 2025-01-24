@@ -635,6 +635,7 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 23676,https://islam.zmo.de/s/afrique_ouest/item/23676,iwac-index-0000604,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Congrès COSIM (2019),,,2019,,,,,,,Côte d'Ivoire,,,,,,
 23700,https://islam.zmo.de/s/afrique_ouest/item/23700,iwac-index-0000605,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Élections en Côte d'Ivoire,,,,,,,,,Élection présidentielle ivoirienne de 2010|Élection présidentielle ivoirienne de 2015|Élection présidentielle ivoirienne de 2020,Côte d'Ivoire,,,,,,
 27761,https://islam.zmo.de/s/afrique_ouest/item/27761,iwac-index-0002792,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Élections législatives togolaises de 2013,,,2013-07-25,,,,,,,Togo,,,,,,
+27781,https://islam.zmo.de/s/afrique_ouest/item/27781,,bibo:Event,https://islam.zmo.de/api/item_sets/1,,Loi dissolution sectes religieuses,,,1978,,,,,,,Togo,,,,,,
 31359,https://islam.zmo.de/s/afrique_ouest/item/31359,iwac-index-0000606,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Incendies marchés Lomé et Kara (2013),,,2013-01,,,,,,,Togo,,,,,,
 43052,https://islam.zmo.de/s/afrique_ouest/item/43052,iwac-index-0002793,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Procès CNI-CSI,,,1994,,Conseil National Islamique|Conseil Supérieur Islamique,,,,,Côte d'Ivoire,,,,,,
 43057,https://islam.zmo.de/s/afrique_ouest/item/43057,iwac-index-0002794,bibo:Event,https://islam.zmo.de/api/item_sets/2,,Intervention policière mosquée d'Abobo Banco II,,,1994,,,,,,,Côte d'Ivoire,,,,,,
@@ -3797,3 +3798,5 @@ o:id,url,dcterms:identifier,o:resource_class,o:item_set,o:media/file,dcterms:tit
 65749,https://islam.zmo.de/s/afrique_ouest/item/65749,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Louise Kudzu-Akutsa,,,,,,,,,,,,,,,,
 65750,https://islam.zmo.de/s/afrique_ouest/item/65750,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Assimbodom Batassi,,,,,,,,,,,,,,,,
 65751,https://islam.zmo.de/s/afrique_ouest/item/65751,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Folly Koutouklo,,,,,,,,,,,,,,,,
+67400,https://islam.zmo.de/s/afrique_ouest/item/67400,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Siméon Kwami Occansey,Siméon Occansey|Kwami Occansey,,,,,,,,,Togo,,Siméon Kwami,Occansey,,,
+67401,https://islam.zmo.de/s/afrique_ouest/item/67401,,foaf:Person,https://islam.zmo.de/api/item_sets/266,,Ernest Gnassingbé,,,,,,,,,,Togo,,Ernest,Gnassingbé,,,
