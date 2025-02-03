@@ -58,9 +58,8 @@ def main():
         logger.info("Starting data collection from Omeka S")
         
         # Initialize client with script directory as cache dir
-        # Force cache update by setting use_cache=False in fetch_all_data
         client = OmekaClient(OmekaConfig(cache_dir=script_dir))
-        items = client.fetch_all_data(use_cache=False)
+        items = client.fetch_all_data()
         
         if not items:
             logger.warning("No items were collected!")
