@@ -76,7 +76,7 @@ class OmekaItem:
         item_set_ids (List[int]): List of item set IDs this item belongs to
         item_set_title (Optional[str]): Title of the item set this item belongs to
         country (Optional[str]): Country associated with the item
-        type_display_title (Optional[str]): Display title from dcterms:type
+        type (Optional[str]): Display title from dcterms:type
     """
     
     id: int
@@ -91,7 +91,7 @@ class OmekaItem:
     item_set_ids: List[int]
     item_set_title: Optional[str]
     country: Optional[str]
-    type_display_title: Optional[str]
+    type: Optional[str]
     
     @classmethod
     def from_api_response(cls, data: Dict[str, Any], resource_class_labels: Dict[int, str] = None, 
@@ -154,9 +154,9 @@ class OmekaItem:
             if item_set_countries and item_set_ids:
                 country = item_set_countries.get(item_set_ids[0])
 
-            # Extract type display title
+            # Extract type
             type_data = data.get('dcterms:type', [])
-            type_display_title = type_data[0].get('display_title') if type_data else None
+            type_value = type_data[0].get('display_title') if type_data else None
             
             return cls(
                 id=data.get('o:id'),
@@ -171,7 +171,7 @@ class OmekaItem:
                 item_set_ids=item_set_ids,
                 item_set_title=item_set_title,
                 country=country,
-                type_display_title=type_display_title
+                type=type_value
             )
         except Exception as e:
             logger.error(f"Error processing item {data.get('o:id')}: {str(e)}")
@@ -462,7 +462,7 @@ class OmekaClient:
                     'word_count': item.word_count,
                     'item_set_title': item.item_set_title,
                     'country': item.country,
-                    'type_display_title': item.type_display_title
+                    'type': item.type
                 }
                 for item in items
             ]
@@ -494,7 +494,7 @@ class OmekaClient:
                             word_count=item_data['word_count'],
                             item_set_title=item_data.get('item_set_title'),
                             country=item_data.get('country'),
-                            type_display_title=item_data.get('type_display_title')
+                            type=item_data.get('type')
                         )
                         items.append(item)
                 logger.info(f"Successfully loaded {len(items)} items from cache")
