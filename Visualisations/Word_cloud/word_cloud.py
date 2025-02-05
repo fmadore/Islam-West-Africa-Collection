@@ -12,7 +12,7 @@ The script:
 
 Requirements:
 - Python 3.x
-- spaCy with French language model (fr_core_news_lg)
+- spaCy with French language model (fr_dep_news_trf)
 - NLTK with French stopwords
 - Environment variables for Omeka S API credentials
 """
@@ -57,7 +57,7 @@ additional_stopwords = {'El', '000', '%', "être", "avoir", "faire", "dire", "al
 french_stopwords.update(additional_stopwords)
 
 # Load French language model for spaCy
-nlp = spacy.load('fr_core_news_lg')
+nlp = spacy.load('fr_dep_news_trf')
 
 # Combine NLTK and spaCy stopwords
 spacy_french_stopwords = nlp.Defaults.stop_words
@@ -158,7 +158,7 @@ def preprocess_texts(texts):
         processed_texts.extend(tokens)
     return processed_texts
 
-def get_word_frequencies(texts, top_n=100):
+def get_word_frequencies(texts, top_n=150):
     """
     Calculate word frequencies from processed texts.
     
@@ -187,7 +187,7 @@ for country, sets in ITEM_SETS.items():
     
     # Process texts and get word frequencies
     preprocessed_texts = preprocess_texts(country_texts)
-    all_word_frequencies[country] = get_word_frequencies(preprocessed_texts, top_n=100)
+    all_word_frequencies[country] = get_word_frequencies(preprocessed_texts, top_n=150)
 
 # Generate individual JSON files for each country
 for country, word_freq in all_word_frequencies.items():
