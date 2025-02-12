@@ -11,7 +11,6 @@ Requirements:
 """
 
 import os
-import json
 from pathlib import Path
 from omeka_client import OmekaClient, OmekaConfig, setup_logging
 from dotenv import load_dotenv
@@ -43,11 +42,11 @@ def main():
         Exception: For any other errors during execution
     """
     try:
-        logger.info("Starting data collection process")
+        logger.info("=== Starting IWAC Data Collection Process ===")
         
         # Setup paths - using script directory for cache storage
         script_dir = Path(__file__).resolve().parent
-        logger.info(f"Script directory: {script_dir}")
+        logger.info(f"Cache directory set to: {script_dir}")
         
         # Verify all required environment variables are present
         required_vars = ['OMEKA_BASE_URL', 'IWAC_KEY_IDENTITY', 'IWAC_KEY_CREDENTIAL']
@@ -55,18 +54,19 @@ def main():
         if missing_vars:
             raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
             
-        logger.info("Starting data collection from Omeka S")
+        logger.info("Environment variables verified successfully")
+        logger.info("Initializing Omeka S client and fetching collection data...")
         
         # Initialize client with script directory as cache dir
         client = OmekaClient(OmekaConfig(cache_dir=script_dir))
         items = client.fetch_all_data()
         
         if not items:
-            logger.warning("No items were collected!")
+            logger.warning("Collection is empty - no items were found!")
             return
             
         # Calculate and log collection statistics
-        logger.info(f"Collected {len(items)} items")
+        logger.info(f"Successfully retrieved {len(items)} items from the collection")
         
         # Calculate language distribution across all items
         language_counts = {}
@@ -75,20 +75,25 @@ def main():
                 language_counts[item.language] = language_counts.get(item.language, 0) + 1
         
         # Log language distribution statistics
-        logger.info("\nLanguage distribution:")
-        for lang, count in sorted(language_counts.items()):
-            logger.info(f"{lang}: {count} items")
+        logger.info("\n=== Language Distribution Analysis ===")
+        if language_counts:
+            for lang, count in sorted(language_counts.items()):
+                percentage = (count / len(items)) * 100
+                logger.info(f"{lang}: {count} items ({percentage:.1f}%)")
+        else:
+            logger.warning("No language information found in any items")
         
         # Calculate and log word count statistics
         total_words = sum(item.word_count or 0 for item in items)
         avg_words = total_words / len(items) if items else 0
-        logger.info(f"\nTotal word count: {total_words}")
-        logger.info(f"Average words per item: {avg_words:.2f}")
+        logger.info("\n=== Word Count Statistics ===")
+        logger.info(f"Total words across all items: {total_words:,}")
+        logger.info(f"Average words per item: {avg_words:,.2f}")
         
-        logger.info("Data collection completed successfully")
+        logger.info("\n=== Data collection and analysis completed successfully ===")
         
     except Exception as e:
-        logger.error(f"An error occurred: {str(e)}", exc_info=True)
+        logger.error(f"Critical error during data collection: {str(e)}", exc_info=True)
         raise
 
 if __name__ == "__main__":
