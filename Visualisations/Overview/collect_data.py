@@ -12,6 +12,7 @@ Requirements:
 
 import os
 from pathlib import Path
+from collections import Counter
 from omeka_client import OmekaClient, OmekaConfig, setup_logging
 from dotenv import load_dotenv
 
@@ -68,17 +69,15 @@ def main():
         # Calculate and log collection statistics
         logger.info(f"Successfully retrieved {len(items)} items from the collection")
         
-        # Calculate language distribution across all items
-        language_counts = {}
-        for item in items:
-            if item.language:
-                language_counts[item.language] = language_counts.get(item.language, 0) + 1
+        # Calculate language distribution across all items using Counter
+        language_counts = Counter(item.language for item in items if item.language)
         
         # Log language distribution statistics
         logger.info("\n=== Language Distribution Analysis ===")
         if language_counts:
-            for lang, count in sorted(language_counts.items()):
-                percentage = (count / len(items)) * 100
+            total_items = len(items)
+            for lang, count in language_counts.most_common():
+                percentage = (count / total_items) * 100
                 logger.info(f"{lang}: {count} items ({percentage:.1f}%)")
         else:
             logger.warning("No language information found in any items")
