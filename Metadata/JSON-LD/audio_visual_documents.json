@@ -32,7 +32,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:07+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -311,6 +311,19 @@
         "is_public": true,
         "@value": "iwac-video-0000001"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -346,7 +359,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:07+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -627,6 +640,19 @@
         "is_public": true,
         "@value": "iwac-video-0000002"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -662,7 +688,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:07+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -885,6 +911,19 @@
         "is_public": true,
         "@value": "iwac-video-0000003"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -920,7 +959,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:07+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -1169,6 +1208,19 @@
         "is_public": true,
         "@value": "iwac-video-0000004"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -1204,7 +1256,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:07+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -1454,6 +1506,19 @@
         "is_public": true,
         "@value": "iwac-video-0000005"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -1489,7 +1554,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:07+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -1739,6 +1804,19 @@
         "is_public": true,
         "@value": "iwac-video-0000006"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -1774,7 +1852,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:07+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -2010,6 +2088,19 @@
         "is_public": true,
         "@value": "iwac-video-0000007"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -2045,7 +2136,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:07+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -2347,6 +2438,19 @@
         "is_public": true,
         "@value": "iwac-video-0000008"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -2382,7 +2486,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -2631,6 +2735,19 @@
         "is_public": true,
         "@value": "iwac-video-0000009"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -2666,7 +2783,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -2910,6 +3027,19 @@
         "is_public": true,
         "@value": "iwac-video-0000010"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -2945,7 +3075,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -3186,6 +3316,19 @@
         "is_public": true,
         "@value": "iwac-video-0000011"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -3221,7 +3364,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -3506,6 +3649,19 @@
         "is_public": true,
         "@value": "iwac-video-0000012"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -3541,7 +3697,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -3799,6 +3955,19 @@
         "is_public": true,
         "@value": "iwac-video-0000013"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -3834,7 +4003,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -4055,6 +4224,19 @@
         "is_public": true,
         "@value": "iwac-video-0000014"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -4090,7 +4272,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -4336,6 +4518,19 @@
         "is_public": true,
         "@value": "iwac-video-0000015"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -4371,7 +4566,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -4609,6 +4804,19 @@
         "is_public": true,
         "@value": "iwac-video-0000016"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -4644,7 +4852,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -4883,6 +5091,19 @@
         "is_public": true,
         "@value": "iwac-video-0000017"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -4918,7 +5139,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -5129,6 +5350,19 @@
         "is_public": true,
         "@value": "iwac-video-0000018"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -5164,7 +5398,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -5474,6 +5708,19 @@
         "is_public": true,
         "@value": "iwac-video-0000019"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -5509,7 +5756,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -5787,6 +6034,19 @@
         "is_public": true,
         "@value": "iwac-video-0000020"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -5822,7 +6082,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:08+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -6054,6 +6314,19 @@
         "is_public": true,
         "@value": "iwac-video-0000021"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -6089,7 +6362,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -6330,6 +6603,19 @@
         "is_public": true,
         "@value": "iwac-video-0000022"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -6365,7 +6651,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:40+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -6644,6 +6930,19 @@
         "is_public": true,
         "@value": "iwac-video-0000023"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -6679,7 +6978,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -6886,6 +7185,19 @@
         "is_public": true,
         "@value": "iwac-video-0000024"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -6921,7 +7233,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -7152,6 +7464,19 @@
         "is_public": true,
         "@value": "iwac-video-0000025"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -7187,7 +7512,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -7417,6 +7742,19 @@
         "is_public": true,
         "@value": "iwac-video-0000026"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -7452,7 +7790,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -7667,6 +8005,19 @@
         "is_public": true,
         "@value": "iwac-video-0000027"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -7702,7 +8053,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -7936,6 +8287,19 @@
         "is_public": true,
         "@value": "iwac-video-0000028"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -7971,7 +8335,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -8216,6 +8580,19 @@
         "is_public": true,
         "@value": "iwac-video-0000029"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -8251,7 +8628,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -8472,6 +8849,19 @@
         "is_public": true,
         "@value": "iwac-video-0000030"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -8507,7 +8897,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -8736,6 +9126,19 @@
         "is_public": true,
         "@value": "iwac-video-0000031"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -8771,7 +9174,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -8983,6 +9386,19 @@
         "is_public": true,
         "@value": "iwac-video-0000032"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -9018,7 +9434,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -9220,6 +9636,19 @@
         "is_public": true,
         "@value": "iwac-video-0000033"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -9255,7 +9684,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": null,
@@ -9476,6 +9905,19 @@
         "is_public": true,
         "@value": "iwac-video-0000034"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -9511,7 +9953,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -9709,6 +10151,19 @@
         "is_public": true,
         "@value": "iwac-video-0000035"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -9744,7 +10199,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:09+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -10003,6 +10458,19 @@
         "is_public": true,
         "@value": "iwac-video-0000036"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -10038,7 +10506,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -10240,6 +10708,19 @@
         "is_public": true,
         "@value": "iwac-video-0000037"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -10275,7 +10756,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -10535,6 +11016,19 @@
         "is_public": true,
         "@value": "iwac-video-0000038"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -10570,7 +11064,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -10806,6 +11300,19 @@
         "is_public": true,
         "@value": "iwac-video-0000039"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -10841,7 +11348,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -11043,6 +11550,19 @@
         "is_public": true,
         "@value": "iwac-video-0000040"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -11078,7 +11598,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -11287,6 +11807,19 @@
         "is_public": true,
         "@value": "iwac-video-0000041"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -11322,7 +11855,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -11538,6 +12071,19 @@
         "is_public": true,
         "@value": "iwac-video-0000042"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -11573,7 +12119,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -11793,6 +12339,19 @@
         "is_public": true,
         "@value": "iwac-video-0000043"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -11828,7 +12387,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -12041,6 +12600,19 @@
         "is_public": true,
         "@value": "iwac-video-0000044"
       }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
+      }
     ]
   },
   {
@@ -12076,7 +12648,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-09-01T18:00:10+00:00",
+      "@value": "2025-02-03T14:33:41+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -12308,6 +12880,19 @@
         "property_label": "Identifier",
         "is_public": true,
         "@value": "iwac-video-0000045"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67571",
+        "value_resource_id": 67571,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Enregistrement vidéo"
       }
     ]
   }

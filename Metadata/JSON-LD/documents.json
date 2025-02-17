@@ -32,7 +32,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:35+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -76,6 +76,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Association des Jeunes Musulmans à Ouidi (AJMO) : historique et grandes orientations"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:abstract": [
@@ -248,7 +261,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:37+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -320,6 +333,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Rapport général du séminaire régional de formation islamique (SEREFI) tenu du 16 au 23 août 2014 au lycée provincial de Tougan/Sourou 2014"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -546,7 +572,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:36+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -586,6 +612,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Affiche de la conférence \"Rôle et place de la jeunesse musulmane dans la société\""
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:date": [
@@ -752,7 +791,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:39+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -808,6 +847,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Projet d'ouverture de 60 centres d'alphabétisation au profit des femmes musulmanes du Burkina"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -1006,7 +1058,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:41+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -1050,6 +1102,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Dépliant \"Infos Pratiques Islam\""
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "bibo:numPages": [
@@ -1193,7 +1258,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:43+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -1253,6 +1318,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Dépliant Jama'at Islamique Ahmadiyya Burkina Faso"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "bibo:numPages": [
@@ -1431,7 +1509,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:42+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -1471,6 +1549,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Grille de programmes Radio IQRA"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:date": [
@@ -1609,7 +1700,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:44+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -1661,6 +1752,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Dépliant Qatar Charity"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "bibo:numPages": [
@@ -1811,7 +1915,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:58+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -2233,6 +2337,19 @@
         "@value": "Rapport général : Forum national sur la laïcité au Burkina Faso"
       }
     ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
+      }
+    ],
     "dcterms:creator": [
       {
         "type": "literal",
@@ -2611,7 +2728,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:46+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -2655,6 +2772,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Concours de mémorisation et de récitation du Saint Coran par les femmes musulmanes"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -2817,7 +2947,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:47+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -2909,6 +3039,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Résolutions, motions et recommandations de la CMHV"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -3243,7 +3386,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:51+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -3283,6 +3426,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Institut Musulman d'Enseignement et d'Education (IM2E)"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -3482,7 +3638,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:51+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -3522,6 +3678,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Invitation CERFI. Intellectuel Musulman : être avec Dieu pour mieux bâtir la cité / Regards croisés sur la situation nationale"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:date": [
@@ -3685,7 +3854,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:51+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -3733,6 +3902,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Déclaration liminaire. 25e Anniversaire de l'Association des Elèves et Etudiants Musulmans au Burkina (AEEMB)"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -3934,7 +4116,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:35:53+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -3974,6 +4156,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Dépliant pour la promotion du Centre culturel islamique de l'AEEMB"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -4170,7 +4365,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:33:09+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -4266,6 +4461,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Module de formation sur \"Connaissance de l'ACEEMUB\""
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -4588,7 +4796,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-23T05:09:27+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -4680,6 +4888,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Islam, paix et développement : le citoyen musulman face au défi sécuritaire"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:creator": [
@@ -4924,7 +5145,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-23T05:03:13+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -4964,6 +5185,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Récépissé Union Musulmane Togolaise"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:date": [
@@ -5116,7 +5350,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-23T05:03:08+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -5156,6 +5390,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Invitation"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:date": [
@@ -5333,7 +5580,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-23T05:03:21+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -5373,6 +5620,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Lettre d'Eyadéma au grand cheik d'El Ashar"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:date": [
@@ -5575,7 +5835,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-23T05:03:17+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -5615,6 +5875,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Autorisation"
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:date": [
@@ -5833,7 +6106,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:modified": {
-      "@value": "2024-10-22T17:33:08+00:00",
+      "@value": "2025-02-03T14:30:28+00:00",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "o:primary_media": {
@@ -5881,6 +6154,19 @@
         "property_label": "Title",
         "is_public": true,
         "@value": "Procès verbal de réunion du comité mixte gouvernement-communauté musulmane d'organisation du séminaire bilan sur \"l'islam et la pratique de la laïcité au Bénin\""
+      }
+    ],
+    "dcterms:type": [
+      {
+        "type": "resource:item",
+        "property_id": 8,
+        "property_label": "Type",
+        "is_public": true,
+        "@id": "https://islam.zmo.de/api/items/67570",
+        "value_resource_id": 67570,
+        "value_resource_name": "items",
+        "url": null,
+        "display_title": "Document"
       }
     ],
     "dcterms:date": [
