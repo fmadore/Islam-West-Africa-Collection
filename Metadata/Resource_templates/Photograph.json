@@ -32,6 +32,20 @@
     },
     {
       "o:property": {
+        "@id": "https://islam.zmo.de/api/properties/8",
+        "o:id": 8
+      },
+      "o:alternate_label": null,
+      "o:alternate_comment": null,
+      "o:data_type": [
+        "customvocab:6"
+      ],
+      "o:is_required": false,
+      "o:is_private": false,
+      "o:default_lang": null
+    },
+    {
+      "o:property": {
         "@id": "https://islam.zmo.de/api/properties/2",
         "o:id": 2
       },
