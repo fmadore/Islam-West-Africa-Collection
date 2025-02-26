@@ -25,7 +25,7 @@ load_dotenv(env_path)
 logger = setup_logging('collection.log')
 logger.name = 'collector'  # Change logger name for this script
 
-def main():
+def main() -> None:
     """
     Main function to collect and analyze data from Omeka S.
     
@@ -46,12 +46,12 @@ def main():
         logger.info("=== Starting IWAC Data Collection Process ===")
         
         # Setup paths - using script directory for cache storage
-        script_dir = Path(__file__).resolve().parent
+        script_dir: Path = Path(__file__).resolve().parent
         logger.info(f"Cache directory set to: {script_dir}")
         
         # Verify all required environment variables are present
-        required_vars = ['OMEKA_BASE_URL', 'IWAC_KEY_IDENTITY', 'IWAC_KEY_CREDENTIAL']
-        missing_vars = [var for var in required_vars if not os.getenv(var)]
+        required_vars: list[str] = ['OMEKA_BASE_URL', 'IWAC_KEY_IDENTITY', 'IWAC_KEY_CREDENTIAL']
+        missing_vars: list[str] = [var for var in required_vars if not os.getenv(var)]
         if missing_vars:
             raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
             
@@ -60,31 +60,39 @@ def main():
         
         # Initialize client with script directory as cache dir
         client = OmekaClient(OmekaConfig(cache_dir=script_dir))
-        items = client.fetch_all_data()
+        
+        # Fetch all items from the API
+        items: list = client.fetch_all_data()
         
         if not items:
             logger.warning("Collection is empty - no items were found!")
             return
-            
+
+        # Exclude items with item_set_title 'Notices d'autorités à traiter'
+        excluded_title: str = "Notices d'autorités à traiter"
+        initial_count: int = len(items)
+        items = [item for item in items if item.item_set_title != excluded_title]
+        logger.info(f"Excluded {initial_count - len(items)} items with item_set_title '{excluded_title}'.")
+
         # Calculate and log collection statistics
         logger.info(f"Successfully retrieved {len(items)} items from the collection")
         
         # Calculate language distribution across all items using Counter
-        language_counts = Counter(item.language for item in items if item.language)
+        language_counts: Counter = Counter(item.language for item in items if item.language)
         
         # Log language distribution statistics
         logger.info("\n=== Language Distribution Analysis ===")
         if language_counts:
-            total_items = len(items)
+            total_items: int = len(items)
             for lang, count in language_counts.most_common():
-                percentage = (count / total_items) * 100
+                percentage: float = (count / total_items) * 100
                 logger.info(f"{lang}: {count} items ({percentage:.1f}%)")
         else:
             logger.warning("No language information found in any items")
         
         # Calculate and log word count statistics
-        total_words = sum(item.word_count or 0 for item in items)
-        avg_words = total_words / len(items) if items else 0
+        total_words: int = sum(item.word_count or 0 for item in items)
+        avg_words: float = total_words / len(items) if items else 0
         logger.info("\n=== Word Count Statistics ===")
         logger.info(f"Total words across all items: {total_words:,}")
         logger.info(f"Average words per item: {avg_words:,.2f}")
