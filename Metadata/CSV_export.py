@@ -25,6 +25,9 @@ from typing import Type, Union, Callable
 import sys
 from contextlib import asynccontextmanager
 import argparse
+import gzip
+import io
+import concurrent.futures
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -47,29 +50,54 @@ class Cache:
         if self.use_cache:
             os.makedirs(self.cache_dir, exist_ok=True)
         self.cache_duration = timedelta(hours=24)
+        self.memory_cache = {}  # Add in-memory cache layer
+        self.memory_cache_max_size = 1000  # Maximum number of items to keep in memory
 
     def _get_cache_path(self, key: str) -> str:
         # Create a hash of the key to use as filename
         hashed_key = hashlib.md5(key.encode()).hexdigest()
-        return os.path.join(self.cache_dir, f"{hashed_key}.json")
+        return os.path.join(self.cache_dir, f"{hashed_key}.json.gz")  # Use compression
 
     async def get(self, key: str) -> Optional[Any]:
         if not self.use_cache:
             return None
+        
+        # First check memory cache
+        if key in self.memory_cache:
+            cached_item = self.memory_cache[key]
+            cached_time = cached_item['timestamp']
+            if isinstance(cached_time, str):
+                cached_time = datetime.fromisoformat(cached_time)
+            if datetime.now() - cached_time <= self.cache_duration:
+                return cached_item['data']
+            else:
+                # Expired item, remove from memory cache
+                del self.memory_cache[key]
             
         cache_path = self._get_cache_path(key)
         try:
             if not os.path.exists(cache_path):
                 return None
 
-            async with aiofiles.open(cache_path, 'r') as f:
-                cached_data = json.loads(await f.read())
+            # Use gzip for compression
+            async with aiofiles.open(cache_path, 'rb') as f:
+                content = await f.read()
+                try:
+                    with gzip.open(io.BytesIO(content), 'rt', encoding='utf-8') as gz_f:
+                        cached_data = json.loads(gz_f.read())
+                except gzip.BadGzipFile:
+                    # Fallback for older non-compressed files
+                    cached_data = json.loads(content.decode('utf-8'))
 
             # Check if cache has expired
             cached_time = datetime.fromisoformat(cached_data['timestamp'])
             if datetime.now() - cached_time > self.cache_duration:
                 return None
 
+            # Add to memory cache
+            if len(self.memory_cache) < self.memory_cache_max_size:
+                self.memory_cache[key] = cached_data
+                
             return cached_data['data']
         except Exception as e:
             logger.warning(f"Cache read error for key {key}: {str(e)}")
@@ -85,10 +113,124 @@ class Cache:
                 'timestamp': datetime.now().isoformat(),
                 'data': value
             }
-            async with aiofiles.open(cache_path, 'w') as f:
-                await f.write(json.dumps(cache_data))
+            
+            # Add to memory cache
+            if len(self.memory_cache) < self.memory_cache_max_size:
+                self.memory_cache[key] = cache_data
+            
+            # Use gzip for compression
+            compressed_data = io.BytesIO()
+            with gzip.open(compressed_data, 'wt', encoding='utf-8') as f:
+                f.write(json.dumps(cache_data))
+                
+            async with aiofiles.open(cache_path, 'wb') as f:
+                await f.write(compressed_data.getvalue())
         except Exception as e:
             logger.warning(f"Cache write error for key {key}: {str(e)}")
+
+class ConnectionManager:
+    """Manages HTTP connections with proper lifecycle handling"""
+    def __init__(self):
+        self._clients = {}
+        self._lock = asyncio.Lock()
+    
+    async def get_client(self, key: str = 'default') -> aiohttp.ClientSession:
+        """Get a client session, creating one if it doesn't exist"""
+        async with self._lock:
+            if key not in self._clients or self._clients[key].closed:
+                # Configure an optimal connection pool
+                conn = aiohttp.TCPConnector(
+                    limit=20,
+                    limit_per_host=8,
+                    ssl=False,
+                    ttl_dns_cache=300,
+                )
+                timeout = aiohttp.ClientTimeout(total=30)
+                self._clients[key] = aiohttp.ClientSession(timeout=timeout, connector=conn)
+            return self._clients[key]
+    
+    async def close_all(self):
+        """Close all open client sessions"""
+        async with self._lock:
+            for key, client in self._clients.items():
+                if not client.closed:
+                    try:
+                        await client.close()
+                    except Exception as e:
+                        logger.warning(f"Error closing client {key}: {str(e)}")
+            self._clients.clear()
+
+# Global connection manager
+connection_manager = ConnectionManager()
+
+class Profiler:
+    """Simple profiler to track performance metrics"""
+    def __init__(self):
+        self.metrics = {}
+        self.start_times = {}
+        self.enabled = False
+    
+    def enable(self):
+        self.enabled = True
+    
+    def disable(self):
+        self.enabled = False
+    
+    def start(self, name: str):
+        """Start timing an operation"""
+        if not self.enabled:
+            return
+        self.start_times[name] = time.time()
+    
+    def stop(self, name: str):
+        """Stop timing an operation and record the duration"""
+        if not self.enabled or name not in self.start_times:
+            return
+        
+        duration = time.time() - self.start_times[name]
+        if name not in self.metrics:
+            self.metrics[name] = {
+                'count': 0,
+                'total_time': 0,
+                'min_time': float('inf'),
+                'max_time': 0
+            }
+        
+        self.metrics[name]['count'] += 1
+        self.metrics[name]['total_time'] += duration
+        self.metrics[name]['min_time'] = min(self.metrics[name]['min_time'], duration)
+        self.metrics[name]['max_time'] = max(self.metrics[name]['max_time'], duration)
+        
+        del self.start_times[name]
+    
+    def report(self):
+        """Generate a performance report"""
+        if not self.enabled or not self.metrics:
+            return "Profiling disabled or no metrics collected"
+        
+        report = ["Performance Metrics:"]
+        report.append("-" * 80)
+        report.append(f"{'Operation':<40} | {'Count':>8} | {'Total (s)':>10} | {'Avg (ms)':>10} | {'Min (ms)':>10} | {'Max (ms)':>10}")
+        report.append("-" * 80)
+        
+        # Sort operations by total time (descending)
+        sorted_ops = sorted(self.metrics.items(), key=lambda x: x[1]['total_time'], reverse=True)
+        
+        for name, stats in sorted_ops:
+            avg_ms = (stats['total_time'] / stats['count']) * 1000 if stats['count'] > 0 else 0
+            min_ms = stats['min_time'] * 1000 if stats['min_time'] != float('inf') else 0
+            max_ms = stats['max_time'] * 1000
+            
+            report.append(
+                f"{name[:39]:<40} | {stats['count']:>8} | {stats['total_time']:>10.2f} | "
+                f"{avg_ms:>10.2f} | {min_ms:>10.2f} | {max_ms:>10.2f}"
+            )
+        
+        report.append("-" * 80)
+        return "\n".join(report)
+
+# Global profiler instance
+profiler = Profiler()
 
 class ProcessingError(Exception):
     """Base class for processing errors"""
@@ -144,19 +286,26 @@ def async_retry(
 class OmekaApiClient:
     def __init__(self, config: Config, use_cache: bool = True):
         self.config = config
-        self.session = None
         self.cache = Cache(use_cache=use_cache)
+        self.request_semaphore = asyncio.Semaphore(10)  # Limit concurrent requests
+        self.last_request_time = 0
+        self.min_request_interval = 0.1  # 100ms minimum between requests
     
     async def _create_session(self):
-        if not self.session:
-            timeout = aiohttp.ClientTimeout(total=30)
-            self.session = aiohttp.ClientSession(timeout=timeout)
-        return self.session
+        # Use the global connection manager
+        return await connection_manager.get_client('omeka_api')
+
+    async def _wait_for_rate_limit(self):
+        """Implement simple rate limiting"""
+        current_time = time.time()
+        elapsed = current_time - self.last_request_time
+        if elapsed < self.min_request_interval:
+            await asyncio.sleep(self.min_request_interval - elapsed)
+        self.last_request_time = time.time()
 
     async def _close_session(self):
-        if self.session:
-            await self.session.close()
-            self.session = None
+        # We don't need to do anything here as connection_manager will handle cleanup
+        pass
 
     @async_retry(max_tries=5, exceptions=(aiohttp.ClientError, asyncio.TimeoutError))
     async def _make_request(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
@@ -166,31 +315,44 @@ class OmekaApiClient:
         cache_key = f"{endpoint}:{json.dumps(params, sort_keys=True)}"
         
         try:
+            # Start profiling
+            profiler.start(f"api_request_{endpoint.split('/')[0]}")
+            
             # Try cache first
             cached_data = await self.cache.get(cache_key)
             if cached_data is not None:
+                profiler.stop(f"api_request_{endpoint.split('/')[0]}")
                 return cached_data
 
-            # Make API request
-            params.update({
-                'key_identity': self.config.API_KEY_IDENTITY,
-                'key_credential': self.config.API_KEY_CREDENTIAL
-            })
-            url = f"{self.config.API_URL}/{endpoint}"
+            # Apply rate limiting
+            await self._wait_for_rate_limit()
             
-            async with error_context(f"API request to {endpoint}"):
-                session = await self._create_session()
-                async with session.get(url, params=params) as response:
-                    response.raise_for_status()
-                    data = await response.json()
-                    await self.cache.set(cache_key, data)
-                    return data
+            # Use semaphore to limit concurrent requests
+            async with self.request_semaphore:
+                # Make API request
+                params.update({
+                    'key_identity': self.config.API_KEY_IDENTITY,
+                    'key_credential': self.config.API_KEY_CREDENTIAL
+                })
+                url = f"{self.config.API_URL}/{endpoint}"
+                
+                async with error_context(f"API request to {endpoint}"):
+                    session = await self._create_session()
+                    async with session.get(url, params=params) as response:
+                        response.raise_for_status()
+                        data = await response.json()
+                        await self.cache.set(cache_key, data)
+                        profiler.stop(f"api_request_{endpoint.split('/')[0]}")
+                        return data
 
         except aiohttp.ClientError as e:
+            profiler.stop(f"api_request_{endpoint.split('/')[0]}")
             raise APIError(f"API request failed: {str(e)}") from e
         except json.JSONDecodeError as e:
+            profiler.stop(f"api_request_{endpoint.split('/')[0]}")
             raise APIError(f"Invalid JSON response: {str(e)}") from e
         except Exception as e:
+            profiler.stop(f"api_request_{endpoint.split('/')[0]}")
             raise ProcessingError(f"Unexpected error: {str(e)}") from e
 
     async def fetch_items_page(self, resource_class_id: int, page: int, per_page: int) -> List[Dict[str, Any]]:
@@ -213,17 +375,35 @@ class OmekaApiClient:
         
         # If there might be more pages
         if len(first_page) == per_page:
-            # Make subsequent requests concurrently
-            tasks = []
+            # For better concurrency, estimate the number of pages and fetch them all at once
+            # We'll estimate conservatively based on the first page size
+            max_concurrent_requests = 5  # Adjust based on API limitations
+            
             page = 2
             while True:
-                next_page = await self.fetch_items_page(resource_class_id, page, per_page)
-                if not next_page or len(next_page) < per_page:
-                    if next_page:
-                        items.extend(next_page)
+                # Create a batch of concurrent requests
+                batch_tasks = []
+                for i in range(max_concurrent_requests):
+                    current_page = page + i
+                    batch_tasks.append(self.fetch_items_page(resource_class_id, current_page, per_page))
+                
+                # Execute the batch of requests concurrently
+                batch_results = await asyncio.gather(*batch_tasks)
+                
+                # Process the results
+                has_more_pages = False
+                for i, page_items in enumerate(batch_results):
+                    if page_items:
+                        items.extend(page_items)
+                        if len(page_items) == per_page:
+                            has_more_pages = True
+                
+                # Update page counter
+                page += max_concurrent_requests
+                
+                # If no more pages with data, break
+                if not has_more_pages:
                     break
-                items.extend(next_page)
-                page += 1
 
         item_type = self.get_item_type_name(resource_class_id)
         logger.info(f"Fetched {len(items)} {item_type}")
@@ -584,22 +764,46 @@ class DataProcessor:
         errors = []
 
         async with error_context(f"Processing batch of {item_type}"):
-            for item in batch:
-                try:
-                    if is_async:
-                        result = await mapper(item, self.api_client)
-                    else:
-                        result = await asyncio.to_thread(mapper, item)
-                    results.append(result)
-                except Exception as e:
-                    logger.error(f"Error processing {item_type} item {item.get('o:id', 'unknown')}: {str(e)}")
-                    errors.append({
-                        'item_type': item_type,
-                        'item_id': item.get('o:id', 'unknown'),
-                        'error': str(e)
-                    })
-                    # Add a placeholder result to maintain data integrity
-                    results.append(self._create_error_placeholder(item_type, item))
+            # Optimize: Process batch items concurrently instead of sequentially
+            if is_async:
+                # For async mappers, use gather with tasks
+                tasks = []
+                for item in batch:
+                    tasks.append(asyncio.create_task(mapper(item, self.api_client)))
+                
+                # Process all tasks with proper error handling
+                for i, task in enumerate(asyncio.as_completed(tasks)):
+                    try:
+                        result = await task
+                        results.append(result)
+                    except Exception as e:
+                        item = batch[i]
+                        logger.error(f"Error processing {item_type} item {item.get('o:id', 'unknown')}: {str(e)}")
+                        errors.append({
+                            'item_type': item_type,
+                            'item_id': item.get('o:id', 'unknown'),
+                            'error': str(e)
+                        })
+                        # Add a placeholder result to maintain data integrity
+                        results.append(self._create_error_placeholder(item_type, item))
+            else:
+                # For synchronous mappers, use thread pool
+                with ThreadPoolExecutor(max_workers=min(os.cpu_count() * 2, len(batch))) as executor:
+                    future_to_item = {executor.submit(mapper, item): item for item in batch}
+                    for future in concurrent.futures.as_completed(future_to_item):
+                        item = future_to_item[future]
+                        try:
+                            result = future.result()
+                            results.append(result)
+                        except Exception as e:
+                            logger.error(f"Error processing {item_type} item {item.get('o:id', 'unknown')}: {str(e)}")
+                            errors.append({
+                                'item_type': item_type,
+                                'item_id': item.get('o:id', 'unknown'),
+                                'error': str(e)
+                            })
+                            # Add a placeholder result to maintain data integrity
+                            results.append(self._create_error_placeholder(item_type, item))
 
             # Log batch processing summary
             if errors:
@@ -750,6 +954,7 @@ class FileGenerator:
     def __init__(self, processed_data: Dict[str, List[Dict[str, Any]]], output_dir: str):
         self.processed_data = processed_data
         self.output_dir = output_dir
+        self.chunk_size = 1000  # Process in chunks to reduce memory pressure
 
     def generate_all_files(self):
         os.makedirs(self.output_dir, exist_ok=True)
@@ -760,15 +965,38 @@ class FileGenerator:
         for item_type, items in self.processed_data.items():
             if items:  # Only generate files for non-empty data
                 filepath = os.path.join(self.output_dir, f"{item_type}.csv")
-                with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
-                    if items:
-                        fieldnames = items[0].keys()
-                        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                        writer.writeheader()
-                        writer.writerows(items)
+                self._write_csv_in_chunks(filepath, items)
                 logger.info(f"Generated {filepath} with {len(items)} items")
             else:
                 logger.warning(f"No data to generate file for {item_type}")
+    
+    def _write_csv_in_chunks(self, filepath: str, items: List[Dict[str, Any]]):
+        """Write CSV file in chunks to reduce memory usage"""
+        total_items = len(items)
+        
+        with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
+            if not items:
+                # Handle empty list case
+                csvfile.write("")
+                return
+                
+            # Write header first
+            fieldnames = items[0].keys()
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            
+            # Process in chunks
+            with tqdm(total=total_items, desc=f"Writing {os.path.basename(filepath)}", unit="rows") as pbar:
+                for i in range(0, total_items, self.chunk_size):
+                    chunk = items[i:i + self.chunk_size]
+                    writer.writerows(chunk)
+                    
+                    # Force garbage collection if large dataset
+                    if total_items > 10000:
+                        import gc
+                        gc.collect()
+                    
+                    pbar.update(len(chunk))
 
 def get_value(item: Dict[str, Any], field: str, subfield: str = None) -> str:
     """Utility function to safely get a value from an item."""
@@ -1140,14 +1368,39 @@ def get_media_ids(item: Dict[str, Any]) -> str:
 
 async def async_main():
     try:
-        # Ask user about cache usage
-        while True:
-            response = input("Do you want to use cached data if available? (y/n): ").lower()
-            if response in ['y', 'n']:
-                break
-            print("Please enter 'y' for yes or 'n' for no.")
+        # Parse command line arguments
+        parser = argparse.ArgumentParser(description='Export data from Omeka API to CSV files')
+        parser.add_argument('--cache', choices=['yes', 'no'], default=None, 
+                            help='Use cached data if available (yes/no)')
+        parser.add_argument('--profile', action='store_true', 
+                            help='Enable performance profiling')
+        parser.add_argument('--concurrent-requests', type=int, default=10,
+                            help='Maximum number of concurrent API requests')
+        parser.add_argument('--output-dir', type=str, default=None,
+                            help='Directory to store output CSV files')
+        parser.add_argument('--resource-classes', type=str, nargs='+',
+                            help='Specific resource classes to fetch (space-separated IDs)')
+        
+        args = parser.parse_args()
+        
+        # Enable profiler if requested
+        if args.profile:
+            profiler.enable()
+            logger.info("Performance profiling enabled")
+        
+        # Configure cache usage (command line arg or interactive)
+        use_cache = None
+        if args.cache:
+            use_cache = (args.cache.lower() == 'yes')
+        else:
+            # Ask user interactively if not specified
+            while True:
+                response = input("Do you want to use cached data if available? (y/n): ").lower()
+                if response in ['y', 'n']:
+                    use_cache = (response == 'y')
+                    break
+                print("Please enter 'y' for yes or 'n' for no.")
 
-        use_cache = (response == 'y')
         if not use_cache:
             logger.info("Cache disabled - fetching fresh data from API")
         else:
@@ -1155,35 +1408,60 @@ async def async_main():
         
         logger.info("Starting the Omeka data export process...")
         
+        # Configure the export
         config = Config()
+        if args.output_dir:
+            config.OUTPUT_DIR = args.output_dir
+        
         logger.info(f"Configuration loaded. API URL: {config.API_URL}")
+        logger.info(f"Output directory: {config.OUTPUT_DIR}")
 
         os.makedirs(config.OUTPUT_DIR, exist_ok=True)
 
+        # Create API client with potentially customized concurrent request limit
         api_client = OmekaApiClient(config, use_cache=use_cache)
+        if args.concurrent_requests:
+            api_client.request_semaphore = asyncio.Semaphore(args.concurrent_requests)
+            logger.info(f"Set concurrent request limit to {args.concurrent_requests}")
 
+        # Start profile timing for the main operations
+        profiler.start("fetch_item_set_titles")
         item_set_titles = await api_client.fetch_item_set_titles()
+        profiler.stop("fetch_item_set_titles")
+        
+        profiler.start("fetch_all_items")
         raw_data, item_sets, media, references = await api_client.fetch_all_items()
+        profiler.stop("fetch_all_items")
 
         if not raw_data and not item_sets and not media and not references:
             logger.warning("No data fetched from the API. Exiting.")
             return
 
         logger.info("Processing fetched data...")
+        profiler.start("process_data")
         processor = DataProcessor(raw_data, item_sets, media, references, 
                                 item_set_titles, api_client, config)
         processed_data = await processor.process()
+        profiler.stop("process_data")
 
         logger.info(f"Processed data contains categories: {list(processed_data.keys())}")
         logger.info("Generating CSV files...")
+        profiler.start("generate_csv_files")
         generator = FileGenerator(processed_data, config.OUTPUT_DIR)
         generator.generate_all_files()
+        profiler.stop("generate_csv_files")
 
         logger.info("All files generated successfully.")
+        
+        # Print performance report if profiling was enabled
+        if args.profile:
+            print("\n" + profiler.report())
+            
     except Exception as e:
         logger.error(f"An unexpected error occurred: {str(e)}", exc_info=True)
     finally:
-        await api_client._close_session()
+        # Close all connections properly
+        await connection_manager.close_all()
 
 def main():
     asyncio.run(async_main())
