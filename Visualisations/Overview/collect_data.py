@@ -45,10 +45,6 @@ def main() -> None:
     try:
         logger.info("=== Starting IWAC Data Collection Process ===")
         
-        # Setup paths - using script directory for cache storage
-        script_dir: Path = Path(__file__).resolve().parent
-        logger.info(f"Cache directory set to: {script_dir}")
-        
         # Verify all required environment variables are present
         required_vars: list[str] = ['OMEKA_BASE_URL', 'IWAC_KEY_IDENTITY', 'IWAC_KEY_CREDENTIAL']
         missing_vars: list[str] = [var for var in required_vars if not os.getenv(var)]
@@ -58,21 +54,15 @@ def main() -> None:
         logger.info("Environment variables verified successfully")
         logger.info("Initializing Omeka S client and fetching collection data...")
         
-        # Initialize client with script directory as cache dir
-        client = OmekaClient(OmekaConfig(cache_dir=script_dir))
+        # Initialize client
+        client = OmekaClient()
         
-        # Fetch all items from the API
+        # Fetch all items from the API (filtering is handled in the client)
         items: list = client.fetch_all_data()
         
         if not items:
             logger.warning("Collection is empty - no items were found!")
             return
-
-        # Exclude items with item_set_title 'Notices d'autorités à traiter'
-        excluded_title: str = "Notices d'autorités à traiter"
-        initial_count: int = len(items)
-        items = [item for item in items if item.item_set_title != excluded_title]
-        logger.info(f"Excluded {initial_count - len(items)} items with item_set_title '{excluded_title}'.")
 
         # Calculate and log collection statistics
         logger.info(f"Successfully retrieved {len(items)} items from the collection")

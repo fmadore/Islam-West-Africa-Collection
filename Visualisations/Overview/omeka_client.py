@@ -189,7 +189,6 @@ class OmekaConfig:
     base_url: str = field(default_factory=lambda: os.getenv('OMEKA_BASE_URL', ''))
     key_identity: str = field(default_factory=lambda: os.getenv('IWAC_KEY_IDENTITY', ''))
     key_credential: str = field(default_factory=lambda: os.getenv('IWAC_KEY_CREDENTIAL', ''))
-    cache_dir: Path = field(default_factory=lambda: Path(__file__).resolve().parent)
 
     def __post_init__(self):
         """Validate configuration after initialization"""
@@ -198,9 +197,6 @@ class OmekaConfig:
         
         # Ensure base_url doesn't end with trailing slash
         self.base_url = self.base_url.rstrip('/')
-        
-        # Ensure cache directory exists
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
 
 class ApiError(Exception):
     """Custom exception for API-related errors"""
@@ -325,6 +321,7 @@ class OmekaClient:
                             pbar.update(1)
                         except Exception as e:
                             logger.error(f"Failed to process item on page {page}: {str(e)}")
+                            pbar.update(1)
                             continue
                             
                     page += 1
@@ -379,27 +376,36 @@ class OmekaClient:
                     self.item_set_titles[set_id] = title
                 if country:
                     self.item_set_countries[set_id] = country
+        
+        # Pre-fetch all item sets to ensure we have complete metadata
+        if not self.item_set_titles:
+            logger.info("Pre-fetching all item sets to ensure complete metadata...")
+            item_sets_data = self._make_request("item_sets", {"per_page": 100})
+            for item_set in item_sets_data:
+                set_id = item_set.get('o:id')
+                title = item_set.get('o:title', '')
+                if set_id and title:
+                    self.item_set_titles[set_id] = title
+                    # Log any excluded item sets we find
+                    excluded_title = "Notices d'autorités à traiter"
+                    if excluded_title.lower() in title.lower():
+                        logger.warning(f"Found excluded item set: ID={set_id}, Title='{title}'")
 
     def get_items(self, params: Optional[Dict[str, Any]] = None) -> List[OmekaItem]:
         """
-        Fetch all items from the Omeka S instance with optional filtering.
-        
-        This method handles pagination automatically and enriches items with
-        additional metadata like resource class labels and item set information.
+        Fetch all items from the Omeka S instance.
         
         Args:
             params (Optional[Dict[str, Any]]): Query parameters for filtering items
             
         Returns:
             List[OmekaItem]: List of processed Omeka items
-            
-        Raises:
-            Exception: If item collection fails
         """
         items = []
         logger.info("Starting item collection...")
         
         try:
+            # Collect all items
             for item in self._paginated_fetch(ResourceType.ITEM, params):
                 items.append(item)
             
@@ -436,79 +442,73 @@ class OmekaClient:
             logger.error(f"Failed to fetch item {item_id}: {str(e)}")
         return None
 
-    def save_to_cache(self, items: List[OmekaItem], filename: str):
+    def save_items_to_json(self, items: List[OmekaItem], filename: str = 'items.json'):
         """
-        Save collected items to a cache file.
+        Save items to a JSON file with the specified format.
         
         Args:
-            items (List[OmekaItem]): Items to cache
-            filename (str): Name of the cache file
+            items (List[OmekaItem]): Items to save
+            filename (str): Name of the JSON file to save
             
         Raises:
-            IOError: If writing to the cache file fails
+            IOError: If writing to the file fails
         """
-        cache_file = self.config.cache_dir / filename
         try:
-            logger.info(f"Saving {len(items)} items to cache...")
-            items_data = [
-                {
-                    'id': item.id,
-                    'title': item.title,
-                    'resource_class_label': item.resource_class_label,
-                    'created_date': item.created_date.isoformat(),
-                    'publication_date': item.publication_date,
-                    'num_pages': item.num_pages,
-                    'language': item.language,
-                    'word_count': item.word_count,
-                    'item_set_title': item.item_set_title,
-                    'country': item.country,
-                    'type': item.type
+            # Use current directory for saving the file
+            file_path = Path(filename)
+            logger.info(f"Saving {len(items)} items to {file_path}...")
+            
+            items_data = []
+            for item in items:
+                # Ensure we have the exact format requested
+                item_data = {
+                    "id": item.id,
+                    "title": item.title,
+                    "resource_class_label": item.resource_class_label,
+                    "created_date": item.created_date.isoformat() if item.created_date else None,
+                    "publication_date": item.publication_date,
+                    "num_pages": item.num_pages,
+                    "language": item.language,
+                    "word_count": item.word_count,
+                    "item_set_title": item.item_set_title,
+                    "country": item.country,
+                    "type": item.type
                 }
-                for item in items
-            ]
-            with cache_file.open('w', encoding='utf-8') as f:
+                items_data.append(item_data)
+            
+            with open(file_path, 'w', encoding='utf-8') as f:
                 json.dump(items_data, f, ensure_ascii=False, indent=2)
-            logger.info(f"Successfully saved data to {cache_file}")
-        except IOError as e:
-            logger.error(f"Failed to write cache file {cache_file}: {str(e)}")
+                
+            logger.info(f"Successfully saved {len(items)} items to {file_path}")
+        except Exception as e:
+            logger.error(f"Failed to save items to {filename}: {str(e)}")
             raise
 
-    def load_from_cache(self, filename: str) -> Optional[List[OmekaItem]]:
-        """Load items from cache file"""
-        cache_file = self.config.cache_dir / filename
-        try:
-            if cache_file.exists():
-                logger.info(f"Loading items from cache: {cache_file}")
-                with cache_file.open('r', encoding='utf-8') as f:
-                    items_data = json.load(f)
-                    items = []
-                    for item_data in tqdm(items_data, desc="Loading cached items"):
-                        item = OmekaItem(
-                            id=item_data['id'],
-                            title=item_data['title'],
-                            resource_class_label=item_data.get('resource_class_label'),
-                            created_date=datetime.fromisoformat(item_data['created_date']),
-                            publication_date=item_data['publication_date'],
-                            num_pages=item_data['num_pages'],
-                            language=item_data['language'],
-                            word_count=item_data['word_count'],
-                            item_set_title=item_data.get('item_set_title'),
-                            country=item_data.get('country'),
-                            type=item_data.get('type')
-                        )
-                        items.append(item)
-                logger.info(f"Successfully loaded {len(items)} items from cache")
-                return items
-        except IOError as e:
-            logger.error(f"Failed to read cache file {cache_file}: {str(e)}")
-        return None
-
-    def fetch_all_data(self, use_cache: bool = True) -> List[OmekaItem]:
-        """Fetch all items with caching support"""
+    def fetch_all_data(self) -> List[OmekaItem]:
+        """Fetch all items from the API and save to JSON file"""
         logger.info("Fetching fresh data from API...")
-        items = self.get_items()
-        self.save_to_cache(items, 'items.json')
-        return items
+        
+        try:
+            # Get all items without filtering
+            items = self.get_items()
+            
+            # Filter out items with excluded title
+            excluded_title = "Notices d'autorités à traiter"
+            filtered_items = [item for item in items if not (item.item_set_title and excluded_title.lower() in item.item_set_title.lower())]
+            
+            # Log the filtering results
+            removed_count = len(items) - len(filtered_items)
+            if removed_count > 0:
+                logger.info(f"Removed {removed_count} items with title '{excluded_title}'")
+            
+            # Save filtered items
+            self.save_items_to_json(filtered_items, 'items.json')
+            logger.info(f"Saved {len(filtered_items)} filtered items to items.json")
+            
+            return filtered_items
+        except Exception as e:
+            logger.error(f"Error during data collection: {str(e)}")
+            raise
 
     def get_item_sets(self) -> List[Dict[str, Any]]:
         """Fetch all item sets"""
