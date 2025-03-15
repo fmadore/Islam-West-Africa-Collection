@@ -137,10 +137,14 @@ class OmekaItem:
             language_data = data.get('dcterms:language', [])
             language = language_data[0].get('display_title') if language_data else None
             
-            # Calculate word count if content exists
+            # Calculate word count from bibo:content - properly extracting from API response
+            word_count = 0
             content_data = data.get('bibo:content', [])
-            content = content_data[0].get('@value') if content_data else ''
-            word_count = len(content.split()) if content else 0
+            
+            # Check if content data exists and extract value
+            if content_data:
+                content = content_data[0].get('@value', '')
+                word_count = len(content.split()) if content else 0
             
             # Extract item set IDs, title and country
             item_sets = data.get('o:item_set', [])
@@ -454,8 +458,9 @@ class OmekaClient:
             IOError: If writing to the file fails
         """
         try:
-            # Use current directory for saving the file
-            file_path = Path(filename)
+            # Save in the same directory as the script
+            script_dir = Path(__file__).parent.absolute()
+            file_path = script_dir / filename
             logger.info(f"Saving {len(items)} items to {file_path}...")
             
             items_data = []
