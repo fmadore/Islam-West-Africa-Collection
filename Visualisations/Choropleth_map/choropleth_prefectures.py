@@ -9,6 +9,7 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 import time
+import numpy as np
 
 class GeoDataProcessor:
     def __init__(self):
@@ -179,7 +180,7 @@ class GeoDataProcessor:
     def count_items_per_prefecture(self, coordinates, gdf):
         if not coordinates:
             logging.warning("No coordinates provided for counting items per prefecture")
-            return None
+            return gpd.GeoDataFrame(columns=['name', 'count'])
 
         points = gpd.GeoDataFrame(
             geometry=gpd.points_from_xy([c[1] for c in coordinates], [c[0] for c in coordinates]),
@@ -197,6 +198,29 @@ class GeoDataProcessor:
 
         m = folium.Map(location=[center_lat, center_lon], zoom_start=8)
 
+        # Prepare data for choropleth
+        # Ensure 'count' column exists and is numeric, fill NaN with 0
+        if 'count' not in gdf.columns:
+            gdf['count'] = 0
+        gdf['count'] = gdf['count'].fillna(0).astype(float)
+
+        # Use quantiles for color bins if there are enough unique values
+        # Exclude zeros from quantile calculation to prevent them from dominating bins
+        counts_for_bins = gdf[gdf['count'] > 0]['count']
+        if len(counts_for_bins.unique()) > 5: # Ensure enough unique values for 5 quantiles
+            bins = list(counts_for_bins.quantile([0, 0.25, 0.5, 0.75, 1.0]))
+            # Ensure bins are unique and sorted, add 0 at the beginning if not present
+            bins = sorted(list(set(bins)))
+            if 0 not in bins and gdf['count'].min() == 0:
+                 bins = [0] + bins
+            # If all values are the same (after filtering > 0), bins might be just one value.
+            # Or if there are very few unique values.
+            # In such cases, or if bins are not suitable, fall back to default YlOrRd behavior or a simpler scheme.
+            if len(bins) < 2: # Not enough bins
+                bins = None # Let folium decide or use a simpler scheme
+        else:
+            bins = None # Not enough unique values, let folium decide
+
         choropleth = folium.Choropleth(
             geo_data=gdf.__geo_interface__,
             name="choropleth",
@@ -206,7 +230,8 @@ class GeoDataProcessor:
             fill_color="YlOrRd",
             fill_opacity=0.7,
             line_opacity=0.2,
-            legend_name="Item Count"
+            legend_name="Item Count (Quantile Scale)",
+            bins=bins # Use calculated bins
         ).add_to(m)
 
         folium.LayerControl().add_to(m)
@@ -261,7 +286,9 @@ class GeoDataProcessor:
 
             item_counts = self.count_items_per_prefecture(coordinates, gdf)
             if item_counts is None:
-                return
+                # If item_counts is None (e.g., no coordinates), create an empty DataFrame
+                # to avoid error in merge and ensure 'count' column exists.
+                item_counts = gpd.GeoDataFrame(columns=['name', 'count'])
 
             gdf = gdf.merge(item_counts, on='name', how='left')
             gdf['count'] = gdf['count'].fillna(0)
